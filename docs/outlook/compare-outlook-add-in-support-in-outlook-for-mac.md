@@ -1,0 +1,24 @@
+
+# Comparar la compatibilidad con el complemento de Outlook en Outlook para Mac con otros hosts de Outlook
+
+Puede crear y ejecutar un complemento de Outlook del mismo modo en Outlook para Mac que en otros hosts, incluidos Outlook para Windows, OWA para dispositivos y Outlook Web App, sin personalizar el JavaScript para cada host. Las mismas llamadas desde el complemento a API de JavaScript para Office normalmente funcionan igual, excepto para las áreas descritas en la tabla siguiente.
+
+ >**Nota**  Outlook para Mac admite API de JavaScript para Office en Outlook en modo de solo lectura.
+
+|**Área**|**Outlook para Windows, OWA para dispositivos, Outlook Web App**|**Outlook para Mac**|
+|:-----|:-----|:-----|
+|Versiones compatibles del esquema de manifiesto de Complementos de Office y office.js|Todas las API de Office.js y del esquema v1.1|<ul><li>Solo las API que se pueden aplicar en modo de lectura. Se puede activar un complemento que usa las API nuevas y extendidas en la versión 1.1 de office.js, pero estas API para el modo de redacción no se ejecutarán correctamente en Outlook para Mac. </li><li>Esquema versión 1.1.</li></ul>|
+|Instancias de una serie de citas periódicas|<ul><li>Puede obtener el identificador del elemento y otras propiedades de una cita principal o una instancia de cita de una serie periódica. </li><li>Puede usar [mailbox.displayAppointmentForm](../../reference/outlook/Office.context.mailbox.md#displayappointmentformitemid) para visualizar una instancia o la principal de una serie periódica.</li></ul>|<ul><li>Puede obtener el identificador del elemento y otras propiedades de la cita principal, pero no los de una instancia de una serie periódica.</li><li>Puede mostrar la cita principal de una serie periódica. Sin el identificador del elemento, no puede mostrar una instancia de una serie periódica.</li></ul>|
+|Tipo de destinatario de un asistente de cita|Puede usar [EmailAddressDetails.recipientType](../../reference/outlook/simple-types.md) para identificar el tipo de destinatario de un asistente.|**EmailAddressDetails.recipientType** devuelve **undefined** para los asistentes de cita.|
+|Cadena de versión del host |El formato de la cadena de versión devuelta por [diagnostics.hostVersion](../../reference/outlook/Office.context.mailbox.diagnostics.md) depende del tipo de host. Por ejemplo:<ul><li>Outlook para Windows: 15.0.4454.1002</li><li>Outlook Web App: 15.0.918.2</li></ul>|Un ejemplo de la cadena de versión devuelta por  **Diagnostics.hostVersion** en Outlook para Mac: 15.0 (140325)|
+|Propiedades personalizadas de un elemento|Si la red deja de funcionar, un complemento todavía puede tener acceso a propiedades personalizadas almacenadas en caché.|Dado que Outlook para Mac no almacena en caché las propiedades personalizadas; si la red deja de funcionar, los complementos no podrán obtener acceso a ellas.|
+|Detalles de datos adjuntos|El tipo de contenido y los nombres de datos adjuntos de un objeto [AttachmentDetails](../../reference/outlook/Office.context.mailbox.md) dependen del tipo de host:<ul><li>Un ejemplo de JSON de <b>AttachmentDetails.contentType</b>: <b>"contentType": "image/x-png"</b>. </li><li><b>AttachmentDetails.name</b> no contiene una extensión de nombre de archivo. Por ejemplo, si un archivo adjunto es un mensaje con el asunto "RE: Actividad de verano", el objeto JSON que representa el nombre de los datos adjuntos sería <b>"name": "RE: Actividad de verano"</b>.</li></ul>|<ul><li>Un ejemplo de JSON de <b>AttachmentDetails.contentType</b>: <b>"contentType": "image/png"</b></li><li><b>AttachmentDetails.name</b> siempre incluye una extensión de nombre de archivo. Los datos adjuntos que son elementos de correo tienen una extensión .eml y las citas tienen una extensión .ics. Por ejemplo, si un archivo adjunto es un correo electrónico con el asunto "RE: Actividad de verano", el objeto JSON que representa el nombre de los datos adjuntos sería <b>"name": "RE: Actividad de verano.eml".</b></li></ul>|
+|Cadena que representa la zona horaria en las propiedades  **dateTimeCreated** y **dateTimeModified**|Por ejemplo: Jueves 13 de marzo de 2014 14:09:11 GMT + 0800 (hora estándar de China)|Por ejemplo: Jueves 13 de marzo de 2014 14:09:11 GMT + 0800 (Hora estándar del Centro)|
+|Precisión temporal de  **dateTimeCreated** y **dateTimeModified**|Si un complemento usa el código siguiente, la precisión será de hasta un milisegundo.<br/><pre lang="javascript">JSON.stringify(Office.context.mailbox.item, null, 4);</pre>|La precisión es sólo de hasta un segundo.|
+
+## Recursos adicionales
+
+
+
+- [Implementar e instalar complementos de Outlook para probarlos](../outlook/testing-and-tips.md)
+    
