@@ -2,19 +2,17 @@
 # Novedades en la API de JavaScript para Office
 Con el fin de ampliar la funcionalidad de sus Complementos de Office, la API de JavaScript para Office se actualiza periódicamente con objetos, métodos, propiedades, eventos y enumeraciones nuevos y actualizados. Siga los vínculos siguientes para ver los miembros de la API nuevos y actualizados.
 
- _**Hace referencia a:** Access apps for SharePoint | apps for Office | Excel | Office Add-ins | Outlook | PowerPoint | Project | Word_
-
 Para desarrollar complementos con nuevos miembros de API, necesita [actualizar los archivos de la API de JavaScript para Office en el proyecto](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
 Para ver todos los miembros de la API incluidos los que no han cambiado desde actualizaciones anteriores, consulte [API de JavaScript para Office](../reference/javascript-api-for-office.md).
 
 
-## API nueva y actualizada
+## API nuevas y actualizadas
 
  **Objetos nuevos y actualizados**
 
 
-|**Object**|**Descripción**|**Versión agregada o actualizada **|
+|**Object**|**Descripción**|**Versión agregada o actualizada**|
 |:-----|:-----|:-----|
 |[Elemento](../reference/outlook/Office.context.mailbox.item.md)|Actualizaciones y adiciones a:<br><ul><li><p>Los métodos <a href="../reference/outlook/Office.context.mailbox.item.md#getSelectedDataAsync" target="_blank">getSelectedDataAsync</a> y <a href="../reference/outlook/Office.context.mailbox.item.md#setSelectedDataAsync" target="_blank">setSelectedDataAsync</a> para permitir obtener la selección del usuario y sobrescribirla en el asunto y el cuerpo de un mensaje o cita.</p></li><li><p>Los métodos <a href="../reference/outlook/Office.context.mailbox.item.md#displayReplyAllForm" target="_blank">displayReplyAllForm</a> y <a href="../reference/outlook/Office.context.mailbox.item.md#displayReplyForm" target="_blank">displayReplyForm</a> para admitir la adición de datos adjuntos en el formulario de respuesta de una cita.</p></li></ul>|Mailbox 1.2|
 |[Elemento](../reference/outlook/Office.context.mailbox.item.md)|Se actualizó para incluir métodos y campos para la creación de complementos de Outlook en modo de redacción. |1.1|

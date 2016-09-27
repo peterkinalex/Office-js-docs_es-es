@@ -11,12 +11,12 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac_
 |ignoreSpace|bool|Obtiene o establece un valor que indica si se van a pasar por alto todos los espacios en blanco entre las palabras. Corresponde a la casilla Omitir espacios en blanco en el cuadro de diálogo Buscar y reemplazar.|
 |matchCase|bool|Obtiene o establece un valor que indica si se va a realizar una búsqueda distinguiendo entre mayúsculas y minúsculas. Corresponde a la casilla Coincidir mayúsculas y minúsculas en el cuadro de diálogo Buscar y reemplazar (menú Edición).|
 |matchPrefix|bool|Obtiene o establece un valor que indica si se van a buscar palabras que empiecen por la cadena de búsqueda. Corresponde a la casilla Coincidir prefijo en el cuadro de diálogo Buscar y reemplazar.|
-|matchSoundsLike|bool|Obtiene o establece un valor que indica si se van a buscar palabras que se parezcan a la cadena de búsqueda. Corresponde a la casilla Se parece a en el cuadro de diálogo Buscar y reemplazar.|
+|matchSoundsLike|bool|**Esta opción quedó en desuso en la actualización de junio de 2016**. Obtiene o establece un valor que indica si se van a buscar palabras que se parezcan a la cadena de búsqueda. Corresponde a la casilla Se parece a en el cuadro de diálogo Buscar y reemplazar.|
 |matchSuffix|bool|Obtiene o establece un valor que indica si se van a buscar palabras que finalicen por la cadena de búsqueda. Corresponde a la casilla Coincidir sufijo en el cuadro de diálogo Buscar y reemplazar.|
 |matchWholeWord|bool|Obtiene o establece un valor que indica si se van a buscar solamente palabras completas y no texto que forme parte de una palabra más larga. Corresponde a la casilla Solo palabras completas en el cuadro de diálogo Buscar y reemplazar.|
 |matchWildCards|bool|Obtiene o establece un valor que indica si la búsqueda se realizará usando operadores de búsqueda especiales. Corresponde a la casilla Usar caracteres comodín en el cuadro de diálogo Buscar y reemplazar.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 Las opciones de búsqueda son opcionales. Las opciones de búsqueda deben especificarse en todos los métodos de búsqueda mediante un literal de objeto:
 

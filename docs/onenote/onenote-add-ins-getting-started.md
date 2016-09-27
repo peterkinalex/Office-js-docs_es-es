@@ -2,18 +2,12 @@
 
 En este artículo se indican los pasos necesarios para crear un complemento de panel de tareas sencillo que agrega texto a una página de OneNote.
 
-- [Configurar el entorno de desarrollo](#configurar-el-entorno-de-desarrollo)
-- [Crear el proyecto de complemento](#crear-el-proyecto-de-complemento)
-- [Configurar el manifiesto del complemento](#configurar-el-manifiesto-del-complemento)
-- [Desarrollo del complemento](#desarrollo-del-complemento)
-- [Probar el complemento](#probar-el-complemento)
-
 En la imagen siguiente se muestra el complemento que creará.
 
    ![El complemento de OneNote que se crea con este tutorial](../../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
-### Paso 1: Configurar el entorno de desarrollo
+## Paso 1: Configurar el entorno de desarrollo
 1. Instale Yeoman Office Generator y sus requisitos previos según estas [instrucciones de instalación](https://dev.office.com/docs/add-ins/get-started/create-an-office-add-in-using-any-editor).
 
    Yeoman Office Generator facilita la creación de proyectos de complementos si no tiene Visual Studio o si quiere usar tecnologías distintas de HTML, CSS y JavaScript. También proporciona acceso rápido a un servidor web de Gulp local para realizar pruebas. 
@@ -21,7 +15,7 @@ En la imagen siguiente se muestra el complemento que creará.
    >De manera opcional, puede [usar Visual Studio](https://dev.office.com/docs/add-ins/get-started/create-and-debug-office-add-ins-in-visual-studio) para crear sus archivos de proyectos, pero no recibirá la asistencia del servidor de Gulp integrado.
 
 <a name="create-project"></a>
-### Paso 2: Crear el proyecto de complemento 
+## Paso 2: Crear el proyecto de complemento 
 1. Cree una carpeta local llamada *onenote add-in*.
 
 Abra una ventana del símbolo del sistema (**cmd**) y navegue hasta la carpeta **onenote add-in**. Ejecute el comando `yo office`, como se muestra a continuación.
@@ -42,7 +36,7 @@ C:\your-local-path\onenote add-in\> yo office
 | Tecnología que se usará | HTML, CSS y JavaScript |
 
 <a name="manifest"></a>
-### Paso 3: Configurar el manifiesto del complemento 
+## Paso 3: Configurar el manifiesto del complemento 
 Abra **manifest-onenote-add-in.xml** en sus archivos del proyecto. Agregue la línea siguiente a la sección **Hosts**. Esto especifica que el complemento es compatible con la aplicación host de OneNote.
 
 ```
@@ -56,7 +50,7 @@ Tenga en cuenta que **SourceLocation** ya se ha configurado para el servidor web
 ```
 
 <a name="develop"></a>
-### Paso 4: Desarrollar el complemento
+## Paso 4: Desarrollar el complemento
 Puede desarrollar el complemento con cualquier editor de texto o IDE. Si aún no ha probado Visual Studio Code, puede [descargarlo de forma gratuita](https://code.visualstudio.com/) en Linux, Mac OS X y Windows.
 
 Abra **home.html** en la carpeta *app/home*. 
@@ -165,7 +159,7 @@ function addOutlineToPage() {
 ```
 
 <a name="test"></a>
-### Paso 5: Probar el complemento en OneNote Online
+## Paso 5: Probar el complemento en OneNote Online
 1. Ejecute el servidor web de Gulp.  
 
    a. Abra una ventana del símbolo del sistema (**cmd**) y navegue hasta la carpeta **onenote add-in**. 
@@ -188,13 +182,21 @@ https://localhost:8443/app/home/home.html
 
 3. En OneNote Online, abra un bloc de notas.
 
-4. Elija **Insertar > Cargar complementos**.
+4. Elija **Insertar > Complementos de Office**. Se abrirá el cuadro de diálogo Complementos de Office.
+  - Si ha iniciado sesión con su cuenta de consumidor, elija la pestaña **MIS COMPLEMENTOS** y después elija **Cargar mi complemento**.
+  - Si ha iniciado sesión con su cuenta escolar o de trabajo, elija la pestaña **MI ORGANIZACIÓN** y después elija **Cargar mi complemento**. 
+  
+  La siguiente imagen muestra la pestaña **MIS COMPLEMENTOS** en blocs de notas de consumidor.
+
+  ![El cuadro de diálogo Complementos de Office con la pestaña MIS COMPLEMENTOS](../../images/onenote-office-add-ins-dialog.png)
+  
+  >**NOTA**: Para habilitar el botón **Complementos de Office**, haga clic dentro de la página de OneNote.
 
 5. En el diálogo Cargar complemento, busque **manifest-onenote-add-in.xml** en los archivos del proyecto y, después, elija **Cargar**. Mientras realiza pruebas, el archivo de manifiesto se puede almacenar de forma local.
 
 6. El complemento se abre en un iFrame junto a la página de OneNote. Escriba texto en el área de texto y, después, elija **Agregar esquema**. El texto que escriba se agregará a la página. 
 
-### Solución de problemas y sugerencias
+## Solución de problemas y sugerencias
 - Puede depurar el complemento con las herramientas de desarrollo del navegador. Si usa el servidor web de Gulp y realiza la depuración en Internet Explorer o en Chrome, puede guardar los cambios de forma local y, después, actualizar el iframe del complemento.
 
 - Al inspeccionar un objeto de OneNote, las propiedades que están disponibles actualmente para su uso se muestran como valores reales. Las propiedades que es necesario cargar se muestran como *undefined*. Expanda el nodo `_proto_` para ver las propiedades que se han definido en el objeto pero que aún no se han cargado.
@@ -207,5 +209,5 @@ https://localhost:8443/app/home/home.html
 
 - [Introducción a la programación de API de JavaScript para OneNote](onenote-add-ins-programming-overview.md)
 - [Referencia de la API de JavaScript de complementos de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader sample (Ejemplo de Rubric Grader)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader sample (Ejemplo de Rubric Grader)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview (Información general sobre la plataforma de complementos para Office)](https://dev.office.com/docs/add-ins/overview/office-add-ins)

@@ -20,7 +20,7 @@ Devuelve una matriz de matrices que contiene los datos de la tabla. Si no hay ni
 
 ## Observaciones
 
-Para especificar filas, debe especificar una matriz de matrices que se corresponda con la estructura de la tabla. Por ejemplo, para especificar dos filas de valores **string** en una tabla de dos columnas, debe establecer la propiedad **row** en ` [['a', 'b'], ['c', 'd']]`.
+Para especificar las filas, debe indicar una matriz de matrices que corresponda a la estructura de la tabla. Por ejemplo, para especificar dos filas de valores **string** en una tabla de dos columnas, establezca la propiedad **rows** en ` [['a', 'b'], ['c', 'd']]`.
 
 Si especifica **null** para la propiedad **rows** (o la deja vacía al construir un objeto **TableData**), al ejecutarse el código se producirán los siguientes resultados:
 

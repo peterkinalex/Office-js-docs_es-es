@@ -26,15 +26,15 @@ El Tejido incluye estilos para diversos elementos de interfaz de usuario, como b
     </button>
 
 ##4. Usar componentes con un comportamiento de ejemplo
-El Tejido incluye algunos componentes que admiten comportamientos (por ejemplo, lo que ocurre al hacer clic). A modo de introducción, el Tejido incluye **códigos de ejemplo** en forma de complementos de la interfaz de usuario de JQuery que puede usar. También puede usar cualquier otro marco de trabajo que desee para conectar las cosas. Si decide usar los ejemplos, debe tener en cuenta que el código no se distribuye como parte de la CDN, por lo que tiene que descargarlo desde la versión más reciente del [proyecto GitHub del Tejido](https://github.com/OfficeDev/Office-UI-Fabric/releases), hacer referencia a él e inicializarlo en el código. 
+Fabric incluye algunos componentes que admiten comportamientos (por ejemplo, lo que ocurre al hacer clic). A modo de introducción, Fabric 2.6.1 incluye **códigos de ejemplo** en forma de complementos de la interfaz de usuario de JQuery que puede usar. También puede usar cualquier otro marco de trabajo que desee para conectar las cosas. Si decide usar los ejemplos, debe tener en cuenta que el código no se distribuye como parte de la CDN, por lo que tiene que descargarlo desde la versión 2.6.1 del [proyecto GitHub de Fabric](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1), hacer referencia a él e inicializarlo en el código. 
 
 Por ejemplo, para usar el componente SearchBox:
 
-1. Descargue el componente SearchBox desde [GitHub](https://github.com/OfficeDev/Office-UI-Fabric/tree/master/src/components/SearchBox).
+1. Descargue el componente SearchBox desde [GitHub](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1/src/components/SearchBox).
 2. Agregue la referencia siguiente al código: `<script src="SearchBox/Jquery.SearchBox.js"></script>`
 3. Inicialice el componente asegurándose de que esta línea se ejecuta cuando se carga la página: `$(".ms-SearchBox").SearchBox();`. Se recomienda incluirla en el bloque `Office.Initialize` del complemento.     
 
-**Nota:** Si no desea usar todos los componentes del Tejido, puede reducir el tamaño de los recursos que descargue optando por hospedar los archivos CSS individuales de cada componente. Puede obtener los archivos CSS en las carpetas de componente del [repositorio GitHub del Tejido](https://github.com/OfficeDev/Office-UI-Fabric). 
+**Nota:** Si no desea usar todos los componentes de Fabric, puede reducir el tamaño de los recursos que descargue optando por hospedar los archivos CSS individuales de cada componente. Puede obtener los archivos CSS de las carpetas de componente que hay en el [repositorio GitHub de Fabric 2.6.1](https://github.com/OfficeDev/office-ui-fabric-core/tree/release/2.6.1). 
 
 
 ##Pasos siguientes

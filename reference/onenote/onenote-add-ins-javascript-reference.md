@@ -1,6 +1,6 @@
 # Referencia de la API de JavaScript de complementos de OneNote
 
-*Se aplica a: OneNote Online*
+*Válido para: OneNote Online*
 
 En los vínculos siguientes se muestran los objetos de OneNote de alto nivel disponibles en la API. Cada vínculo a una página del objeto contiene una descripción de las propiedades, relaciones y métodos disponibles en el objeto. Explore los vínculos siguientes para más información. 
     
@@ -50,5 +50,5 @@ En los vínculos siguientes se muestran los objetos de OneNote de alto nivel dis
 
 - [Introducción a la programación de API de JavaScript para OneNote](../../docs/onenote/onenote-add-ins-programming-overview.md)
 - [Crear el primer complemento de OneNote](../../docs/onenote/onenote-add-ins-getting-started.md)
-- [Rubric Grader sample (Ejemplo de Rubric Grader)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader-Preview)
+- [Rubric Grader sample (Ejemplo de Rubric Grader)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview (Información general sobre la plataforma de complementos para Office)](https://dev.office.com/docs/add-ins/overview/office-add-ins)

@@ -14,9 +14,6 @@ Office.context
 
 ## Miembros
 
-
-**Propiedades**
-
 |||
 |:-----|:-----|
 |Nombre|Descripción|
@@ -26,6 +23,7 @@ Office.context
 |[documento](../../reference/shared/office.context.document.md)|Obtiene un objeto que representa el documento con el que está interactuando el complemento de panel de tareas o de contenido.|
 |[buzón de correo](../../reference/shared/office.context.mailbox.md)|Obtiene el objeto **mailbox** que proporciona acceso a los miembros de la API específicos para los complementos de Outlook.|
 |[officeTheme](../../reference/shared/office.context.officetheme.md)|Proporciona acceso a las propiedades de los colores del tema de Office.|
+|[ui](../../reference/shared/officeui)|Proporciona objetos y métodos que puede usar para crear y manipular componentes de la interfaz de usuario, como cuadros de diálogo.|
 |[roamingSettings](../../reference/shared/office.context.roamingsettings.md)|Obtiene un objeto que representa la configuración personalizada guardada del complemento.|
 |[touchEnabled](../../reference/shared/office.context.touchenabled.md)|Obtiene información sobre si el complemento se está ejecutando en una aplicación host de Office con funcionalidad táctil.|
 

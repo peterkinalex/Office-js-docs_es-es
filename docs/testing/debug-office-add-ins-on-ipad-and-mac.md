@@ -9,34 +9,25 @@ Vorlon.js es un depurador de páginas web, similar a las herramientas de F12, qu
 
 Para instalar y configurar Vorlon: 
 
-1.  Instale [Node.js](https://nodejs.org) (si aún no lo hizo). 
+1.  Instale [Node.js](https://nodejs.org) y [Git](https://git-scm.com/) (si aún no lo ha hecho). 
 
-2.  Instale Vorlon con npm con el comando siguiente: `sudo npm i -g vorlon` 
+2.  Instale Vorlon con git usando el comando siguiente: `git clone https://github.com/MicrosoftDX/Vorlonjs.git`
 
-3.  Ejecute el servidor Vorlon con el comando `vorlon`. 
+3.  Instale las dependencias con `npm install`.
 
-4.  Abra una ventana del explorador y vaya a [http://localhost:1337](http://localhost:1337), que es la interfaz de Vorlon.
+4.  Los complementos requieren HTTPS. Por extensión, los scripts que usan también deben ser HTTPS, incluyendo el script de Vorlon. Por lo tanto, para usar Vorlon con complementos deberá configurarlo de forma que use SSL. En la carpeta en la que instaló Vorlon, vaya a la carpeta /Server y edite el archivo config.json. Cambie la propiedad **useSSL** a **true**. De paso, puede habilitar también el complemento de complementos de Office (cambie su propiedad "enabled" a true). 
 
-5.  Agregue la siguiente etiqueta de script a la sección `<head>` del archivo home.html (o el archivo HTML principal) del complemento:
+5.  Ejecute el servidor Vorlon con el comando `sudo vorlon`. 
+
+6.  Abra una ventana del explorador y vaya a [http://localhost:1337](http://localhost:1337), que es la interfaz de Vorlon. Confíe en el certificado de seguridad cuando se le solicite. El certificado de seguridad se encuentra también en la carpeta Vorlon, en /Server/cert. 
+
+7.  Agregue la siguiente etiqueta de secuencia de comandos a la sección `<head>` del archivo home.html (o al archivo HTML principal) del complemento:
 ```    
-<script src="http://localhost:1337/vorlon.js"></script>    
+<script src="https://localhost:1337/vorlon.js"></script>    
 ```  
-
->**Nota:** Debe habilitar HTTPS en Vorlon para usar Vorlon.js para depurar complementos. Para obtener información sobre cómo hacerlo, consulte [VorlonJS plugin for debugging Office Addin](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/) (Complemento VorlonJS para depurar complementos de Office).
 
 Ahora, cuando abra el complemento en un dispositivo, se mostrará en la lista de clientes en Vorlon (en la parte izquierda de la interfaz de Vorlon). Puede resaltar de forma remota elementos DOM, ejecutar comandos de forma remota y mucho más.  
 
 ![Captura de pantalla donde se muestra la interfaz de Vorlon.js](../../images/vorlon_interface.png)
 
-Un complemento de Vorlon dedicado para complementos de Office que agrega funciones adicionales, como interactuar con las API de Office.js. Para más información, vea la entrada de blog [Complemento VorlonJS para depurar complementos de Office](https://blogs.msdn.microsoft.com/mim/2016/02/18/vorlonjs-plugin-for-debugging-office-addin/). Para habilitar el complemento de complementos de Office: 
-
-1.  Clone de forma local la rama para desarrolladores del repositorio de GitHub Vorlon.js con los comandos siguientes: 
-```
-git clone https://github.com/MicrosoftDX/Vorlonjs.git
-git checkout dev
-npm install
-```
-
-2.  Abra el archivo **config.json** ubicado en /Vorlon/Server/config.json. Para activar el complemento de complemento de Office, establezca la propiedad **enabled** en **true**.
-
-![Captura de pantalla donde se muestra la sección de complementos de config.json](../../images/vorlon_plugins_config.png) 
+El complemento de Office agrega capacidades adicionales a Office.js, como las de explorar el modelo de objetos y ejecutar llamadas a Office.js. 

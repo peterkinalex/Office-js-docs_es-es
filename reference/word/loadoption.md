@@ -4,7 +4,7 @@ Objeto que especifica información de paginación y las propiedades que se van a
 
 _Se aplica a: Word 2016, Word para iPad, Word para Mac_
 
-## Propiedades
+## Properties
 | Propiedad     | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |select|object|Contiene una lista delimitada por comas o una matriz de nombres de parámetro/relación. Opcional.|
@@ -55,7 +55,7 @@ En este ejemplo se muestra cómo obtener los 50 párrafos superiores del documen
             return context.sync().then(function () {
 
             // Insert code that works with the paragraphs loaded by context.load().
-
+           })
         })
         .catch(function (error) {
             console.log('Error: ' + JSON.stringify(error));
