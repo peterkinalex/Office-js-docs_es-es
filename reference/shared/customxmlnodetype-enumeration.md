@@ -1,5 +1,5 @@
 
-# Enumeración CustomXMLNodeType
+# <a name="customxmlnodetype-enumeration"></a>Enumeración CustomXMLNodeType
 Especifica el tipo de nodo.
 
 
@@ -16,7 +16,7 @@ Office.CustomXMLNodeType
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Valores**
@@ -32,7 +32,7 @@ Office.CustomXMLNodeType
 |Office.CustomXMLNodeType.ProcessingInstruction|"processingInstruction"|En nodo es una instrucción de procesamiento.|
 |Office.CustomXMLNodeType.Text|"text"|El nodo es un nodo de texto.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -45,7 +45,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 ||**Office para escritorio de Windows**|**Office Online (en el explorador)**|**Office para iPad**|
 |:-----|:-----|:-----|:-----|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 
 
@@ -55,7 +55,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 |**Versión**|**Cambios**|

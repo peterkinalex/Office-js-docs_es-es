@@ -1,7 +1,7 @@
 
-# Labs.Core.Actions.ISubmitAnswerOptions
+# <a name="labs.core.actions.isubmitansweroptions"></a>Labs.Core.Actions.ISubmitAnswerOptions
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Opciones disponibles para la acción de envío de respuestas.
 
@@ -10,7 +10,7 @@ interface ISubmitAnswerOptions extends Core.IActionOptions
 ```
 
 
-## Properties
+## <a name="properties"></a>Properties
 
 
 |||

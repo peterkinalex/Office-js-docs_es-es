@@ -1,12 +1,12 @@
 
-# Crear un complemento de Project que use REST con un servicio OData local de Project Server
+# <a name="create-a-project-add-in-that-uses-rest-with-an-on-premises-project-server-odata-service"></a>Crear un complemento de Project que use REST con un servicio OData local de Project Server
 
 En este artículo se describe cómo crear un complemento de panel de tareas para Project Profesional 2013 que compare datos de coste y trabajo en el proyecto activo con las medias de todos los proyectos de la sesión actual de Project Web App. El complemento usa REST con la biblioteca jQuery para obtener acceso al servicio de informes OData de **ProjectData** en Project Server 2013.
 
 
 El código en este artículo se basa en una muestra desarrollada por Saurabh Sanghvi y Arvind Iyer, Microsoft Corporation.
 
-## Requisitos previos para crear un complemento de panel de tareas que lea datos de informes de Project Server
+## <a name="prerequisites-for-creating-a-task-pane-add-in-that-reads-project-server-reporting-data"></a>Requisitos previos para crear un complemento de panel de tareas que lea datos de informes de Project Server
 
 
 A continuación, se indican los requisitos previos para crear un complemento de panel de tareas de Project que lea el servicio **ProjectData** de una instancia de Project Web App en una instalación local de Project Server 2013:
@@ -25,7 +25,7 @@ A continuación, se indican los requisitos previos para crear un complemento de 
     Comprobar que el servicio **ProjectData** sea accesible desde el equipo de desarrollo
     
 
-### Procedimiento 1. Comprobar que el servicio ProjectData sea accesible
+### <a name="procedure-1.-to-verify-that-the-projectdata-service-is-accessible"></a>Procedimiento 1. Comprobar que el servicio ProjectData sea accesible
 
 
 1- Para permitir que el explorador muestre directamente los datos XML desde una consulta de REST, deshabilite la vista de lectura de fuentes. Para más información sobre cómo hacer esto en Internet Explorer, vea el procedimiento 1, paso 4 en [Consulta de fuentes OData de datos de informes de Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
@@ -52,7 +52,7 @@ A continuación, se indican los requisitos previos para crear un complemento de 
 3- Es posible que tenga que proporcionar las credenciales de red para ver los resultados. Si en el explorador se muestra el mensaje "Error 3, acceso denegado", quiere decir que no tiene el permiso de inicio de sesión para esa instancia de Project Web App, o bien que hay un problema de red y necesita la ayuda de un administrador.
     
 
-## Usar Visual Studio para crear un complemento de panel de tareas para Project
+## <a name="using-visual-studio-to-create-a-task-pane-add-in-for-project"></a>Usar Visual Studio para crear un complemento de panel de tareas para Project
 
 Office Developer Tools para Visual Studio incluye una plantilla para complementos de panel de tareas para Project 2013. Si crea una solución con el nombre  **HelloProjectOData**, la solución contiene los siguientes dos proyectos de Visual Studio:
 
@@ -62,7 +62,7 @@ Office Developer Tools para Visual Studio incluye una plantilla para complemento
 - El proyecto web se denomina  **HelloProjectODataWeb**. Incluye páginas web, archivos JavaScript, archivos CSS, imágenes, referencias y archivos de configuración para el contenido web en el panel de tareas. El proyecto web se orienta a .NET Framework 4. En los procedimientos 4 y 5 se muestra cómo modificar los archivos en el proyecto web para crear la funcionalidad del complemento  **HelloProjectOData**.
     
 
-### Procedimiento 2. Crear el complemento HelloProjectOData para Project
+### <a name="procedure-2.-to-create-the-helloprojectodata-add-in-for-project"></a>Procedimiento 2. Crear el complemento HelloProjectOData para Project
 
 
 1. Ejecute Visual Studio 2015 como administrador y después seleccione  **Nuevo proyecto** en la página Inicio.
@@ -71,13 +71,13 @@ Office Developer Tools para Visual Studio incluye una plantilla para complemento
     
 3. Para ubicar ambos proyectos de Visual Studio en el mismo directorio, seleccione  **Crear directorio para la solución** y después vaya hasta la ubicación deseada.
     
-4. En el campo  **Nombre**, escriba HelloProjectOData y haga clic en **Aceptar**.
+4. En el campo **Nombre**, escriba HelloProjectOData y haga clic en **Aceptar**.
     
     **Creación de un complemento de Office**
 
     ![Creación de una aplicación para Office 2013](../../images/pj15_HelloProjectOData_CreatingApp.png)
 
-5. En el cuadro de diálogo  **Elegir el tipo de complemento**, seleccione  **Panel de tareas** y elija **Siguiente** (consulte la siguiente captura de pantalla).
+5. En el cuadro de diálogo **Elegir el tipo de complemento**, seleccione **Panel de tareas** y elija **Siguiente** (consulte la siguiente captura de pantalla).
     
     **Elección del tipo de complemento para crear**
 
@@ -85,15 +85,15 @@ Office Developer Tools para Visual Studio incluye una plantilla para complemento
 
 6. En el cuadro de diálogo  **Elija las aplicaciones host**, desactive todas las casillas excepto la casilla  **Project** (vea la siguiente captura de pantalla) y elija **Finalizar**.
     
-    **Choosing the host application**
+    **Elección de la aplicación host**
 
-    ![Elegir el proyecto como la única aplicación host](../../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
+    ![Elección de Project como la única aplicación host](../../images/b2144f2c-51f6-4e61-bc0d-972125c57031.png)
     
     Visual Studio crea el proyecto **HelloProjectOdata** y el proyecto **HelloProjectODataWeb**.
     
 La carpeta  **Complementos** (vea la siguiente captura de pantalla) contiene el archivo App.css para estilos CSS personalizados. En la subcarpeta **Inicio**, el archivo Home.html contiene referencias a los archivos CSS y a los archivos de JavaScript que usa el complemento, así como el contenido HTML5 para el complemento. Además, el archivo Home.js es para el código personalizado de JavaScript. La carpeta  **Scripts** incluye los archivos de la biblioteca jQuery. La subcarpeta **Office** incluye las bibliotecas de JavaScript, tales como office.js y project-15.js, además de las bibliotecas de idiomas para las cadenas estándar en los complementos de Office. En la carpeta **Contenido**, el archivo Office.css contiene los estilos predeterminados para todos los complementos de Office.
 
-**Vista de los archivos de proyecto web predeterminados en el Explorador de soluciones**
+**Visualización de los archivos de proyecto web predeterminados en el Explorador de soluciones**
 
 ![Visualización de los archivos de proyecto web en el Explorador de soluciones](../../images/pj15_HelloProjectOData_InitialSolutionExplorer.png)
 
@@ -102,7 +102,7 @@ El manifiesto para el proyecto  **HelloProjectOData** es el archivo HelloProject
 Para más información sobre el manifiesto, vea [Manifiesto XML de complementos de Office](../../docs/overview/add-in-manifests.md) y [Referencia de esquema para manifiestos de complementos de Office (versión 1.1)](../overview/add-in-manifests.md).
 
 
-### Procedimiento 3. Modificar el manifiesto del complemento
+### <a name="procedure-3.-to-modify-the-add-in-manifest"></a>Procedimiento 3. Modificar el manifiesto del complemento
 
 
 1. En Visual Studio, abra el archivo HelloProjectOData.xml.
@@ -119,7 +119,7 @@ En los pasos siguientes se muestra cómo agregar un archivo de icono a la soluci
     
 2. Para que aparezca en la lista desplegable **Complementos de Office**, el tamaño del icono tiene que ser de 32 x 32 píxeles. Por ejemplo, instale el SDK de Project 2013, elija la carpeta **Imágenes** y agregue el siguiente archivo del SDK: `\Samples\Apps\HelloProjectOData\HelloProjectODataWeb\Images\NewIcon.png`
     
-    Además, puede usar su propio icono con tamaño 32x32 o copiar la siguiente imagen al archivo denominado NewIcon.png y agregarlo a la carpeta “HelloProjectODataWeb\Images”: ![Icono de la aplicación HelloprojectOData](../../images/pj15_HelloProjectData_NewIcon.jpg)
+    Alternately, use your own 32 x 32 icon; or, copy the following image to a file named NewIcon.png, and then add that file to the  `HelloProjectODataWeb\Images` folder: ![Icono de la aplicación HelloprojectOData](../../images/pj15_HelloProjectData_NewIcon.jpg)
 
 3. En el manifiesto HelloProjectOData.xml, agregue un elemento **IconUrl** debajo del elemento **Description**, donde el valor de la URL del icono es la ruta de acceso relativa al archivo de icono de 32x32. Por ejemplo, agregue la línea siguiente: **<IconUrl DefaultValue="~remoteAppUrl/Images/NewIcon.png" />**. El archivo de manifiesto HelloProjectOData.xml contiene ahora lo siguiente (el valor de **Id** será distinto en su caso):
 
@@ -145,7 +145,7 @@ En los pasos siguientes se muestra cómo agregar un archivo de icono a la soluci
     </OfficeApp>
 ```
 
-## Crear el contenido HTML para el complemento HelloProjectOData
+## <a name="creating-the-html-content-for-the-helloprojectodata-add-in"></a>Crear el contenido HTML para el complemento HelloProjectOData
 
 El complemento  **HelloProjectOData** es un ejemplo que incluye depuración e informe de errores. No está pensado para la producción. Antes de comenzar a codificar el contenido HTML, diseñe la IU y la experiencia de usuario para el complemento, y esboce las funciones de JavaScript que interactúan con el código HTML. Para obtener más información, vea[Directrices de diseño para complementos de Office](../../docs/design/add-in-design.md). 
 
@@ -164,7 +164,7 @@ En el panel de tareas, el nombre para mostrar del complemento, que es el valor d
      >**Nota** En este ejemplo, los datos de costo y de trabajo para el proyecto activo se derivan de los valores publicados. Si cambia los valores en Project, el servicio **ProjectData** no tiene los cambios hasta que se publique el proyecto.
 
 
-### Procedimiento 4. Crear el contenido HTML
+### <a name="procedure-4.-to-create-the-html-content"></a>Procedimiento 4. Crear el contenido HTML
 
 1. En el elemento  **head** del archivo Home.html, agregue todos los elementos **link** adicionales para los archivos CSS que el complemento use. La plantilla de proyecto de Visual Studio incluye un vínculo para el archivo App.css que puede usar para los estilos CSS personalizados.
     
@@ -172,7 +172,7 @@ En el panel de tareas, el nombre para mostrar del complemento, que es el valor d
     
      >**Nota**  Antes de implementar el complemento, cambie las referencias a office.js y a jQuery por la referencia a la red de entrega de contenido (CDN). La referencia a CDN proporciona la versión más reciente y el mejor rendimiento.
 
-    El complemento **HelloProjectOData** también usa el archivo SurfaceErrors.js, que muestra los errores en un mensaje emergente. Puede copiar el código desde la sección _Programación robusta_ de [Procedimiento para crear el primer complemento de panel de tareas para Project 2013 con un editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md) y, después, agregue un archivo SurfaceErrors.js en la carpeta **Scripts\Office** del proyecto **HelloProjectODataWeb**.
+    El complemento **HelloProjectOData** también usa el archivo SurfaceErrors.js, que muestra los errores en un mensaje emergente. Puede copiar el código desde la sección _Programación robusta_ de [Procedimiento para crear el primer complemento de panel de tareas para Project 2013 con un editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md) y, después, agregar un archivo SurfaceErrors.js en la carpeta **Scripts\Office** del proyecto **HelloProjectODataWeb**.
     
     Lo que sigue es el código HTML actualizado del elemento **head**, con la línea adicional para el archivo SurfaceErrors.js:
     
@@ -271,7 +271,7 @@ En el panel de tareas, el nombre para mostrar del complemento, que es el valor d
 ```
 
 
-## Crear el código JavaScript para el complemento
+## <a name="creating-the-javascript-code-for-the-add-in"></a>Crear el código JavaScript para el complemento
 
 
 La plantilla para un complemento de panel de tareas de Project incluye un código de inicialización predeterminado, diseñado para demostrar las acciones básicas de obtener y seleccionar datos en un documento para un complemento de Office 2013 típico. Como Project 2013 no admite acciones que escriban en el proyecto activo y el complemento  **HelloProjectOData** no usa el método **getSelectedDataAsync**, puede eliminar el script dentro de la función  **Office.initialize** y eliminar las funciones **setData** y **getData** del archivo HelloProjectOData.js predeterminado.
@@ -281,7 +281,7 @@ JavaScript incluye constantes globales para la consulta de REST y variables glob
 El resto del archivo HelloProjectOData.js incluye dos funciones: la función  **retrieveOData** se llama cuando el usuario selecciona **Comparar todos los proyectos**; y la función  **parseODataResult** calcula promedios y después rellena la tabla comparativa con valores que tienen formatos de color y unidades.
 
 
-### Procedimiento 5. Crear el código JavaScript
+### <a name="procedure-5.-to-create-the-javascript-code"></a>Procedimiento 5. Crear el código JavaScript
 
 
 1. Elimine todo el código del archivo HelloProjectOData.js predeterminado y después agregue las variables globales y la función  **Office.initialize**. Los nombres de las variables que están escritos todos en mayúscula indican que son constantes; se usan más adelante con la variable  **_pwa** para crear la consulta de REST en este ejemplo.
@@ -368,7 +368,7 @@ El resto del archivo HelloProjectOData.js incluye dos funciones: la función  **
 
 3. Agregue la función  **retrieveOData**, que concatena valores para la consulta de REST y después llama a la función  **ajax** en jQuery para obtener los datos solicitados del servicio de **ProjectData**. La variable  **support.cors** habilita el uso compartido de recursos de origen cruzado (CORS) con la función **ajax**. Si falta la instrucción  **support.cors** o está establecida como **false**, la función  **ajax** devuelve el error **Sin transporte**.
     
-     >**Nota** El código siguiente funciona con una instalación local de Project Server 2013. Para Project Online, puede usar OAuth para autenticación basada en testigos. Para obtener más información, consulte [Abordar las limitaciones de la directiva del mismo origen en complementos para Office](../../docs/develop/addressing-same-origin-policy-limitations.md).
+     >**Nota** El código siguiente funciona con una instalación local de Project Server 2013. Para Project Online, puede usar OAuth para autenticación basada en tokens. Para obtener más información, consulte [Abordar las limitaciones de la directiva del mismo origen en complementos para Office](../../docs/develop/addressing-same-origin-policy-limitations.md).
 
     En la llamada **ajax**, puede usar el parámetro _headers_ o el parámetro _beforeSend_. El parámetro _complete_ es una función anónima de modo que está en el mismo ámbito que las variables de **retrieveOData**. La función del parámetro _complete_ muestra los resultados en el control **odataText** y también llama al método **parseODataResult** para analizar y mostrar la respuesta JSON. El parámetro _error_ especifica la función con nombre **getProjectDataErrorHandler**, que escribe un mensaje de error en el control **odataText** y también usa el método **throwError** para mostrar un mensaje emergente.
     
@@ -432,7 +432,7 @@ El resto del archivo HelloProjectOData.js incluye dos funciones: la función  **
 
 4. Agregue el método  **parseODataResult**, que deserializa y procesa la respuesta JSON del servicio OData. El método  **parseODataResult** calcula los valores promedio de los datos de costo y trabajo con una exactitud de una o dos posiciones decimales, da formato a los valores con el color correcto, agrega una unidad ( **$**,  **h** o **%**) y después muestra los valores en las celdas de las tablas especificadas.
     
-    Si el GUID del proyecto activo coincide con el valor **ProjectId**, la variable **myProjectIndex** se establece en el índice de proyecto. Si **myProjectIndex** indica que se publica el proyecto activo en Project Server, el método **parseODataResult** aplica formato y muestra datos de costo y de trabajo para ese proyecto. Si no se publica el proyecto activo, los valores para el proyecto activo se muestran como un **ND** azul.
+    Si el GUID del proyecto activo coincide con el valor **ProjectId**, la variable **myProjectIndex** se establece en el índice de proyecto. Si **myProjectIndex** indica que se publica el proyecto activo en Project Server, el método **parseODataResult** aplica formato y muestra datos de costo y de trabajo para ese proyecto. Si no se publica el proyecto activo, los valores para el proyecto activo se muestran como **NA** en azul.
     
 
 
@@ -546,7 +546,7 @@ El resto del archivo HelloProjectOData.js incluye dos funciones: la función  **
 ```
 
 
-## Probar el complemento HelloProjectOData
+## <a name="testing-the-helloprojectodata-add-in"></a>Probar el complemento HelloProjectOData
 
 
 Para probar y depurar el complemento  **HelloProjectOData** con Visual Studio 2015, Project Profesional 2013 debe estar instalado en el equipo de desarrollo. Para habilitar diferentes escenarios de prueba, asegúrese de elegir si Project se abrirá para archivos en el equipo local o se conectará con Project Web App. Por ejemplo, haga lo siguiente:
@@ -568,7 +568,7 @@ Las pruebas básicas deben incluir lo siguiente:
 - Ejecute el complemento nuevamente y cree un proyecto que tenga tareas con datos de costo y trabajo. Puede guardar el proyecto en Project Web App, pero no lo publique. Compruebe que el complemento muestre datos de Project Server, pero que aparezca  **ND** para el proyecto actual.
     
 
-### Procedimiento 6. Probar el complemento
+### <a name="procedure-6.-to-test-the-add-in"></a>Procedimiento 6. Probar el complemento
 
 
 1. Ejecute Project Profesional 2013, conéctese con Project Web App y después cree un proyecto de prueba. Asigne tareas a recursos locales o empresariales, establezca diversos valores de porcentaje completado en algunas tareas y después publique el proyecto. Salga de Project, lo que permitirá que Visual Studio inicie Project para depurar el complemento.
@@ -577,17 +577,17 @@ Las pruebas básicas deben incluir lo siguiente:
     
 3. En la pestaña  **PROYECTO** de la cinta, en la lista desplegable **Complementos para Office**, seleccione  **Hola ProjectData** (ver Figura 4). El botón **Comparar todos los proyectos** debe estar deshabilitado.
     
-    **Figura 4. Ejecutar el complemento HelloProjectOData**
+    **Figura 4: Iniciar el complemento HelloProjectOData**
 
-    ![Probar la aplicación HelloprojectOData](../../images/pj15_HelloProjectData_TestTheApp.png)
+    ![Prueba de la aplicación HelloprojectOData](../../images/pj15_HelloProjectData_TestTheApp.png)
 
 4. En el panel de tareas  **Hola ProjectData**, seleccione  **Obtener extremo de ProjectData**. La línea  **projectDataEndPoint** debe mostrar la dirección URL del servicio **ProjectData** y el botón **Comparar todos los proyectos** debe estar habilitado (vea la figura 5).
     
 5. Seleccione  **Comparar todos los proyectos**. El complemento puede hacer una pausa mientras recupera datos del servicio  **ProjectData** y después debe mostrar los valores actuales y promedio con formato en la tabla.
     
-    **Figura 5. Vista de los resultados de la consulta de REST**
+    **Figura 5: Visualización de los resultados de la consulta de REST**
 
-    ![Vista de los resultados de la consulta de REST](../../images/pj15_HelloProjectData_RESTresults.gif)
+    ![Visualización de los resultados de la consulta de REST](../../images/pj15_HelloProjectData_RESTresults.gif)
 
 6. Revise el resultado en el cuadro de texto. Debería mostrar la ruta del documento, la consulta de REST, la información de estado y los resultados JSON de las llamadas a  **ajax** y **parseODataResult**. El resultado ayuda a entender, crear y depurar código en el método  **parseODataResult**, como por ejemplo  `projCost += Number(res.d.results[i].ProjectCost);`.
     
@@ -643,7 +643,7 @@ Las pruebas básicas deben incluir lo siguiente:
 
 7. Detenga la depuración (presione  **Mayús + F5**) y presione  **F5** otra vez para ejecutar una nueva instancia de Project. En el cuadro de diálogo **Inicio de sesión**, elija el perfil  **Equipo** local, no Project Web App. Cree o abra un archivo .mpp de proyecto local, abra el panel de tareas **Hola ProjectData** y seleccione **Obtener extremo de ProjectData**. El complemento debe mostrar el error  **Sin conexión** (vea la figura 6) y el botón **Comparar todos los proyectos** debe seguir deshabilitado.
     
-    **Figura 6. Uso del complemento sin conexión a Project Web App**
+    **Figura 6: Uso del complemento sin conexión a Project Web App**
 
     ![Uso de la aplicación sin conexión a Project Web App](../../images/pj15_HelloProjectData_NoConnection.gif)
 
@@ -652,9 +652,9 @@ Las pruebas básicas deben incluir lo siguiente:
     En el panel de tareas **Hola ProjectData**, al seleccionar **Comparar todos los proyectos**, debería ver un **ND** azul para los campos en la columna **Actual** (véase Figura 7).
     
 
-    **Figura 7. Comparación de un proyecto no publicado con otros proyectos**
+    **Figura 7: Comparación de un proyecto no publicado con otros proyectos**
 
-    ![Comparación de un proyecto no publicado con otros](../../images/pj15_HelloProjectData_NotPublished.gif)
+    ![Comparación de un proyecto no publicado con otros proyectos](../../images/pj15_HelloProjectData_NotPublished.gif)
 
 Aun cuando el complemento haya funcionado correctamente en las pruebas anteriores, hay otras pruebas que se deben ejecutar. Por ejemplo:
 
@@ -662,14 +662,14 @@ Aun cuando el complemento haya funcionado correctamente en las pruebas anteriore
     
 - Pruebe un proyecto que no tenga tareas.
     
-- Si modifica el complemento y lo publica, debe ejecutar pruebas similares nuevamente con el complemento publicado. Para otras consideraciones, vea [Pasos siguientes](#pasos-siguientes).
+- Si modifica el complemento y lo publica, debe ejecutar pruebas similares nuevamente con el complemento publicado. Para otras consideraciones, vea [Pasos siguientes](#next-steps).
     
 
  >
-  **Nota**  Existen límites para la cantidad de datos que se pueden devolver en una consulta del servicio  **ProjectData** y varían según la entidad. Por ejemplo, el conjunto de entidades **Projects** tiene un límite predeterminado de 100 proyectos por consulta, pero el límite predeterminado de **Risks** es de 200. En una instalación de producción, el código del ejemplo **HelloProjectOData** se tendría que modificar para habilitar consultas de más de 100 proyectos. Si desea más información, consulte [Pasos siguientes](#pasos-siguientes) y [Consulta de fuentes OData de datos de informes de Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+  **Nota**  Existen límites para la cantidad de datos que se pueden devolver en una consulta del servicio  **ProjectData** y varían según la entidad. Por ejemplo, el conjunto de entidades **Projects** tiene un límite predeterminado de 100 proyectos por consulta, pero el límite predeterminado de **Risks** es de 200. En una instalación de producción, el código del ejemplo **HelloProjectOData** se tendría que modificar para habilitar consultas de más de 100 proyectos. Si desea más información, consulte [Pasos siguientes](#next-steps) y [Consulta de fuentes OData de datos de informes de Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
 
 
-## Ejemplo de código para el complemento HelloProjectOData
+## <a name="example-code-for-the-helloprojectodata-add-in"></a>Ejemplo de código para el complemento HelloProjectOData
 
 
  **Archivo HelloProjectOData.html**   El siguiente código está en el archivo  `Pages\HelloProjectOData.html` del proyecto **HelloProjectODataWeb**:
@@ -1109,7 +1109,7 @@ Table styles
  **Archivo SurfaceErrors.js**   Puede copiar el código para el archivo SurfaceErrors.js de la sección  _Programación sólida_ de [Procedimiento para crear el primer complemento de panel de tareas para Project 2013 con un editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 
-## Pasos siguientes
+## <a name="next-steps"></a>Pasos siguientes
 
 
 Si  **HelloProjectOData** fuera un complemento de producción para ser vendido en la Tienda Office o distribuido en un catálogo de complementos de SharePoint, estaría diseñado de otra manera. Por ejemplo, no aparecería el resultado de la depuración en un cuadro de texto y, probablemente, no habría un botón para obtener el extremo de **ProjectData**. También debería volver a escribir la función  **retireveOData** para administrar instancias de Project Web App con más de 100 proyectos.
@@ -1134,17 +1134,18 @@ Si modifica el complemento  **HelloProjectOData** para el uso en producción, si
 - Para implementar el complemento, consulte [Publicar el complemento para Office](../publish/publish.md).
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
 - [Complementos de panel de tareas para Project](../project/project-add-ins.md)
     
-- [Procedimiento para crear el primer complemento de panel de tareas para Project 2013 con un editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
+- [Crear el primer complemento de panel de tareas para Project 2013 con un editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
     
-- [ProjectData: referencia del servicio OData de Project](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
+- 
+  [ProjectData: referencia del servicio OData de Project](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
     
 - [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md)
     
-- [Publicar el complemento para Office](../publish/publish.md)
+- [Publicar el complemento de Office](../publish/publish.md)
     

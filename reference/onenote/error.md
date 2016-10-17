@@ -1,11 +1,11 @@
-# Objeto OfficeExtension.Error (API de JavaScript para OneNote)
+# <a name="officeextension.error-object-(javascript-api-for-onenote)"></a>Objeto OfficeExtension.Error (API de JavaScript para OneNote)
 
 _Se aplica a: OneNote Online_
 
 
 Representa los errores que se producen al usar la API de JavaScript para OneNote.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |código|cadena|Obtiene un valor que indica el tipo de error. El valor puede ser "InvalidArgument", "GeneralException", "ItemNotFound" o "UnsupportedOperationForObjectType". |
@@ -14,24 +14,24 @@ Representa los errores que se producen al usar la API de JavaScript para OneNote
 |nombre |cadena| Obtiene un valor que siempre es "OfficeExtension.Error". |
 |traceMessages |string[]| Obtiene una matriz de valores que corresponden a los mensajes de instrumentación establecidos con context.trace();. |
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[toString()](#tostring)|string|Devuelve el código de error y los valores del mensaje en el formato siguiente: "{0}: {1}", código, mensaje.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
-### toString()
+### <a name="tostring()"></a>toString()
 Devuelve el código de error y los valores del mensaje en el formato siguiente: "{0}: {1}", código, mensaje.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 error.toString()
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 cadena

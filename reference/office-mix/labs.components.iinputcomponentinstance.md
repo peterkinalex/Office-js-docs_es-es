@@ -1,7 +1,7 @@
 
-# Labs.Components.IInputComponentInstance
+# <a name="labs.components.iinputcomponentinstance"></a>Labs.Components.IInputComponentInstance
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Una instancia de un componente de entrada.
 
@@ -10,7 +10,7 @@ interface IInputComponentInstance extends Labs.Core.IComponentInstance
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |**Nombre**|**Descripción**|

@@ -1,7 +1,7 @@
 
-# Labs.Components.IDynamicComponentInstance
+# <a name="labs.components.idynamiccomponentinstance"></a>Labs.Components.IDynamicComponentInstance
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Una instancia de un componente dinámico.
 
@@ -10,7 +10,7 @@ interface IDynamicComponentInstance extends Labs.Core.IComponentInstance
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |Nombre|Descripción|

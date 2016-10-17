@@ -1,7 +1,7 @@
 
-# Labs.Core.IUserInfo
+# <a name="labs.core.iuserinfo"></a>Labs.Core.IUserInfo
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Proporciona información de usuario relevante al laboratorio.
 
@@ -10,7 +10,7 @@ interface IUserInfo
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||

@@ -1,10 +1,10 @@
 
-# Enumeraciones de laboratorios
+# <a name="labs-enumerations"></a>Enumeraciones de laboratorios
 Enumeraciones del módulo Labs.
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
-A continuación se encuentran las descripciones de las dos enumeraciones del módulo LabJS.Labs.
+A continuación se describen las dos enumeraciones del módulo LabJS.Labs.
 
 ## 
 

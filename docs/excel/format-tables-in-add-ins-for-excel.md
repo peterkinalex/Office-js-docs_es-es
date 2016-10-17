@@ -1,5 +1,5 @@
 
-# Dar formato a tablas en complementos para Excel
+# <a name="format-tables-in-add-ins-for-excel"></a>Dar formato a tablas en complementos para Excel
 
 
 En este artículo se explican las diferentes características de la API de formato y se describe cómo usarlas. En esta versión, puede especificar mediante programación el formato de celda y otras opciones solo para tablas (no para las estructuras de datos  **Office.CoercionType.Text** o **Office.CoercionType.Matrix**), y solo en complementos de Excel. Para establecer el formato en un complemento:
@@ -10,7 +10,7 @@ En este artículo se explican las diferentes características de la API de forma
     
 >**Importante:** Para usar estos métodos nuevos y actualizados con el fin de aplicar formato a tablas en complementos de Excel, el proyecto del complemento debe [usar o estar actualizado para usar Office.js v1.1 o posterior](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
-## Especificar formato
+## <a name="specifying-formatting"></a>Especificar formato
 
 Para especificar el formato que desea establecer, cree un literal de objeto JavaScript que contenga uno o varios pares clave-valor. Si lo desea, puede combinar una serie de valores de formato en una lista dentro del objeto JavaScript. Por ejemplo: 
 
@@ -26,15 +26,15 @@ Puede trabajar con el formato de dos formas:
 
 - La primera vez que el complemento escriba datos en una selección o un enlace, especifique los parámetros opcionales  _cellFormat_ o _tableOptions_ en el objeto _options_ pasado a los métodos [Document.setSelectedDataAysnc](../../reference/shared/document.setselecteddataasync.md) o [Binding.setDataAsync](../../reference/shared/binding.setdataasync.md).
     
-- Tras establecer el formato inicial, puede [borrarlo o actualizarlo](#borrarlo-o-actualizarlo) con uno de los nuevos métodos dedicados a este fin.
+- Tras establecer el formato inicial, puede [borrarlo o actualizarlo](#updating-and-clearing-formatting) con uno de los nuevos métodos dedicados a este fin.
     
 
-## Uso de parámetros opcionales con métodos de configuración de datos
+## <a name="using-optional-parameters-with-data-setting-methods"></a>Uso de parámetros opcionales con métodos de configuración de datos
 
 En cuanto a los enlaces de tabla, si decide establecer los datos con los métodos  **Document.setSelectedData** o **Binding.setDataAsync**, puede especificar el formato con los parámetros opcionales  _tableOptions_ y _cellFormat_.
 
 
-### El parámetro opcional tableOptions
+### <a name="the-tableoptions-optional-parameter"></a>El parámetro opcional tableOptions
 
 Use el parámetro opcional  _tableOptions_ para especificar los estilos de tabla predeterminados y activar o desactivar ciertas características de tabla (como **Fila de encabezado**,  **Fila Total** y **Filas con bandas**). El valor que pase como parámetro  _tableOptions_ deberá ser un objeto JavaScript que contenga una lista de pares clave-valor. Por ejemplo:
 
@@ -44,7 +44,7 @@ tableOptions: {bandedRows: true, filterButton: false, style:"TableStyleMedium3"}
 ```
 
 
-### El parámetro opcional cellFormat
+### <a name="the-cellformat-optional-parameter"></a>El parámetro opcional cellFormat
 
 Use el parámetro opcional  _cellFormat_ para cambiar los valores de formato de celda (como el ancho, el alto, la fuente, el fondo, la alineación, etc.). El valor que pase como parámetro _cellFormat_ deberá ser una matriz que contenga una lista de los objetos JavaScript que especifiquen las celdas que deben considerarse celdas de destino y los formatos que se les deben aplicar. Por ejemplo:
 
@@ -59,15 +59,15 @@ cellFormat:
 Puede combinar varios pares  `cells:` y `format:` en la matriz _cellFormat_ para minimizar el número de llamadas de función necesarias para aplicar el formato.
 
 
-#### cells
+#### <a name="cells"></a>cells
 
-Use  `cells:` para especificar el rango de columnas, filas y celdas a las que desea aplicar formato.
-
-
-**Rangos compatibles con los valores de las celdas**
+Use `cells:` para especificar el rango de columnas, filas y celdas a las que desea aplicar formato.
 
 
-|**configuración del rango de celdas**|**Descripción**|
+**Rangos admitidos en los valores de cells**
+
+
+|**configuración del rango de cells**|**Descripción**|
 |:-----|:-----|
 | `{row: i}`|Especifica el rango que se extiende hasta la fila ith de datos de la tabla.|
 | `{column: i}`|Especifica el rango que se extiende hasta la columna ith de datos de la tabla.|
@@ -76,9 +76,9 @@ Use  `cells:` para especificar el rango de columnas, filas y celdas a las que de
 | `Office.Table.Data`|Especifica solo los datos de la tabla (no los encabezados ni los totales).|
 | `Office.Table.Headers`|Especifica solo la fila de encabezado.|
 
-#### format
+#### <a name="format"></a>format
 
-Use  `format:` para especificar el formato que quiere aplicar al rango definido con `cells:` como una lista de pares clave-valor de JavaScript. Para ver una lista de los valores posibles, consulte [Claves y valores de formato compatibles](#claves-y-valores-de-formato-compatibles).
+Use  `format:` para especificar el formato que quiere aplicar al rango definido con `cells:` como una lista de pares clave-valor de JavaScript. Para ver una lista de los valores posibles, consulte [Claves y valores de formato compatibles](#supported-formatting-keys-and-values).
 
  **Limita la especificación de formato para Excel Online**
 
@@ -95,7 +95,7 @@ Office.context.document.setSelectedDataAsync(
 ```
 
 
-#### Aplicar parámetros opcionales
+#### <a name="applying-optional-parameters"></a>Aplicar parámetros opcionales
 
 En esta versión, solo los métodos  **Document.setSelectedDataAsync** y **TableBinding.setDataAsync** permiten escribir datos y establecer el formato de las tablas en la misma llamada mediante los parámetros opcionales _tableOptions_ y _cellFormat_. En los siguientes ejemplos, el valor de  `tableData` pasado al primer parámetro de cada método (el parámetro _data_) debe ser un objeto [TableData](../../reference/shared/tabledata.md) que contenga la definición de la tabla y los datos que se van a escribir.
 
@@ -126,13 +126,13 @@ Office.select("bindings#myBinding").setDataAsync(tableData,
  >**Nota:**: En la llamada a `Office.select("bindings#myBinding")` se supone que ya existe un enlace denominado `myBinding` en la hoja de cálculo.
 
 
-## Actualizar y borrar el formato
+## <a name="updating-and-clearing-formatting"></a>Actualizar y borrar el formato
 
 
 Cuando se establece formato con los parámetros opcionales  _cellFormat_ y _tableOptions_ de los métodos **Document.setSelectedDataAsync** o **TableBinding.setDataAsync**, solo se define el formato la primera vez que se llama a estos métodos. Para actualizar o borrar el formato, debe usar tres métodos nuevos del objeto  **TableBinding**:  **setFormatsAsync**,  **setTableOptionsAsync** y **clearFormatsAsync**.
 
 
-### Actualizar el formato
+### <a name="updating-formatting"></a>Actualizar el formato
 
 El método [TableBinding.setFormatsAsync](../../reference/shared/binding.tablebinding.setformatsasync.md) solo se emplea para actualizar el formato de celda (como el ancho, el alto, la fuente, el fondo y la alineación). Usa _cellFormat_ como parámetro necesario:
 
@@ -156,7 +156,7 @@ Office.select("bindings#myBinding").setTableOptionsAsync(tableOptions, function(
 ```
 
 
-### Borrar el formato
+### <a name="clearing-formatting"></a>Borrar el formato
 
 El método [TableBinding.clearFormatsAsync](../../reference/shared/binding.tablebinding.clearformatsasync.md) se emplea para borrar todo el formato de la tabla. Usa el parámetro opcional _asyncContext_ y una función de devolución de llamada opcional:
 
@@ -166,7 +166,7 @@ Office.select("bindings#myBinding").clearFormatsAsync();
 ```
 
 
-## Claves y valores de formato compatibles
+## <a name="supported-formatting-keys-and-values"></a>Claves y valores de formato compatibles
 
 
 En las siguientes tablas se muestran los pares clave-valor posibles que se pueden pasar a los parámetros  _cellFormat_ o _tableOptions_.
@@ -174,7 +174,7 @@ En las siguientes tablas se muestran los pares clave-valor posibles que se puede
 Para los valores de  `format:`, las opciones disponibles se corresponden con un conjunto de las opciones del cuadro de diálogo  **Formato de celdas** (haga clic con el botón secundario en > **Formato de celdas** o en **Formato** > **Formato de celdas** en la pestaña **Inicio** de la cinta). Para los valores de `tableOptions:`, las opciones se correspondes con las de los grupos  **Opciones de estilo de tabla** y **Estilos de tabla** de la pestaña **Herramientas de tabla** |**Diseño** de la cinta.
 
 
- >**Importante**:  Los métodos de la API de formato solo admiten las opciones y valores que se recogen a continuación. Si especifica opciones o valores de formato distintos de los mencionados, no está definido el comportamiento de control. Estos comportamientos de control sin definir no son necesariamente coherentes en las plataformas compatibles; no debe desarrollar los complementos según ninguno de los efectos secundarios de estos comportamientos no definidos para cualquier plataforma específica. En cambio, los comportamientos de control no definidos no deben dañar el estado y la interfaz de usuario del complemento o los documentos con los que interactúan.
+ >**Importante**:  Los métodos de la API de formato solo admiten las opciones y valores que se recogen a continuación. Si especifica opciones o valores de formato distintos de los mencionados, no está definido el comportamiento de control. Estos comportamientos de control sin definir no son necesariamente coherentes en las plataformas compatibles; no debe desarrollar los complementos según ninguno de los efectos secundarios de estos comportamientos no definidos para cualquier plataforma específica. Pero los comportamientos de control no definidos no deben dañar el estado y la interfaz de usuario del complemento o los documentos con los que interactúan.
 
 
 **Alineación**
@@ -225,7 +225,7 @@ Para los valores de  `format:`, las opciones disponibles se corresponden con un 
 |:-----|:-----|
 | `width:`|"auto fit" \|  **Número**|
 | `height:`|"auto fit" \|  **Número**|
-| `wrapping:`|**Boolean**|
+| `wrapping:`|**Valor booleano**|
 
 
 
@@ -235,15 +235,15 @@ Para los valores de  `format:`, las opciones disponibles se corresponden con un 
 |**Tecla**|**Valores**|**Notas**|
 |:-----|:-----|:-----|
 | `fontFamily:`|\<Todos los nombres de fuente disponibles\>|Cuando establece una fuente en Excel Online, si la fuente no está disponible en el explorador, la API intentará regresar a las siguientes fuentes en este orden: Segoe UI, Thonburi, Arial, Verdana y Microsoft Sans Serif. Si ninguna de estas fuentes está disponible, se usa la fuente predeterminada del explorador.|
-| `fontStyle:`|"regular" \| "italic" \| "bold" \| "bold italic"|**Nota**: En el momento de esta publicación, el proceso de establecer `fontStyle:` en "italic" y, después, "bold" (o viceversa) se comporta como una unión de estos dos valores. Es decir, si, por ejemplo, primero establece "italic" y más tarde establece "bold", el resultado será "bold italic". Para establecer bold o italic _solo_ en un rango configurado anteriormente en bold o italic, primero debe establecer `fontStyle:"regular"` para borrar el formato anterior.|
+| `fontStyle:`|"regular" \| "italic" \| "bold" \| "bold italic"|**Nota**: En el momento de esta publicación, el proceso de establecer `fontStyle:` en "italic" y, después, "bold" (o viceversa) se comporta como una unión de estos dos valores. Es decir, si, por ejemplo, primero establece "italic" y más tarde establece "bold", el resultado será "bold italic". Para establecer bold o italic _only_ en un rango configurado anteriormente en bold o italic, primero debe establecer `fontStyle:"regular"` para borrar el formato anterior.|
 | `fontSize:`|**Número**||
 | `fontUnderlineStyle:`|"none" \| "single" \| "double" \| "single accounting" \| "double accounting"||
 | `fontColor:`|"automatic" \| \<Todos los nombres de colores predefinidos\> \| #RRGGBB||
-| `fontDirection:`|"context" \| "left-to-right" \| "right-to-left"|Excel Online no admite en este momento la visualización de texto de derecha a izquierda. En cambio, si el complemento establece  `fontDirection:` "de derecha a izquierda" cuando se ejecuta en Excel Online, esa configuración de formato se guarda en el archivo del libro y se muestra correctamente al abrir el libro en Excel de escritorio.|
-| `fontStrikethrough:`|**Booleano**||
-| `fontSuperscript:`|**Booleano**||
-| `fontSubScript:`|**Booleano**||
-| `fontNormal:`|**Booleano**|Establece la fuente, el estilo de fuente, el tamaño y los efectos en el estilo normal. Esto restablece el formato de fuente de celda a los valores predeterminados. Equivale a seleccionar la casilla **Fuente normal** en la pestaña **Fuente** del  cuadro de diálogo **Formato de celdas**.|
+| `fontDirection:`|"context" \| "left-to-right" \| "right-to-left"|Excel Online no admite en este momento la visualización de texto de derecha a izquierda. En cambio, si el complemento establece `fontDirection:` "de derecha a izquierda" cuando se ejecuta en Excel Online, esa configuración de formato se guarda en el archivo del libro y se muestra correctamente al abrir el libro en Excel de escritorio.|
+| `fontStrikethrough:`|**Valor booleano**||
+| `fontSuperscript:`|**Valor booleano**||
+| `fontSubScript:`|**Valor booleano**||
+| `fontNormal:`|**Valor booleano**|Establece la fuente, el estilo de fuente, el tamaño y los efectos en el estilo normal. Restablece el formato de fuente de celda a los valores predeterminados. Equivale a activar la casilla  **Fuente normal** de la pestaña **Fuente** del cuadro de diálogo **Formato de celdas**.|
 
 
 
@@ -258,7 +258,7 @@ Para los valores de  `format:`, las opciones disponibles se corresponden con un 
 
 
 
-**Formato de los números**
+**Formato de número**
 
 
 |**Tecla**|**Valores**|**Notas**|
@@ -273,10 +273,10 @@ Para los valores de  `format:`, las opciones disponibles se corresponden con un 
 |**Tecla**|**Valores**|**Notas**|
 |:-----|:-----|:-----|
 | `style:`|"none" \| \<Todos los nombres de estilo de tabla predefinidos\>|Nombres de estilo de tabla predefinidos:<br/><br/>"TableStyleLight1", "TableStyleLight2", "TableStyleLight3", "TableStyleLight4", "TableStyleLight5", "TableStyleLight6", "TableStyleLight7", "TableStyleLight8", "TableStyleLight9", "TableStyleLight10", "TableStyleLight11", "TableStyleLight12", "TableStyleLight13", "TableStyleLight14", "TableStyleLight15", "TableStyleLight16", "TableStyleLight17", "TableStyleLight18", "TableStyleLight19", "TableStyleLight20", "TableStyleLight21", "TableStyleMedium1", "TableStyleMedium2", "TableStyleMedium3", "TableStyleMedium4", "TableStyleMedium5", "TableStyleMedium6", "TableStyleMedium7", "TableStyleMedium8", "TableStyleMedium9", "TableStyleMedium10", "TableStyleMedium11", "TableStyleMedium12", "TableStyleMedium13", "TableStyleMedium14", "TableStyleMedium15", "TableStyleMedium16", "TableStyleMedium17", "TableStyleMedium18", "TableStyleMedium19", "TableStyleMedium20", "TableStyleMedium21", "TableStyleMedium22", "TableStyleMedium23", "TableStyleMedium24", "TableStyleMedium25", "TableStyleMedium26", "TableStyleMedium27", "TableStyleMedium28", "TableStyleDark1", "TableStyleDark2", "TableStyleDark3", "TableStyleDark4", "TableStyleDark5", "TableStyleDark6", "TableStyleDark7", "TableStyleDark8", "TableStyleDark9", "TableStyleDark10", "TableStyleDark11"<br/><br/>Para ver cómo es un estilo de tabla, inserte una tabla en Excel, en las **Herramientas de tabla** \| **Diseño**, elija la lista desplegable  **Estilos rápidos** y seleccione un estilo predefinido. La información sobre herramientas para el estilo corresponderá a uno de los valores de la lista anterior.|
-| `headerRow:`|**Boolean**||
-| `firstColumn:`|**Booleano**||
-| `filterButton:`|**Booleano**||
-| `totalRow:`|**Booleano**||
-| `lastColumn:`|**Booleano**||
-| `bandedRows:`|**Booleano**||
-| `bandedColumns:`|**Boolean**||
+| `headerRow:`|**Valor booleano**||
+| `firstColumn:`|**Valor booleano**||
+| `filterButton:`|**Valor booleano**||
+| `totalRow:`|**Valor booleano**||
+| `lastColumn:`|**Valor booleano**||
+| `bandedRows:`|**Valor booleano**||
+| `bandedColumns:`|**Valor booleano**||

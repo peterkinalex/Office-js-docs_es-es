@@ -1,7 +1,7 @@
 
-# Labs.Core.Actions.ICloseComponentOptions
+# <a name="labs.core.actions.iclosecomponentoptions"></a>Labs.Core.Actions.ICloseComponentOptions
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Cierra un componente e indica que no será el objetivo de más acciones.
 
@@ -10,7 +10,7 @@ interface ICloseComponentOptions extends Core.IActionOptions
 ```
 
 
-## Properties
+## <a name="properties"></a>Properties
 
 
 |||

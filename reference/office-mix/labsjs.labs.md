@@ -1,29 +1,29 @@
 
-# LabsJS.Labs
+# <a name="labsjs.labs"></a>LabsJS.Labs
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 El módulo LabsJS.Labs contiene el conjunto de las API clave de JavaScript que se pueden usar para crear los complementos de Office (los laboratorios). Las API proporcionan el punto de entrada para el desarrollo de laboratorios.
 
-## Módulo de API LabsJS.Labs
+## <a name="labsjs.labs-api-module"></a>Módulo de API LabsJS.Labs
 
 El módulo Laboratorios contiene los siguientes tipos:
 
 
-### Variables
+### <a name="variables"></a>Variables
 
 
 |||
 |:-----|:-----|
 |[Labs.DefaultHostBuilder](../../reference/office-mix/labs.defaulthostbuilder.md)|Use este objeto para construir una instancia predeterminada de [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md).|
 
-### Funciones
+### <a name="functions"></a>Funciones
 
 
 |||
 |:-----|:-----|
 |[Labs.Connect](../../reference/office-mix/labs.connect.md)|Inicializa una conexión con el host.|
-|[Labs.connect (overload)](../../reference/office-mix/labs.connect-overload.md)|Inicializa una conexión con el host y proporciona parámetros de entrada.|
+|[Labs.connect (sobrecarga)](../../reference/office-mix/labs.connect-overload.md)|Inicializa una conexión con el host y proporciona parámetros de entrada.|
 |[Labs.isConnected](../../reference/office-mix/labs.isconnected.md)|Inicializa una conexión con el host.|
 |[Labs.getConnectionInfo](../../reference/office-mix/labs.getconnectioninfo.md)|Recupera información de configuración asociada con una conexión especificada.|
 |[Labs.disconnect](../../reference/office-mix/labs.disconnect.md)|Desconecta el laboratorio del host y proporciona el estado de finalización del laboratorio.|
@@ -32,9 +32,9 @@ El módulo Laboratorios contiene los siguientes tipos:
 |[Labs.on](../../reference/office-mix/labs.on.md)|Agrega un nuevo controlador para un evento especificado.|
 |[Labs.off](../../reference/office-mix/labs.off.md)|Quita un controlador de eventos para un evento especificado.|
 |[Labs.getTimeline](../../reference/office-mix/labs.gettimeline.md)|Recupera una instancia del objeto [Labs.Timeline](../../reference/office-mix/labs.timeline.md) que se puede usar para manejar el control de reproductor de host.|
-|[Labs.registerDeserializer](../../reference/office-mix/labs.registerdeserializer.md)|Deserializa un objeto JSON especificado en un objeto. Solo deben usarlo los autores de componentes.|
+|[Labs.registerDeserializer](../../reference/office-mix/labs.registerdeserializer.md)|Deserializa un objeto JSON especificado en un objeto. Solo lo deben usar los autores del componente.|
 
-### Clases
+### <a name="classes"></a>Clases
 
 
 |||
@@ -45,9 +45,9 @@ El módulo Laboratorios contiene los siguientes tipos:
 |[Labs.LabEditor](../../reference/office-mix/labs.labeditor.md)|El objeto **LabEditor** le permite editar un laboratorio determinado, así como obtener y establecer los datos de configuración asociados al laboratorio.|
 |[Labs.LabInstance](../../reference/office-mix/labs.labinstance.md)|Una instancia de un laboratorio que está configurado para el usuario actual. Use este objeto para grabar y recuperar datos de laboratorio para el usuario.|
 |[Labs.Timeline](../../reference/office-mix/labs.timeline.md)|Proporciona acceso a la característica de escala de tiempo labs.js.|
-|[Labs.ValueHolder](../../reference/office-mix/labs.valueholder.md)|Un objeto contenedor que contiene y realiza un seguimiento de los valores de un laboratorio especificado. El valor puede almacenarse localmente o en el servidor.|
+|[Labs.ValueHolder](../../reference/office-mix/labs.valueholder.md)|Un objeto contenedor que contiene y realiza el seguimiento de valores para un laboratorio especificado. El valor puede almacenarse localmente o en el servidor.|
 
-### Interfaces
+### <a name="interfaces"></a>Interfaces
 
 
 |||
@@ -55,10 +55,10 @@ El módulo Laboratorios contiene los siguientes tipos:
 |[Labs.GetActionsCommandData](../../reference/office-mix/labs.getactionscommanddata.md)|Permite recuperar los datos asociados con un comando [LabsJS.Labs.Core.GetActions](../../reference/office-mix/labsjs.labs.core.getactions.md).|
 |[Labs.IMessageHandler](../../reference/office-mix/labs.imessagehandler.md)|Interfaz que le permite definir controladores de eventos.|
 |[Labs.ITimelineNextMessage](../../reference/office-mix/labs.itimelinenextmessage.md)|Proporciona medios para interactuar con el objeto [Labs.Core.IMessage](https://msdn.microsoft.com/library/office/mt599680.aspx).|
-|[Labs.SendMessageCommandData](../../reference/office-mix/labs.sendmessagecommanddata.md)|Datos asociados a un comando [Labs.CommandType.TakeAction](https://msdn.microsoft.com/library/office/mt599680.aspx).|
+|[Labs.SendMessageCommandData](../../reference/office-mix/labs.sendmessagecommanddata.md)|Datos asociados con un comando [Labs.CommandType.TakeAction](https://msdn.microsoft.com/library/office/mt599680.aspx).|
 |[Labs.TakeActionCommandData](../../reference/office-mix/labs.takeactioncommanddata.md)|Datos asociados con un comando de realizar una acción.|
 
-### Enumeraciones
+### <a name="enumerations"></a>Enumeraciones
 
 
 |||

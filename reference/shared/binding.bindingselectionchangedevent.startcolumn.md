@@ -1,5 +1,5 @@
 
-# Propiedad BindingSelectionChangedEventArgs.startColumn
+# <a name="bindingselectionchangedeventargs.startcolumn-property"></a>Propiedad BindingSelectionChangedEventArgs.startColumn
 Obtiene el índice de la primera columna de la selección (de base cero).
 
 |||
@@ -12,19 +12,19 @@ var startCol = eventArgsObj.startColumn;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 El índice de base cero de la primera columna de la selección empezando desde la columna más a la izquierda del enlace.
 
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Si el usuario hace una selección no contigua, se devuelven las coordenadas de la última selección contigua que hay en el enlace. 
 
 Para Word, esta propiedad solo funcionará para los enlaces de la "tabla" [BindingType](../../reference/shared/bindingtype-enumeration.md). Si la tabla es del tipo "matriz", se devuelve **null**. Además, la llamada fallará si la tabla contiene celdas combinadas, porque la estructura de la tabla tiene que ser uniforme para que esta propiedad funcione correctamente.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente se agrega un controlador de eventos para el evento [SelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md) al enlace con un [id](../../reference/shared/binding.id.md) de `myTable`. Cuando el usuario cambia la selección, en el controlador se muestran las coordenadas de la primera celda de la selección y el número de filas y columnas seleccionadas.
 
@@ -49,7 +49,7 @@ function write(message){
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta propiedad es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta propiedad.
@@ -64,16 +64,16 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
 |**Nivel de permisos mínimo**|[Restringido](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

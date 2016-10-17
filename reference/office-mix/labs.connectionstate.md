@@ -1,7 +1,7 @@
 
-# Labs.ConnectionState
+# <a name="labs.connectionstate"></a>Labs.ConnectionState
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Enumera los posibles estados de conexión del laboratorio al host.
 
@@ -10,7 +10,7 @@ enum ConnectionState
 ```
 
 
-## Valores de enumeración
+## <a name="enumeration-values"></a>Valores de enumeración
 
 
 |||

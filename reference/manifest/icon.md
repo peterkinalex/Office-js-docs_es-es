@@ -1,12 +1,12 @@
-# Elemento Icon
+# <a name="icon-element"></a>Elemento Icon
 Define los elementos de **Image** para los controles de [Button](./button.md) y [Menu](./menu-control.md).
 
-## Elementos secundarios
+## <a name="child-elements"></a>Elementos secundarios
 |  Elemento |  Obligatorio  |  Descripción  |
 |:-----|:-----|:-----|
 |  [Image](#image)        | Sí |   resid de una imagen que se usará         |
 
-## Image
+## <a name="image"></a>Image
 Imagen del botón. El atributo **resid** tiene que establecerse en el valor del atributo **id** de un elemento **Image** en el elemento **Images** del elemento [Resources](./resources.md). El atributo **size** indica el tamaño en píxeles de la imagen. Se necesitan tres tamaños de imágenes (16, 32 y 80 píxeles), mientras que se admiten otros cinco tamaños (20, 24, 40, 48 y 64 píxeles).|
 
 

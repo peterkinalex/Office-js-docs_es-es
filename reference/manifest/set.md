@@ -1,11 +1,11 @@
 
-# Elemento Set
+# <a name="set-element"></a>Elemento Set
 Especifica un conjunto de requisitos de la API de JavaScript para Office que su complemento de Office necesita para activarse.
 
  **Tipo de complemento:** Contenido, panel de tareas, correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,21 +13,21 @@ Especifica un conjunto de requisitos de la API de JavaScript para Office que su 
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
-[Sets](../../reference/manifest/sets.md)
-
-
-## Atributos
+[Conjuntos](../../reference/manifest/sets.md)
 
 
+## <a name="attributes"></a>Atributos
 
-|**Atributo**|**Tipo**|**Necesario**|**Descripción**|
+
+
+|**Atributo**|**Tipo**|**Obligatorio**|**Descripción**|
 |:-----|:-----|:-----|:-----|
 |Nombre|string|necesario|El nombre de un [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-requirements-element-in-the-manifest).|
 |MinVersion|string|opcional|Especifica la versión mínima del conjunto de API que necesita el complemento. Reemplaza el valor **DefaultMinVersion** si se especifica en el elemento primario [Sets](../../reference/manifest/sets.md).|
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Para obtener más información sobre los conjuntos de requisitos, consulte [Especificar los requisitos de la API y del host de Office](../../docs/overview/specify-office-hosts-and-api-requirements.md#specify-office-hosts-and-api-requirements).
 

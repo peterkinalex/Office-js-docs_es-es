@@ -1,5 +1,5 @@
 
-# Enumeración FileType
+# <a name="filetype-enumeration"></a>Enumeración FileType
 Especifica el formato en el que deben devolverse los documentos.
 
 |||
@@ -12,7 +12,7 @@ Office.FileType
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Valores**
@@ -24,7 +24,7 @@ Office.FileType
 |Office.FileType.Pdf|"pdf"|Devuelve todo el documento en formato PDF como matriz de bytes.|
 |Office.FileType.Text|"text"|Devuelve solo el texto del documento como una **string** (solo en Word).|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -42,11 +42,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 |**Versión**|**Cambios**|

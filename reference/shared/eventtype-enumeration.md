@@ -1,6 +1,6 @@
 
-# Enumeración EventType
-Especifica el tipo de evento que se ha generado y se devuelve desde la propiedad **type** de un objeto _EventName_**EventArgs**.
+# <a name="eventtype-enumeration"></a>Enumeración EventType
+Especifica el tipo de evento que se ha generado. Devuelto por la propiedad **type** de un objeto _EventName_**EventArgs**.
 
 |||
 |:-----|:-----|
@@ -12,7 +12,7 @@ Office.EventType
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Valores**
@@ -29,13 +29,13 @@ Office.EventType
 |Office.EventType.DataNodeReplaced|"nodeReplaced"|Se generó un evento [CustomXmlPart.dataNodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md).|
 |Office.EventType.SettingsChanged|"settingsChanged"|Se ha generado un evento [Settings.settingsChanged](../../reference/shared/settings.settingschangedevent.md).|
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 
  >**Nota**:  Los complementos para Project admiten los tipos de evento  **Office.EventType.ResourceSelectionChanged**,  **Office.EventType.TaskSelectionChanged** y  **Office.EventType.ViewSelectionChanged**.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -55,11 +55,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

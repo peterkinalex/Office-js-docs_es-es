@@ -1,4 +1,4 @@
-#Diseños para complementos de contenido
+#<a name="layout-for-content-add-ins"></a>Diseños para complementos de contenido
 
 Cree un aspecto coherente para los complementos de contenido usando el diseño recomendado. El diseño recomendado para un complemento de contenido incluye los siguientes elementos: 
 

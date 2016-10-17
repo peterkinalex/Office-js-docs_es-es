@@ -1,6 +1,6 @@
 
 
-# Método Office.useShortNamespace
+# <a name="office.useshortnamespace-method"></a>Método Office.useShortNamespace
 Activa y desactiva el alias de `Office` para el espacio de nombres completo `Microsoft.Office.WebExtension`.
 
 |||
@@ -13,7 +13,7 @@ Office.useShortNamespace(useShortcut);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
@@ -25,7 +25,7 @@ _useShortcut_<br/>
     
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -57,7 +57,7 @@ function write(message){
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -81,7 +81,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 |**Versión**|**Cambios**|

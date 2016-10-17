@@ -1,11 +1,11 @@
 
-# Elemento Version
+# <a name="version-element"></a>Elemento Version
 Especifica la versión de su complemento de Office.
 
  **Tipo de complemento:** Contenido, panel de tareas, correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,7 +13,7 @@ Especifica la versión de su complemento de Office.
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 

@@ -1,7 +1,7 @@
 
-# Labs.Core.ILabHostVersionInfo
+# <a name="labs.core.ilabhostversioninfo"></a>Labs.Core.ILabHostVersionInfo
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Información de la versión sobre el host de laboratorio.
 
@@ -10,7 +10,7 @@ interface ILabHostVersionInfo
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||

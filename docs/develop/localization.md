@@ -1,8 +1,8 @@
-# Localización de complementos para Office
+# <a name="localization-for-office-add-ins"></a>Localización de complementos para Office
 
 Puede implementar cualquier esquema de localización que le resulte adecuado para su Complemento de Office. La API de JavaScript y el esquema de manifiesto de la plataforma Complementos de Office ofrecen algunas opciones. Puede usar la API de JavaScript para Office para determinar la configuración regional y mostrar cadenas en función de la configuración regional de la aplicación host, o interpretar o mostrar datos en función de la configuración regional de los datos. También puede usar el manifiesto para especificar información descriptiva y la ubicación del archivo de la aplicación específica de la configuración regional. Asimismo, puede usar la secuencia de comandos de Microsoft Ajax para la localización y la globalización.
 
-## Uso de la API de JavaScript para determinar cadenas específicas de configuración regional
+## <a name="use-the-javascript-api-to-determine-locale-specific-strings"></a>Uso de la API de JavaScript para determinar cadenas específicas de configuración regional
 
 La API de JavaScript para Office ofrece dos propiedades que permiten la visualización y la interpretación de valores según la configuración regional de la aplicación host y de los datos, respectivamente:
 
@@ -36,27 +36,27 @@ La API de JavaScript para Office ofrece dos propiedades que permiten la visualiz
 ```
 
 
-## Localización del control desde el manifiesto
+## <a name="control-localization-from-the-manifest"></a>Localización del control desde el manifiesto
 
 
-Cada complemento de Office especifica un elemento [DefaultLocale] y una configuración regional en su manifiesto. De forma predeterminada, el complemento de Office de la plataforma y las aplicaciones host de Office aplican los valores de los elementos[Description], [DisplayName], [IconUrl], [HighResolutionIconUrl] y [SourceLocation] a todas las configuraciones regionales. Puede admitir de forma opcional valores específicos en determinadas configuraciones regionales, especificando un elemento secundario [Override] para cada configuración regional adicional, para cualquiera de estos cinco elementos. El valor para el elemento [DefaultLocale] y para el atributo `Locale` del elemento [Override] se ha especificado de acuerdo con [RFC 3066], "Etiquetas para la identificación de idiomas". La tabla 1 describe el soporte de localización para estos elementos.
+Cada complemento de Office especifica un elemento [DefaultLocale] y una configuración regional en su manifiesto. De forma predeterminada, el complemento de Office de la plataforma y las aplicaciones host de Office aplican los valores de los elementos [Description], [DisplayName], [IconUrl], [HighResolutionIconUrl] y [SourceLocation] a todas las configuraciones regionales. Puede admitir de forma opcional valores específicos en determinadas configuraciones regionales, especificando un elemento secundario [Override] para cada configuración regional adicional, para cualquiera de estos cinco elementos. El valor para el elemento [DefaultLocale] y para el atributo `Locale` del elemento [Override] se ha especificado de acuerdo con [RFC 3066], "Etiquetas para la identificación de idiomas". La tabla 1 describe el soporte de localización para estos elementos.
 
-**Tabla 1. Soporte de localización**
+**Tabla 1: Compatibilidad de localización**
 
 
-|**Elemento**|**Soporte de localización**|
+|**Elemento**|**Compatibilidad de localización**|
 |:-----|:-----|
 |[Descripción]   |Los usuarios de las configuraciones regionales que especifique pueden ver una descripción localizada del complemento en la Tienda Office (o en un catálogo privado).<br/>Para los complementos de Outlook, los usuarios pueden ver la descripción en el Centro de administración de Exchange (EAC) después de la instalación.|
 |[DisplayName]   |Los usuarios de las configuraciones regionales que especifique pueden ver una descripción localizada del complemento en la Tienda Office (o en un catálogo privado).<br/>Para los complementos de Outlook, los usuarios pueden ver el nombre para mostrar como una etiqueta del botón de aplicación de Outlook y en el EAC después de la instalación.<br/>En el caso de los complementos de contenido y de panel de tareas, los usuarios podrán ver el icono en la cinta de opciones tras instalar el complemento.|
 |[IconUrl]        |Puede usar la misma técnica de reemplazo para especificar una imagen concreta para una referencia cultural específica. Si usa y localiza el icono, los usuarios de cada configuración regional que especifique podrán ver una imagen de icono localizada del complemento.<br/>En el caso de los complemento de Outlook, los usuarios podrán ver el icono en el EAC después de instalar el complemento.<br/>Para los complemento de contenido y de panel de tareas, los usuarios pueden ver el nombre para mostrar en la cinta de opciones después de instalar la aplicación.|
 |[HighResolutionIconUrl] <br/><br/>**Importante** Este elemento solo está disponible al usar el manifiesto del complemento versión 1.1.|La imagen de icono de alta resolución es opcional, pero, si se especifica, tiene que aparecer después del elemento [IconUrl]. Si especifica [HighResolutionIconUrl] y el complemento está instalado en un dispositivo compatible con una resolución con valores altos de ppp, se usará el valor [HighResolutionIconUrl] en lugar de [IconUrl].<br/>El icono de la imagen es opcional. Puede usar la misma técnica de omisión para especificar una imagen determinada para una referencia cultural específica. Si usa y localiza un icono, los usuarios de las configuraciones regionales que especifique pueden ver una imagen de icono localizada para el complemento.<br/>En el caso de los complemento de Outlook, los usuarios podrán ver el icono en el EAC después de instalar el complemento.<br/>Para los complemento de contenido y de panel de tareas, los usuarios pueden ver el nombre para mostrar en la cinta de opciones después de instalar la aplicación.|
-|[SourceLocation]   |Los usuarios de las configuraciones regionales que especifique pueden ver una página web que usted diseñe específicamente para el complemento para la configuración regional en cuestión. |
+|[SourceLocation]   |Los usuarios de las configuraciones regionales que especifique pueden ver una página web que diseñe específicamente para el complemento para esa configuración regional. |
 
  > 
   **Nota:** Solo se puede localizar la descripción y el nombre para mostrar de las configuraciones locales compatibles con Office. Consulte [Identificadores de idioma y valores de identificador OptionState en Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx) para obtener una lista de idiomas y configuraciones regionales para la versión actual de Office.
 
 
-### Ejemplos
+### <a name="examples"></a>Ejemplos
 
 Por ejemplo, una Complemento de Office puede especificar la  [DefaultLocale] como `en-us`. Para el elemento  [DisplayName], el complemento puede especificar un elemento secundario  [Override] para la configuración regional `fr-fr`, como se muestra más abajo. 
 
@@ -71,7 +71,7 @@ Por ejemplo, una Complemento de Office puede especificar la  [DefaultLocale] com
 
 Esto quiere decir que el complemento supone que la configuración regional es `en-us` de forma predeterminada. Los usuarios verán el nombre para mostrar en inglés ("Video player") para todas las configuraciones regionales, excepto si la configuración regional del equipo cliente es `fr-fr`, en cuyo caso los usuarios verán el nombre para mostrar en francés ("Lecteur vidéo").
 
-> **Nota:** Solo puede especificar un único reemplazo por idioma, incluidos los de la configuración regional predeterminada. Por ejemplo, si la configuración regional predeterminada es `en-us` no puede especificar un reemplazo para `en-us` también. 
+> **Nota:** Solo puede especificar un único reemplazo por idioma, incluido el de la configuración regional predeterminada. Por ejemplo, si la configuración regional predeterminada es `en-us` no puede especificar un reemplazo para `en-us` también. 
 
 En el siguiente ejemplo se aplica un reemplazo de configuración regional para el elemento  [Description]. Primero se especifica una configuración regional  `en-us` y una descripción en inglés, y se especifica, a continuación, una instrucción [Override] con una descripción en francés para la configuración regional `fr-fr`:
 
@@ -126,15 +126,15 @@ Para los complementos de Outlook, el elemento  [SourceLocation] también permite
 ```
 
 
-## Ajuste de formato de fecha y hora con la configuración regional del cliente
+## <a name="match-date/time-format-with-client-locale"></a>Ajuste de formato de fecha y hora con la configuración regional del cliente
 
 
-Puede obtener la configuración regional de la interfaz de usuario de la aplicación host mediante la propiedad [displayLanguage]. Después, puede mostrar valores de fecha y hora en un formato coherente con la configuración regional actual de la aplicación host. Una forma de hacerlo es preparar un archivo de recursos que especifica el formato de presentación de fecha y hora que quiere usar para cada configuración regional que el complemento de Office admite. En tiempo de ejecución, el complemento puede usar el archivo de recursos y hacer coincidir el formato de fecha y hora apropiado con la configuración regional procedente de la propiedad [displayLanguage].
+Puede obtener la configuración regional de la interfaz de usuario de la aplicación host mediante la propiedad [displayLanguage]. Después, puede mostrar valores de fecha y hora en un formato coherente con la configuración regional actual de la aplicación host. Una forma de hacerlo es preparar un archivo de recursos que especifique el formato de presentación de fecha y hora que quiere usar para cada configuración regional que el complemento de Office admite. En tiempo de ejecución, el complemento puede usar el archivo de recursos y hacer coincidir el formato de fecha y hora apropiado con la configuración regional procedente de la propiedad [displayLanguage].
 
-Puede obtener la configuración regional de la fecha de la aplicación host mediante la propiedad [contentLanguage]. Basándose en este valor, puede entonces interpretar correctamente o mostrar cadenas de fecha y hora. Por ejemplo, la configuración regional `jp-JP` expresa los valores de fecha y hora como `yyyy/MM/dd` y la configuración regional `fr-FR`, `dd/MM/yyyy`.
+Puede obtener la configuración regional de la fecha de la aplicación host mediante la propiedad [contentLanguage]. Basándose en este valor, puede interpretar o mostrar cadenas de fecha y hora correctamente. Por ejemplo, la configuración regional `jp-JP` expresa los valores de fecha y hora como `yyyy/MM/dd` y la configuración regional `fr-FR`, `dd/MM/yyyy`.
 
 
-## Uso de Ajax para localización y globalización
+## <a name="use-ajax-for-globalization-and-localization"></a>Usar Ajax para localización y globalización
 
 
 Si usa Visual Studio para crear Complementos de Office, .NET Framework y Ajax ofrecen varias formas de localizar y globalizar los archivos de secuencias de comando cliente.
@@ -144,7 +144,7 @@ De este modo, puede globalizar y usar las extensiones de tipo JavaScript [Date](
 Puede incluir cadenas de recursos localizadas directamente en los archivos independientes de JavaScript para proporcionar archivos de script cliente para distintas configuraciones regionales, que están en el navegador o son proporcionados por el usuario. Cree un archivo de script separado por cada configuración regional admitida. En cada archivo de script, incluya un objeto en formato JSON que contenga las cadenas de recursos para esa configuración regional. Los valores localizados se aplican cuando el script se ejecuta en el navegador. 
 
 
-## Ejemplo: Cree un complemento de Office localizado
+## <a name="example:-build-a-localized-office-add-in"></a>Ejemplo: Cree un complemento de Office localizado
 
 
 Esta sección ofrece ejemplos que le muestran cómo localizar una descripción, nombre para mostrar e IU de Complemento de Office.
@@ -156,7 +156,7 @@ Además, deberá crear un proyecto con complementos de Office Visual Studio 2015
 
  > **Nota:** Para descargar Visual Studio 2015, visite la [página de Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs). En esta página también encontrará un vínculo a Office Developer Tools.
 
-### Configurar Office 2013 para usar idiomas adicionales para mostrar o editar
+### <a name="configure-office-2013-to-use-additional-languages-for-display-or-editing"></a>Configurar Office 2013 para usar idiomas adicionales para mostrar o editar
 
 Puede usar un paquete de idiomas Office 2013 para instalar un idioma adicional. Para obtener más información sobre Paquetes de idiomas y dónde obtenerlos, consulte las [opciones de idiomas de Office 2013](http://office.microsoft.com/en-us/language-packs/).
 
@@ -166,7 +166,7 @@ Puede usar un paquete de idiomas Office 2013 para instalar un idioma adicional. 
 Después de instalar el paquete de idiomas, puede configurar Office 2013 para usar el idioma instalado en la IU, para editar el documento o para ambas cosas. El ejemplo en este artículo usa una instalación de Office 2013 que tiene aplicado el paquete de idioma español.
 
 
-### Crear un proyecto de complemento de Office
+### <a name="create-an-office-add-in-project"></a>Crear un proyecto de complemento de Office
 
 
 1. En Visual Studio, elija **Archivo**  >  **Nuevo proyecto**.
@@ -178,7 +178,7 @@ Después de instalar el paquete de idiomas, puede configurar Office 2013 para us
 4. En el cuadro de diálogo  **Crear complemento de Office**, seleccione  **Panel de tareas** y elija **Siguiente**. En la página siguiente, desactive las casillas de todas las aplicaciones host excepto Word. Elija  **Finalizar** para crear el proyecto.
     
 
-### Localizar el texto usado en su complemento
+### <a name="localize-the-text-used-in-your-add-in"></a>Localizar el texto usado en su complemento
 
 
 El texto que desea localizar en otro idioma aparece en dos áreas:
@@ -255,14 +255,14 @@ Para diseñar la IU del complemento:
 
 3. En Visual Studio, seleccione  **Archivo**,  **Guardar App\Home\Home.html**.
     
-En la ilustración 3 se muestra el elemento del encabezado (h1) y el elemento del párrafo (p) donde se verá el texto localizado cuando se ejecute el complemento de ejemplo.
+En la figura 3 se muestra el elemento de encabezado (h1) y el elemento de párrafo (p) donde se verá el texto localizado cuando se ejecute el complemento de ejemplo.
 
-**Figura 3. IU del complemento**
+**Figura 3: IU del complemento**
 
 ![Interfaz de usuario de la aplicación con secciones resaltadas](../../images/off15App_HowToLocalize_fig03.png)
 
 
-#### Agregue el archivo de recurso que contiene las cadenas localizadas
+#### <a name="add-the-resource-file-that-contains-the-localized-strings"></a>Agregue el archivo de recurso que contiene las cadenas localizadas
 
 
 El archivo de recursos de JavaScript contiene las cadenas usadas para la interfaz de usuario del complemento. La interfaz de usuario del complemento de ejemplo tiene un elemento h1 que muestra un saludo y un elemento p que presenta el complemento al usuario. 
@@ -329,7 +329,7 @@ Para agregar un archivo de recurso a un proyecto de complemento:
 
 El archivo de recurso UIStrings.js crea un objeto,  **UIStrings**, que contiene cadenas localizadas para la IU de su complemento. 
 
-#### Localizar texto usado en l IU del complemento
+#### <a name="localize-the-text-used-for-the-add-in-ui"></a>Localizar texto usado en l IU del complemento
 
 
 Para usar el archivo de recurso en su complemento, deberá agregar una etiqueta de script para él en Home.html. Cuando se carga Home.html, UIStrings.js se ejecuta y el objeto  **UIStrings** que usa para obtener las cadenas queda disponible para su código. Agregue el siguiente código HTML en la etiqueta head de Home.html para que **UIStrings** esté instalado para su código.
@@ -394,7 +394,7 @@ Sustituya el código del archivo Home.js con el siguiente código. El código mu
 ```
 
 
-### Pruebe su complemento localizado
+### <a name="test-your-localized-add-in"></a>Pruebe su complemento localizado
 
 
 Para probar su complemento localizado, cambie el idioma usado para la muestra o edición en una aplicación host y luego ejecute el complemento. 
@@ -402,9 +402,9 @@ Para probar su complemento localizado, cambie el idioma usado para la muestra o 
 Para cambiar el idioma usado para mostrar o editar su complemento:
 
 
-1. En Word 2013, seleccione  **Archivo**,  **Opciones**,  **Idioma**. La Figura 4 muestra el cuadro de diálogo  **Opciones de Word** abierto en la pestaña de idioma.
+1. En Word 2013, seleccione **Archivo**, **Opciones**, **Idioma**. La Figura 4 muestra el cuadro de diálogo **Opciones de Word** abierto en la pestaña Idioma.
     
-    **Figura 4. Opciones de idioma en el cuadro de diálogo de opciones de Word 2013**
+    **Figura 4: Opciones de idioma en el cuadro de diálogo Opciones de Word 2013**
 
     ![Cuadro de diálogo Opciones de Word 2013](../../images/off15App_HowToLocalize_fig04.png)
 
@@ -415,16 +415,17 @@ Para cambiar el idioma usado para mostrar o editar su complemento:
 Ejecute el complemento de muestra. El complemento de panel de tareas se carga en Word 2013 y las cadenas en la IU del complemento cambian para coincidir con el idioma usado por la aplicación host, según se muestra en la figura 5.
 
 
-**Figura 5. IU del complemento con texto localizado**
+**Figura 5: IU del complemento con texto localizado**
 
 ![Aplicación con texto de UI localizado](../../images/off15App_HowToLocalize_fig05.png)
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
-- [Directrices de diseño para complementos de Office](../../docs/design/add-in-design.md)
+- [Instrucciones de diseño para complementos de Office](../../docs/design/add-in-design.md)
     
-- [Identificadores de idioma y valores de identificador OptionState en Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
+- 
+  [Identificadores de idioma y valores de identificador OptionState en Office 2013](http://technet.microsoft.com/en-us/library/cc179219%28Office.15%29.aspx)
 
 [DefaultLocale]:         ../../reference/manifest/defaultlocale.md
 [Descripción]:           ../../reference/manifest/description.md

@@ -1,19 +1,19 @@
-# Objeto ContentControlCollection (API de JavaScript para Word)
+# <a name="contentcontrolcollection-object-(javascript-api-for-word)"></a>Objeto ContentControlCollection (API de JavaScript para Word)
 
 Contiene una colección de objetos ContentControl. Los controles de contenido son regiones delimitadas y posiblemente con etiquetas de un documento que funcionan como contenedores para tipos de contenido específicos. Los controles de contenido individuales pueden incluir contenido como imágenes, tablas o párrafos de texto con formato. Actualmente, solo se admiten controles de contenido de texto enriquecido.
 
-_Se aplica a: Word 2016, Word para iPad, Word para Mac_
+_Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 
-## Properties
+## <a name="properties"></a>Propiedades
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
-|Items|[ContentControl[]](contentcontrol.md)|Colección de objetos contentControl. Solo lectura.|
+|items|[ContentControl[]](contentcontrol.md)|Colección de objetos contentControl. Solo lectura.|
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 Ninguno
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
@@ -22,25 +22,25 @@ Ninguno
 |[getByTitle(title: string)](#getbytitletitle-string)|[ContentControlCollection](contentcontrolcollection.md)|Obtiene los controles de contenido que tienen el título especificado.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
-### getById(id: number)
+### <a name="getbyid(id:-number)"></a>getById(id: number)
 Obtiene un control de contenido mediante su identificador.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlCollectionObject.getById(id);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |id|number|Necesario. Identificador de un control de contenido.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [ContentControl](contentcontrol.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -65,23 +65,23 @@ Word.run(function (context) {
 });
 ```
 
-### getByTag(tag: string)
+### <a name="getbytag(tag:-string)"></a>getByTag(tag: string)
 Obtiene los controles de contenido que tienen la etiqueta especificada.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlCollectionObject.getByTag(tag);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |tag|string|Necesario. Etiqueta establecida en un control de contenido.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [ContentControlCollection](contentcontrolcollection.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -111,27 +111,27 @@ Word.run(function (context) {
 });
 ```
 
-#### Información adicional
+#### <a name="additional-information"></a>Información adicional
 El ejemplo [Word-Add-in-DocumentAssembly][contentControls.getByTag] contiene otro ejemplo sobre cómo usar el método getByTag.
 
 
-### getByTitle(title: string)
+### <a name="getbytitle(title:-string)"></a>getByTitle(title: string)
 Obtiene los controles de contenido que tienen el título especificado.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlCollectionObject.getByTitle(title);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |title|string|Necesario. Título de un control de contenido.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [ContentControlCollection](contentcontrolcollection.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -161,26 +161,26 @@ Word.run(function (context) {
 });
 ```
 
-#### Información adicional
+#### <a name="additional-information"></a>Información adicional
 El ejemplo [Word-Add-in-DocumentAssembly][contentControls.getByTitle] contiene otro ejemplo sobre cómo usar el método getByTitle.
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -248,7 +248,7 @@ Word.run(function (context) {
 
 El ejemplo de complemento [Silly stories](https://aka.ms/sillystorywordaddin) muestra cómo se usa el método **load** para cargar la colección de controles de contenido con las propiedades **tag** y **title**.
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 

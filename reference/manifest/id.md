@@ -1,11 +1,11 @@
 
-# Elemento Id
+# <a name="id-element"></a>Elemento Id
 Especifica el id. único de su complemento de Office como un GUID.
 
  **Tipo de complemento:** Contenido, panel de tareas, correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,7 +13,7 @@ Especifica el id. único de su complemento de Office como un GUID.
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 

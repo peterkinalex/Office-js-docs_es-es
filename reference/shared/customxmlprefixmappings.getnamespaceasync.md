@@ -1,11 +1,11 @@
 
-# Método CustomXmlPrefixMappings.getNamespaceAsync
-Obtiene de forma asíncrona el espacio de nombres asignado al prefijo especificado.
+# <a name="customxmlprefixmappings.getnamespaceasync-method"></a>Método CustomXmlPrefixMappings.getNamespaceAsync
+Obtiene de forma asincrónica el espacio de nombres asignado al prefijo especificado.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
 |**Agregado en**|1.1|
 
 ```
@@ -13,18 +13,18 @@ customXmlPrefixMappingsObj.getNamespaceAsync(prefix [, options], callback);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
 |**Nombre**|**Tipo**|**Descripción**|**Notas de compatibilidad**|
 |:-----|:-----|:-----|:-----|
-| _prefix_|**string**|Especifica el prefijo para el que obtener el espacio de nombres. Requerido.||
+| _prefix_|**string**|Especifica el prefijo para el que obtener el espacio de nombres. Obligatorio.||
 | _options_|**object**|Especifica cualquiera de los siguientes [parámetros opcionales](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods):||
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string** o **undefined**|Un elemento de cualquier tipo definido por el usuario que se devuelve en el objeto **AsyncResult** sin sufrir modificaciones.||
 | _callback_|**object**|Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.||
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función que ha remitido al parámetro _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el único parámetro de la función de devolución de llamada.
 
@@ -32,19 +32,19 @@ En la función de devolución de llamada que se ha remitido al método **getName
 
 
 
-|**Propiedad**|**Usar para...**|
+|**Propiedad**|**Usar para**|
 |:-----|:-----|
-|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Tener acceso a una **string** que contiene el espacio de nombres asignado al prefijo específico.|
+|[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Tener acceso a una **cadena** que contiene el espacio de nombres asignado al prefijo específico.|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determinar si la operación se ha completado correctamente o no.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Tener acceso a un objeto [Error](../../reference/shared/error.md) que proporcione información sobre el error si la operación no se ha llevado a cabo correctamente.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **object** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **objeto** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Si no se asigna ningún espacio de nombres al prefijo solicitado, el método devuelve una cadena vacía ("").
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -54,17 +54,17 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 ||**Office para escritorio de Windows**|**Office Online (en el explorador)**|**Office para iPad**|
 |:-----|:-----|:-----|:-----|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|CustomXmlParts|
+|**Disponible en los conjuntos de requisitos**|CustomXmlParts|
 |**Nivel de permisos mínimo**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

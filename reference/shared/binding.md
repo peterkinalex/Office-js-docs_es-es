@@ -1,18 +1,18 @@
 
-# Objeto Binding
+# <a name="binding-object"></a>Objeto Binding
 Una clase abstracta que representa un enlace a una sección del documento.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Access, Excel y Word|
-|**Disponible en [Conjuntos de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBinding, TableBinding, TextBinding|
+|**Disponible en los [conjuntos de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBinding, TableBinding, TextBinding|
 |**Modificado por última vez en TableBinding**|1.1|
 
 ```js
 Office.context.document.bindings.getByIdAsync(id);
 ```
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Objetos**
@@ -24,14 +24,14 @@ Office.context.document.bindings.getByIdAsync(id);
 |[TableBinding](../../reference/shared/binding.tablebinding.md)|Representa un enlace en dos dimensiones de filas y columnas, que puede llevar o no encabezados.|
 |[TextBinding](../../reference/shared/binding.textbinding.md)|Representa una selección de texto enlazado en el documento.|
 
-**Properties**
+**Propiedades**
 
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|[documento](../../reference/shared/binding.document.md)|Obtiene el objeto **Document** que se asocia con el enlace.|
+|[document](../../reference/shared/binding.document.md)|Obtiene el objeto **Document** que se asocia con el enlace.|
 |[id](../../reference/shared/binding.id.md)|Obtiene el identificador del objeto.|
-|[tipo](../../reference/shared/binding.type.md)|Obtiene el tipo del enlace.|
+|[type](../../reference/shared/binding.type.md)|Obtiene el tipo del enlace.|
 
 **Métodos**
 
@@ -49,17 +49,17 @@ Office.context.document.bindings.getByIdAsync(id);
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|[bindingDataChanged](../../reference/shared/binding.bindingdatachangedevent.md)|Se genera al cambiar los datos en el enlace.|
-|[bindingSelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md)|Se genera al cambiar la selección en el enlace.|
+|[bindingDataChanged](../../reference/shared/binding.bindingdatachangedevent.md)|Se produce al cambiar los datos en el enlace.|
+|[bindingSelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md)|Se produce al cambiar la selección en el enlace.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 El objeto **Binding** expone la funcionalidad que poseen todos los enlaces, independientemente de su tipo.
 
 El objeto **Binding** nunca se llama de forma directa. Es la clase primaria abstracta de los objetos que representa cada tipo de enlace: [MatrixBinding](../../reference/shared/binding.matrixbinding.md), [TableBinding](../../reference/shared/binding.tablebinding.md) o [TextBinding](../../reference/shared/binding.textbinding.md). Estos tres objetos heredan los métodos **getDataAsync** y **setDataAsync** del objeto **Binding**, que habilitan al usuario a interactuar con los datos del enlace. También heredan las propiedades **id** y **type** para realizar consultas de estos valores de propiedad. Asimismo, los objetos **MatrixBinding** y **TableBinding** exponen métodos adicionales para las características específicas de matrices y tablas, como contar el número de filas y columnas.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 La compatibilidad para cada miembro de API del objeto **Binding** difiere entre aplicaciones host de Office. Consulte la sección "Detalles de compatibilidad" del tema de cada miembro para obtener información de compatibilidad de host.
@@ -69,7 +69,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|MatrixBinding, TableBinding, TextBinding|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Disponible en los conjuntos de requisitos**|MatrixBinding, TableBinding, TextBinding|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|

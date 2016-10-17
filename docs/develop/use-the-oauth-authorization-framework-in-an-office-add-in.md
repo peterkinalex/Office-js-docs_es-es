@@ -1,5 +1,5 @@
 
-# Usar el marco de autorización OAuth en un complemento de Office
+# <a name="use-the-oauth-authorization-framework-in-an-office-add-in"></a>Usar el marco de autorización OAuth en un complemento de Office
 
 OAuth es el estándar abierto de autorización que proveedores de servicios en línea como Office 365, Facebook, Google, SalesForce, LinkedIn y otros usan para llevar a cabo la autenticación de usuarios. El marco de autorización OAuth es el protocolo de autorización predeterminado que se usa en Azure y Office 365. El marco de autorización OAuth se usa en escenarios empresariales (corporativos) y de consumidor.
 
@@ -27,7 +27,7 @@ El diagrama muestra cómo se usan los siguientes componentes necesarios:
  **Importante** Los tokens de acceso no se pueden devolver al panel de tareas, pero se pueden usar en el servidor. En este ejemplo de código, los tokens de acceso se almacenan en la base de datos durante 2 minutos. Después de 2 minutos, los tokens se eliminan de la base de datos y se pide a los usuarios que vuelvan a autenticarse. Antes de cambiar este período de tiempo en su propia implementación, considere los riesgos de seguridad asociados al almacenamiento de tokens de acceso durante un período de tiempo superior a 2 minutos.
 
 
-## Paso 1: Iniciar el socket y abrir una ventana emergente
+## <a name="step-1---start-socket-and-open-a-pop-up-window"></a>Paso 1: Iniciar el socket y abrir una ventana emergente
 
 Al ejecutar este ejemplo de código, se muestra un complemento de panel de tareas en Office. Cuando el usuario elige un proveedor de OAuth para iniciar sesión, el complemento primero crea un socket. En este ejemplo se usa un socket para proporcionar una experiencia del usuario adecuada en el complemento. El complemento usa el socket para comunicar al usuario si la autenticación se ha completado correctamente o no. Al usar un socket, la página principal del complemento se actualiza fácilmente con el estado de la autenticación y no necesita la interacción del usuario ni un sondeo. En el siguiente segmento de código, extraído de routes/connect.js, se muestra cómo iniciar el socket. El socket recibe un nombre con **decodedNodeCookie**, que es el id. de sesión del complemento. En este ejemplo de código se crea el socket con [socket.io](http://socket.io/).
 
@@ -70,7 +70,7 @@ onclick="window.open('/connect/azure/#{sessionID}', 'AuthPopup', 'width=500,heig
 ```
 
 
-## Pasos 2 y 3: Iniciar el flujo de autenticación y mostrar la página de inicio de sesión
+## <a name="steps-2-&amp;-3---start-the-authentication-flow-and-show-the-sign-in-page"></a>Pasos 2 y 3: Iniciar el flujo de autenticación y mostrar la página de inicio de sesión
 
 El complemento debe iniciar el flujo de autenticación. El siguiente segmento de código usa la biblioteca de OAuth de Passport. Al iniciar el flujo de autenticación, asegúrese de pasar la dirección URL de autorización del proveedor de OAuth y el identificador de sesión del complemento. El identificador de sesión del complemento se debe pasar en el parámetro de estado. Ahora la ventana emergente muestra la página de inicio de sesión del proveedor de OAuth para que los usuarios inicien sesión.
 
@@ -84,7 +84,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## Pasos 4, 5 y 6: El usuario inicia sesión y el servidor web recibe los tokens
+## <a name="steps-4,-5-&amp;-6---user-signs-in-and-web-server-receives-tokens"></a>Pasos 4, 5 y 6: El usuario inicia sesión y el servidor web recibe los tokens
 
  Después de iniciar sesión correctamente, se devuelve al complemento un token de acceso, un token de actualización y un parámetro de estado. El parámetro de estado contiene el id. de sesión, que se usó para enviar información de estado de autenticación al socket en el paso 7. En el siguiente segmento de código, extraído de app.js, almacena el token de acceso en la base de datos.
 
@@ -101,7 +101,7 @@ router.get('/azure/:sessionID', function(req, res, next) {
 ```
 
 
-## Paso 7: Mostrar información de autenticación en la interfaz de usuario del complemento
+## <a name="step-7---show-authentication-information-in-the-add-in's-ui"></a>Paso 7: Mostrar información de autenticación en la interfaz de usuario del complemento
 
 El siguiente segmento de código, extraído de connect.js, actualiza la interfaz de usuario del complemento con la información de estado de autenticación. La interfaz de usuario del complemento se actualiza con el socket que se creó en el paso 1.
 
@@ -114,9 +114,9 @@ El siguiente segmento de código, extraído de connect.js, actualiza la interfaz
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 <a name="bk_addresources"> </a>
 
 
-- [Ejemplo de autenticación de servidor de complemento de Office para Node.js](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
+- [Ejemplo de autenticación de servidor de complementos de Office para Node.js](https://github.com/OfficeDev/Office-Add-in-Nodejs-ServerAuth/blob/master/README.md)
     

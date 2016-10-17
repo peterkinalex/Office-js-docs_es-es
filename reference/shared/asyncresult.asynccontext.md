@@ -1,5 +1,5 @@
 
-# Propiedad AsyncResult.asyncContext
+# <a name="asyncresult.asynccontext-property"></a>Propiedad AsyncResult.asyncContext
 Obtiene el elemento definido por el usuario que se ha enviado al parámetro _asyncContext_ opcional del método invocado, en el mismo estado en el que se envió.
 
 |||
@@ -12,12 +12,12 @@ var myContext = asynchResult.asyncContext;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Devuelve el elemento definido por el usuario (que puede ser de cualquier tipo JavaScript: **String**, **Number**, **Boolean**, **Object**, **Array**, **Null** o **Undefined**) que se envió al parámetro _asyncContext_ opcional del método invocado. Si no se envió ningún elemento al parámetro **asyncContext**, devuelve _Undefined_.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -41,7 +41,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -68,7 +68,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

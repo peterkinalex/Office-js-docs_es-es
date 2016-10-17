@@ -1,5 +1,5 @@
 
-# Panel personalizado Complementos de Outlook
+# <a name="custom-pane-outlook-add-ins"></a>Panel personalizado Complementos de Outlook
 
 Un panel personalizado es un punto de extensión para un complemento que se activa cuando se cumplen ciertas condiciones en el elemento que está seleccionado. Se define en el manifiesto del complemento en el elemento  **VersionOverrides** con los demás comandos de complemento que este implementa. Para obtener más información, consulte [Definir comandos de complementos en el manifiesto de complemento de Outlook](../outlook/manifests/define-add-in-commands.md). Un panel personalizado solo puede aparecer en un mensaje leído o en las vistas de asistentes de una cita. Muestra una entrada en la barra de complementos. Cuando el usuario hace clic en la entrada, se muestra el panel personalizado en orientación horizontal encima del cuerpo del elemento. Tienen la misma apariencia y el mismo comportamiento que los complementos del modo de lectura que no implementan comandos de complemento.
 
@@ -33,7 +33,7 @@ En el siguiente ejemplo se define un panel personalizado de elementos que son me
   **Rule** especifica la regla o colección de reglas que indican el momento de activación del complemento. Es lo mismo que se define en [Manifiestos de complementos de Outlook](../outlook/manifests/manifests.md), pero la regla [ItemIs](http://msdn.microsoft.com/en-us/library/f7dac4a3-1574-9671-1eda-47f092390669%28Office.15%29.aspx) tiene los cambios siguientes: **ItemType** es "Message" o "AppointmentAttendee" y no existe el atributo **FormType**. Para obtener más información, consulte [Reglas de activación para complementos de Outlook](../outlook/manifests/activation-rules.md).
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

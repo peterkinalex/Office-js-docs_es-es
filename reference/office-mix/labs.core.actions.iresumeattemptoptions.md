@@ -1,7 +1,7 @@
 
-# Labs.Core.Actions.IResumeAttemptOptions
+# <a name="labs.core.actions.iresumeattemptoptions"></a>Labs.Core.Actions.IResumeAttemptOptions
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Opciones asociadas al intento de reanudación.
 
@@ -10,7 +10,7 @@ interface IResumeAttemptOptions extends Core.IActionOptions
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||

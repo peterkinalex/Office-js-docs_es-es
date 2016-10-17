@@ -1,21 +1,21 @@
-# Objeto BindingCollection (API de JavaScript para Excel)
+# <a name="bindingcollection-object-(javascript-api-for-excel)"></a>Objeto BindingCollection (API de JavaScript para Excel)
 
 Representa la colección de todos los objetos de enlace que forman parte del libro.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |count|entero|Devuelve el número de enlaces incluidos en la colección. Solo lectura.|
-|Items|[Binding[]](binding.md)|Colección de objetos de enlace. Solo lectura.|
+|items|[Binding[]](binding.md)|Colección de objetos de enlace. Solo lectura.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 Ninguno
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
@@ -23,26 +23,26 @@ Ninguno
 |[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Obtiene un objeto de enlace según su posición en la matriz de elementos.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### getItem(id: string)
+### <a name="getitem(id:-string)"></a>getItem(id: string)
 Obtiene un objeto de enlace por identificador.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 bindingCollectionObject.getItem(id);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |id|string|Identificador del objeto de contenido que se va a recuperar.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Binding](binding.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 Crear un enlace de tabla para supervisar los cambios en los datos de la tabla. Cuando se modifica algún dato, el color de fondo de la tabla cambiará a naranja.
 
@@ -100,7 +100,7 @@ Crear un enlace de tabla para supervisar los cambios en los datos de la tabla. C
 
 
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var lastPosition = ctx.workbook.bindings.count - 1;
@@ -118,23 +118,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 Obtiene un objeto de enlace según su posición en la matriz de elementos.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 bindingCollectionObject.getItemAt(index);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Binding](binding.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var lastPosition = ctx.workbook.bindings.count - 1;
@@ -152,22 +152,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, acepta un objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js
 Excel.run(function (ctx) { 

@@ -1,7 +1,7 @@
 
-# Labs.DefaultHostBuilder
+# <a name="labs.defaulthostbuilder"></a>Labs.DefaultHostBuilder
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Use este objeto para construir una instancia predeterminada de [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md).
 
@@ -10,15 +10,15 @@ var DefaultHostBuilder: (): Core.ILabHost
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 Ninguno.
 
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
-#### Referencia
+#### <a name="reference"></a>Referencia
 
 
 [Labs.Core.ILabHost](../../reference/office-mix/labs.core.ilabhost.md)

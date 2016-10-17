@@ -1,10 +1,10 @@
-# Objeto Range (API de JavaScript para Excel)
+# <a name="range-object-(javascript-api-for-excel)"></a>Objeto Range (API de JavaScript para Excel)
 
-_Se aplica a: Excel 2016, Excel Online, Excel para iOS y Office 2016_
+_Se aplica a: Excel 2016, Excel Online, Excel para iOS, Office 2016_
 
 El intervalo representa un conjunto de una o más celdas contiguas, como una celda, una fila, una columna, un bloque de celdas, etc.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
@@ -26,27 +26,27 @@ El intervalo representa un conjunto de una o más celdas contiguas, como una cel
 |valueTypes|string|Representa el tipo de datos de cada celda. Solo lectura. Los valores posibles son: Unknown, Empty, String, Integer, Double, Boolean, Error.|
 |values|object[][]|Representa los valores sin formato del intervalo especificado. Los datos devueltos pueden ser de tipo cadena, número o booleano. La celda que contenga un error devolverá la cadena de error.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |formato|[RangeFormat](rangeformat.md)|Devuelve un objeto de formato que encapsula la fuente, el relleno, los bordes, la alineación y otras propiedades del intervalo. Solo lectura.|
 |sort|[RangeSort](rangesort.md)|Representa la configuración de ordenación del rango. Solo lectura.|
-|worksheet|[Hoja de cálculo](worksheet.md)|Hoja de cálculo que contiene el intervalo actual. Solo lectura.|
+|worksheet|[Worksheet](worksheet.md)|Hoja de cálculo que contiene el rango actual. Solo lectura.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
-|[clear(applyTo: string)](#clearapplyto-string)|void|Borra valores de intervalo, formato, relleno, borde, etc.|
-|[delete(shift: string)](#deleteshift-string)|void|Elimina las celdas asociadas al intervalo.|
-|[getBoundingRect(anotherRange: Range or string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Obtiene el objeto de intervalo más pequeño que abarca los intervalos especificados. Por ejemplo, el valor getBoundingRect de "B2:C5" y "D10:E15" es "B2:E15".|
+|[clear(applyTo: string)](#clearapplyto-string)|nulo|Borra valores de intervalo, formato, relleno, borde, etc.|
+|[delete(shift: string)](#deleteshift-string)|nulo|Elimina las celdas asociadas al intervalo.|
+|[getBoundingRect(anotherRange: Range o string)](#getboundingrectanotherrange-range-or-string)|[Range](range.md)|Obtiene el objeto de intervalo más pequeño que abarca los intervalos especificados. Por ejemplo, el valor getBoundingRect de "B2:C5" y "D10:E15" es "B2:E15".|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Obtiene el objeto de intervalo que contiene la celda en función de los números de fila y columna. La celda puede estar fuera de los límites del intervalo principal, siempre y cuando permanezca dentro de la cuadrícula de la hoja de cálculo. La celda devuelta se ubica con respecto a la celda superior izquierda del intervalo.|
 |[getColumn(column: number)](#getcolumncolumn-number)|[Range](range.md)|Obtiene una columna contenida en el intervalo.|
 |[getEntireColumn()](#getentirecolumn)|[Range](range.md)|Obtiene un objeto que representa toda la columna del intervalo.|
 |[getEntireRow()](#getentirerow)|[Range](range.md)|Obtiene un objeto que representa toda la fila del intervalo.|
-|[getIntersection(anotherRange: Range or string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Obtiene el objeto de intervalo que representa la intersección rectangular de los intervalos especificados.|
+|[getIntersection(anotherRange: Range o string)](#getintersectionanotherrange-range-or-string)|[Range](range.md)|Obtiene el objeto de intervalo que representa la intersección rectangular de los intervalos especificados.|
 |[getLastCell()](#getlastcell)|[Range](range.md)|Obtiene la última celda del intervalo. Por ejemplo, la última celda de "B2:D5" es "D5".|
 |[getLastColumn()](#getlastcolumn)|[Range](range.md)|Obtiene la última columna del intervalo. Por ejemplo, la última columna de "B2:D5" es "D2:D5".|
 |[getLastRow()](#getlastrow)|[Range](range.md)|Obtiene la última fila del intervalo. Por ejemplo, la última fila de "B2:D5" es "B5:D5".|
@@ -59,26 +59,26 @@ _Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
 |[select()](#select)|void|Selecciona el intervalo especificado en la interfaz de usuario de Excel.|
 |[unmerge()](#unmerge)|void|Separa las celdas del rango en celdas separadas.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### clear(applyTo: string)
+### <a name="clear(applyto:-string)"></a>clear(applyTo: string)
 Borra valores de intervalo, formato, relleno, borde, etc.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.clear(applyTo);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |applyTo|string|Opcional. Determina el tipo de acción de borrado. Los valores posibles son: `All` (opción predeterminada), `Formats`, `Contents`|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 En el ejemplo siguiente se borra el formato y el contenido del intervalo. 
 
@@ -98,23 +98,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### delete(shift: string)
+### <a name="delete(shift:-string)"></a>delete(shift: string)
 Elimina las celdas asociadas al intervalo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.delete(shift);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |Shift|string|Especifica hacia dónde se desplazarán las celdas.  Los valores posibles son: Up, Left|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -132,23 +132,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getBoundingRect(anotherRange: Range or string)
+### <a name="getboundingrect(anotherrange:-range-or-string)"></a>getBoundingRect(anotherRange: Range or string)
 Obtiene el objeto de intervalo más pequeño que abarca los intervalos especificados. Por ejemplo, el valor GetBoundingRect de "B2:C5" y "D10:E15" es "B2:E15".
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getBoundingRect(anotherRange);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |anotherRange|Range o string|Objeto o dirección de intervalo o nombre de intervalo.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 
@@ -170,24 +170,24 @@ Excel.run(function (ctx) {
 ```
 
 
-### getCell(row: number, column: number)
+### <a name="getcell(row:-number,-column:-number)"></a>getCell(row: number, column: number)
 Obtiene el objeto de intervalo que contiene la celda en función de los números de fila y columna. La celda puede estar fuera de los límites del intervalo principal, siempre y cuando permanezca dentro de la cuadrícula de la hoja de cálculo. La celda devuelta se ubica con respecto a la celda superior izquierda del intervalo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getCell(row, column);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |row|number|Número de fila de la celda que se va a recuperar. Indizado con cero.|
 |column|number|Número de columna de la celda que se va a recuperar. Indizado con cero.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -209,23 +209,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getColumn(column: number)
+### <a name="getcolumn(column:-number)"></a>getColumn(column: number)
 Obtiene una columna contenida en el intervalo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getColumn(column);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |column|number|Número de columna del intervalo que se va a recuperar. Indizado con cero.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 
@@ -246,21 +246,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getEntireColumn()
+### <a name="getentirecolumn()"></a>getEntireColumn()
 Obtiene un objeto que representa toda la columna del intervalo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getEntireColumn();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 Nota: Las propiedades de cuadrícula del intervalo (values, numberFormat, formulas) contienen `null`, dado que el intervalo en cuestión está desvinculado.
 
@@ -283,21 +283,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getEntireRow()
+### <a name="getentirerow()"></a>getEntireRow()
 Obtiene un objeto que representa toda la fila del intervalo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getEntireRow();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 
 Excel.run(function (ctx) {
@@ -318,23 +318,23 @@ Excel.run(function (ctx) {
 ```
 Las propiedades de cuadrícula del intervalo (values, numberFormat, formulas) contienen `null`, dado que el intervalo en cuestión está desvinculado.
 
-### getIntersection(anotherRange: Range or string)
+### <a name="getintersection(anotherrange:-range-or-string)"></a>getIntersection(anotherRange: Range or string)
 Obtiene el objeto de intervalo que representa la intersección rectangular de los intervalos especificados.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getIntersection(anotherRange);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |anotherRange|Range o string|Objeto de intervalo o dirección de intervalo que se usará para determinar la intersección de los intervalos.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 
@@ -355,21 +355,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getLastCell()
+### <a name="getlastcell()"></a>getLastCell()
 Obtiene la última celda del intervalo. Por ejemplo, la última celda de "B2:D5" es "D5".
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getLastCell();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 
@@ -390,21 +390,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getLastColumn()
+### <a name="getlastcolumn()"></a>getLastColumn()
 Obtiene la última columna del intervalo. Por ejemplo, la última columna de "B2:D5" es "D2:D5".
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getLastColumn();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 
@@ -425,21 +425,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getLastRow()
+### <a name="getlastrow()"></a>getLastRow()
 Obtiene la última fila del intervalo. Por ejemplo, la última fila de "B2:D5" es "B5:D5".
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getLastRow();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 
@@ -461,24 +461,24 @@ Excel.run(function (ctx) {
 
 
 
-### getOffsetRange(rowOffset: number, columnOffset: number)
+### <a name="getoffsetrange(rowoffset:-number,-columnoffset:-number)"></a>getOffsetRange(rowOffset: number, columnOffset: number)
 Obtiene un objeto que representa un intervalo desplazado con respecto al intervalo especificado. La dimensión del intervalo devuelto coincidirá con este intervalo. Si el intervalo resultante se fuerza fuera de los límites de la cuadrícula de la hoja de cálculo, se producirá una excepción.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getOffsetRange(rowOffset, columnOffset);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |rowOffset|number|Número de filas (número positivo, negativo o 0) que debe desplazarse el intervalo. Los valores positivos desplazan hacia abajo, mientras que los negativos lo hacen hacia arriba.|
 |columnOffset|number|Número de columnas (número positivo, negativo o 0) que debe desplazarse el intervalo. Los valores positivos desplazan hacia la derecha, mientras que los negativos lo hacen hacia la izquierda.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -498,23 +498,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getRow(row: number)
+### <a name="getrow(row:-number)"></a>getRow(row: number)
 Obtiene una fila contenida en el intervalo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getRow(row);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |row|number|Número de fila del intervalo que se va a recuperar. Indizado con cero.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 
@@ -535,23 +535,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getUsedRange(valuesOnly: bool)
+### <a name="getusedrange(valuesonly:-bool)"></a>getUsedRange(valuesOnly: bool)
 Devuelve el intervalo usado del objeto de intervalo especificado.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getUsedRange(valuesOnly);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |valuesOnly|bool|Opcional. Si es verdadero, solo las celdas que tienen valores actualmente se consideran celdas usadas. El valor predeterminado, falso, cuenta todas las celdas que hayan tenido un valor en cualquier momento como usadas.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 
@@ -573,23 +573,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### insert(shift: string)
+### <a name="insert(shift:-string)"></a>insert(shift: string)
 Inserta una celda o un intervalo de celdas en la hoja de cálculo en lugar de este intervalo y desplaza las demás celdas para crear espacio. Devuelve un objeto Range en el espacio que queda en blanco.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.insert(shift);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |Shift|string|Especifica hacia dónde se desplazarán las celdas.  Los valores posibles son: Down, Right|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
     
@@ -609,39 +609,39 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-### merge(across: bool)
+### <a name="merge(across:-bool)"></a>merge(across: bool)
 Combina las celdas del rango en una región de la hoja de cálculo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.merge(across);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |across|bool|Opcional. Verdadero para que se combinen las celdas de cada fila del rango especificado como celdas combinadas distintas. El valor predeterminado es falso.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";
@@ -658,21 +658,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### select()
+### <a name="select()"></a>select()
 Selecciona el intervalo especificado en la interfaz de usuario de Excel.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.select();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 
@@ -692,21 +692,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### unmerge()
+### <a name="unmerge()"></a>unmerge()
 Separa las celdas del rango de celdas combinadas en celdas separadas.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.unmerge();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";
@@ -722,7 +722,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 En este ejemplo se usa la dirección del intervalo para obtener el objeto de intervalo.
 

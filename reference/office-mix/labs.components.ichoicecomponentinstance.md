@@ -1,7 +1,7 @@
 
-# Labs.Components.IChoiceComponentInstance
+# <a name="labs.components.ichoicecomponentinstance"></a>Labs.Components.IChoiceComponentInstance
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Una instancia de un componente de elección.
 
@@ -10,7 +10,7 @@ interface IChoiceComponentInstance extends Labs.Core.IComponentInstance
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |Nombre|Descripción|

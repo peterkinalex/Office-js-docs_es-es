@@ -1,5 +1,5 @@
 
-# Transferir localmente complementos de Office en Office Online para pruebas
+# <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Transferir localmente complementos de Office en Office Online para pruebas
 
 Puede instalar un complemento de Office para realizar pruebas sin tener que colocarlo primero en un catálogo de complementos con una instalación de prueba. La instalación de prueba se puede realizar en Office 365 o en Office Online. El procedimiento es ligeramente distinto para las dos plataformas. 
 
@@ -9,7 +9,7 @@ Cuando se transfiere localmente un complemento, el manifiesto de este se almacen
  >**Nota**  Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Transferir localmente complementos de Outlook para pruebas](sideload-outlook-add-ins-for-testing.md).
 
 
-## Sideload an Office Add-in on Office 365
+## <a name="sideload-an-office-add-in-on-office-365"></a>Sideload an Office Add-in on Office 365
 
 
 1. Inicie sesión en su cuenta de Office 365.
@@ -29,7 +29,7 @@ Cuando se transfiere localmente un complemento, el manifiesto de este se almacen
 6. Verify that your complemento is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in the pane should appear.
     
 
-## Transferir localmente un complemento de Office en Office Online
+## <a name="sideload-an-office-add-in-on-office-online"></a>Transferir localmente un complemento de Office en Office Online
 
 
 

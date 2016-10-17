@@ -1,5 +1,5 @@
 
-# Requisitos para ejecutar complementos de Office
+# <a name="requirements-for-running-office-add-ins"></a>Requisitos para ejecutar complementos de Office
 
 
 En este artículo se describen los requisitos de software y de dispositivo para ejecutar complementos de Office.
@@ -7,7 +7,7 @@ En este artículo se describen los requisitos de software y de dispositivo para 
 >**Nota:** Para consultar una lista detallada de dónde se pueden usar actualmente los complementos de Office, vea la página [Disponibilidad de plataformas y hosts de los complementos de Office](http://dev.office.com/add-in-availability). 
 
 
-## Requisitos de servidor
+## <a name="server-requirements"></a>Requisitos de servidor
 
 Para poder instalar y ejecutar cualquier Complemento de Office., primero debe implementar los archivos de manifiesto y página web para la interfaz de usuario y el código de su complemento en las ubicaciones de servidor correspondientes.
 
@@ -25,7 +25,7 @@ Para probar y ejecutar un complemento de Outlook, la cuenta de correo electróni
 
 
 
-## Requisitos del cliente: dispositivo de escritorio y tableta con Windows
+## <a name="client-requirements:-windows-desktop-and-tablet"></a>Requisitos de cliente: dispositivo de escritorio y tableta con Windows
 
 Para desarrollar un Complemento de Office, se necesita el siguiente software en los clientes de escritorio de Office o clientes web que ejecuten dispositivos de escritorio, portátiles o tabletas basados en Windows:
 
@@ -43,7 +43,7 @@ Para desarrollar un Complemento de Office, se necesita el siguiente software en 
 - Un editor de HTML y JavaScript, como el Bloc de notas, [Visual Studio y Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs) o una herramienta de desarrollo web de terceros.
 
 
-## Requisitos de cliente: escritorio de OS X
+## <a name="client-requirements:-os-x-desktop"></a>Requisitos de cliente: escritorio de OS X
 
 Outlook para Mac, que se distribuye como parte de Office 365, admite complementos de Outlook. La ejecución de complementos de Outlook en Outlook para Mac tiene los mismos requisitos que el propio Outlook para Mac: el sistema operativo debe ser como mínimo OS X v10.10 "Yosemite". Ya que Outlook para Mac usa WebKit como motor de diseño para presentar las páginas del complemento, no existen dependencias de explorador adicionales.
 
@@ -52,12 +52,12 @@ Estas son las versiones mínimas del cliente de Office para Mac que admiten comp
 - Excel para Mac versión 15.19 (160206) 
 - PowerPoint para Mac versión 15.24 (160614)
 
-## Requisitos del cliente: compatibilidad del explorador con clientes web de Office Online y SharePoint
+## <a name="client-requirements:-browser-support-for-office-online-web-clients-and-sharepoint"></a>Requisitos de cliente: compatibilidad del explorador con clientes web de Office Online y SharePoint
 
 Cualquier explorador que admita ECMAScript 5.1, HTML5 y CSS3, como Internet Explorer 9, Chrome 13, Firefox 5, Safari 5.0.6 o una versión posterior de estos exploradores.
 
 
-## Requisitos de cliente: smartphone y tabletas sin Windows
+## <a name="client-requirements:-non-windows-smartphone-and-tablet"></a>Requisitos de cliente: smartphone y tabletas sin Windows
 
 Se necesita el siguiente software para probar y ejecutar complementos de Outlook específicamente para OWA para dispositivos y Outlook Web App cuando se ejecutan en un explorador en smartphones o tabletas que no son Windows.
 
@@ -70,8 +70,8 @@ Se necesita el siguiente software para probar y ejecutar complementos de Outlook
 |Outlook Web App|iPhone 4, iPad 2, iPod Touch 4 o versiones posteriores|iOS 5 o posterior|En Office 365, Exchange Online o localmente en Exchange Server 2013 o posterior|Safari|
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
-- [Información general sobre la plataforma de complementos de Office](../../docs/overview/office-add-ins.md)
+- [Office Add-ins platform overview (Información general sobre la plataforma de complementos para Office)](../../docs/overview/office-add-ins.md)
 - [Disponibilidad de plataformas y hosts de los complementos de Office](http://dev.office.com/add-in-availability)
 

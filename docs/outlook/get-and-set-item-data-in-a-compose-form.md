@@ -1,11 +1,11 @@
 
-# Obtener y definir datos de elementos en un formulario de redacción de Outlook
+# <a name="get-and-set-item-data-in-a-compose-form-in-outlook"></a>Obtener y definir datos de elementos en un formulario de redacción de Outlook
 Aprenda a obtener o establecer varias propiedades de un elemento en un complemento de Outlook de un escenario de redacción, incluidos los destinatarios, el asunto, el cuerpo, la hora y la ubicación de la cita.
 
 
 
 
-## Obtener y configurar propiedades de elemento para un complemento de redacción
+## <a name="getting-and-setting-item-properties-for-a-compose-add-in"></a>Obtener y configurar propiedades de elemento para un complemento de redacción
 
 
 En un formulario de redacción, puede obtener la mayoría de las propiedades expuestas en el mismo tipo de elemento que en un formulario de lectura (como asistentes, destinatarios, asunto y cuerpo), y también algunas propiedades adicionales que solo son relevantes en un formulario de redacción, pero no en uno de lectura (cuerpo, CCO). 
@@ -15,25 +15,25 @@ Para la mayoría de estas propiedades, como es posible que un complemento de Out
 Además de obtener acceso a propiedades de elemento en la API de JavaScript para Office, también puede tener acceso a propiedades de nivel de elemento mediante los servicios Web Exchange (EWS). Con el permiso  **ReadWriteMailbox** puede usar el método [mailbox.makeEwsRequestAsync](../../reference/outlook/Office.context.mailbox.md) para obtener acceso a las operaciones de EWS, [GetItem](http://msdn.microsoft.com/en-us/library/e3590b8b-c2a7-4dad-a014-6360197b68e4%28Office.15%29.aspx) y [UpdateItem](http://msdn.microsoft.com/en-us/library/5d027523-e0bc-4da2-b60b-0cb9fc1fdfe4%28Office.15%29.aspx) para obtener y establecer más propiedades de uno o varios elementos en el buzón del usuario. **makeEwsRequestAsync** está disponible tanto en formularios de redacción como de lectura. Si quiere más información sobre el permiso **ReadWriteMailbox** y sobre el acceso a EWS a través de la plataforma de Complementos de Office, vea [Especificar permisos para el acceso de los complementos de Outlook al buzón del usuario](../outlook/understanding-outlook-add-in-permissions.md) y [Llamar a servicios web desde un complemento de Outlook](../outlook/web-services.md).
 
 
-**Tabla 1. Métodos asincrónicos para obtener o establecer propiedades de elemento en un formulario de redacción**
+**Tabla 1: Métodos asincrónicos para obtener o establecer propiedades de elemento en un formulario de redacción**
 
 
 |**Propiedad**|**Tipo de propiedad**|**Método asincrónico para obtener**|**Métodos asincrónicos para establecer**|
 |:-----|:-----|:-----|:-----|
-|[bcc](../../reference/outlook/Office.context.mailbox.item.md)|[Destinatarios](../../reference/outlook/Recipients.md)|[Recipients.getAsync](../../reference/outlook/Recipients.md)|[Recipients.addAsync](../../reference/outlook/Recipients.md)[Recipients.setAsync](../../reference/outlook/Recipients.md)|
-|[cuerpo](../../reference/outlook/Office.context.mailbox.item.md)|[Body](../../reference/outlook/Body.md)|[Body.getAsync](../../reference/outlook/Body.md)|[Body.prependAsync](../../reference/outlook/Body.md)[Body.setAsync](../../reference/outlook/Body.md)[Body.setSelectedDataAsync](../../reference/outlook/Body.md)|
-|[cc](../../reference/outlook/Office.context.mailbox.item.md)|Destinatarios|Recipients.getAsync|Recipients.addAsync Recipients.setAsync|
-|[fin](../../reference/outlook/Office.context.mailbox.item.md)|[Hora](../../reference/outlook/Time.md)|[Time.getAsync](../../reference/outlook/Time.md)|[Time.setAsync](../../reference/outlook/Time.md)|
-|[location](../../reference/outlook/Office.context.mailbox.item.md)|[Ubicación](../../reference/outlook/Location.md)|[Location.getAsync](../../reference/outlook/Location.md)|[Location.setAsync](../../reference/outlook/Location.md)|
-|[optionalAttendees](../../reference/outlook/Office.context.mailbox.item.md)|Destinatarios|Recipients.getAsync|Recipients.addAsync Recipients.setAsync|
-|[requiredAttendees](../../reference/outlook/Office.context.mailbox.item.md)|Destinatarios|Recipients.getAsync|Recipients.addAsync Recipients.setAsync|
-|[empezar](../../reference/outlook/Office.context.mailbox.item.md)|Hora|Time.getAsync|Time.setAsync|
-|[subject](../../reference/outlook/Office.context.mailbox.item.md)|[Tema](../../reference/outlook/Subject.md)|[Subject.getAsync](../../reference/outlook/Subject.md)|[Subject.setAsync](../../reference/outlook/Subject.md)|
-|[a](../../reference/outlook/Office.context.mailbox.item.md)|Destinatarios|Recipients.getAsync|Recipients.addAsync Recipients.setAsync|
+|[bcc](../../reference/outlook/Office.context.mailbox.item.md)|[Recipients](../../reference/outlook/Recipients.md)|[Recipients.getAsync](../../reference/outlook/Recipients.md)|[Recipients.addAsync](../../reference/outlook/Recipients.md)[Recipients.setAsync](../../reference/outlook/Recipients.md)|
+|[body](../../reference/outlook/Office.context.mailbox.item.md)|[Body](../../reference/outlook/Body.md)|[Body.getAsync](../../reference/outlook/Body.md)|[Body.prependAsync](../../reference/outlook/Body.md)[Body.setAsync](../../reference/outlook/Body.md)[Body.setSelectedDataAsync](../../reference/outlook/Body.md)|
+|[cc](../../reference/outlook/Office.context.mailbox.item.md)|Recipients|Recipients.getAsync|Recipients.addAsync Recipients.setAsync|
+|[end](../../reference/outlook/Office.context.mailbox.item.md)|[Time](../../reference/outlook/Time.md)|[Time.getAsync](../../reference/outlook/Time.md)|[Time.setAsync](../../reference/outlook/Time.md)|
+|[location](../../reference/outlook/Office.context.mailbox.item.md)|[Location](../../reference/outlook/Location.md)|[Location.getAsync](../../reference/outlook/Location.md)|[Location.setAsync](../../reference/outlook/Location.md)|
+|[optionalAttendees](../../reference/outlook/Office.context.mailbox.item.md)|Recipients|Recipients.getAsync|Recipients.addAsync Recipients.setAsync|
+|[requiredAttendees](../../reference/outlook/Office.context.mailbox.item.md)|Recipients|Recipients.getAsync|Recipients.addAsync Recipients.setAsync|
+|[start](../../reference/outlook/Office.context.mailbox.item.md)|Time|Time.getAsync|Time.setAsync|
+|[subject](../../reference/outlook/Office.context.mailbox.item.md)|[Subject](../../reference/outlook/Subject.md)|[Subject.getAsync](../../reference/outlook/Subject.md)|[Subject.setAsync](../../reference/outlook/Subject.md)|
+|[to](../../reference/outlook/Office.context.mailbox.item.md)|Recipients|Recipients.getAsync|Recipients.addAsync Recipients.setAsync|
 
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
@@ -43,7 +43,7 @@ Además de obtener acceso a propiedades de elemento en la API de JavaScript para
     
 - [Llamar a servicios web desde un complemento de Outlook](../outlook/web-services.md)
     
-- [Obtención y definición de datos de elementos de Outlook en los formularios de lectura o redacción](../outlook/item-data.md)
+- [Obtener y establecer datos de elementos en formularios de lectura o redacción](../outlook/item-data.md)
     
 
 

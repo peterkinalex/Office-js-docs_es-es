@@ -1,9 +1,9 @@
 
-# API de complementos de Outlook
+# <a name="outlook-add-in-apis"></a>API de complementos de Outlook
 
 Para usar las API en el complemento de Outlook, debe especificar la ubicación de la biblioteca Office.js, el conjunto de requisitos, el esquema y los permisos.
 
-## Biblioteca Office.js
+## <a name="office.js-library"></a>Biblioteca Office.js
 
 Para interactuar con la API de complemento de Outlook es necesario usar las API de JavaScript en Office.js. La CDN para la biblioteca es _https://appsforoffice.microsoft.com/lib/1/hosted/Office.js_. Los complementos enviados a la Tienda Office tienen que hacer referencia a Office.js con esta CDN, no pueden usar una referencia local. 
 
@@ -18,7 +18,7 @@ A medida que agregamos nuevas API, la dirección URL de Office.js seguirá siend
 
 > **Importante:** Al desarrollar un complemento para una aplicación host de Office, haga referencia a la API de JavaScript para Office desde dentro de la sección `<head>` de la página. Esto garantiza que la API se inicializa por completo antes de los elementos body. Los hosts de Office necesitan que los complementos se inicialicen 5 segundos después de la activación. Al superar este umbral, el complemento no responde y se muestra un mensaje de error al usuario.  
 
-## Conjuntos de requisitos
+## <a name="requirement-sets"></a>Conjuntos de requisitos
 
 Todas las API de Outlook pertenecen al conjunto de requisitos del buzón. El conjunto de requisitos del buzón tiene versiones y cada nuevo conjunto de API que publicamos pertenece a una versión posterior del conjunto. No todos los clientes de Outlook admitirán el conjunto más reciente de API cuando lo publiquemos. Pero, si un cliente de Outlook declara la compatibilidad con un conjunto de requisitos, será compatible con todas las API de ese conjunto de requisitos. 
 
@@ -42,7 +42,7 @@ Especifique el conjunto de requisitos mínimo que admita el conjunto crítico de
 El elemento **Methods** no se aplica a los complementos de Outlook, por lo que no se puede declarar la compatibilidad para métodos específicos.
 
 
-## Permisos
+## <a name="permissions"></a>Permisos
 
 El complemento necesita los permisos adecuados para usar las API que necesita. Hay cuatro niveles de permisos, que se resumen a continuación. Para más información, vea [Información sobre los permisos del complemento de Outlook](../outlook/understanding-outlook-add-in-permissions.md).
 
@@ -56,7 +56,7 @@ El complemento necesita los permisos adecuados para usar las API que necesita. H
 En general, tiene que especificar el permiso mínimo necesario para el complemento. Los permisos se declaran en el elemento **Permissions** del manifiesto. Para más información, vea [Manifiestos de complementos de Outlook](../outlook/manifests/manifests.md). Para obtener información sobre problemas de seguridad, vea [Privacidad, permisos y seguridad para los complementos de Outlook](../outlook/../../docs/develop/privacy-and-security.md).
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 - [Manifiestos de complementos de Outlook](../outlook/manifests/manifests.md)
 

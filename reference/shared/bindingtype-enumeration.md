@@ -1,5 +1,5 @@
 
-# Enumeración BindingType
+# <a name="bindingtype-enumeration"></a>Enumeración BindingType
  Especifica el tipo de objeto de enlace que se debería devolver.
 
 |||
@@ -12,7 +12,7 @@ Office.BindingType
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Valores**
@@ -24,7 +24,7 @@ Office.BindingType
 |Office.BindingType.Table|"table"|Datos tabuladores con una fila de encabezado. Se devuelven los datos como un objeto [TableData](../../reference/shared/tabledata.md).|
 |Office.BindingType.Text|"text"|Texto sin formato. Se devuelven los datos con una sucesión de caracteres.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -39,15 +39,15 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|:-----|:-----|
 |**Access**|v|||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

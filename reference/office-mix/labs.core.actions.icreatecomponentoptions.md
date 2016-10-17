@@ -1,7 +1,7 @@
 
-# Labs.Core.Actions.ICreateComponentOptions
+# <a name="labs.core.actions.icreatecomponentoptions"></a>Labs.Core.Actions.ICreateComponentOptions
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Crea un nuevo componente.
 
@@ -10,7 +10,7 @@ interface ICreateComponentOptions extends Core.IActionOptions
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||

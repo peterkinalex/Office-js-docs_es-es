@@ -1,11 +1,11 @@
 
-# Cargar el DOM y el entorno de tiempo de ejecución
+# <a name="loading-the-dom-and-runtime-environment"></a>Cargar el DOM y el entorno de tiempo de ejecución
 
 
 
 Un complemento debe asegurarse de que el DOM y el entorno en tiempo de ejecución de las Complementos de Office están cargados antes de ejecutar su propia lógica personalizada. 
 
-## Inicio de un complemento de panel de tareas o de contenido
+## <a name="startup-of-a-content-or-task-pane-add-in"></a>Inicio de un complemento de panel de tareas o de contenido
 
 En la ilustración siguiente se muestra el flujo de eventos relacionados con el inicio de un complemento de panel de tareas o de contenido en Excel, PowerPoint, Project, Word o Access.
 
@@ -30,7 +30,7 @@ Los eventos siguientes se producen cuando se inicia un complemento de panel de t
 6. Cuando finaliza la carga del DOM y el cuerpo HTML, y el complemento termina de inicializarse, la función principal del complemento puede continuar.
     
 
-## Inicio de un complemento de Outlook
+## <a name="startup-of-an-outlook-add-in"></a>Inicio de un complemento de Outlook
 
 
 
@@ -57,7 +57,7 @@ Los eventos siguientes se producen cuando se inicia un complemento de Outlook:
 7. Cuando el DOM y el cuerpo HTML terminan de cargarse y el complemento termina de inicializarse, la función principal del complemento puede continuar.
     
 
-## Comprobación del estado de carga
+## <a name="checking-the-load-status"></a>Comprobación del estado de carga
 
 
 Una manera de comprobar que tanto el DOM como el entorno de tiempo de ejecución de los terminaron de cargarse es usar la función jQuery [.ready()](http://api.jquery.com/ready/):  `$(document).ready()`. Por ejemplo, la siguiente función del controlador de eventos  **initialize** comprueba que el DOM se cargue antes de que se ejecute el código específico para inicializar el complemento. Luego el controlador de eventos **initialize** usa la propiedad [mailbox.item](../../reference/outlook/Office.context.mailbox.item.md) para obtener el elemento que está seleccionado en Outlook y llama a la función principal del complemento, `initDialer`.
@@ -94,7 +94,7 @@ Si no incluye un controlador de eventos  **Office.initialize**, el complemento p
 Si su complemento incluye más de una página, cada vez que carga una nueva página, esta debe incluir o llamar a un controlador de eventos  **Office.initialize**.
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

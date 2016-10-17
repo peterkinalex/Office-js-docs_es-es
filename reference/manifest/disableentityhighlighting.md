@@ -1,11 +1,11 @@
 
-# Elemento DisableEntityHighlighting
+# <a name="disableentityhighlighting-element"></a>Elemento DisableEntityHighlighting
 Especifica si se debe desactivar el resaltado de entidades para su complemento de correo.
 
  **Tipo de complemento:** correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,7 +13,7 @@ Especifica si se debe desactivar el resaltado de entidades para su complemento d
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 

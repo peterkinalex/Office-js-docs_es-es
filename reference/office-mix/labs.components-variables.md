@@ -1,12 +1,12 @@
 
-# Variables de Labs.Components
-Declaraciones de variable para el módulo Lab.Components.
+# <a name="labs.components-variables"></a>Variables de Labs.Components
+Declaraciones de variables para el módulo Lab.Components.
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Proporcionamos las declaraciones y descripciones para las variables del módulo Lab.Components de la API de LabsJS. De hecho, estas variables simplemente son constantes que usamos para definir los tipos respectivos.
 
-## Variables
+## <a name="variables"></a>Variables
 
 
 |**Nombre**|**Descripción**|

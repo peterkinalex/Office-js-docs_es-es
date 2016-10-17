@@ -1,5 +1,5 @@
 
-# Usar las reglas de activación de las expresiones regulares para mostrar un complemento de Outlook
+# <a name="use-regular-expression-activation-rules-to-show-an-outlook-add-in"></a>Usar las reglas de activación de las expresiones regulares para mostrar un complemento de Outlook
 
 Puede especificar reglas de expresiones regulares para que un complemento de Outlook se active en escenarios de lectura. Cuando el usuario vea un mensaje o una cita en el inspector o en el panel de lectura, Outlook evaluará las reglas de expresión regular para determinar si tiene que activar el complemento de correo. Outlook no evalúa estas reglas mientras el usuario redacta un elemento. Existen otros escenarios en los que Outlook no activa complementos (por ejemplo, si los elementos se encuentran protegidos con Information Rights Management [IRM] o en la carpeta Correo no deseado). Para más información, vea [Reglas de activación para complementos de Outlook](../outlook/manifests/activation-rules.md).
 
@@ -15,7 +15,7 @@ Si lo desea, puede especificar una expresión regular como parte de una regla [I
 |<|Signo de menor que|&amp;lt;|
 |>|Signo de mayor que|&amp;gt;|
 
-## Regla ItemHasRegularExpressionMatch
+## <a name="itemhasregularexpressionmatch-rule"></a>Regla ItemHasRegularExpressionMatch
 
 
 Una regla  **ItemHasRegularExpressionMatch** es útil para controlar la activación de un complemento en función de valores específicos de una propiedad admitida. La regla **ItemHasRegularExpressionMatch** tiene los siguientes atributos.
@@ -24,12 +24,12 @@ Una regla  **ItemHasRegularExpressionMatch** es útil para controlar la activaci
 
 |**Nombre del atributo**|**Descripción**|
 |:-----|:-----|
-|**RegExName**|Especifica el nombre de una expresión regular para que pueda hacer referencia a dicha expresión en el código de su complemento.|
+|**RegExName**|Especifica el nombre de una expresión regular para que pueda hacer referencia a dicha expresión en el código del complemento.|
 |**RegExValue**|Especifica la expresión regular que se evaluará para determinar si se debe mostrar el complemento.|
 |**PropertyName**|Especifica el nombre la propiedad con respecto a la cual se evaluará la expresión regular. Los valores permitidos son  **BodyAsHTML**,  **BodyAsPlaintext**,  **SenderSMTPAddress** y **Subject**. Si especifica  **BodyAsHTML**, Outlook aplica la expresión regular solo si el cuerpo del elemento es HTML; de lo contrario, Outlook no devuelve ningún resultado para dicha expresión regular. Dado que las citas siempre se guardan en formato de texto enriquecido, una expresión regular que especifica  **BodyAsHTML** no coincide con ninguna cadena del cuerpo de elementos de cita.Si especifica  **BodyAsPlaintext**, Outlook siempre aplica la expresión regular al cuerpo del elemento.|
-|**IgnoreCase**|Especifica si debe distinguirse entre mayúsculas y minúsculas al buscar resultados con la expresión regular especificada por  **RegExName**.|
+|**IgnoreCase**|Especifica si debe distinguirse entre mayúsculas y minúsculas al buscar resultados con la expresión regular especificada por **RegExName**.|
 
-### Procedimientos recomendados para usar expresiones regulares en reglas
+### <a name="best-practices-for-using-regular-expressions-in-rules"></a>Procedimientos recomendados para usar expresiones regulares en reglas
 
 Preste especial atención a lo siguiente cuando use expresiones regulares:
 
@@ -65,7 +65,7 @@ La misma regla no devuelve este resultado en Outlook Web App y OWA para disposit
 - En función de la aplicación host, el tipo de dispositivo o la propiedad a la que se aplica una expresión regular, existen otros procedimientos recomendados y límites para cada uno de los hosts que debe tener en cuenta al diseñar expresiones regulares como reglas de activación. Vea [Límites de activación y API de JavaScript para complementos de Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md) para más información.
     
 
-### Ejemplos
+### <a name="examples"></a>Ejemplos
 
 La siguiente regla  **ItemHasRegularExpressionMatch** activa el complemento siempre que la dirección de correo electrónico SMTP del remitente coincida con "@contoso", independientemente de si los caracteres están en mayúsculas o minúsculas.
 
@@ -106,7 +106,7 @@ La siguiente regla  **ItemHasRegularExpressionMatch** activa el complemento siem
 ```
 
 
-## Regla ItemHasKnownEntity
+## <a name="itemhasknownentity-rule"></a>Regla ItemHasKnownEntity
 
 
 Una regla  **ItemHasKnownEntity** activa un complemento en función de la existencia de una entidad en el asunto o cuerpo del elemento seleccionado. El tipo [KnownEntityType](http://msdn.microsoft.com/en-us/library/432d413b-9fcc-eb50-cfea-0ed10a43bd52%28Office.15%29.aspx) define las entidades admitidas. La aplicación de una expresión regular a una regla **ItemHasKnownEntity** es conveniente en aquellos casos en los que la activación se basa en un subconjunto de valores para una entidad (por ejemplo, un conjunto específico de direcciones URL o números de teléfono con un determinado prefijo regional).
@@ -122,11 +122,11 @@ La regla  **ItemHasKnownEntity** admite los atributos de la siguiente tabla. Ten
 |**Nombre del atributo**|**Descripción**|
 |:-----|:-----|
 |**EntityType**|Especifica el tipo de entidad que debe encontrarse para que la regla se evalúe como  **true**. Use varias reglas para especificar varios tipos de entidad.|
-|**RegExFilter**|Especifica una expresión regular que filtra aún más las instancias de la entidad especificada por  **EntityType**.|
-|**FilterName**|Especifica el nombre de la expresión regular especificada por  **RegExFilter**, de tal modo que es posible referirse a ella posteriormente con código.|
-|**IgnoreCase**|Especifica si debe distinguirse entre mayúsculas y minúsculas al buscar resultados con la expresión regular especificada por  **RegExFilter**.|
+|**RegExFilter**|Especifica una expresión regular que filtra aún más las instancias de la entidad especificada por **EntityType**.|
+|**FilterName**|Especifica el nombre de la expresión regular especificada por **RegExFilter**, de tal modo que es posible referirse a ella posteriormente con código.|
+|**IgnoreCase**|Especifica si debe distinguirse entre mayúsculas y minúsculas al buscar resultados con la expresión regular especificada por **RegExFilter**.|
 
-### Ejemplos
+### <a name="examples"></a>Ejemplos
 
 La siguiente regla  **ItemHasKnownEntity** activa el complemento siempre que haya una dirección URL en el asunto o cuerpo del elemento actual y la dirección URL contenga la cadena "youtube", independientemente de si está en mayúsculas o minúsculas.
 
@@ -140,7 +140,7 @@ La siguiente regla  **ItemHasKnownEntity** activa el complemento siempre que hay
 ```
 
 
-## Usar los resultados de expresiones regulares en el código
+## <a name="using-regular-expression-results-in-code"></a>Usar los resultados de expresiones regulares en el código
 
 
 Puede obtener resultados para una expresión regular usando los siguientes métodos en el elemento actual:
@@ -158,7 +158,7 @@ Cuando se evalúan las expresiones regulares, se devuelven los resultados al com
  >**Nota**  Un cliente enriquecido de Outlook no devuelve resultados en ningún orden específico en la matriz. Además, no debe dar por sentado que el cliente enriquecido de Outlook va a devolver resultados en el mismo orden en esta matriz que en Outlook Web App o OWA para dispositivos, aunque ejecute el mismo complemento en cada uno de estos clientes en el mismo elemento del mismo buzón. Para conocer otras diferencias a la hora de procesar expresiones regulares entre un cliente enriquecido de Outlook y Outlook Web App o OWA para dispositivos, vea [Límites de activación y API de JavaScript para complementos de Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md).
 
 
-### Ejemplos
+### <a name="examples"></a>Ejemplos
 
 El ejemplo siguiente es una colección de reglas que contiene una regla  **ItemHasRegularExpressionMatch** con una expresión regular de nombre `videoURL`.
 
@@ -226,7 +226,7 @@ var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName(CampSugg
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
@@ -238,5 +238,6 @@ var suggestions = Office.context.mailbox.item.getFilteredEntitiesByName(CampSugg
     
 - [Coincidencia de cadenas en un elemento de Outlook como entidades conocidas](../outlook/match-strings-in-an-item-as-well-known-entities.md)
     
-- [Procedimientos recomendados para expresiones regulares en .NET Framework](http://msdn.microsoft.com/en-us/library/618e5afb-3a97-440d-831a-70e4c526a51c%28Office.15%29.aspx)
+- 
+  [Procedimientos recomendados para expresiones regulares en .NET Framework](http://msdn.microsoft.com/en-us/library/618e5afb-3a97-440d-831a-70e4c526a51c%28Office.15%29.aspx)
     

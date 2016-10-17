@@ -1,18 +1,18 @@
 
-# Enumeración InitializationReason
+# <a name="initializationreason-enumeration"></a>Enumeración InitializationReason
 Especifica si el complemento se acaba de insertar o si se encontraba en el documento con anterioridad. 
 
 |||
 |:-----|:-----|
 |**Hosts:**|Excel, Project y Word|
-|**Agregado en**|1,0|
+|**Agregado en**|1.0|
 
 ```
 Office.InitializationReason
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Valores**
@@ -23,7 +23,7 @@ Office.InitializationReason
 |Office.InitializationReason.Inserted|"inserted"|El complemento se acaba de insertar en el documento.|
 |Office.InitializationReason.DocumentOpened|"documentOpened"|El complemento ya forma parte del documento abierto.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -42,11 +42,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

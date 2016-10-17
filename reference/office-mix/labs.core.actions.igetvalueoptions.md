@@ -1,7 +1,7 @@
 
-# Labs.Core.Actions.IGetValueOptions
+# <a name="labs.core.actions.igetvalueoptions"></a>Labs.Core.Actions.IGetValueOptions
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Opciones disponibles de la operación de obtención de valor.
 
@@ -10,7 +10,7 @@ interface IGetValueOptions extends Core.IActionOptions
 ```
 
 
-## Properties
+## <a name="properties"></a>Properties
 
 
 |||

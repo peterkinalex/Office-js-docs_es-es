@@ -1,5 +1,5 @@
 
-# Propiedad Binding.id
+# <a name="binding.id-property"></a>Propiedad Binding.id
 Obtiene el identificador del objeto.
 
 |||
@@ -12,12 +12,12 @@ var bindingID = bindingObj.id;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Una cadena que identifica de forma exclusiva a este enlace entre los enlaces que se encuentran en el mismo objeto [Document](../../reference/shared/document.md).
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -36,7 +36,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -51,16 +51,16 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
 |**Nivel de permisos mínimo**|[Restringido](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

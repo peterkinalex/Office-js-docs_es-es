@@ -1,5 +1,5 @@
 
-# Depurar complementos en Office Online
+# <a name="debug-add-ins-in-office-online"></a>Depurar complementos en Office Online
 
 
 Se pueden compilar y depurar complementos en un equipo que no ejecute Windows o con el cliente de escritorio de Office 2013 u Office 2016 (por ejemplo, si desarrolla en un equipo Mac). En este artículo se describe cómo usar Office Online para probar y depurar complementos. 
@@ -14,7 +14,7 @@ Para empezar:
 - Configure un catálogo de complementos en Office 365 (SharePoint Online). Un catálogo de complementos es una colección de sitios dedicada en SharePoint Online que contiene bibliotecas de documentos para los complementos de Office. Si dispone de su propio sitio de SharePoint, puede configurar una biblioteca de documentos de catálogo de complementos. Para obtener más información, consulte [Publicar complementos de panel de tareas y de contenido en un catálogo de complementos de SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
     
 
-## Depurar el complemento desde Excel Online o Word Online
+## <a name="debug-your-add-in-from-excel-online-or-word-online"></a>Depurar el complemento desde Excel Online o Word Online
 
 Para depurar el complemento mediante Office Online:
 
@@ -46,14 +46,16 @@ Para depurar el complemento mediante Office Online:
   - Si establece puntos de interrupción en el código, Office Online puede producir un error que indica que no se puede guardar.
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
-- [Procedimientos recomendados para desarrollar complementos para Office](../overview/add-in-development-best-practices.md)
+- [Procedimientos recomendados para desarrollar complementos de Office](../overview/add-in-development-best-practices.md)
     
-- [Directivas de validación para aplicaciones enviadas a la Tienda Office (versión 1.9)](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)
+- 
+  [Directivas de validación para aplicaciones enviadas a la Tienda Office (versión 1.9)](http://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe%28Office.15%29.aspx)
     
-- [Crear complementos y aplicaciones de la Tienda de Office efectivos](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx)
+- 
+  [Crear complementos y aplicaciones de la Tienda de Office efectivos](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx)
     
 - [Solucionar errores de usuario con los complementos de Office](../testing/testing-and-troubleshooting.md)
     

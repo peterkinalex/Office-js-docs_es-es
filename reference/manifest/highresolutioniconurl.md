@@ -1,11 +1,11 @@
 
-# Elemento HighResolutionIconUrl
+# <a name="highresolutioniconurl-element"></a>Elemento HighResolutionIconUrl
 Especifica la dirección URL de la imagen que se usa para representar su complemento de Office en la UX de inserción y la Tienda Office en pantallas con valores altos de PPP. 
 
  **Tipo de complemento:** Contenido, panel de tareas, correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,20 +13,20 @@ Especifica la dirección URL de la imagen que se usa para representar su complem
 ```
 
 
-## Puede contener:
+## <a name="can-contain:"></a>Puede contener:
 
 [Override](../../reference/manifest/override.md)
 
 
-## Atributos
+## <a name="attributes"></a>Atributos
 
 
 
-|**Atributo**|**Tipo**|**Necesario**|**Descripción**|
+|**Atributo**|**Tipo**|**Obligatorio**|**Descripción**|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|cadena (URL)|necesario|Especifica el valor predeterminado de esta opción, expresado para la configuración regional especificada en el elemento [DefaultLocale](../../reference/manifest/defaultlocale.md).|
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Para un complemento de correo, se muestra el icono en la interfaz de usuario **Archivo**  >  **Administrar complementos**. Para un complemento de contenido o panel de tareas, se muestra el icono en la interfaz de usuario **Insertar**  >  **Complementos**.
 

@@ -1,9 +1,9 @@
 
-# LabsJS lab components
+# <a name="labsjs-lab-components"></a>LabsJS lab components
 
 Labs.js proporciona cuatro tipos de componente que puede usar para montar su laboratorio. Cada tipo de componente admite un tipo específico de interacción de laboratorio (por ejemplo, problemas de varias opciones, problemas de respuesta libre o actividades, como ver páginas web en el iframe HTML de la lección).
 
-## Componentes
+## <a name="components"></a>Componentes
 
 Office Mix es compatible con los cuatro siguientes tipos de componentes de laboratorio: 
 
@@ -17,7 +17,7 @@ Office Mix es compatible con los cuatro siguientes tipos de componentes de labor
 -  **Dynamic component** ( **IDynamicComponent**). Generates other component types at runtime. Use this component type when you have branching questions, for example, where follow-up component types vary depending on a previous user input. This type also enables creating quiz banks or generating problems at runtime. For more information, see [Labs.Components.DynamicComponentInstance](../../../reference/office-mix/labs.components.dynamiccomponentinstance.md).
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
@@ -25,5 +25,5 @@ Office Mix es compatible con los cuatro siguientes tipos de componentes de labor
     
 - [Configurar y editar laboratorios de LabsJS para Office Mix](../../powerpoint/office-mix/configuring-and-editing-labsjs-labs-for-office-mix.md)
     
-- [Tutorial: Crear su primer laboratorio para Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
+- [Tutorial: Crear el primer laboratorio para Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
     

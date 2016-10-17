@@ -1,11 +1,11 @@
 
-# Límites de recursos y optimización de rendimiento para los complementos de Office
+# <a name="resource-limits-and-performance-optimization-for-office-add-ins"></a>Límites de recursos y optimización de rendimiento para los complementos de Office
 
 
 
 Para crear la mejor experiencia para los usuarios, asegúrese de que su Office Add-in funcione dentro de límites específicos para el uso del núcleo de CPU y de la memoria, la confiabilidad y, en el caso de los complementos de Outlook, el tiempo de respuesta para evaluar expresiones regulares. Estos límites del uso de recursos de tiempo de ejecución se aplican a los complementos que se ejecutan en clientes de Office para Windows y OS X, pero no a Office Online, Outlook Web App ni OWA para dispositivos. También puede optimizar el rendimiento de sus complementos en dispositivos móviles y de escritorio optimizando el uso de recursos en el diseño y la implementación de los complementos.
 
-## Límites de uso de recursos para complementos
+## <a name="resource-usage-limits-for-add-ins"></a>Límites de uso de recursos para complementos
 
 
 Los límites de uso de recursos de tiempo de ejecución se aplican a todos los tipos de Office Add-ins. Estos límites ayudan a garantizar el rendimiento para sus usuarios y mitigar los ataques por denegación de servicio. Asegúrese de probar su Complemento de Office en la aplicación host de destino con una amplia gama de datos posibles y mida su rendimiento con los siguientes límites de uso de tiempo de ejecución:
@@ -53,7 +53,7 @@ Los límites de uso de recursos de tiempo de ejecución se aplican a todos los t
   - No aceptar más alertas de superación de ese umbral. Lo ideal sería que el usuario eliminara el complemento del documento, dado que continuar con el complemento podría provocar errores de estabilidad y rendimiento.
     
 
-## Comprobación de los problemas de uso de recursos en el Registro de telemetría
+## <a name="verifying-resource-usage-issues-in-the-telemetry-log"></a>Comprobación de los problemas de uso de recursos en el Registro de telemetría
 
 
 Office proporciona un Registro de telemetría que mantiene un registro de determinados eventos (carga, apertura, cierre y errores) de las soluciones de Office que se ejecutan en el equipo local, incluidos los problemas de uso de recursos de una Complemento de Office. Si ha configurado el Registro de telemetría, puede usar Excel para abrir el Registro de telemetría en la siguiente ubicación predeterminada de su unidad local:
@@ -64,15 +64,15 @@ Para cada evento de un complemento que sigue el Registro de telemetría, está l
 
 
 
-|**Fecha/Hora**|**Id. de evento**|**Severity**|**Título**|**Archivo**|**Id.**|**Aplicación**|
+|**Fecha y hora**|**Id. de evento**|**Gravedad**|**Título**|**Archivo**|**ID**|**Aplicación**|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
-|10/8/2012 5:57:10 p. m.|7||El manifiesto del complemento se descargó correctamente|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
+|8/10/2012 5:57:10 p. m.|7||El manifiesto del complemento se descargó correctamente|Who's Who|69cc567c-6737-4c49-88dd-123334943a22|Outlook|
 |10/8/2012 5:57:01 p. m.|7||El manifiesto del complemento se descargó correctamente|LinkedIn|333bf46d-7dad-4f2b-8cf4-c19ddc78b723|Outlook|
  La siguiente tabla contiene los eventos de las Complementos de Office que sigue el Registro de telemetría en general.
 
 
 
-|**Id. de evento**|**Título**|**Severity**|**Descripción**|
+|**Id. de evento**|**Título**|**Gravedad**|**Descripción**|
 |:-----|:-----|:-----|:-----|
 |7|El manifiesto del complemento se descargó correctamente||El manifiesto de la Complemento de Office se cargó correctamente y la aplicación host lo leyó correctamente.|
 |8|No se pudo descargar el manifiesto del complemento|Crítico|La aplicación host no pudo cargar el archivo de manifiesto de la Complemento de Office desde el catálogo de SharePoint, el catálogo corporativo o la Tienda Office.|
@@ -85,7 +85,7 @@ Para cada evento de un complemento que sigue el Registro de telemetría, está l
 Para obtener más información, consulte [Implementación del Panel de telemetría](http://msdn.microsoft.com/en-us/library/f69cde72-689d-421f-99b8-c51676c77717%28Office.15%29.aspx) y [Solución de problemas de los archivos de Office y soluciones personalizadas con el registro de telemetría](http://msdn.microsoft.com/library/ef88e30e-7537-488e-bc72-8da29810f7aa%28Office.15%29.aspx)
 
 
-## Técnicas de diseño e implementación
+## <a name="design-and-implementation-techniques"></a>Técnicas de diseño e implementación
 
 
 Si bien los límites de recursos para el uso de la CPU y la memoria, la tolerancia de bloqueos y la respuesta de la interfaz de usuario se aplican a las Complementos de Office cuando se ejecutan solo en clientes enriquecidos, la optimización del uso de estos recursos y de la batería debe ser una prioridad si desea que el complemento tenga un rendimiento satisfactorio en todos los clientes y dispositivos compatibles. La optimización es particularmente importante si el complemento realiza operaciones de ejecución prolongada o administra grandes conjuntos de datos. En la siguiente lista se sugieren algunas técnicas para dividir las operaciones con uso intensivo de datos o CPU en fragmentos más pequeños para que el complemento pueda evitar el consumo excesivo de recursos y la aplicación host pueda seguir respondiendo con normalidad:
@@ -93,7 +93,7 @@ Si bien los límites de recursos para el uso de la CPU y la memoria, la toleranc
 
 - En un escenario en el que el complemento necesita leer un gran volumen de datos de un conjunto de datos sin enlazar, puede aplicar la paginación cuando se leen los datos de una tabla o reducir el tamaño de los datos en operaciones de lectura más breves, en lugar de intentar completar la lectura en una sola operación. 
     
-    Para un ejemplo de código JavaScript y jQuery que muestra la interrupción de una serie de operaciones de entrada y salida potencialmente prolongada y que consume muchos recursos de CPU, consulte [¿Cómo puedo dar volver a dar control (brevemente) al explorador durante procesamiento intensivo de JavaScript?](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Este ejemplo usa el método [setTimeout](http://msdn.microsoft.com/en-us/library/ie/ms536753%28v=vs.85%29.aspx) del objeto global para limitar la duración de entrada y salida. También controla los datos en fragmentos definidos en lugar de datos sin delimitar de forma aleatoria.
+    Para un ejemplo de código JavaScript y jQuery que muestra la interrupción de una serie de operaciones de entrada y salida potencialmente prolongada y que consume muchos recursos de CPU, consulte [¿Cómo puedo devolver el control (brevemente) al explorador durante procesamiento intensivo de JavaScript?](http://stackoverflow.com/questions/210821/how-can-i-give-control-back-briefly-to-the-browser-during-intensive-javascript). Este ejemplo usa el método [setTimeout](http://msdn.microsoft.com/en-us/library/ie/ms536753%28v=vs.85%29.aspx) del objeto global para limitar la duración de entrada y salida. También controla los datos en fragmentos definidos en lugar de datos sin delimitar de forma aleatoria.
     
 - Si el complemento usa un algoritmo con uso intensivo de CPU para procesar un gran volumen de datos, puede usar Web Workers para realizar la tarea de ejecución prolongada en segundo plano mientras se ejecuta un script individual en primer plano, como mostrar el progreso en la interfaz de usuario. Los Web Workers no bloquean las actividades del usuario y permiten que la página HTML siga respondiendo con normalidad. Para ver un ejemplo de Web Workers, vea [Introducción a los Web Workers](http://www.mdl5rocks.com/en/tutorials/workers/basics/). Vea [Web Workers](http://msdn.microsoft.com/en-us/library/IE/hh772807%28v=vs.85%29.aspx) para obtener más información sobre la API de Web Workers de Internet Explorer.
     
@@ -102,7 +102,7 @@ Si bien los límites de recursos para el uso de la CPU y la memoria, la toleranc
 - Pruebe el complemento con el mayor volumen de datos esperado y restrinja el procesamiento que puede realizar el complemento hasta ese límite.
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

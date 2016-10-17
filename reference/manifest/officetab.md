@@ -1,18 +1,18 @@
-# Elemento OfficeTab
+# <a name="officetab-element"></a>Elemento OfficeTab
 Define la ficha de la cinta en la que aparece el comando del complemento. Puede ser la pestaña predeterminada (**Inicio**, **Mensaje** o **Reunión**), o una pestaña personalizada definida por el complemento. Se requiere este elemento.
 
-## Elementos secundarios
+## <a name="child-elements"></a>Elementos secundarios
 |  Elemento |  Obligatorio  |  Descripción  |
 |:-----|:-----|:-----|
 |  Grupo      | Sí |  Define un grupo de comandos. Solo se puede agregar un grupo por cada complemento a la ficha predeterminada.  |
 
 
-Los siguientes valores son `id` valores de ficha válidos por host: Los valores en **negrita** son compatibles en el escritorio y en línea (por ejemplo, Word 2016 para Windows y Word Online). 
+Los siguientes valores son valores `id` de pestaña válidos por host: Los valores en **negrita** son compatibles en el escritorio y en línea (por ejemplo, Word 2016 para Windows y Word Online). 
 
-### Outlook 
+### <a name="outlook"></a>Outlook 
 - **TabDefault**
 
-### Word
+### <a name="word"></a>Word
 - **TabHome**
 - **TabInsert**
 - TabWordDesign
@@ -31,7 +31,7 @@ Los siguientes valores son `id` valores de ficha válidos por host: Los valores 
 - TabBackgroundRemoval
 - TabBroadcastPresentation
 
-### Excel
+### <a name="excel"></a>Excel
 - **TabHome**
 - **TabInsert**
 - TabPageLayoutExcel
@@ -44,7 +44,7 @@ Los siguientes valores son `id` valores de ficha válidos por host: Los valores 
 - TabPrintPreview
 - TabBackgroundRemoval 
 
-### PowerPoint
+### <a name="powerpoint"></a>PowerPoint
 - **TabHome**
 - **TabInsert**
 - **TabDesign**
@@ -66,17 +66,17 @@ Los siguientes valores son `id` valores de ficha válidos por host: Los valores 
 - TabBackgroundRemoval
 - TabSlideMasterHome
 
-### OneNote
+### <a name="onenote"></a>OneNote
 - **TabHome**
 - **TabInsert**
 - **TabView**
 - TabDeveloper
 - TabAddIns
 
-## Group
+## <a name="group"></a>Group
 Un grupo de puntos de extensión de UI en una ficha. Un grupo puede tener hasta seis controles. El atributo **id** es obligatorio y cada **id** debe ser único en el manifiesto. El **id** es una cadena de 125 caracteres como máximo. Consulte el [elemento Group](./group.md).
 
-## Ejemplo de OfficeTab
+## <a name="officetab-example"></a>Ejemplo de OfficeTab
 ```xml
 <ExtensionPoint xsi:type="MessageReadCommandSurface">
   <OfficeTab id="TabDefault">

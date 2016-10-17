@@ -1,5 +1,5 @@
 
-# Enumeración SelectionMode
+# <a name="selectionmode-enumeration"></a>Enumeración SelectionMode
 Especifica si se va a seleccionar (resaltar) la ubicación a la que se va a dirigir (al usar el método [Document.goToByIdAsync](../../reference/shared/document.gotobyidasync.md)).
 
 |||
@@ -18,7 +18,7 @@ Office.SelectionMode
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Valores**
@@ -29,7 +29,7 @@ Office.SelectionMode
 |Office.SelectionMode.Selected|"selected"|Se seleccionará (resaltará) la ubicación.|
 |Office.SelectionMode.None|"none"|El cursor se mueve al inicio de la ubicación.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -48,11 +48,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

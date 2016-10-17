@@ -1,11 +1,11 @@
-# Objeto TableRow (API de JavaScript para OneNote)
+# <a name="tablerow-object-(javascript-api-for-onenote)"></a>Objeto TableRow (API de JavaScript para OneNote)
 
 _Se aplica a: OneNote Online_  
 
 
 Representa una fila de una tabla.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción|Comentarios|
 |:---------------|:--------|:----------|:-------|
@@ -13,15 +13,15 @@ Representa una fila de una tabla.
 |id|string|Obtiene el identificador de la fila. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-id)|
 |rowIndex|int|Obtiene el índice de la fila en la tabla primaria. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-rowIndex)|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
 |cells|[TableCellCollection](tablecellcollection.md)|Obtiene las celdas de la fila. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-cells)|
 |parentTable|[Table](table.md)|Obtiene la tabla primaria. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-parentTable)|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
@@ -30,41 +30,41 @@ _Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-load)|
 |[setShadingColor(colorCode: string)](#setshadingcolorcolorcode-string)|void|Establece el color de sombreado de todas las celdas de la fila.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableRow-setShadingColor)|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### clear()
+### <a name="clear()"></a>clear()
 Borra el contenido de la fila.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableRowObject.clear();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-### insertRowAsSibling(insertLocation: string, values: string[])
+### <a name="insertrowassibling(insertlocation:-string,-values:-string[])"></a>insertRowAsSibling(insertLocation: string, values: string[])
 Inserta una fila antes o después de la fila actual.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableRowObject.insertRowAsSibling(insertLocation, values);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |insertLocation|string|Dónde se deben insertar las filas nuevas con respecto a la fila actual.  Los valores posibles son: Before, After|
 |values|string[]|Opcional. Cadenas para insertar en la nueva fila, especificadas como una matriz. No debe tener más celdas que la fila actual. Opcional.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [TableRow](tablerow.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -104,38 +104,38 @@ OneNote.run(function(ctx) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-### setShadingColor(colorCode: string)
+### <a name="setshadingcolor(colorcode:-string)"></a>setShadingColor(colorCode: string)
 Establece el color de sombreado de todas las celdas de la fila.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableRowObject.setShadingColor(colorCode);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |colorCode|string|El código de color que hay que establecer en las celdas./param|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 **id, cellCount, rowIndex**
 ```js
 OneNote.run(function(ctx) {

@@ -1,11 +1,11 @@
 
-# Objeto CustomXmlPart
+# <a name="customxmlpart-object"></a>Objeto CustomXmlPart
 Representa un único objeto **CustomXMLPart** de una colección de objetos [CustomXMLParts](../../reference/shared/customxmlparts.customxmlparts.md).
 
 |||
 |:-----|:-----|
 |**Hosts:**|Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
 |**Modificado por última vez en**|1.1|
 
 ```
@@ -13,7 +13,7 @@ Office.context.document.customXmlParts.getByIdAsync(id);
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -22,7 +22,7 @@ Office.context.document.customXmlParts.getByIdAsync(id);
 |**Nombre**|**Descripción**|
 |:-----|:-----|
 |[builtIn](../../reference/shared/customxmlpart.builtin.md)|Obtiene un valor que indica si el objeto CustomXMLPart se encuentra integrado.|
-|[id](../../reference/shared/customxmlpart.id.md)|Obtiene el GUID del elemento XML personalizado.|
+|[id](../../reference/shared/customxmlpart.id.md)|Obtiene el GUID del elemento CustomXMLPart.|
 |[namespaceManager](../../reference/shared/customxmlpart.namespacemanager.md)|Obtiene el conjunto de asignaciones de prefijo de espacio de nombres (CustomXMLPrefixMappings) que se usa en el objeto CustomXMLPart actual.|
 
 **Métodos**
@@ -41,11 +41,11 @@ Office.context.document.customXmlParts.getByIdAsync(id);
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|[dataNodeDeleted](../../reference/shared/customxmlpart.datanodedeleted.event.md)|Ocurre cuando se suprime un nodo.|
-|[dataNodeInserted](../../reference/shared/customxmlpart.datanodeinserted.event.md)|Ocurre cuando se inserta un nodo.|
-|[dataNodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md)|Se genera al reemplazar un nodo.|
+|[dataNodeDeleted](../../reference/shared/customxmlpart.datanodedeleted.event.md)|Se produce cuando se elimina un nodo.|
+|[dataNodeInserted](../../reference/shared/customxmlpart.datanodeinserted.event.md)|Se produce cuando se inserta un nodo.|
+|[dataNodeReplaced](../../reference/shared/customxmlpart.datanodereplaced.event.md)|Se produce cuando se reemplaza un nodo.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -55,17 +55,17 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 ||**Office para escritorio de Windows**|**Office Online (en el explorador)**|**Office para iPad**|
 |:-----|:-----|:-----|:-----|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|CustomXmlParts|
+|**Disponible en los conjuntos de requisitos**|CustomXmlParts|
 |**Nivel de permisos mínimo**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

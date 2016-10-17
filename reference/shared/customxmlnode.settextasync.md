@@ -1,11 +1,11 @@
 
-# Método CustomXmlNode.setTextAsync
-Obtiene el texto de un nodo XML de forma asíncrona en un elemento XML personalizado.
+# <a name="customxmlnode.settextasync-method"></a>Método CustomXmlNode.setTextAsync
+Define el texto de un nodo XML de forma asincrónica en un elemento XML personalizado.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
 |**Agregado en**|1.2|
 
 ```
@@ -13,17 +13,17 @@ customXmlNodeObj.setTextAsync(text, [asyncContext,]callback(asyncResult);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
 |**Nombre**|**Tipo**|**Descripción**|
 |:-----|:-----|:-----|
-| _text_|**string**|Necesario. El valor de texto del nodo XML.|
+| _text_|**string**|Obligatorio. El valor de texto del nodo XML.|
 | _asyncContext_|**object**|Opcional. Un objeto definido por el usuario que está disponible en la propiedad asyncContext del objeto [AsyncResult](../../reference/shared/asyncresult.md). Use esta opción para proporcionar un objeto o valor para el **AsyncResult** si la devolución de llamada es una función con nombre.|
-| _callback_|**object**|Opcional. Una función que se invoca al devolver una llamada, cuyo único parámetro es de tipo **AsyncResult**.|
+| _callback_|**object**|Opcional. Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.|
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función que ha remitido al parámetro _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el único parámetro de la función de devolución de llamada.
 
@@ -31,14 +31,14 @@ En la función de devolución de llamada que se ha remitido al método **setText
 
 
 
-|**Propiedad**|**Usar para...**|
+|**Propiedad**|**Usar para**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|No se usa.|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Indica si la operación se ha efectuado correctamente o no.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Tener acceso a un objeto [Error](../../reference/shared/error.md) que proporcione información sobre el error si la operación no se ha llevado a cabo correctamente.|
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **object** definidos por el usuario si ha remitido uno como parámetro _asyncContext_. Esta propiedad devuelve «undefined» si no se ha establecido _asyncContext_.|
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 Obtenga información sobre cómo establecer el valor de texto de un nodo en un elemento XML personalizado.
 
@@ -73,7 +73,7 @@ Office.context.document.customXmlParts.getByIdAsync("{6C3C8BC8-F283-45AE-878A-BA
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -87,13 +87,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|CustomXmlParts|
+|**Disponible en los conjuntos de requisitos**|CustomXmlParts|
 |**Nivel de permisos mínimo**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

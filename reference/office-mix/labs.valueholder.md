@@ -1,7 +1,7 @@
 
-# Labs.ValueHolder
+# <a name="labs.valueholder"></a>Labs.ValueHolder
 
- _**Hace referencia a:** aplicaciones para Office | Complementos de Office | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Un objeto contenedor que contiene y realiza el seguimiento de valores para un laboratorio especificado. El valor puede almacenarse localmente o en el servidor.
 
@@ -10,7 +10,7 @@ class ValueHolder<T>
 ```
 
 
-## Variables
+## <a name="variables"></a>Variables
 
 
 |||
@@ -21,12 +21,12 @@ class ValueHolder<T>
 | `public var value: T`|El valor que se almacena en el contenedor.|
 | `public var id: string`|El identificador del valor.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 
 
 
-### getValue
+### <a name="getvalue"></a>getValue
 
  `public function getValue(callback: Labs.Core.ILabCallback<T>): void`
 
@@ -39,7 +39,7 @@ Recupera el valor especificado.
 |:-----|:-----|
 | _callback_|Función de devolución de llamada que devuelve un valor especificado.|
 
-### provideValue
+### <a name="providevalue"></a>provideValue
 
  `public function provideValue(value: T): void`
 

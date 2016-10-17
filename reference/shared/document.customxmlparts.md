@@ -1,5 +1,5 @@
 
-# Propiedad Document.customXmlParts
+# <a name="document.customxmlparts-property"></a>Propiedad Document.customXmlParts
 Obtiene un objeto que representa los elementos XML personalizados del documento.
 
 |||
@@ -12,12 +12,12 @@ var xmlParts = Office.context.document.customXmlParts;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Un objeto [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md).
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -38,7 +38,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta propiedad es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta propiedad.
@@ -60,7 +60,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

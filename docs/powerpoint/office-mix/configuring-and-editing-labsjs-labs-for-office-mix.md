@@ -1,11 +1,11 @@
 
-# Configuración y edición de laboratorios de LabsJS para Office Mix
+# <a name="configuring-and-editing-labsjs-labs-for-office-mix"></a>Configuración y edición de laboratorios de LabsJS para Office Mix
 
 
 
 Aplicaciones para Office Mix proporciona métodos de office.js para obtener y establecer configuraciones de laboratorio. La configuración indica a Aplicaciones para Office Mix el tipo de laboratorio que se está creando, así como el tipo de datos que el laboratorio devolverá. Esta información se usa para recopilar y visualizar análisis.
 
-## Obtener el editor de laboratorio
+## <a name="getting-the-lab-editor"></a>Obtener el editor de laboratorio
 
 El editor de laboratorio, el objeto [Labs.LabEditor](../../../reference/office-mix/labs.labeditor.md), permite editar el laboratorio, así como obtener y establecer la configuración del laboratorio. Cuando haya terminado de editar el laboratorio, debe llamar al método  **Done**. Sin embargo, no es necesario llamar al método  **Done** excepto cuando intenta realizar o ejecutar un laboratorio que está editando. Tenga en cuenta que solo se puede abrir una instancia del laboratorio a la vez.
 
@@ -67,17 +67,17 @@ labEditor.getConfiguration((err, configuration) => {
 ```
 
 
-## Cerrar el editor
+## <a name="closing-the-editor"></a>Cerrar el editor
 
 Para cerrar el editor, llame al método  **Done** en el editor cuando haya terminado de editar el laboratorio. Tenga en cuenta que no puede llevar a cabo y editar un laboratorio. Sin embargo, después de llamar al método **Done**, podrá editar o ejecutar el laboratorio.
 
 
-## Interactuar con un laboratorio
+## <a name="interacting-with-a-lab"></a>Interactuar con un laboratorio
 
 Después de establecer la configuración del laboratorio, está listo para empezar a interactuar con él. Cuando el laboratorio se ejecuta dentro de PowerPoint, se simulan las interacciones. Sin embargo, cuando se ejecuta dentro del reproductor de lecciones de Aplicaciones para Office Mix, los datos se almacenan en la base de datos de Aplicaciones para Office Mix y se usan en análisis.
 
 
-### Obtener la instancia de laboratorio
+### <a name="getting-the-lab-instance"></a>Obtener la instancia de laboratorio
 
 Interactúe con el laboratorio mediante el objeto [Labs.LabInstance](../../../reference/office-mix/labs.labinstance.md), que es una instancia del laboratorio configurado del usuario actual. Para ejecutar (o "realizar") el laboratorio, llame a la función [Labs.takeLab](../../../reference/office-mix/labs.takelab.md).
 
@@ -93,7 +93,7 @@ Labs.takeLab((err, labInstance) => {
 El objeto de la instancia contiene una matriz de instancias de componentes ([Labs.ComponentInstanceBase](../../../reference/office-mix/labs.componentinstancebase.md), [Labs.ComponentInstance](../../../reference/office-mix/labs.componentinstance.md)) que se asignan a los componentes especificados en la configuración. De hecho, una instancia es simplemente una versión transformada de la configuración que se usa para adjuntar identificadores del servidor a los objetos de instancia, así como para ocultar al usuario determinados campos cuando sea necesario (por ejemplo, sugerencias, respuestas, etc.).
 
 
-### Administración del estado
+### <a name="managing-state"></a>Administración del estado
 
 El estado es un almacenamiento temporal asociado a un usuario que ejecuta un laboratorio determinado. Puede usar el almacén para conservar información entre invocaciones sucesivas de laboratorio. Por ejemplo, un laboratorio de programación podría almacenar el trabajo actual en curso del usuario.
 
@@ -120,7 +120,7 @@ labInstance.getState((err, state) => {
 ```
 
 
-## Resultados e instancias de componentes
+## <a name="component-instances-and-results"></a>Resultados e instancias de componentes
 
 A continuación, se presenta una introducción de cómo implementar las instancias de los cuatro tipos de componentes, así como ejemplos breves de los métodos de componente. 
 
@@ -178,7 +178,7 @@ hints[0].getValue((err, hint) => {
 ```
 
 
-### ActivityComponentInstance
+### <a name="activitycomponentinstance"></a>ActivityComponentInstance
 
 
 Use el objeto  **ActivityComponentInstace** para realizar el seguimiento de la interacción de un usuario con un componente de actividad. Esta clase proporciona un método **complete** para indicar que el usuario ha terminado de interactuar con la actividad. El método puede indicar que el usuario completó una tarea asignada, terminó una lectura o cualquier otro punto final asociado con la actividad. El código siguiente muestra cómo usar el método **complete**.
@@ -191,7 +191,7 @@ attempt.complete((err, unused) => {
 ```
 
 
-### ChoiceComponentInstance
+### <a name="choicecomponentinstance"></a>ChoiceComponentInstance
 
 
 Use el objeto  **ChoiceComponentInstance** para realizar el seguimiento de la interacción de un usuario con un componente de elección. Los componentes de elección son problemas que presentan al usuario una lista de opciones para seleccionar. Puede o no haber una respuesta correcta. La clase proporciona dos métodos principales: **getSubmissions** y **submit**. El método  **getSubmissions** permite recuperar envíos almacenados anteriormente; el método **submit** permite que se almacene un nuevo envío. Los siguientes ejemplos de código ilustran el uso de los métodos.
@@ -214,7 +214,7 @@ this._attempt.submit(
 ```
 
 
-### InputComponentInstance
+### <a name="inputcomponentinstance"></a>InputComponentInstance
 
 
 Use el objeto  **InputComponentInstance** para realizar el seguimiento de la interacción de un usuario con un componente de entrada. La clase proporciona dos métodos principales: **getSubmission** y **submit**. El método  **getSubmissions** permite recuperar los envíos almacenados previamente; el método **submit** permite almacenar un nuevo envío. El siguiente fragmento de código ilustra cómo usar el método **getSubmissions**.
@@ -239,7 +239,7 @@ this._attempt.submit(
 ```
 
 
-### DynamicComponentInstance
+### <a name="dynamiccomponentinstance"></a>DynamicComponentInstance
 
 
 Use el objeto  **DynamicComponentInstance** para realizar el seguimiento de la interacción de un usuario con un componente dinámico. Los métodos principales en esta clase son **getComponents**,  **createComponent** y **close**.
@@ -297,11 +297,11 @@ dynamicComponentInstance.close((err, unused) => {
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
 - [Complementos de Office Mix](../../powerpoint/office-mix/office-mix-add-ins.md)
     
-- [Tutorial: Crear su primer laboratorio para Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
+- [Tutorial: Crear el primer laboratorio para Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md#walkthrough-creating-your-first-lab-for-office-mix)
     

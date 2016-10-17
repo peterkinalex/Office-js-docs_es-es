@@ -1,7 +1,7 @@
 
-# Labs.Core.IComponent
+# <a name="labs.core.icomponent"></a>Labs.Core.IComponent
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Clase base para representar componentes de un laboratorio.
 
@@ -10,7 +10,7 @@ interface IComponent extends Core.ILabObject, Core.IUserData
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||

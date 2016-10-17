@@ -1,7 +1,7 @@
 
-# Labs.Components.ComponentAttempt
+# <a name="labs.components.componentattempt"></a>Labs.Components.ComponentAttempt
 
- _**Hace referencia a:** aplicaciones para Office | Complementos de Office | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Clase base para los intentos en los componentes.
 
@@ -10,7 +10,7 @@ class ComponentAttempt
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |**Nombre**|**Descripción**|
@@ -22,12 +22,12 @@ class ComponentAttempt
 | `public var _state: Labs.ProblemState`|Estado actual del intento tal y como se ha proporcionado por la enumeración [Labs.ProblemState](../../reference/office-mix/labs.problemstate.md).|
 | `public var _values: { [type:string]: Labs.ValueHolder<any>[]}`|Valores asociados al intento, si los hubiera, como se incluyen en el objeto [Labs.ValueHolder](../../reference/office-mix/labs.valueholder.md).|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 
 
 
-### constructor
+### <a name="constructor"></a>constructor
 
  `(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
 
@@ -42,7 +42,7 @@ Crea una instancia nueva de la clase ComponentAttempt y proporciona valores del 
 | _attemptId_|El identificador asociado al intento.|
 | _values_|Matriz de valores ([Labs.Core.IValueInstance](../../reference/office-mix/labs.core.ivalueinstance.md)) asociada al intento.|
 
-### isResumed
+### <a name="isresumed"></a>isResumed
 
  `public function isResumed(): boolean`
 
@@ -53,7 +53,7 @@ Función booleana que indica si el laboratorio se ha reanudado.  **True** si el 
 Ninguno.
 
 
-### resume
+### <a name="resume"></a>resume
 
  `public function resume(callback: Labs.Core.ILabCallback<void>): void`
 
@@ -66,7 +66,7 @@ Indica si el laboratorio ha reanudado el progreso del intento determinado y si c
 |:-----|:-----|
 | _callback_|Función de devolución de llamada que se desencadena una vez que se ha reanudado el intento.|
 
-### getState
+### <a name="getstate"></a>getState
 
  `public function getState(): Labs.ProblemState`
 
@@ -77,7 +77,7 @@ Recupera el estado del laboratorio.
 Ninguno.
 
 
-### processAction
+### <a name="processaction"></a>processAction
 
  `public function processAction(action: Labs.Core.IAction): void`
 
@@ -88,7 +88,7 @@ Ejecuta la acción asociada al intento.
 Ninguno.
 
 
-### getValues
+### <a name="getvalues"></a>getValues
 
  `public function getValues(key: string): Labs.ValueHolder<any>[]`
 

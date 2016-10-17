@@ -1,5 +1,5 @@
 
-# Validar un token de identidad de Exchange
+# <a name="validate-an-exchange-identity-token"></a>Validar un token de identidad de Exchange
 
 Su complemento de Outlook le puede enviar un token de identidad, pero antes de que confíe en la solicitud será necesario que valide el token para asegurarse de que procede del servidor Exchange esperado. Con el ejemplo de este artículo se le mostrará cómo validar el token de identidad de Exchange con un objeto de validación escrito en C#. No obstante, para hacer la validación se puede usar cualquier lenguaje de programación. Los pasos que hay que seguir para validar el token se describen en el [borrador de Internet de token JWT (token web de JSON)](http://self-issued.info/docs/draft-goland-json-web-token-00.mdl). 
 
@@ -9,7 +9,7 @@ Le recomendamos usar este procedimiento de cuatro pasos para validar el token de
 
 
 
-## Configuración para validar el token de identidad
+## <a name="set-up-to-validate-your-identity-token"></a>Configuración para validar el token de identidad
 
 
 Los ejemplos de código de este artículo dependen de Windows Identity Foundation (WIF), así como un archivo DLL que extiende WIF con controladores para tokens JSON. Los ensamblados necesarios se pueden descargar desde las siguientes ubicaciones:
@@ -22,7 +22,7 @@ Los ejemplos de código de este artículo dependen de Windows Identity Foundatio
 - [Windows.IdentityModel.Extensions.dll para aplicaciones de 64 bits](http://download.microsoft.com/download/0/1/D/01D06854-CA0C-46F1-ADBA-EBF86010DCC6/MicrosoftIdentityExtensions-64.msi)
     
 
-## Extracción del token web JSON
+## <a name="extract-the-json-web-token"></a>Extracción del token web JSON
 
 
 El patrón de diseño Factory Method  **Decode** divide el JWT del servidor Exchange en tres cadenas que constituyen el token, y después usa el método **Base64Decode** (mostrado en el segundo ejemplo) para descodificar el encabezado y la carga del JWT en cadenas JSON. Las cadenas se pasan al constructor **JsonToken**, donde los contenidos del JWT se validan y se devuelve una nueva instancia de objeto **JsonToken**.
@@ -92,7 +92,7 @@ El método **Base64Decode** implementa la lógica de descodificación que se des
 ```
 
 
-## Análisis del JWT
+## <a name="parse-the-jwt"></a>Análisis del JWT
 
 
 El constructor del objeto  **JsonToken** comprueba la estructura y el contenido del JWT para determinar si es válido. Es mejor hacerlo antes de solicitar el documento de metadatos de autenticación. Si el JWT no contiene las notificaciones correctas o si está fuera de su ciclo de vida, se puede evitar una llamada al servidor Exchange y el retraso asociado.
@@ -148,7 +148,7 @@ Cada uno de los métodos de utilidad se describe más adelante en este artículo
 ```
 
 
-### Método ValidateHeader
+### <a name="validateheader-method"></a>Método ValidateHeader
 
 El método  **ValidateHeader** comprueba que las notificaciones necesarias están en el encabezamiento del token y que tienen los valores correctos. Es necesario configurar el encabezamiento como se indica a continuación. De lo contrario, el método generará una excepción de aplicación y se cerrará.
 
@@ -185,7 +185,7 @@ El método  **ValidateHeader** comprueba que las notificaciones necesarias está
 ```
 
 
-### Método ValidateLifetime
+### <a name="validatelifetime-method"></a>Método ValidateLifetime
 
 En el JWT se proporcionan dos fechas: "nbf" (equivalente a "no antes de" en inglés) indica la fecha y la hora en las que el token pasa a ser válido, y "exp" indica la hora a la que el token expira. Solo los tokens presentados entre estas dos fechas se deberán considerar válidos. Para dar cabida a las mínimas diferencias posibles en la configuración del reloj entre el servidor y el cliente, este método validará los tokens hasta cinco minutos antes y cinco minutos después de las horas establecidas en el token.
 
@@ -229,7 +229,7 @@ En el JWT se proporcionan dos fechas: "nbf" (equivalente a "no antes de" en ingl
 Las fechas  **validFrom** ("nbf") y **validTo** ("exp") se envían como el número de segundos desde la época Unix, el 1 de enero de 1970. Las fechas y las horas se calculan usando el UTC para evitar problemas con las diferencias de zona horaria entre el servidor Exchange y el servidor que ejecuta el código de validación.
 
 
-### Método ValidateAudience
+### <a name="validateaudience-method"></a>Método ValidateAudience
 
 El token de identidad solo es válido para el complemento que lo solicitó. El método  **ValidateAudience** comprueba la notificación del público del token para asegurarse de que coincide con la dirección URL esperada del complemento de Outlook.
 
@@ -256,7 +256,7 @@ El token de identidad solo es válido para el complemento que lo solicitó. El m
 ```
 
 
-### Método ValidateVersion
+### <a name="validateversion-method"></a>Método ValidateVersion
 
 El método  **ValidateVersion** comprueba la versión del token de identidad y se asegura de que coincide con la versión esperada. Las diferentes versiones del token pueden llevar notificaciones diferentes. La comprobación de la versión asegura que las notificaciones esperadas están en el token de identidad.
 
@@ -280,7 +280,7 @@ El método  **ValidateVersion** comprueba la versión del token de identidad y s
 ```
 
 
-### Método ValidateMetadataLocation
+### <a name="validatemetadatalocation-method"></a>Método ValidateMetadataLocation
 
 El objeto de metadatos de autenticación almacenado en el servidor Exchange contiene la información necesaria para validar la firma incluida en el token de identidad. El método  **ValidateMetadataLocation** se asegura de que hay una notificación URL de metadatos de autenticación en el token de identidad al confirmar que la firma se produce en el paso siguiente.
 
@@ -297,7 +297,7 @@ El objeto de metadatos de autenticación almacenado en el servidor Exchange cont
 ```
 
 
-## Validar la firma del token de identidad
+## <a name="validate-the-identity-token-signature"></a>Validar la firma del token de identidad
 
 
 Una vez se le ha informado de que el JWT contiene las notificaciones necesarias para validar la firma, puede usar Windows Identity Foundation (WIF) y las extensiones de WIF para validar la firma del token. Se necesitará la información siguiente para validar la firma:
@@ -362,7 +362,7 @@ En este ejemplo, el constructor de un objeto  **IdentityToken** obtiene el docum
 La mayor parte del código del constructor del objeto  **IdentityToken** establece las propiedades de la instancia con las notificaciones del servidor Exchange. El constructor llama al método **GetSecurityTokenHandler** para obtener un controlador de tokens que validará el token de identidad de Exchange. El método **GetSecurityTokenHandler** llama a dos métodos de utilidad, **GetMetadataDocument** y **GetSigningCertificate**, que se encargan de obtener el certificado de firma desde el servidor Exchange. Cada uno de estos métodos se describe en las secciones siguientes.
 
 
-### Método GetSecurityTokenHandler
+### <a name="getsecuritytokenhandler-method"></a>Método GetSecurityTokenHandler
 
 El método  **GetSecurityTokenHandler** devuelve un controlador de tokens WIF que validará el token de identidad. La mayor parte del código del método inicializa el controlador de tokens para hacer la validación. No obstante, el método llama al método **GetSigningCertificate** para recuperar el certificado X.509 usado para firmar el token del servidor Exchange.
 
@@ -398,7 +398,7 @@ El método  **GetSecurityTokenHandler** devuelve un controlador de tokens WIF qu
 ```
 
 
-### Método GetSigningCertificate
+### <a name="getsigningcertificate-method"></a>Método GetSigningCertificate
 
 El método  **GetSigningCertificate** llama al método **GetMetadataDocument** para recuperar los metadatos de autenticación del servidor Exchange y devuelve el primer certificado X.509 en el documento de metadatos de autenticación. Si el documento no existe, el método genera una excepción de aplicación.
 
@@ -424,7 +424,7 @@ El método  **GetSigningCertificate** llama al método **GetMetadataDocument** p
 ```
 
 
-### Método GetMetadataDocument
+### <a name="getmetadatadocument-method"></a>Método GetMetadataDocument
 
 El documento de metadatos de autenticación contiene la información necesaria para validar la firma en el token de identidad de Exchange. El documento se envía como una cadena JSON. El método  **GetMetatDataDocument** solicita el documento de la ubicación especificada en el token de identidad de Exchange y devuelve un objeto que encapsula la cadena JSON como un objeto. Si la dirección URL no contiene un documento de metadatos de autenticación, el método genera una excepción de aplicación.
 
@@ -462,7 +462,7 @@ La clase  **ServicePointManager** del espacio de nombres de System.Net de Framew
  **Nota de seguridad**  Si usa un método de devolución de llamada de validación de certificados, asegúrese de que cumple con los requisitos de seguridad de su organización.
 
 
-## Calcular el identificador exclusivo para una cuenta de Exchange
+## <a name="compute-the-unique-id-for-an-exchange-account"></a>Calcular el identificador exclusivo para una cuenta de Exchange
 
 
 Puede crear un identificador único para una cuenta de Exchange mediante el hash de la dirección URL del documento de metadatos de autenticación con el identificador de Exchange para la cuenta. Cuando tenga este identificador único, puede usarlo para crear un sistema único de inicio de sesión (SSO) para el servicio web de su complemento de Outlook. Para más detalles sobre cómo usar el identificador único para SSO, vea [Autenticar un usuario con un token de identidad para Exchange](../outlook/authenticate-a-user-with-an-identity-token.md)
@@ -504,7 +504,7 @@ La propiedad  **UniqueUserIdentification** crea un hash de bytes aleatorios SHA2
 ```
 
 
-## Objetos de utilidad
+## <a name="utility-objects"></a>Objetos de utilidad
 
 
 Los ejemplos de código de este artículo dependen de algunos objetos de utilidad que proporcionan nombres descriptivos a las constantes que se utilizan. En la tabla siguiente se enumeran los objetos de utilidad.
@@ -513,13 +513,13 @@ Los ejemplos de código de este artículo dependen de algunos objetos de utilida
 **Tabla 1: Objetos de utilidad**
 
 
-|**Object**|**Descripción**|
+|**Objeto**|**Descripción**|
 |:-----|:-----|
 |**AuthClaimsType**|Recopila en un solo lugar los identificadores de notificación que usa el código de validación de tokens.|
 |**Config**|Proporciona las constantes para validar el token de identidad. |
 |**JsonAuthMetadataDocument**|Encapsula el documento de metadatos de autenticación JSON enviado desde el servidor Exchange.|
 
-### Objeto AuthClaimTypes
+### <a name="authclaimtypes-object"></a>Objeto AuthClaimTypes
 
 El objeto  **AuthClaimTypes** recopila en un solo lugar los identificadores de notificación que usa el código de validación de tokens. Incluye tanto las notificaciones JWT estándar como las notificaciones específicas del token de identidad de Exchange.
 
@@ -554,7 +554,7 @@ El objeto  **AuthClaimTypes** recopila en un solo lugar los identificadores de n
 ```
 
 
-### Objeto Config
+### <a name="config-object"></a>Objeto Config
 
 El objeto  **Config** contiene las constantes usadas para validar el token de identidad, además de un método de devolución de llamada de validación de certificados que puede usar si su servidor no dispone de un certificado X509 que provenga de un certificado raíz.
 
@@ -595,7 +595,7 @@ El objeto  **Config** contiene las constantes usadas para validar el token de id
 ```
 
 
-### Objeto JsonAuthMetadataDocument
+### <a name="jsonauthmetadatadocument-object"></a>Objeto JsonAuthMetadataDocument
 
 El objeto  **JsonAuthMetadataDocument** expone los contenidos del documento de metadatos de autenticación con las propiedades.
 
@@ -641,7 +641,7 @@ namespace IdentityTest
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

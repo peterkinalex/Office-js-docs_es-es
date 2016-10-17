@@ -1,11 +1,11 @@
 
-# Enumeración ProjectResourceFields
+# <a name="projectresourcefields-enumeration"></a>Enumeración ProjectResourceFields
 Especifica los campos de recursos que están disponibles como parámetro para el método **[getResourceFieldAsync](../../reference/shared/projectdocument.getresourcefieldasync.md)**.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Agregado en**|1,0|
+|**Agregado en**|1.0|
 
 ```js
 ProjectResourceFields={
@@ -213,7 +213,7 @@ ProjectResourceFields={
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 La enumeración **ProjectResourceFields** contiene los siguientes miembros.
@@ -423,13 +423,13 @@ La enumeración **ProjectResourceFields** contiene los siguientes miembros.
 |Text8|198|Un campo de texto para el recurso.|
 |Text9|199|Un campo de texto para el recurso.|
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 
 Se puede usar una constante **ProjectResourceFields** como parámetro del método [getResourceFieldAsync](../../reference/shared/projectdocument.getresourcefieldasync.md).<br/><br/>Para obtener más información sobre cómo trabajar con campos de Project, consulte [Referencia de campos disponibles](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1). En la ayuda de Project, busque _Campos disponibles_.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -450,18 +450,18 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
-|1,0|Agregado|
+|1.0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 [Método getResourceFieldAsync](../../reference/shared/projectdocument.getresourcefieldasync.md)
 

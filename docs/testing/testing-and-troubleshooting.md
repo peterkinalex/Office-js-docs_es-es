@@ -1,5 +1,5 @@
 
-# Solucionar errores de usuario con los complementos de Office
+# <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar errores de usuario con los complementos de Office
 
 A veces, los usuarios pueden experimentar problemas con los complementos de Office que desarrolla. Por ejemplo, un complemento no se puede cargar o está inaccesible. Use la información de este artículo como ayuda para resolver problemas comunes que experimentan los usuarios con el complemento de Office. 
 
@@ -7,7 +7,7 @@ También puede usar [Fiddler](http://www.telerik.com/fiddler) para identificar y
 
 Después de resolver el problema del usuario, puede [responder directamente a las opiniones del cliente en la Tienda Office](https://msdn.microsoft.com/library/jj635874.aspx).
 
-## Pasos para solucionar problemas y errores comunes
+## <a name="common-errors-and-troubleshooting-steps"></a>Pasos para solucionar problemas y errores comunes
 
 En la siguiente tabla se enumeran los mensajes de error comunes que los usuarios pueden encontrar, así como los pasos que los usuarios pueden realizar para resolver los errores.
 
@@ -20,7 +20,7 @@ En la siguiente tabla se enumeran los mensajes de error comunes que los usuarios
 |Error: El objeto no admite la propiedad o el método 'defineProperty'|Confirme que Internet Explorer no se está ejecutando en modo de compatibilidad. Vaya a Herramientas >  **Configuración de Vista de compatibilidad**.|
 |Lo sentimos, no pudimos cargar la aplicación porque la versión de su explorador no es compatible. Haga clic aquí para ver una lista de las versiones de explorador compatibles.|Asegúrese de que el explorador admite el almacenamiento local HTML5 o restablezca su configuración de Internet Explorer.Para obtener información sobre los exploradores compatibles, vea [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).|
 
-## El complemento de Outlook no funciona correctamente
+## <a name="outlook-add-in-doesn't-work-correctly"></a>El complemento de Outlook no funciona correctamente
 
 Si un complemento de Outlook que se ejecuta en Windows no funciona correctamente, pruebe a activar la depuración de scripts en Internet Explorer. 
 
@@ -32,7 +32,7 @@ Si un complemento de Outlook que se ejecuta en Windows no funciona correctamente
 Se recomienda desactivar estas opciones solo para solucionar el problema. Si las deja desactivadas, recibirá mensajes mientras navegue. Una vez resuelto el problema, vuelva a activar  **Deshabilitar depuración de scripts (Internet Explorer)** y **Deshabilitar depuración de scripts (otros)**.
 
 
-## El complemento no se activa en Office 2013
+## <a name="add-in-doesn't-activate-in-office-2013"></a>El complemento no se activa en Office 2013
 
 Si el complemento no se activa cuando el usuario realiza los pasos siguientes:
 
@@ -46,7 +46,7 @@ Si el complemento no se activa cuando el usuario realiza los pasos siguientes:
 Compruebe que están instaladas las últimas actualizaciones de Office o descargue la [actualización de Office 2013](https://support.microsoft.com/en-us/kb/2986156/).
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

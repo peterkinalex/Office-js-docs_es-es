@@ -1,5 +1,5 @@
 
-# Introducir datos en el cuerpo al redactar una cita o un mensaje en Outlook
+# <a name="insert-data-in-the-body-when-composing-an-appointment-or-message-in-outlook"></a>Introducir datos en el cuerpo al redactar una cita o un mensaje en Outlook
 
 Puede usar los métodos asincrónicos ([Body.getAsync](../../reference/outlook/Body.md), [Body.getTypeAsync](../../reference/outlook/Body.md), [Body.prependAsync](../../reference/outlook/Body.md), [Body.setAsync](../../reference/outlook/Body.md) y [Body.setSelectedDataAsync](../../reference/outlook/Body.md)) para obtener el tipo de cuerpo e insertar datos en el cuerpo de la cita o el elemento de mensaje que el usuario está redactando. Estos métodos asincrónicos solo están disponibles para complementos de redacción. Para usar estos métodos, asegúrese de configurar el manifiesto del complemento correctamente para que Outlook active el complemento en los formularios de redacción, como se describe en [Crear complementos de Outlook para formularios de redacción](../outlook/compose-scenario.md).
 
@@ -7,7 +7,7 @@ En Outlook, un usuario puede crear un mensaje de texto, HTML o formato de texto 
 
 
 
-|**Datos por insertar**|**Formato de elemento devuelto por getTypeAsync**|**Utilice este coercionType**|
+|**Datos para insertar**|**Formato de elemento devuelto por getTypeAsync**|**Usar este coercionType**|
 |:-----|:-----|:-----|
 |Texto|Texto (1)|Texto|
 |HTML|Texto (1)|Texto (2)|
@@ -21,7 +21,7 @@ En Outlook, un usuario puede crear un mensaje de texto, HTML o formato de texto 
 Además de _coercionType_, como con la mayoría de los métodos asincrónicos en la API de JavaScript para Office, **getTypeAsync**, **prependAsync** y **setSelectedDataAsync** aceptan otros parámetros de entrada opcionales. Para más información sobre cómo especificar estos parámetros de entrada opcionales, vea [Pasar parámetros opcionales a métodos asincrónicos](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) en [Programación asincrónica en complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
-## Para insertar datos en la posición actual del cursor
+## <a name="to-insert-data-at-the-current-cursor-position"></a>Para insertar datos en la posición actual del cursor
 
 
 Esta sección muestra un ejemplo de código que usa  **getTypeAsync** para verificar el tipo de cuerpo del elemento que se está redactando y, a continuación, usa **setSelectedDataAsync** para insertar datos en la ubicación actual del cursor.
@@ -123,7 +123,7 @@ function write(message){
 ```
 
 
-## Para insertar datos al comienzo del cuerpo del elemento
+## <a name="to-insert-data-at-the-beginning-of-the-item-body"></a>Para insertar datos al comienzo del cuerpo del elemento
 
 
 Asimismo, también puede usar  **prependAsync** para insertar datos al comienzo del cuerpo del elemento e ignorar la posición actual del cursor. Excepto por el punto de inserción, **prependAsync** y **setSelectedDataAsync** funcionan de manera similar:
@@ -215,17 +215,17 @@ function write(message){
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
 - [Obtener y definir datos de elementos en un formulario de redacción de Outlook](../outlook/get-and-set-item-data-in-a-compose-form.md)
     
-- [Obtención y definición de datos de elementos de Outlook en los formularios de lectura o redacción](../outlook/item-data.md)
+- [Obtener y establecer datos de elementos en formularios de lectura o redacción](../outlook/item-data.md)
     
 - [Crear complementos de Outlook para formularios de redacción](../outlook/compose-scenario.md)
     
-- [Programación asíncrona en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
+- [Programación asincrónica en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
     
 - [Obtener, establecer o agregar destinatarios al redactar una cita o un mensaje en Outlook](../outlook/get-set-or-add-recipients.md)
     

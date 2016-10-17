@@ -1,5 +1,5 @@
 
-# Referencia a la biblioteca de la API de JavaScript para Office desde su red de entrega de contenido (CDN)
+# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-(cdn)"></a>Referencia a la biblioteca de la API de JavaScript para Office desde su red de entrega de contenido (CDN)
 
 
 La biblioteca de la [API de JavaScript para Office](../../reference/javascript-api-for-office.md) está formada por el archivo Office.js y los archivos .js específicos de la aplicación host asociada, como Excel-15.js y Outlook-15.js. 
@@ -17,13 +17,13 @@ Si tiene previsto publicar su complemento de Office desde la Tienda Office, tend
 
 > **Importante:** Al desarrollar un complemento para una aplicación host de Office, es importante hacer referencia a la API de JavaScript para Office desde dentro de la sección `<head>` de la página. Esto garantiza que la API se inicializa por completo antes que los elementos de body. Los hosts de Office necesitan que los complementos se inicialicen 5 segundos después de la activación. Al superar este umbral, el complemento no responde y se muestra un mensaje de error al usuario.       
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
 - [Información sobre la API de JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
-- [Información general sobre la plataforma de complementos para Office](../../docs/overview/office-add-ins.md)
+- [Office Add-ins platform overview (Información general sobre la plataforma de complementos para Office)](../../docs/overview/office-add-ins.md)
     
 - [Ciclo de vida de desarrollo de complementos de Office](../../docs/design/add-in-development-lifecycle.md)
     

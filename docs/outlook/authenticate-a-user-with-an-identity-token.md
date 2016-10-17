@@ -1,12 +1,12 @@
 
-# Autenticar un usuario con un token de identidad para Exchange
+# <a name="authenticate-a-user-with-an-identity-token-for-exchange"></a>Autenticar un usuario con un token de identidad para Exchange
 
 Puede implementar un esquema de autenticación de inicio de sesión único (SSO) para un servicio de información que permite que los clientes que usan complementos de Outlook se conecten con su servicio a través de las credenciales del servidor Exchange. En este artículo se explica cómo hacer coincidir las credenciales con un almacén de datos de usuario simple basado en objetos  **Dictionary**.
 
  >**Nota**  Este es solo un ejemplo de SSO y no se debe usar en el código de producción. Como siempre, cuando esté trabajando con identidades y autenticaciones, deberá asegurarse de que el código cumpla los requisitos de seguridad de su organización.
 
 
-## Requisitos previos para usar la autenticación SSO
+## <a name="prerequisites-for-using-sso-authentication"></a>Requisitos previos para usar la autenticación SSO
 
 
 Para usar un token de identidad para SSO, la aplicación de servicio debe tener un token de identidad válido. Puede obtener información sobre los tokens de identidad y cómo solicitar y validar un token de identidad en los siguientes artículos:
@@ -19,7 +19,7 @@ Para usar un token de identidad para SSO, la aplicación de servicio debe tener 
 - [Usar la biblioteca de validación de tokens de Exchange](../outlook/use-the-token-validation-library.md) si usa código administrado, o [Validar un token de identidad de Exchange](../outlook/validate-an-identity-token.md) si escribe su propio método de validación de tokens.
     
 
-## Autenticación de usuarios
+## <a name="authenticate-a-user"></a>Autenticación de usuarios
 
 
 El siguiente ejemplo de código muestra un objeto de autenticación simple que empareja la identidad única representada por un token de identidad con un conjunto de credenciales para un servicio. La clase  **TokenAuthentication** proporciona un método, **GetResponseFromService**, que devolverá una respuesta para los tokens previamente autenticados, o bien solicitará al usuario que proporcione credenciales que puedan ser autenticadas y asociadas con el token de identidad. El código no está completo, se supone que se proporcionarán los siguientes objetos y métodos.
@@ -155,7 +155,7 @@ El siguiente ejemplo de código muestra un objeto de autenticación simple que e
 ```
 
 
-## Autenticación de un usuario con la biblioteca de validación administrada
+## <a name="authenticating-a-user-with-the-managed-validation-library"></a>Autenticación de un usuario con la biblioteca de validación administrada
 
 
 Si usa la biblioteca administrada para validar tokens de identidad, no es necesario que aplique una clave única. La propiedad  **UniqueUserIdentification** en la clase **AppIdentityToken** se puede usar directamente como clave única para el usuario. En el siguiente ejemplo de código se muestran las modificaciones al método **GetResponseFromService** en el ejemplo anterior que debe hacer para usar la clase **AppIdentityToken**.
@@ -233,7 +233,7 @@ Si usa la biblioteca administrada para validar tokens de identidad, no es necesa
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

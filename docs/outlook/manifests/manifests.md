@@ -1,5 +1,5 @@
 
-# Manifiestos de complementos de Outlook
+# <a name="outlook-add-in-manifests"></a>Manifiestos de complementos de Outlook
 
 Un complemento de Outlook está formado por dos componentes: el manifiesto del complemento XML y una página web, compatible con la biblioteca de JavaScript para complementos de Office (office.js). En el manifiesto se describe cómo se integra el complemento en diferentes clientes de Outlook. Actualmente hay tres versiones del esquema del manifiesto, incluida **VersionOverrides**. Le recomendamos que use la versión 1.1 del esquema del manifiesto y **VersionOverrides** 1.0 para crear el complemento. A continuación encontrará un ejemplo.
 
@@ -605,7 +605,7 @@ Un complemento de Outlook está formado por dos componentes: el manifiesto del c
 ```
 
 
-## Versiones de esquema
+## <a name="schema-versions"></a>Versiones de esquema
 
 No todos los clientes de Outlook admiten las características más recientes a la vez. Además, algunos usuarios de Outlook tendrán una versión más antigua. Las versiones de esquema permiten a los desarrolladores compilar complementos que son compatibles con versiones anteriores, que usan las características más recientes cuando están disponibles, pero que siguen funcionando en versiones anteriores.
 
@@ -625,7 +625,7 @@ Las versiones actuales del esquema son:
 En este artículo se tratarán los requisitos para un manifiesto 1.1. Incluso si el manifiesto de su complemento usa el elemento  **VersionOverrides**, sigue siendo importante incluir los elementos del manifiesto 1.1 para permitir que la aplicación funcione con clientes anteriores que no admiten  **VersionOverrides**.
 
 
-## Elemento raíz
+## <a name="root-element"></a>Elemento raíz
 
 El elemento raíz del manifiesto del complemento de Outlook es  **OfficeApp**. Este elemento también declara el espacio de nombres predeterminado, la versión del esquema y el tipo de complemento. Coloque los demás elementos en el manifiesto dentro de las etiquetas de apertura y cierre. El siguiente es un ejemplo del elemento raíz:
 
@@ -644,19 +644,19 @@ El elemento raíz del manifiesto del complemento de Outlook es  **OfficeApp**. E
 ```
 
 
-## Versión
+## <a name="version"></a>Versión
 
 Esta es la versión del complemento específico. Si un desarrollador actualiza algo en el manifiesto, también se debe incrementar la versión. De este modo, cuando se instale el nuevo manifiesto, se sobrescribirá el anterior y el usuario podrá disfrutar de las funciones nuevas. Si este complemento se envió al almacén, el nuevo manifiesto se tendrá que volver a enviar y validar. Así, los usuarios de este complemento obtendrán el nuevo manifiesto actualizado automáticamente en unas horas tras su aprobación.
 
 Si los permisos solicitados del complemento cambian, se solicitará a los usuarios que actualicen y vuelvan a otorgar su consentimiento para el complemento. Si el administrador ha instalado este complemento para toda la organización, el administrador tendrá que volver a otorgar su consentimiento primero. Los usuarios seguirán viendo la funcionalidad anterior mientras tanto.
 
 
-## VersionOverrides
+## <a name="versionoverrides"></a>VersionOverrides
 
-El elemento **VersionOverrides** es la ubicación de la información para comandos de complementos. Para obtener más información sobre este elemento, consulte [Definir comandos de complementos en el manifiesto de complemento de Outlook](../../outlook/manifests/define-add-in-commands.md).
+El elemento **VersionOverrides** es la ubicación de la información para comandos de complementos. Para obtener más información sobre este elemento, consulte [Definir comandos de complementos en el manifiesto del complemento de Outlook](../../outlook/manifests/define-add-in-commands.md).
 
 
-## Localización
+## <a name="localization"></a>Localización
 
 Algunos aspectos del complemento deben estar localizados para distintas configuraciones regionales, como el nombre, la descripción y la dirección URL que se carga. Estos elementos se pueden localizar fácilmente especificando el valor predeterminado y, después, invalidaciones de configuración regional en el elemento **Recursos** dentro del elemento **VersionOverrides**. A continuación, se muestra cómo reemplazar una imagen, una dirección URL y una cadena:
 
@@ -686,7 +686,7 @@ Algunos aspectos del complemento deben estar localizados para distintas configur
 La referencia de esquema contiene toda la información sobre los elementos que se pueden localizar.
 
 
-## Hosts
+## <a name="hosts"></a>Hosts
 
 Los complementos de Outlook especifican el elemento  **Hosts** como el siguiente.
 
@@ -704,7 +704,7 @@ Los complementos de Outlook especifican el elemento  **Hosts** como el siguiente
 Esto es independiente del elemento  **Hosts** dentro del elemento **VersionOverrides**, que se describe en [Definir comandos de complementos en el manifiesto de complemento de Outlook](../../outlook/manifests/define-add-in-commands.md).
 
 
-## Requisitos
+## <a name="requirements"></a>Requisitos
 
 El elemento  **Requirements** especifica el conjunto de las API disponibles para el complemento. Para un complemento de Outlook, el conjunto de requisitos debe ser Mailbox y un valor de 1.1 o superior. Consulte la referencia de API para ver la última versión del conjunto de requisitos. Consulte [API de complementos de Outlook](../../outlook/apis.md) para obtener más información sobre los conjuntos de requisitos.
 
@@ -728,7 +728,7 @@ El siguiente ejemplo usa el atributo  **DefaultMinVersion** del elemento **Sets*
 ```
 
 
-## Configuración de formulario
+## <a name="form-settings"></a>Configuración de formulario
 
 El elemento  **FormSettings** lo usan los clientes de Outlook anteriores, que solo admiten el esquema 1.1 y no admiten **VersionOverrides**. Con este elemento, los desarrolladores definen cómo se mostrará el complemento en estos clientes. Hay dos partes: **ItemRead** e **ItemEdit**.  **ItemRead** se usa para especificar cómo se muestra el complemento en los mensajes cuando el usuario lee mensajes y citas. **ItemEdit** describe cómo se muestra el complemento cuando el usuario está redactando una respuesta, un nuevo mensaje, una nueva cita o editando una cita, casos en los que es el organizador.
 
@@ -736,7 +736,7 @@ Estas configuraciones están relacionadas directamente con las reglas de activac
 
 Para obtener más información, vea la [Referencia de esquemas para manifiestos de complementos de Office (versión 1.1)](../../overview/add-in-manifests.md).
 
-## Dominios de aplicación
+## <a name="app-domains"></a>Dominios de aplicación
 
 El dominio de la página de inicio del complemento que se especifica en el elemento  **SourceLocation** es el dominio predeterminado del complemento. Sin usar los elementos **AppDomains** y **AppDomain**, si el complemento intenta navegar a otro dominio, el explorador abrirá una nueva ventana fuera del panel de complementos. Para que el complemento pueda navegar a otro dominio dentro del panel de complementos, agregue un elemento  **AppDomains** e incluya cada dominio adicional en su propio subelemento **AppDomain** en el manifiesto del complemento.
 
@@ -758,7 +758,7 @@ El siguiente ejemplo especifica un dominio  `https://www.contoso2.com` como segu
 Los dominios de aplicación también son necesarios para habilitar el uso compartido de cookies entre la ventana emergente y el complemento que se ejecuta en el cliente enriquecido.
 
 
-## Permisos
+## <a name="permissions"></a>Permisos
 
 El elemento  **Permissions** contiene los permisos necesarios para el complemento. En general, debe especificar el permiso mínimo que necesita el complemento según los métodos exactos que planea usar. Por ejemplo, un complemento de correo que se activa en los formularios de redacción y solo lee pero no escribe en propiedades de elemento como [item.requiredAttendees](../../../reference/outlook/Office.context.mailbox.item.md) y no llama a [mailbox.makeEwsRequestAsync](../../../reference/outlook/Office.context.mailbox.md) para obtener acceso a las operaciones de los servicios Web Exchange debe especificar el permiso **ReadItem**. Para ver información detallada sobre los permisos disponibles, consulte [Especificar permisos para el acceso de los complementos de Outlook al buzón del usuario](../../outlook/understanding-outlook-add-in-permissions.md).
 
@@ -776,7 +776,7 @@ El elemento  **Permissions** contiene los permisos necesarios para el complement
 ```
 
 
-## Reglas de activación
+## <a name="activation-rules"></a>Reglas de activación
 
 Las reglas de activación se especifican en el elemento  **Rule**. El elemento  **Rule** puede aparecer como un elemento secundario del elemento **OfficeApp** en manifiestos 1.1, y además como un elemento secundario **ExtensionPoint** en **VersionOverrides**. Consulte [Definir comandos de complementos en el manifiesto de complemento de Outlook](../../outlook/manifests/define-add-in-commands.md) para obtener información detallada sobre cómo usar este elemento en **VersionOverrides**.
 
@@ -794,13 +794,13 @@ Las reglas de activación se pueden usar para activar un complemento en función
 Para obtener información detallada y ejemplos de reglas de activación, vea [Reglas de activación para complementos de Outlook](../../outlook/manifests/activation-rules.md).
 
 
-## Pasos siguientes: comandos de complementos
+## <a name="next-steps:-add-in-commands"></a>Pasos siguientes: comandos de complementos
 
 
 Después de definir un manifiesto básico, [defina comandos de complementos para el complemento](../../outlook/manifests/define-add-in-commands.md). Los comandos de complementos presentan un botón en la cinta para que los usuarios puedan activar el complemento de una forma sencilla e intuitiva. Para obtener más información, consulte [Comandos de complementos de Outlook](../../outlook/add-in-commands-for-outlook.md).
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
@@ -810,7 +810,8 @@ Después de definir un manifiesto básico, [defina comandos de complementos para
     
 - [Localización de complementos para Office](../../develop/localization.md)
     
-- [Crear un complemento de correo para Outlook que se ejecute en equipos de escritorio, tabletas y dispositivos móviles (esquema v1.1)](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
+- 
+  [Crear un complemento de correo para Outlook que se ejecute en equipos de escritorio, tabletas y dispositivos móviles (esquema v1.1)](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
     
 - [Privacidad, permisos y seguridad para los complementos de Outlook](../../outlook/privacy-and-security.md)
     
@@ -820,9 +821,10 @@ Después de definir un manifiesto básico, [defina comandos de complementos para
     
 - [Referencia de esquema para manifiestos de Complementos de Office (v1.1)](../../overview/add-in-manifests.md)
     
-- [Tipos de elementos y clases de mensajes](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- 
+  [Tipos de elementos y clases de mensajes](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
     
-- [Directrices de diseño para complementos de Office](../../design/add-in-design.md)
+- [Instrucciones de diseño para complementos de Office](../../design/add-in-design.md)
     
 - [Comprender los permisos de los complementos de Outlook](../../outlook/understanding-outlook-add-in-permissions.md)
     

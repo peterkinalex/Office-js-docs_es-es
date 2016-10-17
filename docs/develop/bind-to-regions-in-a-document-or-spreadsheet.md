@@ -1,5 +1,5 @@
 
-# Enlazar a regiones de un documento u hoja de cálculo
+# <a name="bind-to-regions-in-a-document-or-spreadsheet"></a>Enlazar a regiones de un documento u hoja de cálculo
 
 El acceso a datos basado en enlaces permite a los complementos de panel de tareas y de contenido tener acceso de forma coherente a una determinada región de un documento o una hoja de cálculo a través de un identificador. Primero, el complemento necesita establecer el enlace con una llamada a uno de los métodos que asocian una parte del documento con un identificador único: [addFromPromptAsync], [addFromSelectionAsync] o [addFromNamedItemAsync]. Después de establecer el enlace, el complemento puede usar el identificador para tener acceso a los datos de la región asociada del documento o la hoja de cálculo. Crear enlaces proporciona las ventajas siguientes al complemento:
 
@@ -15,7 +15,7 @@ Al establecer un enlace, también puede subscribirse a eventos de cambio de dato
 El objeto [Bindings] expone un método [getAllAsync] que da acceso al conjunto de todos los enlaces establecidos en el documento u hoja de cálculo. Se puede acceder a un enlace individual por su identificador mediante los métodos Bindings.[getByIdAsync] u [Office.select]. Puede establecer enlaces nuevos, así como quitar los existentes, mediante uno de los métodos siguientes del objeto [Bindings]: [addFromSelectionAsync], [addFromPromptAsync], [addFromNamedItemAsync] o [releaseByIdAsync].
 
 
-## Tipos de enlaces
+## <a name="binding-types"></a>Tipos de enlaces
 
 Existen [tres tipos de enlaces][Office.BindingType] distintos que puede especificar con el parámetro _bindingType_ al crear un enlace con los métodos [addFromSelectionAsync], [addFromPromptAsync] o [addFromNamedItemAsync]:
 
@@ -23,7 +23,7 @@ Existen [tres tipos de enlaces][Office.BindingType] distintos que puede especifi
 
     En Word, la mayoría de las selecciones contiguas son válidas, mientras que en Excel solo se puede seleccionar una celda como destino del enlace de texto. En Excel, solo se admite el texto sin formato. En Word pueden usarse tres formatos: texto sin formato, HTML y Open XML para Office.
 
-2. **[Enlace de matriz][MatrixBinding]**: enlaza con una región fija de un documento que contiene datos tabulares sin encabezados. Los datos en un enlace de matriz se escriben o se leen como una **Matriz** bidireccional, que en JavaScript se implementa como una matriz de matrices. Por ejemplo, dos filas de valores de **cadena** en dos columnas pueden escribirse o leerse como ` [['a', 'b'], ['c', 'd']]` y una sola columna de tres filas puede escribirse o leerse como `[['a'], ['b'], ['c']]`.
+2. **[Enlace de matriz][MatrixBinding]**: enlaza con una región fija de un documento que contiene datos tabulares sin encabezados. Los datos en un enlace de matriz se escriben o se leen como una **Matriz** bidireccional, que en JavaScript se implementa como una matriz de matrices. Por ejemplo, dos filas de valores de **cadena** en dos columnas se pueden escribir o leer como ` [['a', 'b'], ['c', 'd']]`, y una sola columna de tres filas se puede escribir o leer como `[['a'], ['b'], ['c']]`.
 
     En Excel, se puede usar cualquier selección contigua de celdas para establecer un enlace de matriz.  En Word, solo las tablas admiten enlaces de matriz.
 
@@ -33,11 +33,11 @@ Existen [tres tipos de enlaces][Office.BindingType] distintos que puede especifi
 
 Después de crear un enlace mediante uno de los tres métodos de "addFrom" del objeto `Bindings`, puede trabajar con los datos y propiedades del enlace mediante los métodos del objeto correspondiente: [MatrixBinding], [TableBinding] o [TextBinding]. Estos tres objetos heredan los métodos [getDataAsync] y [setDataAsync] del objeto `Binding` que le permiten interactuar con los datos enlazados.
 
-> **¿Cuándo debería usar matrices en lugar de enlaces de tabla?** Cuando los datos tabulares con los que trabaja contienen una fila de total, debe usar un enlace de matriz si el script del complemento necesita acceder a los valores de la fila de total o detectar que la selección del usuario está en la fila de total. Si establece un enlace de tabla para datos tabulares que contengan una fila de total, la propiedad [TableBinding.rowCount] y las propiedades `rowCount` y `startRow` del objeto [BindingSelectionChangedEventArgs] en controladores de eventos no reflejarán la fila de total en sus valores. Para evitar esta limitación, debe establecer un enlace de matriz para trabajar con la fila de total.
+> **¿Cuándo debería usar matrices en lugar de enlaces de tabla?** Cuando los datos tabulares con los que trabaja contienen una fila de total, debe usar un enlace de matriz si el script del complemento necesita tener acceso a los valores de la fila de total o detectar que la selección del usuario está en la fila de total. Si establece un enlace de tabla para datos tabulares que contengan una fila de total, la propiedad [TableBinding.rowCount] y las propiedades `rowCount` y `startRow` del objeto [BindingSelectionChangedEventArgs] en controladores de eventos no reflejarán la fila de total en sus valores. Para evitar esta limitación, debe establecer un enlace de matriz para trabajar con la fila de total.
 
 
 
-### Adición de un enlace a la selección actual del usuario
+### <a name="add-a-binding-to-the-user's-current-selection"></a>Adición de un enlace a la selección actual del usuario
 
 En el ejemplo siguiente se muestra cómo agregar un enlace de texto con el nombre `myBinding` a la selección actual de un documento con el método [addFromSelectionAsync].
 
@@ -63,7 +63,7 @@ El segundo parámetro opcional es un objeto que indica el identificador del enla
 
 La función anónima que se pasa a la función como el parámetro de _devolución de llamada_ final se ejecuta cuando se completa la creación del enlace. Se llama a la función con un solo parámetro, `asyncResult`, que proporciona acceso a un objeto [AsyncResult] que proporciona el estado de la llamada. La propiedad `AsyncResult.value` contiene una referencia a un objeto [Binding] del tipo especificado para el enlace recién creado. Puede usar este objeto [Binding] para obtener y establecer datos.
 
-### Adición de un enlace desde un aviso
+### <a name="add-a-binding-from-a-prompt"></a>Agregar un enlace desde un aviso
 
 En el ejemplo siguiente se muestra cómo agregar un enlace de texto denominado `myBinding` mediante el uso del método [addFromPromptAsync]. Este método permite al usuario especificar el rango para el enlace usando el aviso de selección de rango integrado de la aplicación.
 
@@ -94,12 +94,12 @@ La función anónima que se pasa a la función como el tercer parámetro _callba
 La Figura 1 muestra la petición de selección de rango integrada en Excel.
 
 
-**Figura 1. IU de selección de datos en Excel.**
+**Figura 1: Interfaz de usuario Seleccionar datos en Excel**
 
-![UI de Seleccionar datos en Excel](../../images/AgaveAPIOverview_ExcelSelectionUI.png)
+![Interfaz de usuario Seleccionar datos en Excel](../../images/AgaveAPIOverview_ExcelSelectionUI.png)
 
 
-### Adición de un enlace a un elemento con nombre
+### <a name="add-a-binding-to-a-named-item"></a>Adición de un enlace a un elemento con nombre
 
 
 En el ejemplo siguiente se muestra cómo agregar un enlace al elemento con nombre `myRange` existente como un enlace de "matriz" con el método [addFromNamedItemAsync] y se asigna el `id` del enlace como "myMatrix".
@@ -159,7 +159,7 @@ function write(message){
 
 De forma predeterminada, un control de contenido no tiene ningún `Title*`valor asignado. Para asignar un nombre significativo en la interfaz de usuario de Word, después de insertar un control de contenido **Texto enriquecido** desde el grupo **Controles** de la pestaña **Desarrollador** de la cinta, use el comando **Propiedades** del grupo **Controles** para mostrar el cuadro de diálogo **Propiedades del control de contenido**. Después, establezca la propiedad **Title** del control de contenido con el nombre al que quiera hacer referencia desde su código.
 
-En el ejemplo siguiente se crea un enlace de texto en Word a un control de contenido de texto enriquecido llamado  `"FirstName"`, se asigna el  **id**`"firstName"` y, a continuación, se muestra esa información.
+En el ejemplo siguiente se crea un enlace de texto en Word a un control de contenido de texto enriquecido llamado `"FirstName"`, se asigna el **id**`"firstName"` y, a continuación, se muestra esa información.
 
 
 ```js
@@ -182,7 +182,7 @@ function write(message){
 ```
 
 
-### Obtención de todos los enlaces
+### <a name="get-all-bindings"></a>Obtención de todos los enlaces
 
 
 En el ejemplo siguiente se muestra cómo obtener todos los enlaces de un documento con el método Bindings.[getAllAsync].
@@ -206,7 +206,7 @@ function write(message){
 La función anónima que se pasa a la función como el parámetro `callback` se ejecuta cuando se completa la operación. Se llama a la función con un solo parámetro, `asyncResult`, que contiene una matriz de los enlaces en el documento. La matriz se itera para construir una cadena que contenga los identificadores de los enlaces. Después, se muestra la cadena en un cuadro de mensaje.
 
 
-### Obtención de un enlace por el identificador con el método getByIdAsync del objeto Bindings
+### <a name="get-a-binding-by-id-using-the-getbyidasync-method-of-the-bindings-object"></a>Obtención de un enlace por el identificador con el método getByIdAsync del objeto Bindings
 
 
 En el ejemplo siguiente se muestra cómo usar el método [getByIdAsync] para obtener un enlace de un documento al especificar su identificador. En este ejemplo se supone que se ha agregado al documento un enlace denominado `'myBinding'` mediante uno de los métodos descritos anteriormente en este tema.
@@ -233,7 +233,7 @@ En el ejemplo, el primer parámetro `id` es el identificador del enlace que se q
 La función anónima transferida a la función como el segundo parámetro  _callback_ se inicia una vez acabada la acción. Se llama a la función con un único parámetro, _asyncResult_, que contiene el estado de la llamada y el enlace con el identificador "myBinding".
 
 
-### Obtención de enlace por el identificador con el método de selección del objeto Office
+### <a name="get-a-binding-by-id-using-the-select-method-of-the-office-object"></a>Obtención de enlace por el identificador con el método de selección del objeto Office
 
 
 En el ejemplo siguiente se muestra cómo usar el método [Office.select] para obtener un objeto [Binding] de un documento al especificar su identificador en una cadena de selector. Después, llama al método Binding.[getDataAsync] para obtener datos del enlace especificado. En este ejemplo se supone que se ha agregado al documento un enlace denominado `'myBinding'` mediante uno de los métodos descritos anteriormente en este tema.
@@ -255,9 +255,9 @@ function write(message){
 ```
 
 
- > **Nota:**  Si la promesa del método `select` devuelve correctamente un objeto [Binding], dicho objeto solo expone los siguientes cuatro métodos del objeto: [getDataAsync], [setDataAsync], [addHandlerAsync] y [removeHandlerAsync]. Si la promesa no puede devolver un objeto Binding, se puede usar la devolución de llamada `onError` para obtener acceso a un objeto [asyncResult.error] y obtener más información. Si necesita llamar a un miembro del objeto Binding que no sea ninguno de los cuatro métodos expuestos por la promesa del objeto Binding devuelta por el método `select`, use en su lugar el método [getByIdAsync] con la propiedad [Document.bindings] y el método [Bindings.getByIdAsync] para recuperar el objeto Binding**.
+ > **Nota:**  Si la promesa del método `select` devuelve correctamente un objeto [Binding], ese objeto solo expone los siguientes cuatro métodos del objeto: [getDataAsync], [setDataAsync], [addHandlerAsync] y [removeHandlerAsync]. Si la promesa no puede devolver un objeto Binding, se puede usar la devolución de llamada `onError` para obtener acceso a un objeto [asyncResult] y obtener más información. Si necesita llamar a un miembro del objeto Binding que no sea ninguno de los cuatro métodos expuestos por la promesa del objeto Binding devuelta por el método `select`, use en su lugar el método [getByIdAsync] con la propiedad [Document.bindings] y el método Bindings.[getByIdAsync] para recuperar el objeto Binding**.
 
-### Liberación de un enlace por el identificador
+### <a name="release-a-binding-by-id"></a>Liberar un enlace por el identificador
 
 
 En el ejemplo siguiente se muestra cómo usar el método [releaseByIdAsync] para liberar un enlace de un documento especificando su identificador.
@@ -278,7 +278,7 @@ En el ejemplo, el primer parámetro `id` es el identificador del enlace que se q
 La función anónima que se pasa a la función como segundo parámetro es una devolución de llamada que se inicia cuando se ha completado la operación. Se llama a la función con un único parámetro,  [asyncResult], que contiene el estado de la llamada.
 
 
-### Lectura de datos de un enlace
+### <a name="read-data-from-a-binding"></a>Lectura de datos de un enlace
 
 
 En el ejemplo siguiente se muestra cómo usar el método [getDataAsync] para obtener datos de un enlace existente.
@@ -306,10 +306,10 @@ Office.select("bindings#myBindingID").getDataAsync
 ```
 
 
-La función anónima que se pasa a la función es una devolución de llamada que se ejecuta cuando se completa la operación. La propiedad [AsyncResult].value contiene los datos de `myBinding`. El tipo del valor depende del tipo de enlace. El enlace de este ejemplo es un enlace de texto. Por lo tanto, el valor contendrá una cadena. Para obtener ejemplos adicionales de trabajar con enlaces de matriz y tabla, consulte el tema del método [getDataAsync].
+La función anónima que se pasa a la función es una devolución de llamada que se ejecuta cuando se completa la operación. La propiedad [AsyncResult].value contiene los datos de `myBinding`. El tipo del valor depende del tipo de enlace. El enlace de este ejemplo es un enlace de texto. Por tanto, el valor contendrá una cadena. Para obtener ejemplos adicionales de trabajar con enlaces de matriz y tabla, consulte el tema del método [getDataAsync].
 
 
-### Escritura de los datos en un enlace
+### <a name="write-data-to-a-binding"></a>Escribir datos en un enlace
 
 En el ejemplo siguiente se muestra cómo usar el método [setDataAsync] para establecer datos en un enlace existente.
 
@@ -319,14 +319,14 @@ myBinding.setDataAsync('Hello World!', function (asyncResult) { });
 
  `myBinding` es una variable que contiene un enlace de texto existente en el documento.
 
-En el ejemplo, el primer parámetro es el valor para establecer en `myBinding`. Como se trata de un enlace de texto, el valor es una `string`. Los tipos de enlace diferentes aceptan tipos de datos diferentes.
+En el ejemplo, el primer parámetro es el valor para establecer en `myBinding`. Como se trata de un enlace de texto, el valor es una `string`. Cada tipo de enlace acepta tipos de datos diferentes.
 
 La función anónima que se pasa a la función es una devolución de llamada que se ejecuta cuando se completa la operación. Se llama a la función con un solo parámetro, `asyncResult`, que contiene el estado del resultado.
 
  > **Nota:** A partir de Excel 2013 SP1 y la compilación correspondiente de Excel Online, ahora puede [establecer el formato al escribir y actualizar datos en tablas enlazadas](../../docs/excel/format-tables-in-add-ins-for-excel.md).
 
 
-### Detección de cambios en los datos o en la selección de un enlace
+### <a name="detect-changes-to-data-or-the-selection-in-a-binding"></a>Detección de cambios en los datos o en la selección de un enlace
 
 
 En el ejemplo siguiente se muestra cómo conectar un controlador de eventos al evento [DataChanged](../../reference/shared/binding.bindingdatachangedevent.md) de un enlace con el id. "MyBinding".
@@ -348,7 +348,7 @@ function write(message){
 
  `myBinding` es una variable que contiene un enlace de texto existente en el documento.
 
-El primer parámetro `eventType` del método [addHandlerAsync] especifica el nombre del evento al que suscribirse. [Office.EventType] es una enumeración de los valores de tipos de eventos disponibles. “Office.EventType.BindingDataChanged evalúa la cadena ‘bindingDataChanged’”.
+El primer parámetro `eventType` del método [addHandlerAsync] especifica el nombre del evento al que suscribirse. [Office.EventType] es una enumeración de los valores de tipos de eventos disponibles. `Office.EventType.BindingDataChanged evaluates to the string `"bindingDataChanged"`.
 
 La función  `dataChanged` que se pasa a la función como el segundo parámetro _handler_ es un controlador de eventos que se ejecuta cuando cambian los datos del enlace. La función se llama con un solo parámetro, _eventArgs_, que contiene una referencia al enlace. Este enlace puede usarse para recuperar los datos actualizados.
 
@@ -357,7 +357,7 @@ De forma similar, puede detectar cuándo cambia la selección un usuario en un e
 Puede agregar varios controladores de eventos a un evento determinado al llamar de nuevo al método [addHandlerAsync] y pasar una función de controlador de eventos adicional para el parámetro `handler`. Esto funcionará correctamente siempre que el nombre de cada función del controlador de eventos sea único.
 
 
-### Eliminación de un controlador de eventos
+### <a name="remove-an-event-handler"></a>Eliminación de un controlador de eventos
 
 
 Para quitar un controlador de eventos de un evento, llame al método [removeHandlerAsync] pasando el tipo de evento como el primer parámetro _eventType_ y el nombre de la función del controlador de eventos que quiere quitar como segundo parámetro _handler_. Por ejemplo, la función siguiente quitará la función del controlador de eventos `dataChanged` que se ha agregado en el ejemplo de la sección anterior.
@@ -374,15 +374,15 @@ function removeEventHandlerFromBinding() {
  >**Importante:**  Si el parámetro opcional _handler_ se omite cuando se llama al método [removeHandlerAsync], se quitarán todos los controladores de eventos del `eventType` especificado.
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 - [Información sobre la API de JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
     
-- [Programación asíncrona en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
+- [Programación asincrónica en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
     
 - [Leer y escribir datos en la selección activa de un documento o una hoja de cálculo](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md)
     
-[Binding]:               ../../reference/shared/binding.md
+[Enlace]:               ../../reference/shared/binding.md
 [MatrixBinding]:         ../../reference/shared/binding.matrixbinding.md
 [TableBinding]:          ../../reference/shared/binding.tablebinding.md
 [TextBinding]:           ../../reference/shared/binding.textbinding.md
@@ -392,7 +392,7 @@ function removeEventHandlerFromBinding() {
 [addHandlerAsync]:       ../../reference/shared/binding.addhandlerasync.md
 [removeHandlerAsync]:    ../../reference/shared/binding.removehandlerasync.md
 
-[Bindings]:              ../../reference/shared/bindings.bindings.md
+[Enlaces]:              ../../reference/shared/bindings.bindings.md
 [getByIdAsync]:          ../../reference/shared/bindings.getbyidasync.md 
 [getAllAsync]:           ../../reference/shared/bindings.getallasync.md
 [addFromNamedItemAsync]: ../../reference/shared/bindings.addfromnameditemasync.md

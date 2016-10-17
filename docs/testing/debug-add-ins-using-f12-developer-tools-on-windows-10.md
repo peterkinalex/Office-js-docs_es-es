@@ -1,5 +1,5 @@
 
-# Depurar complementos con las herramientas de desarrollo F12 en Windows 10
+# <a name="debug-add-ins-using-f12-developer-tools-on-windows-10"></a>Depurar complementos con las herramientas de desarrollo F12 en Windows 10
 
 Las Herramientas de desarrollo F12 que se incluyen en Windows 10 pueden ayudarle a desarrollar, depurar y hacer que se carguen más rápido sus páginas web. También puede usarlas para desarrollar y depurar complementos de Office (por ejemplo, si no usa un IDE como Visual Studio o si necesita investigar un problema mientras ejecuta el complemento fuera del IDE). Puede iniciar las Herramientas de desarrollo F12 después de ejecutar el complemento.
 
@@ -8,7 +8,7 @@ En este artículo se muestra cómo usar la herramienta Depurador de las Herramie
  >**Nota** El Depurador forma parte de las Herramientas de desarrollo F12 en Windows 10 e Internet Explorer. En las versiones anteriores de Windows no se incluye el Depurador. 
 
 
-### Requisitos previos
+### <a name="prerequisites"></a>Requisitos previos
 
 Necesita el siguiente software:
 
@@ -19,7 +19,7 @@ Necesita el siguiente software:
     
 - Su complemento. 
     
-### Usar el depurador
+### <a name="using-the-debugger"></a>Usar el depurador
 
 En este ejemplo se usa Word y un complemento gratuito de la Tienda Office.
 
@@ -57,11 +57,13 @@ En este ejemplo se usa Word y un complemento gratuito de la Tienda Office.
     ![Depurador con resultados desde el punto de interrupción desencadenado](../../images/e0bcd036-91ce-4509-ae98-6c10b593d61b.png)
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
-- [Inspeccionar el JavaScript que se está ejecutando con el depurador](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
+- 
+  [Inspeccionar el JavaScript que se está ejecutando con el depurador](https://msdn.microsoft.com/library/dn255007%28v=vs.85%29.aspx)
     
-- [Usar las herramientas de desarrollo F12](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
+- 
+  [Usar las herramientas de desarrollo F12](https://msdn.microsoft.com/en-us/library/bg182326%28v=vs.85%29.aspx)
     

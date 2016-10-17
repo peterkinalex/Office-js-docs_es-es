@@ -1,7 +1,7 @@
 
-# Labs.Core.ILabCallback
+# <a name="labs.core.ilabcallback"></a>Labs.Core.ILabCallback
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 La interfaz para controlar los métodos de devolución de llamada Labs.js.
 
@@ -10,7 +10,7 @@ interface ILabCallback<T>
 ```
 
 
-## Firma de devolución de llamada
+## <a name="callback-signature"></a>Firma de devolución de llamada
 
  `(err: any, data: T): void`
 

@@ -1,11 +1,11 @@
 
-# Enumeración ProjectViewTypes
+# <a name="projectviewtypes-enumeration"></a>Enumeración ProjectViewTypes
 Especifica los tipos de vistas que puede reconocer el método **[ getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md)**.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Agregado en**|1,0|
+|**Agregado en**|1.0|
 
 ```
 ProjectViewTypes={
@@ -29,13 +29,13 @@ ProjectViewTypes={
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 ****
 
 
-|**Miembro	**|**Descripción**|
+|**Miembro**|**Descripción**|
 |:-----|:-----|
 |**Gantt**|Vista Diagrama de Gantt.|
 |**NetworkDiagram**|Vista Diagrama de red.|
@@ -50,17 +50,17 @@ ProjectViewTypes={
 |**TaskDetails**|Vista Detalles de tarea.|
 |**TaskNameForm**|Vista Formulario Nombre de tarea.|
 |**ResourceNames**|Vista Nombres de los recursos.|
-|**Calendario**|Vista Calendario.|
+|**Calendar**|Vista Calendario.|
 |**TaskUsage**|Vista Uso de tareas.|
 |**ResourceUsage**|Vista Uso de recursos.|
-|**Escala de tiempo**|Vista Escala de tiempo.|
+|**Timeline**|Vista Escala de tiempo.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 El método **[getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md)** devuelve el nombre y el valor de la constante **ProjectViewTypes** correspondientes a la vista activa.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -81,7 +81,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 
@@ -90,13 +90,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
-|1,0|Agregado|
+|1.0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [Método getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md)

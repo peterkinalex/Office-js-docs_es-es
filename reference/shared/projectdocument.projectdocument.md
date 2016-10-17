@@ -1,19 +1,19 @@
 
 
-# Objeto ProjectDocument
+# <a name="projectdocument-object"></a>Objeto ProjectDocument
 Clase abstracta que representa el documento del proyecto (el proyecto activo) con el que interactúa el complemento de Office.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Agregado en**|1,0|
+|**Agregado en**|1.0|
 
 ```js
 Office.context.document
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Métodos**
@@ -21,11 +21,11 @@ Office.context.document
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|[Método addHandlerAsync](../../reference/shared/projectdocument.addhandlerasync.md)|Agrega de forma asíncrona un controlador de evento para un evento en un objeto **ProjectDocument**.|
+|[Método addHandlerAsync](../../reference/shared/projectdocument.addhandlerasync.md)|Agrega de forma asincrónica un controlador de eventos para un evento en un objeto **ProjectDocument**.|
 |[Método getMaxResourceIndexAsync](../../reference/shared/projectdocument.getmaxresourceindexasync.md)|Obtiene de forma asincrónica el índice máximo de la colección de recursos del proyecto actual.|
 |[Método getMaxTaskIndexAsync](../../reference/shared/projectdocument.getmaxtaskindexasync.md)|Obtiene de forma asincrónica el índice máximo de la colección de tareas del proyecto actual.|
-|[Método getProjectFieldAsync](../../reference/shared/projectdocument.getprojectfieldasync.md)|Obtiene de forma asíncrona el valor del campo especificado del proyecto activo.|
-|[Método getResourceByIndexAsync](../../reference/shared/projectdocument.getresourcebyindexasync.md)|Obtiene de forma asíncrona el GUID del recurso que tiene el índice especificado en la colección de recursos.|
+|[Método getProjectFieldAsync](../../reference/shared/projectdocument.getprojectfieldasync.md)|Obtiene de forma asincrónica el valor del campo especificado del proyecto activo.|
+|[Método getResourceByIndexAsync](../../reference/shared/projectdocument.getresourcebyindexasync.md)|Obtiene de forma asincrónica el GUID del recurso que tiene el índice especificado en la colección de recursos.|
 |[Método getResourceFieldAsync](../../reference/shared/projectdocument.getresourcefieldasync.md)|Obtiene de forma asincrónica el valor del campo indicado para el recurso que se ha especificado.|
 |[Método getSelectedDataAsync](../../reference/shared/projectdocument.getselecteddataasync.md)|Obtiene de forma asincrónica los datos que contiene la selección actual de una o varias celdas del diagrama de Gantt.|
 |[Método getSelectedResourceAsync](../../reference/shared/projectdocument.getselectedresourceasync.md)|Obtiene de forma asincrónica el identificador único global (GUID, Globally Unique Identifier) del recurso seleccionado.|
@@ -33,9 +33,9 @@ Office.context.document
 |[Método getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md)|Obtiene de forma asincrónica el nombre y el tipo de vista de la vista activa.|
 |[Método getTaskAsync](../../reference/shared/projectdocument.gettaskasync.md)|Obtiene de forma asincrónica el nombre de la tarea, los recursos que se han asignado a la misma y el identificador correspondiente de la lista sincronizada de tareas de SharePoint.|
 |[Método getTaskByIndexAsync](../../reference/shared/projectdocument.gettaskbyindexasync.md)|Obtiene de forma asincrónica el GUID de la tarea que tiene el índice especificado en la colección de tareas.|
-|[Método getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)|Obtiene de forma asíncrona el valor del campo especificado para la tarea especificada.|
+|[Método getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)|Obtiene de forma asincrónica el valor del campo especificado para la tarea especificada.|
 |[Método getWSSUrlAsync](../../reference/shared/projectdocument.getwssurlasync.md)|Obtiene de forma asincrónica la dirección URL de la lista sincronizada de tareas de SharePoint.|
-|[Método removeHandlerAsync](../../reference/shared/projectdocument.removehandlerasync.md)|Elimina de forma asíncrona un controlador de evento para un evento de cambio en un objeto **ProjectDocument**.|
+|[Método removeHandlerAsync](../../reference/shared/projectdocument.removehandlerasync.md)|Elimina de forma asincrónica un controlador de eventos para un evento en un objeto **ProjectDocument**.|
 |[Método setResourceFieldAsync](../../reference/shared/projectdocument.setresourcefieldasync.md)|Establece de forma asincrónica el valor del campo especificado para el recurso concreto.|
 |[Método setTaskFieldAsync](../../reference/shared/projectdocument.settaskfieldasync.md)|Establece de forma asincrónica el valor del campo especificado para la tarea determinada.|
 
@@ -44,16 +44,16 @@ Office.context.document
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|[ResourceSelectionChanged event](../../reference/shared/projectdocument.resourceselectionchanged.event.md)|Ocurre cuando la selección de recursos cambia en el proyecto activo.|
-|[TaskSelectionChanged event](../../reference/shared/projectdocument.taskselectionchanged.event.md)|Se genera cuando cambia la selección de tareas en el proyecto activo.|
-|[ViewSelectionChanged event](../../reference/shared/projectdocument.viewselectionchanged.event.md)|Ocurre cuando la visualización activa cambia en el proyecto activo.|
+|[Evento ResourceSelectionChanged](../../reference/shared/projectdocument.resourceselectionchanged.event.md)|Se produce cuando la selección de recursos cambia en el proyecto activo.|
+|[Evento TaskSelectionChanged](../../reference/shared/projectdocument.taskselectionchanged.event.md)|Se produce cuando cambia la selección de tareas en el proyecto activo.|
+|[Evento ViewSelectionChanged](../../reference/shared/projectdocument.viewselectionchanged.event.md)|Se produce cuando la visualización activa cambia en el proyecto activo.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 No llame directamente o cree instancias del objeto **ProjectDocument** en el script.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el siguiente ejemplo se inicializa el complemento y después se obtienen propiedades del objeto [Document](../../reference/shared/document.md) que están disponibles en el contexto de un documento de Project. Un documento de Project es el proyecto activo y abierto. Para tener acceso a los miembros del objeto **ProjectDocument**, use el objeto **Office.context.document** tal como se muestra en los ejemplos de código para los eventos y métodos **ProjectDocument**.
 
@@ -94,7 +94,7 @@ En el ejemplo se presupone que el complemento tiene una referencia a la bibliote
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este objeto es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este objeto.
@@ -112,18 +112,18 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
-|1,0|Agregado|
+|1.0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [Complementos de panel de tareas para Project](../../docs/project/project-add-ins.md)

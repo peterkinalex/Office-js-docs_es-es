@@ -1,4 +1,4 @@
-# Uso de temas de documentos en los complementos para PowerPoint
+# <a name="use-document-themes-in-your-powerpoint-add-ins"></a>Uso de temas de documentos en los complementos para PowerPoint
 
 
 Un [tema de Office](https://support.office.com/en-US/Article/What-is-a-theme--7528ccc2-4327-4692-8bf5-9b5a3f2a5ef5) consiste, en parte, en un conjunto coordinado visualmente de fuentes y colores que se puede aplicar a presentaciones, documentos, hojas de cálculo y correos electrónicos. Para aplicar o personalizar el tema de una presentación en PowerPoint, use los grupos **Temas** y **Variantes** en la pestaña **Diseño** de la cinta. PowerPoint asigna una presentación en blanco con el **Tema de Office** predeterminado, pero puede elegir otros temas disponibles en la pestaña **Diseño**, descargar temas adicionales de Office.com, o crear y personalizar su propio tema.
@@ -11,7 +11,7 @@ Con OfficeThemes.css puede diseñar complementos que se coordinan con PowerPoint
 -  **En los complementos de panel de tareas para PowerPoint** Use las clases de temas de la interfaz de usuario de Office de OfficeThemes.css para especificar las mismas fuentes y colores de fondo que se usan en la interfaz de usuario de modo que los complementos de panel de tareas coincidan con los colores de los paneles de tareas integrados; y dichos colores se actualizarán dinámicamente si un usuario cambia el tema de la interfaz de usuario de Office.
     
 
-### Colores de temas del documento
+### <a name="document-theme-colors"></a>Colores de temas del documento
 
 Cada tema del documento de Office define 12 colores. Diez de esos colores se encuentran disponibles cuando establece la fuente, el fondo y otras opciones de colores en una presentación con el selector de colores:
 
@@ -26,7 +26,7 @@ Para ver o personalizar el conjunto total de 12 colores de temas en PowerPoint, 
 Los primeros cuatro colores son para texto y fondos. El texto que se crea con colores claro siempre será legible sobre colores oscuros y el texto que se crea con colores oscuros siempre será legible sobre colores claros. Los seis colores siguientes son colores de énfasis que siempre están visibles en los cuatro colores de fondo posibles. Los dos últimos colores son para hipervínculos e hipervínculos visitados.
 
 
-### Fuentes de temas del documento
+### <a name="document-theme-fonts"></a>Fuentes de temas del documento
 
 Cada tema del documento de Office también define dos fuentes: una para los encabezados y otra para el texto de cuerpo. PowerPoint usa estas fuentes para crear estilos de texto automáticos. Además, las galerías de **Estilos rápidos** para texto y **WordArt** usan las mismas fuentes del tema. Estas dos fuentes están disponibles como las primeras dos selecciones cuando selecciona fuentes con el selector de fuentes:
 
@@ -39,7 +39,7 @@ Para ver o personalizar las fuentes de temas en PowerPoint, en el grupo **Varian
 ![Cuadro de diálogo Crear nuevas fuentes del tema](../../images/off15app_CreateNewThemeFonts.png)
 
 
-### Fuentes y colores del tema de la interfaz de usuario de Office
+### <a name="office-ui-theme-fonts-and-colors"></a>Fuentes y colores del tema de la interfaz de usuario de Office
 
 Office también permite elegir entre varios temas predefinidos que especifican algunos de los colores y las fuentes que se usan en la interfaz de usuario de todas las aplicaciones de Office. Para ello, use el menú desplegable  **Archivo**  >  **Cuenta**  >  **Tema de Office** (desde cualquier aplicación de Office).
 
@@ -49,17 +49,17 @@ Office también permite elegir entre varios temas predefinidos que especifican a
 OfficeThemes.css incluye clases que puede usar en los complementos de panel de tareas para PowerPoint de modo que usen las mismas fuentes y colores. Esto le permite diseñar complementos de panel de tareas que coincidan con la apariencia de los paneles de tareas integrados.
 
 
-## Usar OfficeThemes.css
+## <a name="using-officethemes.css"></a>Usar OfficeThemes.css
 
 Usar el archivo OfficeThemes.css con los complementos de contenido para PowerPoint permite coordinar la apariencia de complemento con el tema aplicado a la presentación con la que se está ejecutando. Usar el archivo OfficeThemes.css con los complementos de paneles de tareas para PowerPoint permite coordinar la apariencia de complemento con las fuentes y los colores de la interfaz de usuario de Office.
 
 
-### Agregar el archivo OfficeThemes.css al proyecto
+### <a name="adding-the-officethemes.css-file-to-your-project"></a>Agregar el archivo OfficeThemes.css al proyecto
 
 Use los siguientes pasos para agregar el archivo OfficeThemes.css al proyecto de complemento, y hacer referencia a él.
 
 
-### Para agregar OfficeThemes.css al proyecto de Visual Studio
+### <a name="to-add-officethemes.css-to-your-visual-studio-project"></a>Para agregar OfficeThemes.css al proyecto de Visual Studio
 
 
 1. En el **Explorador de soluciones**, haga clic con el botón derecho en la carpeta **Contenido** del proyecto _**nombre_proyecto**_**Web**, elija **Agregar** y, después, haga clic en **Hoja de estilo**.
@@ -76,7 +76,7 @@ Use los siguientes pasos para agregar el archivo OfficeThemes.css al proyecto de
 4. Si está usando otra herramienta que no es Visual Studio para crear su complemento, copie el código CSS del paso 3 en un archivo de texto y asegúrese de guardar el archivo como OfficeThemes.css.
     
 
-### Referencia a OfficeThemes.css en las páginas HTML del complemento
+### <a name="referencing-officethemes.css-in-your-add-in's-html-pages"></a>Referencia a OfficeThemes.css en las páginas HTML del complemento
 
 Para usar el archivo OfficeThemes.css en su proyecto de complemento, agregue una etiqueta  `<link>` que haga referencia al archivo OfficeThemes.css dentro de la etiqueta `<head>` de las páginas web (como un archivo .html, .aspx o .php) que implementa la interfaz de usuario de su complemento en este formato:
 
@@ -88,7 +88,7 @@ Para usar el archivo OfficeThemes.css en su proyecto de complemento, agregue una
 Para realizar esta acción en Visual Studio, siga estos pasos
 
 
-### Para hacer referencia a OfficeThemes.css en el complemento para PowerPoint
+### <a name="to-reference-officethemes.css-in-your-add-in-for-powerpoint"></a>Para hacer referencia a OfficeThemes.css en el complemento para PowerPoint
 
 
 1. En Visual Studio 2015, abra o cree un nuevo proyecto de  **Complemento de Office**.
@@ -102,9 +102,9 @@ Para realizar esta acción en Visual Studio, siga estos pasos
 Si va a crear su complemento con otra herramienta que no es Visual Studio, agregue una etiqueta  `<link>` con el mismo formato que especifica una ruta de acceso relativa a la copia de OfficeThemes.css que se implementará con su complemento.
 
 
-### Usar clases de temas del documento OfficeThemes.css en la página HTML del complemento de contenido
+### <a name="using-officethemes.css-document-theme-classes-in-your-content-add-in's-html-page"></a>Usar clases de temas del documento OfficeThemes.css en la página HTML del complemento de contenido
 
-A continuación, se muestra un ejemplo simple de HTML en una complemento de contenido que usa las clases de temas del documento OfficeTheme.css. Para obtener información detallada sobre las clases de OfficeThemes.css que corresponden a los 12 colores y las 2 fuentes que se usan en un tema del documento, vea [Clases de temas para complementos de contenido](#clases-de-temas-para-complementos-de-contenido).
+A continuación, se muestra un ejemplo simple de HTML en una complemento de contenido que usa las clases de temas del documento OfficeTheme.css. Para obtener información detallada sobre las clases de OfficeThemes.css que corresponden a los 12 colores y las 2 fuentes que se usan en un tema del documento, vea [Clases de temas para complementos de contenido](#theme-classes-for-content-add-ins).
 
 
 ```HTML
@@ -122,11 +122,11 @@ Si cambia la presentación para usar otro tema o personalizar el tema de la pres
 ![Aplicación de contenido con el tema Faceta](../../images/off15app_ContentApp_FacetTheme.png)
 
 
-### Usar clases de temas de la interfaz de usuario de Office de OfficeThemes.css en la página HTML del complemento de panel de tareas
+### <a name="using-officethemes.css-office-ui-theme-classes-in-your-task-pane-add-in's-html-page"></a>Usar clases de temas de la interfaz de usuario de Office de OfficeThemes.css en la página HTML del complemento de panel de tareas
 
 Además del tema del documento, los usuarios pueden personalizar el esquema de color de la interfaz de usuario de Office para todas las aplicaciones de Office mediante el cuadro desplegable  **Archivo**  >  **Cuenta**  >  **Tema de Office**.
 
-A continuación, se muestra un ejemplo simple de HTML en una complemento de panel de tareas que usa clases de OfficeTheme.css para especificar el color de la fuente y el fondo. Para obtener información detallada sobre las clases de OfficeThemes.css que corresponden a las fuentes y los colores del tema de interfaz de usuario de Office, vea [Clases de temas para complementos de panel de tareas](#clases-de-temas-para-complementos-de-panel-de-tareas).
+A continuación, se muestra un ejemplo simple de HTML en una complemento de panel de tareas que usa clases de OfficeTheme.css para especificar el color de la fuente y el fondo. Para obtener información detallada sobre las clases de OfficeThemes.css que corresponden a las fuentes y los colores del tema de interfaz de usuario de Office, vea [Clases de temas para complementos de panel de tareas](#theme-classes-for-task-pane-add-ins).
 
 
 ```HTML
@@ -144,13 +144,13 @@ Si cambia el **Tema de Office** a **Gris oscuro**, las fuentes y los colores esp
 ![Panel de tareas con el tema de Office gris oscuro](../../images/off15app_TaskPaneThemeDarkGray.png)
 
 
-## Clases de OfficeTheme.cs
+## <a name="officetheme.css-classes"></a>Clases de OfficeTheme.cs
 
 
 El archivo OfficeThemes.css contiene dos conjuntos de clases que puede usar con los complementos de contenido y de panel de tareas para PowerPoint.
 
 
-### Clases de temas para complementos de contenido
+### <a name="theme-classes-for-content-add-ins"></a>Clases de temas para complementos de contenido
 
 
 El archivo OfficeThemes.css proporciona clases que corresponden a las 2 fuentes y los 12 colores usados en un tema del documento. Estas clases son apropiadas para los complementos de contenido para PowerPoint de modo que las fuentes y los colores del complemento puedan coordinarse con la presentación en la que se inserta.
@@ -168,7 +168,7 @@ El archivo OfficeThemes.css proporciona clases que corresponden a las 2 fuentes 
 | `office-headerFont-eastAsian`|Nombre del este asiático de la fuente de los encabezados.|
 | `office-headerFont-latin`|Nombre latino de la fuente de los encabezados. Valor predeterminado "Calabri Light"|
 | `office-headerFont-script`|Nombre de script de la fuente de los encabezados.|
-| `office-headerFont-localized`|Nombre localizado de la fuente de los encabezados. Especifica el nombre de fuente predeterminado conforme a la cultura que se usa actualmente en Office.|
+| `office-headerFont-localized`|Nombre localizado de la fuente de los encabezados. Especifica el nombre de fuente predeterminado conforme a la referencia cultural que se usa actualmente en Office.|
 
 **Colores de temas para complementos de contenido**
 
@@ -205,7 +205,7 @@ En la siguiente captura de pantalla se muestran ejemplos de todas las clases de 
 ![Ejemplo de colores del tema de Office predeterminado](../../images/off15app_DefaultOfficeThemeColors.png)
 
 
-### Clases de temas para complementos de panel de tareas
+### <a name="theme-classes-for-task-pane-add-ins"></a>Clases de temas para complementos de panel de tareas
 
 
 El archivo OfficeThemes.css proporciona clases que corresponden a los cuatro colores asignados a fuentes y fondos que el tema de la interfaz de usuario de la aplicación de Office utiliza. Estas clases son apropiadas para usar con complementos de tareas para PowerPoint de modo que los colores de los complementos se coordinen con los otros paneles de tareas integrados en Office.
@@ -221,6 +221,6 @@ El archivo OfficeThemes.css proporciona clases que corresponden a los cuatro col
 | `office-officeTheme-secondary-fontColor`|Color de fuente secundario. Valor predeterminado #262626|
 | `office-officeTheme-secondary-bgColor`|Color de fondo secundario. Valor predeterminado #FFFFFF|
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
-- [Creación de complementos de contenido y panel de tareas para PowerPoint](../powerpoint/powerpoint-add-ins.md)
+- [Crear complementos de contenido y panel de tareas para PowerPoint](../powerpoint/powerpoint-add-ins.md)

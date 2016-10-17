@@ -1,7 +1,7 @@
 
-# Labs.Components.ChoiceComponentAnswer
+# <a name="labs.components.choicecomponentanswer"></a>Labs.Components.ChoiceComponentAnswer
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 La respuesta a un problema presentado en un componente de elección.
 
@@ -10,19 +10,19 @@ class ChoiceComponentAnswer
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
 | `public var answer: any`|El valor de respuesta.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 
 
 
-### constructor
+### <a name="constructor"></a>constructor
 
  `function constructor(answer: any)`
 

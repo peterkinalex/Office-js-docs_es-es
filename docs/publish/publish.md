@@ -1,5 +1,5 @@
 
-# Implementar y publicar el complemento de Office
+# <a name="deploy-and-publish-your-office-add-in"></a>Implementar y publicar el complemento de Office
 
 
 Puede usar uno de varios métodos a la hora de implementar el complemento de Office para pruebas o para distribuirlo a los usuarios:
@@ -11,7 +11,7 @@ Puede usar uno de varios métodos a la hora de implementar el complemento de Off
 
 Las opciones disponibles dependen del tipo de complemento que cree y del host de Office al que esté destinado.
 
-### Opciones de implementación de complementos para Word, Excel y PowerPoint
+### <a name="deployment-options-for-word,-excel,-and-powerpoint-add-ins"></a>Opciones de implementación de complementos para Word, Excel y PowerPoint
 
 | Punto de extensión            | Transferencia local | Catálogo de SharePoint | Vista previa del Centro de administración de Office 365 | Tienda Office |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
@@ -21,7 +21,7 @@ Las opciones disponibles dependen del tipo de complemento que cree y del host de
 
 > **NOTA:** No se admiten los catálogos de SharePoint en Office 2016 para Mac. Para implementar complementos de Office en clientes Mac, debe enviarlos a la [Tienda Office].    
 
-### Opciones de implementación para complementos de Outlook
+### <a name="deployment-options-for-outlook-add-ins"></a>Opciones de implementación para complementos de Outlook
 
 | Punto de extensión     | Transferencia local | Servidor Exchange | Tienda Office |
 |:---------|:-----------:|:---------------:|:------------:|
@@ -34,14 +34,16 @@ Para obtener información sobre las licencias de los complementos de la Tienda O
 
 Para obtener información sobre cómo pueden los usuarios finales adquirir, insertar y ejecutar complementos, consulte [Empezar a usar el complemento de Office](https://support.office.com/en-ie/article/Start-using-your-Office-Add-in-82e665c4-6700-4b56-a3f3-ef5441996862?ui=en-US&rs=en-IE&ad=IE).
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 - [Disponibilidad de plataformas y hosts de los complementos de Office]
 - [Implementar e instalar complementos de Outlook para probarlos](../outlook/testing-and-tips.md) 
-- [Enviar complementos y aplicaciones web a la Tienda Office][#tienda-de-office]
+- [Enviar complementos y aplicaciones web a la Tienda Office][Tienda Office]
 - [Instrucciones de diseño para complementos de Office](../design/add-in-design)
-- [Crear complementos de la Tienda Office efectivos](https://msdn.microsoft.com/en-us/library/jj635874.aspx)
+- 
+  [Crear complementos de la Tienda Office efectivos](https://msdn.microsoft.com/en-us/library/jj635874.aspx)
 - [Solucionar errores de usuario con los complementos de Office](../testing/testing-and-troubleshooting.md)
 
-[Tienda Office]: http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx
+
+  [Tienda Office]: http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx
 [Disponibilidad de plataformas y hosts de los complementos de Office]: http://dev.office.com/add-in-availability

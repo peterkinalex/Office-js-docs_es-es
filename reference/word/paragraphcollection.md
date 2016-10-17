@@ -1,43 +1,43 @@
-# Objeto ParagraphCollection (API de JavaScript para Word)
+# <a name="paragraphcollection-object-(javascript-api-for-word)"></a>Objeto ParagraphCollection (API de JavaScript para Word)
 
 Contiene una colección de objetos [paragraph](paragraph.md).
 
-_Se aplica a: Word 2016, Word para iPad, Word para Mac_
+_Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 
-## Properties
+## <a name="properties"></a>Propiedades
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
-|Items|[Paragraph[]](paragraph.md)|Colección de objetos de párrafo. Solo lectura.|
+|items|[Paragraph[]](paragraph.md)|Colección de objetos de párrafo. Solo lectura.|
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 Ninguno
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -75,5 +75,5 @@ Word.run(function (context) {
 });
 ```
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).

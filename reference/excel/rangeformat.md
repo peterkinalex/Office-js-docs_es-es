@@ -1,8 +1,8 @@
-# Objeto RangeFormat (API de JavaScript para Excel)
+# <a name="rangeformat-object-(javascript-api-for-excel)"></a>Objeto RangeFormat (API de JavaScript para Excel)
 
 Objeto de formato que encapsula la fuente, el relleno, los bordes, la alineación y otras propiedades del intervalo.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
@@ -12,17 +12,17 @@ Objeto de formato que encapsula la fuente, el relleno, los bordes, la alineació
 |verticalAlignment|string|Representa la alineación vertical del objeto especificado. Los valores posibles son: Top, Center, Bottom, Justify, Distributed.|
 |wrapText|bool|Indica que el control de texto de Excel está establecido para ajustar texto en el objeto. Un valor null indica que el intervalo no usa una configuración de ajuste de texto uniforme.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |borders|[RangeBorderCollection](rangebordercollection.md)|Colección de objetos de borde que se aplican al intervalo global seleccionado. Solo lectura.|
 |fill|[RangeFill](rangefill.md)|Devuelve el objeto de relleno definido en el intervalo global. Solo lectura.|
 |font|[RangeFont](rangefont.md)|Devuelve el objeto de fuente definido en el intervalo global seleccionado. Solo lectura.|
-|protección|[FormatProtection](formatprotection.md)|Devuelve el objeto de protección de formato de un rango. Solo lectura.|
+|protection|[FormatProtection](formatprotection.md)|Devuelve el objeto de protección de formato de un rango. Solo lectura.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
@@ -30,53 +30,53 @@ _Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
 |[autofitRows()](#autofitrows)|void|Cambia el alto de las filas del rango actual para obtener el ajuste perfecto (según los datos actuales de las columnas).|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### autofitColumns()
+### <a name="autofitcolumns()"></a>autofitColumns()
 Cambia el ancho de las columnas del rango actual para obtener el ajuste perfecto (según los datos actuales de las columnas).
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeFormatObject.autofitColumns();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-### autofitRows()
+### <a name="autofitrows()"></a>autofitRows()
 Cambia el alto de las filas del rango actual para obtener el ajuste perfecto (según los datos actuales de las columnas).
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeFormatObject.autofitRows();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 En este ejemplo se imprimen todas las propiedades de formato de un intervalo. 
 

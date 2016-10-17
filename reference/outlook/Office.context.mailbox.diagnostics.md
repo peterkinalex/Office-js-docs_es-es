@@ -1,56 +1,56 @@
 
 
-# diagnostics
+# <a name="diagnostics"></a>diagnostics
 
 ## [Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md). diagnostics
 
 Proporciona información de diagnóstico a un complemento de Outlook.
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-### Miembros
+### <a name="members"></a>Miembros
 
-####  hostName :String
+####  <a name="hostname-:string"></a>hostName :String
 
 Obtiene una cadena que representa el nombre de la aplicación host.
 
 Una cadena que puede ser uno de los siguientes valores: `Outlook`, `Mac Outlook` o `OutlookWebApp`.
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   String
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
-####  hostVersion :String
+####  <a name="hostversion-:string"></a>hostVersion :String
 
 Obtiene una cadena que representa la versión de la aplicación host o bien de Exchange Server.
 
 Si el complemento de correo se ejecuta en el cliente de escritorio de Outlook, la propiedad `hostVersion` devuelve la versión de la aplicación host, es decir, Outlook. En Outlook Web App, la propiedad devuelve la versión de Exchange Server. Un ejemplo de ello es la cadena `15.0.468.0`.
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   String
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
-####  OWAView :String
+####  <a name="owaview-:string"></a>OWAView :String
 
 Obtiene una cadena que representa la vista actual de Outlook Web App.
 
@@ -64,14 +64,14 @@ Outlook Web App tiene tres vistas que se corresponden con el ancho de la pantall
 *   `TwoColumns` se muestra cuando la pantalla es más ancha. Outlook Web App usa esta vista en la mayor parte de las tabletas.
 *   `ThreeColumns` se muestra cuando la pantalla es ancha. Por ejemplo, Outlook Web App usa esta vista en una ventana de pantalla completa en un equipo de escritorio.
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   String
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|

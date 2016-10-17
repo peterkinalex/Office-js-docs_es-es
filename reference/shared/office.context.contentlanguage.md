@@ -1,5 +1,5 @@
 
-# Propiedad Context.contentLanguage
+# <a name="context.contentlanguage-property"></a>Propiedad Context.contentLanguage
  Obtiene la configuración regional (de idioma) especificada por el usuario para editar el documento o el elemento.
 
 |||
@@ -12,19 +12,19 @@ var myContentLang = Office.context.contentLanguage;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Una **string** con el formato de etiqueta de idioma RFC 1766, como `en-US`.
 
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 El valor **contentLanguage** refleja la configuración de **Idioma de edición** que se ha especificado desde **Archivo**  >  **Opciones**  >  **Idioma**, en la aplicación host de Office.
 
 En el caso de los complementos de contenido para las aplicaciones web de Access, la propiedad **contentLanguage** obtiene la referencia cultural del complemento (por ejemplo, "es-ES").
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -50,7 +50,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -68,11 +68,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |||
 |:-----|:-----|
 |**Nivel de permisos mínimo**|[Restringido](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

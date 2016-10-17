@@ -1,9 +1,9 @@
 
-# Transferir localmente complementos de Office para pruebas en dispositivos iPad y Mac
+# <a name="sideload-office-add-ins-on-ipad-and-mac-for-testing"></a>Transferir localmente complementos de Office para pruebas en dispositivos iPad y Mac
 
 Para ver cómo se ejecutará el complemento en Office para iOS, puede transferir localmente el manifiesto del complemento a un iPad mediante iTunes o transferir localmente el manifiesto del complemento directamente en Office para Mac. Esta acción no le permite establecer puntos de interrupción ni depurar el código del complemento mientras se está ejecutando, pero puede ver cómo se comporta y comprobar que la interfaz de usuario es utilizable y se representa adecuadamente. 
 
-## Requisitos previos de Office para iOS
+## <a name="prerequisites-for-office-for-ios"></a>Requisitos previos de Office para iOS
 
 
 
@@ -14,7 +14,7 @@ Para ver cómo se ejecutará el complemento en Office para iOS, puede transferir
 - El archivo de manifiesto .xml del complemento que desea probar.
     
 
-## Requisitos previos de Office para Mac
+## <a name="prerequisites-for-office-for-mac"></a>Requisitos previos de Office para Mac
 
 
 
@@ -29,9 +29,9 @@ Para ver cómo se ejecutará el complemento en Office para iOS, puede transferir
 - El archivo de manifiesto .xml del complemento que quiere probar.
     
 
-## Transferir localmente un complemento en Excel o Word para iPad
+## <a name="sideload-an-add-in-on-excel-or-word-for-ipad"></a>Transferir localmente un complemento en Excel o Word para iPad
 
-1. Use un cable de sincronización para conectar su iPad al equipo. Si es la primera vez que lo hace, verá la pregunta **¿Confiar en este equipo?**. Elija **Confiar** para continuar.
+1. Use un cable de sincronización para conectar su iPad al equipo. Si es la primera vez que conecta el iPad al equipo, verá la pregunta **¿Confiar en este equipo?**. Elija **Confiar** para continuar.
 
 2. En iTunes, seleccione el icono **iPad** debajo de la barra de menús.
     
@@ -56,7 +56,7 @@ Para ver cómo se ejecutará el complemento en Office para iOS, puede transferir
     ![Insertar complementos en la aplicación de Excel](../../images/ed6033b0-ecec-4853-8ee7-9ef0884cb237.PNG)
 
 
-## Transferir localmente un complemento en Office para Mac
+## <a name="sideload-an-add-in-on-office-for-mac"></a>Transferir localmente un complemento en Office para Mac
 
 > **Nota:** Para transferir de forma local un complemento de Outlook 2016 para Mac, consulte [Transferir localmente complementos de Outlook para pruebas](sideload-outlook-add-ins-for-testing.md).
 
@@ -70,19 +70,21 @@ Para ver cómo se ejecutará el complemento en Office para iOS, puede transferir
     
     ![Carpeta de Wef en Office para Mac](../../images/bca689f8-bff4-421d-bc36-92c8ae0ddfba.png)
 
-3. Abra Word y luego abra un documento. Reinicie Word si se está ejecutando.
+3. Inicie Word y abra un documento. Si ya se está ejecutando, reinicie Word.
     
-4. En Word, elija  **Insertar**  >  **Complementos**  >  **Mis complementos** y luego elija su complemento.
+4. En Word, elija **Insertar** > **Complementos** > **Mis complementos** (menú desplegable) y luego elija su complemento.
     
     ![Mis complementos en Office para Mac](../../images/4593430c-b33e-4895-b2be-63fe3c4d08bc.png)
 
-> **Importante:** Los complementos transferidos localmente no aparecen en el cuadro de diálogo Mis complementos. Solo son visibles en el menú desplegable (pequeña flecha abajo a la derecha de Mis complementos). Los complementos transferidos localmente se muestran en la lista bajo el encabezado "Complementos de desarrollador". 
+  > **Importante:** Los complementos transferidos localmente no aparecen en el cuadro de diálogo Mis complementos. Solo son visibles en el menú desplegable (pequeña flecha abajo a la derecha de Mis complementos). Los complementos transferidos localmente se muestran en la lista bajo el encabezado "Complementos de desarrollador". 
     
 5. Compruebe si su complemento se muestra en Word.
     
     ![Complemento de Office en Office para Mac](../../images/a5cb2efc-1180-45b4-85a6-13df817b9d2c.png)
+    
+> **Nota:** a menudo en Office para Mac los complementos se almacenan en caché, por motivos de rendimiento. Si necesita forzar una recarga del complemento mientras lo está desarrollando, puede borrar la carpeta Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/. 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 - [Depurar complementos de Office en dispositivos iPad y Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)

@@ -1,11 +1,11 @@
 
-# Enumeración ProjectProjectFields
+# <a name="projectprojectfields-enumeration"></a>Enumeración ProjectProjectFields
 Especifica los campos del proyecto que están disponibles como parámetro del método **[getProjectFieldAsync](../../reference/shared/projectdocument.getprojectfieldasync.md)**.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Agregado en**|1,0|
+|**Agregado en**|1.0|
 
 ```
 ProjectProjectFields={
@@ -26,33 +26,33 @@ ProjectProjectFields={
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 ****
 
 
-|**Miembro	**|**Descripción**|
+|**Miembro**|**Descripción**|
 |:-----|:-----|
 |**CurrencyDigits**|El número de dígitos después del decimal para la moneda.|
 |**CurrencySymbol**|El símbolo de moneda.|
 |**CurrencySymbolPosition**|La ubicación del símbolo de moneda: No especificada = -1; Antes del valor, sin espacio ($0) = 0; Después del valor, sin espacio (0$) = 1; Antes del valor, con un espacio ($ 0) = 2; Después del valor, con un espacio (0 $) = 3.|
 |**GUID**|El GUID del proyecto.|
 |**Finish**|La fecha de finalización del proyecto.|
-|**Iniciar**|La fecha de inicio del proyecto.|
+|**Start**|La fecha de inicio del proyecto.|
 |**ReadOnly**|Especifica si el proyecto es de solo lectura.|
-|**VERSIÓN**|La versión del proyecto.|
+|**VERSION**|La versión del proyecto.|
 |**WorkUnits**|Las unidades de trabajo del proyecto (por ejemplo, horas o días).|
 |**ProjectServerUrl**|La dirección URL de Project Web App para los proyectos que se almacenan en Project Server.|
 |**WSSUrl**|La dirección URL de SharePoint para los proyectos sincronizados con una lista de SharePoint.|
 |**WSSList**|El nombre de la lista de SharePoint para los proyectos sincronizados con una lista de tareas.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Se puede usar una constante **ProjectProjectFields** como parámetro del método **[getProjectFieldAsync](../../reference/shared/projectdocument.getprojectfieldasync.md)**.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -73,7 +73,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 
@@ -82,13 +82,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
-|1,0|Agregado|
+|1.0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [Método getProjectFieldAsync](../../reference/shared/projectdocument.getprojectfieldasync.md)

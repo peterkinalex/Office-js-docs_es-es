@@ -1,5 +1,5 @@
 
-# Enumeración CoercionType
+# <a name="coerciontype-enumeration"></a>Enumeración CoercionType
 Especifica cómo convertir los datos que el método invocado ha devuelto o definido.
 
 |||
@@ -11,7 +11,7 @@ Especifica cómo convertir los datos que el método invocado ha devuelto o defin
 Office.CoercionType
 ```
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Valores**
@@ -31,7 +31,7 @@ PowerPoint solo admite **Office.CoercionType.Text**,  **Office.CoercionType.Imag
 Project solo admite **Office.CoercionType.Text**.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -57,7 +57,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 |**Versión**|**Cambios**|

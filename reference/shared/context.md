@@ -1,5 +1,5 @@
 
-# Objeto Context
+# <a name="context-object"></a>Objeto Context
 Representa el entorno en tiempo de ejecución del complemento y proporciona acceso a los objetos clave de la API.
 
 |||
@@ -12,27 +12,27 @@ Office.context
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 |||
 |:-----|:-----|
 |Nombre|Descripción|
 |[commerceAllowed](../../reference/shared/office.context.commerceallowed.md)|Obtiene información sobre si el complemento se está ejecutando en una plataforma que admite vínculos a sistemas de pago externos.|
-|[contentLanguage](../../reference/shared/office.context.contentlanguage.md)|Obtiene la configuración regional (de idioma) para los datos tal como se encuentra almacenada en el documento o el elemento.|
-|[displayLanguage](../../reference/shared/office.context.displaylanguage.md)|Obtiene la configuración regional (de idioma) para la UI de la aplicación host.|
-|[documento](../../reference/shared/office.context.document.md)|Obtiene un objeto que representa el documento con el que está interactuando el complemento de panel de tareas o de contenido.|
-|[buzón de correo](../../reference/shared/office.context.mailbox.md)|Obtiene el objeto **mailbox** que proporciona acceso a los miembros de la API específicos para los complementos de Outlook.|
+|[contentLanguage](../../reference/shared/office.context.contentlanguage.md)|Obtiene la configuración regional (de idioma) para los datos tal como se almacena en el documento o el elemento.|
+|[displayLanguage](../../reference/shared/office.context.displaylanguage.md)|Obtiene la configuración regional (de idioma) para la interfaz de usuario de la aplicación host.|
+|[document](../../reference/shared/office.context.document.md)|Obtiene un objeto que representa el documento con el que está interactuando el complemento de panel de tareas o de contenido.|
+|[mailbox](../../reference/shared/office.context.mailbox.md)|Obtiene el objeto **mailbox** que proporciona acceso a los miembros de la API específicos para los complementos de Outlook.|
 |[officeTheme](../../reference/shared/office.context.officetheme.md)|Proporciona acceso a las propiedades de los colores del tema de Office.|
 |[ui](../../reference/shared/officeui)|Proporciona objetos y métodos que puede usar para crear y manipular componentes de la interfaz de usuario, como cuadros de diálogo.|
 |[roamingSettings](../../reference/shared/office.context.roamingsettings.md)|Obtiene un objeto que representa la configuración personalizada guardada del complemento.|
 |[touchEnabled](../../reference/shared/office.context.touchenabled.md)|Obtiene información sobre si el complemento se está ejecutando en una aplicación host de Office con funcionalidad táctil.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 El objeto **Context** proporciona acceso a los objetos clave de la API de JavaScript para Office.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 
@@ -43,7 +43,7 @@ El objeto **Context** proporciona acceso a los objetos clave de la API de JavaSc
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

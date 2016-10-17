@@ -1,12 +1,11 @@
 
-# Método ProjectDocument.getMaxResourceIndexAsync (API de JavaScript para Office v1.1)
-Obtiene de forma asincrónica el índice máximo de la colección de recursos del proyecto actual.
- **Importante:** Esta API solo funciona en Project 2016 para el escritorio de Windows.
+# <a name="projectdocument.getmaxresourceindexasync-method-(javascript-api-for-office-v1.1)"></a>Método ProjectDocument.getMaxResourceIndexAsync (API de JavaScript para Office v1.1)
+Obtiene de forma asincrónica el índice máximo de la colección de recursos del proyecto actual.  **Importante:** Esta API solo funciona en Project 2016 para escritorio de Windows.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
 |**Agregado en**|1.1|
 
 ```js
@@ -14,18 +13,18 @@ Office.context.document.getMaxResourceIndexAsync([options][, callback]);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 _options_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;El **[parámetro opcional](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods) siguiente:**<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;_asyncContext_<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tipo: **array**, **boolean**, **null**, **number**, **object**, **string** o **undefined**<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Un elemento de cualquier tipo definido por el usuario que se devuelve en el objeto [AsyncResult](../../reference/shared/asyncresult.md) sin sufrir modificaciones. Opcional.<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Por ejemplo, puede pasar el argumento _asyncContext_ usando el formato `{asyncContext: 'Some text'}` o `{asyncContext: <object>}`.
 
 _callback_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Type: **function**<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;Tipo: **function**<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Una función que se invoca cuando se devuelve la llamada al método, cuyo único parámetro es del tipo [AsyncResult](../../reference/shared/asyncresult.md). Opcional.
     
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el parámetro de la función de devolución de llamada.
 
@@ -37,15 +36,15 @@ En el caso del método **getMaxResourceIndexAsync**, el objeto [AsyncResult](../
 |:-----|:-----|
 |[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Datos pasados en el parámetro opcional _asyncContext_, si se usó el parámetro.|
 |[error](../../reference/shared/asyncresult.error.md)|Información sobre el error si la propiedad **status** es igual a **failed**.|
-|[estado](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
+|[status](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
 |[value](../../reference/shared/asyncresult.value.md)|Número de índice más alto de la colección de recursos del proyecto actual.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Puede usar el valor devuelto con el método [getResourceByIndexAsync](../../reference/shared/projectdocument.getresourcebyindexasync.md) para obtener GUID de recursos. Una colección de recursos no contiene ningún recurso en el índice 0.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 El siguiente ejemplo de código llama a **getResourceTaskIndexAsync** para obtener el índice máximo de la colección de recursos del proyecto actual. A continuación usa el valor devuelto y el método [getResourceByIndexAsync](../../reference/shared/projectdocument.getresourcebyindexasync.md) para obtener el GUID de cada recurso.
 
@@ -134,7 +133,7 @@ En el ejemplo se asume que el complemento tiene una referencia a la biblioteca d
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -148,13 +147,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **||
+|**Disponible en los conjuntos de requisitos**||
 |**Nivel de permisos mínimo**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 
@@ -165,11 +164,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|
 |1.1|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [getResourceByIndexAsync](../../reference/shared/projectdocument.getresourcebyindexasync.md)

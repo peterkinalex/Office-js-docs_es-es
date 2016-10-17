@@ -1,7 +1,7 @@
 
-# Labs.Components.InputComponentInstance
+# <a name="labs.components.inputcomponentinstance"></a>Labs.Components.InputComponentInstance
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Representa una instancia de un componente de entrada.
 
@@ -10,19 +10,19 @@ class InputComponentInstance extends Labs.ComponentInstance<Components.InputComp
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |Propiedad|Descripción|
 |:-----|:-----|
 | `public var component: Components.IInputComponentInstance`|El objeto subyacente [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) que representa esta clase.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 
 
 
-### constructor
+### <a name="constructor"></a>constructor
 
  `function constructor(component: Components.IInputComponentInstance)`
 
@@ -33,9 +33,9 @@ Crea una nueva instancia [Labs.Components.IInputComponentInstance](../../referen
 
 |Parámetro|Descripción|
 |:-----|:-----|
-| _componente_|El objeto [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) desde el que se crea esta clase.|
+| _component_|El objeto [Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md) desde el que se crea esta clase.|
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptAction: Labs.Core.IAction): Components.InputComponentAttempt`
 

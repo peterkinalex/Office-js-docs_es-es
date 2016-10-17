@@ -1,7 +1,7 @@
 
-# Labs.Components.InputComponentAttempt
+# <a name="labs.components.inputcomponentattempt"></a>Labs.Components.InputComponentAttempt
 
- _**Hace referencia a:** aplicaciones para Office | Complementos de Office | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Representa un intento de interactuar con un componente de entrada.
 
@@ -10,12 +10,12 @@ class InputComponentAttempt extends Components.ComponentAttempt
 ```
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 
 
 
-### constructor
+### <a name="constructor"></a>constructor
 
  `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
 
@@ -31,7 +31,7 @@ Crea una nueva instancia de la clase **InputComponentAttempt**.
 | _attemptId_|Identificador del intento específico.|
 | _values_|Una matriz que contiene las instancias del valor ([Labs.Core.IValueInstance](../../reference/office-mix/labs.core.ivalueinstance.md)).|
 
-### processAction
+### <a name="processaction"></a>processAction
 
  `public function processAction(action: Labs.Core.IAction): void`
 
@@ -44,14 +44,14 @@ Recorre en iteración las acciones recuperadas para el intento especificado y re
 |:-----|:-----|
 | _action_|Acción asociada al estado del laboratorio.|
 
-### getSubmissions
+### <a name="getsubmissions"></a>getSubmissions
 
  `public function getSubmissions(): Components.InputComponentSubmission[]`
 
 Recupera todos los envíos que se han enviado previamente para el intento especificado.
 
 
-### submit
+### <a name="submit"></a>submit
 
  `public function submit(answer: Components.InputComponentAnswer, result: Components.InputComponentResult, callback: Labs.Core.ILabCallback<Components.InputComponentSubmission>): void`
 

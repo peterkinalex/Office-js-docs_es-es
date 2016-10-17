@@ -1,11 +1,11 @@
 
-# Laboratorios de LabsJS para ejemplos de Office Mix
+# <a name="labsjs-labs-for-office-mix-examples"></a>Laboratorios de LabsJS para ejemplos de Office Mix
 
 
 
 La [Galería de Office Mix](https://mix.office.com/Gallery) es un recurso importante para aprender sobre el poder de Aplicaciones para Office Mix en general y sobre las implementaciones de laboratorios de LabsJS específicamente. La Galería contiene varios laboratorios que se implementan en ejemplos de Aplicaciones para Office Mix.
 
-## Explorar los ejemplos de LabsJS
+## <a name="explore-the-labsjs-examples"></a>Explorar los ejemplos de LabsJS
 
 Las siguientes instancias de Aplicaciones para Office Mix en la [Galería de Office Mix](https://mix.office.com/Gallery) contienen laboratorios:
 
@@ -17,7 +17,7 @@ Las siguientes instancias de Aplicaciones para Office Mix en la [Galería de Off
 - [Extensiones de código](https://mix.office.com/watch/q4tnp5au9mbo)
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
@@ -25,5 +25,5 @@ Las siguientes instancias de Aplicaciones para Office Mix en la [Galería de Off
     
 - [Introducción a LabsJS para Office Mix](../../powerpoint/office-mix/get-started-with-labsjs-for-office-mix.md)
     
-- [Tutorial: Crear su primer laboratorio para Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md)
+- [Tutorial: Crear el primer laboratorio para Office Mix](../../powerpoint/office-mix/creating-your-first-lab-for-office-mix.md)
     

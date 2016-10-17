@@ -1,4 +1,4 @@
-# Trabajar con el contenido de la página de OneNote 
+# <a name="work-with-onenote-page-content"></a>Trabajar con el contenido de la página de OneNote 
 
 En la API de JavaScript de los complementos de OneNote, el contenido de la página se representa mediante el modelo de objetos siguiente.
 
@@ -22,7 +22,7 @@ Después, use métodos de los objetos siguientes para trabajar con el contenido 
 
 El contenido y la estructura de una página de OneNote se representan mediante HTML. Solo se admite un subconjunto de HTML para crear o actualizar el contenido de la página, tal como se describe a continuación.
 
-## HTML compatible
+## <a name="supported-html"></a>HTML compatible
 
 La API de JavaScript del complemento de OneNote admite el siguiente HTML para crear y actualizar el contenido de la página:
 
@@ -35,15 +35,15 @@ La API de JavaScript del complemento de OneNote admite el siguiente HTML para cr
 - `<h1>` ... `<h6>`
 - `<b>`, `<em>`, `<strong>`, `<i>`, `<u>`, `<del>`, `<sup>`, `<sub>`, `<cite>`
 
-## Tener acceso al contenido de la página
+## <a name="accessing-page-contents"></a>Tener acceso al contenido de la página
 
 Solo es posible tener acceso al *contenido de la página* a través de `Page#load` para la página activa. Para cambiar la página activa, invoque `navigateToPage($page)`.
 
 Se pueden seguir consultando los metadatos, como el título, desde cualquier página.
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 - [Introducción a la programación de API de JavaScript para OneNote](onenote-add-ins-programming-overview.md)
-- [Referencia de la API de JavaScript de complementos de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Referencia de la API de JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader sample (Ejemplo de Rubric Grader)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview (Información general sobre la plataforma de complementos para Office)](https://dev.office.com/docs/add-ins/overview/office-add-ins)

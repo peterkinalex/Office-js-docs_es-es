@@ -1,11 +1,11 @@
 
-# Método Binding.setDataAsync
+# <a name="binding.setdataasync-method"></a>Método Binding.setDataAsync
 Escribe datos en la sección enlazada del documento que representa el objeto de enlace que se ha especificado.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Access, Excel y Word|
-|**Disponible en [Conjuntos de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBindings, TableBindings, TextBindings|
+|**Disponible en los [conjuntos de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBindings, TableBindings, TextBindings|
 |**Modificado por última vez en TableBindings**|1.1|
 
 ```js
@@ -13,7 +13,7 @@ bindingObj.setDataAsync(data [, options] ,callback);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
@@ -25,15 +25,15 @@ bindingObj.setDataAsync(data [, options] ,callback);
 | _options_|**object**|Especifica cualquiera de los siguientes [parámetros opcionales](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods):||
 | _coercionType_|**[CoercionType](../../reference/shared/coerciontype-enumeration.md)**|Especifica cómo convertir los datos que se están estableciendo. ||
 | _columnas_|**matriz de cadenas**| Especifica los nombres de columna.|**Agregado en:** v1.1. Solo para los enlaces de tablas de los complementos de contenido para Access.|
-| _Rows_|**Office.TableRange.ThisRow**|Especifica la cadena predefinida "thisRow" para establecer los datos de la fila seleccionada actualmente. |**Agregado en:** v1.1. Solo para los enlaces de tablas de los complementos de contenido para Access.|
-| _startColumn_|**number**|Especifica la columna de inicio de base cero para un subconjunto de los datos. |Solo para enlaces de matriz o tabla. Si se omiten, los datos se establecen a partir de la primera columna.|
-| _startRow_|**number**|Especifica la fila de inicio de base cero para un subconjunto de los datos en el enlace. |Solo para enlaces de matriz o tabla. Si se omiten, los datos se establecen a partir de la primera fila.|
+| _filas_|**Office.TableRange.ThisRow**|Especifica la cadena predefinida "thisRow" para establecer los datos de la fila seleccionada actualmente. |**Agregado en:** v1.1. Solo para los enlaces de tablas de los complementos de contenido para Access.|
+| _startColumn_|**number**|Especifica la columna de inicio de base cero para un subconjunto de los datos. |Solo para los enlaces de tabla o matriz. Si se omiten, los datos se establecen a partir de la primera columna.|
+| _startRow_|**number**|Especifica la fila de inicio de base cero para un subconjunto de los datos en el enlace. |Solo para los enlaces de tabla o matriz. Si se omiten, los datos se establecen a partir de la primera fila.|
 | _tableOptions_|**object**|Para la tabla insertada, una lista de pares clave-valor que especifican [opciones de formato de tabla](../../docs/excel/format-tables-in-add-ins-for-excel.md), como fila de encabezado, fila de total y filas con bandas. |**Agregado en:** v1.1. **Admitido en:** Excel.|
-| _cellFormat_|**object**|Para la tabla insertada, una lista de pares clave-valor que especifican un rango de celdas, filas o columnas y el [formato de celda](../../docs/excel/format-tables-in-add-ins-for-excel.md) que se debe aplicar a dicho rango.|**Agregado en** v1.1. **Admitido en:** Excel y Excel Online.|
+| _cellFormat_|**object**|Para la tabla insertada, una lista de pares clave-valor que especifican un rango de celdas, filas o columnas y el [formato de celda](../../docs/excel/format-tables-in-add-ins-for-excel.md) que se debe aplicar a dicho rango.|**Agregado en:** v1.1. **Admitido en:** Excel, Excel Online.|
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string** o **undefined**|Un elemento de cualquier tipo definido por el usuario que se devuelve en el objeto **AsyncResult** sin sufrir modificaciones.||
 | _callback_|**object**|Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.||
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función que ha remitido al parámetro _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el único parámetro de la función de devolución de llamada.
 
@@ -41,22 +41,22 @@ En la función de devolución de llamada que se ha pasado al método **setDataAs
 
 
 
-|**Propiedad**|**Usar para...**|
+|**Propiedad**|**Usar para**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Devuelve siempre **undefined** porque no hay ningún objeto o dato que recuperar.|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determinar si la operación se ha completado correctamente o no.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Tener acceso a un objeto [Error](../../reference/shared/error.md) que proporcione información sobre el error si la operación no se ha llevado a cabo correctamente.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **object** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **objeto** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 El valor que se ha pasado para _data_ contiene los datos que se escribirán en el enlace. El tipo de valor que se pasa determina qué se escribirá, tal como se describe en la tabla siguiente.
 
 
 
-|**Valor _data_**|**Datos escritos**|
+|**_Valor _data**|**Datos escritos**|
 |:-----|:-----|
-|Una **string**|Se escribirá texto sin formato o cualquier cosa que pueda convertirse en una **string**.|
+|Una **cadena**|Se escribirá texto sin formato o cualquier cosa que pueda convertirse en una **string**.|
 |Una matriz de matrices ("matriz")|Se escribirán datos tabulares sin encabezados. Por ejemplo, para escribir datos en tres filas de dos columnas, se puede transferir una matriz como esta: ` [["R1C1", "R1C2"], ["R2C1", "R2C2"], ["R3C1", "R3C2"]]`. Para escribir una sola columna de tres filas, transfiera una matriz como esta: `[["R1C1"], ["R2C1"], ["R3C1"]]`|
 |Un objeto [TableData](../../reference/shared/tabledata.md)|Se escribirá una tabla con encabezados.|
 Estas acciones específicas de aplicaciones también se pueden realizar al escribir datos en un enlace.
@@ -65,9 +65,9 @@ Estas acciones específicas de aplicaciones también se pueden realizar al escri
 
 
 
-|**Valor _data_**|**Datos escritos**|
+|**_Valor _data**|**Datos escritos**|
 |:-----|:-----|
-|Una **string**|Se escribe el texto que se ha especificado.|
+|Una **cadena**|Se escribe el texto que se ha especificado.|
 |Una matriz de matrices ("matrix") o un objeto **TableData**|Se escribe una tabla de Word.|
 |HTML|Se escribe el contenido HTML que se ha especificado.
  >**Importante** Si parte del contenido HTML que se escribe no es válido, Word no generará un error, sino que escribirá el máximo contenido HTML posible y omitirá los datos no válidos.
@@ -77,15 +77,15 @@ Estas acciones específicas de aplicaciones también se pueden realizar al escri
 
 
 
-|**Valor _data_**|**Datos escritos**|
+|**_Valor _data**|**Datos escritos**|
 |:-----|:-----|
-|Una **string**|El texto especificado se inserta como el valor de la primera celda enlazada. También puede especificar una fórmula válida para agregarla a la celda enlazada. Por ejemplo, al establecer _data_ en `"=SUM(A1:A5)"`, se calculará el total de los valores en el rango especificado. Sin embargo, cuando se establece una fórmula en la celda enlazada, después de hacerlo no puede leer la fórmula (o cualquier fórmula existente) de la celda enlazada. Si llama al método [Binding.getDataAsync](../../reference/shared/binding.getdataasync.md) en la celda enlazada para leer sus datos, el método puede devolver solo los datos que se muestran en la celda (resultado de la fórmula).|
+|Una **cadena**|El texto especificado se inserta como el valor de la primera celda enlazada. También puede especificar una fórmula válida para agregarla a la celda enlazada. Por ejemplo, al establecer _data_ en `"=SUM(A1:A5)"`, se calculará el total de los valores en el rango especificado. Sin embargo, cuando se establece una fórmula en la celda enlazada, después de hacerlo no puede leer la fórmula (o cualquier fórmula existente) de la celda enlazada. Si llama al método [Binding.getDataAsync](../../reference/shared/binding.getdataasync.md) en la celda enlazada para leer sus datos, el método puede devolver solo los datos que se muestran en la celda (resultado de la fórmula).|
 |Una matriz de matrices ("matrix") y la forma coincide exactamente con la forma del enlace que se ha especificado|Se escribe el conjunto de filas y columnas. También puede especificar una matriz de matrices que contenga fórmulas válidas para agregarlas a las celdas enlazadas. Por ejemplo, al establecer _data_ en `[["=SUM(A1:A5)","=AVERAGE(A1:A5)"]]`, se agregarán estas dos fórmulas a un enlace que contiene dos celdas. Igual que cuando se establece una fórmula en una única celda enlazada, no podrá leer las fórmulas agregadas (o fórmulas existentes) del enlace con el método **Binding.getDataAsync**, porque solo devuelve los datos que se muestran en las celdas enlazadas.|
 |Un objeto **TableData** y la forma de tabla coincide con la tabla enlazada.|Se escribe el conjunto especificado de filas o encabezados si no se van a sobrescribir otros datos de las celdas contiguas. **Nota:** si especifica fórmulas en el objeto **TableData** que pasa al parámetro _data_, podría no obtener los resultados que espera debido a la característica "columnas calculadas" de Excel, que automáticamente duplica las fórmulas dentro de una columna. Para solucionar esto cuando quiere escribir _data_ que contienen fórmulas a una tabla enlazada, pruebe a especificar los datos como una matriz de matrices (en lugar de un objeto **TableData**) y especifique _coercionType_ como **Microsoft.Office.Matrix** o "matriz".|
  **Comentarios adicionales para Excel Online**
 
 
-- El número total de celdas en el valor pasado al parámetro _data_ no puede ser superior a 20.000 en una sola llamada a este método.
+- El número total de celdas en el valor pasado al parámetro _data_ no puede ser superior a 20 000 en una sola llamada a este método.
     
 - El número de _grupos de formato_ pasado al parámetro _cellFormat_ no puede ser superior a 100. Un único grupo de formato consta de un conjunto de formato aplicado a un rango de celdas especificado. Por ejemplo, la siguiente llamada pasa dos grupos de formato a _cellFormat_.
     
@@ -102,7 +102,7 @@ En todos los casos restantes, se devolverá un error.
 El método **setDataAsync** escribirá los datos en un subconjunto de un enlace de matriz o tabla si se especifican los parámetros opcionales _startRow_ y _startColumn_, y estos definen a su vez un rango válido.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -113,7 +113,7 @@ function setBindingData() {
 }
 ```
 
-Especificar el parámetro _coercionType_ opcional le permite especificar el tipo de datos que quiere escribir en un enlace. Por ejemplo, en Word, si quiere escribir HTML en un enlace de texto, puede especificar el parámetro _coercionType_ como `"html"` tal y como se muestra en el ejemplo siguiente, que usa etiquetas HTML `<b>` para que "Hello" aparezca en negrita.
+Especificar el parámetro _coercionType_ opcional le permite especificar el tipo de datos que quiere escribir en un enlace. Por ejemplo, en Word, si quiere escribir HTML en un enlace de texto, puede especificar el parámetro _coercionType_ como `"html"` como se muestra en el ejemplo siguiente, que usa etiquetas HTML `<b>` para que "Hello" aparezca en negrita.
 
 
 
@@ -196,7 +196,7 @@ function updateTableData() {
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -211,17 +211,17 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|MatrixBindings, TableBindings, TextBindings|
+|**Disponible en los conjuntos de requisitos**|MatrixBindings, TableBindings, TextBindings|
 |**Nivel de permisos mínimo**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 
@@ -231,11 +231,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |1.1|<ul><li>En los complementos para Access, se ha agregado compatibilidad para escribir datos de tabla.</li><li>En los complementos para Excel, se ha agregado compatibilidad para <a href="http://msdn.microsoft.com/library/46b05707-b350-41be-b6b8-311799c71a33(Office.15).aspx" target="_blank">establecer el formato al escribir datos en un enlace de tabla</a> con los parámetros opcionales <span class="parameter" sdata="paramReference">tableOptions</span> y <span class="parameter" sdata="paramReference">cellFormat</span>.</li></ul>|
 |1,0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
-[Enlazar a regiones de un documento u hoja de cálculo](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)
+[Enlazar a regiones en un documento u hoja de cálculo](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)

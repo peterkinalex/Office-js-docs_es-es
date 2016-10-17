@@ -1,11 +1,11 @@
 
-# Objeto File
+# <a name="file-object"></a>Objeto File
 Representa el archivo de documento asociado a un complemento de Office.
 
 |||
 |:-----|:-----|
 |**Hosts:**|PowerPoint y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Archivo|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Archivo|
 |**Modificado por última vez en**|1.1|
 
 ```
@@ -13,7 +13,7 @@ file
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -32,12 +32,12 @@ file
 |**[closeAsync](../../reference/shared/file.closeasync.md)**|Cierra el archivo de documento.|
 |**[getSliceAsync](../../reference/shared/file.getsliceasync.md)**|Devuelve el segmento especificado.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Obtiene acceso al objeto **File** con la propiedad [AsyncResult.value](../../reference/shared/asyncresult.value.md) de la función de devolución de llamada que se remite al método [Document.getFileAsync](../../reference/shared/document.getfileasync.md).
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este objeto es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este objeto.
@@ -54,11 +54,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |||
 |:-----|:-----|
 |**Disponible en el conjunto de requisitos**|Archivo|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

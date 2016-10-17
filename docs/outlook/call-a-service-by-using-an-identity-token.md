@@ -1,5 +1,5 @@
 
-# Llamar a un servicio de un complemento de Outlook con un token de identidad en Exchange
+# <a name="call-a-service-from-an-outlook-add-in-by-using-an-identity-token-in-exchange"></a>Llamar a un servicio de un complemento de Outlook con un token de identidad en Exchange
 
 Un token de identidad proporciona un identificador único para cada uno de sus clientes que puede usar para personalizar el servicio que ofrece. El código puede pedir un token de identidad al servidor Exchange mediante una llamada de método asincrónico que devuelve una cadena al complemento de Outlook. Esa cadena contiene un token de identidad JWT (por token web de JSON). El complemento no necesita desempaquetar el token, lo remite a su servicio web para que este pueda autenticar la solicitud del complemento.
 
@@ -7,7 +7,7 @@ El servicio web compatible con su complemento debe ejecutarse en el mismo servid
 
 Agregar un token de identidad a la solicitud de servicio que envía el complemento es fácil: solicite el token, úselo y, después, use la respuesta del servicio web. Aquí tiene un ejemplo de un sencillo documento XML enviado a su servidor con el método **XmlHttpRequest**.
 
-## Pedir un token al servidor Exchange
+## <a name="request-a-token-from-your-exchange-server"></a>Pedir un token al servidor Exchange
 
 
 Este sencillo método de inicialización para un complemento usa el método  **getUserIdentityTokenAsync** para pedir un token de identidad del servidor Exchange. El parámetro _getUserIdentityToken_ es la función que se llama cuando se devuelve la solicitud asincrónica al servidor. En el siguiente paso se explica el método de devolución de llamada.
@@ -29,7 +29,7 @@ Office.initialize = function () {
 ```
 
 
-## Usar el token de identidad
+## <a name="use-the-identity-token"></a>Usar el token de identidad
 
 
 La función de devolución de llamada para el método  **getUserIdentityTokenAsync** tiene un parámetro que contiene el token de identidad del usuario en su propiedad **value**.
@@ -57,7 +57,7 @@ function getUserIdentityTokenCallback(asyncResult) {
 ```
 
 
-## Usar la respuesta del servicio web
+## <a name="use-the-web-service-response"></a>Usar la respuesta del servicio web
 
 
 Esta es otra función simple que procesa la respuesta del servicio web. Sigue el patrón estándar para las funciones de devolución de llamada de  **XHMHttpResponse**. Espera a que llegue la respuesta entera del servicio web y entonces coloca el contenido de la respuesta en la interfaz de usuario del complemento. La respuesta que esa función analiza es la respuesta del servicio web. Para más información sobre esta respuesta, vea [Validar un token de identidad de Exchange](../outlook/validate-an-identity-token.md). 
@@ -86,7 +86,7 @@ function readyStateChange() {
 ```
 
 
-## Ejemplo: llamar a un servicio web con tokens de identidad
+## <a name="example:-calling-a-web-service-with-identity-tokens"></a>Ejemplo: llamar a un servicio web con tokens de identidad
 
 
 Los tokens de identidad proporcionan información sobre la identidad del cliente que llama al servicio a un servicio web que se ejecuta en el servidor. Para usar tokens de identidad, necesitará lo siguiente:
@@ -96,12 +96,12 @@ Los tokens de identidad proporcionan información sobre la identidad del cliente
     
 - Un servicio web que se ejecute en el servidor y que proporcione la interfaz de usuario del complemento que valida el token de identidad. Encontrará la información que necesita para crear el servicio web en los temas siguientes:
     
-      - [Usar la biblioteca de validación de tokens de Exchange:](../outlook/use-the-token-validation-library.md) -- si usa la biblioteca de validación que proporcionamos.
+      - [Usar la biblioteca de validación de tokens de Exchange:](../outlook/use-the-token-validation-library.md) si usa la biblioteca de validación que proporcionamos.
     
   - [Validar un token de identidad de Exchange:](../outlook/validate-an-identity-token.md) si escribe su propio código de validación.
     
 
-### Código para el complemento de ejemplo
+### <a name="code-for-the-sample-add-in"></a>Código para el complemento de ejemplo
 
 
 Los siguientes archivos son necesarios para el complemento que se describe en este artículo:
@@ -114,7 +114,7 @@ Los siguientes archivos son necesarios para el complemento que se describe en es
 También necesitará el servicio web de prueba de identidad. Para más información sobre este servicio web, vea [Validar un token de identidad de Exchange](../outlook/validate-an-identity-token.md).
 
 
-#### IdentityTest.js
+#### <a name="identitytest.js"></a>IdentityTest.js
 
 En el siguiente ejemplo se muestra el archivo IdentityTest.js.
 
@@ -169,7 +169,7 @@ function readyStateChange() {
 ```
 
 
-#### IdentityTest.html
+#### <a name="identitytest.html"></a>IdentityTest.html
 
 En el siguiente ejemplo se muestra el archivo IdentityTest.html.
 
@@ -272,7 +272,7 @@ En el siguiente ejemplo se muestra el archivo IdentityTest.html.
 ```
 
 
-## Pasos siguientes
+## <a name="next-steps"></a>Pasos siguientes
 
 
 Ahora que sabe cómo solicitar un token de identidad, debe usar el token en el lado del servidor de la solicitud. Los siguientes artículos lo ayudarán a comenzar:
@@ -285,7 +285,7 @@ Ahora que sabe cómo solicitar un token de identidad, debe usar el token en el l
 - [Autenticar un usuario con un token de identidad para Exchange](../outlook/authenticate-a-user-with-an-identity-token.md)
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

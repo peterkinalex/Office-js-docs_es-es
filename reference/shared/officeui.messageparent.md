@@ -1,21 +1,21 @@
-# Método UI.messageParent
+# <a name="ui.messageparent-method"></a>Método UI.messageParent
 
 Entrega un mensaje desde el cuadro de diálogo a su pagina primaria o de apertura. La página que llama a esta API debe estar en el mismo dominio que la página primaria. 
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```js
 Office.context.ui.messageParent("Message from Dialog box");
 ```
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |messageObject|Cadena o booleano|Acepta un mensaje del cuadro de diálogo para entregarlo al complemento.|
 
-## Valores devueltos
+## <a name="returns"></a>Valores devueltos
 void
 
-## Ejemplos
+## <a name="examples"></a>Ejemplos
 Para obtener ejemplos, vea el tema [Método DisplayDialogAsync](officeui.displaydialogasync.md).
 

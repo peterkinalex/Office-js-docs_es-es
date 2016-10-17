@@ -1,11 +1,11 @@
 
-# Elemento TargetDialects
+# <a name="targetdialects-element"></a>Elemento TargetDialects
 Define los dialectos compatibles con este diccionario.
 
  **Tipo de complemento:** Panel de tareas
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -15,12 +15,12 @@ Define los dialectos compatibles con este diccionario.
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

@@ -1,7 +1,7 @@
 
-# Labs.Components.ChoiceComponentAttempt
+# <a name="labs.components.choicecomponentattempt"></a>Labs.Components.ChoiceComponentAttempt
 
- _**Hace referencia a:** aplicaciones para Office | Complementos de Office | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Representa un intento en un componente de elección.
 
@@ -10,12 +10,12 @@ class ChoiceComponentAttempt extends Components.ComponentAttempt
 ```
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 
 
 
-### constructor
+### <a name="constructor"></a>constructor
 
  `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
 
@@ -30,7 +30,7 @@ Crea una nueva instancia de la clase **ChoiceComponentAttempt**.
 | _attemptId_|El identificador asociado al intento.|
 | _values_|Los valores asociados al intento.|
 
-### timeout
+### <a name="timeout"></a>timeout
 
  `public function timeout(callback: Labs.Core.ILabCallback<void>): void`
 
@@ -43,14 +43,14 @@ Indica que el laboratorio ha agotado el tiempo de espera.
 |:-----|:-----|
 | _callback_|Funciones de devolución de llamada que se desencadenan una vez que el servidor ha recibido el mensaje de tiempo de espera.|
 
-### getSubmissions
+### <a name="getsubmissions"></a>getSubmissions
 
  `public function getSubmissions(): Components.ChoiceComponentSubmission[]`
 
 Recupera todos los envíos que se habían enviado previamente para un determinado intento.
 
 
-### submit
+### <a name="submit"></a>submit
 
  `public function submit(answer: Components.ChoiceComponentAnswer, result: Components.ChoiceComponentResult, callback: Labs.Core.ILabCallback<Components.ChoiceComponentSubmission>): void`
 
@@ -65,7 +65,7 @@ Envía una respuesta nueva que el laboratorio ha calificado y que no usará el h
 | _result_|El resultado del envío.|
 | _callback_|Función de devolución de llamada que se desencadena una vez que se ha recibido el envío.|
 
-### processAction
+### <a name="processaction"></a>processAction
 
  `public function processAction(action: Labs.Core.IAction): void`
 

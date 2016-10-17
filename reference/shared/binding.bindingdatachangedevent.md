@@ -1,6 +1,6 @@
 
-# Evento Binding.bindingDataChanged
-Se genera al cambiar los datos en el enlace.
+# <a name="binding.bindingdatachanged-event"></a>Evento Binding.bindingDataChanged
+Se produce al cambiar los datos en el enlace.
 
 |||
 |:-----|:-----|
@@ -12,12 +12,12 @@ Office.EventType.BindingDataChanged
 ```
 
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Para agregar un controlador de eventos para el evento **BindingDataChanged** de un enlace, use el método [addHandlerAsync](../../reference/shared/binding.addhandlerasync.md) del objeto **Binding**. El controlador de eventos recibirá un argumento de tipo [BindingDataChangedEventArgs](../../reference/shared/binding.bindingdatachangedeventargs.md).
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -38,7 +38,7 @@ function write(message){
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -57,12 +57,12 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|BindingEvents|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Disponible en los conjuntos de requisitos**|BindingEvents|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 |**Versión**|**Cambios**|
 |:-----|:-----|

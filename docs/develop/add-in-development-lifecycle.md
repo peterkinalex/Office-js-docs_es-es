@@ -1,11 +1,11 @@
 
-# Ciclo de vida de desarrollo de complementos de Office
+# <a name="office-add-ins-development-lifecycle"></a>Ciclo de vida de desarrollo de complementos de Office
 
 
 El ciclo de vida de desarrollo típico de un complemento para Office incluye los siguientes pasos:
 
 
-1.  **Decidir la finalidad del complemento.**
+1.  **Decida la finalidad del complemento.**
     
     Haga las siguientes preguntas:
     
@@ -20,7 +20,7 @@ El ciclo de vida de desarrollo típico de un complemento para Office incluye los
     
 2.  **Identifique los datos y el origen de datos del complemento.**
     
-    ¿Los datos están en un documento, libro, presentación, proyecto o una base de datos de acceso basada en explorador, o son sobre un elemento o elementos en un buzón de Exchange Server o Exchange Online? ¿Los datos provienen de un origen externo como un servicio web?
+    ¿Los datos están en un documento, libro, presentación, proyecto o una base de datos de Access basada en el explorador, o son sobre un elemento o elementos en un buzón de Exchange Server o Exchange Online? ¿Los datos provienen de un origen externo como un servicio web?
     
 3.  **Identifique el tipo de complemento y de aplicaciones host de Office que mejor se ajusta a la finalidad del complemento.**
     
@@ -42,7 +42,7 @@ El ciclo de vida de desarrollo típico de un complemento para Office incluye los
     
     Puede elegir entre una variedad de herramientas de desarrollo web y usar HTML y JavaScript para implementar la interfaz de usuario.
     
-5.  **Crear un archivo de manifiesto XML basado en el esquema del manifiesto de Complementos de Office.**
+5.  **Cree un archivo de manifiesto XML basado en el esquema del manifiesto de Complementos de Office.**
     
     Cree un manifiesto XML para identificar el complemento y sus requisitos, especifique las ubicaciones del HTML y cualquier archivo JavaScript y CSS que use el complemento, y, dependiendo del tipo de complemento, el tamaño predeterminado y los permisos.
     

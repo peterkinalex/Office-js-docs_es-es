@@ -1,6 +1,6 @@
-﻿
 
-# Coincidencia de cadenas en un elemento de Outlook como entidades conocidas
+
+# <a name="match-strings-in-an-outlook-item-as-well-known-entities"></a>Coincidencia de cadenas en un elemento de Outlook como entidades conocidas
 
 
 Antes de enviar un mensaje o un elemento de convocatoria de reunión, Exchange Server analiza el contenido del elemento, identifica y marca determinadas cadenas en el asunto y en el cuerpo que son similares a entidades conocidas de Exchange (por ejemplo, direcciones de correo electrónico, números de teléfono y direcciones URL). Los mensajes y las convocatorias de reunión son entregadas por Exchange Server en una bandeja de entrada de Outlook con entidades conocidas marcadas. 
@@ -12,37 +12,37 @@ Es conveniente saber identificar o extraer estas instancias a partir de un mensa
 En este tema se presentan estas entidades conocidas, se muestran ejemplos de reglas de activación basadas en entidades conocidas y se explica cómo extraer coincidencias de entidad independientemente de que se hayan utilizado entidades en las reglas de activación.
 
 
-## Compatibilidad con entidades conocidas
+## <a name="support-for-well-known-entities"></a>Compatibilidad con entidades conocidas
 
 
 Exchange Server marca las entidades conocidas de un mensaje o un elemento de convocatoria de reunión después de que el remitente envíe el elemento y antes de que Exchange entregue el elemento al destinatario. Por lo tanto, solo se marcan los elementos que hayan pasado por el servicio de transporte en Exchange, y Outlook puede activar los complementos según estas marcas cuando el usuario los visualiza. Por el contrario, cuando el usuario está redactando un elemento o visualizando un elemento que se encuentra en la carpeta Elementos enviados, como el elemento no ha pasado a través del servicio de transporte, Outlook no puede activar los complementos según las entidades conocidas. 
 
 De forma similar, tampoco se pueden extraer entidades conocidas de elementos que estén siendo redactados o que se encuentren en la carpeta Elementos enviados, ya que estos elementos no han pasado a través del servicio de transporte y no han sido marcados. Para más información sobre los tipos de elementos compatibles con la activación, vea [Reglas de activación para complementos de Outlook](../outlook/manifests/activation-rules.md#activation-rules-for-outlook-add-ins).
 
-En la tabla siguiente se muestran las entidades que admiten y reconocen Exchange Server y Outlook (de ahí que se denominen "entidades conocidas") y el tipo de objeto de una instancia de cada entidad. El reconocimiento del lenguaje natural de una cadena como una de estas entidades se basa en un modelo de aprendizaje formado sobre una gran cantidad de datos. Por ello, el reconocimiento no es determinista. Vea [Sugerencias para usar entidades conocidas](#sugerencias-para-usar-entidades-conocidas) si desea más información sobre las condiciones del reconocimiento.
+En la tabla siguiente se muestran las entidades que admiten y reconocen Exchange Server y Outlook (de ahí que se denominen "entidades conocidas") y el tipo de objeto de una instancia de cada entidad. El reconocimiento del lenguaje natural de una cadena como una de estas entidades se basa en un modelo de aprendizaje formado sobre una gran cantidad de datos. Por ello, el reconocimiento no es determinista. Vea [Sugerencias para usar entidades conocidas](#tips-for-using-well-known-entities) si desea más información sobre las condiciones del reconocimiento.
 
- **Tabla 1. Entidades admitidas y sus tipos**
+ **Tabla 1: Entidades admitidas y sus tipos**
 
 
 
 |**Tipo de entidad**|**Condiciones para el reconocimiento**|**Tipo de objeto**|
 |:-----|:-----|:-----|
-|**Address**|Direcciones postales de los Estados Unidos; por ejemplo: 1234 Main Street, Redmond, WA 07722.En general, para que se pueda reconocer una dirección, debe seguir la estructura de las direcciones postales estadounidenses e incluir la mayoría de los siguientes elementos: número de la calle, nombre de la calle, ciudad, estado y código postal. La dirección se puede especificar en una o varias líneas.|Objeto JavaScript  **String**|
-|**Contacto**|Una referencia a la información de una persona como se reconoce en el lenguaje natural.El reconocimiento de un contacto depende del contexto. Por ejemplo, una firma al final del mensaje, o el nombre de una persona que aparezca cerca de alguno de estos elementos de información: un número de teléfono, una dirección, una dirección de correo electrónico o una URL.|Objeto [Contact](../../reference/outlook/simple-types.md)|
-|**EmailAddress**|Direcciones de correo electrónico SMTP.|Objeto JavaScript  **String**|
+|**Address**|Direcciones postales de los Estados Unidos; por ejemplo: 1234 Main Street, Redmond, WA 07722.En general, para que se pueda reconocer una dirección, debe seguir la estructura de las direcciones postales estadounidenses e incluir la mayoría de los siguientes elementos: número de la calle, nombre de la calle, ciudad, estado y código postal. La dirección se puede especificar en una o varias líneas.|Objeto JavaScript **String**|
+|**Contact**|Una referencia a la información de una persona como se reconoce en el lenguaje natural.El reconocimiento de un contacto depende del contexto. Por ejemplo, una firma al final del mensaje, o el nombre de una persona que aparezca cerca de alguno de estos elementos de información: un número de teléfono, una dirección, una dirección de correo electrónico o una URL.|Objeto [Contact](../../reference/outlook/simple-types.md)|
+|**EmailAddress**|Direcciones de correo electrónico SMTP.|Objeto JavaScript **String**|
 |**MeetingSuggestion**|Una referencia a un evento o encuentro. Por ejemplo, Exchange 2013 reconocería el siguiente texto como una sugerencia de encuentro:  _Quedamos mañana para comer_|Objeto [MeetingSuggestion](../../reference/outlook/simple-types.md)|
 |**PhoneNumber**|Números de teléfono de Estados Unidos; por ejemplo:  _(235) 555-0110_|Objeto [PhoneNumber](../../reference/outlook/simple-types.md)|
 |**TaskSuggestion**|Frases accionables de un mensaje de correo. Por ejemplo:  _Por favor, actualice la hoja de cálculo._|Objeto [TaskSuggestion](../../reference/outlook/simple-types.md)|
 |**Url**|Una dirección web que especifique explícitamente la ubicación de la red y el identificador de un recurso web. Exchange Server no requiere el protocolo de acceso en la dirección web y no reconoce las direcciones URL incrustadas en el texto de vínculos como instancias de la entidad  **Url**. Exchange Server puede devolver resultados para los siguientes ejemplos: _www.youtube.com/user/officevideos_ _http://www.youtube.com/user/officevideos_|Objeto JavaScript  **String**|
-La figura 1 describe cómo Exchange Server y Outlook admiten entidades conocidas para complementos y qué pueden hacer estos con las entidades conocidas. Consulte los temas sobre la [Recuperación de las entidades en su complemento](#recuperación-de-las-entidades-en-su-complemento) y la [Activación de un complemento sobre la base de la existencia de una entidad](#activación-de-un-complemento-sobre-la-base-de-la-existencia-de-una-entidad) para obtener más detalles sobre cómo usar estas entidades.
+La figura 1 describe cómo Exchange Server y Outlook admiten entidades conocidas para complementos y qué pueden hacer estos con las entidades conocidas. Consulte los temas sobre la [Recuperación de las entidades en su complemento](#retrieving-entities-in-your-add-in) y la [Activación de un complemento sobre la base de la existencia de una entidad](#activating-an-add-in-based-on-the-existence-of-an-entity) para obtener más detalles sobre cómo usar estas entidades.
 
 
-**Figura 1. Cómo Exchange Server, Outlook y los complementos admiten entidades conocidas**
+**Figura 1: Cómo Exchange Server, Outlook y los complementos admiten entidades conocidas**
 
 ![Soporte y uso de entidades conocidas en aplicación de correo](../../images/mod_off15_mailapp_wellknownentities_curvedlines.png)
 
 
-## Permisos para extraer entidades
+## <a name="permissions-to-extract-entities"></a>Permisos para extraer entidades
 
 
 Para extraer entidades en su código JavaScript o para que su complemento se active según la existencia de determinadas entidades conocidas, asegúrese de solicitar los permisos adecuados en el manifiesto del complemento.
@@ -57,7 +57,7 @@ Al especificar el permiso restringido predeterminado, el complemento puede extra
 ```
 
 
-## Recuperación de las entidades en su complemento
+## <a name="retrieving-entities-in-your-add-in"></a>Recuperación de las entidades en su complemento
 
 
 Siempre que el cuerpo o el asunto del elemento que se está viendo contenga cadenas que Exchange y Outlook pueden identificar como entidades conocidas, estas instancias se encontrarán disponibles para los complementos (aunque los complementos no estén activados en función de estas entidades). Con el permiso adecuado, puede usar el método  **getEntities** o **getEntitiesByType** para recuperar entidades conocidas que se encuentran en el mensaje o la cita actual. El método **getEntities** devuelve una matriz de objetos [Entities](../../reference/outlook/simple-types.md) que contiene todas las entidades conocidas del elemento. Si está interesado en un tipo de entidades en particular, el método **getEntitiesByType** permite obtener una matriz que contiene únicamente las entidades que se especifican. La enumeración [EntityType](../../reference/outlook/Office.MailboxEnums.md) representa todos los tipos de entidades conocidas que se pueden extraer.
@@ -80,10 +80,10 @@ if (null != entities &amp;&amp; null != entities.addresses &amp;&amp; undefined 
 ```
 
 
-## Activación de un complemento sobre la base de la existencia de una entidad
+## <a name="activating-an-add-in-based-on-the-existence-of-an-entity"></a>Activación de un complemento sobre la base de la existencia de una entidad
 
 
-Cuando se usan entidades conocidas, Outlook también puede activar el complemento en función de la existencia de uno o varios tipos de entidades en el asunto o el cuerpo del elemento que se está viendo. Para ello, debe especificar una regla  **ItemHasKnownEntity** en el manifiesto del complemento. El tipo sencillo [KnownEntityType](http://msdn.microsoft.com/en-us/library/432d413b-9fcc-eb50-cfea-0ed10a43bd52%28Office.15%29.aspx) representa los diferentes tipos de entidades conocidas compatibles con las reglas **ItemHasKnownEntity**. Cuando se active el complemento, también podrá recuperar las instancias de estas entidades si así lo desea, tal como se describe en la sección anterior [Recuperación de las entidades en su complemento](#recuperación-de-las-entidades-en-su-complemento). 
+Cuando se usan entidades conocidas, Outlook también puede activar el complemento en función de la existencia de uno o varios tipos de entidades en el asunto o el cuerpo del elemento que se está viendo. Para ello, debe especificar una regla  **ItemHasKnownEntity** en el manifiesto del complemento. El tipo sencillo [KnownEntityType](http://msdn.microsoft.com/en-us/library/432d413b-9fcc-eb50-cfea-0ed10a43bd52%28Office.15%29.aspx) representa los diferentes tipos de entidades conocidas compatibles con las reglas **ItemHasKnownEntity**. Cuando se active el complemento, también podrá recuperar las instancias de estas entidades si así lo desea, tal como se describe en la sección anterior [Recuperación de las entidades en su complemento](#retrieving-entities-in-your-add-in). 
 
 Si lo prefiere, puede aplicar una expresión regular a una regla  **ItemHasKnownEntity**, como también a otras instancias de filtrado de una entidad, y hacer que Outlook active un complemento solo en un subconjunto de las instancias de la entidad. Por ejemplo, puede especificar un filtro para la entidad de nombre de la calle en un mensaje que contenga un código postal del estado de Washington que empiece por "98". Para aplicar un filtro en las instancias de la entidad, use los atributos  **RegExFilter** y **FilterName** en el elemento [Rule](http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx) del tipo [ItemHasKnownEntity](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx).
 
@@ -131,7 +131,7 @@ var videos = Office.context.mailbox.item.getFilteredEntitiesByName(youtube);
 ```
 
 
-## Sugerencias para usar entidades conocidas
+## <a name="tips-for-using-well-known-entities"></a>Sugerencias para usar entidades conocidas
 
 
 Existen algunos hechos y límites relacionados con el uso de entidades conocidas en un complemento que debe conocer. Las consideraciones siguientes se aplican siempre que un complemento se encuentra activado mientras el usuario lee un elemento que contiene coincidencias de entidades conocidas, independientemente de si usa o no una regla  **ItemHasKnownEntity**:
@@ -159,7 +159,7 @@ Además, lo siguiente se aplica si se usa una regla [ItemHasKnownEntity](http://
 3. No se puede usar una regla  **ItemHasKnownEntity** para activar un complemento para elementos en la carpeta Elementos enviados.
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

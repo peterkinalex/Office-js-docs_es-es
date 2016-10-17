@@ -1,11 +1,11 @@
 
-# Elemento TabletSettings
+# <a name="tabletsettings-element"></a>Elemento TabletSettings
 Especifica la configuración de control que se aplica cuando su complemento de correo se usa en una tableta.
 
  **Tipo de complemento:** correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -15,7 +15,7 @@ Especifica la configuración de control que se aplica cuando su complemento de c
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
-[Formulario](../../reference/manifest/form.md)
+[Form](../../reference/manifest/form.md)
 

@@ -1,5 +1,5 @@
 
-# Enumeración DocumentMode
+# <a name="documentmode-enumeration"></a>Enumeración DocumentMode
 Especifica si el documento de la aplicación asociada es de solo lectura o de lectura y escritura. 
 
 |||
@@ -12,7 +12,7 @@ Office.DocumentMode
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Valores**
@@ -23,12 +23,12 @@ Office.DocumentMode
 |Office.DocumentMode.ReadOnly|"readOnly"|El documento es de solo lectura.|
 |Office.DocumentMode.ReadWrite|"readWrite"|El documento es de lectura y escritura.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Devuelto por la propiedad **mode** del objeto [Document](../../reference/shared/document.md).
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -48,11 +48,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

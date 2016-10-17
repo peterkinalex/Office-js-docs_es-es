@@ -1,7 +1,7 @@
 
-# Labs.Components.IDynamicComponent
+# <a name="labs.components.idynamiccomponent"></a>Labs.Components.IDynamicComponent
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Permite la interacción con un componente dinámico.
 
@@ -10,7 +10,7 @@ interface IDynamicComponent extends Labs.Core.IComponent
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |Nombre|Descripción|

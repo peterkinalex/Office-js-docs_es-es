@@ -1,14 +1,11 @@
 
-# Crear y depurar complementos de Office en Visual Studio
+# <a name="create-and-debug-office-add-ins-in-visual-studio"></a>Crear y depurar complementos de Office en Visual Studio
 
+Este artículo describe cómo usar Visual Studio para crear el primer complemento de Office. Los pasos de este artículo se basan en Visual Studio 2015. Si usa otra versión de Visual Studio, los procedimientos pueden variar ligeramente.
 
+>**Nota:** Para empezar con un complemento de OneNote, consulte [Crear el primer complemento de OneNote](../onenote/onenote-add-ins-getting-started.md).
 
-
- >**Nota** Estas instrucciones se basan en Visual Studio 2015. Si usa otra versión de Visual Studio, los procedimientos pueden variar ligeramente.
-
-
-
-## Crear un proyecto Complemento de Office en Visual Studio
+## <a name="create-an-office-add-in-project-in-visual-studio"></a>Crear un proyecto Complemento de Office en Visual Studio
 
 
 Para empezar, compruebe que tiene instalado [Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs.aspx). 
@@ -41,13 +38,13 @@ Una vez que haya completado el asistente, Visual Studio crea una solución que c
 |Proyecto de complemento|Contiene solo un archivo de manifiesto XML con todas las configuraciones que describen su complemento. Estas configuraciones ayudan al host de Office a determinar cuándo el complemento se debe activar y dónde debe aparecer. Visual Studio genera los contenidos de esta archivo para que usted pueda ejecutar el proyecto y usar el complemento inmediatamente. Puede cambiar estas configuraciones en cualquier momento usando el editor de manifiesto.|
 |Proyecto de aplicación web|Contiene las páginas de contenido de su complemento, incluidos todos los archivos y referencias de archivos que necesita para desarrollar HTML compatible con Office y páginas de JavaScript. Mientras desarrolla su complemento, Visual Studio aloja la aplicación web en su servidor local IIS. Cuando esté listo para publicar, deberá encontrar un servidor para alojar este proyecto.Para obtener más información sobre proyectos de aplicaciones web ASP.NET, vea [Proyectos web de ASP.NET](http://msdn.microsoft.com/en-us/library/cdcd712f-96b0-4165-8b5d-9d0566650a28%28Office.15%29.aspx).|
 
-## Modificar las configuraciones de su complemento
+## <a name="modify-your-add-in-settings"></a>Modificar las configuraciones de su complemento
 
 
-Para modificar las configuraciones de su complemento, edite el archivo de manifiesto XML del proyecto. En el **Explorador de soluciones**, expanda el nodo del proyecto del complemento, expanda la carpeta que contiene el manifiesto XML y elija el manifiesto XML. Puede apuntar a cualquier elemento en el archivo para ver una información sobre herramientas que describe la finalidad del elemento. Para más información sobre el archivo de manifiesto, vea [Manifiesto XML de complementos de Office](../../docs/overview/add-in-manifests.md).
+Para modificar las configuraciones de su complemento, edite el archivo de manifiesto XML del proyecto. En el **Explorador de soluciones**, expanda el nodo del proyecto del complemento, expanda la carpeta que contiene el manifiesto XML y elija el manifiesto XML. Puede apuntar a cualquier elemento en el archivo para ver una información sobre herramientas que describe la finalidad del elemento. Para obtener más información sobre el archivo de manifiesto, consulte [Manifiesto XML de complementos de Office](../../docs/overview/add-in-manifests.md).
 
 
-## Desarrolle el contenido de su complemento
+## <a name="develop-the-contents-of-your-add-in"></a>Desarrollar el contenido del complemento
 
 
 Mientras que el proyecto del complemento le permite modificar las configuraciones que describen su complemento, la aplicación web proporciona el contenido que aparece en el mismo. 
@@ -67,18 +64,18 @@ A medida que su complemento se vuelve más sofisticado, puede agregar más archi
  >**Nota**  No tiene que usar estos archivos. Puede agregar otros archivos al proyecto y usarlos en su lugar. Si desea que aparezca otro archivo HTML como página inicial del complemento, abra el editor de manifiesto y luego señale la propiedad  **SourceLocation** en el nombre del archivo.
 
 
-## Depurar el complemento
+## <a name="debug-your-add-in"></a>Depurar el complemento
 
 
 Cuando esté listo para iniciar el complemento, revise la compilación y depure las propiedades relacionadas y luego inicie la solución.
 
 
-### Revisar las propiedades de compilación y depuración
+### <a name="review-the-build-and-debug-properties"></a>Revisar las propiedades de compilación y depuración
 
 Antes de iniciar la solución, es buena idea asegurarse de que Visual Studio abra la aplicación host que usted quiere. Esa información aparece en las páginas de propiedades del proyecto junto con varias otras propiedades que se refieren a la compilación y la depuración del complemento.
 
 
-### Para abrir las páginas de propiedades de un proyecto
+### <a name="to-open-the-property-pages-of-a-project"></a>Para abrir las páginas de propiedades de un proyecto
 
 
 1. En  **Explorador de soluciones**, elija el nombre del proyecto.
@@ -101,13 +98,13 @@ En la tabla siguiente se describen las propiedades del proyecto.
 |**Archivo de proyecto**|Especifica el nombre del archivo que contiene la compilación, configuración y otra información sobre el proyecto.|
 |**Carpeta de proyecto**|La ubicación del archivo de proyecto.|
 
-### Usar un documento existente para depurar el complemento (solo complementos de panel de tareas y de contenido)
+### <a name="use-an-existing-document-to-debug-the-add-in-(content-and-task-pane-add-ins-only)"></a>Usar un documento existente para depurar el complemento (solo complementos de panel de tareas y de contenido)
 
 
 Puede agregar documentos al proyecto del complemento. Si tiene un documento que contiene datos de prueba que quiere usar con la aplicación, Visual Studio lo abrirá cuando se inicie el proyecto.
 
 
-### Para usar un documento existente para depurar el complemento
+### <a name="to-use-an-existing-document-to-debug-the-add-in"></a>Para usar un documento existente para depurar el complemento
 
 
 1. En el  **Explorador de soluciones**, elija la carpeta del proyecto del complemento.
@@ -126,7 +123,7 @@ Puede agregar documentos al proyecto del complemento. Si tiene un documento que 
 6. En la lista  **Documento de inicio**, elija el documento que agregó al proyecto y, a continuación, elija el botón  **Aceptar** para cerrar las páginas de propiedades.
     
 
-### Iniciar la solución
+### <a name="start-the-solution"></a>Iniciar la solución
 
 
 Visual Studio compilará automáticamente la solución cuando la inicie. Puede iniciar la solución desde la barra  **Menú** mediante la elección de **Depurar**,  **Iniciar**. 
@@ -157,20 +154,21 @@ Visual Studio no muestra errores de validación en la ventana  **OUTPUT** cuando
 
 - [Opciones, editor de texto, JavaScript, IntelliSense](http://go.microsoft.com/fwlink/?LinkID=238779)
     
-- [Cómo: Establecer opciones de validación para la edición de HTML en Visual Web Developer](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
+- 
+  [Procedimiento: Establecer opciones de validación para la edición de HTML en Visual Web Developer](http://msdn.microsoft.com/en-us/library/vstudio/0byxkfet%28v=vs.100%29.aspx)
     
 - [Validación, CSS, Editor de texto, Opciones (Cuadro de diálogo)](http://go.microsoft.com/fwlink/?LinkID=238780)
     
-Para revisar las reglas de validación del archivo de manifiesto XML en su proyecto, vea [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md).
+Para revisar las reglas de validación del archivo de manifiesto XML en su proyecto, consulte [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md).
 
 
-### Mostrar una aplicación en Excel, Word o Project y revisar el código
+### <a name="show-an-add-in-in-excel,-word,-or-project-and-step-through-your-code"></a>Mostrar una aplicación en Excel, Word o Project y revisar el código
 
 
 Si establece la propiedad  **Documento de inicio** del proyecto de complemento en Excel o Word, Visual Studio crea un documento nuevo y aparece el complemento. Si establece la propiedad **Documento de inicio** del proyecto de complemento para que use un documento existente, Visual Studio abre el documento, pero debe insertar el complemento manualmente. Si establece el **Documento de inicio** como **Microsoft Project**, también deberá insertar el complemento de forma manual.
 
 
-### Para mostrar una Complemento de Office en Excel o Word
+### <a name="to-show-an-office-add-in-in-excel-or-word"></a>Para mostrar una Complemento de Office en Excel o Word
 
 
 1. En Excel o Word, en la pestaña  **Insertar**, elija  **Aplicaciones para Office**.
@@ -178,7 +176,7 @@ Si establece la propiedad  **Documento de inicio** del proyecto de complemento e
 2. En la lista que aparece, elija su complemento.
     
 
-### Para mostrar una Complemento de Office en Project
+### <a name="to-show-an-office-add-in-in-project"></a>Para mostrar una Complemento de Office en Project
 
 
 1. En Project, en la pestaña  **Project**, elija  **Complementos de Office**.
@@ -188,7 +186,7 @@ Si establece la propiedad  **Documento de inicio** del proyecto de complemento e
 A continuación, en Visual Studio, puede configurar puntos de interrupción. Luego, a medida que interactúe con su complemento, podrá repasar el código en sus archivos de código HTML, JavaScript y C# o VB.
 
 
-### Mostrar el complemento de Outlook en Outlook y repasar el código
+### <a name="show-the-outlook-add-in-in-outlook-and-step-through-your-code"></a>Mostrar el complemento de Outlook en Outlook y repasar el código
 
 
 Para ver la aplicación en Outlook, abra un mensaje de correo electrónico o un elemento de cita.
@@ -202,13 +200,13 @@ En Visual Studio, puede configurar puntos de interrupción. Luego, mientras inte
 También puede cambiar el código y ver los efectos de esos cambios en el complemento de Outlook sin tener que cerrar el Complemento de Office e iniciar el proyecto de nuevo. En Outlook, simplemente abra el menú contextual para el complemento de Outlook y luego seleccione  **Volver a cargar**.
 
 
-### Modificar código y seguir depurando el complemento sin tener que volver a iniciar el proyecto
+### <a name="modify-code-and-continue-to-debug-the-add-in-without-having-to-start-the-project-again"></a>Modificar código y seguir depurando el complemento sin tener que volver a iniciar el proyecto
 
 
 Puede cambiar el código y ver los efectos de esos cambios en su aplicación sin tener que cerrar la aplicación host e iniciar el proyecto de nuevo. Después de cambiar el código, abra el menú contextual de la aplicación y, a continuación, elija  **Recargar**. Al volver a cargar la aplicación, se desconecta del depurador de Visual Studio. Por ello puede ver los efectos del cambio, pero no podrá volver a revisar el código paso por paso hasta que asocie el depurador de Visual Studio a todos los procesos de iexplore.exe disponibles.
 
 
-### Para asociar el depurador de Visual Studio a todos los procesos de Iexplore.exe disponibles
+### <a name="to-attach-the-visual-studio-debugger-to-all-of-the-available-iexplore.exe-processes"></a>Para asociar el depurador de Visual Studio a todos los procesos de Iexplore.exe disponibles
 
 
 1. En Visual Studio, elija  **DEPURAR**,  **Asociar al proceso**.
@@ -216,7 +214,7 @@ Puede cambiar el código y ver los efectos de esos cambios en su aplicación sin
 2. En el cuadro de diálogo  **Asociar al proceso**, elija todos los procesos disponibles de  **Iexplore.exe** y, a continuación, elija el botón **Asociar**.
     
 
-## Pasos siguientes
+## <a name="next-steps"></a>Pasos siguientes
 
-- [Publicar el complemento para Office](../publish/publish.md)
+- [Publicar el complemento de Office](../publish/publish.md)
     

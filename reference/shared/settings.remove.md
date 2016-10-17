@@ -1,12 +1,12 @@
 
 
-# Método Settings.remove
+# <a name="settings.remove-method"></a>Método Settings.remove
 Elimina la configuración especificada.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Access, Excel, PowerPoint y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Configuración|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Configuración|
 |**Modificado por última vez en**|1.1|
 
 ```js
@@ -14,7 +14,7 @@ Office.context.document.settings.remove(name);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
@@ -27,7 +27,7 @@ _name_<br/>
 
 
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
  **null** es un valor válido para una configuración. Por lo tanto, si se asigna **null** a la configuración, no se eliminará del contenedor de propiedades de la configuración.
 
@@ -35,7 +35,7 @@ _name_<br/>
  >**Importante**: sea consciente de que el método **Settings.remove** afecta solo a la copia en memoria del contenedor de propiedades de configuración. Para continuar quitando la configuración especificada en el documento, en algún momento después de llamar al método **Settings.remove** y antes de que se cierre el complemento, debe llamar al método [Settings.saveAsync](../../reference/shared/settings.saveasync.md).
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -49,7 +49,7 @@ function removeMySetting() {
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -67,13 +67,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|Configuración|
+|**Disponible en los conjuntos de requisitos**|Configuración|
 |**Nivel de permisos mínimo**|[Restringido](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

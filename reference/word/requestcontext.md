@@ -1,39 +1,39 @@
-# Objeto RequestContext (API de JavaScript para Word)
+# <a name="requestcontext-object-(javascript-api-for-word)"></a>Objeto RequestContext (API de JavaScript para Word)
 
 El objeto RequestContext facilita las solicitudes a la aplicación de Word desde el complemento de Word, ya que las dos aplicaciones se ejecutan en procesos diferentes.
 
-_Se aplica a: Word 2016, Word para iPad, Word para Mac_
+_Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 
-## Properties
+## <a name="properties"></a>Propiedades
 Ninguno
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método         | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[load(object: object, option: object)](#loadobject-object-option-object)  |void     |Rellena el objeto proxy creado en la capa de JavaScript con la propiedad y las opciones especificadas en el parámetro.|
 |[sync()](#sync)  |Objeto Promise |Envía la cola de solicitudes a Word y devuelve un objeto Promise, que puede usarse para encadenar más acciones.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
-### load(object: object, option: object)
+### <a name="load(object:-object,-option:-object)"></a>load(object: object, option: object)
 Rellena el objeto proxy creado en la capa de JavaScript con la propiedad y las opciones especificadas en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 requestContextObject.load(object, loadOption);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro       | Tipo    |Descripción|
 |:----------------|:--------|:----------|
 |object|object|Opcional. Especifique el nombre del objeto que se va a cargar.|
-|Opción|[loadOption](loadoption.md)|Opcional, pero se usa como procedimiento recomendado. Especifique las opciones de carga, como select, expand, skip y top. |
+|option|[loadOption](loadoption.md)|Opcional, pero se usa como procedimiento recomendado. Especifique las opciones de carga, como select, expand, skip y top. |
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-##### Ejemplos
+##### <a name="examples"></a>Ejemplos
 
 En el ejemplo siguiente se muestra cómo se usa el contexto de solicitud para cargar la propiedad Text en una colección de párrafo.
 
@@ -70,25 +70,25 @@ Word.run(function (context) {
 
 ```
 
-#### Información adicional
+#### <a name="additional-information"></a>Información adicional
 
 Es necesario llamar a load() después de agregar objetos de los que se realiza seguimiento.
 
-### sync()
+### <a name="sync()"></a>sync()
 Envía la cola de solicitudes a Word y devuelve un objeto Promise, que puede usarse para encadenar más acciones.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 requestContextObject.sync();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 Objeto Promise.
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 En el ejemplo siguiente se muestra el método de sincronización usado dos veces: 1) cargar la colección de controles de contenido con la propiedad Text de cada control de contenido y 2) borrar el contenido del primer control de contenido de la colección.
 
@@ -130,5 +130,5 @@ Word.run(function (context) {
 
 ```
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).

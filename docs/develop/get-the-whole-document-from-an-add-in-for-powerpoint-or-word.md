@@ -1,9 +1,9 @@
 
-# Procedimiento para obtener el documento completo de un complemento para PowerPoint o Word
+# <a name="get-the-whole-document-from-an-add-in-for-powerpoint-or-word"></a>Procedimiento para obtener el documento completo de un complemento para PowerPoint o Word
 
 Puede crear un Complemento de Office para permitir enviar o publicar con un clic un documento de Word 2013 o PowerPoint 2013 en una ubicación remota. En este artículo se muestra cómo comopilar un complemento de panel de tareas sencillo para PowerPoint 2013 que obtenga toda la presentación como un objeto de datos y envíe esos datos a un servidor web mediante una solicitud HTTP.
 
-## Requisitos previos para crear un complemento para PowerPoint o Word
+## <a name="prerequisites-for-creating-an-add-in-for-powerpoint-or-word"></a>Requisitos previos para crear un complemento para PowerPoint o Word
 
 
 En este artículo se supone que se usa un editor de texto para crear el complemento de panel de tareas para PowerPoint o Word. Para crear el complemento de panel de tareas, debe crear los siguientes archivos:
@@ -22,12 +22,12 @@ En este artículo se supone que se usa un editor de texto para crear el compleme
 También puede crear un complemento para PowerPoint o Word mediante Visual Studio 2015 o Herramientas de desarrollo de Office 365 de Napa. Para obtener más información sobre cómo crear Complementos de Office, consulte la tabla 1.
 
 
-### Conceptos básicos que deben considerarse al crear un complemento de panel de tareas
+### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Conceptos básicos que deben considerarse al crear un complemento de panel de tareas
 
 Antes de empezar a crear este complemento para PowerPoint o Word, debe estar familiarizado con la compilación de Complementos de Office y estar acostumbrado a trabajar con solicitudes HTTP. En este artículo no se explica cómo descodificar texto con codificación Base64 de una solicitud HTTP en un servidor web. 
 
 
-## Crear el manifiesto del complemento
+## <a name="create-the-manifest-for-the-add-in"></a>Crear el manifiesto del complemento
 
 
 El archivo de manifiesto XML del complemento para PowerPoint ofrece información importante sobre el complemento: qué aplicaciones pueden hospedarlo, la ubicación del archivo HTML, el título y la descripción del complemento, y muchas otras características.
@@ -61,7 +61,7 @@ El archivo de manifiesto XML del complemento para PowerPoint ofrece información
 - Guarde el archivo como GetDoc_App.xml con codificación UTF-8 en una ubicación de red o en un catálogo de complementos.
     
 
-## Crear la interfaz de usuario del complemento
+## <a name="create-the-user-interface-for-the-add-in"></a>Crear la interfaz de usuario del complemento
 
 
 Para la interfaz de usuario del complemento, puede usar HTML, escrito directamente en el archivo GetDoc_App.html. La lógica de programación y la funcionalidad del complemento deben estar en un archivo JavaScript (por ejemplo, GetDoc_App.js).
@@ -131,7 +131,7 @@ input [type="submit"], input[type="button"]
 - Guarde el archivo como Program.css con codificación UTF-8 en la ubicación de red o en el servidor web donde se encuentra el archivo GetDoc_App.html.
     
 
-## Agregar el código JavaScript para obtener el documento
+## <a name="add-the-javascript-to-get-the-document"></a>Agregar el código JavaScript para obtener el documento
 
 
 En el código del complemento, un controlador del evento [Office.initialize](../../reference/shared/office.initialize.md) agrega un controlador al evento de clic del botón **Enviar** en el formulario e informa al usuario de que el complemento está listo.

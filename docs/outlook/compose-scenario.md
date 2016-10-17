@@ -1,5 +1,5 @@
 
-# Crear complementos de Outlook para formularios de redacción
+# <a name="create-outlook-add-ins-for-compose-forms"></a>Crear complementos de Outlook para formularios de redacción
 
 Desde la versión 1.1 del esquema de manifiestos de Complementos de Office y office.js v1.1, puede crear complementos de redacción, que son complementos de Outlook que se activan en los formularios de redacción. Al contrario que los complementos de lectura (complementos de Outlook que se activan en modo de lectura cuando un usuario ve un mensaje o cita), los complementos de redacción están disponibles en los siguientes escenarios:
 
@@ -27,17 +27,17 @@ En la ilustración siguiente se muestra el panel de selección de complementos f
 ![Aplicación de correo Plantillas activada para elemento redactado](../../images/mod_off15_MailApps_TemplatesAppSelectionPane.png)
 
 
-## Tipos de complementos disponibles en modo de redacción
+## <a name="types-of-add-ins-available-in-compose-mode"></a>Tipos de complementos disponibles en modo de redacción
 
 
 Los complementos de redacción se implementan como [Comandos de complementos de Outlook](../outlook/add-in-commands-for-outlook.md).
 
 
-## Características de la API disponibles para complementos de redacción
+## <a name="api-features-available-to-compose-add-ins"></a>Características de la API disponibles para complementos de redacción
 
 
 
-- Para activar complementos en formularios de redacción, vea la tabla 1 de [Especificar las reglas de activación en un manifiesto](../outlook/manifests/activation-rules.md#specify-activation-rules-in-a-manifest).
+- Para activar complementos en formularios de redacción, consulte la tabla 1 de [Especificar las reglas de activación en un manifiesto](../outlook/manifests/activation-rules.md#specify-activation-rules-in-a-manifest).
     
 - [Agregar y quitar datos adjuntos de un elemento en un formulario de redacción en Outlook](../outlook/add-and-remove-attachments-to-an-item-in-a-compose-form.md)
     
@@ -56,7 +56,7 @@ Los complementos de redacción se implementan como [Comandos de complementos de 
 - [Outlook-Power-Hour_Code-Samples](https://github.com/OfficeDev/Outlook-Power-Hour-Code-Samples):  `ComposeAppDemo`
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

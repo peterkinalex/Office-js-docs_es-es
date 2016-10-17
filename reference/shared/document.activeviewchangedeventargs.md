@@ -1,15 +1,15 @@
 
-# Objeto DocumentActiveViewChangedEventArgs
+# <a name="documentactiveviewchangedeventargs-object"></a>Objeto DocumentActiveViewChangedEventArgs
 Proporciona información sobre la vista que generó el evento [ActiveViewChanged](../../reference/shared/document.activeviewchanged.md).
 
 |||
 |:-----|:-----|
 |**Hosts:**|PowerPoint|
-|**Incorporación**|1.1|
+|**Introducido en**|1.1|
 
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -18,9 +18,9 @@ Proporciona información sobre la vista que generó el evento [ActiveViewChanged
 |**Nombre**|**Descripción**|
 |:-----|:-----|
 |[activeView](../../reference/shared/document.activeviewchangedeventargs.activeview.md)|Se obtiene un valor de enumeración **ActiveView** que identifica el estado de la vista activa del documento; por ejemplo, determina si el usuario puede editar el documento.|
-|[tipo](../../reference/shared/document.activeviewchangedeventargs.type.md)|Obtiene un valor de la enumeración **EventType** que identifica el tipo de evento que se ha generado.|
+|[type](../../reference/shared/document.activeviewchangedeventargs.type.md)|Obtiene un valor de la enumeración **EventType** que identifica el tipo de evento que se ha generado.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -37,7 +37,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Incorporación**|1.1|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Introducido en**|1.1|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|

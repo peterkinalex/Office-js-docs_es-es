@@ -1,17 +1,17 @@
 
-# LabsJS.Labs.Core.GetActions
+# <a name="labsjs.labs.core.getactions"></a>LabsJS.Labs.Core.GetActions
 Proporciona una vista detallada de las API de JavaScript de LabsJS.Labs.Core.GetActions.
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Estas API permiten consultar las acciones que se produjeron previamente en el servidor. 
 
-## Módulo Labs.Core.GetActions
+## <a name="labs.core.getactions-module"></a>Módulo Labs.Core.GetActions
 
 El módulo Labs.Core.GetActions contiene los siguientes tipos:
 
 
-### Interfaces
+### <a name="interfaces"></a>Interfaces
 
 
 |||

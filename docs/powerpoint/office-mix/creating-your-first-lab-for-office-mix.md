@@ -1,5 +1,5 @@
 
-# Tutorial: Crear su primer laboratorio para Office Mix
+# <a name="walkthrough:-creating-your-first-lab-for-office-mix"></a>Tutorial: Crear su primer laboratorio para Office Mix
 Cree su primer laboratorio de LabsJS con un tutorial paso a paso.
 
 
@@ -32,7 +32,7 @@ Puede usar cualquier editor de código para editar estos archivos porque no empe
 
 Por último, puede ver el archivo JavaScript completado (TrueFalse.js) entre los archivos que se distribuyen con este SDK. Lo que sigue es un tutorial del proceso de codificación.
 
-## Conexión con el host de laboratorio
+## <a name="connecting-to-the-lab-host"></a>Conexión con el host de laboratorio
 
 Los laboratorios en este entorno se pueden ejecutar con nuestro host de laboratorio (para desarrollo y pruebas) o con el host de tiempo de ejecución predeterminado mediante el host de Office.js. A continuación, la función de apertura usa una expresión if/else simple para probar cuál de estos contextos de hospedaje se aplica.
 
@@ -101,7 +101,7 @@ function getConfiguration(question, answer) {
 ```
 
 
-## Cambios de modo
+## <a name="mode-changes"></a>Cambios de modo
 
 Un laboratorio siempre está en uno de dos estados o modos:  **view** y **edit**. Por lo tanto, se necesita una manera de capturar y mantener el estado y el comportamiento del cuestionario. Crearemos una clase para este propósito.
 
@@ -430,7 +430,7 @@ $(document).ready(function () {
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 <a name="bk_addresources"> </a>
 
 

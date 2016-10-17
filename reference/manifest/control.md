@@ -1,19 +1,19 @@
-# Elemento Control
+# <a name="control-element"></a>Elemento Control
 
-Define una función de JavaScript que ejecuta una acción o inicia un panel de tareas. Un elemento **Control** puede ser un botón o una opción de menú. Al menos un **Control** debe estar incluido en un elemento [Group](group.md) .
+Define una función de JavaScript que ejecuta una acción o inicia un panel de tareas. Un elemento **Control** puede ser un botón o una opción de menú. Al menos un **Control** debe estar incluido en un elemento [Group](group.md).
 
-## Atributos
+## <a name="attributes"></a>Atributos
 
 |  Atributo  |  Obligatorio  |  Descripción  |
 |:-----|:-----|:-----|
 |**xsi:type**|Sí|El tipo de control que se está definiendo. Puede ser un botón o un menú.|
 |**id**|No|El identificador del elemento de control. Puede tener 125 caracteres como máximo.|
 
-## Control de botón
+## <a name="button-control"></a>Control de botón
 
 Un botón realiza una sola acción cuando el usuario lo selecciona. Puede ejecutar una función o mostrar un panel de tareas. Cada control de botón ha que tener un `id` único para el manifiesto. 
 
-### Elementos secundarios
+### <a name="child-elements"></a>Elementos secundarios
 |  Elemento |  Obligatorio  |  Descripción  |
 |:-----|:-----|:-----|
 |  **Label**     | Sí |  El texto del botón. El atributo **resid** debe estar establecido en el valor del atributo **id** de un elemento **String** en el elemento [ShortStrings](./resources.md#shortstrings) del elemento [Resources](./resources.md).        |
@@ -65,7 +65,7 @@ Un botón realiza una sola acción cuando el usuario lo selecciona. Puede ejecut
                 </Control>
 ```
 
-### Ejemplo de botón ExecuteFunction
+### <a name="executefunction-button-example"></a>Ejemplo de botón ExecuteFunction
 
 ```xml
 <Control xsi:type="Button" id="msgReadFunctionButton">
@@ -85,7 +85,7 @@ Un botón realiza una sola acción cuando el usuario lo selecciona. Puede ejecut
 </Control>
 ```
 
-### Ejemplo de botón ShowTaskpane
+### <a name="showtaskpane-button-example"></a>Ejemplo de botón ShowTaskpane
 
 ```xml
 <Control xsi:type="Button" id="msgReadOpenPaneButton">
@@ -104,7 +104,7 @@ Un botón realiza una sola acción cuando el usuario lo selecciona. Puede ejecut
   </Action>
 </Control>
 ```
-## Controles de menú (botón desplegable)
+## <a name="menu-(dropdown-button)-controls"></a>Controles de menú (botón desplegable)
 
 Un menú define una lista estática de opciones. Cada elemento de menú ejecuta una función o muestra un panel de tareas. No se admiten submenús. 
 
@@ -168,18 +168,18 @@ En el ejemplo siguiente se muestra cómo definir un elemento de menú con dos el
 
 ```
 
-### Elementos secundarios
+### <a name="child-elements"></a>Elementos secundarios
 
 |  Elemento |  Obligatorio  |  Descripción  |
 |:-----|:-----|:-----|
-|  **Label**     | Sí |  El texto del botón. El atributo **resid** debe estar establecido en el valor del atributo **id** de un elemento **String** en el elemento [ShortStrings](./resources.md#shortstrings) del elemento [Resources](./resources.md).      |
+|  **Label**     | Sí |  El texto del botón. El atributo **resid** debe establecerse en el valor del atributo **id** de un elemento **String** en el elemento [ShortStrings](./resources.md#shortstrings) del elemento [Resources](./resources.md).      |
 |  **ToolTip**  |No|La información sobre herramientas del botón. El atributo **resid** tiene que establecerse en el valor del atributo **id** de un elemento **String**. El elemento **String** es un elemento secundario del elemento **LongStrings**, que es un elemento secundario del elemento [Resources](resource.md).|     
-|  [Supertip](./supertip.md)  | Sí |  La sugerencia del botón.    |
+|  [Supertip](./supertip.md)  | Sí |  La sugerencia de este botón.    |
 |  [Icon](./icon.md)      | Sí |  Una imagen del botón.         |
-|  [Items](#items)     | Sí |  Una colección de botones que se mostrarán en el menú Contiene los elementos **Item** para cada elemento de submenú. Cada elemento **Item** contiene los elementos secundarios del [Button control](#button-control).|
+|  [Items](#items)     | Sí |  Una colección de botones que se mostrarán en el menú Contiene los elementos **Item** para cada elemento de submenú. Cada elemento **Item** contiene los elementos secundarios del [control Button](#button-control).|
 
 
-### Ejemplo de control de menú
+### <a name="menu-control-examples"></a>Ejemplos de control de menú
 
 ```xml
 <Control xsi:type="Menu" id="TestMenu2">

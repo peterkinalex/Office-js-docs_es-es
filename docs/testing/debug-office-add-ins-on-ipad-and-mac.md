@@ -1,9 +1,9 @@
 
-# Depurar complementos de Office en dispositivos iPad y Mac
+# <a name="debug-office-add-ins-on-ipad-and-mac"></a>Depurar complementos de Office en dispositivos iPad y Mac
 
 Puede usar Visual Studio para desarrollar y depurar add-ins en Windows, pero no se puede usar para depurar add-ins en un iPad ni en un Mac. Como los add-ins se desarrollan en HTML y Javascript, están diseñados para que funcionen en distintas plataformas, pero puede haber diferencias sutiles en la forma en que cada explorador presenta el código HTML. En este tema se describe cómo depurar los add-ins que se ejecutan en iPad o Mac. 
 
-## Depurar con Vorlon.js 
+## <a name="debugging-with-vorlon.js"></a>Depurar con Vorlon.js 
 
 Vorlon.js es un depurador de páginas web, similar a las herramientas de F12, que está diseñado para trabajar de forma remota y permite depurar páginas web en diferentes dispositivos. Para más información, vea el [sitio web de Vorlon](http://www.vorlonjs.com).  
 
@@ -31,3 +31,6 @@ Ahora, cuando abra el complemento en un dispositivo, se mostrará en la lista de
 ![Captura de pantalla donde se muestra la interfaz de Vorlon.js](../../images/vorlon_interface.png)
 
 El complemento de Office agrega capacidades adicionales a Office.js, como las de explorar el modelo de objetos y ejecutar llamadas a Office.js. 
+
+
+> **Nota:** a menudo en Office para Mac los complementos se almacenan en caché, por motivos de rendimiento. Si necesita forzar una recarga del complemento mientras lo está desarrollando, puede borrar la carpeta Users/<usr>/Library/Containers/com.Microsoft.OsfWebHost/Data/.  

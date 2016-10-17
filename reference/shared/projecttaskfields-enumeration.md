@@ -1,11 +1,11 @@
 
-# Enumeración ProjectTaskFields
+# <a name="projecttaskfields-enumeration"></a>Enumeración ProjectTaskFields
 Especifica los campos de tarea que se encuentran disponibles como parámetros para el método **[getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)**.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Agregado en**|1,0|
+|**Agregado en**|1.0|
 
 ```js
 Microsoft.Office.WebExtension.ProjectTaskFields={
@@ -295,7 +295,7 @@ Microsoft.Office.WebExtension.ProjectTaskFields={
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 La enumeración **ProjectTaskFields** contiene los siguientes miembros.
@@ -587,13 +587,13 @@ La enumeración **ProjectTaskFields** contiene los siguientes miembros.
 |WBSSUCCESSORS|280|Los códigos de la estructura de desglose del trabajo de las tareas posteriores, separados por el separador de lista.|
 |WSSID|281|El identificador de la tarea en una lista de SharePoint para un proyecto sincronizado con una lista de tareas de SharePoint.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 
 Se puede usar una constante **ProjectTaskFields** como parámetro del método **[getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)**.<br/><br/>Para obtener más información sobre cómo trabajar con campos de Project, consulte la [Referencia de campos disponibles](http://office.microsoft.com/en-us/project-help/available-fields-reference-HA102749299.aspx?CTT=1). En la ayuda de Project, busque _Campos disponibles_.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.<br/><br/>
@@ -612,17 +612,17 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
-|1,0|Agregado|
+|1.0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 [Método getTaskFieldAsync](../../reference/shared/projectdocument.gettaskfieldasync.md)
 

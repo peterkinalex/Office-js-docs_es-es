@@ -1,5 +1,5 @@
 
-# Complementos de Outlook contextuales
+# <a name="contextual-outlook-add-ins"></a>Complementos de Outlook contextuales
 
 Los complementos contextuales son complementos de Outlook que se activan en función del texto de un mensaje o una cita. Mediante el uso de complementos contextuales, un usuario puede iniciar tareas relacionadas con un mensaje sin salir del propio mensaje, lo que da como resultado una experiencia de usuario más fácil y completa.
 
@@ -14,7 +14,7 @@ Los complementos contextuales son diferentes de los que implican datos adjuntos 
     
 Actualmente, los complementos contextuales se limitan a Outlook Web App.
 
-## Cómo hacer un complemento contextual
+## <a name="how-to-make-a-contextual-add-in"></a>Cómo hacer un complemento contextual
 
 Para crear un complemento contextual, su manifiesto de complemento debe especificar la entidad o la expresión regular que puede activarlo. La entidad puede ser cualquiera de las propiedades del objeto [Entities](../../reference/outlook/simple-types.md). Por lo tanto, el manifiesto del complemento debe contener una regla de tipo  **ItemHasKnownEntity** o **ItemHasRegularExpressionMatch**. En el ejemplo siguiente se muestra cómo especificar una entidad que es un número de teléfono:
 
@@ -40,7 +40,7 @@ Hay varias restricciones sobre los complementos contextuales:
 - No se puede especificar si el complemento se mostrará en la tarjeta o en la barra de complementos.
     
 
-## Cómo iniciar un complemento contextual
+## <a name="how-to-launch-a-contextual-add-in"></a>Cómo iniciar un complemento contextual
 
 Un usuario inicia un complemento contextual a través de texto, ya sea una entidad conocida o la expresión regular de un desarrollador, o mediante la barra de complementos. Normalmente, un usuario identifica un complemento contextual porque la entidad está resaltada. El siguiente ejemplo muestra cómo aparece el resaltado en un mensaje. Aquí, la entidad (una dirección) es de color azul y está subrayada con una línea de puntos azul. Un usuario inicia el complemento contextual haciendo clic en la entidad resaltada. 
 
@@ -70,7 +70,7 @@ Cuando hay varias entidades o complementos contextuales en un mensaje, hay unas 
 - Si una única cadena contiene varias entidades que activan varios complementos, se resalta la cadena completa y, al hacer clic, en la cadena se muestran todas los complementos relacionados con la cadena en pestañas diferentes. Por ejemplo, una cadena que describe una propuesta de reunión en un restaurante podría activar el complemento de reunión sugerida y un complemento de clasificación de restaurantes.
     
 
-## Cómo se muestra un complemento contextual
+## <a name="how-a-contextual-add-in-displays"></a>Cómo se muestra un complemento contextual
 
 Un complemento contextual activado aparece en dos lugares:
 
@@ -84,7 +84,7 @@ La tarjeta normalmente aparecerá debajo de la entidad y se centra respecto a la
 
 **Ejemplo de un complemento que se muestra en una tarjeta**
 
-![Muestra una aplicación contextual de una tarjeta](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
+![Muestra una aplicación contextual en una tarjeta](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
 
 Tenga en cuenta lo siguiente:
 
@@ -112,12 +112,12 @@ Tenga en cuenta lo siguiente:
 - El iframe muestra el complemento. El desarrollador puede establecer la altura del iframe, pero el ancho es un valor fijo. Se usa la misma altura para la barra de complementos del complemento que para la tarjeta. El desarrollador no necesita especificar dos alturas distintas.
     
 
-## Cómo aparece un complemento contextual en distintos dispositivos
+## <a name="how-contextual-add-ins-appear-on-different-devices"></a>Cómo aparece un complemento contextual en distintos dispositivos
 
 En un equipo de escritorio, un complemento contextual se muestra normalmente en una tarjeta y, si hay varios complementos, aparecen en pestañas diferentes. En tabletas, el mismo complemento se muestra al dorso y, si hay varios complementos, aparecen en pestañas. En teléfonos, el complemento se muestra como una experiencia envolvente. En caso de que haya varios complementos activados en la entidad, se muestra "…" en la parte superior derecha para permitir a los usuarios navegar entre los diferentes complementos de la entidad específica.
 
 
-## Complementos contextuales actuales
+## <a name="current-contextual-add-ins"></a>Complementos contextuales actuales
 
 Los siguientes complementos contextuales están instalados de forma predeterminada para los usuarios con complementos de Outlook:
 
@@ -129,7 +129,7 @@ Los siguientes complementos contextuales están instalados de forma predetermina
 Además, el complemento contextual [Package Tracker](https://store.office.com/package-tracker-WA104162083.aspx?assetid=WA104162083.aspx) está disponible en la Tienda Office.
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

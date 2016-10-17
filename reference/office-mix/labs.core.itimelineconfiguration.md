@@ -1,7 +1,7 @@
 
-# Labs.Core.ITimelineConfiguration
+# <a name="labs.core.itimelineconfiguration"></a>Labs.Core.ITimelineConfiguration
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Opciones de configuración de [Labs.Timeline](../../reference/office-mix/labs.timeline.md). Le permite especificar un conjunto de opciones de configuración de escala de tiempo.
 
@@ -10,7 +10,7 @@ interface ITimelineConfiguration
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||

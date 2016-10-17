@@ -1,4 +1,4 @@
-# Crear su primer complemento de Excel
+# <a name="build-your-first-excel-add-in"></a>Crear su primer complemento de Excel
 
 En este artículo se describe cómo usar la API de JavaScript para Excel para crear un complemento para Excel 2016 y Excel Online. Los pasos siguientes le guiarán en el proceso de creación de un sencillo complemento de panel de tareas que carga datos en una hoja de cálculo y crea un gráfico básico en Excel 2016.
 
@@ -8,7 +8,7 @@ En este artículo se describe cómo usar la API de JavaScript para Excel para cr
 Comenzará creando una aplicación web con HTML y jQuery. A continuación, creará un archivo de manifiesto XML que especifica dónde desea ubicar su aplicación web y cómo debe aparecer en Excel.
 
 
-### Escribir código
+### <a name="code-it"></a>Escribir código
 
 1- Cree una carpeta en la unidad local denominada QuarterlySalesReport (por ejemplo, C:\\QuarterlySalesReport). Guarde en esta carpeta todos los archivos creados en los pasos siguientes.
 
@@ -261,7 +261,7 @@ Comenzará creando una aplicación web con HTML y jQuery. A continuación, crear
 
 8-  Guarde todos los archivos. Acaba de escribir su primer complemento de Excel.
 
-### Pruébelo
+### <a name="try-it-out"></a>Pruébelo
 
 La forma más sencilla de implementar y probar el complemento consiste en copiar los archivos en un recurso compartido de red.
 
@@ -294,7 +294,7 @@ La forma más sencilla de implementar y probar el complemento consiste en copiar
 ![Complemento de informe de ventas trimestrales](../../images/QuarterlySalesReport_report.PNG)
 
 
-### Recursos adicionales
+### <a name="additional-resources"></a>Recursos adicionales
 
 *  [Introducción a la programación de complementos de Excel](excel-add-ins-javascript-programming-overview.md)
 *  [Explorador de fragmentos de código para Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)

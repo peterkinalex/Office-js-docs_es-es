@@ -1,7 +1,7 @@
 
-# Labs.off
+# <a name="labs.off"></a>Labs.off
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Quita un controlador de eventos para un evento especificado.
 
@@ -10,15 +10,15 @@ function off(event: string, handler: Core.IEventCallback): void
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|evento|El evento en el que se debe quitar el controlador.|
+|event|El evento en el que se debe quitar el controlador.|
 |handler|El controlador de eventos que quiere quitar.|
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Ninguno.
 

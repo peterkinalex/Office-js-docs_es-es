@@ -1,7 +1,7 @@
 
-# Labs.Core.IAction
+# <a name="labs.core.iaction"></a>Labs.Core.IAction
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Representa una acción de laboratorio, que es una interacción que un usuario tiene con un laboratorio especificado.
 
@@ -10,7 +10,7 @@ interface IAction
 ```
 
 
-## Properties
+## <a name="properties"></a>Properties
 
 
 |||

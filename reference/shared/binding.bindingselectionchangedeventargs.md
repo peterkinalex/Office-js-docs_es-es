@@ -1,5 +1,5 @@
 
-# Objeto BindingSelectionChangedEventArgs
+# <a name="bindingselectionchangedeventargs-object"></a>Objeto BindingSelectionChangedEventArgs
 Proporciona información sobre el enlace que ha generado el evento [SelectionChanged](../../reference/shared/binding.bindingselectionchangedevent.md).
 
 |||
@@ -12,7 +12,7 @@ Office.EventType.BindingSelectionChanged
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -25,9 +25,9 @@ Office.EventType.BindingSelectionChanged
 |[rowCount](../../reference/shared/binding.bindingselectionchangedevent.rowcount.md)|Obtiene la cantidad de filas seleccionadas.|
 |[startRow](../../reference/shared/binding.bindingselectionchangedevent.startrow.md)|Obtiene el índice de la primera fila de la selección (de base cero).|
 |[startColumn](../../reference/shared/binding.bindingselectionchangedevent.startcolumn.md)|Obtiene el índice de la primera columna de la selección (de base cero).|
-|[tipo](../../reference/shared/binding.bindingselectionchangedevent.type.md)|Obtiene un valor de enumeración [EventType](../../reference/shared/eventtype-enumeration.md) que identifica el tipo de evento que se generó.|
+|[type](../../reference/shared/binding.bindingselectionchangedevent.type.md)|Obtiene un valor de enumeración [EventType](../../reference/shared/eventtype-enumeration.md) que identifica el tipo de evento que se generó.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -42,15 +42,15 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

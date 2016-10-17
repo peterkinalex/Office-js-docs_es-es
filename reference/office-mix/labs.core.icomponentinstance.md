@@ -1,7 +1,7 @@
 
-# Labs.Core.IComponentInstance
+# <a name="labs.core.icomponentinstance"></a>Labs.Core.IComponentInstance
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Clase base de las instancias de los componentes del laboratorio.
 
@@ -10,7 +10,7 @@ interface IComponentInstance extends Core.ILabObject, Core.IUserData
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||
@@ -19,7 +19,7 @@ interface IComponentInstance extends Core.ILabObject, Core.IUserData
 | `name: string`|Nombre del componente.|
 | `values: {[type:string]: Core.IValueInstance[]}`|La asignación de propiedades de valor asociada al componente.|
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Una instancia de componente es una creación de instancia de un componente para un usuario. Contiene una vista traducida del componente para una ejecución particular del laboratorio. Esta vista puede excluir información oculta (respuestas y sugerencias entre otros) y también contiene identificadores para identificar las diversas instancias.
 

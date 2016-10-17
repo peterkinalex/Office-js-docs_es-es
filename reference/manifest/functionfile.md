@@ -1,8 +1,8 @@
-# Elemento FunctionFile
+# <a name="functionfile-element"></a>Elemento FunctionFile
 
-Especifica el archivo de código fuente para las operaciones que expone un complemento a través de comandos que ejecutan una función de JavaScript en lugar de mostrar la UI. El elemento **FunctionFile** es un elemento secundario de [FormFactor](./formfactor). El atributo **resid** del **FunctionFile** está establecido en el valor del atributo **id** de un elemento **Url** en el elemento **Resources** que contiene la dirección URL a un archivo HTML que contiene o carga todas las funciones de JavaScript que usan los botones de comandos del complemento sin interfaz de usuario, como define el [elemento Control](control.md).
+Especifica el archivo de código fuente para las operaciones que expone un complemento a través de comandos que ejecutan una función de JavaScript en lugar de mostrar la UI. El elemento **FunctionFile** es un elemento secundario de [FormFactor](./formfactor). El atributo **resid** del elemento **FunctionFile** está establecido en el valor del atributo **id** de un elemento **Url** en el elemento **Resources** que contiene la dirección URL a un archivo HTML que contiene o carga todas las funciones de JavaScript que usan los botones de comandos del complemento sin interfaz de usuario, como define el [Control element](control.md).
 
-El siguiente es un ejemplo del elemento  **FunctionFile**.
+El siguiente es un ejemplo del elemento **FunctionFile**.
 
 
 ```XML

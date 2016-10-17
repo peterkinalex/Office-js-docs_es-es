@@ -1,11 +1,11 @@
 
-# Elemento DesktopSettings
+# <a name="desktopsettings-element"></a>Elemento DesktopSettings
 Especifica la ubicación del código fuente y la configuración de control que se aplican cuando su complemento de correo se usa en un equipo de escritorio.
 
  **Tipo de complemento:** correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -15,7 +15,7 @@ Especifica la ubicación del código fuente y la configuración de control que s
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
-[Formulario](../../reference/manifest/form.md)
+[Form](../../reference/manifest/form.md)
 

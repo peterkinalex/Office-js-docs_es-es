@@ -1,24 +1,24 @@
 
-# Objeto TextBinding
+# <a name="textbinding-object"></a>Objeto TextBinding
 Representa una selección de texto enlazado en el documento.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Access, Excel, PowerPoint, Project y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TextBindings|
-|**Agregado en**|1,0|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TextBindings|
+|**Agregado en**|1.0|
 
 ```
 TextBinding
 ```
 
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 El objeto **TextBinding** hereda las propiedades [id](../../reference/shared/binding.id.md) y [type](../../reference/shared/binding.type.md), y los métodos [getDataAsync](../../reference/shared/binding.getdataasync.md) y [setDataAsync](../../reference/shared/binding.setdataasync.md) del objeto [Binding](../../reference/shared/binding.md). No implementa ninguna otra de sus propiedades ni métodos adicionales.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este objeto es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este objeto.
@@ -32,17 +32,17 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 ||**Office para escritorio de Windows**|**Office Online (en el explorador)**|**Office para iPad**|
 |:-----|:-----|:-----|:-----|
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|TextBindings|
+|**Disponible en los conjuntos de requisitos**|TextBindings|
 |**Nivel de permisos mínimo**|[WriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

@@ -1,5 +1,5 @@
 
-# Propiedad officeTheme.bodyForegroundColor
+# <a name="officetheme.bodyforegroundcolor-property"></a>Propiedad officeTheme.bodyForegroundColor
 Obtiene el color de primer plano del cuerpo del tema de Office.
 
  **Importante:** Actualmente, esta API solo funciona en Excel, Outlook, PowerPoint y Word en [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) para el escritorio de Windows.
@@ -8,7 +8,7 @@ Obtiene el color de primer plano del cuerpo del tema de Office.
 |||
 |:-----|:-----|
 |**Hosts:**|Excel, Outlook, PowerPoint y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|No en un conjunto|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|No en un conjunto|
 |**Agregado en**|1.3|
 
 
@@ -18,17 +18,17 @@ var bodyForegroundColor = Office.context.officeTheme.bodyForegroundColor;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Un triplo de color hexadecimal.
 
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Los colores devueltos se corresponden con los valores del tema de Office seleccionado por el usuario en **Archivo**  >  **Cuenta de Office**  >  interfaz de usuario de **Tema de Office**, que se aplica a todas las aplicaciones host de Office.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -53,7 +53,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

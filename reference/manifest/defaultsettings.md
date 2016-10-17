@@ -1,11 +1,11 @@
 
-# Elemento DefaultSettings
+# <a name="defaultsettings-element"></a>Elemento DefaultSettings
 Especifica la ubicación del código fuente predeterminada y otras configuraciones predeterminadas de su complemento de contenido o de panel de tareas.
 
  **Tipo de complemento:** Panel de tareas, contenido
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -15,12 +15,12 @@ Especifica la ubicación del código fuente predeterminada y otras configuracion
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## Puede contener:
+## <a name="can-contain:"></a>Puede contener:
 
 
 
@@ -30,7 +30,7 @@ Especifica la ubicación del código fuente predeterminada y otras configuracion
 |[RequestedWidth](../../reference/manifest/requestedwidth.md)|x|||
 |[RequestedHeight](../../reference/manifest/requestedheight.md)|x|||
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 La ubicación del origen y otros parámetros del elemento **DefaultSettings** se aplican solo a complementos de panel de tares y contenido. Para complementos de correo, puede especificar las ubicaciones predeterminadas de los archivos de origen y otros parámetros predeterminados en el elemento [FormSettings](../../reference/manifest/formsettings.md).
 

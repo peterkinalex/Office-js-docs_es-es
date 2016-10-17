@@ -1,7 +1,7 @@
 
-# Labs.isConnected
+# <a name="labs.isconnected"></a>Labs.isConnected
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Indica si el laboratorio está conectado al host.
 
@@ -10,12 +10,12 @@ function isConnected(): boolean
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 Ninguno.
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Devuelve **true** si está conectado al host.
 

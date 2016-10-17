@@ -1,11 +1,11 @@
 
-# Elemento DictionaryHomePage
+# <a name="dictionaryhomepage-element"></a>Elemento DictionaryHomePage
 Especifica la dirección URL de la página principal del diccionario.
 
  **Tipo de complemento:** Panel de tareas
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,12 +13,12 @@ Especifica la dirección URL de la página principal del diccionario.
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

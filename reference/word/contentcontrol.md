@@ -1,10 +1,10 @@
-# Objeto ContentControl (API de JavaScript para Word)
+# <a name="contentcontrol-object-(javascript-api-for-word)"></a>Objeto ContentControl (API de JavaScript para Word)
 
 Representa un control de contenido. Los controles de contenido son regiones delimitadas y posiblemente con etiquetas de un documento que funcionan como contenedores para tipos de contenido específicos. Los controles de contenido individuales pueden incluir contenido como imágenes, tablas o párrafos de texto con formato. Actualmente, solo se admiten controles de contenido de texto enriquecido.
 
-_Se aplica a: Word 2016, Word para iPad, Word para Mac_
+_Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 
-## Properties
+## <a name="properties"></a>Propiedades
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |cannotDelete|bool|Obtiene o establece un valor que indica si el usuario puede eliminar el control de contenido. Esta propiedad y removeWhenEdited son mutuamente excluyentes.|
@@ -17,56 +17,56 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac_
 |text|string|Obtiene el texto del control de contenido. Solo lectura.|
 |title|string|Obtiene o establece el título de un control de contenido.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|appearance|**ContentControlAppearance**|Obtiene o establece el aspecto del control de contenido. El valor puede ser "boundingBox", "tags" o "hidden".|
+|appearance|**ContentControlAppearance**|Obtiene o establece el aspecto del control de contenido. El valor puede ser 'boundingBox', 'tags' o 'hidden'.|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|Obtiene la colección de objetos de control de contenido que se encuentran en el control de contenido. Solo lectura.|
-|font|[Fuente](font.md)|Obtiene el formato de texto del control de contenido. Úselo para obtener y establecer el nombre de la fuente, el tamaño, el color y otras propiedades. Solo lectura.|
-|id|**[UINT]**|Obtiene un entero que representa el identificador del control de contenido. Solo lectura.|
+|font|[Font](font.md)|Obtiene el formato de texto del control de contenido. Úselo para obtener y establecer el nombre de la fuente, el tamaño, el color y otras propiedades. Solo lectura.|
+|id|**uint**|Obtiene un entero que representa el identificador del control de contenido. Solo lectura.|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Obtiene la colección de objetos inlinePicture que se encuentran en el control de contenido. La colección no incluye imágenes flotantes. Solo lectura.|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Obtiene la colección de objetos de párrafo que se encuentran en el control de contenido. Solo lectura.|
 |parentContentControl|[ContentControl](contentcontrol.md)|Obtiene el control de contenido que contiene el control de contenido. Devuelve null si no hay un control de contenido principal. Solo lectura.|
-|tipo|**ContentControlType**|Obtiene el tipo de control de contenido. Actualmente, solo se admiten controles de contenido de texto enriquecido. Solo lectura.|
+|type|**ContentControlType**|Obtiene el tipo de control de contenido. Actualmente, solo se admiten controles de contenido de texto enriquecido. Solo lectura.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|Borra el contenido del control de contenido. El usuario puede realizar la operación de deshacer en el contenido borrado.|
-|[delete(keepContent: bool)](#deletekeepcontent-bool)|void|Elimina el control de contenido y su contenido. Si keepContent se establece en true, el contenido no se elimina.|
-|[getHtml()](#gethtml)|cadena|Obtiene la representación HTML del objeto de control de contenido.|
-|[getOoxml()](#getooxml)|cadena|Obtiene la representación Office Open XML (OOXML) del objeto de control de contenido.|
+|[delete(keepContent: bool)](#deletekeepcontent-bool)|nulo|Elimina el control de contenido y su contenido. Si keepContent se establece en true, el contenido no se elimina.|
+|[getHtml()](#gethtml)|string|Obtiene la representación HTML del objeto de control de contenido.|
+|[getOoxml()](#getooxml)|string|Obtiene la representación Office Open XML (OOXML) del objeto de control de contenido.|
 |[insertBreak(breakType: BreakType, insertLocation: InsertLocation)](#insertbreakbreaktype-breaktype-insertlocation-insertlocation)|void|Inserta un salto en la ubicación especificada. Un salto solo puede insertarse en objetos que se encuentran en el cuerpo principal del documento, excepto si se trata de un salto de línea, que puede insertarse en cualquier objeto de cuerpo. El valor insertLocation puede ser "Before", "After", "Start" o "End".|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserta un documento en el control de contenido actual en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserta HTML en el control de contenido en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserta una imagen incorporada en el control de contenido en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'. |
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserta OOXML o wordProcessingML en el control de contenido en la ubicación especificada. El valor insertLocation puede ser "Replace", "Start" o "End".|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserta una imagen incorporada en el control de contenido en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'. |
+|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserta OOXML o wordProcessingML en el control de contenido en la ubicación especificada.  El valor insertLocation puede ser 'Replace', 'Start' o 'End'.|
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserta un párrafo en la ubicación especificada. El valor insertLocation puede ser 'Before', 'After', 'Start' o 'End'.|
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserta texto en el control de contenido en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Realiza una búsqueda con el valor searchOptions especificado en el ámbito del objeto de control de contenido. Los resultados de la búsqueda son una colección de objetos de intervalo.|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Realiza una búsqueda con el valor searchOptions especificado en el ámbito del objeto de control de contenido. Los resultados de la búsqueda son una colección de objetos de intervalo.|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selecciona el control de contenido. Esto hace que Word se desplace hasta la selección. El modo de selección puede ser 'Select', 'Start' o 'End'.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
-### clear()
+### <a name="clear()"></a>clear()
 Borra el contenido del control de contenido. El usuario puede realizar la operación de deshacer en el contenido borrado.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.clear();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -105,23 +105,23 @@ Word.run(function (context) {
 
 ```
 
-### delete(keepContent: bool)
+### <a name="delete(keepcontent:-bool)"></a>delete(keepContent: bool)
 Elimina el control de contenido y su contenido. Si keepContent se establece en true, el contenido no se elimina.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.delete(keepContent);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |keepContent|bool|Necesario. Indica si el contenido se debe eliminar con el control de contenido. Si keepContent se establece en true, el contenido no se elimina.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -161,21 +161,21 @@ Word.run(function (context) {
 ```
 
 
-### getHtml()
+### <a name="gethtml()"></a>getHtml()
 Obtiene la representación HTML del objeto de control de contenido.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.getHtml();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 string
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -213,21 +213,21 @@ Word.run(function (context) {
 });
 ```
 
-### getOoxml()
+### <a name="getooxml()"></a>getOoxml()
 Obtiene la representación Office Open XML (OOXML) del objeto de control de contenido.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.getOoxml();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 string
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -265,27 +265,27 @@ Word.run(function (context) {
 });
 ```
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 Inserta un salto en la ubicación especificada. Un salto solo puede insertarse en objetos que se encuentran en el cuerpo principal del documento, excepto si se trata de un salto de línea, que puede insertarse en cualquier objeto de cuerpo. El valor insertLocation puede ser "Before", "After", "Start" o "End".
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.insertBreak(breakType, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |breakType|BreakType|Necesario. Tipo de salto (breakType.md)|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Before", "After", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Detalles adicionales
+#### <a name="additional-details"></a>Detalles adicionales
 A excepción de los saltos de línea, no se puede insertar un salto en objetos contenidos en encabezados, pies de página, notas al pie, notas al final, comentarios y cuadros de texto.  
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -324,41 +324,41 @@ Word.run(function (context) {
 });
 ```
 
-### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
+### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
 Inserta un documento en el control de contenido actual en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.insertFileFromBase64(base64File, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |base64File|string|Necesario. Contenido codificado en Base64 del archivo que se va a insertar.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-### insertHtml(html: string, insertLocation: InsertLocation)
+### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation: InsertLocation)
 Inserta HTML en el control de contenido en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.insertHtml(html, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |Html|string|Necesario. HTML que se va a insertar en el control de contenido.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -396,41 +396,41 @@ Word.run(function (context) {
 });
 ```
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
 Inserta una imagen incorporada en el control de contenido en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 contentControlObject.insertInlinePictureFromBase64(image, insertLocation);
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|Necesario. Imagen codificada en base64 que se va a insertar en el control de contenido.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [InlinePicture](inlinepicture.md)
 
 
 
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Inserta OOXML o wordProcessingML en el control de contenido en la ubicación especificada. El valor insertLocation puede ser "Replace", "Start" o "End".
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.insertOoxml(ooxml, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |ooxml|string|Necesario. OOXML o wordProcessingML que se va a insertar en el control de contenido.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -468,27 +468,27 @@ Word.run(function (context) {
 });
 ```
 
-#### Información adicional
+#### <a name="additional-information"></a>Información adicional
 Lea [Crear complementos mejores para Word con Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) para obtener instrucciones sobre cómo trabajar con OOXML.
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Inserta un párrafo en la ubicación especificada. El valor insertLocation puede ser 'Before', 'After', 'Start' o 'End'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.insertParagraph(paragraphText, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |paragraphText|string|Necesario. Texto de párrafo que se va a insertar.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Before", "After", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Paragraph](paragraph.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -526,24 +526,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertText(text: string, insertLocation: InsertLocation)
+### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation: InsertLocation)
 Inserta texto en el control de contenido en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.insertText(text, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |text|string|Necesario. Texto que se va a insertar en el control de contenido.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -583,23 +583,23 @@ Word.run(function (context) {
 
 El complemento de ejemplo [Silly stories](https://aka.ms/sillystorywordaddin) muestra cómo se usa el método **insertText**.
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -632,40 +632,40 @@ Word.run(function (context) {
 });
 ```
 
-### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
+### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Realiza una búsqueda con el valor searchOptions especificado en el ámbito del objeto de control de contenido. Los resultados de la búsqueda son una colección de objetos de intervalo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.search(searchText, searchOptions);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|searchText|string|Necesario. Texto de búsqueda.|
+|searchText|cadena|Necesario. El texto de búsqueda.|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Opcional. Opciones de la búsqueda.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [SearchResultCollection](searchresultcollection.md)
 
-### select(selectionMode: SelectionMode)
+### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
 Selecciona el control de contenido. Esto hace que Word se desplace hasta la selección. El modo de selección puede ser 'Select', 'Start' o 'End'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 contentControlObject.select(selectionMode);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |selectionMode|SelectionMode|Opcional. El modo de selección puede ser 'Select', 'Start' o 'End'. 'Select' es el valor predeterminado.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -703,9 +703,9 @@ Word.run(function (context) {
 });
 ```
 
-## Ejemplos de acceso a la propiedad
+## <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
-### Cargar todas las propiedades del control de contenido.
+### <a name="load-all-of-the-content-control-properties"></a>Cargar todas las propiedades del control de contenido.
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -771,5 +771,5 @@ Word.run(function (context) {
 });
 ```
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).

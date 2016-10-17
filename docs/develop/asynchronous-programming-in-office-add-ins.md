@@ -1,5 +1,5 @@
 
-# Programación asincrónica en complementos para Office
+# <a name="asynchronous-programming-in-office-add-ins"></a>Programación asincrónica en complementos para Office
 
 ¿Por qué la API de Complementos de Office usa programación asincrónica? Debido a que JavaScript es un lenguaje de procesamiento único, si un script invoca un proceso sincrónico de larga duración, toda la ejecución posterior de dicho script se bloqueará hasta que el proceso haya finalizado. Puesto que determinadas operaciones en los clientes web de Office (aunque también en los clientes enriquecidos) podrían bloquear la ejecución si se realizan de forma sincrónica, la mayor parte de los métodos en la API de JavaScript para Office se han diseñado para ejecutarse de forma asincrónica. Esto garantiza que los Complementos de Office respondan y trabajen de forma eficaz. Asimismo, al trabajar con estos métodos asincrónicos es frecuente que sea necesario escribir funciones de devolución de llamada.
 
@@ -7,14 +7,14 @@ Los nombres de todos los métodos asincrónicos en la API terminan con "Async", 
 
 En el siguiente diagrama se muestra el flujo de ejecución de una llamada a un método "Async", que lee los datos que el usuario ha seleccionado en un documento abierto en las versiones basadas en servidor de Word Online o Excel Online. En el momento en que se realiza la llamada "Async", el subproceso de ejecución de JavaScript es libre de realizar cualquier otro procesamiento del lado del cliente (aunque no se muestra ninguno en el diagrama). Cuando se devuelve el método "Async", la devolución de llamada reanuda la ejecución en el subproceso y el complemento puede acceder a los datos, realizar alguna operación con ellos y mostrar el resultado. Se aplica el mismo patrón de ejecución asincrónica al trabajar con las aplicaciones host de clientes enriquecidos de Office, como Word 2013 o Excel 2013.
 
-**Figura 1. Flujo de ejecución de programación asincrónica**
+**Figura 1: Flujo de ejecución de programación asincrónica**
 
 
 ![Flujo de ejecución de subproceso de programación asincrónica](../../images/off15appAsyncProgFig01.png)
 
 La compatibilidad con este diseño asincrónico, tanto en clientes enriquecidos como web, es parte del objetivo de diseño de "escribe una vez, ejecuta en cualquier plataforma" del modelo de desarrollo de los Complementos de Office. Por ejemplo, puede crear un complemento de panel de tareas y de contenido con una única base de código que se ejecute tanto en Excel 2013 como en Excel Online.
 
-## Escritura de la función de devolución de llamada para un método "Async"
+## <a name="writing-the-callback-function-for-an-"async"-method"></a>Escritura de la función de devolución de llamada para un método "Async"
 
 
 La función de devolución de llamada que se pasa como argumento _callback_ de un método "Async" tiene que declarar un solo parámetro que el tiempo de ejecución del complemento usará para proporcionar acceso a un objeto [AsyncResult](../../reference/shared/asyncresult.md) cuando se ejecuta la función de devolución de llamada. Puede escribir:
@@ -27,7 +27,7 @@ La función de devolución de llamada que se pasa como argumento _callback_ de u
 Una función anónima es útil si solo va a usar su código una vez: puesto que no tiene nombre, no se puede hacer referencia a ella en otra parte del código. Una función con nombre es útil si desea volver a usar la función de devolución de llamada para más de un método "Async".
 
 
-### Escritura de una función de devolución de llamada anónima
+### <a name="writing-an-anonymous-callback-function"></a>Escritura de una función de devolución de llamada anónima
 
 La siguiente función de devolución de llamada anónima declara un parámetro único denominado `result` que recupera los datos de la propiedad [AsyncResult.value](../../reference/shared/asyncresult.status.md) cuando se devuelve la devolución de llamada.
 
@@ -66,7 +66,7 @@ También puede usar el parámetro de la función de devolución de llamada para 
 Para más información sobre el uso del método  **getSelectedDataAsync**, vea [Leer y escribir datos en la selección activa de un documento u hoja de cálculo](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md). 
 
 
-### Escritura de una función de devolución de llamadas con nombre
+### <a name="writing-a-named-callback-function"></a>Escritura de una función de devolución de llamadas con nombre
 
 Como alternativa, puede escribir una función con nombre y transferir su nombre al parámetro  _callback_ de un método "Async". Por ejemplo, el ejemplo anterior se puede reescribir para transferir una función denominada `writeDataCallback` como el parámetro _callback_, tal y como se indica a continuación.
 
@@ -87,7 +87,7 @@ function write(message){
 ```
 
 
-## Diferencias en lo que se devuelve a la propiedad AsyncResult.value
+## <a name="differences-in-what's-returned-to-the-asyncresult.value-property"></a>Diferencias en lo que se devuelve a la propiedad AsyncResult.value
 
 
 Las propiedades  **asyncContext**,  **status** y **error** del objeto **AsyncResult** devuelven el mismo tipo de información a la función de devolución de llamada transferida a todos los métodos "Async". Sin embargo, lo que se devuelve a la propiedad **AsyncResult.value** varía según la funcionalidad del método "Async".
@@ -99,7 +99,7 @@ Por otra parte, si llama al método **Document.getSelectedDataAsync**, este devo
 Para obtener una descripción de lo que se devuelve a la propiedad **AsyncResult.value** para un método "Async", vea la sección "Valor de devolución de llamada" del tema de referencia del método. Para obtener un resumen de todos los objetos que proporcionan métodos "Async", vea la tabla de la parte inferior del tema sobre el objeto [AsyncResult](../../reference/shared/asyncresult.md).
 
 
-## Patrones de programación asincrónica
+## <a name="asynchronous-programming-patterns"></a>Patrones de programación asincrónica
 
 
 La API de JavaScript para Office es compatible con dos tipos de patrones de programación asincrónica:
@@ -114,7 +114,7 @@ La programación asincrónica con funciones de devolución de llamada requiere c
 El uso de devoluciones de llamada anidadas es un patrón de programación conocido por la mayoría de los desarrolladores de JavaScript, pero el código con devoluciones de llamada excesivamente anidadas puede resultar difícil de leer y comprender. Como alternativa a las devoluciones de llamada anidadas, la API de JavaScript para Office también es compatible con una implementación del patrón de promesas. Pero, en la versión actual de la API de JavaScript para Office, el patrón de promesas solo funciona con código para [enlaces en hojas de cálculo de Excel y documentos de Word](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 <a name="AsyncProgramming_NestedCallbacks" />
-### Programación asincrónica con funciones anidadas de devolución de llamada
+### <a name="asynchronous-programming-using-nested-callback-functions"></a>Programación asincrónica con funciones anidadas de devolución de llamada
 
 
 A menudo, hay que llevar a cabo dos operaciones asincrónicas o más para finalizar una tarea. Para hacerlo, puede anidar una llamada "Async" dentro de otra. 
@@ -151,7 +151,7 @@ Este patrón de funciones anidadas de devolución de llamada se puede usar para 
 Las secciones siguientes muestran cómo usar las funciones (anónimas o con nombre) para realizar devoluciones de llamadas anidadas en métodos asincrónicos.
 
 
-#### Uso de funciones anónimas para realizar devoluciones de llamadas anidadas
+#### <a name="using-anonymous-functions-for-nested-callbacks"></a>Uso de funciones anónimas para realizar devoluciones de llamadas anidadas
 
 En el ejemplo siguiente, se declaran alineadas dos funciones anónimas y se transfieren a los métodos  **getByIdAsync** y **getDataAsync** como devoluciones de llamada anidadas. Como las funciones son sencillas y están alineadas, el propósito de la implementación es claro inmediatamente.
 
@@ -174,7 +174,7 @@ function write(message){
 ```
 
 
-#### Uso de funciones con nombre para realizar devoluciones de llamadas anidadas
+#### <a name="using-named-functions-for-nested-callbacks"></a>Uso de funciones con nombre para realizar devoluciones de llamadas anidadas
 
 En implementaciones complejas, puede resultarle útil usar funciones con nombre para facilitar la lectura, el mantenimiento y la reutilización del código. En el ejemplo siguiente, se han cambiado los nombres de las dos funciones anónimas del ejemplo anterior y ahora se llaman  `deleteAllData` y `showResult`. Esas funciones con nombre se pasan luego a los métodos  **getByIdAsync** y **deleteAllDataValuesAsync** como llamadas de devolución por nombre.
 
@@ -201,7 +201,7 @@ function write(message){
 ```
 
 
-### Programación asincrónica con el patrón de promesas para tener acceso a los datos de los enlaces
+### <a name="asynchronous-programming-using-the-promises-pattern-to-access-data-in-bindings"></a>Programación asincrónica con el patrón de promesas para tener acceso a los datos de los enlaces
 
 
 En lugar de transferir una función de devolución de llamada y esperar a que se devuelva la función antes de que continúe la ejecución, el patrón de programación de promesas devuelve inmediatamente unobjeto de promesa que representa el resultado deseado. No obstante, a diferencia de la programación verdaderamente sincrónica, en realidad el cumplimiento del resultado prometido se aplaza hasta que el entorno en tiempo de ejecución de los Complementos de Office pueda completar la solicitud. Se facilita un controlador _onError_ para dar cobertura en situaciones en las que no se puede realizar la solicitud.
@@ -253,7 +253,7 @@ function addBindingDataChangedEventHandler() {
  >**Importante**  La promesa del objeto  **Binding** que ha devuelto el método **Office.select** proporciona acceso únicamente a los cuatro métodos del objeto **Binding**. Si necesita acceder a cualquiera de los demás miembros del objeto  **Binding**, debe usar la propiedad  **Document.bindings** en su lugar y los métodos **Bindings.getByIdAsync** o **Bindings.getAllAsync** para recuperar el objeto **Binding**. Por ejemplo, si necesita acceder a cualquiera de las propiedades del objeto  **Binding** (las propiedades **document**,  **id** o **type**) o de los objetos [MatrixBinding](../../reference/shared/binding.matrixbinding.md) o [TableBinding](../../reference/shared/binding.tablebinding.md), debe usar los métodos  **getByIdAsync** o **getAllAsync** para recuperar un objeto **Binding**.
 
 
-## Transferencia de parámetros opcionales a métodos asincrónicos
+## <a name="passing-optional-parameters-to-asynchronous-methods"></a>Transferencia de parámetros opcionales a métodos asincrónicos
 
 
 La sintaxis común de todos los métodos "Async" sigue el patrón siguiente:
@@ -265,7 +265,7 @@ Todos los métodos asincrónicos son compatibles con los parámetros opcionales,
 Puede crear el objeto JSON que contiene parámetros opcionales de forma alineada o bien creando un objeto  `options` opciones y pasarlo como el parámetro _options_.
 
 
-### Transferencia de parámetros opcionales de forma alineada
+### <a name="passing-optional-parameters-inline"></a>Transferencia de parámetros opcionales de forma alineada
 
 Por ejemplo, la sintaxis para llamar al método [Document.setSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) con parámetros opcionales de forma alineada tiene el aspecto siguiente:
 
@@ -298,7 +298,7 @@ function write(message){
 > **Nota:**  Puede especificar parámetros opcionales en el objeto JSON en cualquier orden siempre que los nombres se especifiquen correctamente.
 
 
-### Transferencia de parámetros opcionales a un objeto de opciones
+### <a name="passing-optional-parameters-in-an-options-object"></a>Transferencia de parámetros opcionales a un objeto de opciones
 
 También puede crear un objeto llamado  `options` que especifique los parámetros opcionales independientemente de la llamada del método, y luego pasar el objeto `options` como el argumento de _options_.
 
@@ -383,7 +383,7 @@ function write(message){
 En los dos ejemplos de parámetros opcionales, el parámetro _callback_ se especifica como el último parámetro (después de los parámetros opcionales insertados o después del objeto del argumento _options_). Como alternativa, puede especificar el parámetro _callback_, bien dentro del objeto JSON insertado o dentro del objeto `options`. Pero el parámetro _callback_ solo se puede pasar a una ubicación: al objeto _options_ (insertado o creado externamente) o como el último parámetro, pero no a ambas.
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 - [Información sobre la API de JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md)

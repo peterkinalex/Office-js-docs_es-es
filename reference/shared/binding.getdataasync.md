@@ -1,11 +1,11 @@
 
-# Método Binding.getDataAsync
+# <a name="binding.getdataasync-method"></a>Método Binding.getDataAsync
 Devuelve los datos que contiene el enlace.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Access, Excel y Word|
-|**Disponible en [Conjuntos de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBindings, TableBindings, TextBindings|
+|**Disponible en los [conjuntos de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|MatrixBindings, TableBindings, TextBindings|
 |**Modificado por última vez en TableBindings**|1.1|
 
 ```
@@ -13,7 +13,7 @@ bindingObj.getDataAsync([, options] , callback );
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
@@ -22,8 +22,8 @@ bindingObj.getDataAsync([, options] , callback );
 | _options_|**object**|Especifica cualquiera de los siguientes [parámetros opcionales](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods):||
 | _coercionType_|**[CoercionType](../../reference/shared/coerciontype-enumeration.md)**|Especifica cómo convertir los datos que se están estableciendo. ||
 | _valueFormat_|[ValueFormat](../../reference/shared/valueformat-enumeration.md)|Especifica si se debe aplicar su formato correspondiente a los valores que se devuelven (por ejemplo, números y fechas).||
-| _filterType_|[FilterType](../../reference/shared/filtertype-enumeration.md)|Especifica si debe aplicarse un filtro al recuperar los datos.||
-| _Rows_|**Office.TableRange.ThisRow**| Especifica la cadena predefinida "thisRow" para obtener los datos de la fila seleccionada actualmente.|Solo para los enlaces de tablas de los complementos de contenido para Access.|
+| _filterType_|[FilterType](../../reference/shared/filtertype-enumeration.md)|Especifica si se debe aplicar un filtro al recuperar los datos.||
+| _filas_|**Office.TableRange.ThisRow**| Especifica la cadena predefinida "thisRow" para obtener los datos de la fila seleccionada actualmente.|Solo para los enlaces de tablas de los complementos de contenido para Access.|
 | _startRow_|**number**|Para los enlaces de matriz o tabla, especifica la fila de inicio de base cero para un subconjunto de los datos del enlace. ||
 | _startColumn_|**number**|Para los enlaces de matriz o tabla, especifica la columna de inicio de base cero para un subconjunto de los datos del enlace. ||
 | _rowCount_|**number**|Para los enlaces de matriz o tabla, especifica el número de filas que se deben desplazar desde _startRow_. ||
@@ -31,7 +31,7 @@ bindingObj.getDataAsync([, options] , callback );
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string** o **undefined**|Un elemento de cualquier tipo definido por el usuario que se devuelve en el objeto **AsyncResult** sin sufrir modificaciones.||
 | _callback_|**object**|Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.||
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función que ha remitido al parámetro _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el único parámetro de la función de devolución de llamada.
 
@@ -39,20 +39,20 @@ En la función de devolución de llamada que se ha remitido al método **Binding
 
 
 
-|**Propiedad**|**Usar para...**|
+|**Propiedad**|**Usar para**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Tener acceso a los valores del enlace especificado. Si se determina el parámetro _coercionType_ (y la llamada se completa correctamente), los datos se devolverán en el formato que se describe en el tema de la enumeración [CoercionType](../../reference/shared/coerciontype-enumeration.md).|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determinar si la operación se ha completado correctamente o no.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Tener acceso a un objeto [Error](../../reference/shared/error.md) que proporcione información sobre el error si la operación no se ha llevado a cabo correctamente.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **object** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **objeto** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Si se omite un parámetro opcional, se usará el siguiente valor predeterminado (cuando resulte aplicable al tipo y al formato de los datos).
 
 
 
-|**Parámetro**|**Predeterminada**|
+|**Parámetro**|**Predeterminado**|
 |:-----|:-----|
 | _coercionType_|El tipo original del enlace, sin coerción.|
 | _valueFormat_|Datos sin formato.|
@@ -64,7 +64,7 @@ Si se omite un parámetro opcional, se usará el siguiente valor predeterminado 
 Si se realiza la llamada desde [MatrixBinding](../../reference/shared/binding.matrixbinding.md) o [TableBinding](../../reference/shared/binding.tablebinding.md), y se especifican los parámetros opcionales **startRow**, _startColumn_, _rowCount_ y _columnCount_ (siempre que estos definan un rango válido de elementos contiguos), el método _getDataAsync_ devolverá un subconjunto de los valores enlazados.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -131,7 +131,7 @@ function write(message){
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -146,17 +146,17 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|MatrixBindings, TableBindings, TextBindings|
+|**Disponible en los conjuntos de requisitos**|MatrixBindings, TableBindings, TextBindings|
 |**Nivel de permisos mínimo**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 
@@ -169,11 +169,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |1.1|Se ha agregado compatibilidad para los enlaces de tabla en los complementos para Access.|
 |1.0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
-[Enlazar a regiones de un documento u hoja de cálculo](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)
+[Enlazar a regiones en un documento u hoja de cálculo](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md)

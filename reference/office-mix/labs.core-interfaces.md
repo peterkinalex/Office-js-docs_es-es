@@ -1,8 +1,8 @@
 
-# Interfaces de Labs.Core
+# <a name="labs.core-interfaces"></a>Interfaces de Labs.Core
 Interfaces del módulo **LabsJS.Labs.Core**
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 El módulo **LabsJS.Labs.Core** contiene las siguientes interfaces.
 
@@ -24,11 +24,11 @@ El módulo **LabsJS.Labs.Core** contiene las siguientes interfaces.
 |[Labs.Core.IValueInstance](../../reference/office-mix/labs.core.ivalueinstance.md)|Una instancia de objeto [Labs.Core.IValue](../../reference/office-mix/labs.core.ivalue.md) que contiene datos de valor, si los hubiera.|
 |[Labs.Core.IVersion](../../reference/office-mix/labs.core.iversion.md)|Proporciona la información de la versión de laboratorio.|
 |[Labs.Core.IAnalyticsConfiguration](../../reference/office-mix/labs.core.ianalyticsconfiguration.md)|Información de configuración de análisis personalizado. Le permite especificar qué IFrame debe cargar para mostrar el análisis personalizado para la ejecución de un laboratorio por parte de un usuario.|
-|[Labs.Core.ICompletionStatus](../../reference/office-mix/labs.core.icompletionstatus.md)|Finalización del estado del laboratorio. El estado se pasa al finalizar el laboratorio para indicar el resultado de la interacción.|
+|[Labs.Core.ICompletionStatus](../../reference/office-mix/labs.core.icompletionstatus.md)|Estado de finalización del laboratorio. El estado se pasa al finalizar el laboratorio para indicar el resultado de la interacción.|
 |[Labs.Core.ILabCallback](../../reference/office-mix/labs.core.ilabcallback.md)|La interfaz para controlar los métodos de devolución de llamada Labs.js.|
 |[Labs.Core.ILabObject](../../reference/office-mix/labs.core.ilabobject.md)|Un objeto asociado a un laboratorio. El objeto contiene un campo de tipo que indica qué tipo de objeto es.|
 |[Labs.Core.ITimelineConfiguration](../../reference/office-mix/labs.core.itimelineconfiguration.md)|Opciones de configuración de [Labs.Timeline](../../reference/office-mix/labs.timeline.md). Le permite especificar un conjunto de opciones de configuración de escala de tiempo.|
-|[Labs.Core.IUserData](../../reference/office-mix/labs.core.iuserdata.md)|La interfaz de base para representar datos de usuario personalizados que se almacenan en un objeto.|
+|[Labs.Core.IUserData](../../reference/office-mix/labs.core.iuserdata.md)|La interfaz base para representar datos de usuario personalizados que se almacenan en un objeto.|
 |[Labs.Core.IValue](../../reference/office-mix/labs.core.ivalue.md)|Clase base de los valores almacenados en un laboratorio.|
 |[Labs.Core.IConfiguration](../../reference/office-mix/labs.core.iconfiguration.md)|Estructura de datos de una configuración de laboratorio.|
 |[Labs.Core.IConfigurationInstance](../../reference/office-mix/labs.core.iconfigurationinstance.md)|Clase base para las instancias de una configuración de laboratorio.|

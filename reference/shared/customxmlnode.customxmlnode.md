@@ -1,11 +1,11 @@
 
-# Objeto CustomXmlNode
+# <a name="customxmlnode-object"></a>Objeto CustomXmlNode
 Representa un nodo XML en un árbol de un documento.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
 |**Modificado por última vez en**|1.1|
 
 ```js
@@ -13,7 +13,7 @@ CustomXmlNode
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -30,15 +30,15 @@ CustomXmlNode
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|[getNodesAsync](../../reference/shared/customxmlnode.getnodesasync.md)|Obtiene los nodos de forma asíncrona como una matriz de objetos **CustomXMLNode** que coinciden con la expresión XPath relativa.|
-|[getNodeValueAsync](../../reference/shared/customxmlnode.getnodevalueasync.md)|Obtiene de forma asíncrona el valor del nodo.|
-|[getTextAsync](customxmlnode.gettextasync.md)|Obtiene el texto de un nodo XML de forma asíncrona en un elemento XML personalizado.|
-|[getXmlAsync](../../reference/shared/customxmlnode.getxmlasync.md)|Obtiene de forma asíncrona el XML del nodo.|
-|[setNodeValueAsync](../../reference/shared/customxmlnode.setnodevalueasync.md)|Define de forma asíncrona el valor del nodo.|
-|[setTextAsync](customxmlnode.settextasync.md)|Obtiene el texto de un nodo XML de forma asíncrona en un elemento XML personalizado.|
-|[setXmlAsync](../../reference/shared/customxmlnode.setxmlasync.md)|Define de forma asíncrona el XML del nodo.|
+|[getNodesAsync](../../reference/shared/customxmlnode.getnodesasync.md)|Obtiene los nodos de forma asincrónica como una matriz de objetos **CustomXMLNode** que coinciden con la expresión XPath relativa.|
+|[getNodeValueAsync](../../reference/shared/customxmlnode.getnodevalueasync.md)|Obtiene de forma asincrónica el valor del nodo.|
+|[getTextAsync](customxmlnode.gettextasync.md)|Obtiene el texto de un nodo XML de forma asincrónica en un elemento XML personalizado.|
+|[getXmlAsync](../../reference/shared/customxmlnode.getxmlasync.md)|Obtiene de forma asincrónica el XML del nodo.|
+|[setNodeValueAsync](../../reference/shared/customxmlnode.setnodevalueasync.md)|Define de forma asincrónica el valor del nodo.|
+|[setTextAsync](customxmlnode.settextasync.md)|Define el texto de un nodo XML de forma asincrónica en un elemento XML personalizado.|
+|[setXmlAsync](../../reference/shared/customxmlnode.setxmlasync.md)|Define de forma asincrónica el XML del nodo.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -48,17 +48,17 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 ||**Office para escritorio de Windows**|**Office Online (en el explorador)**|**Office para iPad**|
 |:-----|:-----|:-----|:-----|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|CustomXmlParts|
+|**Disponible en los conjuntos de requisitos**|CustomXmlParts|
 |**Nivel de permisos mínimo**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

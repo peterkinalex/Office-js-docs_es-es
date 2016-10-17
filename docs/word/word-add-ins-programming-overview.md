@@ -1,11 +1,11 @@
 
-# Información general sobre los complementos de Word
+# <a name="word-add-ins-overview"></a>Información general sobre los complementos de Word
 
 ¿Quiere crear una solución que amplíe las funciones de Word (por ejemplo, una solución para el ensamblado automatizado de documentos o una que enlace y tenga acceso a datos en un documento de Word desde otros orígenes de datos)? Puede usar la plataforma de complementos de Office, que incluye la API de JavaScript para Word y la API de JavaScript para Office, para ampliar las funciones de los clientes de Word que se ejecutan en equipos de escritorio de Windows, en equipos Mac o en la nube.
 
 Los complementos de Word son una de las muchas opciones de desarrollo que tiene en la [plataforma de complementos de Office](../overview/office-add-ins.md). Puede usar los comandos de complemento para ampliar la interfaz de usuario de Word e iniciar paneles de tareas que ejecuten código JavaScript que interactúe con el contenido de un documento de Word. Cualquier código que pueda ejecutar en un explorador también se puede ejecutar en un complemento de Word. Los complementos que interactúan con contenido en un documento de Word crean solicitudes para actuar en objetos de Word y sincronizar el estado de los objetos. En la ilustración siguiente se muestra un ejemplo de un complemento de Word que se ejecuta en un panel de tareas.
 
-**Ilustración 1. Complemento que se ejecuta en un panel de tareas de Word**
+**Figura 1: Complemento que se ejecuta en un panel de tareas de Word**
 
 ![Complemento que se ejecuta en un panel de tareas de Word](../../images/WordAddinShowHostClient.png)
 
@@ -35,7 +35,7 @@ Las API de JavaScript para Word permiten que su aplicación tenga acceso a los o
 
 Escriba su complemento una vez y se ejecutará en todas las versiones de Word en varias plataformas. Para más información, vea [Disponibilidad de plataformas y hosts de los complementos de Office](https://dev.office.com/add-in-availability).
 
-## API de JavaScript para Word
+## <a name="javascript-apis-for-word"></a>API de JavaScript para Word
 
 Puede usar dos API de JavaScript para interactuar con los objetos y los metadatos en un documento de Word. La primera es la [API de JavaScript para Office](https://dev.office.com/reference/add-ins/javascript-api-for-office?product=word), que se usó por primera vez en Office 2013. Es una API compartida (es decir, muchos de los objetos se pueden usar en complementos hospedados por dos o más clientes de Office). Esta API usa un gran número de devoluciones de llamada. 
 
@@ -57,7 +57,7 @@ Use la API de JavaScript para Office compartida si necesita:
 * Usar elementos XML personalizados.
 * Abrir un cuadro de diálogo.
 
-## Pasos siguientes
+## <a name="next-steps"></a>Pasos siguientes
 
 ¿Está preparado para crear su primer complemento de Word? Vea [Crear el primer complemento de Word](word-add-ins.md). También puede probar nuestra [experiencia de introducción](http://dev.office.com/getting-started/addins?product=Word) interactiva. Use el [manifiesto del complemento](../overview/add-in-manifests.md) para describir dónde se hospedará el complemento y cómo se mostrará, así como para definir permisos y otra información.
 
@@ -65,14 +65,14 @@ Para más información sobre cómo diseñar un complemento de Word de primer niv
 
 Después de desarrollar el complemento, puede [publicarlo](../publish/publish.md) en un recurso compartido de red, en un catálogo de aplicaciones o en la Tienda Office.
 
-## ¿Qué novedades habrá próximamente para los complementos de Word?
+## <a name="what's-coming-up-for-word-add-ins?"></a>¿Qué novedades habrá próximamente para los complementos de Word?
 
 Cuando diseñemos y desarrollemos nuevas API para complementos de Word, estarán disponibles y nos podrá enviar sus comentarios en la página [Especificaciones de la API abierta](../../reference/openspec.md). Descubra las nuevas características que están en proceso para las API de JavaScript para Word y envíe sus comentarios sobre nuestras especificaciones de diseño.
 
 También puede ver las novedades en la API de JavaScript para Word en la página del [registro de cambios](http://dev.office.com/changelog).
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
-* [Información general sobre la plataforma de complementos para Office](../overview/office-add-ins.md)
+* [Office Add-ins platform overview (Información general sobre la plataforma de complementos para Office)](../overview/office-add-ins.md)
 * [Referencia de la API de JavaScript de Word](../../reference/word/word-add-ins-reference-overview.md)
 

@@ -1,7 +1,7 @@
 
-# Labs.Components.ActivityComponentAttempt
+# <a name="labs.components.activitycomponentattempt"></a>Labs.Components.ActivityComponentAttempt
 
- _**Hace referencia a:** aplicaciones para Office | Complementos de Office | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Representa un intento de completar un componente de actividad.
 
@@ -10,12 +10,12 @@ class Permissions
 ```
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 
 
 
-### constructor
+### <a name="constructor"></a>constructor
 
  `function constructor(labs: Labs.LabsInternal, componentId: string, attemptId: string, values: {[type:string]: Labs.Core.IValueInstance[]})`
 
@@ -31,7 +31,7 @@ Crea una nueva instancia de la clase **ActivityComponentAttempt**.
 | _attemptId_|Identificador del intento.|
 | _values_|Valores, si los hubiera, asociados al componente.|
 
-### complete
+### <a name="complete"></a>complete
 
  `public function complete(callback: Labs.Core.ILabCallback<void>): void`
 
@@ -44,7 +44,7 @@ Indicador de que la actividad se ha completado.
 |:-----|:-----|
 | _callback_|Función de devolución de llamada que se invoca una vez que se ha completado la actividad.|
 
-### processAction
+### <a name="processaction"></a>processAction
 
  `public function processAction(action: Labs.Core.IAction): void`
 

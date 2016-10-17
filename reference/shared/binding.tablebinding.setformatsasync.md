@@ -1,11 +1,11 @@
 
-# Método TableBinding.setFormatsAsync
+# <a name="tablebinding.setformatsasync-method"></a>Método TableBinding.setFormatsAsync
 Establece o actualiza el formato de los elementos y datos especificados en la tabla enlazada.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Excel|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|No en un conjunto|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|No en un conjunto|
 |**Agregado en**|1.1|
 
 ```
@@ -13,18 +13,18 @@ bindingObj.setFormatsAsync(cellFormat [,options] , callback);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
 |**Nombre**|**Tipo**|**Descripción**|**Notas de compatibilidad**|
 |:-----|:-----|:-----|:-----|
-| _cellFormat_|**matriz**|Una matriz que contiene uno o varios objetos de JavaScript que especifican las celdas que deben considerarse celdas de destino y el formato que se les aplicará. Obligatorio.||
+| _cellFormat_|**array**|Una matriz que contiene uno o varios objetos de JavaScript que especifican las celdas que deben considerarse celdas de destino y el formato que se les aplicará. Obligatorio.||
 | _options_|**object**|Especifica cualquiera de los siguientes [parámetros opcionales](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods):||
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string** o **undefined**|Un elemento de cualquier tipo definido por el usuario que se devuelve en el objeto **AsyncResult** sin sufrir modificaciones.||
 | _callback_|**object**|Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.||
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función que ha remitido al parámetro _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el único parámetro de la función de devolución de llamada.
 
@@ -32,14 +32,14 @@ En la función de devolución de llamada que se ha remitido al método **goToByI
 
 
 
-|**Propiedad**|**Usar para...**|
+|**Propiedad**|**Usar para**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Siempre devuelve **undefined** porque no hay ningún objeto ni datos que recuperar al establecer los formatos.|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determinar si la operación se ha completado correctamente o no.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Tener acceso a un objeto [Error](../../reference/shared/error.md) que proporcione información sobre el error si la operación no se ha llevado a cabo correctamente.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **object** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **objeto** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
 
-## Observaciones
+## <a name="remarks"></a>Comentarios
 
  **Especificar el parámetro cellFormat**
 
@@ -55,7 +55,7 @@ La propiedad `cells:` especifica el rango al que quiere aplicar formato mediante
 **Rangos admitidos en la propiedad cells**
 
 
-|**configuración del rango de celdas**|**Descripción**|
+|**configuración del rango de cells**|**Descripción**|
 |:-----|:-----|
 | `{row: i}`|Especifica el rango que se extiende hasta la fila ith de datos de la tabla.|
 | `{column: i}`|Especifica el rango que se extiende hasta la columna ith de datos de la tabla.|
@@ -162,7 +162,7 @@ Office.select("bindings#myBinding).setFormatsAsync(
 Para obtener más detalles y ejemplos, consulte [Format tables in add-ins for Excel](../../docs/excel/format-tables-in-add-ins-for-excel.md) (Dar formato a las tablas de los complementos para Excel).
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -179,13 +179,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|No en un conjunto.|
+|**Disponible en los conjuntos de requisitos**|No en un conjunto.|
 |**Nivel de permisos mínimo**|[WriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

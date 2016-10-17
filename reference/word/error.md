@@ -1,43 +1,43 @@
-# Objeto OfficeExtension.Error (API de JavaScript para Word)
+# <a name="officeextension.error-object-(javascript-api-for-word)"></a>Objeto OfficeExtension.Error (API de JavaScript para Word)
 
 Representa los errores que se producen al usar la API de JavaScript para Word.
 
-_Se aplica a: Word 2016, Word para iPad, Word para Mac_
+_Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 
-## Properties
+## <a name="properties"></a>Propiedades
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
-|código|cadena|Obtiene un valor que indica el tipo de error. El valor puede ser "AccessDenied", "GeneralException", "ActivityLimitReached", "InvalidArgument", "ItemNotFound" o "NotImplemented". <!-- Values come from OfficeExtension.Error and Word.ErrorCodes. -->|
+|código|cadena|Obtiene un valor que indica el tipo de error. El valor puede ser "AccessDenied", "GeneralException", "ActivityLimitReached", "InvalidArgument", "ItemNotFound" o "NotImplemented".<!-- Values come from OfficeExtension.Error and Word.ErrorCodes. -->|
 |debugInfo|string|Obtiene un valor que indica lo sucedido al producirse el error. Este valor solo está diseñado para su uso durante el desarrollo y la depuración.  |
 |mensaje |cadena| Obtiene una cadena legible y localizada manualmente que corresponde al código de error.|
 |nombre |cadena| Obtiene un valor que siempre es "OfficeExtension.Error". |
 |traceMessages |string[]| Obtiene una matriz de valores que corresponden a los mensajes de instrumentación establecidos con context.trace();. |
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[toString()](#tostring)|string|Devuelve el código de error y los valores del mensaje en el formato siguiente: "{0}: {1}", código, mensaje.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
-### toString()
+### <a name="tostring()"></a>toString()
 Devuelve el código de error y los valores del mensaje en el formato siguiente: "{0}: {1}", código, mensaje.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 error.toString()
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 string
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -61,9 +61,9 @@ Word.run(function (context) {
 
 ```
 
-## Ejemplos de acceso a la propiedad
+## <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
-### Instrumentación de los mensajes de seguimiento
+### <a name="trace-message-instrumentation"></a>Instrumentación de los mensajes de seguimiento
 
 En el ejemplo siguiente se muestra cómo se puede instrumentar un lote de comandos para determinar dónde se ha producido un error. El primer lote inserta correctamente los dos primeros párrafos en el documento sin provocar ningún error. El segundo lote inserta correctamente el tercer y el cuarto párrafo, pero se produce un error en la llamada para insertar el quinto. El resto de comandos tras el comando que ha producido el error del lote no se ejecuta, incluido el comando que agrega el quinto mensaje de seguimiento. En este caso, el error se ha producido tras insertar el cuarto párrafo y antes de agregar el quinto mensaje de seguimiento.
 

@@ -1,5 +1,5 @@
 
-# Transferir localmente complementos de Office para pruebas
+# <a name="sideload-office-add-ins-for-testing"></a>Transferir localmente complementos de Office para pruebas
 
 Puede instalar un complemento de Office para realizar pruebas en un cliente de Office que se ejecuta en Windows mediante un catálogo de carpeta compartida para publicar el manifiesto en un recurso compartido de archivos de red. 
 
@@ -9,7 +9,7 @@ Implemente solo el archivo de manifiesto en el catálogo de carpeta compartida. 
 
  >**Importante:** Para mejorar la seguridad de las aplicaciones que obtienen acceso a datos y servicios externos, el complemento tiene que usar un protocolo seguro como HTTPS (Hypertext Transfer Protocol Secure) para conectarse a servicios y datos externos. Es necesario usar HTTPS si el complemento usa comandos de complemento.
 
-## Compartir una carpeta
+## <a name="share-a-folder"></a>Compartir una carpeta
 
 1. En el equipo de Windows en el que desee alojar el complemento, vaya a la carpeta principal o a la letra de unidad de la carpeta que quiera usar como catálogo de carpeta compartida.
 
@@ -21,7 +21,7 @@ Implemente solo el archivo de manifiesto en el catálogo de carpeta compartida. 
 
 5. Elija **Compartir** > **Hecho** > **Cerrar**.
 
-## Especificar la carpeta compartida como catálogo de confianza
+## <a name="specify-the-shared-folder-as-a-trusted-catalog"></a>Especificar la carpeta compartida como catálogo de confianza
 
       
 3. Abra un nuevo documento en Excel, Word o PowerPoint.
@@ -38,7 +38,7 @@ Implemente solo el archivo de manifiesto en el catálogo de carpeta compartida. 
 
 9. Cierre la aplicación de Office para que los cambios surtan efecto.
     
-## Transferir localmente el complemento
+## <a name="sideload-your-add-in"></a>Transferir localmente el complemento
 
 
 1. Coloque el archivo de manifiesto de cualquier complemento que se esté probando en el catálogo de carpetas compartidas.
@@ -50,8 +50,8 @@ Implemente solo el archivo de manifiesto en el catálogo de carpeta compartida. 
 4. Seleccione el nombre del complemento y haga clic en **Aceptar** para insertarlo.
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
-- [Usar el registro de runtime para depurar su manifiesto](../develop/use-runtime-logging-to-debug-manifest.md)
+- [Usar el registro de tiempo de ejecución para depurar el manifiesto](../develop/use-runtime-logging-to-debug-manifest.md)
 - [Publicar el complemento de Office](../publish/publish.md)
     

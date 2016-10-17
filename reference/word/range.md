@@ -1,25 +1,25 @@
-# Objeto Range (API de JavaScript para Word)
+# <a name="range-object-(javascript-api-for-word)"></a>Objeto Range (API de JavaScript para Word)
 
 Representa un área contigua en un documento.
 
-_Se aplica a: Word 2016, Word para iPad, Word para Mac_
+_Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 
-## Properties
+## <a name="properties"></a>Propiedades
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |style|string|Obtiene o establece el estilo usado para el intervalo. Este es el nombre del estilo preinstalado o personalizado.|
 |text|string|Obtiene el texto del intervalo. Solo lectura.|
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|Obtiene la colección de objetos de control de contenido que se encuentran en el intervalo. Solo lectura.|
-|font|[Fuente](font.md)|Obtiene el formato de texto del intervalo. Úselo para obtener y establecer el nombre de la fuente, el tamaño, el color y otras propiedades. Solo lectura.|
+|font|[Font](font.md)|Obtiene el formato de texto del intervalo. Úselo para obtener y establecer el nombre de la fuente, el tamaño, el color y otras propiedades. Solo lectura.|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Obtiene la colección de objetos inlinePicture que se encuentran en el intervalo. Solo lectura.|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Obtiene la colección de objetos de párrafo que se encuentran en el intervalo. Solo lectura.|
 |parentContentControl|[ContentControl](contentcontrol.md)|Obtiene el control de contenido que contiene el intervalo. Devuelve null si no hay un control de contenido principal. Solo lectura.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
@@ -31,31 +31,31 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac_
 |[insertContentControl()](#insertcontentcontrol)|[ContentControl](contentcontrol.md)|Ajusta el objeto de intervalo con un control de contenido de texto enriquecido.|
 |[insertFileFromBase64(base64File: string, insertLocation: InsertLocation)](#insertfilefrombase64base64file-string-insertlocation-insertlocation)|[Range](range.md)|Inserta un documento en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.|
 |[insertHtml(html: string, insertLocation: InsertLocation)](#inserthtmlhtml-string-insertlocation-insertlocation)|[Range](range.md)|Inserta HTML en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.|
-|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserta una imagen en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start', 'End', 'Before' o 'After'.
-|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserta OOXML o wordProcessingML en el intervalo en la ubicación especificada. El valor insertLocation puede ser "Replace", "Start" o "End".|
+|[insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)](#insertInlinePictureFromBase64base64EncodedImage-string-insertlocation-insertlocation)|[InlinePicture](inlinepicture.md)|Inserta una imagen en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start', 'End', 'Before' o 'After'.
+|[insertOoxml(ooxml: string, insertLocation: InsertLocation)](#insertooxmlooxml-string-insertlocation-insertlocation)|[Range](range.md)|Inserta OOXML o wordProcessingML en el intervalo en la ubicación especificada.  El valor insertLocation puede ser 'Replace', 'Start' o 'End'.|
 |[insertParagraph(paragraphText: string, insertLocation: InsertLocation)](#insertparagraphparagraphtext-string-insertlocation-insertlocation)|[Paragraph](paragraph.md)|Inserta un párrafo en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Before' o 'After'.|
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserta texto en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
-|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestrings.searchoptions)|[SearchResultCollection](searchresultcollection.md)|Realiza una búsqueda con el valor searchOptions especificado en el ámbito del objeto de intervalo. Los resultados de la búsqueda son una colección de objetos de intervalo.|
+|[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Realiza una búsqueda con el valor searchOptions especificado en el ámbito del objeto de intervalo. Los resultados de la búsqueda son una colección de objetos de intervalo.|
 |[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selecciona y se desplaza por la interfaz de usuario de Word hasta el intervalo. Los valores de selectionMode pueden ser 'Select', 'Start' o 'End'.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
-### clear()
+### <a name="clear()"></a>clear()
 Borra el contenido del objeto de intervalo. El usuario puede realizar la operación de deshacer en el contenido borrado.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.clear();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -80,21 +80,21 @@ Word.run(function (context) {
     }
 });
 ```
-### delete()
+### <a name="delete()"></a>delete()
 Elimina el intervalo y su contenido del documento.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.delete();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -120,21 +120,21 @@ Word.run(function (context) {
 });
 ```
 
-### getHtml()
+### <a name="gethtml()"></a>getHtml()
 Obtiene la representación HTML del objeto de intervalo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getHtml();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 string
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -160,21 +160,21 @@ Word.run(function (context) {
 });
 ```
 
-### getOoxml()
+### <a name="getooxml()"></a>getOoxml()
 Obtiene la representación OOXML del objeto de intervalo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.getOoxml();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 string
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -200,27 +200,27 @@ Word.run(function (context) {
 });
 ```
 
-### insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 Inserta un salto en la ubicación especificada. Solo puede insertarse un salto en objetos de intervalo que se encuentran en el cuerpo principal del documento, excepto si se trata de un salto de línea, que puede insertarse en cualquier objeto de cuerpo. El valor de insertLocation puede ser 'Before' o 'After'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.insertBreak(breakType, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |breakType|BreakType|Necesario. Tipo de salto que se va a agregar al intervalo.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Before" o "After".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Detalles adicionales
+#### <a name="additional-details"></a>Detalles adicionales
 A excepción de los saltos de línea, no se puede insertar un salto en los objetos de encabezado, pie de página, nota al pie, nota al final, comentario y cuadro de texto.
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -246,21 +246,21 @@ Word.run(function (context) {
 });
 ```
 
-### insertContentControl()
+### <a name="insertcontentcontrol()"></a>insertContentControl()
 Ajusta el objeto de intervalo con un control de contenido de texto enriquecido.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.insertContentControl();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [ContentControl](contentcontrol.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -293,24 +293,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
+### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
 Inserta un documento en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.insertFileFromBase64(base64File, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |base64File|string|Necesario. Contenido del archivo codificado en Base64 que se va a insertar.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -337,24 +337,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertHtml(html: string, insertLocation: InsertLocation)
+### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation: InsertLocation)
 Inserta HTML en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.insertHtml(html, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |Html|string|Necesario. HTML que se va a insertar en el intervalo.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -380,39 +380,39 @@ Word.run(function (context) {
 });
 ```
 
-### insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
 Inserta una imagen en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start', 'End', 'Before' o 'After'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 rangeObject.insertInlinePictureFromBase64(image, insertLocation);
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|Necesario. Imagen codificada en base64 que se va a insertar en el intervalo.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser 'Replace', 'Start', 'End', 'Before' o 'After'.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [InlinePicture](inlinepicture.md)
 
-### insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Inserta OOXML o wordProcessingML en el intervalo en la ubicación especificada. El valor insertLocation puede ser "Replace", "Start" o "End".
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.insertOoxml(ooxml, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |ooxml|string|Necesario. OOXML o wordProcessingML que se va a insertar en el intervalo.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -438,27 +438,27 @@ Word.run(function (context) {
 });
 ```
 
-#### Información adicional
+#### <a name="additional-information"></a>Información adicional
 Lea [Crear complementos mejores para Word con Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) para obtener instrucciones sobre cómo trabajar con OOXML.
 
-### insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Inserta un párrafo en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Before' o 'After'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.insertParagraph(paragraphText, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |paragraphText|string|Necesario. Texto de párrafo que se va a insertar.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Before" o "After".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Paragraph](paragraph.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -484,24 +484,24 @@ Word.run(function (context) {
 });
 ```
 
-### insertText(text: string, insertLocation: InsertLocation)
+### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation: InsertLocation)
 Inserta texto en el intervalo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.insertText(text, insertLocation);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |text|string|Necesario. Texto que se va a insertar.|
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -527,23 +527,23 @@ Word.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -576,41 +576,41 @@ Word.run(function (context) {
 });
 ```
 
-### search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
+### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Realiza una búsqueda con el valor searchOptions especificado en el ámbito del objeto de intervalo. Los resultados de la búsqueda son una colección de objetos de intervalo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.search(searchText, searchOptions);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|searchText|string|Necesario. Texto de búsqueda.|
+|searchText|cadena|Necesario. El texto de búsqueda.|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Opcional. Opciones de la búsqueda.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [SearchResultCollection](searchresultcollection.md)
 
 
-### select(selectionMode: SelectionMode)
+### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
 Selecciona y se desplaza por la interfaz de usuario de Word hasta el intervalo. Los valores de selectionMode pueden ser 'Select', 'Start' o 'End'.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeObject.select(selectionMode);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |selectionMode|SelectionMode|Opcional. El modo de selección puede ser 'Select', 'Start' o 'End'. 'Select' es el valor predeterminado.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -639,5 +639,5 @@ Word.run(function (context) {
 });
 ```
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).

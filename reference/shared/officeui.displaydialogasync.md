@@ -1,8 +1,8 @@
-# Método UI.displayDialogAsync
+# <a name="ui.displaydialogasync-method"></a>Método UI.displayDialogAsync
 
 Muestra un cuadro de diálogo en un host de Office. 
 
-## Requisitos
+## <a name="requirements"></a>Requisitos
 
 |Host|Incorporación|Modificado por última vez en|
 |:---------------|:--------|:----------|
@@ -35,7 +35,7 @@ Para detectar esta API en tiempo de ejecución, use el siguiente código.
 
 
 
-### Plataformas compatibles
+### <a name="supported-platforms"></a>Plataformas compatibles
 El conjunto de requisitos de DialogAPI actualmente es compatible con las siguientes plataformas:
 
   - Office 2016 para escritorio de Windows (versión 16.0.6741.0000 o posteriores)
@@ -44,19 +44,19 @@ El conjunto de requisitos de DialogAPI actualmente es compatible con las siguien
 
 Estarán disponibles en más plataformas próximamente. 
 
-## Sintaxis
+## <a name="syntax"></a>Sintaxis
 
 ```js
 office.context.ui.displayDialogAsync(startAddress, options, callback);
 ```
-##Ejemplos
+##<a name="examples"></a>Ejemplos
 
 Para ver un ejemplo simple que usa el método **displayDialogAsync**, consulte [Office Add-in Dialog API example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/) (Ejemplo del complemento de Office Dialog API) en GitHub.
 
 Para ver un ejemplo que muestra un escenario de autenticación, consulte el ejemplo [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) (Complemento de Office para autenticación de cliente de Office 365 para AngularJS) en GitHub.
 
  
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
@@ -64,18 +64,18 @@ Para ver un ejemplo que muestra un escenario de autenticación, consulte el ejem
 |options|object|Opcional. Acepta un objeto de opciones para definir los comportamientos de los cuadros de diálogo.|
 |callback|objeto|Acepta un método de devolución de llamada para controlar el intento de creación de cuadro de diálogo.|
     
-### Opciones de configuración
+### <a name="configuration-options"></a>Opciones de configuración
 Las opciones de configuración siguientes están disponibles para un cuadro de diálogo.
 
 
 | Propiedad     | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|**width**|objeto|Opcional. Define el ancho del cuadro de diálogo como porcentaje de la pantalla actual. El valor predeterminado es 80 %. La resolución mínima es de 250 píxeles.|
-|**height**|objeto|Opcional. Define la altura del cuadro de diálogo como porcentaje de la pantalla actual. El valor predeterminado es 80 %. La resolución mínima es de 150 píxeles.|
+|**width**|object|Opcional. Define el ancho del cuadro de diálogo como porcentaje de la pantalla actual. El valor predeterminado es 80 %. La resolución mínima es de 250 píxeles.|
+|**height**|object|Opcional. Define la altura del cuadro de diálogo como porcentaje de la pantalla actual. El valor predeterminado es 80 %. La resolución mínima es de 150 píxeles.|
 |**displayInIFrame**|object|Opcional. Determina si se debe mostrar el cuadro de diálogo dentro de un IFrame en clientes de Office Online. Esta configuración se omite por los clientes de escritorio. Los valores posibles son:<ul><li>False (predeterminado): se mostrará el cuadro de diálogo como una nueva ventana de explorador (elemento emergente). Se recomienda para las páginas de autenticación que no se pueden mostrar en un IFrame. </li><li>True: se mostrará el cuadro de diálogo como una superposición flotante con un IFrame. Es adecuado para mejorar el rendimiento y la experiencia del usuario.</li>|
 
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 Cuando la función que ha remitido al parámetro _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el único parámetro de la función de devolución de llamada.
 
 En la función de devolución de llamada que se ha remitido al método **displayDialogAsync**, puede usar las propiedades del objeto **AsyncResult** para devolver la siguiente información.
@@ -90,7 +90,7 @@ En la función de devolución de llamada que se ha remitido al método **display
 |[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Acceda al valor o al objeto definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
 
 
-## Consideraciones sobre diseño
+## <a name="design-considerations"></a>Consideraciones sobre diseño
 Se aplican las siguientes consideraciones de diseño a cuadros de diálogo:
 
 - Un complemento de Office puede tener solo un cuadro de diálogo abierto en cualquier momento.

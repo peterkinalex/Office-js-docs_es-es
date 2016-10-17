@@ -1,11 +1,11 @@
 
-# Objeto Slice
+# <a name="slice-object"></a>Objeto Slice
 Representa un segmento de un archivo de documento.
 
 |||
 |:-----|:-----|
 |**Hosts:**|PowerPoint y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Archivo|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Archivo|
 |**Modificado por última vez en**|1.1|
 
 ```
@@ -13,7 +13,7 @@ slice
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -25,12 +25,12 @@ slice
 |**[index](../../reference/shared/slice.index.md)**|Obtiene el índice del segmento de archivos.|
 |**[size](../../reference/shared/slice.size.md)**|Obtiene el tamaño del segmento en bytes.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Se obtiene acceso al objeto **Slice** con el método [File.getSliceAsync](../../reference/shared/file.getsliceasync.md).
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este objeto es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este objeto.
@@ -46,13 +46,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|Archivo|
+|**Disponible en los conjuntos de requisitos**|Archivo|
 |**Nivel de permisos mínimo**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

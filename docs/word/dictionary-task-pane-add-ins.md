@@ -1,38 +1,37 @@
 
-# Crear un complemento de panel de tareas de diccionario
+# <a name="create-a-dictionary-task-pane-add-in"></a>Crear un complemento de panel de tareas de diccionario
 
 
 En este artículo se muestra un ejemplo de un complemento de panel de tareas y el servicio web asociado que proporciona definiciones de diccionarios o sinónimos para la selección actual del usuario en un documento de Word 2013. 
 
 Una Complemento de Office de diccionario se basa en el complemento de panel de tareas estándar con funciones complementarias para la consulta y presentación de definiciones de un servicio web XML de diccionarios en lugares adicionales de la interfaz de usuario de la aplicación de Office. 
 
-En un complemento de panel de tareas de diccionario normal, un usuario selecciona una palabra o frase en el documento y, después, la lógica de JavaScript que hay detrás del complemento pasa esta selección al servicio web XML del proveedor de diccionario. Luego, se actualiza la página web del proveedor de diccionario para mostrar las definiciones de la selección al usuario.
-El componente de servicio web XML devuelve tres definiciones como máximo en el formato definido por el esquema XML de OfficeDefinitions, que se muestran al usuario en otros lugares de la UI de la aplicación host de Office. La figura 1 muestra la experiencia de visualización y selección de un complemento de diccionario de marca Bing que se ejecuta en Word 2013.
+En un complemento de panel de tareas de diccionario normal, un usuario selecciona una palabra o frase en el documento y, después, la lógica de JavaScript que hay detrás del complemento pasa esta selección al servicio web XML del proveedor de diccionario. Luego, se actualiza la página web del proveedor de diccionario para mostrar las definiciones de la selección al usuario. El componente de servicio web XML devuelve tres definiciones como máximo en el formato definido por el esquema XML de OfficeDefinitions, que se muestran al usuario en otros lugares de la UI de la aplicación host de Office. La figura 1 muestra la experiencia de visualización y selección de un complemento de diccionario de marca Bing que se ejecuta en Word 2013.
 
-**Figura 1. Complemento de diccionario que muestra definiciones para la palabra seleccionada**
+**Figura 1: Complemento de diccionario que muestra definiciones para la palabra seleccionada**
 
 
 ![Aplicación de diccionario que muestra una definición](../../images/DictionaryAgave01.jpg)
 
 Tiene que decidir si, al hacer clic en el vínculo **Ver más** de la interfaz de usuario HTML del complemento de diccionario, se mostrará más información en el panel de tareas o se abrirá una ventana independiente del explorador con la página web completa para la palabra o frase seleccionada. En la ilustración 2 se muestra el comando de menú contextual **Definir** que permite a los usuarios abrir rápidamente los diccionarios instalados. En las ilustraciones 3, 4 y 5 se muestran los lugares de la interfaz de usuario de Office donde se usan los servicios XML de diccionarios para proporcionar las definiciones en Word 2013.
 
-**Figura 2. Comando Definir del menú contextual**
+**Figura 2: Comando Definir del menú contextual**
 
 
 
 ![Opción Definir del menú contextual](../../images/DictionaryAgave02.jpg)
 
-**Figura 3. Definiciones en los paneles Ortografía y Gramática**
+**Figura 3: Definiciones en los paneles Ortografía y Gramática**
 
 
 ![Definiciones en los paneles Ortografía y Gramática](../../images/DictionaryAgave03.jpg)
 
-**Figura 4. Definiciones en el panel Sinónimos**
+**Figura 4: Definiciones en el panel Sinónimos**
 
 
 ![Definiciones en el panel Sinónimos](../../images/DictionaryAgave04.jpg)
 
-**Figura 5. Definiciones en modo de lectura**
+**Figura 5: Definiciones en modo de lectura**
 
 
 ![Definiciones en modo de lectura](../../images/DictionaryAgave05.jpg)
@@ -46,13 +45,13 @@ Para crear un complemento de panel de tareas que ofrezca una búsqueda en diccio
     
 Las secciones siguientes muestran la manera de crear estos componentes.
 
-## Creación de un servicio web XML de diccionarios
+## <a name="creating-a-dictionary-xml-web-service"></a>Creación de un servicio web XML de diccionarios
 
 
 El servicio web XML debe devolver las consultas al servicio web XML que cumple con el esquema XML de OfficeDefinitions. Las dos secciones siguientes describen el esquema XML de OfficeDefinitions y muestran un ejemplo de cómo codificar un servicio web XML que devuelva las consultas en ese formato XML.
 
 
-### Esquema XML OfficeDefinitions
+### <a name="officedefinitions-xml-schema"></a>Esquema XML OfficeDefinitions
 
 El código siguiente muestra el XSD para el esquema XML de OfficeDefinitions.
 
@@ -105,7 +104,7 @@ El XML devuelto que cumple con el esquema de OfficeDefinitions consta de un elem
 ```
 
 
-### Servicio web de XML de diccionarios de muestra
+### <a name="sample-dictionary-xml-web-service"></a>Servicio web de XML de diccionarios de muestra
 
 El código de C# siguiente presenta un ejemplo sencillo de cómo escribir código para un servicio web XML que devuelve el resultado de una consulta de diccionario en el formato XML de OfficeDefinitions.
 
@@ -179,7 +178,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## Creación de los componentes de un complemento de diccionario
+## <a name="creating-the-components-of-a-dictionary-add-in"></a>Creación de los componentes de un complemento de diccionario
 
 
 Un complemento de diccionario consta de tres archivos de componentes principales.
@@ -192,7 +191,7 @@ Un complemento de diccionario consta de tres archivos de componentes principales
 - Un archivo JavaScript que proporciona la lógica para obtener la selección del usuario desde el documento, envía la selección como una consulta al servicio web y muestra los resultados devueltos en la UI del complemento.
     
 
-### Creación del archivo de manifiesto del complemento de diccionario
+### <a name="creating-a-dictionary-add-in's-manifest-file"></a>Creación del archivo de manifiesto del complemento de diccionario
 
 A continuación se muestra un ejemplo de archivo de manifiesto para un complemento de diccionario.
 
@@ -257,7 +256,7 @@ A continuación se muestra un ejemplo de archivo de manifiesto para un complemen
 El elemento  **Dictionary** y sus componentes secundarios que son específicos para crear el archivo de manifiesto de un complemento de diccionario se describen en las secciones siguientes. Para más información sobre los otros elementos del archivo de manifiesto, visite [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md).
 
 
-### Elemento de diccionario
+### <a name="dictionary-element"></a>Elemento de diccionario
 
 
 Especifica la configuración para los complementos de diccionario.
@@ -270,15 +269,15 @@ Especifica la configuración para los complementos de diccionario.
 
  `<TargetDialects>`,  `<QueryUri>`,  `<CitationText>`,  `<DictionaryName>`,  `<DictionaryHomePage>`
 
- **Observaciones**
+ **Comentarios**
 
-El elemento  **Dictionary** y sus elementos secundarios se agregan al manifiesto de un complemento de panel de tareas cuando se crea un complemento de diccionario.
-
-
-#### Elemento TargetDialects
+El elemento **Dictionary** y sus elementos secundarios se agregan al manifiesto de un complemento de panel de tareas cuando se crea un complemento de diccionario.
 
 
-Especifica los dialectos que admite el diccionario. Es obligatorio para complementos de diccionario.
+#### <a name="targetdialects-element"></a>Elemento TargetDialects
+
+
+Especifica los dialectos que admite el diccionario. Es obligatorio (para complementos de diccionario).
 
  **Elemento primario**
 
@@ -321,18 +320,18 @@ El elemento  **TargetDialects** y sus elementos secundarios indican el conjunto 
 ```
 
 
-#### Elemento TargetDialect
+#### <a name="targetdialect-element"></a>Elemento TargetDialect
 
 
-Especifica un dialecto que admite el diccionario. Es obligatorio para complementos de diccionario.
+Especifica el dialecto que admite el diccionario. Es obligatorio (para complementos de diccionario).
 
  **Elemento primario**
 
  `<TargetDialects>`
 
- **Observaciones**
+ **Comentarios**
 
-Especifique el valor de un dialecto en el formato de etiqueta  `language` RFC1766, como EN-US.
+Especifique el valor de un dialecto en el formato de etiqueta `language` RFC1766, como EN-US.
 
  **Ejemplo**
 
@@ -344,18 +343,18 @@ Especifique el valor de un dialecto en el formato de etiqueta  `language` RFC176
 ```
 
 
-#### Elemento QueryUri
+#### <a name="queryuri-element"></a>Elemento QueryUri
 
 
-Especifica el punto de conexión para el servicio de consulta del diccionario. Es obligatorio para complementos de diccionario.
+Especifica el punto de conexión para el servicio de consulta del diccionario. Es obligatorio (para complementos de diccionario).
 
  **Elemento primario**
 
  `<Dictionary>`
 
- **Observaciones**
+ **Comentarios**
 
-Este es el URI del servicio web XML para el proveedor del diccionario. La consulta realizada correctamente se anexará a este URI. 
+Este es el URI del servicio web XML para el proveedor de diccionario. La consulta con la secuencia de escape adecuada se anexará a este identificador URI. 
 
  **Ejemplo**
 
@@ -367,16 +366,16 @@ Este es el URI del servicio web XML para el proveedor del diccionario. La consul
 ```
 
 
-#### Elemento CitationText
+#### <a name="citationtext-element"></a>Elemento CitationText
 
 
-Especifica el texto que se debe usar en las citas. Es obligatorio para complementos de diccionario.
+Especifica el texto que se usará en las citas. Es obligatorio (para complementos de diccionario).
 
  **Elemento primario**
 
  `<Dictionary>`
 
- **Observaciones**
+ **Comentarios**
 
 Este elemento especifica el principio del texto de cita que se mostrará en una línea debajo del contenido devuelto desde el servicio web (por ejemplo, "Resultados de:" o "Con la tecnología de:").
 
@@ -392,16 +391,16 @@ Para este elemento, se pueden especificar valores para configuraciones regionale
 ```
 
 
-#### Elemento DictionaryName
+#### <a name="dictionaryname-element"></a>Elemento DictionaryName
 
 
-Especifica el nombre de este diccionario. Es obligatorio para complementos de diccionario.
+Especifica el nombre de este diccionario. Es obligatorio (para complementos de diccionario).
 
  **Elemento primario**
 
  `<Dictionary>`
 
- **Observaciones**
+ **Comentarios**
 
 Este elemento especifica el texto del vínculo en el texto de la cita. El texto de la cita se muestra en una línea debajo del contenido devuelto desde el servicio web.
 
@@ -417,16 +416,16 @@ Para este elemento, se pueden especificar valores para configuraciones regionale
 ```
 
 
-#### Elemento DictionaryHomePage
+#### <a name="dictionaryhomepage-element"></a>Elemento DictionaryHomePage
 
 
-Especifica la dirección URL de la página de inicio del diccionario. Es obligatorio para complementos de diccionario.
+Especifica la dirección URL de la página principal del diccionario. Es obligatorio (para complementos de diccionario).
 
  **Elemento primario**
 
  `<Dictionary>`
 
- **Observaciones**
+ **Comentarios**
 
 Este elemento especifica la dirección URL del vínculo en el texto de la cita. El texto de la cita se muestra en una línea debajo del contenido devuelto desde el servicio web.
 
@@ -442,7 +441,7 @@ Para este elemento, se pueden especificar valores para configuraciones regionale
 ```
 
 
-### Creación de una interfaz de usuario HTML del complemento de diccionario
+### <a name="creating-a-dictionary-add-in's-html-user-interface"></a>Creación de una interfaz de usuario HTML del complemento de diccionario
 
 
 Los dos ejemplos siguientes muestran los archivos HTML y CSS para la UI del complemento de la demo del diccionario. Para ver cómo se muestra la UI en el panel de tareas del complemento, consulte la Figura 6, después del código. Para conocer la manera en que la implementación de JavaScript en el archivo Dictionary.js proporciona la lógica de programación para esta UI de HTML, consulte "Escritura de la implementación de JavaScript", inmediatamente después de esta sección.
@@ -532,12 +531,12 @@ a:hover, a:active
 ```
 
 
-**Figura 6. UI de la demo del diccionario**
+**Figura 6: IU de la demo del diccionario**
 
-![UI de la demo del diccionario](../../images/DictionaryAgave06.jpg)
+![IU de la demo del diccionario](../../images/DictionaryAgave06.jpg)
 
 
-### Escritura de la implementación de JavaScript
+### <a name="writing-the-javascript-implementation"></a>Escritura de la implementación de JavaScript
 
 
 En el ejemplo siguiente se muestra la implementación de JavaScript en el archivo Dictionary.js, que se llama desde la página HTML del complemento para proporcionar la lógica de programación para el complemento del Diccionario de demostración. Esta secuencia de comandos vuelve a usar el servicio web XML descrito anteriormente. Cuando se coloca en el mismo directorio que el servicio web de ejemplo, la secuencia de comandos obtiene las definiciones de dicho servicio. La secuencia de comandos se puede usar con un servicio web XML público que cumpla con OfficeDefinitions modificando la variable  `xmlServiceURL` de la parte superior del archivo y, posteriormente, cambiando la clave de la API de Bing para pronunciaciones por una que se haya registrado correctamente.

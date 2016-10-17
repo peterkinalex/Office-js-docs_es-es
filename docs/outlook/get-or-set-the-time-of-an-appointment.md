@@ -1,5 +1,5 @@
 
-# Obtener o establecer la hora al redactar una cita en Outlook
+# <a name="get-or-set-the-time-when-composing-an-appointment-in-outlook"></a>Obtener o establecer la hora al redactar una cita en Outlook
 
 La API de JavaScript para Office proporciona métodos asincrónicos ([Time.getAsync](../../reference/outlook/Time.md) y [Time.setAsync](../../reference/outlook/Time.md)) para obtener y establecer la hora de inicio o la hora de finalización de una cita que el usuario está redactando. Estos métodos asincrónicos solo están disponibles para complementos de redacción. Para usar estos métodos, asegúrese de configurar el manifiesto del complemento correctamente para que Outlook active el complemento en los formularios de redacción, como se describe en [Crear complementos de Outlook para formularios de redacción](../outlook/compose-scenario.md).
 
@@ -42,7 +42,7 @@ item.end.getAsync
 Como ocurre con la mayoría de métodos asincrónicos de la API de JavaScript para Office, **getAsync** y **setAsync** usan parámetros de entrada opcionales. Para más información sobre cómo especificar estos parámetros de entrada opcionales, vea [Pasar parámetros opcionales a métodos asincrónicos](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) en [Programación asincrónica en complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
-## Para obtener la hora de inicio o finalización
+## <a name="to-get-the-start-or-end-time"></a>Para obtener la hora de inicio o finalización
 
 
 Esta sección muestra un código de ejemplo que obtiene la hora de inicio de una cita que el usuario está redactando y muestra la hora. Puede usar el mismo código para reemplazar la propiedad  **start** por la propiedad **end** y así obtener la hora de finalización. Este código de ejemplo asume una regla en el manifiesto del complemento que activa el complemento en un formulario de redacción para una cita, tal como se muestra a continuación.
@@ -94,7 +94,7 @@ function write(message){
 ```
 
 
-## Para establecer la hora de inicio o finalización
+## <a name="to-set-the-start-or-end-time"></a>Para establecer la hora de inicio o finalización
 
 
 Esta sección muestra un código de ejemplo que configura la hora de inicio de una cita o mensaje que el usuario está redactando. Puede usar el mismo código y reemplazar la propiedad  **start** por la propiedad **end** para configurar la hora de finalización. Tenga en cuenta que si el formulario de redacción de la cita ya cuenta con una hora de inicio, la configuración de otra hora de inicio ajustará la hora de finalización para mantener la duración de la cita. Si el formulario de redacción de la cita ya cuenta con una hora de finalización, la configuración de otra hora de finalización ajustará tanto la duración como la hora de finalización. Si la cita se ha establecido como un evento de todo el día, la configuración de la hora de inicio ajustará la hora de finalización 24 horas más tarde y desactivará la opción de la interfaz para el evento de todo el día en el formulario de redacción.
@@ -145,17 +145,17 @@ function write(message){
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
 - [Obtener y definir datos de elementos en un formulario de redacción de Outlook](../outlook/get-and-set-item-data-in-a-compose-form.md)
     
-- [Obtención y definición de datos de elementos de Outlook en los formularios de lectura o redacción](../outlook/item-data.md)
+- [Obtener y establecer datos de elementos en formularios de lectura o redacción](../outlook/item-data.md)
     
 - [Crear complementos de Outlook para formularios de redacción](../outlook/compose-scenario.md)
     
-- [Programación asíncrona en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
+- [Programación asincrónica en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
     
 - [Obtener, establecer o agregar destinatarios al redactar una cita o un mensaje en Outlook](../outlook/get-set-or-add-recipients.md)
     

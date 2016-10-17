@@ -1,11 +1,11 @@
 
-# Método Document.getFilePropertiesAsync
+# <a name="document.getfilepropertiesasync-method"></a>Método Document.getFilePropertiesAsync
 Obtiene las propiedades de archivo del documento actual.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Excel, PowerPoint y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|No en un conjunto|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|No en un conjunto|
 |**Agregado en**|1.1|
 
 ```js
@@ -13,7 +13,7 @@ Office.context.document.getFilePropertiesAsync([, options], callback);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
@@ -23,7 +23,7 @@ Office.context.document.getFilePropertiesAsync([, options], callback);
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string** o **undefined**|Un elemento de cualquier tipo definido por el usuario que se devuelve en el objeto **AsyncResult** sin sufrir modificaciones.||
 | _callback_|**object**|Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.||
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función que ha remitido al parámetro _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el único parámetro de la función de devolución de llamada.
 
@@ -31,19 +31,19 @@ En la función de devolución de llamada que se ha remitido al método **getFile
 
 
 
-|**Propiedad**|**Usar para...**|
+|**Propiedad**|**Usar para**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Devuelve la dirección URL del archivo a `asyncResult.value.url`|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determinar si la operación se ha completado correctamente o no.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Tener acceso a un objeto [Error](../../reference/shared/error.md) que proporcione información sobre el error si la operación no se ha llevado a cabo correctamente.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **object** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **objeto** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 En esta versión de la API, solo puede obtener la dirección URL del archivo con la propiedad **url** (`asyncResult.value.url`).
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 Para leer la URL del archivo actual, debe escribir una función de devolución de llamada que devuelva la URL. En el ejemplo siguiente se muestra cómo hacerlo:
 
@@ -71,7 +71,7 @@ function getFileUrl() {
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -90,13 +90,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|No en un conjunto|
+|**Disponible en los conjuntos de requisitos**|No en un conjunto|
 |**Nivel de permisos mínimo**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

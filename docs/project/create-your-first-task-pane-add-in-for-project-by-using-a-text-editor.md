@@ -1,5 +1,5 @@
 
-# Procedimiento para crear el primer complemento de panel de tareas para Project 2013 con un editor de texto
+# <a name="create-your-first-task-pane-add-in-for-project-2013-by-using-a-text-editor"></a>Procedimiento para crear el primer complemento de panel de tareas para Project 2013 con un editor de texto
 
 Puede crear un complemento de panel de tareas para Project Standard 2013 o Project Profesional 2013 con Visual Studio 2015 con el fin de crear una aplicación web compleja o un editor de texto con el que crear archivos para un complemento local. En este artículo se describe cómo crear un complemento sencillo, que use un manifiesto XML que apunte a un archivo HTML de un recurso compartido de archivos. El complemento de ejemplo Project OM Test prueba algunas funciones JavaScript que usan el modelo de objetos de los complementos. Después de usar el  **Centro de confianza** de Project 2013 para registrar el recurso compartido de archivos que contiene el archivo de manifiesto, puede abrir el complemento de panel de tareas desde la pestaña **PROYECTO** de la cinta de opciones. (El código de ejemplo de este artículo está basado en un complementos de prueba de Arvind Iyer, Microsoft Corporation).
 
@@ -7,7 +7,7 @@ Project 2013 usa el mismo esquema de manifiesto del complemento que otros client
 
 El complemento de ejemplo Project OM Test obtiene el GUID de una tarea y las propiedades de la aplicación y del proyecto activo. Si Project Profesional 2013 abre un proyecto de una biblioteca de SharePoint, el complementos puede mostrar la dirección URL del proyecto. La [descarga del SDK de Project 2013](https://www.microsoft.com/en-us/download/details.aspx?id=30435%20) incluye el código fuente completo. Cuando extraiga e instale el SDK y los ejemplos del archivo Project2013SDK.msi, examine el subdirectorio `\Samples\Apps\Copy_to_AppManifests_FileShare` para buscar el archivo de manifiesto y el subdirectorio `\Samples\Apps\Copy_to_AppSource_FileShare`, y así buscar el código fuente. El ejemplo JSOMCall.html usa las funciones JavaScript del archivo office.js y del archivo project-15.js, que también se incluyen. Puede usar los archivos de depuración correspondientes (office.debug.js y project-15.debug.js) para examinar las funciones. Para una introducción sobre el uso de JavaScript en Complementos de Office, vea [Información sobre la API de JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md).
 
-## Procedimiento 1. Para crear el archivo de manifiesto del complemento
+## <a name="procedure-1.-to-create-the-add-in-manifest-file"></a>Procedimiento 1. Para crear el archivo de manifiesto del complemento
 
 
 
@@ -51,7 +51,7 @@ El complemento de ejemplo Project OM Test obtiene el GUID de una tarea y las pro
     
 En el procedimiento 2 se muestra cómo crear el archivo HTML que especifica el manifiesto JSOM_SimpleOMCalls.xml para el complemento de prueba de Project. Los botones especificados en el archivo HTML llaman a funciones JavaScript relacionadas. Puede agregar las funciones JavaScript en el archivo HTML o colocarlas en un archivo .js independiente.
 
-## Procedimiento 2. Para crear los archivos de origen para el complemento Project OM Test
+## <a name="procedure-2.-to-create-the-source-files-for-the-project-om-test-add-in"></a>Procedimiento 2. Para crear los archivos de origen para el complemento Project OM Test
 
 
 
@@ -697,7 +697,7 @@ function manageViewEventHandler(docMethod) {
      >**Note**  The  **Task Pane Add-in (Project)** template in Visual Studio 2015 includes default .css files for a common look and feel of add-ins.
 En el procedimiento 3 se muestra cómo instalar y usar las funciones del complemento Project OM Test.
 
-## Procedimiento 3. Para instalar y usar el complemento Project OM Test
+## <a name="procedure-3.-to-install-and-use-the-project-om-test-add-in"></a>Procedimiento 3. Para instalar y usar el complemento Project OM Test
 
 
 
@@ -722,19 +722,19 @@ En el procedimiento 3 se muestra cómo instalar y usar las funciones del comple
     
 5. Si ya agregó la ruta  `\\ServerName\AppManifests` para el complemento de búsqueda de Bing, omita este paso. De lo contrario, en el panel **Catálogos de complementos de confianza**, agregue la ruta  `\\ServerName\AppManifests` en el cuadro de texto **Dirección URL del catálogo**, elija  **Agregar catálogo**, habilite el recurso compartido de red como origen predeterminado (vea la figura 1) y luego elija  **Aceptar**.
     
-    **Figura 1. Adición de un recurso compartido de red para manifiestos de complementos**
+    **Figura 1: Adición de un recurso compartido de red para manifiestos de complementos**
 
     ![Adición de un recurso compartido de red para manifiestos de aplicaciones](../../images/pj15_CreateSimpleAgave_ManageCatalogs.png)
 
 6. Después de agregar complementos nuevos o de cambiar el código fuente, reinicie Project. En la cinta de opciones  **PROYECTO**, elija el menú desplegable  **Complementos para Office** y luego elija **Ver todo**. En el cuadro de diálogo  **Insertar complemento**, elija  **CARPETA COMPARTIDA** (vea la figura 2), seleccione **Project OM Test** y luego elija **Insertar**. El complemento Project OM Test se inicia en un panel de tareas.
     
-    **Figura 2. Ejecución del complemento Project OM Test que se encuentra en un recurso compartido de archivo**
+    **Figura 2: Ejecución del complemento Project OM Test que se encuentra en un recurso compartido de archivo**
 
     ![Inserción de una aplicación](../../images/pj15_CreateSimpleAgave_StartAgaveApp.png)
 
 7. En Project, cree y guarde un proyecto sencillo que tenga al menos dos tareas. Por ejemplo, cree tareas con el nombre T1, T2 y un hito con el nombreM1, y luego establezca que las duraciones y los predecesores de las tareas sean similares a los de la figura 3. Elija la pestaña  **PROYECTO** en la cinta, seleccione la fila completa para la tarea T2 y seleccione el botón **getSelectedDataAsync** en el panel de tareas. La figura 3 muestra los datos seleccionados en el cuadro de texto del complemento **Project OM Test**.
     
-    **Figura 3. Uso del complemento Project OM Test**
+    **Figura 3: Uso del complemento Project OM Test**
 
     ![Uso de la aplicación Project OM Test](../../images/pj15_CreateSimpleAgave_ProjectOMTest.gif)
 
@@ -838,7 +838,7 @@ Display language: en-US
 19. Puede actualizar el complemento después de editar el código fuente al cerrar y reiniciar Project. En la cinta de opciones  **Proyecto**, la lista desplegable  **Complementos para Office** mantiene la lista de complemento usados recientemente.
     
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 La descarga del SDK de Project 2013 contiene el código completo en el archivo JSOMCall.html, el archivo JSOM_Sample.js y los archivos relacionados Office.js, Office.debug.js, Project-15.js y Project-15.debug.js. A continuación se muestra el código en el archivo JSOMCall.html.
@@ -927,7 +927,7 @@ La descarga del SDK de Project 2013 contiene el código completo en el archivo J
 ```
 
 
-## Programación sólida
+## <a name="robust-programming"></a>Programación sólida
 
 
 El complemento  **Project OM Test** es un ejemplo que muestra el uso de algunas funciones JavaScript para Project 2013 en los archivos Project-15.js y Office.js. El ejemplo es solo para fines de prueba y no incluye comprobaciones de errores sólidas. Por ejemplo, si no selecciona un recurso y ejecuta la función **getSelectedResourceAsync**, la variable  **resourceGuid** no se inicializa y las llamadas a **getResourceFieldAsync** devuelven un error. Para un complemento de producción, debe comprobar si existen errores específicos y pasar por alto los resultados, ocultar las funciones no relevantes, o notificar al usuario que elija una vista y haga una selección válida antes de usar una función.
@@ -1120,12 +1120,12 @@ function logMethodError(methodName, errorName, errorMessage, actionMessage) {
 ```
 
 
-**Figura 4. Funciones en el archivo SurfaceErrors.js pueden mostrar una notificación de "aviso"**
+**Figura 4: Las funciones en el archivo SurfaceErrors.js pueden mostrar una notificación de "aviso"**
 
 ![Uso de rutinas SurfaceError para mostrar un error](../../images/pj15_CreateSimpleAgave_SurfaceError.gif)
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

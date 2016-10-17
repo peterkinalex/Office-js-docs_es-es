@@ -1,11 +1,11 @@
 
-# Elemento FormSettings
+# <a name="formsettings-element"></a>Elemento FormSettings
 Especifica la ubicación del código fuente y la configuración de control para su complemento de correo.
 
  **Tipo de complemento:** correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -15,12 +15,12 @@ Especifica la ubicación del código fuente y la configuración de control para 
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## Puede contener:
+## <a name="can-contain:"></a>Puede contener:
 
-[Formulario](../../reference/manifest/form.md)
+[Form](../../reference/manifest/form.md)
 

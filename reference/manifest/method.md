@@ -1,11 +1,11 @@
 
-# Elemento Method
+# <a name="method-element"></a>Elemento Method
 Especifica un método individual de la API de JavaScript para Office que su complemento de Office necesita para activarse.
 
  **Tipo de complemento:** Panel de tareas, contenido
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,20 +13,20 @@ Especifica un método individual de la API de JavaScript para Office que su comp
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
  _ [Métodos](../../reference/manifest/methods.md)_
 
 
-## Atributos
+## <a name="attributes"></a>Atributos
 
 
 
-|**Atributo**|**Tipo**|**Necesario**|**Descripción**|
+|**Atributo**|**Tipo**|**Obligatorio**|**Descripción**|
 |:-----|:-----|:-----|:-----|
 |Nombre|string|necesario|Especifica el nombre del método necesario calificado con su objeto principal. Por ejemplo, para especificar el método **getSelectedDataAsync**, debe especificar `"Document.getSelectedDataAsync"`.|
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Los elementos **Methods** y **Method** no son compatibles con los complementos de correo. Para obtener más información acerca de los conjuntos de requisitos, consulte [Especificar los requisitos de la API y del host de Office](../../docs/overview/specify-office-hosts-and-api-requirements.md#SpecifyRequirementSets_intro).
 

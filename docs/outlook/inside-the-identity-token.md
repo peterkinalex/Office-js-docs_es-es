@@ -1,12 +1,12 @@
 
-# Contenido del token de identidad de Exchange
+# <a name="inside-the-exchange-identity-token"></a>Contenido del token de identidad de Exchange
 Descubra qué hay dentro de un token de identidad de Exchange 2013.
 
 
 
 El token de identidad de autenticación que envía el servidor Exchange al complemento de Outlook es opaco para el complemento. No debe examinar el contenido del token para enviarlo al servidor, pero cuando escriba el código del servicio web que interactúa con el complemento de Outlook, necesitará saber qué hay dentro del token de identidad.
 
-## ¿Qué es un token de identidad?
+## <a name="what-is-an-identity-token?"></a>¿Qué es un token de identidad?
 
 
 Un token de identidad es una cadena con codificación URL base64 que está autofirmada por el servidor Exchange que la envió. El token no está cifrado, y la clave pública que usa para validar la firma se almacena en el servidor Exchange que emitió el token. El token tiene tres partes: un encabezado, una carga y una firma. En la cadena del token, las partes están separadas por el carácter "." para facilitar la tarea de división del token.
@@ -14,7 +14,7 @@ Un token de identidad es una cadena con codificación URL base64 que está autof
 Exchange 2013 usa un token web JSON (JWT) para el token de identidad. Para obtener información sobre tokens JWT, consulte el [borrador de Internet del token web JSON (JWT)](http://self-issued.info/docs/draft-goland-json-web-token-00.html).
 
 
-### Encabezado del token de identidad
+### <a name="identity-token-header"></a>Encabezado del token de identidad
 
 El encabezado identifica el token y permite al servicio web saber cuál es el tipo de token que se presenta. En el siguiente ejemplo se muestra el aspecto del encabezado del token.
 
@@ -34,7 +34,7 @@ En la siguiente tabla se describen las partes del encabezado del token de identi
 |alg|"RS256"|El algoritmo hash que se usa para crear la firma. Todos los tokens proporcionados por el servidor Exchange usan el algoritmo RS-256.|
 |x5t|Huella digital de certificado|La huella digital X.509 del token.|
 
-### Carga del token de identidad
+### <a name="identity-token-payload"></a>Carga del token de identidad
 
 La carga contiene las notificaciones de autenticación que identifican la cuenta de correo electrónico y el servidor Exchange que envió el token. En el siguiente ejemplo se muestra el aspecto de la sección de carga.
 ```js
@@ -76,12 +76,12 @@ La información de la notificación appctx proporciona la dirección de la cuent
 |version|El número de versión del token. En todos los tokens proporcionados por un servidor que ejecuta Exchange 2013, el valor es "ExIdTok.V1".|
 |amurl|La dirección URL del documento de metadatos de autenticación que contiene la clave pública del certificado X.509 que se usó para firmar el token. Para más información sobre cómo usar el documento de metadatos de autenticación, vea [Validar un token de identidad de Exchange](../outlook/validate-an-identity-token.md).|
 
-### Firma del token de identidad
+### <a name="identity-token-signature"></a>Firma del token de identidad
 
 La firma se crea al cifrar las secciones de encabezado y de carga con el algoritmo hash especificado en el encabezado y con el certificado X.509 autofirmado que se encuentra en el servidor en la ubicación especificada en la carga. El servicio web puede validar esta firma para garantizar que el token de identidad proviene del servidor que se espera que lo envíe.
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

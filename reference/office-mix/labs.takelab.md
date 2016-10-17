@@ -1,7 +1,7 @@
 
-# Labs.takeLab
+# <a name="labs.takelab"></a>Labs.takeLab
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Ejecuta el laboratorio especificado y habilita el envío de los resultados del laboratorio al servidor. Tenga en cuenta que no se puede ejecutar un laboratorio mientras se está editando.
 
@@ -10,7 +10,7 @@ function takeLab(callback: Core.ILabCallback<LabInstance>): void
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 |**Nombre**|**Descripción**|

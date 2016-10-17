@@ -1,5 +1,5 @@
 
-# Objeto AsyncResult
+# <a name="asyncresult-object"></a>Objeto AsyncResult
 Un objeto que encapsula el resultado de una solicitud asincrónica, incluida la información de estado y error si la solicitud falla.
 
 |||
@@ -12,7 +12,7 @@ AsyncResult
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -22,10 +22,10 @@ AsyncResult
 |:-----|:-----|
 |**[asyncContext](../../reference/shared/asyncresult.asynccontext.md)**|Obtiene el elemento definido por el usuario que se ha enviado al parámetro _asyncContext_ opcional del método invocado, en el mismo estado en el que se envió.|
 |**[error](../../reference/shared/asyncresult.error.md)**|Obtiene un objeto **Error** que proporciona una descripción del error, en caso de existir.|
-|**[estado](../../reference/shared/asyncresult.status.md)**|Obtiene el estado de la acción asíncrona.|
+|**[status](../../reference/shared/asyncresult.status.md)**|Obtiene el estado de la operación asincrónica.|
 |**[value](../../reference/shared/asyncresult.value.md)**|Obtiene la carga o el contenido de una operación asincrónica, si la hay.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Cuando la función que ha remitido al parámetro _callback_ de un método "Async" se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el parámetro único de la función de devolución de llamada.
 
@@ -93,13 +93,18 @@ El objeto **AsyncResult** se encuentra disponible en la función que se ha remit
 |**CustomXmlPrefixMappings** (solo en Word)|[addNamespaceAsync](../../reference/shared/customxmlprefixmappings.addnamespaceasync.md)|
 ||[getNamespaceAsync](../../reference/shared/customxmlprefixmappings.getnamespaceasync.md)|
 ||[getPrefixAsync](../../reference/shared/customxmlprefixmappings.getprefixasync.md)|
-|**Mailbox** (solo en Outlook)|[getUserIdentityTokenAsync](http://msdn.microsoft.com/library/c658518b-6867-41a0-99cf-810303e4c539%28Office.15%29.aspx)|
-||[makeEwsRequestAsync](http://msdn.microsoft.com/library/2ec380e0-4a67-4146-92a6-6a39f65dc6f2%28Office.15%29.aspx)|
-|**CustomProperties** (solo en Outlook)|[saveAsync](http://msdn.microsoft.com/library/690d5aa9-62b5-4e5c-9548-62dfdbb5fa56%28Office.15%29.aspx)|
-|**Item** (solo en Outlook)|[loadCustomPropertiesAsync](http://msdn.microsoft.com/library/dfbec151-8ea7-4915-b723-09ea1396a261%28Office.15%29.aspx)|
-|**RoamingSettings** (solo en Outlook)|[saveAsync](http://msdn.microsoft.com/library/a616f71c-a447-423f-a0d2-e9d6f1ac32f8%28Office.15%29.aspx)|
+|**Mailbox** (solo en Outlook)|
+  [getUserIdentityTokenAsync](http://msdn.microsoft.com/library/c658518b-6867-41a0-99cf-810303e4c539%28Office.15%29.aspx)|
+||
+  [makeEwsRequestAsync](http://msdn.microsoft.com/library/2ec380e0-4a67-4146-92a6-6a39f65dc6f2%28Office.15%29.aspx)|
+|**CustomProperties** (solo en Outlook)|
+  [saveAsync](http://msdn.microsoft.com/library/690d5aa9-62b5-4e5c-9548-62dfdbb5fa56%28Office.15%29.aspx)|
+|**Item** (solo en Outlook)|
+  [loadCustomPropertiesAsync](http://msdn.microsoft.com/library/dfbec151-8ea7-4915-b723-09ea1396a261%28Office.15%29.aspx)|
+|**RoamingSettings** (solo en Outlook)|
+  [saveAsync](http://msdn.microsoft.com/library/a616f71c-a447-423f-a0d2-e9d6f1ac32f8%28Office.15%29.aspx)|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -123,7 +128,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

@@ -1,5 +1,5 @@
 
-# Privacidad, permisos y seguridad para los complementos de Outlook
+# <a name="privacy,-permissions,-and-security-for-outlook-add-ins"></a>Privacidad, permisos y seguridad para los complementos de Outlook
 Los usuarios finales, los desarrolladores y los administradores pueden usar los niveles de permisos en capas del modelo de seguridad en los complementos de Outlook para controlar la privacidad y el rendimiento.
 
 
@@ -15,7 +15,7 @@ En este artículo se describen los posibles permisos que pueden solicitar los co
 - Administradores: privilegios para establecer umbrales de rendimiento.
     
 
-## Modelo de permisos
+## <a name="permissions-model"></a>Modelo de permisos
 
 
 La percepción de los clientes sobre la seguridad de un complemento puede influir en la opción de instalarlo o no. Por ello, la seguridad de los complementos de Outlook se basa en un modelo de permisos en niveles. Un complemento de Outlook revelaría el nivel de permisos necesarios, al identificar el posible acceso y las acciones que el complemento puede realizar en los datos de los buzones del cliente. 
@@ -23,7 +23,7 @@ La percepción de los clientes sobre la seguridad de un complemento puede influi
 La versión 1.1 del esquema del manifiesto incluye cuatro niveles de permisos. 
 
 
-**Tabla 1. Niveles de permisos de complementos**
+**Tabla 1: Niveles de permisos de complementos**
 
 
 |**Nivel de permisos**|**Valor en el manifiesto del complemento de Outlook**|
@@ -32,15 +32,15 @@ La versión 1.1 del esquema del manifiesto incluye cuatro niveles de permisos.
 |Elemento de lectura|ReadItem|
 |Elemento de lectura y escritura|ReadWriteItem|
 |Buzón de lectura y escritura|ReadWriteMailbox|
-Los cuatro niveles de permisos son acumulativos: el permiso  **buzón de lectura y escritura** incluye los permisos de **lectura y escritura de elemento**,  **lectura de elemento** y **restringido**, el permiso  **lectura y escritura de elemento** incluye **lectura de elemento** y la opción **restringido**, y el permiso  **lectura de elemento** incluye el permiso **restringido**. En la figura 1 se muestran los cuatro niveles de permisos y se describen las capacidades que se ofrecen al usuario final, al desarrollador y al administrador en cada nivel. Para más información sobre estos permisos, vea [Usuarios finales: dudas sobre privacidad y rendimiento](#usuarios-finales-dudas-sobre-privacidad-y-rendimiento), [Desarrolladores: opciones de permisos y límites de uso de recursos.](#developers-permission-choices-and-resource-usage-limits) y [Especificar permisos para el acceso de los complementos de Outlook al buzón del usuario](../outlook/understanding-outlook-add-in-permissions.md). 
+Los cuatro niveles de permisos son acumulativos: el permiso  **buzón de lectura y escritura** incluye los permisos de **lectura y escritura de elemento**,  **lectura de elemento** y **restringido**, el permiso  **lectura y escritura de elemento** incluye **lectura de elemento** y la opción **restringido**, y el permiso  **lectura de elemento** incluye el permiso **restringido**. En la figura 1 se muestran los cuatro niveles de permisos y se describen las capacidades que se ofrecen al usuario final, al desarrollador y al administrador en cada nivel. Para más información sobre estos permisos, vea [Usuarios finales: dudas sobre privacidad y rendimiento](#end-users-privacy-and-performance-concerns), [Desarrolladores: opciones de permisos y límites de uso de recursos.](#developers-permission-choices-and-resource-usage-limits) y [Especificar permisos para el acceso de los complementos de Outlook al buzón del usuario](../outlook/understanding-outlook-add-in-permissions.md). 
 
 
-**Figura 1. Adaptación del modelo de permisos de cuatro niveles al usuario final, al desarrollador y al administrador**
+**Figura 1: Adaptación del modelo de permisos de cuatro niveles al usuario final, al desarrollador y al administrador**
 
 ![Modelo de permisos de cuatro niveles para esquema v1.1 de aplicaciones de correo](../../images/olowa15wecon_Permissions_4Tier.png)
 
 
-## Tienda Office: integridad del complemento
+## <a name="office-store:-add-in-integrity"></a>Tienda Office: integridad del complemento
 
 
 La Tienda Office hospeda complementos que los usuarios finales y los administradores pueden instalar. La Tienda Office aplica las siguientes medidas para mantener la integridad de estos complementos de Outlook:
@@ -55,7 +55,7 @@ La Tienda Office hospeda complementos que los usuarios finales y los administrad
 - Admite un sistema de revisión del usuario para que los complementos disponibles promuevan una comunidad autocontrolada.
     
 
-## Usuarios finales: dudas sobre privacidad y rendimiento
+## <a name="end-users:-privacy-and-performance-concerns"></a>Usuarios finales: dudas sobre privacidad y rendimiento
 
 
 El modelo de seguridad aborda las dudas de los usuarios finales sobre seguridad, privacidad y rendimiento de las siguientes maneras:
@@ -77,7 +77,7 @@ El modelo de seguridad aborda las dudas de los usuarios finales sobre seguridad,
     
 - Solo para el cliente enriquecido de Outlook: los clientes enriquecidos de Outlook supervisan el rendimiento de los complementos de correo instalados, ejercen un control de gobernanza y deshabilitan los complementos de Outlook que superan los límites en las siguientes áreas:
     
-      - Response time to activate
+      - Tiempo de respuesta para activarse
     
   - Número de errores para activarse o reactivarse
     
@@ -91,13 +91,13 @@ El modelo de seguridad aborda las dudas de los usuarios finales sobre seguridad,
 - Siempre que lo deseen, los usuarios finales pueden comprobar los permisos que solicitan los complementos de Outlook instalados y habilitar (o deshabilitar posteriormente) cualquier complemento de Outlook en el Centro de administración de Exchange.
     
 
-## Desarrolladores: opciones de permisos y límites de uso de recursos.
+## <a name="developers:-permission-choices-and-resource-usage-limits"></a>Desarrolladores: opciones de permisos y límites de uso de recursos.
 
 
 El modelo de seguridad proporciona a los desarrolladores niveles pormenorizados de permisos entre los que pueden elegir y unas instrucciones estrictas sobre el rendimiento que es necesario cumplir.
 
 
-### Los permisos en niveles aumentan la transparencia
+### <a name="tiered-permissions-increases-transparency"></a>Los permisos en niveles aumentan la transparencia
 
 Los desarrolladores deben seguir el modelo de permisos en niveles para proporcionar transparencia y disipar las dudas de los usuarios sobre lo que los complementos pueden hacer en sus datos y buzones. De hacerlo así, estará promoviendo indirectamente que los usuarios instalen el complemento:
 
@@ -136,19 +136,19 @@ Los desarrolladores deben seguir el modelo de permisos en niveles para proporcio
     
 - Los desarrolladores solicitan el permiso  **buzón de lectura y escritura** solo si el complemento de Outlook necesita llevar a cabo una o varias de las siguientes acciones con el método [mailbox.makeEWSRequestAsync](../../reference/outlook/Office.context.mailbox.md):
     
-      - Read or write to properties of items in the mailbox.
+      - Lea o escriba en las propiedades de los elementos del buzón de correo.
     
   - Cree, envíe, lea o escriba en elementos del buzón de correo.
     
   - Cree, lea o escriba en carpetas del buzón de correo.
     
 
-### Ajuste del uso de recursos
+### <a name="resource-usage-tuning"></a>Ajuste del uso de recursos
 
 Los desarrolladores deben estar al tanto de los límites del uso de recursos para la activación e incorporar el ajuste del rendimiento en su flujo de trabajo de desarrollo a fin de reducir las posibilidades de un complemento con bajo rendimiento que deniega el servicio del host. Para ello, deben seguir las instrucciones relativas al diseño de reglas de activación descritas en [Límites de activación y API de JavaScript para complementos de Outlook](../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md). Si está previsto que un complemento de Outlook se ejecute en un cliente enriquecido de Outlook, será necesario que los desarrolladores comprueben que el complemento funciona dentro de los límites de uso de recursos.
 
 
-### Otras medidas para promover la seguridad del usuario
+### <a name="other-measures-to-promote-user-security"></a>Otras medidas para promover la seguridad del usuario
 
 Los desarrolladores deben conocer y planear lo siguiente:
 
@@ -157,7 +157,7 @@ Los desarrolladores deben conocer y planear lo siguiente:
     
 - Para enviar un complemento de Outlook a la Tienda Office, es necesario que los desarrolladores hagan lo siguiente:
     
-      - Produce an Extended Validation (EV) SSL certificate as a proof of identity.
+      - Presentar un certificado SSL de validación extendida (EV) como prueba de identidad.
     
   - Hospedar el complemento que van a enviar en un servidor web que admita SSL.
     
@@ -166,7 +166,7 @@ Los desarrolladores deben conocer y planear lo siguiente:
   - Firmar un acuerdo contractual al enviar el complemento.
     
 
-## Administradores: privilegios
+## <a name="administrators:-privileges"></a>Administradores: privilegios
 
 
 El modelo de seguridad proporciona a los administradores los siguientes derechos y responsabilidades:
@@ -180,7 +180,7 @@ El modelo de seguridad proporciona a los administradores los siguientes derechos
     
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

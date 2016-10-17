@@ -1,5 +1,5 @@
 
-# La API de JavaScript para Office es compatible con complementos de contenido y panel de tareas en Office 2013
+# <a name="office-javascript-api-support-for-content-and-task-pane-add-ins-in-office-2013"></a>La API de JavaScript para Office es compatible con complementos de contenido y panel de tareas en Office 2013
 
 
 Puede usar la [API de JavaScript para Office](../../reference/javascript-api-for-office.md) para crear complementos de panel de tareas o de contenido para aplicaciones host de Office 2013. Los objetos y los métodos compatibles con los complementos de contenido y panel de tareas se dividen en las categorías siguientes:
@@ -27,7 +27,7 @@ Puede usar la [API de JavaScript para Office](../../reference/javascript-api-for
 Para consultar un resumen de la API de JavaScript para Office en diferentes aplicaciones host de Office, vea [Información sobre la API de JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md).
 
 
-## Lectura y escritura en una selección activa
+## <a name="reading-and-writing-to-an-active-selection"></a>Lectura y escritura en una selección activa
 
 Puede leer o escribir en la selección actual de un usuario en un documento, una hoja de cálculo o una presentación. En función de la aplicación host del complemento, puede especificar el tipo de estructura de datos donde quiere leer o escribir como un parámetro de los métodos [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) y [setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) del objeto [Document](../../reference/shared/document.md). Por ejemplo, puede especificar cualquier tipo de datos para Word (texto, HTML, datos tabulares u Office Open XML), texto y datos tabulares para Excel y texto para PowerPoint y Project. También puede crear controladores de eventos para detectar cambios en la selección del usuario. El ejemplo siguiente obtiene datos de una selección como texto con el método **getSelectedDataAsync**.
 
@@ -53,7 +53,7 @@ function write(message){
 Para obtener más información y ejemplos, vea [Leer y escribir datos en la selección activa de un documento u hoja de cálculo](../../docs/develop/read-and-write-data-to-the-active-selection-in-a-document-or-spreadsheet.md).
 
 
-## Enlaces a una región de un documento u hoja de cálculo
+## <a name="binding-to-a-region-in-a-document-or-spreadsheet"></a>Enlaces a una región de un documento u hoja de cálculo
 
 Puede usar los métodos **getSelectedDataAsync** y **setSelectedDataAsync** para leer o escribir en la selección *actual* del usuario en un documento, hoja de cálculo o presentación. Pero, si quiere tener acceso a la misma región en un documento en varias sesiones de ejecución del complemento sin que sea necesario que el usuario realice una selección, primero tiene que enlazar esa región. También se puede suscribir a eventos de cambios de datos y selección para esa región enlazada.
 
@@ -83,7 +83,7 @@ function write(message){
 Para obtener más información y ejemplos, vea [Enlazar a regiones en un documento u hoja de cálculo](../../docs/develop/bind-to-regions-in-a-document-or-spreadsheet.md).
 
 
-## Obtención de documentos completos
+## <a name="getting-entire-documents"></a>Obtención de documentos completos
 
 Si el complemento de panel de tareas se ejecuta en PowerPoint o Word, puede usar los métodos [Document.getFileAsync](../../reference/shared/document.getfileasync.md), [File.getSliceAsync](../../reference/shared/file.getsliceasync.md) y [File.closeAsync](../../reference/shared/file.closeasync.md) para obtener una presentación o documento completo.
 
@@ -92,7 +92,7 @@ Al realizar una llamada a **Document.getFileAsync**, se obtiene una copia del do
 Para más información, vea cómo [obtener el documento completo de un complemento para PowerPoint o Word](../../docs/develop/get-the-whole-document-from-an-add-in-for-powerpoint-or-word.md). 
 
 
-## Leer y escribir en fragmentos XML personalizados de un documento de Word
+## <a name="reading-and-writing-custom-xml-parts-of-a-word-document"></a>Leer y escribir en fragmentos XML personalizados de un documento de Word
 
 Si usa el formato de archivo Office Open XML y controles de contenido, puede agregar fragmentos XML personalizados a un documento de Word y enlazar elementos de los fragmentos XML a controles de contenido en el documento. Al abrir el documento, Word lee y rellena automáticamente los controles de contenido enlazados con datos de los fragmentos XML personalizados. Los usuarios también pueden escribir datos en los controles de contenido y, cuando el usuario guarde el documento, los datos en los controles se guardarán en los fragmentos XML enlazados. Los complementos de panel de tareas para Word pueden usar la propiedad [Document.customXmlParts](../../reference/shared/document.customxmlparts.md) y los objetos [CustomXmlParts](../../reference/shared/customxmlparts.customxmlparts.md), [CustomXmlPart](../../reference/shared/customxmlpart.customxmlpart.md) y [CustomXmlNode](../../reference/shared/customxmlnode.customxmlnode.md) para leer y escribir datos de forma dinámica en el documento.
 
@@ -105,10 +105,10 @@ Para agregar un nuevo fragmento XML personalizado a un documento, use la propied
 Para más información sobre cómo trabajar con fragmentos XML personalizados desde un complemento de panel de tareas, vea [Crear mejores complementos para Word con Office Open XML](../../docs/word/create-better-add-ins-for-word-with-office-open-xml.md).
 
 
-## Conservación de la configuración de complementos
+## <a name="persisting-add-in-settings"></a>Conservación de la configuración de complementos
 
 
-A menudo es preciso guardar datos personalizados para el complemento, como las preferencias del usuario o el estado del complemento, y tener acceso a esos datos la siguiente vez que se abre el complemento. Puede usar técnicas comunes de programación web para guardar estos datos, como cookies del navegador o almacenamiento web HTML 5. O bien, si el complemento se ejecuta en Excel, PowerPoint o Word, puede usar los métodos del objeto [Settings](../../reference/shared/settings.md). Los datos creados con el objeto **Settings** se almacenan en la hoja de cálculo, presentación o documento en el que se ha insertado y con el que se ha guardado el complemento. Estos datos están disponibles solo para el complemento que los ha creado.
+A menudo es preciso guardar datos personalizados para el complemento, como las preferencias del usuario o el estado del complemento, y tener acceso a esos datos la siguiente vez que se abre el complemento. Puede usar técnicas comunes de programación web para guardar estos datos, como cookies del navegador o almacenamiento web HTML 5. O bien, si el complemento se ejecuta en Excel, PowerPoint o Word, puede usar los métodos del objeto [Settings](../../reference/shared/settings.md). Los datos creados con el objeto **Settings** se almacenan en la hoja de cálculo, presentación o documento en el que se insertó y con el que se guardó el complemento. Estos datos están disponibles solo para el complemento que los creó.
 
 Para evitar ciclos de ida y vuelta al servidor donde se almacena el documento, los datos creados con el objeto **Settings** se administran en la memoria en el tiempo de ejecución. Los datos de configuración guardados anteriormente se cargan en la memoria cuando se inicializa el complemento y los cambios en esos datos solo se vuelven a guardar en el documento cuando realiza una llamada al método [Settings.saveAsync](../../reference/shared/settings.saveasync.md). Internamente, los datos se almacenan en un objeto JSON en serie como pares de nombres/valores. Use los métodos [get](../../reference/shared/settings.get.md), [set](../../reference/shared/settings.set.md) y [remove](../../reference/shared/settings.removehandlerasync.md) del objeto **Settings** para leer, escribir y eliminar elementos de la copia almacenada en la memoria de los datos. En la siguiente línea de código se muestra cómo crear una configuración llamada `themeColor` y establecer su valor en "green".
 
@@ -124,14 +124,14 @@ Como los datos de configuración creados o eliminados con los métodos **set** y
 Para más información sobre cómo trabajar con datos personalizados con los métodos del objeto **Settings**, vea [Guardar el estado y la configuración de un complemento](../../docs/develop/persisting-add-in-state-and-settings.md).
 
 
-## Lectura de propiedades de un documento de proyecto
+## <a name="reading-properties-of-a-project-document"></a>Lectura de propiedades de un documento de proyecto
 
 Si el complemento de panel de tareas se ejecuta en Project, podrá leer los datos de algunos campos de proyecto, recursos y campos de tarea del proyecto activo. Para ello, use los métodos y eventos del objeto [ProjectDocument](../../reference/shared/projectdocument.projectdocument.md), que extiende el objeto **Document** para proporcionar una función adicional específica de Project.
 
 Vea ejemplos de lectura de datos de Project en [Crear su primer complemento de panel de tareas para Project 2013 con un editor de texto](../../docs/project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md).
 
 
-## Modelo de permisos y administración
+## <a name="permissions-model-and-governance"></a>Modelo de permisos y administración
 
 El complemento usa el elemento **Permissions** del manifiesto para solicitar permiso para tener acceso al nivel de la función que necesita de la API de JavaScript para Office. Por ejemplo, si el manifiesto necesita acceso de lectura/escritura al documento, en el manifiesto será necesario especificar `ReadWriteDocument` como el valor de texto en el elemento **Permissions**. Como los permisos existen para proteger la privacidad y la seguridad de los usuarios, se recomienda solicitar el nivel mínimo de permisos necesario para sus características. En el ejemplo siguiente se muestra cómo solicitar el permiso **ReadDocument** en el manifiesto del panel de tareas.
 
@@ -151,12 +151,13 @@ El complemento usa el elemento **Permissions** del manifiesto para solicitar per
 Para más información, vea [Solicitar permisos para usar la API en complementos de contenido y panel de tareas](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 - [API de JavaScript para Office](../../reference/javascript-api-for-office.md)
     
-- [Referencia de esquema para manifiestos de complementos de Office](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
+- 
+  [Referencia de esquema para manifiestos de complementos de Office](http://msdn.microsoft.com/en-us/library/7e0cadc3-f613-8eb9-57ef-9032cbb97f92.aspx)
     
 - [Solucionar errores de usuario con los complementos de Office](../../docs/testing/testing-and-troubleshooting.md)
     

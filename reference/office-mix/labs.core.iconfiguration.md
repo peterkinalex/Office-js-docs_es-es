@@ -1,7 +1,7 @@
 
-# Labs.Core.IConfiguration
+# <a name="labs.core.iconfiguration"></a>Labs.Core.IConfiguration
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Estructura de datos de una configuración de laboratorio.
 
@@ -10,7 +10,7 @@ interface IConfiguration extends Core.IUserData
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||

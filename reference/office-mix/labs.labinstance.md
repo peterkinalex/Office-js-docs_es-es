@@ -1,7 +1,7 @@
 
-# Labs.LabInstance
+# <a name="labs.labinstance"></a>Labs.LabInstance
 
- _**Hace referencia a:** aplicaciones para Office | Complementos de Office | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Una instancia de un laboratorio que está configurado para el usuario actual. Use este objeto para grabar y recuperar datos de laboratorio para el usuario.
 
@@ -10,7 +10,7 @@ class LabInstance
 ```
 
 
-## Variables
+## <a name="variables"></a>Variables
 
 
 |||
@@ -18,12 +18,12 @@ class LabInstance
 | `public var data: any`|Variable de contenedor para almacenar los datos de usuario.|
 | `public var components: Labs.ComponentInstanceBase[]`|Los componentes que crean la instancia de laboratorio.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 
 
 
-### getState
+### <a name="getstate"></a>getState
 
  `public function getState(callback: Labs.Core.ILabCallback<any>): void`
 
@@ -36,7 +36,7 @@ Recupera el estado actual del laboratorio para un usuario determinado.
 |:-----|:-----|
 | _callback_|La función de devolución de llamada que se desencadena cuando se recupera el estado del laboratorio.|
 
-### setState
+### <a name="setstate"></a>setState
 
  `public function setState(state: any, callback: Labs.Core.ILabCallback<void>): void`
 
@@ -50,7 +50,7 @@ Establece el estado del laboratorio para un usuario determinado.
 | _state_|Estado que se debe establecer.|
 | _callback_|Función de devolución de llamada que se desencadena una vez que se establece el estado.|
 
-### Done
+### <a name="done"></a>Done
 
  `public function done(callback: Labs.Core.ILabCallback<void>): void`
 

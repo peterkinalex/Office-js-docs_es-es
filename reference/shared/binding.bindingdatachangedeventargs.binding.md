@@ -1,5 +1,5 @@
 
-# Propiedad BindingDataChangedEventArgs.binding
+# <a name="bindingdatachangedeventargs.binding-property"></a>Propiedad BindingDataChangedEventArgs.binding
 Obtiene un objeto **Binding** que representa el enlace que generó el evento [DataChanged](../../reference/shared/binding.bindingdatachangedevent.md).
 
 |||
@@ -12,12 +12,12 @@ var myBinding = eventArgsObj.binding;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Un objeto [Binding](../../reference/shared/binding.md).
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta propiedad es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta propiedad.
@@ -37,11 +37,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |||
 |:-----|:-----|
 |**Nivel de permisos mínimo**|[Restringido](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 |**Versión**|**Cambios**|

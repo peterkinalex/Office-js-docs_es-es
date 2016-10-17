@@ -1,4 +1,4 @@
-#Diseño para contenedores de panel de tareas
+#<a name="layout-for-task-pane-containers"></a>Diseño para contenedores de panel de tareas
 
 
 Cree una apariencia coherente para los complementos del panel de tareas con el diseño recomendado. El diseño recomendado para un panel de tareas tiene los elementos siguientes: 

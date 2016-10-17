@@ -1,8 +1,8 @@
 
-# Clases de Labs.Components
+# <a name="labs.components-classes"></a>Clases de Labs.Components
 Clase del módulo **LabsJS.Labs.Components**.
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 El módulo **LabsJS.Labs.Components** contiene las clases siguientes.
 

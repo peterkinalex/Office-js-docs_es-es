@@ -1,4 +1,4 @@
-#Diseños para complementos de correo
+#<a name="layouts-for-mail-add-ins"></a>Diseños para complementos de correo
 
 Puede usar cualquiera de los siguientes diseños para complementos de correo:
 
@@ -8,11 +8,11 @@ Puede usar cualquiera de los siguientes diseños para complementos de correo:
 
 Vea las directrices sobre el texto de la interfaz de usuario en los complementos en [Tono de Office](https://msdn.microsoft.com/en-us/library/office/mt484351.aspx).
 
-##Panel de tareas
+##<a name="task-pane"></a>Panel de tareas
  Para obtener recomendaciones sobre los diseños del panel de tareas de complementos de correo, vea [Diseño para complementos de panel de tareas](layout-for-task-pane-add-ins.md).
 
 
-##Panel personalizado
+##<a name="custom-pane"></a>Panel personalizado
 
 La imagen siguiente muestra el diseño recomendado para un panel personalizado en un complemento de correo.
 
@@ -22,7 +22,7 @@ La imagen siguiente muestra el diseño recomendado para un [complemento de corre
 
 ![Diseño de un complemento de correo contextual](../../../images/mail-add-in-contextual-card.png)
 
-##Funciones con notificaciones de la barra de información
+##<a name="functions-with-infobar-notifications"></a>Funciones con notificaciones de la barra de información
 
 Además de usar un panel de tareas o un panel personalizado para mostrar la interfaz de usuario HTML personalizada en el complemento de correo, puede ejecutar las funciones desde los comandos. Cuando necesite mostrar el texto de interfaz de usuario como resultado de una función, puede usar las notificaciones de la barra de información. Por ejemplo, puede que necesite usar una notificación de la barra de información para mostrar mensajes de error o de operación correcta. 
 

@@ -1,12 +1,12 @@
 
-# Referencia a API de JavaScript LabsJS
+# <a name="labsjs-javascript-api-reference"></a>Referencia a API de JavaScript LabsJS
 Obtenga información general sobre el modelo de objetos de JavaScript LabsJS.
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
-La referencia de LabsJS documenta el archivo [TypeScript](http://www.typescriptlang.org/),  **labs-1.0.42.d.ts**, que ordena el modelo de objetos de LabsJS en módulos.
+La referencia de LabsJS documenta el archivo [TypeScript](http://www.typescriptlang.org/), **labs-1.0.42.d.ts**, que ordena el modelo de objetos de LabsJS en módulos.
 
-## Modelo de objetos de LabsJS
+## <a name="labsjs-object-model"></a>Modelo de objetos de LabsJS
 
 El modelo de objetos de LabsJS se organiza en cinco módulos:
 
@@ -37,7 +37,7 @@ Cada módulo contiene un conjunto de miembros que consta de uno o varios de los 
 
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

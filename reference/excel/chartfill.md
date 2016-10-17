@@ -1,40 +1,40 @@
-# Objeto ChartFill (API de JavaScript para Excel)
+# <a name="chartfill-object-(javascript-api-for-excel)"></a>Objeto ChartFill (API de JavaScript para Excel)
 
 Representa el formato de relleno para un elemento de gráfico.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 Ninguno
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 Ninguno
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[clear()](#clear)|void|Borra el color de relleno de un elemento de gráfico.|
 |[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Establece el formato de relleno de un elemento de gráfico en un color uniforme.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### clear()
+### <a name="clear()"></a>clear()
 Borra el color de relleno de un elemento de gráfico.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 chartFillObject.clear();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 Borrar el formato de línea de las líneas de cuadrícula principales del eje de valores del gráfico denominado "Chart1".
 
@@ -53,23 +53,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### setSolidColor(color: string)
+### <a name="setsolidcolor(color:-string)"></a>setSolidColor(color: string)
 Establece el formato de relleno de un elemento de gráfico en un color uniforme.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 chartFillObject.setSolidColor(color);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |color|string|Código de color HTML que representa el color de la línea de borde con el formato #RRGGBB (por ejemplo, "FFA500") o como un color HTML con nombre (por ejemplo, "naranja").|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 Establecer el color de fondo de Chart1 en rojo.
 

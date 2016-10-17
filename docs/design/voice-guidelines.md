@@ -1,4 +1,4 @@
-# Directrices de voz para complementos de Office
+# <a name="voice-guidelines-for-office-add-ins"></a>Directrices de voz para complementos de Office
 
 Al diseñar complementos de Office, debe tener en cuenta el tono que usa en el texto y los elementos de la interfaz de usuario. Procure reflejar el tono de la interfaz de usuario de Office, que es familiar, atractiva y accesible para los usuarios. 
 

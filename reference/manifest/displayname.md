@@ -1,11 +1,11 @@
 
-# Elemento DisplayName
+# <a name="displayname-element"></a>Elemento DisplayName
 Especifica el nombre de su complemento de Office como una cadena de hasta 125 caracteres.
 
  **Tipo de complemento:** Contenido, panel de tareas, correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,12 +13,12 @@ Especifica el nombre de su complemento de Office como una cadena de hasta 125 ca
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## Puede contener:
+## <a name="can-contain:"></a>Puede contener:
 
 [Override](../../reference/manifest/override.md)
 

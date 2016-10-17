@@ -1,12 +1,11 @@
 
-# Método ProjectDocument.setTaskFieldAsync (API de JavaScript para Office v1.1)
-Establece de forma asincrónica el valor del campo especificado para la tarea determinada.
- **Importante:** Esta API solo funciona en Project 2016 para el escritorio de Windows.
+# <a name="projectdocument.settaskfieldasync-method-(javascript-api-for-office-v1.1)"></a>Método ProjectDocument.setTaskFieldAsync (API de JavaScript para Office v1.1)
+Establece de forma asincrónica el valor del campo especificado para la tarea determinada.  **Importante:** Esta API solo funciona en Project 2016 para escritorio de Windows.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
 |**Agregado en**|1.1|
 
 ```js
@@ -14,7 +13,7 @@ Office.context.document.setTaskFieldAsync(taskId, fieldId, fieldValue[, options]
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 _taskId_<br/>
@@ -33,7 +32,7 @@ _callback_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Una función que se invoca cuando se devuelve la llamada al método, cuyo único parámetro es del tipo [AsyncResult](../../reference/shared/asyncresult.md). Opcional.
     
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el parámetro de la función de devolución de llamada.
 
@@ -45,15 +44,15 @@ En el caso del método **setTaskFieldAsync**, el objeto [AsyncResult](../../refe
 |:-----|:-----|
 |[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Datos pasados en el parámetro opcional _asyncContext_, si se usó el parámetro.|
 |[error](../../reference/shared/asyncresult.error.md)|Información sobre el error si la propiedad **status** es igual a **failed**.|
-|[estado](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
+|[status](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
 |[value](../../reference/shared/asyncresult.value.md)|Este método no devuelve ningún valor.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Primero llame al método [getSelectedTaskAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) o [getTaskByIndexAsync](../../reference/shared/projectdocument.settaskfieldasync.md) para obtener el GUID de la tarea y luego pase el GUID como el argumento _taskId_ a **setTaskFieldAsync**. Solo se puede actualizar un único campo para una única tarea en cada llamada asincrónica.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el siguiente ejemplo de código se llama a [getSelectedTaskAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) para obtener el GUID de la tarea seleccionada en ese momento en una vista de tareas. Luego se establecen dos valores de campo de tareas al llamar a **setTaskFieldAsync** recursivamente.
 
@@ -142,7 +141,7 @@ En el ejemplo se asume que el complemento tiene una referencia a la biblioteca d
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -156,13 +155,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **||
+|**Disponible en los conjuntos de requisitos**||
 |**Nivel de permisos mínimo**|[WriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 
@@ -170,11 +169,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|
 |1.1|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [Método getSelectedTaskAsync](../../reference/shared/projectdocument.getselectedresourceasync.md)

@@ -1,11 +1,11 @@
 
-# Elemento AllowSnapshot
+# <a name="allowsnapshot-element"></a>Elemento AllowSnapshot
 Especifica si una imagen de instantánea de su complemento de contenido debe guardarse con el documento host.
 
  **Tipo de complemento:** Contenido
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,12 +13,12 @@ Especifica si una imagen de instantánea de su complemento de contenido debe gua
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [OfficeApp](../../reference/manifest/officeapp.md)
 
 
-## Observaciones
+## <a name="remarks"></a>Comentarios
 
 
  **Nota de seguridad:**   **AllowSnapshot** es **true** de forma predeterminada. Esto hace que una imagen del complemento sea visible para los usuarios que abren el documento en una versión de la aplicación host que no admite complementos de Office, o proporciona una imagen estática del complemento si la aplicación host no puede conectarse al servidor que aloja el complemento. Sin embargo, esto también significa que se puede tener acceso a información confidencial que se muestra en el complemento directamente desde el documento que lo hospeda.

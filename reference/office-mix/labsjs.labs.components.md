@@ -1,17 +1,17 @@
 
-# LabsJS.Labs.Components
+# <a name="labsjs.labs.components"></a>LabsJS.Labs.Components
 Proporciona información general detallada sobre las API de JavaScript de Labs.JS Labs.Components.
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Las API del módulo Labs.Components representan los cuatro componentes predeterminados que actualmente están disponibles para el desarrollo de laboratorios: Actividad, Elección, Entrada y Dinámico.
 
-## Módulo Labs.Components
+## <a name="labs.components-module"></a>Módulo Labs.Components
 
 Estos son los tipos de Labs.Components:
 
 
-### Clases
+### <a name="classes"></a>Clases
 
 
 |||
@@ -31,18 +31,18 @@ Estos son los tipos de Labs.Components:
 |[Labs.Components.InputComponentResult](../../reference/office-mix/labs.components.inputcomponentresult.md)|El resultado de un envío de un componente de entrada.|
 |[Labs.Components.InputComponentSubmission](../../reference/office-mix/labs.components.inputcomponentsubmission.md)|Representa un envío a un componente de entrada.|
 
-### Interfaces
+### <a name="interfaces"></a>Interfaces
 
 
 |||
 |:-----|:-----|
-|[Labs.Components.IActivityComponent](../../reference/office-mix/labs.components.iactivitycomponent.md)|Representa un componente de actividad. Amplía [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md).|
-|[Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md)|Representa una instancia determinada de un componente de actividad. Amplía [Labs.Core.IComponentInstance](../../reference/office-mix/labs.core.icomponentinstance.md).|
+|[Labs.Components.IActivityComponent](../../reference/office-mix/labs.components.iactivitycomponent.md)|Representa un componente de la actividad. Extiende [Labs.Core.IComponent](../../reference/office-mix/labs.core.icomponent.md).|
+|[Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md)|Representa una instancia específica de un componente de actividad. Extiende [Labs.Core.IComponentInstance](../../reference/office-mix/labs.core.icomponentinstance.md).|
 |[Labs.Components.IChoice](../../reference/office-mix/labs.components.ichoice.md)|Una elección disponible para un problema determinado.|
 |[Labs.Components.IChoiceComponent](../../reference/office-mix/labs.components.ichoicecomponent.md)|Permite las interacciones con un componente de elección.|
 |[Labs.Components.IChoiceComponentInstance](../../reference/office-mix/labs.components.ichoicecomponentinstance.md)|Una instancia de un componente de elección.|
 |[Labs.Components.IDynamicComponent](../../reference/office-mix/labs.components.idynamiccomponent.md)|Permite la interacción con un componente dinámico.|
 |[Labs.Components.IDynamicComponentInstance](../../reference/office-mix/labs.components.idynamiccomponentinstance.md)|Una instancia de un componente dinámico.|
 |[Labs.Components.IHint](../../reference/office-mix/labs.components.ihint.md)|Sugerencia para un problema de laboratorio.|
-|[Labs.Components.IInputComponent](../../reference/office-mix/labs.components.iinputcomponent.md)|Permite interactuar con un componente de entrada.|
+|[Labs.Components.IInputComponent](../../reference/office-mix/labs.components.iinputcomponent.md)|Permite la interacción con un componente de entrada.|
 |[Labs.Components.IInputComponentInstance](../../reference/office-mix/labs.components.iinputcomponentinstance.md)|Una instancia de un componente de entrada.|

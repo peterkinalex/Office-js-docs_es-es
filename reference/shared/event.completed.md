@@ -1,6 +1,6 @@
 
 
-# event.completed
+# <a name="event.completed"></a>event.completed
 La devolución de llamada que invoca el complemento para permitir que Outlook sepa que se ha realizado la operación.
 
 ****
@@ -19,19 +19,19 @@ event.completed();
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 Ninguno
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente tabla indica que esta propiedad es compatible con la aplicación host de Outlook correspondiente. Una celda vacía indica que la aplicación host de Outlook no es compatible con esta propiedad.
 
 Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
- **Importante:** los comandos de complementos y las API asociadas de momento solo funcionan en Outlook en [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) para el escritorio de Windows.
+ **Importante:** Los comandos de complementos y las API asociadas de momento solo funcionan en Outlook en [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) para el escritorio de Windows.
 
 
 **Hosts compatibles, por plataforma**
@@ -43,13 +43,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|Buzón|
+|**Disponible en los conjuntos de requisitos**|Buzón|
 |**Nivel de permisos mínimo**|[ReadWriteItem](../../docs/outlook/understanding-outlook-add-in-permissions.md)|
 |**Tipos de complementos**|Outlook|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

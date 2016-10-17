@@ -1,5 +1,5 @@
 
-# Objeto Error
+# <a name="error-object"></a>Objeto Error
 Proporciona información específica sobre un error que se produjo durante una operación de datos asincrónica.
 
 |||
@@ -12,7 +12,7 @@ asyncResult.error
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -20,16 +20,16 @@ asyncResult.error
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|[código](../../reference/shared/error.code.md)|Obtiene el código numérico del error.|
-|[nombre](../../reference/shared/error.name.md)|Obtiene el nombre del error.|
-|[mensaje](../../reference/shared/error.message.md)|Obtiene una descripción detallada del error.|
+|[code](../../reference/shared/error.code.md)|Obtiene el código numérico del error.|
+|[name](../../reference/shared/error.name.md)|Obtiene el nombre del error.|
+|[message](../../reference/shared/error.message.md)|Obtiene una descripción detallada del error.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Puede obtener acceso al objeto **Error** desde el objeto [AsyncResult](../../reference/shared/asyncresult.md). Este último objeto se devuelve en la función que se ha remitido como argumento _callback_ de una operación de datos asincrónicos (por ejemplo, el método [setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) del objeto **Document**).
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente se usa el método **setSelectedDataAsync** para establecer el texto seleccionado en "Hello World!" y, si se produce un error, mostrar los valores de las propiedades **name** y **message** del objeto **Error**.
 
@@ -54,7 +54,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -77,7 +77,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

@@ -1,11 +1,11 @@
 
-# Propiedad TableData.rows
+# <a name="tabledata.rows-property"></a>Propiedad TableData.rows
 Obtiene o establece las filas de la tabla.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Excel y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TableBindings|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TableBindings|
 |**Agregado en**|1.1|
 
 ```
@@ -13,12 +13,12 @@ var myRows = tableBindingObj.rows;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Devuelve una matriz de matrices que contiene los datos de la tabla. Si no hay ninguna fila, devuelve una **array**`[]` vacía.
 
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Para especificar las filas, debe indicar una matriz de matrices que corresponda a la estructura de la tabla. Por ejemplo, para especificar dos filas de valores **string** en una tabla de dos columnas, establezca la propiedad **rows** en ` [['a', 'b'], ['c', 'd']]`.
 
@@ -30,7 +30,7 @@ Si especifica **null** para la propiedad **rows** (o la deja vacía al construir
 - Si sobrescribe o actualiza una tabla existente, las filas existentes no se modificarán.
     
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente se crea una tabla de una sola columna con un encabezado y tres filas.
 
@@ -45,7 +45,7 @@ function createTableData() {
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -61,13 +61,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|TableBindings|
+|**Disponible en los conjuntos de requisitos**|TableBindings|
 |**Nivel de permisos mínimo**|[Restringido](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

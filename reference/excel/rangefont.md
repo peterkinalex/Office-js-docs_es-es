@@ -1,8 +1,8 @@
-# Objeto RangeFont (API de JavaScript para Excel)
+# <a name="rangefont-object-(javascript-api-for-excel)"></a>Objeto RangeFont (API de JavaScript para Excel)
 
 Este objeto representa los atributos de fuente (nombre de fuente, tamaño de fuente, color, etc.) de un objeto.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
@@ -11,39 +11,39 @@ Este objeto representa los atributos de fuente (nombre de fuente, tamaño de fue
 |italic|bool|Representa el valor de cursiva de la fuente.|
 |name|string|El nombre de fuente (por ejemplo, "Calibri").|
 |size|Double|Tamaño de fuente|
-|underline|string|Tipo de subrayado aplicado a la fuente. Los valores posibles son: None, Single, Double, SingleAccountant, DoubleAccountant.|
+|underline|cadena|Tipo de subrayado aplicado a la fuente. Los valores posibles son: None, Single, Double, SingleAccountant, DoubleAccountant.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 Ninguno
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js
 Excel.run(function (ctx) { 

@@ -1,52 +1,52 @@
  
 
-# MailboxEnums
+# <a name="mailboxenums"></a>MailboxEnums
 
 ## [Office](Office.md). MailboxEnums
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-### Miembros
+### <a name="members"></a>Miembros
 
-#### AttachmentType :String
+#### <a name="attachmenttype-:string"></a>AttachmentType :String
 
 Especifica el tipo de datos adjuntos.
 
 AttachmentType
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   String
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Valor | Descripción|
 |---|---|---|---|
 |`File`| String|`file`|Los datos adjuntos son un archivo.|
 |`Item`| String|`item`|Los datos adjuntos son un elemento de Exchange.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |Modo de Outlook aplicable| Redacción o lectura|
-#### EntityType :String
+#### <a name="entitytype-:string"></a>EntityType :String
 
 Especifica un tipo de entidad.
 
 EntityType
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   String
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Valor | Descripción|
 |---|---|---|---|
@@ -58,23 +58,23 @@ EntityType
 |`TaskSuggestion`| String|`taskSuggestion`|Especifica que la entidad es una sugerencia de tarea.|
 |`URL`| String|`url`|Especifica que la entidad es una dirección URL de Internet.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |Modo de Outlook aplicable| Redacción o lectura|
-#### ItemNotificationMessageType :String
+#### <a name="itemnotificationmessagetype-:string"></a>ItemNotificationMessageType :String
 
 Especifica el tipo de mensaje de notificación de una cita o un mensaje.
 
 ItemNotificationMessageType
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   String
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Valor | Descripción|
 |---|---|---|---|
@@ -82,46 +82,46 @@ ItemNotificationMessageType
 |`InformationalMessage`| String|`informationalMessage`|notificationMessage es un mensaje informativo.|
 |`ErrorMessage`| String|`errorMessage`|notificationMessage es un mensaje de error.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
 |[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.3|
 |Modo de Outlook aplicable| Redacción o lectura|
-#### ItemType :String
+#### <a name="itemtype-:string"></a>ItemType :String
 
 Especifica el tipo de un elemento.
 
 ItemType
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   String
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Valor | Descripción|
 |---|---|---|---|
 |`Message`| String|`message`|Un mensaje de correo electrónico o una convocatoria, respuesta o cancelación de una reunión.|
 |`Appointment`| String|`appointment`|Un elemento de cita.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |Modo de Outlook aplicable| Redacción o lectura|
-#### RecipientType :String
+#### <a name="recipienttype-:string"></a>RecipientType :String
 
 Especifica el tipo de destinatario de una cita.
 
 RecipientType
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   String
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Valor | Descripción|
 |---|---|---|---|
@@ -130,23 +130,23 @@ RecipientType
 |`User`| String|`user`|El destinatario es una dirección de correo electrónico SMTP que se encuentra en el servidor Exchange.|
 |`ExternalUser`| String|`externalUser`|El destinatario es una dirección de correo electrónico SMTP que no se encuentra en el servidor Exchange.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
 |[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.1|
 |Modo de Outlook aplicable| Redacción o lectura|
-#### ResponseType :String
+#### <a name="responsetype-:string"></a>ResponseType :String
 
 Especifica el tipo de respuesta para la invitación a una reunión.
 
 ResponseType
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   String
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Valor | Descripción|
 |---|---|---|---|
@@ -156,24 +156,24 @@ ResponseType
 |`Accepted`| String|`accepted`|El asistente ha aceptado la convocatoria de reunión.|
 |`Declined`| String|`declined`|El asistente ha rechazado la convocatoria de reunión.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-#### RestVersion :String
+#### <a name="restversion-:string"></a>RestVersion :String
 
 Especifica la versión de la API de REST que corresponde a un identificador de elemento con formato REST. 
 
 RestVersion
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   String
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Valor | Descripción|
 |---|---|---|---|
@@ -181,7 +181,7 @@ RestVersion
 |`v2_0`| String|`v2.0`|Versión 2.0.|
 |`Beta`| String|`beta`|Beta.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|

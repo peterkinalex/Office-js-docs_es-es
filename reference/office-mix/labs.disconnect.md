@@ -1,7 +1,7 @@
 
-# Labs.disconnect
+# <a name="labs.disconnect"></a>Labs.disconnect
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Desconecta el laboratorio del host y proporciona el estado de finalización del laboratorio.
 
@@ -10,7 +10,7 @@ function disconnect(): void
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Ninguno.
 

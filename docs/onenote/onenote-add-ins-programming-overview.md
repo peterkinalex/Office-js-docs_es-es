@@ -1,4 +1,4 @@
-# Introducción a la programación de API de JavaScript para OneNote
+# <a name="onenote-javascript-api-programming-overview"></a>Introducción a la programación de API de JavaScript para OneNote
 
 OneNote introduce una API de JavaScript para complementos de OneNote Online. Puede crear complementos de panel de tareas, complementos de contenido y comandos de complementos que interactúan con objetos de OneNote y se conectan a servicios web o a otros recursos basados en Web.
 
@@ -12,14 +12,14 @@ Los complementos están formados por dos componentes básicos:
 
 ![Un complemento de Office está formado por un manifiesto y una página web](../../images/onenote-add-in.png)
 
-### Uso de la API de JavaScript
+### <a name="using-the-javascript-api"></a>Uso de la API de JavaScript
 
 Los complementos usan el contexto de tiempo de ejecución de la aplicación host para tener acceso a la API de JavaScript. La API tiene dos capas: 
 
 - Una **API avanzada** para operaciones específicas de OneNote a la que se tiene acceso a través del objeto **Application**.
 - Una **API común** que se comparte con todas las aplicaciones de Office y a la que se tiene acceso a través del objeto **Document**.
 
-#### Acceso a la API avanzada a través del objeto *Application*
+#### <a name="accessing-the-rich-api-through-the-*application*-object"></a>Acceso a la API avanzada a través del objeto *Application*
 
 Use el objeto **Application** para tener acceso a objetos de OneNote como **Notebook**, **Section** y **Page**. Con las API avanzadas, puede ejecutar operaciones por lotes en objetos de proxy. El flujo básico sería parecido a este: 
 
@@ -69,7 +69,7 @@ Por ejemplo:
 
 Consulte los objetos y operaciones de OneNote compatibles en la [referencia de la API](../../reference/onenote/onenote-add-ins-javascript-reference.md).
 
-### Acceso a la API común a través del objeto *Document*
+### <a name="accessing-the-common-api-through-the-*document*-object"></a>Acceso a la API común a través del objeto *Document*
 
 Use el objeto **Document** para tener acceso a la API común, como los métodos [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) y [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync). 
 
@@ -93,25 +93,29 @@ Los complementos de OneNote solo son compatibles con las siguientes API comunes:
 
 | API | Notas |
 |:------|:------|
-| [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | **Office.CoercionType.Text** y **Office.CoercionType.Matrix** solo |
-| [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | **Office.CoercionType.Text**, **Office.CoercionType.Image** y **Office.CoercionType.Html** solo | 
-| [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | Las opciones de configuración solo son compatibles con complementos de contenido | 
-| [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | Las opciones de configuración solo son compatibles con complementos de contenido | 
+| 
+  [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | **Office.CoercionType.Text** y **Office.CoercionType.Matrix** solo |
+| 
+  [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | **Office.CoercionType.Text**, **Office.CoercionType.Image** y **Office.CoercionType.Html** solo | 
+| 
+  [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | Las opciones de configuración solo son compatibles con complementos de contenido | 
+| 
+  [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | Las opciones de configuración solo son compatibles con complementos de contenido | 
 | [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
 
 En general, solo se usa la API común para realizar una acción que no es compatible con la API avanzada. Para más información sobre el uso de la API común, vea la [documentación](https://dev.office.com/docs/add-ins/overview/office-add-ins) y la [referencia](https://dev.office.com/reference/add-ins/javascript-api-for-office) de Complementos de Office.
 
 
 <a name="om-diagram"></a>
-## Diagrama del modelo de objetos de OneNote 
+## <a name="onenote-object-model-diagram"></a>Diagrama del modelo de objetos de OneNote 
 En el diagrama siguiente se representa lo que está disponible actualmente en la API de JavaScript de OneNote.
 
   ![Diagrama del modelo de objetos de OneNote](../../images/onenote-om.png)
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 - [Crear el primer complemento de OneNote](onenote-add-ins-getting-started.md)
-- [Referencia de la API de JavaScript de complementos de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+- [Referencia de la API de JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
 - [Rubric Grader sample (Ejemplo de Rubric Grader)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
 - [Office Add-ins platform overview (Información general sobre la plataforma de complementos para Office)](https://dev.office.com/docs/add-ins/overview/office-add-ins)

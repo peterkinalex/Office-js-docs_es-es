@@ -1,12 +1,12 @@
 
-# Propiedad Office.cast.item
+# <a name="office.cast.item-property"></a>Propiedad Office.cast.item
 Proporciona IntelliSense específico para mensajes y citas en modo de redacción o lectura.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Outlook|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Buzón|
-|**Modificado por última vez en**|1,0|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Buzón|
+|**Modificado por última vez en**|1.0|
 
 
 
@@ -47,12 +47,12 @@ Office.cast.item.toMessage(Office.context.mailbox.item);
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Conjunto de métodos que le permiten seleccionar el IntelliSense apropiado para su complemento de Outlook.
 
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Esta propiedad y sus métodos solo son compatibles con el uso de IntelliSense para desarrollar complementos de Outlook en Visual Studio. El resto de las herramientas de desarrollo no resultan afectadas.
 
@@ -61,7 +61,7 @@ Los métodos **Office.cast.item** se usan en tiempo de diseño en Visual Studio 
 En tiempo de ejecución, los métodos **Office.cast.item** no tendrán efecto alguno en su complemento de Outlook.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el ejemplo siguiente se usa el método **toMessageCompose** para convertir la propiedad **Office.context.mailbox.item** de forma que solo mostrará IntelliSense para el objeto **Message** en modo de redacción. Después de la conversión, la variable `message` solo mostrará IntelliSense para los métodos y propiedades que se pueden usar en el modo de redacción.
 
@@ -72,7 +72,7 @@ var message = Office.cast.item.toMessageCompose(Office.context.mailbox.item);
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -85,16 +85,16 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|Buzón|
+|**Disponible en los conjuntos de requisitos**|Buzón|
 |**Nivel de permisos mínimo**|[Restringido](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Outlook|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
-|1,0|Agregado|
+|1.0|Agregado|

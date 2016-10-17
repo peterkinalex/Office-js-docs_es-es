@@ -1,4 +1,4 @@
-# Plantillas de modelos de diseño de la experiencia del usuario para complementos de Office 
+# <a name="ux-design-pattern-templates-for-office-add-ins"></a>Plantillas de modelos de diseño de la experiencia del usuario para complementos de Office 
 
 El [proyecto de modelos de diseño de la experiencia del usuario para complementos de Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code "#proyecto-de-modelos-de-diseño-de-la-experiencia-del-usuario-para-complementos-de-Office") incluye archivos HTML, JavaScript y CSS que puede utilizar para crear la experiencia de usuario del complemento.   
 
@@ -6,10 +6,10 @@ Use el proyecto de modelos de diseño de la experiencia del usuario para:
 
 * Aplicar soluciones a escenarios de cliente comunes.
 * Aplicar los procedimientos recomendados de diseño.
-* Incorporar componentes y estilos de [Office UI Fabric](https://dev.office.com/fabric/getting-started/).
+* Incorporar componentes y estilos de [Office UI Fabric](https://dev.office.com/fabric#/get-started).
 * Crear complementos que se integran visualmente con la interfaz de usuario predeterminada de Office.  
 
-## Usar los modelos de diseño de la experiencia del usuario
+## <a name="using-the-ux-design-patterns"></a>Usar los modelos de diseño de la experiencia del usuario
 
 Puede usar las [especificaciones de diseñadores de la experiencia del usuario](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Source%20Files) como guía a la hora de crear su propio diseño de la experiencia del usuario o puede agregar el [código fuente](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates) directamente al proyecto.
 
@@ -29,8 +29,8 @@ Para agregar el código fuente:
     - Use el modelo de diseño de la experiencia del usuario como modelo para otras páginas.
     - Cree vínculos al modelo de diseño de la experiencia del usuario o desde este.
 
-## Tipos de modelos de diseño de la experiencia del usuario
-### Páginas genéricas
+## <a name="types-of-ux-design-patterns"></a>Tipos de modelos de diseño de la experiencia del usuario
+### <a name="generic-pages"></a>Páginas genéricas
 
 Las plantillas de página genérica se pueden aplicar a cualquier página del complemento y no tienen un propósito especial. Un ejemplo de página con propósito especial sería uno de los modelos de primera ejecución. En la lista siguiente se describen las páginas genéricas disponibles:
 
@@ -47,7 +47,7 @@ Las plantillas de página genérica se pueden aplicar a cualquier página del co
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/generic/brand-bar"><img src="../../images/brand.bar.PNG" alt="brand bar" style="width: 264px;"/></A></td></tr>
  </table>
  
-### Experiencia de primera ejecución
+### <a name="first-run-experience"></a>Experiencia de primera ejecución
 
 Una experiencia de primera ejecución es la experiencia que tiene un usuario al abrir el complemento por primera vez. Están disponibles las siguientes plantillas de patrón de diseño de primera ejecución: 
 
@@ -70,8 +70,8 @@ La [Tienda Office](https://msdn.microsoft.com/en-us/library/office/jj220033.aspx
     * [Especificación de prueba](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/FirstRun_TrialVersion.md)
     * [Código de prueba](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat)
 * **Característica de prueba**: informa a los usuarios de que la característica que intentan usar no está disponible en la versión de prueba del complemento. O bien, si el complemento es gratuito, pero incluye una característica que requiere una suscripción, considere la opción de usar este modelo. También puede usar este modelo para proporcionar una experiencia de versión anterior una vez que ha finalizado la versión de prueba.
-    * [Especificaciones de la característica de prueba](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/FirstRun_TrialFeature.md)
-    * [Código de característica de prueba](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature)
+    * [Especificación de la característica de prueba](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/FirstRun_TrialFeature.md)
+    * [Código de la característica de prueba](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature)
 
 > **Importante:** Si decide administrar su propia versión de prueba y no usar la Tienda Office para administrar la prueba, asegúrese de incluir la etiqueta **Puede requerirse una compra adicional** en las notas de prueba en el panel del vendedor.
 
@@ -93,13 +93,13 @@ Determine si es importante para su escenario mostrar una o varias veces la exper
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/trial-placemat-feature"><img src="../../images/trial.placemat.feature.PNG" alt="trial placemat feature" style="width: 264px;"/></A></td></tr>
  </table> 
 
-### Navegación
+### <a name="navigation"></a>Navegación
 
 Los usuarios necesitan desplazarse entre las distintas páginas de su complemento. Las siguientes plantillas de navegación muestran distintas opciones que puede usar para organizar los comandos y páginas del complemento.
 
 * **Botones Atrás y Página siguiente**: muestra un panel de tareas con los botones Atrás y Página siguiente. Use este modelo para hacer que los usuarios sigan una serie ordenada de pasos.
     * [Especificación de botones Atrás y Página siguiente](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Back_Button.md)
-    * [Código de botones Atrás y Página siguiente](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/back-button) 
+    * [Código de los botones Atrás y Página siguiente](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/back-button) 
 * **Navegación**: muestra un menú, conocido comúnmente como menú hamburguesa, con elementos de menú de página en un panel de tareas. 
     * [Especificación de navegación](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Navigation.md)
     * [Código de navegación](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/navigation/navigation) 
@@ -140,7 +140,7 @@ Los usuarios necesitan desplazarse entre las distintas páginas de su complement
 </tr>
  </table>
 
-### Notificaciones
+### <a name="notifications"></a>Notificaciones
 
 El complemento puede notificar eventos, como errores, o progreso a los usuarios de diversas formas. Están disponibles las siguientes plantillas de notificación: 
 
@@ -148,20 +148,20 @@ El complemento puede notificar eventos, como errores, o progreso a los usuarios 
     * [Especificación del cuadro de diálogo insertado](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Embedded_Dialog.md)
     * [Código del cuadro de diálogo insertado](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/embedded-dialog)
 * **Mensaje en línea**: indica un error, una operación correcta o información, y puede aparecer en una ubicación especificada del panel de tareas. Por ejemplo, si un usuario escribe en un cuadro de texto una dirección de correo electrónico con un formato incorrecto, se muestra un mensaje de error justo debajo del cuadro de texto. 
-    * [Especificación de mensaje en línea](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Notification_Inline_Message.md)
-    * [Código de mensaje en línea](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/inline-message)
+    * [Especificación del mensaje en línea](https://github.com/OfficeDev/Office-Add-in-Design-Patterns/blob/master/Patterns/Notification_Inline_Message.md)
+    * [Código del mensaje en línea](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/inline-message)
 * **Mensaje emergente**: proporciona información y, de manera opcional, una sencilla llamada a la acción en un mensaje emergente que se puede contraer a una única línea, expandir a varias líneas o descartar. Use los mensajes emergentes para informar sobre una actualización de servicio o para mostrar una sugerencia útil cuando se inicie el complemento. 
     * [Especificación del mensaje emergente](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_MessageBanner.md)
-    * [Código de mensaje emergente](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/message-banner)
+    * [Código del mensaje emergente](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/message-banner)
 * **Barra de progreso**: indica el progreso de un proceso sincrónico de ejecución prolongada, como una tarea de configuración que es necesario completar antes de que el usuario pueda realizar otra acción. Es una página intersticial independiente que también refuerza la marca del complemento. Use una barra de progreso cuando el proceso pueda enviar medidas periódicas del progreso para informar al complemento.
     * [Especificación de la barra de progreso](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Progress.md)
     * [Código de la barra de progreso](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/progress-bar)
-* **Indicador giratorio**: indica que se está realizando un proceso sincrónico de ejecución prolongada, pero no proporciona ninguna indicación sobre su avance. Es una página intersticial independiente que también refuerza la marca del complemento. Use un indicador giratorio cuando el complemento no pueda determinar de forma confiable cuánto ha avanzado el proceso. 
+* **Indicador giratorio**: indica que se está realizando un proceso sincrónico de ejecución prolongada, pero no proporciona ninguna indicación sobre su avance. Es una página intersticial independiente que también refuerza la marca del complemento. Use un indicador giratorio cuando el complemento no pueda determinar de forma fiable cuánto ha avanzado el proceso. 
     * [Especificación del indicador giratorio](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Progress.md)
     * [Código del indicador giratorio](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/spinner)
 * **Notificación del sistema**: proporciona un mensaje breve que desaparece después de unos segundos. Como es posible que el usuario no vea el mensaje, use la notificación del sistema solo para información que no se considere esencial. Es una opción adecuada para notificar a los usuarios de un evento en un sistema remoto, como la recepción de un correo electrónico.
     * [Especificación de notificación del sistema](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Notification_Toast.md)
-    * [Código de notificación del sistema](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/toast)
+    * [Código de la notificación del sistema](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/notifications/toast)
 
  <table>
  <tr><th>Cuadro de diálogo insertado</th><th>Mensaje en línea</th><th>Mensaje emergente</th></tr>
@@ -179,15 +179,15 @@ El complemento puede notificar eventos, como errores, o progreso a los usuarios 
  
 
 
-### Componentes generales
+### <a name="general-components"></a>Componentes generales
 
 Los siguientes componentes son generales y los puede usar en el complemento en una variedad de escenarios.  
 
-#### Cuadros de diálogo de cliente
+#### <a name="client-dialog-boxes"></a>Cuadros de diálogo de cliente
 
 Los cuadros de diálogo de cliente ofrecen a los usuarios otra forma de trabajar con el complemento fuera de un panel de tareas. Están disponibles las siguientes plantillas de cuadro de diálogo:
 
-* **Cuadro de diálogo de Typeramp**: muestra un cuadro de diálogo con contenido textual. Use el diálogo de Typeramp para mostrar información constructiva al usuario. 
+* **Cuadro de diálogo de Typeramp**: muestra un cuadro de diálogo con contenido textual. Use cuadro de el diálogo de Typeramp para mostrar información constructiva al usuario. 
     * [Especificación del cuadro de diálogo de Typeramp](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/blob/master/Patterns/Client_Dialog.md)
     * [Código del cuadro de diálogo de Typeramp](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/typeramp)
 * **Cuadro de diálogo de alerta**: muestra al usuario un cuadro de alerta con información importante, como errores o notificaciones.  
@@ -198,7 +198,7 @@ Los cuadros de diálogo de cliente ofrecen a los usuarios otra forma de trabajar
     * [Código del cuadro de diálogo de navegación](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/navigation)
 
 <table>
- <tr><th>Diálogo de Typeramp</th><th>Diálogo de alerta</th></tr>
+ <tr><th>Cuadro de diálogo de Typeramp</th><th>Diálogo de alerta</th></tr>
 <tr>
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/typeramp"><img src="../../images/typeramp.dialog.png" alt="typeramp dialog" style="width: 300px;"/></A></td>
 <td><A href="https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/dialog/alert"><img src="../../images/alert.dialog.png" alt="alert dialog" style="width: 264px;"/></A></td>
@@ -212,7 +212,7 @@ Los cuadros de diálogo de cliente ofrecen a los usuarios otra forma de trabajar
  </table>
 
 
-#### Comentarios y calificaciones
+#### <a name="feedback-and-ratings"></a>Comentarios y calificaciones
 
 Para mejorar la visibilidad y la adopción del complemento, resulta útil proporcionar a los usuarios la capacidad de calificar y revisar el complemento en la Tienda Office. Este modelo muestra dos métodos para presentar comentarios y calificaciones desde dentro del complemento:
 
@@ -232,7 +232,7 @@ Cualquiera de estos métodos abre un cuadro de diálogo que contiene la página 
 </tr>
  </table>
 
-#### Configuración y privacidad
+#### <a name="settings-and-privacy"></a>Configuración y privacidad
 
 El complemento puede necesitar una página de configuración que permita a los usuarios configurar opciones que controlan el comportamiento del complemento. Además, puede que quiera proporcionar a los usuarios las directivas de privacidad que suscribe el complemento. 
 
@@ -251,7 +251,7 @@ El complemento puede necesitar una página de configuración que permita a los u
 </tr></tr>
  </table>
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 * [Procedimientos recomendados para desarrollar complementos de Office](https://dev.office.com/docs/add-ins/overview/add-in-development-best-practices)
 * [Office UI Fabric](http://dev.office.com/fabric/)

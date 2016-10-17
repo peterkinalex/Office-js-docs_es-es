@@ -1,5 +1,5 @@
 
-# Propiedad File.sliceCount
+# <a name="file.slicecount-property"></a>Propiedad File.sliceCount
 Obtiene el número de segmentos en los que está dividido el archivo.
 
 |||
@@ -12,12 +12,12 @@ var slices = file.sliceCount;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 El número de segmentos.
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -34,11 +34,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |||
 |:-----|:-----|
 |**Nivel de permisos mínimo**|[Restringido](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

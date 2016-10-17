@@ -1,21 +1,21 @@
 
-# Llamar a servicios web desde un complemento de Outlook
+# <a name="call-web-services-from-an-outlook-add-in"></a>Llamar a servicios web desde un complemento de Outlook
 
 Su complemento puede usar los servicios Web Exchange (EWS) desde un equipo que ejecute Exchange Server 2013, un servicio web disponible en el servidor que proporcione la ubicación de origen de la interfaz de usuario del complemento o un servicio web que esté disponible en Internet. En este artículo se proporciona un ejemplo que muestra cómo un complemento de Outlook puede solicitar información de EWS.
 
 La forma de llamar a un servicio web varía en función del lugar en el que esté ubicado el servicio web. En la tabla 1 se enumeran las distintas formas que puede usar para llamar a un servicio web basado en la ubicación.
 
 
-**Tabla 1. Formas de llamar a los servicios web desde un complemento de Outlook**
+**Tabla 1: Formas de llamar a los servicios web desde un complemento de Outlook**
 
 
 |**Ubicación del servicio web**|**Forma de llamar al servicio web**|
 |:-----|:-----|
-|Servidor Exchange que hospeda el buzón de correo del cliente|Use el método [mailbox.makeEwsRequestAsync](../../reference/outlook/Office.context.mailbox.md) para llamar a las operaciones de EWS que los complementos admiten. El servidor Exchange que hospeda el buzón de correo también expone EWS.|
+|El servidor Exchange que hospeda el buzón de correo del cliente|Use el método [mailbox.makeEwsRequestAsync](../../reference/outlook/Office.context.mailbox.md) para llamar a las operaciones de EWS que los complementos admiten. El servidor Exchange que hospeda el buzón de correo también expone EWS.|
 |Servidor web que proporciona la ubicación de origen para la interfaz de usuario del complemento|Llame al servicio web con técnicas de JavaScript estándar. El código de JavaScript en el marco de la interfaz de usuario se ejecuta en el contexto del servidor web que proporciona la interfaz de usuario. Por lo tanto, puede llamar a los servicios web de ese servidor sin causar ningún error de scripting entre sitios.|
 |Todas las demás ubicaciones|Cree un proxy para el servicio web en el servidor web que proporciona la ubicación de origen para la interfaz de usuario. Si no proporciona ningún proxy, los errores de scripting entre sitios impedirán la ejecución del complemento. Una manera de proporcionar un proxy es con JSON/P. Para obtener más información, consulte [Privacidad y seguridad de complementos para Office](../../docs/develop/privacy-and-security.md).|
 
-## Uso del método makeEwsRequestAsync para tener acceso a las operaciones de EWS
+## <a name="using-the-makeewsrequestasync-method-to-access-ews-operations"></a>Uso del método makeEwsRequestAsync para tener acceso a las operaciones de EWS
 
 
 Puede usar el método [mailbox.makeEwsRequestAsync](../../reference/outlook/Office.context.mailbox.md) para crear una solicitud de EWS al servidor Exchange que hospeda el buzón del usuario.
@@ -34,7 +34,7 @@ Para usar el método  **makeEwsRequestAsync** para iniciar una operación de EWS
 Cuando la solicitud SOAP de EWS se complete, Outlook llamará al método de devolución de llamada con un argumento, que es un objeto [AsyncResult](../../reference/outlook/simple-types.md). El método de devolución de llamada puede obtener acceso a dos propiedades del objeto  **AsyncResult**: la propiedad  **value**, que contiene la respuesta SOAP XML de la operación de EWS y, de manera opcional, la propiedad  **asyncContext**, que contiene todos los datos que se pasan como parámetro  **userContext**. Por lo general, el método de devolución de llamada suele analizar el XML de la respuesta SOAP para obtener toda la información correspondiente y procesarla como corresponda.
 
 
-## Sugerencias para analizar las respuestas de EWS
+## <a name="tips-for-parsing-ews-responses"></a>Sugerencias para analizar las respuestas de EWS
 
 
 Al analizar la respuesta SOAP en una operación de EWS, tenga en cuenta los siguientes problemas según el explorador:
@@ -82,7 +82,7 @@ Al analizar la respuesta SOAP en una operación de EWS, tenga en cuenta los sigu
  Otras propiedades, como **innerHTML**, podrían no funcionar en Internet Explorer para algunas etiquetas en una respuesta de EWS.
     
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 En el ejemplo siguiente se llama a  **makeEwsRequestAsync** para usar la operación [GetItem](http://msdn.microsoft.com/en-us/library/e3590b8b-c2a7-4dad-a014-6360197b68e4%28Office.15%29.aspx) para obtener el asunto de un elemento. Este ejemplo incluye las tres funciones siguientes:
@@ -145,7 +145,7 @@ function callback(asyncResult)  {
 ```
 
 
-## Operaciones de EWS compatibles con los complementos
+## <a name="ews-operations-that-add-ins-support"></a>Operaciones de EWS compatibles con los complementos
 
 
 Los complementos de Outlook pueden tener acceso a un subconjunto de operaciones disponibles en EWS a través del método  **makeEwsRequestAsync**. Si no está familiarizado con las operaciones de EWS ni con el uso del método  **makeEwsRequestAsync** para obtener acceso a una operación, empiece con una solicitud SOAP de ejemplo para personalizar el argumento _data_. A continuación se describe el uso del método  **makeEwsRequestAsync**:
@@ -164,27 +164,41 @@ Los complementos de Outlook pueden tener acceso a un subconjunto de operaciones 
 En la siguiente tabla se enumeran las operaciones de EWS compatibles con los complementos. Para ver ejemplos de solicitudes y respuestas de SOAP, elija el vínculo para cada operación. Para más información sobre operaciones de EWS, vea [Operaciones de EWS en Exchange](http://msdn.microsoft.com/library/cf6fd871-9a65-4f34-8557-c8c71dd7ce09%28Office.15%29.aspx).
 
 
-**Tabla 2. Operaciones de EWS compatibles**
+**Tabla 2: Operaciones de EWS compatibles**
 
 
 |**Operación de EWS**|**Descripción**|
 |:-----|:-----|
-|[CopyItem Operation](http://msdn.microsoft.com/library/bcc68f9e-d511-4c29-bba6-ed535524624a%28Office.15%29.aspx)|Copia los elementos especificados y coloca los elementos nuevos en una carpeta designada en el almacén de Exchange.|
-|[CreateFolder Operation](http://msdn.microsoft.com/library/6f6c334c-b190-4e55-8f0a-38f2a018d1b3%28Office.15%29.aspx)|Crea carpetas en la ubicación especificada en el almacén de Exchange.|
-|[CreateItem Operation](http://msdn.microsoft.com/library/78a52120-f1d0-4ed7-8748-436e554f75b6%28Office.15%29.aspx)|Crea los elementos especificados en el almacén de Exchange.|
-|[FindConversation Operation](http://msdn.microsoft.com/library/2384908a-c203-45b6-98aa-efd6a4c23aac%28Office.15%29.aspx)|Enumera una lista de conversaciones en la carpeta especificada en el almacén de Exchange.|
-|[FindFolder Operation](http://msdn.microsoft.com/library/7a9855aa-06cc-45ba-ad2a-645c15b7d031%28Office.15%29.aspx)|Busca subcarpetas de una carpeta identificada y devuelve un conjunto de propiedades que describen el conjunto de subcarpetas.|
-|[FindItem Operation](http://msdn.microsoft.com/library/ebad6aae-16e7-44de-ae63-a95b24539729%28Office.15%29.aspx)|Identifica a los elementos que se encuentran en una carpeta especificada en el almacén de Exchange.|
-|[GetConversationItems operation](http://msdn.microsoft.com/library/8ae00a99-b37b-4194-829c-fe300db6ab99%28Office.15%29.aspx)|Obtiene uno o varios conjuntos de elementos que están organizados en nodos en una conversación.|
-|[GetFolder Operation](http://msdn.microsoft.com/library/355bcf93-dc71-4493-b177-622afac5fdb9%28Office.15%29.aspx)|Obtiene las propiedades y los contenidos especificados de las carpetas del almacén de Exchange.|
-|[GetItem Operation](http://msdn.microsoft.com/library/e3590b8b-c2a7-4dad-a014-6360197b68e4%28Office.15%29.aspx)|Obtiene las propiedades y los contenidos especificados de los elementos del almacén de Exchange.|
-|[MarkAsJunk Operation](http://msdn.microsoft.com/library/1f71f04d-56a9-4fee-a4e7-d1034438329e%28Office.15%29.aspx)|Mueve mensajes de correo electrónico a la carpeta Correo electrónico no deseado y agrega o quita de la lista de remitentes bloqueados a los remitentes de los mensajes, según corresponda.|
-|[MoveItem Operation](http://msdn.microsoft.com/library/dcf40fa7-7796-4a5c-bf5b-7a509a18d208%28Office.15%29.aspx)|Mueve elementos a una sola carpeta de destino en el almacén de Exchange.|
-|[SendItem Operation](http://msdn.microsoft.com/library/337b89ef-e1b7-45ed-92f3-8abe4200e4c7%28Office.15%29.aspx)|Envía mensajes de correo electrónico que se encuentran en el almacén de Exchange.|
-|[Operación UpdateFolder](http://msdn.microsoft.com/library/3494c996-b834-4813-b1ca-d99642d8b4e7%28Office.15%29.aspx)|Modifica las propiedades de las carpetas existentes en el almacén de Exchange.|
-|[UpdateItem Operation](http://msdn.microsoft.com/library/5d027523-e0bc-4da2-b60b-0cb9fc1fdfe4%28Office.15%29.aspx)|Modifica las propiedades de los elementos existentes en el almacén de Exchange.|
+|
+  [Operación CopyItem](http://msdn.microsoft.com/library/bcc68f9e-d511-4c29-bba6-ed535524624a%28Office.15%29.aspx)|Copia los elementos especificados y coloca los elementos nuevos en una carpeta designada en el almacén de Exchange.|
+|
+  [Operación CreateFolder](http://msdn.microsoft.com/library/6f6c334c-b190-4e55-8f0a-38f2a018d1b3%28Office.15%29.aspx)|Crea carpetas en la ubicación especificada en el almacén de Exchange.|
+|
+  [Operación CreateItem](http://msdn.microsoft.com/library/78a52120-f1d0-4ed7-8748-436e554f75b6%28Office.15%29.aspx)|Crea los elementos especificados en el almacén de Exchange.|
+|
+  [Operación de FindConversation](http://msdn.microsoft.com/library/2384908a-c203-45b6-98aa-efd6a4c23aac%28Office.15%29.aspx)|Enumera una lista de conversaciones en la carpeta especificada en el almacén de Exchange.|
+|
+  [Operación FindFolder](http://msdn.microsoft.com/library/7a9855aa-06cc-45ba-ad2a-645c15b7d031%28Office.15%29.aspx)|Busca subcarpetas de una carpeta identificada y devuelve un conjunto de propiedades que describen el conjunto de subcarpetas.|
+|
+  [Operación FindItem](http://msdn.microsoft.com/library/ebad6aae-16e7-44de-ae63-a95b24539729%28Office.15%29.aspx)|Identifica a los elementos que se encuentran en una carpeta especificada en el almacén de Exchange.|
+|
+  [Operación GetConversationItems](http://msdn.microsoft.com/library/8ae00a99-b37b-4194-829c-fe300db6ab99%28Office.15%29.aspx)|Obtiene uno o varios conjuntos de elementos que están organizados en nodos en una conversación.|
+|
+  [Operación GetFolder](http://msdn.microsoft.com/library/355bcf93-dc71-4493-b177-622afac5fdb9%28Office.15%29.aspx)|Obtiene las propiedades y los contenidos especificados de las carpetas del almacén de Exchange.|
+|
+  [Operación GetItem](http://msdn.microsoft.com/library/e3590b8b-c2a7-4dad-a014-6360197b68e4%28Office.15%29.aspx)|Obtiene las propiedades y los contenidos especificados de los elementos del almacén de Exchange.|
+|
+  [Operación MarkAsJunk](http://msdn.microsoft.com/library/1f71f04d-56a9-4fee-a4e7-d1034438329e%28Office.15%29.aspx)|Mueve mensajes de correo a la carpeta Correo electrónico no deseado y agrega o quita de la lista de remitentes bloqueados a los remitentes de los mensajes, según corresponda.|
+|
+  [Operación MoveItem](http://msdn.microsoft.com/library/dcf40fa7-7796-4a5c-bf5b-7a509a18d208%28Office.15%29.aspx)|Mueve elementos a una sola carpeta de destino en el almacén de Exchange.|
+|
+  [Operación SendItem](http://msdn.microsoft.com/library/337b89ef-e1b7-45ed-92f3-8abe4200e4c7%28Office.15%29.aspx)|Envía mensajes de correo electrónico que se encuentran en el almacén de Exchange.|
+|
+  [Operación UpdateFolder](http://msdn.microsoft.com/library/3494c996-b834-4813-b1ca-d99642d8b4e7%28Office.15%29.aspx)|Modifica las propiedades de las carpetas existentes en el almacén de Exchange.|
+|
+  [Operación UpdateItem](http://msdn.microsoft.com/library/5d027523-e0bc-4da2-b60b-0cb9fc1fdfe4%28Office.15%29.aspx)|Modifica las propiedades de los elementos existentes en el almacén de Exchange.|
 
-## Consideraciones de autenticación y permisos para el método makeEwsRequestAsync
+## <a name="authentication-and-permission-considerations-for-the-makeewsrequestasync-method"></a>Consideraciones de autenticación y permisos para el método makeEwsRequestAsync
 
 
 Si usa el método  **makeEwsRequestAsync**, la solicitud se autentica con las credenciales de la cuenta de correo del usuario actual. El método  **makeEwsRequestAsync** administra las credenciales por usted, para que no tenga que proporcionarlas con la solicitud.
@@ -196,7 +210,7 @@ Si usa el método  **makeEwsRequestAsync**, la solicitud se autentica con las cr
 El complemento tiene que especificar el permiso **ReadWriteMailbox** en su manifiesto de complemento para usar el método **makeEwsRequestAsync**. Para más información sobre cómo usar el permiso **ReadWriteMailbox**, vea la sección [Permiso ReadWriteMailbox](../outlook/understanding-outlook-add-in-permissions.md#readwritemailbox-permission) en [Información sobre los permisos del complemento de Outlook](../outlook/understanding-outlook-add-in-permissions.md).
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
@@ -204,13 +218,15 @@ El complemento tiene que especificar el permiso **ReadWriteMailbox** en su manif
     
 - [Privacidad y seguridad de complementos para Office](../../docs/develop/privacy-and-security.md)
     
-- [Abordar las limitaciones de la directiva del mismo origen en complementos para Office](../../docs/develop/addressing-same-origin-policy-limitations.md)
+- [Abordar las limitaciones de la directiva de mismo origen en complementos para Office](../../docs/develop/addressing-same-origin-policy-limitations.md)
     
-- [Referencia EWS para Exchange](http://msdn.microsoft.com/library/2a873474-1bb2-4cb1-a556-40e8c4159f4a%28Office.15%29.aspx)
+- 
+  [Referencia EWS para Exchange](http://msdn.microsoft.com/library/2a873474-1bb2-4cb1-a556-40e8c4159f4a%28Office.15%29.aspx)
     
-- [Aplicaciones de correo de Outlook y EWS en Exchange](http://msdn.microsoft.com/library/821c8eb9-bb58-42e8-9a3a-61ca635cba59%28Office.15%29.aspx)
+- 
+  [Aplicaciones de correo para Outlook y EWS en Exchange](http://msdn.microsoft.com/library/821c8eb9-bb58-42e8-9a3a-61ca635cba59%28Office.15%29.aspx)
     
-Si desea crear servicios back-end para complementos con ASP.NET Web API, vea los recursos siguientes:
+Si desea crear servicios back-end para complementos con ASP.NET Web API, consulte los recursos siguientes:
 
 
 - [Crear un servicio web para un complemento para Office con ASP.NET Web API](http://blogs.msdn.com/b/officeapps/archive/2013/06/10/create-a-web-service-for-an-app-for-office-using-the-asp-net-web-api.aspx)

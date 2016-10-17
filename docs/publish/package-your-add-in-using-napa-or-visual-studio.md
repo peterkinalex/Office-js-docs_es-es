@@ -1,9 +1,9 @@
 
-# Empaquetar el complemento con Napa o Visual Studio para prepararlo para su publicación
+# <a name="package-your-add-in-using-napa-or-visual-studio-to-prepare-for-publishing"></a>Empaquetar el complemento con Napa o Visual Studio para prepararlo para su publicación
 
 El complemento de Office contiene un archivo XML que se usará para publicar el complemento. Deberá publicar los archivos de la aplicación web del proyecto de forma independiente.
 
-## Empaquetar una Complemento de Office creada con Napa
+## <a name="package-an-office-add-in-that-you-create-by-using-napa"></a>Empaquetar una Complemento de Office creada con Napa
 
 
 
@@ -22,11 +22,11 @@ Luego, manualmente, copie los archivos de contenido web (hojas de estilo, archiv
 Ahora puede cargar el manifiesto XML en la ubicación adecuada para [publicar el complemento](../publish/publish.md). 
 
 
-## Implementar el proyecto web y empaquetar el complemento mediante Visual Studio 2015
+## <a name="deploy-your-web-project-and-package-your-add-in-by-using-visual-studio-2015"></a>Implementar el proyecto web y empaquetar el complemento mediante Visual Studio 2015
 
 
 
-### Para implementar su proyecto web
+### <a name="to-deploy-your-web-project"></a>Para implementar su proyecto web
 
 
 1. En el  **Explorador de soluciones**, abra el menú contextual para el proyecto de complemento y luego elija  **Publicar**.
@@ -46,7 +46,7 @@ Ahora puede cargar el manifiesto XML en la ubicación adecuada para [publicar el
     Se abrirá el cuadro de diálogo **Publicación web**. Para obtener más información acerca de cómo usar este asistente, consulte [Procedimiento para implementar un proyecto web mediante la publicación con clic en Visual Studio](http://msdn.microsoft.com/en-us/library/dd465337.aspx).
     
 
-### Para empaquetar el complemento
+### <a name="to-package-your-add-in"></a>Para empaquetar el complemento
 
 
 1. En la página  **Publique el complemento**, elija el vínculo  **Empaquetar la aplicación**.
@@ -68,11 +68,12 @@ Ahora puede cargar el manifiesto XML en la ubicación adecuada para [publicar el
  `%UserProfile%\Documents\Visual Studio 2015\Projects\MyApp\bin\Debug\app.publish\OfficeAppManifests`
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
-- [Publicar el complemento para Office](../publish/publish.md)
+- [Publicar el complemento de Office](../publish/publish.md)
     
-- [Enviar complementos de Office y SharePoint y aplicaciones web de Office 365 a la Tienda Office](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
+- 
+  [Enviar complementos de Office y SharePoint, y aplicaciones web de Office 365 a la Tienda Office](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
     

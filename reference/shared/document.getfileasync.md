@@ -1,11 +1,11 @@
 
-# Método Document.getFileAsync
+# <a name="document.getfileasync-method"></a>Método Document.getFileAsync
 Devuelve el archivo de documento entero en segmentos de hasta 4194304 bytes (4 MB). En cuanto a los complementos para iOS, el segmento de archivo puede tener un tamaño máximo de 65536 bytes (64 KB). Tenga en cuenta que, si especifica un tamaño del segmento del archivo superior al límite permitido, se producirá el error "Error interno". 
 
 |||
 |:-----|:-----|
 |**Hosts:**|Excel, PowerPoint y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Archivo|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Archivo|
 |**Modificado por última vez en Archivo**|1.1|
 
 ```js
@@ -13,19 +13,19 @@ Office.context.document.getFileAsync(fileType [, options], callback);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
 |**Nombre**|**Tipo**|**Descripción**|**Notas de compatibilidad**|
 |:-----|:-----|:-----|:-----|
-| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Especifica el formato en el que se devolverá el archivo. Necesario.<br/><table><tr><th>Host</th><th>Tipo de archivo admitido</th></tr><tr><td>Excel Online</td><td>Office.FileType.Compressed</td></tr><tr><td>PowerPoint para el escritorio de Windows</td><td>Office.FileType.Compressed, Office.FileType.Pdf</td></tr><tr><td>Word para el escritorio de Windows, MAC y iPad</td><td>Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text</td></tr><tr><td>Word Online</td><td>Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text</td></tr><tr><td>PowerPoint Online</td><td>Office.FileType.Compressed, Office.FileType.Pdf</td></tr></table>|**Modificado en** 1.1; consulte [Historial de compatibilidad](#historial-de-compatibilidad)|
+| _fileType_|[FileType](../../reference/shared/filetype-enumeration.md)|Especifica el formato en el que se devolverá el archivo. Obligatorio.<br/><table><tr><th>Host</th><th>Tipo de archivo admitido</th></tr><tr><td>Excel Online</td><td>Office.FileType.Compressed</td></tr><tr><td>PowerPoint para el escritorio de Windows</td><td>Office.FileType.Compressed, Office.FileType.Pdf</td></tr><tr><td>Word para el escritorio de Windows, MAC y iPad</td><td>Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text</td></tr><tr><td>Word Online</td><td>Office.FileType.Compressed, Office.FileType.Pdf, Office.FileType.Text</td></tr><tr><td>PowerPoint Online</td><td>Office.FileType.Compressed, Office.FileType.Pdf</td></tr></table>|**Modificado en** 1.1; consulte [Historial de compatibilidad](#support-history)|
 | _options_|**object**|Especifica cualquiera de los siguientes [parámetros opcionales](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods):||
 | _sliceSize_|**number**|Especifica el tamaño del segmento deseado (en bytes) hasta 4194304 bytes (4MB). Si no se especifica, se usará un tamaño predeterminado del segmento de 4194304 bytes (4MB). ||
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string** o **undefined**|Un elemento de cualquier tipo definido por el usuario que se devuelve en el objeto **AsyncResult** sin sufrir modificaciones.||
 | _callback_|**object**|Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.||
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función que ha remitido al parámetro _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el único parámetro de la función de devolución de llamada.
 
@@ -33,14 +33,14 @@ En la función de devolución de llamada que se ha remitido al método **getFile
 
 
 
-|**Propiedad**|**Usar para...**|
+|**Propiedad**|**Usar para**|
 |:-----|:-----|
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Tener acceso al objeto [File](../../reference/shared/file.md).|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determinar si la operación se ha completado correctamente o no.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Tener acceso a un objeto [Error](../../reference/shared/error.md) que proporcione información sobre el error si la operación no se ha llevado a cabo correctamente.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **object** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Tener acceso al valor o al **objeto** definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 En el caso de los complementos que se ejecutan en aplicaciones host de Office que no son de Office para iOS, el método **getFileAsync** admite la obtención de archivos en segmentos de hasta 4194304 bytes (4 MB). En el caso de los complementos que se ejecutan en aplicaciones de Office para iOS, el método **getFileAsync** admite la obtención de archivos en segmentos de hasta 65536 (64 KB).
 
@@ -58,7 +58,7 @@ El parámetro _fileType_ puede especificarse con las enumeraciones o los valores
 No se permite que haya más de dos documentos en la memoria; de lo contrario, la operación **getFileAsync** fallará. Use el método [File.closeAsync](../../reference/shared/file.closeasync.md) para cerrar el archivo cuando haya terminado de trabajar con él.
 
 
-## Ejemplo: obtener un documento en formato Office Open XML ("comprimido")
+## <a name="example---get-a-document-in-office-open-xml-("compressed")-format"></a>Ejemplo: obtener un documento en formato Office Open XML ("comprimido")
 
 En el siguiente ejemplo se obtiene el documento en formato Office Open XML ("comprimido") en segmentos de 65536 bytes (64 KB). Nota: la implementación de `app.showNotification` en este ejemplo procede de la plantilla de Visual Studio para los complementos de Office.
 
@@ -130,7 +130,7 @@ function onGotAllSlices(docdataSlices) {
 ```
 
 
-## Ejemplo: obtener un documento en formato PDF
+## <a name="example---get-a-document-in-pdf-format"></a>Ejemplo: obtener un documento en formato PDF
 
 En el ejemplo siguiente se obtiene el documento en formato PDF.
 
@@ -156,7 +156,7 @@ Office.context.document.getFileAsync(Office.FileType.Pdf,
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -175,13 +175,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|Archivo|
+|**Disponible en los conjuntos de requisitos**|Archivo|
 |**Nivel de permisos mínimo**|[ReadAllDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 |**Versión**|**Cambios**|

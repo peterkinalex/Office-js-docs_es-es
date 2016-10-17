@@ -1,8 +1,8 @@
-# Objeto TableColumn (API de JavaScript para Excel)
+# <a name="tablecolumn-object-(javascript-api-for-excel)"></a>Objeto TableColumn (API de JavaScript para Excel)
 
 Representa una columna en una tabla.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
@@ -11,14 +11,14 @@ Representa una columna en una tabla.
 |name|string|Devuelve el nombre de la columna de la tabla. Solo lectura.|
 |values|object[][]|Representa los valores sin formato del intervalo especificado. Los datos devueltos pueden ser de tipo cadena, número o booleano. La celda que contenga un error devolverá la cadena de error.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|filtro|[Filter](filter.md)|Recupera el filtro aplicado a la columna. Solo lectura.|
+|filter|[Filter](filter.md)|Recupera el filtro aplicado a la columna. Solo lectura.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
@@ -29,24 +29,24 @@ _Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado a la fila de totales de la columna.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### delete()
+### <a name="delete()"></a>delete()
 Elimina la columna de la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableColumnObject.delete();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -63,21 +63,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getDataBodyRange()
+### <a name="getdatabodyrange()"></a>getDataBodyRange()
 Obtiene el objeto de intervalo asociado al cuerpo de datos de la columna.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableColumnObject.getDataBodyRange();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -96,21 +96,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getHeaderRowRange()
+### <a name="getheaderrowrange()"></a>getHeaderRowRange()
 Obtiene el objeto de intervalo asociado a la fila de encabezado de la columna.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableColumnObject.getHeaderRowRange();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -129,21 +129,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getRange()
+### <a name="getrange()"></a>getRange()
 Obtiene el objeto de intervalo asociado a toda la columna.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableColumnObject.getRange();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -163,21 +163,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getTotalRowRange()
+### <a name="gettotalrowrange()"></a>getTotalRowRange()
 Obtiene el objeto de intervalo asociado a la fila de totales de la columna.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableColumnObject.getTotalRowRange();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -197,22 +197,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js
 Excel.run(function (ctx) { 

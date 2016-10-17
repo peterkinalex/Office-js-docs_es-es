@@ -1,18 +1,18 @@
 
-# Especificar permisos para el acceso de los complementos de Outlook al buzón del usuario
+# <a name="understanding-outlook-add-in-permissions"></a>Especificar permisos para el acceso de los complementos de Outlook al buzón del usuario
 
 Los complementos de Outlook especifican el nivel de permisos requerido en su manifiesto. Los niveles disponibles son  **Restricted**,  **ReadItem**,  **ReadWriteItem** o **ReadWriteMailbox**. Estos niveles de permisos son acumulativos:  **Restringido** es el nivel más bajo y cada nivel superior incluye los permisos de todos los niveles que estén por debajo. **ReadWriteMailbox** incluye todos los permisos admitidos.
 
 Puede ver los permisos que solicita un complemento de correo antes de instalarlo desde la Tienda Office. También puede ver los permisos necesarios de los complementos instalados en el Centro de administración de Exchange.
 
 
-## Permiso restringido
+## <a name="restricted-permission"></a>Permiso restringido
 
 
 El permiso  **Restringido** es el nivel más básico de los permisos. Especifique **Restricted** en el elemento [Permissions](http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx) del manifiesto para pedir este permiso. Si un complemento de correo no pide un permiso específico en su manifiesto, Outlook le asigna este permiso de forma predeterminada.
 
 
-### Se puede
+### <a name="can-do"></a>Se puede
 
 
 - [Obtener solo entidades específicas](../outlook/match-strings-in-an-item-as-well-known-entities.md) (número de teléfono, dirección, dirección URL) del asunto o el cuerpo del elemento.
@@ -22,7 +22,7 @@ El permiso  **Restringido** es el nivel más básico de los permisos. Especifiqu
 - Tener acceso a las propiedades y métodos que  **no** hacen referencia a información específica sobre el usuario o el elemento (vea la siguiente sección para ver una lista de los miembros que sí hacen referencia).
     
 
-### No se puede
+### <a name="can't-do"></a>No se puede
 
 
 - Usar una regla [ItemHasKnownEntity](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx) en la entidad de contacto, dirección de correo electrónico, sugerencia de reunión o sugerencia de tarea.
@@ -82,20 +82,21 @@ El permiso  **Restringido** es el nivel más básico de los permisos. Especifiqu
   - [Time](../../reference/outlook/Time.md) y todos sus miembros secundarios
     
 
-## Permiso ReadItem
+## <a name="readitem-permission"></a>Permiso ReadItem
 
 
 El permiso  **ReadItem** es el siguiente nivel de permiso en el modelo de permisos. Especifique **ReadItem** en el elemento **Permissions** del manifiesto para solicitar este permiso.
 
 
-### Se puede
+### <a name="can-do"></a>Se puede
 
 
 - [Leer todas las propiedades](../outlook/item-data.md) del elemento actual en un formulario de lectura o un [formulario de redacción](../outlook/get-and-set-item-data-in-a-compose-form.md) (por ejemplo, [item.to](../../reference/outlook/Office.context.mailbox.item.md) en un formulario de lectura e [item.to.getAsync](../../reference/outlook/Recipients.md) en uno de redacción).
     
 - [Obtener un token de devolución de llamada para obtener los datos adjuntos del elemento](../outlook/get-attachments-of-an-outlook-item.md) o el elemento completo.
     
-- [Escribir propiedades personalizadas](http://msdn.microsoft.com/library/30217d63-7615-4f3f-8618-c91e4e60cd43%28Office.15%29.aspx) definidas por el complemento en ese elemento.
+- 
+  [Escribir propiedades personalizadas](http://msdn.microsoft.com/library/30217d63-7615-4f3f-8618-c91e4e60cd43%28Office.15%29.aspx) definidas por el complemento en ese elemento.
     
 - [Obtener todas las entidades conocidas existentes](../outlook/match-strings-in-an-item-as-well-known-entities.md), no solo un subconjunto, del asunto o el cuerpo del elemento.
     
@@ -122,9 +123,9 @@ El permiso  **ReadItem** es el siguiente nivel de permiso en el modelo de permis
 ```
 
 
-### No se puede
+### <a name="can't-do"></a>No se puede
 
-Obtener acceso a  **mailbox.makeEWSRequestAsync** o a cualquiera de los siguientes métodos de escritura:
+Obtener acceso a **mailbox.makeEWSRequestAsync** o a cualquiera de los siguientes métodos de escritura:
 
 
 - [item.addFileAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md)
@@ -168,13 +169,13 @@ Obtener acceso a  **mailbox.makeEWSRequestAsync** o a cualquiera de los siguient
 - [item.to.setAsync](../../reference/outlook/Recipients.md)
     
 
-## Permiso ReadWriteItem
+## <a name="readwriteitem-permission"></a>Permiso ReadWriteItem
 
 
 Especifique  **ReadWriteItem** en el elemento **Permissions** del manifiesto para solicitar este permiso. Los complementos de correo activadas en los formularios de redacción que usen métodos de escritura ( **Message.to.addAsync** o **Message.to.setAsync**) deben usar como mínimo este nivel de permiso.
 
 
-### Se puede
+### <a name="can-do"></a>Se puede
 
 
 - [Leer y escribir todas las propiedades de nivel de elemento](../outlook/item-data.md) del elemento que se va a ver o redactar en Outlook.
@@ -184,12 +185,12 @@ Especifique  **ReadWriteItem** en el elemento **Permissions** del manifiesto par
 - Usar todos los demás miembros de la API de JavaScript para Office válidos para los complementos de correo, excepto  **Mailbox.makeEWSRequestAsync**.
     
 
-### No se puede
+### <a name="can't-do"></a>No se puede
 
 Usar  **Mailbox.makeEWSRequestAsync**.
 
 
-## Permiso ReadWriteMailbox
+## <a name="readwritemailbox-permission"></a>Permiso ReadWriteMailbox
 
 
 El permiso  **ReadWriteMailbox** es el nivel de permiso más elevado. Especifique **ReadWriteMailbox** en el elemento **Permissions** del manifiesto para solicitar este permiso.
@@ -203,41 +204,55 @@ Aparte de lo que el permiso  **lReadWriteItem** admite, cuando se usa **Mailbox.
     
 - Enviar un elemento desde ese buzón.
     
-A través de  **mailbox.makeEWSRequestAsync**, puede tener acceso a las siguientes operaciones de EWS:
+A través de **mailbox.makeEWSRequestAsync**, puede tener acceso a las siguientes operaciones de EWS:
 
 
-- [CopyItem](http://msdn.microsoft.com/en-us/library/bcc68f9e-d511-4c29-bba6-ed535524624a%28Office.15%29.aspx)
+- 
+  [CopyItem](http://msdn.microsoft.com/en-us/library/bcc68f9e-d511-4c29-bba6-ed535524624a%28Office.15%29.aspx)
     
-- [CreateFolder](http://msdn.microsoft.com/en-us/library/6f6c334c-b190-4e55-8f0a-38f2a018d1b3%28Office.15%29.aspx)
+- 
+  [CreateFolder](http://msdn.microsoft.com/en-us/library/6f6c334c-b190-4e55-8f0a-38f2a018d1b3%28Office.15%29.aspx)
     
-- [CreateItem](http://msdn.microsoft.com/en-us/library/78a52120-f1d0-4ed7-8748-436e554f75b6%28Office.15%29.aspx)
+- 
+  [CreateItem](http://msdn.microsoft.com/en-us/library/78a52120-f1d0-4ed7-8748-436e554f75b6%28Office.15%29.aspx)
     
-- [FindConversation](http://msdn.microsoft.com/en-us/library/2384908a-c203-45b6-98aa-efd6a4c23aac%28Office.15%29.aspx)
+- 
+  [FindConversation](http://msdn.microsoft.com/en-us/library/2384908a-c203-45b6-98aa-efd6a4c23aac%28Office.15%29.aspx)
     
-- [FindFolder](http://msdn.microsoft.com/en-us/library/7a9855aa-06cc-45ba-ad2a-645c15b7d031%28Office.15%29.aspx)
+- 
+  [FindFolder](http://msdn.microsoft.com/en-us/library/7a9855aa-06cc-45ba-ad2a-645c15b7d031%28Office.15%29.aspx)
     
-- [FindItem](http://msdn.microsoft.com/en-us/library/ebad6aae-16e7-44de-ae63-a95b24539729%28Office.15%29.aspx)
+- 
+  [FindItem](http://msdn.microsoft.com/en-us/library/ebad6aae-16e7-44de-ae63-a95b24539729%28Office.15%29.aspx)
     
-- [GetConversationItems](http://msdn.microsoft.com/en-us/library/8ae00a99-b37b-4194-829c-fe300db6ab99%28Office.15%29.aspx)
+- 
+  [GetConversationItems](http://msdn.microsoft.com/en-us/library/8ae00a99-b37b-4194-829c-fe300db6ab99%28Office.15%29.aspx)
     
-- [GetFolder](http://msdn.microsoft.com/en-us/library/355bcf93-dc71-4493-b177-622afac5fdb9%28Office.15%29.aspx)
+- 
+  [GetFolder](http://msdn.microsoft.com/en-us/library/355bcf93-dc71-4493-b177-622afac5fdb9%28Office.15%29.aspx)
     
-- [GetItem](http://msdn.microsoft.com/en-us/library/e3590b8b-c2a7-4dad-a014-6360197b68e4%28Office.15%29.aspx)
+- 
+  [GetItem](http://msdn.microsoft.com/en-us/library/e3590b8b-c2a7-4dad-a014-6360197b68e4%28Office.15%29.aspx)
     
-- [MarkAsJunk](http://msdn.microsoft.com/en-us/library/1f71f04d-56a9-4fee-a4e7-d1034438329e%28Office.15%29.aspx)
+- 
+  [MarkAsJunk](http://msdn.microsoft.com/en-us/library/1f71f04d-56a9-4fee-a4e7-d1034438329e%28Office.15%29.aspx)
     
-- [MoveItem](http://msdn.microsoft.com/en-us/library/dcf40fa7-7796-4a5c-bf5b-7a509a18d208%28Office.15%29.aspx)
+- 
+  [MoveItem](http://msdn.microsoft.com/en-us/library/dcf40fa7-7796-4a5c-bf5b-7a509a18d208%28Office.15%29.aspx)
     
-- [SendItem](http://msdn.microsoft.com/en-us/library/337b89ef-e1b7-45ed-92f3-8abe4200e4c7%28Office.15%29.aspx)
+- 
+  [SendItem](http://msdn.microsoft.com/en-us/library/337b89ef-e1b7-45ed-92f3-8abe4200e4c7%28Office.15%29.aspx)
     
-- [UpdateFolder](http://msdn.microsoft.com/en-us/library/3494c996-b834-4813-b1ca-d99642d8b4e7%28Office.15%29.aspx)
+- 
+  [UpdateFolder](http://msdn.microsoft.com/en-us/library/3494c996-b834-4813-b1ca-d99642d8b4e7%28Office.15%29.aspx)
     
-- [UpdateItem](http://msdn.microsoft.com/en-us/library/5d027523-e0bc-4da2-b60b-0cb9fc1fdfe4%28Office.15%29.aspx)
+- 
+  [UpdateItem](http://msdn.microsoft.com/en-us/library/5d027523-e0bc-4da2-b60b-0cb9fc1fdfe4%28Office.15%29.aspx)
     
 Si trata de usar una acción no admitida, recibirá una respuesta de error.
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

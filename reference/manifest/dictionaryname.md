@@ -1,11 +1,11 @@
 
-# Elemento DictionaryName
+# <a name="dictionaryname-element"></a>Elemento DictionaryName
 Especifica el nombre de este diccionario.
 
  **Tipo de complemento:** Panel de tareas
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,12 +13,12 @@ Especifica el nombre de este diccionario.
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

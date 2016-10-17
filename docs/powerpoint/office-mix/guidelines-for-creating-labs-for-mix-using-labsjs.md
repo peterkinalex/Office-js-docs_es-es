@@ -1,5 +1,5 @@
 
-# Instrucciones para crear laboratorios para Office Mix con LabsJS
+# <a name="guidelines-for-creating-labs-for-mix-using-labsjs"></a>Instrucciones para crear laboratorios para Office Mix con LabsJS
 
 
 
@@ -8,13 +8,13 @@ La biblioteca de LabsJS (labs.js) admite escritura de Complementos de Office esp
 El contenido de LabsJS ayuda a implementar la API de JavaScript labs.js mediante consejos y ejemplos. Esta biblioteca se basa en la [API de JavaScript para Office](../../../reference/javascript-api-for-office.md) (Office.js) y proporciona una capa de abstracción que está optimizada para add-ins insertados en Aplicaciones para Office Mix.
 
 
-## Instrucciones generales
+## <a name="general-guidelines"></a>Instrucciones generales
 
 
 Las siguientes son algunas instrucciones generales que le ayudarán a la hora de escribir add-ins mediante la API LabJS.
 
 
-### Scripts
+### <a name="scripts"></a>Scripts
 
 Dado que la biblioteca de labs.js es una capa de abstracción de office.js y, por lo tanto, tiene una dependencia en office.js, los archivos de biblioteca office.js y labs.js deben incluirse en los proyectos de desarrollo. 
 
@@ -26,7 +26,7 @@ La biblioteca de labs.js se incluye en el SDK de LabsJS. Como alternativa, puede
  >**Nota:** Además del archivo de JavaScript (labs-1.0.4.js), proporcionamos un archivo de definición TypeScript de la API de laboratorios (labs-1.0.4.d.ts). El archivo de definición se creó con TypeScript versión 0.9.1.1.
 
 
-### Devoluciones de llamada y tratamiento de errores
+### <a name="callbacks-and-error-handling"></a>Devoluciones de llamada y tratamiento de errores
 
 Varios métodos de la API labs.js funcionan de forma asincrónica. Para esas operaciones, la API adopta una interfaz estándar de devolución de llamadas,  **ILabCallback**. 
 
@@ -57,7 +57,7 @@ function createCallback<T>(deferred: JQueryDeferred<T>): Labs.Core.ILabCallback<
 ```
 
 
-### Host de laboratorio y DefaultLabHost
+### <a name="lab-host-and-defaultlabhost"></a>Host de laboratorio y DefaultLabHost
 
 El host de laboratorio ( **ILabHost**) es el controlador subyacente que admite el desarrollo de laboratorios. De forma predeterminada, se establece en un host que se integra con office.js.
 
@@ -77,7 +77,7 @@ Labs.DefaultHostBuilder = function () {
 ```
 
 
-### Inicialización
+### <a name="initialization"></a>Inicialización
 
 La inicialización establece la ruta de comunicación entre el laboratorio y el host. Para inicializar el laboratorio, llame a lo siguiente.
 
@@ -89,12 +89,12 @@ Labs.connect((err, connectionResponse) => {});
 Después de inicializar, puede llamar a otros métodos de la API labs.js. El parámetro  _connectionResponse_ contiene información sobre el host, el usuario y otra información relacionada con la conexión. Para obtener más información sobre los valores devueltos, consulte [Labs.Core.IConnectionResponse](../../../reference/office-mix/labs.core.iconnectionresponse.md).
 
 
-### Formato de hora
+### <a name="time-format"></a>Formato de hora
 
 Labs.js almacena los números como milisegundos transcurridos desde el 1 de enero de 1970, hora UTC. Esto coincide con el formato de fecha del JavaScript [objeto Date](http://msdn.microsoft.com/en-us/library/ie/cd9w2te4%28v=vs.94%29.aspx),
 
 
-### Escala de tiempo
+### <a name="timeline"></a>Escala de tiempo
 
 El laboratorio también puede interactuar con la escala de tiempo del reproductor lecciones. La escala de tiempo permite que el laboratorio indique al reproductor de lecciones para que avance a la siguiente diapositiva. El objeto de escala de tiempo se recupera mediante una llamada al método  **Labs.getTimeline**.
 
@@ -104,13 +104,13 @@ Labs.getTimeline().next({}, (err, unused) => { });
 ```
 
 
-## Administración de eventos
+## <a name="handling-events"></a>Administración de eventos
 
 
 La API de eventos LabsJS realiza un seguimiento de los eventos específicos de laboratorio y permite agregar controladores de eventos para que pueda responder a los eventos o actuar acorde con estos. Los métodos de eventos, de los cuales hay tres, están en el objeto  **EventTypes**:  **ModeChanged**,  **Activate** y **Deactivate**. 
 
 
-### Cambio de modo
+### <a name="mode-change"></a>Cambio de modo
 
 El evento  **ModeChanged** se desencadena cuando el laboratorio especificado cambia del modo de edición al modo de vista. El modo de edición está visible cuando el laboratorio se ve en modo de edición de PowerPoint. El modo de vista está visible cuando PowerPoint muestra la presentación con diapositivas o cuando el laboratorio se muestra en el reproductor de lecciones de Aplicaciones para Office Mix. El modo de vista siempre debería mostrar lo que el usuario ve al realizar el laboratorio. El modo de edición permite al usuario configurar el laboratorio.
 
@@ -127,7 +127,7 @@ Labs.on(Labs.Core.EventTypes.ModeChanged, (data) => {
 ```
 
 
-### Activar
+### <a name="activate"></a>Activar
 
 El evento  **activate** se desencadena cuando la diapositiva de PowerPoint en la que se encuentra el laboratorio se vuelve activa en el reproductor de lecciones.
 
@@ -139,7 +139,7 @@ Labs.on(Labs.Core.EventTypes.Activate, (data) => {
 ```
 
 
-### Desactivar
+### <a name="deactivate"></a>Desactivar
 
 El evento  **deactivate** se desencadena cuando la diapositiva de PowerPoint en la que se encuentra el laboratorio ya no es la diapositiva activa.
 
@@ -151,7 +151,7 @@ Labs.on(Labs.Core.EventTypes.Deactivate, (data) => {
 ```
 
 
-### Escala de tiempo
+### <a name="timeline"></a>Escala de tiempo
 
 El laboratorio también puede interactuar con la escala de tiempo del reproductor lecciones. La escala de tiempo permite que el laboratorio indique al reproductor de lecciones para que avance a la siguiente diapositiva. El objeto de escala de tiempo se recupera mediante una llamada al método  **Labs.getTimeline**.
 
@@ -161,7 +161,7 @@ Labs.getTimeline().next({}, (err, unused) => { });
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

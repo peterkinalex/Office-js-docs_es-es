@@ -1,50 +1,50 @@
-# Objeto TableCollection (API de JavaScript para Excel)
+# <a name="tablecollection-object-(javascript-api-for-excel)"></a>Objeto TableCollection (API de JavaScript para Excel)
 
 Representa una colección de todas las tablas que forman parte del libro.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |count|int|Devuelve el número de tablas del libro. Solo lectura.|
-|Items|[Table[]](table.md)|Colección de objetos de tabla. Solo lectura.|
+|items|[Table[]](table.md)|Colección de objetos de tabla. Solo lectura.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 Ninguno
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
-|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Tabla](table.md)|Crea una tabla nueva. La dirección de origen del intervalo determina la hoja de cálculo en la que se agregará la tabla. Si no se puede agregar la tabla (por ejemplo, porque la dirección no es válida o porque la tabla se superpondría con otra tabla), se produce un error.|
-|[getItem(key: number or string)](#getitemkey-number-or-string)|[Tabla](table.md)|Obtener una tabla por nombre o identificador.|
-|[getItemAt(index: number)](#getitematindex-number)|[Tabla](table.md)|Obtiene una tabla basada en su posición en la colección.|
+|[add(address: string, hasHeaders: bool)](#addaddress-string-hasheaders-bool)|[Table](table.md)|Crea una tabla nueva. La dirección de origen del intervalo determina la hoja de cálculo en la que se agregará la tabla. Si no se puede agregar la tabla (por ejemplo, porque la dirección no es válida o porque la tabla se superpondría con otra tabla), se produce un error.|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Table](table.md)|Obtener una tabla por nombre o identificador.|
+|[getItemAt(index: number)](#getitematindex-number)|[Table](table.md)|Obtiene una tabla basada en su posición en la colección.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### add(address: string, hasHeaders: bool)
+### <a name="add(address:-string,-hasheaders:-bool)"></a>add(address: string, hasHeaders: bool)
 Crea una tabla nueva. La dirección de origen del intervalo determina la hoja de cálculo en la que se agregará la tabla. Si no se puede agregar la tabla (por ejemplo, porque la dirección no es válida o porque la tabla se superpondría con otra tabla), se produce un error.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableCollectionObject.add(address, hasHeaders);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |address|string|Dirección o nombre del objeto de intervalo que representa el origen de datos. Si la dirección no contiene un nombre de hoja, se usa la hoja activa en ese momento.|
 |hasHeaders|bool|Valor booleano que indica si los datos que se están importando tienen etiquetas de columna. Si el origen no contiene encabezados (es decir, cuando esta propiedad se establece en false), Excel generará automáticamente un encabezado desplazando los datos hacia abajo una fila.|
 
-#### Valores devueltos
-[Tabla](table.md)
+#### <a name="returns"></a>Valores devueltos
+[Table](table.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -61,23 +61,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getItem(key: number or string)
+### <a name="getitem(key:-number-or-string)"></a>getItem(key: number or string)
 Obtener una tabla por nombre o identificador.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableCollectionObject.getItem(key);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |Key|number o string|Nombre o identificador de la tabla que se va a recuperar.|
 
-#### Valores devueltos
-[Tabla](table.md)
+#### <a name="returns"></a>Valores devueltos
+[Table](table.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -95,7 +95,7 @@ Excel.run(function (ctx) {
 ```
 
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -112,23 +112,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 Obtiene una tabla basada en su posición en la colección.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableCollectionObject.getItemAt(index);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
-#### Valores devueltos
-[Tabla](table.md)
+#### <a name="returns"></a>Valores devueltos
+[Table](table.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 
@@ -145,22 +145,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js
 Excel.run(function (ctx) { 

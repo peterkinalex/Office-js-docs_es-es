@@ -1,10 +1,10 @@
-﻿
-# Privacidad y seguridad de complementos para Office
+
+# <a name="privacy-and-security-for-office-add-ins"></a>Privacidad y seguridad de complementos para Office
 
 
 
 
-## Información sobre el tiempo de ejecución del complemento
+## <a name="understanding-the-add-in-runtime"></a>Información sobre el tiempo de ejecución del complemento
 
 Las Complementos de Office están protegidas por un entorno de tiempo de ejecución de complemento, un modelo de permisos de varios niveles y reguladores de rendimiento. Este marco protege la experiencia del usuario de las siguientes maneras: 
 
@@ -29,36 +29,36 @@ Además, se puede controlar la memoria, la CPU y los recursos de red que usan lo
 En las secciones siguientes se describe brevemente cómo la arquitectura de tiempo de ejecución permite ejecutar complementos en clientes de Office en dispositivos basados en Windows, en dispositivos Mac OS X y en clientes de Office Online en la web.
 
 
-### Clientes para dispositivos Windows y OS X
+### <a name="clients-for-windows-and-os-x-devices"></a>Clientes para dispositivos Windows y OS X
 
 En los clientes de escritorio y tableta compatibles, como Excel, Outlook y Outlook para Mac, los complementos de Office son compatibles si se integra un componente dentro de proceso, el tiempo de ejecución de los complementos de Office, que administra el ciclo de vida del complemento y permite la interoperabilidad entre el complemento y la aplicación cliente. La página web del complemento se hospeda fuera del proceso. Como se muestra en la ilustración 1, en un dispositivo de escritorio o tableta con Windows, la página web del complemento se hospeda dentro de un control de Internet Explorer que, a su vez, se hospeda dentro de un proceso de tiempo de ejecución de complemento que proporciona aislamiento de rendimiento y seguridad. 
 
 
-**Ilustración 1. Entorno de tiempo de ejecución de complementos de Office en clientes de tableta y escritorio basados en Windows**
+**Figura 1: Entorno de tiempo de ejecución de complementos de Office en clientes de tableta y escritorio basados en Windows**
 
 ![Infraestructura de cliente enriquecido](../../images/DK2_AgaveOverview02.png)
 
 Como se muestra en la figura 2, en un escritorio OS X Mac, la página web de complemento se hospeda dentro de un proceso de host en tiempo de ejecución de WebKit de espacio aislado que ayuda a proporcionar un nivel de protección de rendimiento y seguridad similar. 
 
 
-**Ilustración 2. Entorno de tiempo de ejecución de complementos de Office en clientes con Mac OS X**
+**Figura 2: Entorno de tiempo de ejecución de complementos de Office en clientes con Mac OS X**
 
 ![Aplicaciones para entorno de tiempo de ejecución de Office en OS X Mac](../../images/DK2_AgaveOverview_Mac_02.png)
 
 El tiempo de ejecución de complementos de Office administra la comunicación entre procesos, la conversión de eventos y llamadas API de JavaScript en nativos, así como la compatibilidad remota de interfaz de usuario para permitir que el complemento se represente dentro del documento, en un panel de tareas, o de forma adyacente a un mensaje de correo electrónico, una convocatoria de reunión o una cita.
 
 
-### Clientes web
+### <a name="web-clients"></a>Clientes web
 
 En los clientes web admitidos, como Excel Online y Outlook Web App, los complementos de Office se hospedan en un **iframe** que se ejecuta con el atributo **sandbox** de HTML5. No se permiten los componentes ActiveX ni la navegación de la página principal del cliente web. En los clientes web, la compatibilidad con los complementos de Office se habilita con la integración de la API de JavaScript para Office. De un modo similar a las aplicaciones cliente de escritorio, la API de JavaScript administra el ciclo de vida y la interoperabilidad entre el complemento y el cliente web. Esta interoperabilidad se implementa con una infraestructura de comunicación de publicación de mensajes especial entre marcos. La misma biblioteca de JavaScript (Office.js) que se usa para clientes de escritorio puede interactuar con el cliente web. En la ilustración 3 se muestra la infraestructura que admite los complementos de Office en Office Online (que se ejecuta en el explorador) y los componentes relevantes (el cliente web, el **iframe**, el tiempo de ejecución de los complementos de Office y la API de JavaScript para Office) necesarios para admitirlas.
 
 
-**Ilustración 3. Infraestructura compatible con complementos de Office en los clientes web de Office**
+**Figura 3: Infraestructura compatible con complementos de Office en los clientes web de Office**
 
 ![Infraestructura de cliente web](../../images/DK2_AgaveOverview03.png)
 
 
-## Integridad de complementos en la Tienda Office
+## <a name="add-in-integrity-in-the-office-store"></a>Integridad de complementos en la Tienda Office
 
 Si quiere que sus complementos de Office estén disponibles para el público, publíquelos en la Tienda Office. La Tienda Office aplica las medidas siguientes para mantener la integridad de los complementos:
 
@@ -72,12 +72,12 @@ Si quiere que sus complementos de Office estén disponibles para el público, pu
 - Admite un sistema de revisión del usuario para que los complementos disponibles promuevan una comunidad autocontrolada.
     
 
-## Solucionar las dudas sobre privacidad de los usuarios finales
+## <a name="addressing-end-users'-privacy-concerns"></a>Solucionar las dudas sobre privacidad de los usuarios finales
 
 Esta sección responde a las dudas sobre privacidad de los usuarios relacionadas con el uso de complementos de Office. En primer lugar, se describe la protección que ofrece la plataforma de complementos de Office desde el punto de vista del cliente (usuario final). Después, proporciona al desarrollador instrucciones sobre cómo cumplir las expectativas de los usuarios y cómo administrar de forma segura la información de identificación personal (DCP) de estos. 
 
 
-### Perspectiva del usuario final
+### <a name="end-users'-perspective"></a>Perspectiva del usuario final
 
 Los complementos de Office se diseñan con tecnologías web que se ejecutan en un control del explorador o **iframe**. Por este motivo, el uso de los complementos resulta muy similar a la exploración de sitios web en Internet o en una intranet. Los complementos pueden ser externos a una organización (si se adquieren en la Tienda Office) o internos (si adquiere el complemento en un catálogo de complementos de Exchange Server o SharePoint, o en un recurso compartido de archivos de una organización). Los complementos tienen acceso limitado a la red y la mayoría de ellos puede escribir o leer en el elemento de correo o documento activo. La plataforma del complemento aplicará ciertas restricciones antes de que un usuario o un administrador instale o inicie un complemento. Pero, al igual que ocurre con cualquier modelo de extensibilidad, los usuarios tienen que tomar precauciones antes de iniciar un complemento desconocido.
 
@@ -90,9 +90,9 @@ La plataforma del complemento responde a las dudas sobre privacidad de los usuar
     
 - Cuando los usuarios comparten un documento, también comparten los complementos que se han insertado en él o se han asociado con él. Si un usuario abre un documento que contiene un complemento que no ha usado antes, la aplicación host le solicita permiso para ejecutarlo en el documento. En un entorno organizativo, la aplicación host de Office también consulta al usuario si el documento procede de un origen externo.
     
-- Los usuarios pueden habilitar o deshabilitar el acceso a la Tienda Office. Para complementos de contenido y panel de tareas, los usuarios administran el acceso a complementos y catálogos de confianza desde el **Centro de confianza** del cliente host de Office (se abre desde **Archivo** > **Opciones** > **Centro de confianza** > **Configuración del centro de confianza** > **Catálogos de complementos de confianza**). Para complementos de Outlook, los usuarios pueden administrar complementos mediante el botón **Administrar complementos**: en Outlook para Windows, elija **Archivo** > **Administrar complementos**. En Outlook para Mac, elija el botón **Administrar complementos** en la barra de complementos. En Outlook Web App, elija el menú **Configuración** (icono de engranaje) > **Administrar complementos**. Los administradores también pueden administrar este acceso [mediante la directiva de grupo](http://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_Managing).
+- Los usuarios pueden habilitar o deshabilitar el acceso a la Tienda Office. Para complementos de contenido y panel de tareas, los usuarios administran el acceso a complementos y catálogos de confianza desde el **Centro de confianza** del cliente host de Office (se abre desde **Archivo** > **Opciones** > **Centro de confianza** > **Configuración del Centro de confianza** > **Catálogos de complementos de confianza**). Para complementos de Outlook, los usuarios pueden administrar complementos mediante el botón **Administrar complementos**: en Outlook para Windows, elija **Archivo** > **Administrar complementos**. En Outlook para Mac, elija el botón **Administrar complementos** en la barra de complementos. En Outlook Web App, elija el menú **Configuración** (icono de engranaje) > **Administrar complementos**. Los administradores también pueden administrar este acceso [mediante la directiva de grupo](http://technet.microsoft.com/en-us/library/jj219429.aspx#BKMK_Managing).
     
-- El diseño de la plataforma del complemento proporciona seguridad y rendimiento a los usuarios finales de las siguientes maneras:
+- El diseño de la plataforma de complementos proporciona seguridad y rendimiento a los usuarios finales de las siguientes maneras:
     
       - Un complemento de Office se ejecuta en un control del explorador web que está hospedado en un entorno de tiempo de ejecución del complemento independiente de la aplicación host de Office. Este diseño proporciona seguridad y aislamiento del rendimiento con respecto a la aplicación host.
     
@@ -101,7 +101,7 @@ La plataforma del complemento responde a las dudas sobre privacidad de los usuar
 Los complementos de Outlook proporcionan características adicionales de seguridad y rendimiento con la supervisión del uso de recursos específica de complementos de Outlook. Para más información, vea [Privacidad, permisos y seguridad para complementos de Outlook](../../docs/outlook/privacy-and-security.md).
 
 
-### Recomendaciones para desarrolladores sobre el tratamiento de PII
+### <a name="developer-guidelines-to-handle-pii"></a>Recomendaciones para desarrolladores sobre el tratamiento de PII
 
 Los desarrolladores y administradores de TI encontrarán directrices generales para la protección de la información de identificación personal (DCP) en [Protección de la privacidad en el desarrollo y las pruebas de las aplicaciones de recursos humanos](http://technet.microsoft.com/en-us/library/gg447064.aspx). A continuación puede ver algunas directrices para la protección de datos de DCP específicas para desarrolladores de complementos de Office:
 
@@ -115,12 +115,12 @@ Los desarrolladores y administradores de TI encontrarán directrices generales p
 - Si almacena datos de DCP de los usuarios, asegúrese de comunicárselo y de ofrecer una forma para que puedan revisarlos y eliminarlos si así lo prefieren. Si envía el complemento a la Tienda Office, puede explicar brevemente cuáles son los datos que recopila y el uso que realiza de ellos en la declaración de privacidad.
     
 
-## Opciones de permisos y procedimientos de seguridad para desarrolladores
+## <a name="developers'-permission-choices-and-security-practices"></a>Opciones de permisos y procedimientos de seguridad para desarrolladores
 
 Siga estas directrices generales para disfrutar de la compatibilidad con el modelo de seguridad de complementos de Office y obtenga información detallada sobre cada tipo de complemento.
 
 
-### Opciones de permisos
+### <a name="permissions-choices"></a>Opciones de permisos
 
 La plataforma del complemento proporciona un modelo de permisos que usa el complemento para declarar el nivel de acceso a los datos de un usuario que necesita según sus características. Cada nivel de permisos se corresponde con el subconjunto de la API de JavaScript para Office que el complemento puede usar según sus características. Por ejemplo, el permiso **WriteDocument** para los complementos de panel de tareas y de contenido permite obtener acceso al método [Document.setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) que, a su vez, permite a un complemento escribir en el documento del usuario (aunque no permite obtener acceso a ningún método para leer datos en el documento). Este nivel de permisos resulta útil para los complementos que solo necesitan escribir en un documento (por ejemplo, un complemento donde el usuario puede consultar los datos que quiere insertar en su documento).
 
@@ -148,7 +148,7 @@ xsi:type="TaskPaneApp">
 
 Para obtener más información sobre esto para complementos de panel de tareas y contenido, vea [Requesting permissions for API use in content and task pane add-ins](requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md).
 
-Para obtener más información sobre esto para complementos de Outlook, vea los siguientes temas:
+Para obtener más información sobre esto para complementos de Outlook, consulte los siguientes temas:
 
 
 - [Privacidad, permisos y seguridad para los complementos de Outlook](../../docs/outlook/privacy-and-security.md)
@@ -156,7 +156,7 @@ Para obtener más información sobre esto para complementos de Outlook, vea los 
 - [Comprender los permisos de los complementos de Outlook](../../docs/outlook/understanding-outlook-add-in-permissions.md)
     
 
-### Directiva del mismo origen
+### <a name="same-origin-policy"></a>Directiva de mismo origen
 
 Como los complementos de Office son páginas web que se ejecutan en un control del explorador web, tienen que cumplir la directiva de mismo origen que aplica el explorador. De forma predeterminada, una página web de un dominio no puede realizar llamadas a servicios web [XmlHttpRequest](http://www.w3.org/TR/XMLHttpRequest/) a dominios distintos de aquel en que se hospeda.
 
@@ -185,7 +185,7 @@ function loadVideoDetails(videoIndex) {
 Exchange y SharePoint proporcionan servidores proxy del lado cliente para permitir el acceso entre dominios. En general, una directiva de mismo origen en una intranet no es tan estricta como en Internet. Para más información, vea [Directiva de mismo origen parte 1: Sin inspección](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx) y [Solución para limitaciones de directiva de mismo origen en complementos de Office](../../docs/develop/addressing-same-origin-policy-limitations.md).
 
 
-### Consejos para evitar scripting malintencionado entre sitios
+### <a name="tips-to-prevent-malicious-cross-site-scripting"></a>Consejos para evitar scripting malintencionado entre sitios
 
 Para atacar el origen de un complemento, un usuario malintencionado podría escribir script malintencionado en el documento o en los campos del complemento. Un desarrollador debería procesar correctamente las entradas de usuario para evitar la ejecución del código JavaScript de un usuario malintencionado en el dominio. A continuación se describen algunos procedimientos recomendados para administrar las entradas de usuario desde un documento o un mensaje de correo, o a través de los campos de un complemento.
 
@@ -209,7 +209,7 @@ Para atacar el origen de un complemento, un usuario malintencionado podría escr
 - Vea [Desarrollo de complementos seguros](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx) para conocer otros procedimientos recomendados para crear soluciones web más seguras.
     
 
-### Sugerencias para evitar el "secuestro de clics"
+### <a name="tips-to-prevent-"clickjacking""></a>Sugerencias para evitar el "secuestro de clics"
 
 Como los complementos de Office se representan en un iframe cuando se ejecutan con un explorador con aplicaciones host de Office Online, use las sugerencias siguientes para minimizar el riesgo del [secuestro de clics](http://en.wikipedia.org/wiki/Clickjacking), una técnica que usan los hackers para engañar a los usuarios con el objetivo de que revelen información confidencial.
 
@@ -231,7 +231,7 @@ A continuación verá algunos ejemplos de cómo puede conseguir la confirmación
 Asegúrese también de que la dirección a través de la cual va a contactar con el usuario no procede de un posible atacante. Por ejemplo, para confirmaciones de pago, use la dirección que aparece en el archivo de la cuenta autorizada del usuario.
 
 
-### Otros procedimientos de seguridad
+### <a name="other-security-practices"></a>Otros procedimientos de seguridad
 
 Es importante que los desarrolladores también sigan los siguientes procedimientos de seguridad:
 
@@ -242,7 +242,7 @@ Es importante que los desarrolladores también sigan los siguientes procedimient
     
     Para asegurarse de que los complementos no entregan contenido a través de HTTP, al probarlos, los desarrolladores deben asegurarse de seleccionar la configuración siguiente en Internet Explorer y de que no aparezcan advertencias de seguridad en los escenarios de prueba:
     
-      - Compruebe que el valor de seguridad **Mostrar contenido mixto** de la zona **Internet** está establecido en **Pedir datos**. Para ello, seleccione las opciones siguientes en Internet Explorer: en la pestaña **Seguridad** del cuadro de diálogo **Opciones de Internet**, seleccione la zona **Internet**, seleccione **Nivel personalizado**, desplácese hasta **Mostrar contenido mixto** y seleccione **Pedir datos** (si no está seleccionado).
+      - Asegúrese de que la configuración de seguridad, **Mostrar contenido mixto**, para la zona **Internet** está establecida en **Solicitar**. Para ello, seleccione las opciones siguientes en Internet Explorer: en la pestaña **Seguridad** del cuadro de diálogo **Opciones de Internet**, seleccione la zona **Internet**, seleccione **Nivel personalizado**, desplácese hasta **Mostrar contenido mixto** y seleccione **Pedir datos** (si no está seleccionado).
     
   - Asegúrese de que la opción **Avisar si se cambia entre los modos seguro y no seguro** esté seleccionada en la pestaña **Opciones avanzadas** del cuadro de diálogo **Opciones de Internet**.
     
@@ -254,7 +254,7 @@ Es importante que los desarrolladores también sigan los siguientes procedimient
     
 - Es necesario que los desarrolladores hagan lo siguiente cuando envíen un complemento a la Tienda Office:
     
-      - Hospedar el complemento que van a enviar en un servidor web que admita SSL.
+      - Hospedar el complemento que van a enviar en un servidor web que admita SSL
     
   - Elaborar una declaración que describa una directiva de privacidad válida.
     
@@ -263,27 +263,32 @@ Es importante que los desarrolladores también sigan los siguientes procedimient
 Al margen de las reglas de uso de recursos, los desarrolladores de complementos de Outlook también tienen que asegurarse de que los complementos cumplen los límites a la hora de especificar las reglas de activación y usar la API de JavaScript. Para más información, vea [Límites de activación y API de JavaScript para complementos de Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx).
 
 
-## Control de administradores de TI
+## <a name="it-administrators'-control"></a>Control de administradores de TI
 
 En un entorno corporativo, los administradores de TI tienen la máxima autoridad para habilitar o deshabilitar el acceso a la Tienda Office y a los catálogos privados. 
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
-- [Solicitar permisos para el uso de API en complementos de contenido y de panel de tareas](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
+- 
+  [Solicitar permisos para el uso de API en complementos de contenido y de panel de tareas](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
     
-- [Privacidad, permisos y seguridad para los complementos de Outlook](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
+- 
+  [Privacidad, permisos y seguridad para los complementos de Outlook](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
     
-- [Comprender los permisos de los complementos de Outlook](http://msdn.microsoft.com/library/5bca69f2-b287-4e19-8f0f-78d896b2a3d3.aspx)
+- 
+  [Comprender los permisos de los complementos de Outlook](http://msdn.microsoft.com/library/5bca69f2-b287-4e19-8f0f-78d896b2a3d3.aspx)
     
-- [Límites para la activación y API de JavaScript para complementos de Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
+- 
+  [Límites para la activación y API de JavaScript para complementos de Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
     
-- [Abordar las limitaciones de la directiva del mismo origen en complementos para Office](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
+- 
+  [Abordar las limitaciones de la directiva de mismo origen en complementos para Office](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
     
 - [Directiva de mismo origen](http://www.w3.org/Security/wiki/Same_Origin_Policy)
     
-- [Directiva de mismo origen parte 1: Sin inspección](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
+- [Directiva de mismo origen Parte 1: Sin inspección](http://blogs.msdn.com/b/ieinternals/archive/2009/08/28/explaining-same-origin-policy-part-1-deny-read.aspx)
     
 - [Directiva de mismo origen para JavaScript](https://developer.mozilla.org/En/Same_origin_policy_for_JavaScript)
     

@@ -1,5 +1,5 @@
 
-# Crear complementos para aplicaciones web de Access
+# <a name="create-add-ins-for-access-web-apps"></a>Crear complementos para aplicaciones web de Access
 
 
 
@@ -8,7 +8,7 @@ Este artículo explica cómo usar Visual Studio 2015 para desarrollar un complem
 >
   **Nota:** Para obtener información sobre cómo desarrollar soluciones para Access con VBA, consulte [Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx) en MSDN.
 
-## Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 
 Para crear una Complemento de Office dirigida a aplicaciones web de Access, necesita:
 
@@ -21,7 +21,7 @@ Para crear una Complemento de Office dirigida a aplicaciones web de Access, nece
  >**Nota**  Complementos de Office trabajará con aplicaciones web de Access alojado en SharePoint Online o Office 365. La aplicación de escritorio Access 2013 no es compatible con Complementos de Office. Complementos de Office dirigidas a aplicaciones web de Access son compatibles con la version 1.1 y posteriores de Office.js.
 
 
-## Crear un proyecto de complemento para Access en Visual Studio
+## <a name="create-a-project-in-visual-studio"></a>Crear un proyecto de complemento para Access en Visual Studio
 
 
 1.  Abra Visual Studio y, en el menú, elija **Archivo**, **Nuevo**, **Proyecto**. Se abrirá el cuadro de diálogo **Nuevo proyecto**.
@@ -56,7 +56,7 @@ Para crear una Complemento de Office dirigida a aplicaciones web de Access, nece
  >**Nota**  No puede depurar el complemento sin implementarlo con unaAccess web app.
 
 
-## Revisar el manifiesto y el archivo Home.Html
+## <a name="review-the-manifest-and-the-home.html-file"></a>Revisar el manifiesto y el archivo Home.Html
 
 
 1. En el proyecto de Visual Studio, abra el archivo  **Home.html** y busque las líneas que hacen referencia a la biblioteca de scripts de office.js.
@@ -82,7 +82,7 @@ Para que un usuario de encuentre y use un complemente, debe estar registrado en 
  >**Nota**  Deberá crear una Access web app para hospedar su Complemento de Office.
 
 
-## Publicar el complemento en un catálogo de SharePoint Online
+## <a name="publish-your-add-in-to-a-sharepoint-online-catalog"></a>Publicar el complemento en un catálogo de SharePoint Online
 
 
 1.  Inicie sesión en SharePoint Online o Office 365 y luego vaya al **centro de administración de SharePoint** eligiendo **Administración** en la barra de herramientas de Office 365 en la perte superior de la página.
@@ -103,7 +103,7 @@ Para que un usuario de encuentre y use un complemente, debe estar registrado en 
  >**Nota**  En este procedimiento se supone que ha creado un sitio de prueba para su SharePoint. Si no lo hizo, puede hacerlo desde la pestaña  **Sitios**, en la parte superior de la venta de SharePoint. Puede usar una aplicaciones web de Access existente, si la tiene.
 
 
-## Cree una Access web app para que aloje a su complemento
+## <a name="create-an-access-web-app-to-host-your-add-in"></a>Cree una Access web app para que aloje a su complemento
 
 
 1. Vaya hasta el sitio de prueba. En la barra de vínculos que se encuentra a la izquierda, elija  **Contenidos del sitio**. Esto lo llevará a la página  **Contenidos del sitio** de su sitio de prueba.
@@ -120,7 +120,7 @@ Para que un usuario de encuentre y use un complemente, debe estar registrado en 
 6. Debe abrir la aplicación Accessaplicación en la versión de escritorio de Microsoft Access 2013 y agregar datos antes de que se pueda abrir y ver en SharePoint.
 
 
-## Agregar su complemento a una aplicaciones web de Access
+## <a name="add-your-add-in-to-an-access-web-apps"></a>Agregar su complemento a una aplicaciones web de Access
 
 
 1. Abra una aplicaciones web de Access.
@@ -132,19 +132,19 @@ Para que un usuario de encuentre y use un complemente, debe estar registrado en 
     Uno de los complementos en el cuadro de diálogo debe ser el complemento de Office que se ha registrado en un procedimiento anterior. Elija ese complemento para insertarlo en la aplicación web de Access. Recuerde que debe ejecutar la aplicación en Visual Studio para poder detectarla y que aparezca en la página de acceso a la aplicación web de Access.
 
 
-## Depurar el complemento para Office
+## <a name="debug-your-add-in-for-office"></a>Depurar el complemento para Office
 
 Para depurar sus complementos, presione F12 en Internet Explorer o elija el icono de engranaje en la barra de tareas del explorador (no el icono de engranaje de la página SharePoint). De esta forma se abren las herramientas de depuración que proporciona Internet Explorer 11. Si usa otro explorador, consulte su documentación para determinar cómo especificar el modo de depuración.
 
 En este punto se pueden establecer los puntos de interrupción, avanzar en los códigos de JavaScript, explorar el DOM y modificar el código para confirmar que los cambios aparecen en la Complemento de Office que está dirigidaaplicaciones web de Access. Consulte [Uso de herramientas para desarrolladores F12](http://msdn.microsoft.com/library/ie/bg182326%28v=vs.85%29) para obtener más información.
 
 
-## Siguientes pasos
+## <a name="next-steps"></a>Siguientes pasos
 
 Descargue la muestra [Office 365: enlazar y manipular datos en una aplicación web de Access](https://code.msdn.microsoft.com/officeapps/Office-365-Bind-and-4876274e) para obtener más información sobre cómo implementar una Office Add-in que manipule datos en una Access web app.
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

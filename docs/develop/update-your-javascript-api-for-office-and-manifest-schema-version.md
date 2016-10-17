@@ -1,11 +1,11 @@
 
-# Actualizar la versión de la API de JavaScript para Office y los archivos de esquema de manifiesto
+# <a name="update-the-version-of-your-javascript-api-for-office-and-manifest-schema-files"></a>Actualizar la versión de la API de JavaScript para Office y los archivos de esquema de manifiesto
 
 
 
 En este artículo se describe cómo actualizar los archivos JavaScript (Office.js y los archivos .js específicos de la aplicación) y el archivo de validación del manifiesto del complemento en el proyecto de complemento de Office a la versión 1.1.
 
-## Usar los archivos de proyecto más actualizados
+## <a name="using-the-most-up-to-date-project-files"></a>Usar los archivos de proyecto más actualizados
 
 Si usa Visual Studio para desarrollar su complemento, para usar los [miembros de la API más recientes](../../reference/what's-changed-in-the-javascript-api-for-office.md) de la API de JavaScript para Office y las [características de la versión 1.1 del manifiesto del complemento](../../docs/overview/add-in-manifests.md) (validado frente a offappmanifest-1.1.xsd), tiene que descargar e instalar [Visual Studio 2015 y la versión más reciente de Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs).
 
@@ -23,7 +23,7 @@ Para descargar productos de Office, SharePoint y Exchange SP1, consulte los sigu
 - [Descripción de Exchange Server 2013 Service Pack 1](http://support.microsoft.com/kb/2926248)
     
 
-## Actualizar un proyecto de Complemento de Office creado con Visual Studio para que use la última biblioteca de la API de JavaScript para Office y la versión 1.1 del esquema del manifiesto del complemento
+## <a name="updating-an-office-add-in-project-created-with-visual-studio-to-use-the-latest-javascript-api-for-office-library-and-version-1.1-add-in-manifest-schema"></a>Actualizar un proyecto de Complemento de Office creado con Visual Studio para que use la última biblioteca de la API de JavaScript para Office y la versión 1.1 del esquema del manifiesto del complemento
 
 
 En el caso de los proyectos que se han creado antes del lanzamiento de la versión 1.1 de la API de JavaScript para Office y el esquema del manifiesto de la aplicación, pueden actualizarse los archivos correspondientes con el  **Administrador de paquetes NuGet**. A continuación, deberán actualizarse las páginas HTML del complemento para que hagan referencia a estos archivos. 
@@ -33,7 +33,7 @@ Tenga en cuenta que el proceso de actualización se aplica  _por proyecto_. Debe
 
 
 
-### Para actualizar los archivos de la biblioteca de la API de JavaScript para Office de su proyecto a la versión más reciente:
+### <a name="to-update-the-javascript-api-for-office-library-files-in-your-project-to-the-newest-release"></a>Para actualizar los archivos de la biblioteca de la API de JavaScript para Office de su proyecto a la versión más reciente:
 
 
 1. En Visual Studio 2015, abra o cree un nuevo proyecto de  **Complemento de Office**.
@@ -57,7 +57,7 @@ Tenga en cuenta que el proceso de actualización se aplica  _por proyecto_. Debe
 ```
 
 
-### Para actualizar el archivo del manifiesto en el proyecto para usar la versión 1.1 del esquema
+### <a name="to-update-the-manifest-file-in-your-project-to-use-schema-version-1.1"></a>Para actualizar el archivo del manifiesto en el proyecto para usar la versión 1.1 del esquema
 
 
 - En el archivo del manifiesto del complemento del proyecto (_NombreDelProyecto_ Manifest.xml), actualice el atributo **xmlns** del elemento **OfficeApp** y cambie el valor de la versión a "1.1" (no modifique otros atributos que no sean **xmlns**).
@@ -70,7 +70,7 @@ Tenga en cuenta que el proceso de actualización se aplica  _por proyecto_. Debe
 >
   **Nota** Después de actualizar la versión del esquema de manifiesto de complemento a 1.1, tendrá que quitar los elementos **Capabilities** y **Capability** y, después, reemplazarlos por los [elementos Hosts y Host](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx) o por los [elementos Requirements y Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-## Actualizar un proyecto de Complemento de Office creado con un editor de texto u otro IDE para que use la versión más reciente de la biblioteca de la API de JavaScript para Office y del esquema del manifiesto del complemento
+## <a name="updating-an-office-add-in-project-created-with-a-text-editor-or-other-ide-to-use-the-newest-javascript-api-for-office-library-and-version-1.1-add-in-manifest-schema"></a>Actualizar un proyecto de Complemento de Office creado con un editor de texto u otro IDE para que use la versión más reciente de la biblioteca de la API de JavaScript para Office y del esquema del manifiesto del complemento
 
 
 Para los proyectos creados antes del lanzamiento de la versión 1.1 de la API de JavaScript para Office y del esquema del manifiesto del complemento, tiene que actualizar las páginas HTML del complemento para que hagan referencia a la red CDN de la biblioteca v1.1 y actualizar el archivo del manifiesto del complemento para que use el esquema v1.1. 
@@ -82,7 +82,7 @@ No necesita tener copias locales de los archivos de la API de JavaScript para Of
  > **Nota** Para obtener una copia del XSD (definición del esquema XML) para el manifiesto del complemento versión 1.1, vea el listado en [Schema reference for Office Add-ins manifests (v1.1)](../overview/add-in-manifests.md) [Referencia de esquema de manifiestos de complementos de Office (versión 1.1)].
 
 
-### Para actualizar los archivos de la biblioteca de la API de JavaScript para Office de su proyecto a la versión más reciente
+### <a name="to-update-the-javascript-api-for-office-library-files-in-your-project-to-use-the-newest-release"></a>Para actualizar los archivos de la biblioteca de la API de JavaScript para Office de su proyecto a la versión más reciente
 
 
 1. Abra las páginas HTML del complemento en su editor de texto o IDE.
@@ -97,7 +97,7 @@ No necesita tener copias locales de los archivos de la API de JavaScript para Of
     The  `/1/` in front of `office.js` in the CDN URL specifies to use the latest incremental release within version 1 of Office.js.
     
 
-### Para actualizar el archivo del manifiesto en el proyecto para usar la versión 1.1 del esquema
+### <a name="to-update-the-manifest-file-in-your-project-to-use-schema-version-1.1"></a>Para actualizar el archivo del manifiesto en el proyecto para usar la versión 1.1 del esquema
 
 
 - En el archivo del manifiesto del complemento del proyecto ( _nombre_de_proyecto_ Manifest.xml), actualice el atributo **xmlns** del elemento **OfficeApp** y cambie el valor de la versión a `1.1` (no modifique otros atributos que no sean **xmlns**).
@@ -110,7 +110,7 @@ No necesita tener copias locales de los archivos de la API de JavaScript para Of
   **Nota** Después de actualizar la versión del esquema de manifiesto de complemento a 1.1, tendrá que quitar los elementos **Capabilities** y **Capability** y, después, reemplazarlos por los [elementos Hosts y Host](http://msdn.microsoft.com/library/cff9fbdf-a530-4f6e-91ca-81bcacd90dcd%28Office.15%29.aspx) o por los [elementos Requirements y Requirement](../../docs/overview/specify-office-hosts-and-api-requirements.md).
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

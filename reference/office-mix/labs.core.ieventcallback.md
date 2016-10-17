@@ -1,7 +1,7 @@
 
-# Labs.Core.IEventCallback
+# <a name="labs.core.ieventcallback"></a>Labs.Core.IEventCallback
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Interfaz para controlar las devoluciones de llamada de EventManager.
 
@@ -10,7 +10,7 @@ interface IEventCallback
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||

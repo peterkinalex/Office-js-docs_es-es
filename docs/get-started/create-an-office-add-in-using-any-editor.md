@@ -1,12 +1,12 @@
 
-# Crear un complemento de Office con cualquier editor
+# <a name="create-an-office-add-in-using-any-editor"></a>Crear un complemento de Office con cualquier editor
 
 Un complemento de Office es una aplicación web que se hospeda dentro de una aplicación de Office. En este artículo se describe cómo usar el generador Yeoman proporciona scaffolding de proyectos y administración de compilaciones. El archivo `manifest.xml` indica a la aplicación de Office dónde se encuentra el complemento y cómo quiere que aparezca. La aplicación de Office se encarga de hospedarlo en Office.
 
  >**Nota**  Las instrucciones incluyen pasos que usan el símbolo del sistema de Windows, pero también se pueden aplicar a otros entornos de shell. 
 
 
-## Requisitos previos para el generador Yeoman
+## <a name="prerequisites-for-yeoman-generator"></a>Requisitos previos para el generador Yeoman
 
 Para ejecutar el generador de Yeoman Office, necesita lo siguiente:
 
@@ -23,7 +23,7 @@ Para ejecutar el generador de Yeoman Office, necesita lo siguiente:
     
 - [TSD](http://definitelytyped.org/tsd/)
     
-Solo Git y npm requieren una instalación independiente. Los demás programas pueden instalarse mediante npm.
+Solo Git y npm requieren una instalación independiente. Los otros se pueden instalar mediante npm.
 
 Cuando instale Git, use los valores predeterminados pero elija las opciones siguientes: 
 
@@ -42,7 +42,7 @@ npm install -g bower yo generator-office gulp tsd
 ```
 
 
-## Crear los archivos predeterminados para el complemento
+## <a name="create-the-default-files-for-your-add-in"></a>Crear los archivos predeterminados para el complemento
 
 Antes de desarrollar un complemento de Office, primero debe crear una carpeta para el proyecto y ejecutar el generador desde ella. El generador Yeoman se ejecuta en el directorio donde se quiere aplicar la técnica scaffolding al proyecto. 
 
@@ -81,17 +81,17 @@ El generador le pedirá lo siguiente:
 
 **Entrada del generador Yeoman para un complemento**
 
-![Captura de pantalla del generador yeoman donde se solicita una entrada para el proyecto](../../images/338cf34b-fe8d-4a2f-9e38-e4bbca996139.PNG)
+![Captura de pantalla del generador Yeoman donde se solicita una entrada para el proyecto](../../images/338cf34b-fe8d-4a2f-9e38-e4bbca996139.PNG)
 
 Así se crean la estructura y los archivos básicos del complemento.
 
 
-## Hospedar el complemento de Office
+## <a name="hosting-your-office-add-in"></a>Hospedar el complemento de Office
 
 Los complementos de Office deben suministrarse a través de HTTPS. La aplicación de Office no cargará una aplicación web como complemento si es HTTP. Para desarrollar, depurar y hospedar el complemento localmente, necesita una manera de crear y suministrar una aplicación web localmente mediante HTTPS. Se puede crear un sitio HTTPS autohospedado a través de Gulp (se describe en la sección siguiente) o se puede usar Azure. 
 
 
-### Usar un sitio HTTPS autohospedado
+### <a name="using-a-self-hosted-https-site"></a>Usar un sitio HTTPS autohospedado
 
 El complemento gulp-webserver crea un sitio HTTPS autohospedado. El generador de Office lo agrega a gulpfile.js como una tarea denominada serve-static para el proyecto que se genera. Inicie el servidor web autohospedado con la siguiente instrucción: 
 
@@ -103,19 +103,19 @@ gulp serve-static
 Se iniciará un servidor HTTPS en https://localhost:8443.
 
 
-## Desarrollar el complemento de Office
+## <a name="develop-your-office-add-in"></a>Desarrollar el complemento de Office
 
 Se puede usar cualquier editor de texto para desarrollar los archivos del complemento de Office personalizado.
 
 
-### Compatibilidad con proyectos de JavaScript
+### <a name="javascript-project-support"></a>Compatibilidad con proyectos de JavaScript
 
 El generador de Office creará un archivo jsconfig.json cuando cree el proyecto. Este es el archivo que puede usar para inferir todos los archivos de JavaScript dentro del proyecto. Así se evita tener que incluir los bloques de código repetitivos /// <reference path="../App.js" />.
 
 Obtenga más información sobre el archivo jsconfig.json en la página [Lenguaje JavaScript](https://code.visualstudio.com/docs/languages/javascript#_javascript-projects-jsconfigjson).
 
 
-### Compatibilidad con Intellisense de JavaScript
+### <a name="javascript-intellisense-support"></a>Compatibilidad con Intellisense de JavaScript
 
 Además, aunque esté escribiendo JavaScript sin formato, puede usar los archivos de definición del tipo TypeScript ( `*.d.ts`) para proporcionar compatibilidad adicional con IntelliSense. El generador de Office agrega un archivo  `tsd.json` a los archivos creados con referencias a todas las bibliotecas de terceros que usa el tipo de proyecto seleccionado.
 
@@ -129,13 +129,13 @@ tsd install
 ```
 
 
-### Crear un Complemento de Office Hello World
+### <a name="create-a-hello-world-office-add-in"></a>Crear un Complemento de Office Hello World
 
 
 En este ejemplo, vamos a crear un complemento Hello World. La interfaz de usuario del complemento la proporciona un archivo HTML que, opcionalmente, puede suministrar la lógica de programación de JavaScript. 
 
 
-### Para crear los archivos de un complemento Hello World
+### <a name="to-create-the-files-for-a-hello-world-add-in"></a>Para crear los archivos de un complemento Hello World
 
 
 - En la carpeta de proyecto, vaya a _[carpeta de proyecto]/app/home_ (en el ejemplo, es myHelloWorldaddin/app/home), abra home.html y reemplace el código existente, que proporciona el conjunto mínimo de etiquetas HTML para mostrar la interfaz de usuario de un complemento.
@@ -179,7 +179,7 @@ En este ejemplo, vamos a crear un complemento Hello World. La interfaz de usuari
     
 - Vuelva a la carpeta de proyecto principal y asegúrese de que el archivo XML manifest-myHelloWorldaddin.xml contiene el siguiente código XML.
     
-     >**Importante** El valor en la etiqueta `<id>` es un GUID que el generador de yeoman crea al generar el proyecto. No cambie el GUID que el generador de yeoman creó para el complemento. Si el host es Azure, el valor `SourceLocation` tendrá una dirección URL similar a _https:// [nombre-de-la-aplicación-web].azurewebsites.net/[ruta de acceso-a-complemento]_. Si usa la opción autohospedada, como en este ejemplo, será _https://localhost: 8443/ [ruta de acceso-a-complemento]_.
+     >**Importante** El valor en la etiqueta `<id>` es un GUID que el generador de Yeoman crea al generar el proyecto. No cambie el GUID que el generador de Yeoman creó para el complemento. Si el host es Azure, el valor `SourceLocation` tendrá una dirección URL similar a _https:// [nombre-de-la-aplicación-web].azurewebsites.net/[ruta de acceso-al-complemento]_. Si usa la opción autohospedada, como en este ejemplo, será _https://localhost:8443/[ruta de acceso-a-complemento]_.
 
 ```XML
      <?xml version="1.0" encoding="utf-8"?> 
@@ -208,7 +208,7 @@ En este ejemplo, vamos a crear un complemento Hello World. La interfaz de usuari
 ```
 
 
-### Ejecutar el complemento localmente
+### <a name="running-the-add-in-locally"></a>Ejecutar el complemento localmente
 
 
 Para probar el complemento localmente, abra el explorador y escriba la dirección URL del archivo home.html, que puede estar en el servidor web o en el sitio HTTPS autohospedado. Si lo hospedó localmente, escriba la dirección URL en el explorador. En nuestro ejemplo es  `https://localhost:8443/app/home/home.html`. 
@@ -219,7 +219,7 @@ Verá este error: "Existe un problema con el certificado de seguridad de este si
  >**Nota**  El complemento generado viene con una clave y un certificado autofirmado. Agréguelos a la lista de confianza de entidades de certificación para que el explorador no emita advertencias de certificado. Consulte la documentación de [gulp-webserver](https://www.npmjs.com/package/gulp-webserver) si quiere usar sus propios certificados autofirmados.Consulte [el artículo de Knowledge Base #PH18677](https://support.apple.com/kb/PH18677?locale=en_US) para ver las instrucciones de cómo confiar en un certificado en OS X Yosemite.
 
 
-## Instalar el complemento en una aplicación de Office
+## <a name="install-the-add-in-for-testing"></a>Instalar el complemento en una aplicación de Office
 
 Puede usar la transferencia local para instalar el complemento para pruebas:
 
@@ -231,7 +231,7 @@ Puede usar la transferencia local para instalar el complemento para pruebas:
 Como alternativa, puede publicar el complemento en un catálogo o en un recurso compartido de red e instalarlo como lo harían los usuarios finales. Para más información, vea [Crear un catálogo de carpeta compartida de red para complementos de panel de tareas y de contenido](https://technet.microsoft.com/en-us/browser/fp123503(v=office.14)).
 
 
-## Depurar el complemento de Office
+## <a name="debugging-your-office-add-in"></a>Depurar el complemento de Office
 
 Un complemento se puede depurar de varias formas:
 
@@ -243,7 +243,7 @@ Un complemento se puede depurar de varias formas:
 
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

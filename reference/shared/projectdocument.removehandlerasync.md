@@ -1,23 +1,23 @@
 
 
-# Método ProjectDocument.removeHandlerAsync
-Quita de forma asíncrona un controlador de eventos para el evento cambiado de selección de tareas que hay en un objeto [ProjectDocument](../../reference/shared/projectdocument.projectdocument.md).
+# <a name="projectdocument.removehandlerasync-method"></a>Método ProjectDocument.removeHandlerAsync
+Quita de forma asincrónica un controlador de eventos para el evento cambiado de selección de tareas que hay en un objeto [ProjectDocument](../../reference/shared/projectdocument.projectdocument.md).
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
-|**Agregado en**|1,0|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
+|**Agregado en**|1.0|
 
 ```js
 Office.context.document.removeHandlerAsync(eventType[, options][, callback]);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 |**Nombre**|**Tipo**|**Descripción**|**Notas de compatibilidad**|
 |:-----|:-----|:-----|:-----|
-|_eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)|El tipo de evento que se debe quitar, como constante [EventType](../../reference/shared/eventtype-enumeration.md) o su valor de texto correspondiente. Necesario.<br/><br/>En la siguiente tabla se muestran los argumentos eventType válidos para un objeto [ProjectDocument](../../reference/shared/projectdocument.projectdocument.md).<br/><br/><table><tr><th>Enumeración</th><th>Valor de texto</th></tr><tr><td>
+|_eventType_|[EventType](../../reference/shared/eventtype-enumeration.md)|El tipo de evento que se debe quitar, como constante [EventType](../../reference/shared/eventtype-enumeration.md) o su valor de texto correspondiente. Obligatorio.<br/><br/>En la siguiente tabla se muestran los argumentos eventType válidos para un objeto [ProjectDocument](../../reference/shared/projectdocument.projectdocument.md).<br/><br/><table><tr><th>Enumeración</th><th>Valor de texto</th></tr><tr><td>
   <a href="https://msdn.microsoft.com/en-us/library/office/fp179836.aspx">Office.EventType.ResourceSelectionChanged</a></td><td>resourceSelectionChanged</td></tr><tr><td>
   <a href="https://msdn.microsoft.com/en-us/library/office/fp179816.aspx">Office.EventType.TaskSelectionChanged</a></td><td>taskSelectionChanged</td></tr><tr><td>
   <a href="https://msdn.microsoft.com/en-us/library/office/fp179839.aspx">Office.EventType.ViewSelectionChanged</a></td><td>viewSelectionChanged</td></tr></table>||
@@ -26,7 +26,7 @@ Office.context.document.removeHandlerAsync(eventType[, options][, callback]);
 |_callback_|**object**|Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.||
 
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el parámetro de la función de devolución de llamada.
 
@@ -37,10 +37,10 @@ Para el método **removeHandlerAsync**, el objeto devuelto [AsyncResult](../../r
 |:-----|:-----|
 |[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Datos pasados en el parámetro opcional _asyncContext_, si se usó el parámetro.|
 |[error](../../reference/shared/asyncresult.error.md)|Información sobre el error si la propiedad **status** es igual a **failed**.|
-|[estado](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
+|[status](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
 |[value](../../reference/shared/asyncresult.value.md)|**removeHandlerAsync** siempre devuelve **undefined**.|
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 El siguiente código de ejemplo utiliza [addHandlerAsync](../../reference/shared/projectdocument.addhandlerasync.md) para agregar un controlador de eventos para el evento [ResourceSelectionChanged](../../reference/shared/projectdocument.resourceselectionchanged.event.md) y **removeHandlerAsync** para quitar el controlador.
 
@@ -114,7 +114,7 @@ En el ejemplo se presupone que el complemento tiene una referencia a la bibliote
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -128,23 +128,23 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|Selección|
+|**Disponible en los conjuntos de requisitos**|Selección|
 |**Nivel de permisos mínimo**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
-|1,0|Agregado|
+|1.0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [Método addHandlerAsync](../../reference/shared/projectdocument.addhandlerasync.md)

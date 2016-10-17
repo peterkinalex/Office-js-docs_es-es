@@ -1,10 +1,10 @@
-# Objeto Font (API de JavaScript para Word)
+# <a name="font-object-(javascript-api-for-word)"></a>Objeto Font (API de JavaScript para Word)
 
 Representa una fuente.
 
-_Se aplica a: Word 2016, Word para iPad, Word para Mac_
+_Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 
-## Properties
+## <a name="properties"></a>Propiedades
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |bold|bool|Obtiene o establece un valor que indica si la fuente está en negrita. True si la fuente tiene formato de negrita; en caso contrario, false.|
@@ -17,39 +17,39 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac_
 |subscript|bool|Obtiene o establece un valor que indica si la fuente está en subíndice. True si la fuente tiene formato de subíndice; en caso contrario, false.|
 |superscript|bool|Obtiene o establece un valor que indica si la fuente está en superíndice. True si la fuente tiene formato de superíndice; en caso contrario, false.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |size|**float**|Obtiene o establece un valor que representa el tamaño de la fuente en puntos.|
 |underline|**string**|Obtiene o establece un valor que indica el tipo de subrayado de la fuente. Los valores válidos son: "None", "Single", "Word", "Double", "Dotted", "Hidden", "Thick", "Dashline", "Dotline", "DotDashLine", "TwoDotDashLine" y "Wave"|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -88,9 +88,9 @@ Word.run(function (context) {
 });
 ```
 
-## Ejemplos de acceso a la propiedad
+## <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
-### Cambiar el nombre de la fuente
+### <a name="change-the-font-name"></a>Cambiar el nombre de la fuente
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -115,7 +115,7 @@ Word.run(function (context) {
 });
 ```
 
-### Cambiar el color de la fuente
+### <a name="change-the-font-color"></a>Cambiar el color de la fuente
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -140,7 +140,7 @@ Word.run(function (context) {
 });
 ```
 
-### Cambiar el tamaño de la fuente
+### <a name="change-the-font-size"></a>Cambiar el tamaño de la fuente
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -165,7 +165,7 @@ Word.run(function (context) {
 });
 ```
 
-### Resaltar el texto seleccionado
+### <a name="highlight-selected-text"></a>Resaltar el texto seleccionado
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -190,7 +190,7 @@ Word.run(function (context) {
 });
 ```
 
-### Texto con formato de negrita
+### <a name="bold-format-text"></a>Texto con formato de negrita
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -216,7 +216,7 @@ Word.run(function (context) {
 
 ```
 
-### Texto con formato de subrayado
+### <a name="underline-format-text"></a>Texto con formato de subrayado
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -241,7 +241,7 @@ Word.run(function (context) {
 });
 ```
 
-### Texto con formato de tachado
+### <a name="strike-format-text"></a>Texto con formato de tachado
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -266,5 +266,5 @@ Word.run(function (context) {
 });
 ```
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).

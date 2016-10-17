@@ -1,15 +1,15 @@
-# Objeto TrackedObjectsCollection (API de JavaScript para Office 2016)
+# <a name="trackedobjectscollection-object-(javascript-api-for-office-2016)"></a>Objeto TrackedObjectsCollection (API de JavaScript para Office 2016)
 
 Permite que los complementos administren las referencias de objeto de intervalo en lotes sync(). Normalmente, Excel.run() permite mantener automáticamente las referencias entre los lotes, sin tener que realizar un seguimiento de manera explícita. Sin embargo, si un escenario de complemento requiere que se realice un seguimiento de un objeto de intervalo y que se ajuste manualmente para reflejar el estado actual del intervalo de Excel subyacente, esta colección podría usarse para marcar dichos objetos para su seguimiento. Tenga en cuenta que si un objeto de intervalo está marcado para su seguimiento, debe quitarse explícitamente tras su uso para liberar memoria en Excel, incluso en caso de error.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 Ninguna.
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 
 Ninguno
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 El objeto trackedObjectsCollection tiene definidos los métodos siguientes:
 
@@ -17,29 +17,29 @@ El objeto trackedObjectsCollection tiene definidos los métodos siguientes:
 |:-----------------|:--------|:----------|
 |[add(rangeObject: Range)](#addrangeobject-range)| Null             |Crea una referencia nueva en un intervalo.|
 |[remove(rangeObject: Range)](#removerangeobject-range)| Null             |Elimina una referencia en el intervalo.  |
-|[removeAll()](#removeall)| Null|Quita todas las referencias creadas por el complemento en el dispositivo.|
+|[removeAll()](#removeallrangeobject-range)| Null|Quita todas las referencias creadas por el complemento en el dispositivo.|
 
 
-## Especificación de API 
+## <a name="api-specification"></a>Especificación de API 
 
-### add(rangeObject: range)
+### <a name="add(rangeobject:-range)"></a>add(rangeObject: range)
 Agrega un objeto de intervalo a trackedObjectsCollection. Se realizará un seguimiento de los cambios subyacentes en todas las solicitudes de lote y se aplicarán todas las actualizaciones de seguimiento al estado actual del objeto de intervalo. 
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 trackedObjectsCollection.add(rangeObject);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 
 Parámetro       | Tipo   | Descripción
 --------------- | ------ | ------------
 `rangeObject`  | [Range](range.md)| Objeto de intervalo que debe agregarse a trackedObjectCollection.
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 Null
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 var sheetName = "Sheet1";
@@ -57,25 +57,25 @@ Excel.run(function (ctx) {
 ```
 
 
-### remove(rangeObject: range)
+### <a name="remove(rangeobject:-range)"></a>remove(rangeObject: range)
 
 Quita un objeto de referencia de la colección. De este modo se liberan la memoria y los recursos necesarios para mantener el estado del objeto del que se realiza el seguimiento. Tenga en cuenta que si un objeto de intervalo está marcado para su seguimiento, debe quitarse explícitamente incluso en caso de error.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 trackedObjectsCollection.remove(rangeObject);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 
 Parámetro       | Tipo   | Descripción
 --------------- | ------ | ------------
 `rangeObject`  | [Range](range.md)| Objeto de intervalo que debe quitarse de trackedObjectCollection.
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 Null
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 
 ```js
@@ -94,23 +94,23 @@ Excel.run(function (ctx) {
 });
 ```
 
-### removeAll(rangeObject: range)
+### <a name="removeall(rangeobject:-range)"></a>removeAll(rangeObject: range)
 
 Quita todas las referencias creadas por el complemento en el dispositivo.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 trackedObjectsCollection.removeAll();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 Null
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 
 ```js
 Excel.run(function (ctx) { 

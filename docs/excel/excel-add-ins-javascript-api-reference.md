@@ -1,4 +1,4 @@
-# Referencia de la API de JavaScript para Excel
+# <a name="excel-javascript-api-reference"></a>Referencia de la API de JavaScript para Excel
 
 Puede usar la API de JavaScript para Excel para crear complementos para Excel 2016. En la lista siguiente se muestran los objetos de Excel de alto nivel que están disponibles en la API. Cada vínculo a la página del objeto contiene una descripción de las propiedades, las relaciones y los métodos disponibles en el objeto. Explore los vínculos para más información.
 
@@ -25,9 +25,9 @@ Puede usar la API de JavaScript para Excel para crear complementos para Excel 20
 * [RequestContext](../../reference/excel/requestcontext.md): el objeto RequestContext facilita las solicitudes para la aplicación de Excel.
 
 
-##### Recursos adicionales
+##### <a name="additional-resources"></a>Recursos adicionales
 
 *  [Introducción a la programación de complementos de Excel](excel-add-ins-javascript-programming-overview.md)
-*  [Crear su primer complemento de Excel](build-your-first-excel-add-in.md)
+*  [Compilar el primer complemento de Excel](build-your-first-excel-add-in.md)
 *  [Explorador de fragmentos de código para Excel](http://officesnippetexplorer.azurewebsites.net/#/snippets/excel)
 

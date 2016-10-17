@@ -1,7 +1,7 @@
 
-# Labs.Core.GetActions.IGetAttemptOptions
+# <a name="labs.core.getactions.igetattemptoptions"></a>Labs.Core.GetActions.IGetAttemptOptions
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Proporciona acceso a las opciones asociadas con una acción de intento de obtener.
 
@@ -10,7 +10,7 @@ interface IGetAttemptOptions extends Core.IGetActionOptions
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||

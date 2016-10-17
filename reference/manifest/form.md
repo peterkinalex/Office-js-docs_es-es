@@ -1,11 +1,11 @@
 
-# Elemento Form
+# <a name="form-element"></a>Elemento Form
 Configuración UX para los formularios que su complemento de correo usa cuando se ejecuta en un dispositivo concreto (escritorio, tableta o teléfono).
 
  **Tipo de complemento:** correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -15,12 +15,12 @@ Configuración UX para los formularios que su complemento de correo usa cuando s
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [FormSettings](../../reference/manifest/formsettings.md)
 
 
-## Puede contener:
+## <a name="can-contain:"></a>Puede contener:
 
 
 ||

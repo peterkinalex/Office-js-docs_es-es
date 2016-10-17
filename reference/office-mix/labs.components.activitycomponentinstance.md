@@ -1,7 +1,7 @@
 
-# Labs.Components.ActivityComponentInstance
+# <a name="labs.components.activitycomponentinstance"></a>Labs.Components.ActivityComponentInstance
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Representa la instancia actual de un componente de actividad.
 
@@ -10,19 +10,19 @@ class ActivityComponentInstance extends Labs.ComponentInstance<Components.Activi
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
 | `public var component: Components.IActivityComponentInstance`|El objeto subyacente [Labs.Components.IActivityComponentInstance](../../reference/office-mix/labs.components.iactivitycomponentinstance.md) que representa esta clase.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 
 
 
-### constructor
+### <a name="constructor"></a>constructor
 
  `function constructor(component: Components.IActivityComponentInstance)`
 
@@ -33,9 +33,9 @@ Crea una nueva instancia de la clase [Labs.Components.IActivityComponentInstance
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-| _componente_|La instancia **IActivityComponentInstance** para crear esta clase a partir de esta.|
+| _component_|La instancia **IActivityComponentInstance** para crear esta clase a partir de esta.|
 
-### buildAttempt
+### <a name="buildattempt"></a>buildAttempt
 
  `public function buildAttempt(createAttemptAction: Labs.Core.IAction): Components.ActivityComponentAttempt`
 

@@ -1,5 +1,5 @@
 
-# Agregar y quitar datos adjuntos de un elemento en un formulario de redacción en Outlook
+# <a name="add-and-remove-attachments-to-an-item-in-a-compose-form-in-outlook"></a>Agregar y quitar datos adjuntos de un elemento en un formulario de redacción en Outlook
 
 Puede usar los métodos [addFileAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) y [addItemAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md) para adjuntar un archivo y un elemento de Outlook respectivamente al elemento que el usuario está redactando. Ambos son métodos asincrónicos, lo que significa que la ejecución puede continuar sin necesidad de esperar a que se complete la acción de agregar los datos adjuntos. Según la ubicación original y el tamaño de los datos adjuntos que se agregan, la llamada asincrónica para agregar datos adjuntos puede tardar un tiempo en completarse. Si existen tareas que dependen de que finalice la acción, debería llevarlas a cabo con un método de devolución de llamada. Este método de devolución de llamada es opcional y se invoca cuando se completa la carga de los datos adjuntos. El método de devolución de llamada usa un objeto [AsyncResult](http://dev.outlook.com/reference/add-ins/simple-types.md) como parámetro de salida que proporciona los estados, errores y valores devueltos de la acción de agregar datos adjuntos. Si la devolución de llamada necesita otros parámetros, puede especificarlos en el parámetro opcional _options.aysncContext_.  _options.asyncContext_ puede ser de cualquiera de los tipos que el método de devolución de llamada espera.
 
@@ -18,7 +18,7 @@ Puede comprobar si la llamada del método asincrónico se completó correctament
  >**Nota**  Solo se recomienda usar el id. de datos adjuntos para quitar datos adjuntos si el mismo complemento los agregó en la misma sesión. En Outlook Web App y OWA para dispositivos, el id. de datos adjuntos solo es válido en la misma sesión. Una sesión finaliza cuando el usuario cierra el complemento o si empieza a redactar un formulario en línea y posteriormente aparece el formulario en línea como elemento emergente en otra ventana.
 
 
-## Adjuntar un archivo
+## <a name="attaching-a-file"></a>Adjuntar un archivo
 
 Para adjuntar un archivo a un mensaje o una cita en un formulario de redacción, use el método  **addFileAttachmentAsync** y especifique el URI del archivo. Si el archivo está protegido, puede incluir un token de autenticación o identidad apropiado como parámetro de cadena de consulta de URI. Exchange realizará una llamada al URI para obtener los datos adjuntos y el servicio web que protege el archivo tendrá que usar el token como forma de autenticación.
 
@@ -68,7 +68,7 @@ function write(message){
 ```
 
 
-## Adjuntar un elemento de Outlook
+## <a name="attaching-an-outlook-item"></a>Adjuntar un elemento de Outlook
 
 Para adjuntar un elemento de Outlook (por ejemplo, un mensaje de correo electrónico, un calendario o un contacto) a un mensaje o una cita en un formulario de redacción, especifique el identificador de los servicios Web Exchange (EWS) del elemento y use el método  **addItemAttachmentAsync**. Para obtener el identificador de EWS de un elemento de correo electrónico, calendario, contacto o tarea en el buzón del usuario, use el método [mailbox.makeEwsRequestAsync](../../reference/outlook/Office.context.mailbox.md) y obtenga acceso a la operación de EWS [FindItem](http://msdn.microsoft.com/en-us/library/ebad6aae-16e7-44de-ae63-a95b24539729%28Office.15%29.aspx). La propiedad [item.itemId](http://dev.outlook.com/reference/add-ins/Office.context.mailbox.item.md) también proporciona el identificador de EWS de un elemento existente en un formulario de lectura.
 
@@ -108,7 +108,7 @@ function addItemAttachment(ID) {
  >**Nota**  Puede usar un complemento de redacción para adjuntar una instancia de una cita periódica en Outlook Web App o OWA para dispositivos. Sin embargo, en un cliente enriquecido de Outlook, al intentar adjuntar una instancia se adjuntarán las series periódicas (la cita principal).
 
 
-## Quitar datos adjuntos
+## <a name="removing-an-attachment"></a>Quitar datos adjuntos
 
 
 Para quitar datos adjuntos de un elemento o archivo de un mensaje o una cita en un formulario de redacción, especifique el identificador del dato adjunto correspondiente y use el método [removeAttachmentAsync](../../reference/outlook/Office.context.mailbox.item.md). Debe quitar solamente los datos adjuntos que el complemento agregó en la misma sesión. Asegúrese de que el identificador del dato adjunto corresponda a datos adjuntos válidos o el método devolverá un error. Al igual que los métodos  **addFileAttachmentAsync** y **addItemAttachmentAsync**,  **removeAttachmentAsync** es un método asincrónico. Debe proporcionar un método de devolución de llamada para comprobar el estado y los posibles errores mediante el objeto de parámetro de salida **AsyncResult**. También puede transferir otros parámetros al método de devolución de llamada con el parámetro opcional  **asyncContext**,que es un objeto JSON de pares clave-valor.
@@ -146,7 +146,7 @@ function removeAttachment(ID) {
 ```
 
 
-## Consejos para agregar y quitar datos adjuntos
+## <a name="tips-for-adding-and-removing-attachments"></a>Consejos para agregar y quitar datos adjuntos
 
 
 Si el complemento de redacción agrega y quita datos adjuntos, estructure el código de forma que transfiera un id. de datos adjuntos válido a la llamada para quitar datos adjuntos, y administre el caso cuando  **AsyncResult.error** devuelva **InvalidAttachmentId**. Según la ubicación y el tamaño de los datos adjuntos, la acción de adjuntar un archivo o elemento puede tardar un tiempo. El ejemplo siguiente contiene una llamada a  **addFileAttachmentAsync**,  `write` y **removeAttachmentAsync**. Lo lógico es pensar que las llamadas se ejecutarán de forma secuencial una tras otra.
@@ -288,13 +288,13 @@ A continuación verá un ejemplo del resultado:
 Tenga en cuenta que la devolución de llamada para  **removeAttachmentAsync** se anida dentro de la devolución de llamada para **addFileAttachmentAsync**. Debido a que  **addFileAttachmentAsync** y **removeAttachmentAsync** son asincrónicos, la última línea en la devolución de llamada para **addFileAttachmentAsync** se puede ejecutar antes de que finalice la devolución de llamada para **removeAttachmentAsync**.
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
 - [Crear complementos de Outlook para formularios de redacción](../outlook/compose-scenario.md)
     
-- [Programación asíncrona en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
+- [Programación asincrónica en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
     
 
 

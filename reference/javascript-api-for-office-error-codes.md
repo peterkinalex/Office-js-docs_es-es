@@ -1,11 +1,11 @@
 
-# Códigos de error de la API de JavaScript de Office
+# <a name="javascript-api-for-office-error-codes"></a>Códigos de error de la API de JavaScript de Office
 Este artículo muestra los mensajes de error que se puede encontrar al usar la API de JavaScript para Office (Office.js).
 
  _**Se aplica a:** Complementos de Office | Complementos de SharePoint | Excel | Outlook | PowerPoint | Project | Word_
 
 
-## Códigos de error
+## <a name="error-codes"></a>Códigos de error
 
 La tabla siguiente enumera los códigos, nombres y mensajes de error mostrados, así como las condiciones que indican.
 
@@ -72,12 +72,12 @@ La tabla siguiente enumera los códigos, nombres y mensajes de error mostrados, 
 |8022|Fuera del intervalo|El valor está fuera del intervalo permitido.|Algunos de los valores en el formato están fuera de los intervalos admitidos.|
 |9016|Permiso denegado|Permiso denegado|Acceso denegado.|
 
-## Condiciones para no poder crear enlaces
+## <a name="binding-creation-error-conditions"></a>Condiciones para no poder crear enlaces
 
 Cuando se crea un enlace en la API, el desarrollador de soluciones tiene que indicar el tipo de enlace que desea usar. Las tablas siguientes resumen las diferentes posibilidades y los comportamientos de enlace resultantes que se esperan.
 
 
-### Comportamiento en Excel
+### <a name="behavior-in-excel"></a>Comportamiento en Excel
 
 La tabla siguiente resume el comportamiento del enlace en Excel.
 
@@ -99,7 +99,7 @@ La tabla siguiente resume el comportamiento del enlace en Excel.
 |Texto|Una sola celda en una tabla.|Se crea un enlace de tipo  _texto_.|
 |Texto|Texto seleccionado en la celda.|Se crea un enlace de tipo  _texto_ en toda la celda.|
 
-### Comportamiento en Word
+### <a name="behavior-in-word"></a>Comportamiento en Word
 
 La tabla siguiente resume el comportamiento del enlace en Word.
 
@@ -120,7 +120,7 @@ La tabla siguiente resume el comportamiento del enlace en Word.
 |Texto|Selección múltiple.|La última selección se ajustará con un control de contenido y un enlace a ese control. Se crea un control de contenido de tipo  _texto_.|
 |Texto|Selección no válida (por ejemplo, objetos no válidos, múltiples, etc.).|No se puede crear el enlace.|
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 - [Referencias de esquema y API de complementos de Office](../reference/reference.md)

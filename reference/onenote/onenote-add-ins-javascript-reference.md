@@ -1,6 +1,6 @@
-# Referencia de la API de JavaScript de complementos de OneNote
+# <a name="onenote-add-ins-javascript-api-reference"></a>Referencia de la API de JavaScript de complementos de OneNote
 
-*Válido para: OneNote Online*
+*Se aplica a: OneNote Online*
 
 En los vínculos siguientes se muestran los objetos de OneNote de alto nivel disponibles en la API. Cada vínculo a una página del objeto contiene una descripción de las propiedades, relaciones y métodos disponibles en el objeto. Explore los vínculos siguientes para más información. 
     
@@ -46,7 +46,7 @@ En los vínculos siguientes se muestran los objetos de OneNote de alto nivel dis
 
   - [TableCellCollection](tablecellcollection.md): una colección de objetos TableCell de un objeto TableRow.
         
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 - [Introducción a la programación de API de JavaScript para OneNote](../../docs/onenote/onenote-add-ins-programming-overview.md)
 - [Crear el primer complemento de OneNote](../../docs/onenote/onenote-add-ins-getting-started.md)

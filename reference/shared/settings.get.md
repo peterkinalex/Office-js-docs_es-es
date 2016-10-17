@@ -1,11 +1,11 @@
 
-# Método Settings.get
+# <a name="settings.get-method"></a>Método Settings.get
 Recupera la configuración especificada.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Access, Excel, PowerPoint y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Configuración|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Configuración|
 |**Modificado por última vez en**|1.1|
 
 ```js
@@ -13,7 +13,7 @@ var mySetting = Office.context.document.settings.get(name);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
@@ -26,12 +26,12 @@ _name_<br/>
 
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Un **object** que tiene nombres de propiedad asignados a valores serializados JSON.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -49,7 +49,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta propiedad es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta propiedad.
@@ -67,13 +67,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|Configuración|
+|**Disponible en los conjuntos de requisitos**|Configuración|
 |**Nivel de permisos mínimo**|[Restringido](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

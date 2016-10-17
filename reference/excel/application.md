@@ -1,46 +1,46 @@
-# Objeto Application (API de JavaScript para Excel)
+# <a name="application-object-(javascript-api-for-excel)"></a>Objeto Application (API de JavaScript para Excel)
 
 Representa la aplicación de Excel que administra el libro.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |calculationMode|string|Devuelve el modo de cálculo usado en el libro. Solo lectura. Los valores posibles son: `Automatic` Excel controla el recálculo; `AutomaticExceptTables` Excel controla el recálculo pero omite los cambios de las tablas; `Manual` el cálculo se realiza cuando el usuario lo solicita.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 Ninguno
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalcula todos los libros abiertos actualmente en Excel.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### calculate(calculationType: string)
+### <a name="calculate(calculationtype:-string)"></a>calculate(calculationType: string)
 Recalcula todos los libros abiertos actualmente en Excel.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.calculate(calculationType);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |calculationType|string|Especifica el tipo de cálculo que se va a usar. Los valores posibles son: `Recalculate` opción predeterminada, realiza el cálculo normal calculando todas las fórmulas del libro; `Full` fuerza el cálculo completo de los datos; `FullRebuild` fuerza el cálculo completo de los datos y vuelve a crear las dependencias.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     ctx.workbook.application.calculate('Full');
@@ -54,22 +54,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, acepta un objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 ```js
 Excel.run(function (ctx) { 
     var application = ctx.workbook.application;

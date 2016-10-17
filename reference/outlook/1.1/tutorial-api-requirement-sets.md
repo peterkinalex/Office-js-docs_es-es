@@ -1,6 +1,6 @@
  
 
-# Entender los conjuntos de requisitos de la API
+# <a name="understanding-api-requirement-sets"></a>Entender los conjuntos de requisitos de la API
 
 Los complementos de Outlook declaran qué versiones de la API necesitan mediante el uso del elemento [Requirements](https://msdn.microsoft.com/EN-US/library/office/dn592036.aspx) de su [manifiesto](https://msdn.microsoft.com/en-us/library/office/fp123693.aspx). Los complementos de Outlook siempre incluyen un elemento [Set](https://msdn.microsoft.com/EN-US/library/office/dn592049.aspx) con un atributo `Name` establecido en `Mailbox` y un atributo `MinVersion` establecido en el conjunto de requisitos mínimos de la API que admite los escenarios de los complementos.
 
@@ -18,7 +18,7 @@ Todas las API de Outlook pertenecen al `Mailbox`[conjunto de requisitos](https:/
 
 Al establecer una versión de conjunto de requisitos mínimos en el manifiesto se controla en qué cliente de Outlook aparecerá el complemento. Si un cliente no admite el conjunto de requisitos mínimos, no carga el complemento. Por ejemplo, si se especifica la versión 1.3 del conjunto de requisitos, esto significa que el complemento no se mostrará en ningún cliente de Outlook que no admita al menos la versión 1.3.
 
-## Usar las API desde conjuntos de requisitos posteriores
+## <a name="using-apis-from-later-requirement-sets"></a>Usar las API desde conjuntos de requisitos posteriores
 
 Al establecer un conjunto de requisitos no se limitan las API disponibles que puede usar el complemento. Por ejemplo, si el complemento especifica un conjunto de requisitos de la versión 1.1, pero está ejecutando un cliente de Outlook que admite 1.3, el complemento puede usar las API del conjunto de requisitos de la versión 1.3\.
 
@@ -32,11 +32,11 @@ if (item.somePropertyOrFunction !== undefined) {
 
 Dichos controles no son necesarios para ninguna API que esté presente en la versión del conjunto de requisitos especificada en el manifiesto.
 
-## Elegir un conjunto de requisitos mínimos
+## <a name="choosing-a-minimum-requirement-set"></a>Elegir un conjunto de requisitos mínimos
 
 Los desarrolladores deben usar el conjunto de requisitos más antiguo que contenga el conjunto fundamental de las API para su escenario, sin el que no funcionará el complemento.
 
-## Clientes
+## <a name="clients"></a>Clientes
 
 Los siguientes clientes admiten complementos de Outlook.
 

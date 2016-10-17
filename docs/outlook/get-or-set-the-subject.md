@@ -1,5 +1,5 @@
 
-# Obtener o establecer el asunto al redactar una cita o un mensaje en Outlook
+# <a name="get-or-set-the-subject-when-composing-an-appointment-or-message-in-outlook"></a>Obtener o establecer el asunto al redactar una cita o un mensaje en Outlook
 
 La API de JavaScript para Office proporciona métodos asincrónicos ([subject.getAsync](../../reference/outlook/Subject.md) y [subject.setAsync](../../reference/outlook/Subject.md)) para obtener y establecer el asunto de una cita o mensaje que el usuario está redactando. Estos métodos asincrónicos solo están disponibles para complementos de redacción. Para usar estos métodos, asegúrese de configurar el manifiesto del complemento correctamente para que Outlook active el complemento en los formularios de redacción.
 
@@ -26,7 +26,7 @@ La propiedad  **subject** está disponible para el acceso de escritura solamente
 Como ocurre con la mayoría de métodos asincrónicos de la API de JavaScript para Office, **getAsync** y **setAsync** usan parámetros de entrada opcionales. Para más información sobre cómo especificar estos parámetros de entrada opcionales, vea "Pasar parámetros opcionales a métodos asincrónicos" en [Programación asincrónica en complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
-## Para obtener el asunto
+## <a name="to-get-the-subject"></a>Para obtener el asunto
 
 
 Esta sección muestra un código de ejemplo que obtiene y muestra el asunto de la cita o el mensaje que el usuario está redactando. Este código de ejemplo asume una regla en el manifiesto del complemento que activa el complemento en un formulario de redacción para una cita o un mensaje, tal como se muestra a continuación.
@@ -79,7 +79,7 @@ function write(message){
 ```
 
 
-## Para configurar el asunto
+## <a name="to-set-the-subject"></a>Para configurar el asunto
 
 
 Esta sección muestra un código de ejemplo que configura el asunto de una cita o un mensaje que el usuario está redactando. Tal como ocurre en el ejemplo anterior, este código asume una regla en el manifiesto del complemento que activa el complemento en un formulario de redacción para una cita o un mensaje.
@@ -132,17 +132,17 @@ function write(message){
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
 - [Obtener y definir datos de elementos en un formulario de redacción de Outlook](../outlook/get-and-set-item-data-in-a-compose-form.md)
     
-- [Obtención y definición de datos de elementos de Outlook en los formularios de lectura o redacción](../outlook/item-data.md)
+- [Obtener y establecer datos de elementos en formularios de lectura o redacción](../outlook/item-data.md)
     
 - [Crear complementos de Outlook para formularios de redacción](../outlook/compose-scenario.md)
     
-- [Programación asíncrona en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
+- [Programación asincrónica en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
     
 - [Obtener, establecer o agregar destinatarios al redactar una cita o un mensaje en Outlook](../outlook/get-set-or-add-recipients.md)
     

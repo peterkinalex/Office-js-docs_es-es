@@ -1,10 +1,10 @@
-# Objeto Table (API de JavaScript para Excel)
+# <a name="table-object-(javascript-api-for-excel)"></a>Objeto Table (API de JavaScript para Excel)
 
-_Se aplica a: Excel 2016, Excel Online, Excel para iOS y Office 2016_
+_Se aplica a: Excel 2016, Excel Online, Excel para iOS, Office 2016_
 
 Representa una tabla de Excel.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
@@ -14,62 +14,62 @@ Representa una tabla de Excel.
 |showTotals|bool|Indica si la fila de totales está visible o no. Este valor puede establecerse para que muestre o quite la fila de totales.|
 |style|string|Valor constante que representa el estilo de tabla. Los valores posibles son: de TableStyleLight1 a TableStyleLight21, de TableStyleMedium1 a TableStyleMedium28, de TableStyleStyleDark1 a TableStyleStyleDark11. También puede especificarse un estilo personalizado definido por el usuario presente en el libro.|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|columnas|[TableColumnCollection](tablecolumncollection.md)|Representa una colección de todas las columnas de la tabla. Solo lectura.|
-|Rows|[TableRowCollection](tablerowcollection.md)|Representa una colección de todas las filas de la tabla. Solo lectura.|
+|columns|[TableColumnCollection](tablecolumncollection.md)|Representa una colección de todas las columnas de la tabla. Solo lectura.|
+|rows|[TableRowCollection](tablerowcollection.md)|Representa una colección de todas las filas de la tabla. Solo lectura.|
 |sort|[TableSort](tablesort.md)|Representa la configuración de ordenación de la tabla. Solo lectura.|
-|worksheet|[Hoja de cálculo](worksheet.md)|Hoja de cálculo que contiene la tabla actual. Solo lectura.|
+|worksheet|[Worksheet](worksheet.md)|La hoja de cálculo que contiene la tabla actual. Solo lectura.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[clearFilters()](#clearfilters)|void|Borra todos los filtros aplicados actualmente en la tabla.|
 |[convertToRange()](#converttorange)|[Range](range.md)|Convierte la tabla en un rango de celdas normal. Se conservan todos los datos.|
 |[delete()](#delete)|void|Elimina la tabla.|
-|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado al cuerpo de datos de la tabla.|
-|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado a la fila de encabezado de la tabla.|
-|[getRange()](#getrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado a toda la tabla.|
-|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado a la fila de totales de la tabla.|
+|[getDataBodyRange()](#getdatabodyrange)|[Range](range.md)|Obtiene el objeto de rango asociado al cuerpo de datos de la tabla.|
+|[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Obtiene el objeto de rango asociado a la fila de encabezado de la tabla.|
+|[getRange()](#getrange)|[Range](range.md)|Obtiene el objeto de rango asociado a toda la tabla.|
+|[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Obtiene el objeto de rango asociado a la fila de totales de la tabla.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 |[reapplyFilters()](#reapplyfilters)|void|Vuelve a aplicar todos los filtros aplicados actualmente en la tabla.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### clearFilters()
+### <a name="clearfilters()"></a>clearFilters()
 Borra todos los filtros aplicados actualmente en la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.clearFilters();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-### convertToRange()
+### <a name="converttorange()"></a>convertToRange()
 Convierte la tabla en un rango de celdas normal. Se conservan todos los datos.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.convertToRange();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -84,21 +84,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### delete()
+### <a name="delete()"></a>delete()
 Elimina la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.delete();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -114,21 +114,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getDataBodyRange()
+### <a name="getdatabodyrange()"></a>getDataBodyRange()
 Obtiene el objeto de intervalo asociado al cuerpo de datos de la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.getDataBodyRange();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -146,21 +146,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### getHeaderRowRange()
+### <a name="getheaderrowrange()"></a>getHeaderRowRange()
 Obtiene el objeto de intervalo asociado a la fila de encabezado de la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.getHeaderRowRange();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -179,21 +179,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getRange()
+### <a name="getrange()"></a>getRange()
 Obtiene el objeto de intervalo asociado a toda la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.getRange();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var table = ctx.workbook.tables.getItem(tableName);
@@ -211,21 +211,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### getTotalRowRange()
+### <a name="gettotalrowrange()"></a>getTotalRowRange()
 Obtiene el objeto de intervalo asociado a la fila de totales de la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.getTotalRowRange();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
@@ -244,22 +244,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 Obtener una tabla por nombre. 
 

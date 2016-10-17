@@ -1,6 +1,6 @@
 
-# Propiedad Context.displayLanguage
-Obtiene la configuración regional (de idioma) especificada por el usuario para la UI de la aplicación host de Office.
+# <a name="context.displaylanguage-property"></a>Propiedad Context.displayLanguage
+Obtiene la configuración regional (de idioma) especificada por el usuario para la interfaz de usuario de la aplicación host de Office.
 
 |||
 |:-----|:-----|
@@ -12,19 +12,19 @@ var myDisplayLanguage = Office.context.displayLanguage;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Una **string** con el formato de etiqueta de idioma RFC 1766, como `en-US`.
 
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 El valor **displayLanguage** refleja la configuración de **Mostrar idioma** actual que se ha especificado desde **Archivo**  >  **Opciones**  >  **Idioma**, en la aplicación host de Office.
 
 En el caso de los complementos de contenido para las aplicaciones web de Access, la propiedad **displayLanguage** obtiene el idioma del complemento (por ejemplo, "es-ES").
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -50,7 +50,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -74,7 +74,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

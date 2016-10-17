@@ -1,5 +1,5 @@
 
-# Propiedad Error.code
+# <a name="error.code-property"></a>Propiedad Error.code
 Obtiene el código numérico del error.
 
 |||
@@ -12,17 +12,17 @@ var errCode = asyncResult.error.code;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 El código del error como un **number**.
 
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Al objeto **Error** y a sus propiedades se obtiene acceso desde el objeto [AsyncResult](../../reference/shared/asyncresult.md) que se devuelve en la función transferida como el argumento _callback_ de una acción de datos asíncrona.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 Para que se devuelva un error, seleccione una tabla o una matriz y después llame a la función `setText`.
 
@@ -46,7 +46,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -71,7 +71,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

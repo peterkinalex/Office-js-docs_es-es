@@ -1,12 +1,12 @@
 
 
-# NotificationMessages
+# <a name="notificationmessages"></a>NotificationMessages
 
-## NotificationMessages
+## <a name="notificationmessages"></a>NotificationMessages
 
 El objeto `NotificationMessages` se devuelve como la propiedad [`notificationMessages`](Office.context.mailbox.item.md#notificationmessages-notificationmessages) de un elemento.
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
@@ -14,15 +14,15 @@ El objeto `NotificationMessages` se devuelve como la propiedad [`notificationMes
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-### Métodos
+### <a name="methods"></a>Métodos
 
-####  addAsync(key, JSONmessage, [options], [callback])
+####  <a name="addasync(key,-jsonmessage,-[options],-[callback])"></a>addAsync(key, JSONmessage, [options], [callback])
 
 Agrega una notificación a un elemento.
 
 Hay un máximo de 5 notificaciones por mensaje. Establecer más devolverá un error `NumberOfNotificationMessagesExceeded`.
 
-##### Parámetros:
+##### <a name="parameters:"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -31,7 +31,7 @@ Hay un máximo de 5 notificaciones por mensaje. Establecer más devolverá un er
 |`options`| Object| &lt;optional&gt;|Un objeto literal que contiene una o más de las siguientes propiedades.<br/><br/>**Propiedades**<br/><table class="nested-table"><thead><tr><th>Nombre</th><th>Tipo</th><th>Atributos</th><th>Descripción</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Los desarrolladores pueden proporcionar cualquier objeto que quieran para tener acceso al método de devolución de llamada.</td></tr></tbody></table>|
 |`callback`| función| &lt;optional&gt;|Cuando el método finaliza, la función que se pasa en el parámetro `callback` se llama con un único parámetro, `asyncResult`, que es un objeto [`AsyncResult`](simple-types.md#asyncresult). |
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
@@ -39,7 +39,7 @@ Hay un máximo de 5 notificaciones por mensaje. Establecer más devolverá un er
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-##### Ejemplo
+##### <a name="example"></a>Ejemplo
 
 ```
 // Create three notifications, each with a different key
@@ -59,11 +59,11 @@ Office.context.mailbox.item.notificationMessages.addAsync("error", {
 });
 ```
 
-####  getAllAsync([options], [callback])
+####  <a name="getallasync([options],-[callback])"></a>getAllAsync([options], [callback])
 
 Devuelve todas las claves y los mensajes de un elemento.
 
-##### Parámetros:
+##### <a name="parameters:"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -72,7 +72,7 @@ Devuelve todas las claves y los mensajes de un elemento.
 
 Si se completó correctamente, la propiedad `asyncResult.value` contendrá una matriz de objetos [`NotificationMessageDetails`](simple-types.md#notificationmessagedetails).|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
@@ -80,7 +80,7 @@ Si se completó correctamente, la propiedad `asyncResult.value` contendrá una m
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-##### Ejemplo
+##### <a name="example"></a>Ejemplo
 
 ```
 // Get all notifications
@@ -96,11 +96,11 @@ Office.context.mailbox.item.notificationMessages.getAllAsync(function (asyncResu
 });
 ```
 
-####  removeAsync(key, [options], [callback])
+####  <a name="removeasync(key,-[options],-[callback])"></a>removeAsync(key, [options], [callback])
 
 Quita un mensaje de notificación de un elemento.
 
-##### Parámetros:
+##### <a name="parameters:"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -110,7 +110,7 @@ Quita un mensaje de notificación de un elemento.
 
 Si la clave no se encuentra, se devuelve un error `KeyNotFound` en la propiedad `asyncResult.error`.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
@@ -118,20 +118,20 @@ Si la clave no se encuentra, se devuelve un error `KeyNotFound` en la propiedad 
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-##### Ejemplo
+##### <a name="example"></a>Ejemplo
 
 ```
 // Remove a notification
 Office.context.mailbox.item.notificationMessages.removeAsync("progress");
 ```
 
-####  replaceAsync(key, JSONmessage, [options], [callback])
+####  <a name="replaceasync(key,-jsonmessage,-[options],-[callback])"></a>replaceAsync(key, JSONmessage, [options], [callback])
 
 Reemplaza un mensaje de notificación que tiene una clave determinada con otro mensaje.
 
 Si no existe un mensaje de notificación con la clave especificada, `replaceAsync` agregará la notificación.
 
-##### Parámetros:
+##### <a name="parameters:"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -140,7 +140,7 @@ Si no existe un mensaje de notificación con la clave especificada, `replaceAsyn
 |`options`| Object| &lt;optional&gt;|Un objeto literal que contiene una o más de las siguientes propiedades.<br/><br/>**Propiedades**<br/><table class="nested-table"><thead><tr><th>Nombre</th><th>Tipo</th><th>Atributos</th><th>Descripción</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Los desarrolladores pueden proporcionar cualquier objeto que quieran para tener acceso al método de devolución de llamada.</td></tr></tbody></table>|
 |`callback`| función| &lt;optional&gt;|Cuando el método finaliza, la función que se pasa en el parámetro `callback` se llama con un único parámetro, `asyncResult`, que es un objeto [`AsyncResult`](simple-types.md#asyncresult). |
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
@@ -148,7 +148,7 @@ Si no existe un mensaje de notificación con la clave especificada, `replaceAsyn
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-##### Ejemplo
+##### <a name="example"></a>Ejemplo
 
 ```
 // Replace a notification with an informational notification

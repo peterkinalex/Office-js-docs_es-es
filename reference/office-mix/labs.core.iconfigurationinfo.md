@@ -1,7 +1,7 @@
 
-# Labs.Core.IConfigurationInfo
+# <a name="labs.core.iconfigurationinfo"></a>Labs.Core.IConfigurationInfo
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Información sobre la configuración del laboratorio.
 
@@ -10,7 +10,7 @@ interface IConfigurationInfo
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |||

@@ -1,18 +1,18 @@
-# Objeto Section (API de JavaScript para Word)
+# <a name="section-object-(javascript-api-for-word)"></a>Objeto Section (API de JavaScript para Word)
 
 Representa una sección de un documento de Word.
 
-_Se aplica a: Word 2016, Word para iPad, Word para Mac_
+_Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 
-## Properties
+## <a name="properties"></a>Propiedades
 Ninguno
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|cuerpo|[Body](body.md)|Obtiene el cuerpo de la sección. Esto no incluye el encabezado y pie de página y otros metadatos de la sección. Solo lectura.|
+|body|[Body](body.md)|Obtiene el cuerpo de la sección. Esto no incluye el encabezado y pie de página y otros metadatos de la sección. Solo lectura.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
@@ -20,25 +20,25 @@ Ninguno
 |[getHeader(type: HeaderFooterType)](#getheadertype-headerfootertype)|[Body](body.md)|Obtiene uno de los encabezados de la sección.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
-### getFooter(type: HeaderFooterType)
+### <a name="getfooter(type:-headerfootertype)"></a>getFooter(type: HeaderFooterType)
 Obtiene uno de los pies de página de la sección.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 sectionObject.getFooter(type);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |tipo|HeaderFooterType|Necesario. Tipo de pie de página que se va a devolver. Este valor puede ser "primary", "firstPage" o "evenPages".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Body](body.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -77,23 +77,23 @@ Word.run(function (context) {
     }
 });
 ```
-### getHeader(type: HeaderFooterType)
+### <a name="getheader(type:-headerfootertype)"></a>getHeader(type: HeaderFooterType)
 Obtiene uno de los encabezados de la sección.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 sectionObject.getHeader(type);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |tipo|HeaderFooterType|Necesario. Tipo de encabezado que se va a devolver. Este valor puede ser "primary", "firstPage" o "evenPages".|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Body](body.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -133,21 +133,21 @@ Word.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).

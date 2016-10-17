@@ -1,5 +1,5 @@
 
-# Propiedad AsyncResult.error
+# <a name="asyncresult.error-property"></a>Propiedad AsyncResult.error
 Obtiene un objeto **Error** que proporciona una descripción del error, en caso de existir.
 
 |||
@@ -12,12 +12,12 @@ var errorObj = asyncResult.error;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Un objeto **[Error](../../reference/shared/error.md)**.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -41,7 +41,7 @@ function write(message){
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -65,7 +65,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

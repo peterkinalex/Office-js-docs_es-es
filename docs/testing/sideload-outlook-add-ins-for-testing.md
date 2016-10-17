@@ -1,12 +1,12 @@
 
-# Transferir localmente complementos de Outlook para pruebas
+# <a name="sideload-outlook-add-ins-for-testing"></a>Transferir localmente complementos de Outlook para pruebas
 
 Puede usar la transferencia local para instalar un complemento de Outlook para pruebas sin tener que ponerlo primero en un catálogo de complementos.
 
  >**Nota** También puede transferir localmente complementos para otras aplicaciones del conjunto de aplicaciones de Office. Para obtener más información, consulte [Transferir localmente complementos de Office para pruebas](create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins.md).
 
 
-## Para transferir localmente complementos de Outlook
+## <a name="to-sideload-outlook-add-ins"></a>Para transferir localmente complementos de Outlook
 
 
 1. Vaya a [Outlook Web App](https://outlook.office365.com).

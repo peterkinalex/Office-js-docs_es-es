@@ -1,6 +1,6 @@
 
-# Objeto DocumentSelectionChangedEventArgs
-Proporciona información sobre el documento que ha generado el evento [SelectionChanged](../../reference/shared/document.selectionchanged.event.md).
+# <a name="documentselectionchangedeventargs-object"></a>Objeto DocumentSelectionChangedEventArgs
+Proporciona información sobre el documento que generó el evento [SelectionChanged](../../reference/shared/document.selectionchanged.event.md).
 
 |||
 |:-----|:-----|
@@ -12,7 +12,7 @@ Proporciona información sobre el documento que ha generado el evento [Selection
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -20,10 +20,10 @@ Proporciona información sobre el documento que ha generado el evento [Selection
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|[documento](../../reference/shared/document.selectionchangedeventargs.document.md)|Obtiene un objeto **Document** que representa el documento que ha generado el evento **SelectionChanged**.|
-|[tipo](../../reference/shared/document.selectionchangedeventargs.type.md)|Obtiene un valor de la enumeración **EventType** que identifica el tipo de evento que se ha generado.|
+|[document](../../reference/shared/document.selectionchangedeventargs.document.md)|Obtiene un objeto **Document** que representa el documento que generó el evento **SelectionChanged**.|
+|[type](../../reference/shared/document.selectionchangedeventargs.type.md)|Obtiene un valor de la enumeración **EventType** que identifica el tipo de evento que se ha generado.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -42,11 +42,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

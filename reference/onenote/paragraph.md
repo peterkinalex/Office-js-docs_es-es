@@ -1,20 +1,20 @@
-# Objeto Paragraph (API de JavaScript para OneNote)
+# <a name="paragraph-object-(javascript-api-for-onenote)"></a>Objeto Paragraph (API de JavaScript para OneNote)
 
 _Se aplica a: OneNote Online_  
 
 
 Contenedor para el contenido visible en una página. Un Paragraph puede contener cualquier tipo de ParagraphType de contenido.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción|Comentarios|
 |:---------------|:--------|:----------|:-------|
 |id|string|Obtiene el identificador del objeto Paragraph. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-id)|
 |type|string|Obtiene el tipo del objeto Paragraph. Solo lectura. Los valores posibles son: RichText, Image, Table, Other.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-type)|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
 |image|[Image](image.md)|Obtiene el objeto Image de Paragraph. Produce una excepción si ParagraphType no es Image. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-image)|
@@ -28,7 +28,7 @@ _Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
 |richText|[RichText](richtext.md)|Obtiene el objeto RichText de Paragraph. Produce una excepción si ParagraphType no es RichText. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-richText)|
 |table|[Table](table.md)|Obtiene el objeto Table de Paragraph. Produce una excepción si ParagraphType no es Table. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-table)|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
@@ -39,24 +39,24 @@ _Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
 |[insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])](#inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string)|[Table](table.md)|Agrega una tabla con el número especificado de filas y columnas antes o después del párrafo actual.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-insertTableAsSibling)|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-load)|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### delete()
+### <a name="delete()"></a>delete()
 Elimina el párrafo
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 paragraphObject.delete();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 
@@ -94,24 +94,24 @@ OneNote.run(function (context) {
 ```
 
 
-### insertHtmlAsSibling(insertLocation: string, html: string)
+### <a name="inserthtmlassibling(insertlocation:-string,-html:-string)"></a>insertHtmlAsSibling(insertLocation: string, html: string)
 Inserta el contenido HTML especificado
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 paragraphObject.insertHtmlAsSibling(insertLocation, html);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |insertLocation|string|La ubicación del nuevo contenido relativa a Paragraph actual.  Los valores posibles son: Before, After|
 |html|string|Una cadena HTML que describe la presentación visual del contenido. Consulte el [HTML compatible](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) para la API de JavaScript de los complementos de OneNote.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 
@@ -148,15 +148,15 @@ OneNote.run(function (context) {
 ```
 
 
-### insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
+### <a name="insertimageassibling(insertlocation:-string,-base64encodedimage:-string,-width:-double,-height:-double)"></a>insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
 Inserta la imagen en la posición de inserción especificada.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 paragraphObject.insertImageAsSibling(insertLocation, base64EncodedImage, width, height);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |insertLocation|string|La ubicación de la tabla relativa a Paragraph actual.  Los valores posibles son: Before, After|
@@ -164,10 +164,10 @@ paragraphObject.insertImageAsSibling(insertLocation, base64EncodedImage, width, 
 |width|double|Opcional. Ancho en la unidad de puntos. El valor predeterminado es null, que respeta el ancho de la imagen.|
 |height|double|Opcional. Alto en la unidad de puntos. El valor predeterminado es null, que respeta el alto de la imagen.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Image](image.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 
@@ -204,24 +204,24 @@ OneNote.run(function (context) {
 ```
 
 
-### insertRichTextAsSibling(insertLocation: string, paragraphText: string)
+### <a name="insertrichtextassibling(insertlocation:-string,-paragraphtext:-string)"></a>insertRichTextAsSibling(insertLocation: string, paragraphText: string)
 Inserta el texto del párrafo en la posición de inserción especificada.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 paragraphObject.insertRichTextAsSibling(insertLocation, paragraphText);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |insertLocation|string|La ubicación de la tabla relativa a Paragraph actual.  Los valores posibles son: Before, After|
 |paragraphText|string|Cadena HTML que se anexará.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [RichText](richtext.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 
@@ -258,15 +258,15 @@ OneNote.run(function (context) {
 ```
 
 
-### insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
+### <a name="inserttableassibling(insertlocation:-string,-rowcount:-number,-columncount:-number,-values:-string[][])"></a>insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
 Agrega una tabla con el número especificado de filas y columnas antes o después del párrafo actual.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 paragraphObject.insertTableAsSibling(insertLocation, rowCount, columnCount, values);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |insertLocation|string|La ubicación de la tabla relativa a Paragraph actual.  Los valores posibles son: Before, After|
@@ -274,25 +274,25 @@ paragraphObject.insertTableAsSibling(insertLocation, rowCount, columnCount, valu
 |columnCount|number|Número de columnas de la tabla.|
 |values|string[][]|Opcional. Matriz 2D opcional. Si se especifican las cadenas correspondientes en la matriz, se rellenan las celdas.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Table](table.md)
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 **id y type**
 ```js

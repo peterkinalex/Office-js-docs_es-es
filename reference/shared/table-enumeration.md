@@ -1,5 +1,5 @@
 
-# Enumeración Table
+# <a name="table-enumeration"></a>Enumeración Table
 Especifica los valores enumerados de la propiedad `cells:` en el parámetro _cellFormat_ de los [métodos de formato de tabla](../../docs/excel/format-tables-in-add-ins-for-excel.md).
 
 |||
@@ -11,7 +11,7 @@ Especifica los valores enumerados de la propiedad `cells:` en el parámetro _cel
 Office.Table
 ```
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Valores**
@@ -23,7 +23,7 @@ Office.Table
 |Office.Table.Data|"data"|Solo los datos (sin encabezados ni totales).|
 |Office.Table.Headers|"headers"|Solo la fila de encabezado.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica las enumeraciones compatibles con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -40,11 +40,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

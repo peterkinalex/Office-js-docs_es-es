@@ -1,4 +1,4 @@
-# Referencia de la API de JavaScript de Word
+# <a name="word-javascript-api-reference"></a>Referencia de la API de JavaScript de Word
 
 Word proporciona un conjunto amplio de API que puede usar para crear complementos que interactúan con los metadatos y el contenido del documento. Use estas API para crear experiencias atractivas que se integran con Word y lo amplían. Puede importar y exportar contenido, ensamblar documentos nuevos desde distintos orígenes de datos e integrarlos con flujos de trabajo del documento para crear soluciones del documento personalizadas.
 
@@ -7,11 +7,11 @@ Puede usar dos API de JavaScript para interactuar con los objetos y los metadato
 - API de JavaScript de Word: se introdujo en Office 2016.
 - [API de JavaScript para Office](../javascript-api-for-office.md) (Office.js): se introdujo en Office 2013.
 
-## API de JavaScript de Word
+## <a name="word-javascript-api"></a>API de JavaScript de Word
 
 La API de JavaScript de Word se carga mediante Office.js. La API de JavaScript de Word cambia la forma en que puede interactuar con objetos como documentos y párrafos. En lugar de proporcionar API asincrónicas individuales para recuperar y actualizar cada uno de estos objetos, la API de JavaScript de Word proporciona objetos "proxy" de JavaScript que corresponden a los objetos reales que se ejecutan en Word. Puede interactuar con estos objetos proxy leyendo y escribiendo sus propiedades de forma sincrónica y llamando a métodos sincrónicos para realizar operaciones en ellos. Estas interacciones con objetos proxy no se realizan inmediatamente en el script que se está ejecutando. El método **context.sync** sincroniza el estado entre el JavaScript que se está ejecutando y los objetos reales de Office. Para ello, ejecuta instrucciones situadas en la cola y recupera las propiedades de los objetos de Word cargados para usarlos en el script.
 
-## API de JavaScript para Office
+## <a name="javascript-api-for-office"></a>API de JavaScript para Office
 
 Puede hacer referencia a Office.js desde las siguientes ubicaciones:
 
@@ -22,7 +22,7 @@ Si está usando [Visual Studio](https://www.visualstudio.com/products/free-devel
 
 Si usa TypeScript y tiene npm, puede obtener las definiciones de TypeScript al escribir lo siguiente en la interfaz de la línea de comandos: ```typings install office-js --ambient```.
 
-## Ejecutar complementos de Word
+## <a name="running-word-add-ins"></a>Ejecutar complementos de Word
 
 Para ejecutar el complemento, use un controlador de eventos de Office.initialize. Para más información sobre la inicialización del complemento, vea [Información sobre la API](../../docs/develop/understanding-the-javascript-api-for-office.md).
 
@@ -58,7 +58,7 @@ Los complementos destinados a Word 2016 se ejecutan pasando una función al mét
     })();
 ```
 
-### Sincronizar documentos de Word con objetos proxy de la API de JavaScript de Word
+### <a name="synchronizing-word-documents-with-word-javascript-api-proxy-objects"></a>Sincronizar documentos de Word con objetos proxy de la API de JavaScript de Word
 
 El modelo de objetos de la API de JavaScript de Word se acopla libremente a los objetos de Word. Los objetos de la API de JavaScript de Word son servidores proxy para objetos en un documento de Word. Las acciones que se realizan en los objetos proxy no se realizan en Word hasta que se haya sincronizado el estado del documento. En cambio, el estado del documento de Word no se realiza en los objetos proxy hasta que se haya sincronizado el estado del documento. Para sincronizar el estado del documento, ejecute el método **context.sync()**. En el siguiente ejemplo se crea un objeto proxy de cuerpo y un comando en la cola para cargar la propiedad del texto en el objeto proxy de cuerpo y se usa **context.sync()** para sincronizar el cuerpo del documento de Word con el objeto proxy de cuerpo.
 
@@ -81,7 +81,7 @@ El modelo de objetos de la API de JavaScript de Word se acopla libremente a los 
     })
 ```
 
-### Ejecutar un lote de comandos
+### <a name="executing-a-batch-of-commands"></a>Ejecutar un lote de comandos
 
 Los objetos proxy de Word disponen de métodos para obtener acceso y actualizar el modelo de objetos. Estos métodos se ejecutan secuencialmente en el orden en el que se pusieron en la cola en el lote. Todos los comandos que están en la cola en el lote se ejecutan cuando se llama a context.sync().
 
@@ -110,12 +110,12 @@ En el siguiente ejemplo se muestra cómo funciona la cola de comandos. Cuando se
     })
 ```
 
-## Especificaciones de la API pública de Word
+## <a name="open-word-api-specifications"></a>Especificaciones de la API pública de Word
 
 Cuando diseñemos y desarrollemos nuevas API para complementos de Word, estarán disponibles para que envíen sus comentarios en la página [Especificaciones de la API pública](../../reference/openspec.md). Descubra las nuevas características que están en proceso para las API de JavaScript de Word y envíe sus comentarios sobre nuestras especificaciones de diseño.
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 * [Información general sobre los complementos de Word](../../docs/word/word-add-ins-programming-overview.md )
-* [Información general sobre la plataforma de complementos de Office](../../docs/overview/office-add-ins.md)
-* [Ejemplos de complemento de Word en GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)
+* [Office Add-ins platform overview (Información general sobre la plataforma de complementos para Office)](../../docs/overview/office-add-ins.md)
+* [Ejemplos de complementos de Word en GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)

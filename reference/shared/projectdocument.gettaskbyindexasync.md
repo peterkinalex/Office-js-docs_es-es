@@ -1,14 +1,14 @@
 
 
-# Método ProjectDocument.getTaskByIndexAsync
+# <a name="projectdocument.gettaskbyindexasync-method"></a>Método ProjectDocument.getTaskByIndexAsync
 Obtiene de forma asincrónica el GUID de la tarea que tiene el índice especificado en la colección de tareas.
 
-**Importante:** Esta API solo funciona en Project 2016 para el escritorio de Windows.
+**Importante:** Esta API solo funciona en Project 2016 para escritorio de Windows.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
 |**Agregado en**|1.1|
 
 ```js
@@ -16,12 +16,12 @@ Office.context.document.getTaskByIndexAsync(taskIndex[, options][, callback]);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 _taskIndex_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Tipo: **número**
+&nbsp;&nbsp;&nbsp;&nbsp;Tipo: **number**
 
-&nbsp;&nbsp;&nbsp;&nbsp;Índice de la tarea en la colección de tareas del proyecto. Necesario.
+&nbsp;&nbsp;&nbsp;&nbsp;Índice de la tarea en la colección de tareas del proyecto. Obligatorio.
 
     
 _options_<br/>
@@ -37,7 +37,7 @@ _callback_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;Una función que se invoca cuando se devuelve la llamada al método, cuyo único parámetro es del tipo [AsyncResult](../../reference/shared/asyncresult.md). Opcional.
 
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el parámetro de la función de devolución de llamada.
 
@@ -48,15 +48,15 @@ En el caso del método **getTaskByIndexAsync**, el objeto [AsyncResult](../../re
 |:-----|:-----|
 |[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Datos pasados en el parámetro opcional _asyncContext_, si se usó el parámetro.|
 |[error](../../reference/shared/asyncresult.error.md)|Información sobre el error si la propiedad **status** es igual a **failed**.|
-|[estado](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
-|[value](../../reference/shared/asyncresult.value.md)|GUID de la tarea como una **string**.|
+|[status](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
+|[value](../../reference/shared/asyncresult.value.md)|El GUID de la tarea como una **cadena**.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Para obtener el índice máximo de la colección de tareas del proyecto, use el método [getMaxTaskIndexAsync](../../reference/shared/projectdocument.getmaxtaskindexasync.md). La tarea de índice 0 representa la tarea de resumen del proyecto.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el siguiente ejemplo de código se llama a [getMaxTaskIndexAsync](../../reference/shared/projectdocument.getmaxtaskindexasync.md) para obtener el índice máximo de la colección de tareas del proyecto y luego se llama a **getTaskByIndexAsync** para obtener el GUID de cada tarea.
 
@@ -144,7 +144,7 @@ En el ejemplo se asume que el complemento tiene una referencia a la biblioteca d
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -158,23 +158,23 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **||
+|**Disponible en los conjuntos de requisitos**||
 |**Nivel de permisos mínimo**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
 |1.1|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [getMaxTaskIndexAsync](../../reference/shared/projectdocument.getmaxtaskindexasync.md)

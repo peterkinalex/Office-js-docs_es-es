@@ -1,7 +1,7 @@
 
-# Labs.Timeline
+# <a name="labs.timeline"></a>Labs.Timeline
 
- _**Hace referencia a:** aplicaciones para Office | Complementos de Office | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Proporciona acceso a la característica de escala de tiempo labs.js.
 
@@ -10,19 +10,19 @@ class Timeline
 ```
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 
 
 
-### method
+### <a name="method"></a>method
 
  `function constructor(labsInternal: Labs.LabsInternal)`
 
 Crea una nueva instancia en la clase **Timeline**.
 
 
-### next
+### <a name="next"></a>next
 
  `public function next(completionStatus: Labs.Core.ICompletionStatus, callback: Labs.Core.ILabCallback<void>): void`
 

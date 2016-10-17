@@ -1,4 +1,4 @@
-# Complementos de extensión de módulo de Outlook 
+# <a name="module-extension-outlook-add-ins"></a>Complementos de extensión de módulo de Outlook 
 
 Los complementos de extensión de módulo se muestran en la barra de navegación de Outlook junto al correo, las tareas y los calendarios. Una extensión de módulo no está limitada al uso de información de correos y citas, sino que se pueden crear aplicaciones que se ejecutan dentro de Outlook para que sus usuarios puedan tener acceso fácilmente a información sobre la empresa y herramientas de productividad sin tener que salir de Outlook.
 
@@ -128,7 +128,7 @@ Esta es una sección de un archivo de manifiesto donde se define una extensión 
         </VersionOverrides>
       </VersionOverrides>
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 * [Manifiestos de complementos de Outlook](manifests/manifests.md)
 * [Definir comandos de complementos en el manifiesto de complemento de Outlook](manifests/define-add-in-commands.md)

@@ -1,5 +1,5 @@
 
-# Propiedad AsyncResult.value
+# <a name="asyncresult.value-property"></a>Propiedad AsyncResult.value
 Obtiene la carga o el contenido de una operación asincrónica, si la hay.
 
 |||
@@ -12,7 +12,7 @@ var dataValue = asyncResult.value;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Devuelve el valor de la solicitud en el momento en que se realiza la llamada asincrónica. 
 
@@ -20,12 +20,12 @@ Devuelve el valor de la solicitud en el momento en que se realiza la llamada asi
  >**Nota**:  el resultado que devuelve la propiedad **value** para un método "Async" específico varía en función de la finalidad y el contexto de dicho método. Para determinar el resultado que la propiedad **value** debe devolver para un método "Async", consulte la sección "Valor de devolución de llamada" del tema correspondiente al método. Para obtener un listado completo de los métodos "Async", consulte la sección "Notas" del tema del objeto [AsyncResult](../../reference/shared/asyncresult.md).
 
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Si lo desea, puede obtener acceso al objeto **AsyncResult** de la función que se ha remitido como argumento al parámetro _callback_ de un método "Async", por ejemplo, los métodos [getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) y [setSelectedDataAsync](../../reference/shared/document.setselecteddataasync.md) del objeto **Document**.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -51,7 +51,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -74,7 +74,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

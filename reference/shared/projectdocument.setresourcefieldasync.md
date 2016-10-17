@@ -1,13 +1,12 @@
 
 
-# Método ProjectDocument.setResourceFieldAsync
-Establece de forma asincrónica el valor del campo especificado para el recurso concreto.
- **Importante:** Esta API solo funciona en Project 2016 para el escritorio de Windows.
+# <a name="projectdocument.setresourcefieldasync-method"></a>Método ProjectDocument.setResourceFieldAsync
+Establece de forma asincrónica el valor del campo especificado para el recurso concreto.  **Importante:** Esta API solo funciona en Project 2016 para escritorio de Windows.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
 |**Agregado en**|1.1|
 
 ```js
@@ -15,16 +14,16 @@ Office.context.document.setResourceFieldAsync(resourceId, fieldId, fieldValue[, 
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 _resourceId_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;El GUID del recurso. Necesario.
+&nbsp;&nbsp;&nbsp;&nbsp;El GUID del recurso. Obligatorio.
     
 _fieldId_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Identificador del campo de destino, ya sea como una constante [ProjectResourceFields](../../reference/shared/projectresourcefields-enumeration.md) o como el valor entero correspondiente. Necesario.
+&nbsp;&nbsp;&nbsp;&nbsp;Identificador del campo de destino, ya sea como una constante [ProjectResourceFields](../../reference/shared/projectresourcefields-enumeration.md) o como el valor entero correspondiente. Obligatorio.
     
 _fieldValue_<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;Valor para el campo de destino, de tipo **cadena**, **número**, **booleano**, u **objeto**. Necesario.
+&nbsp;&nbsp;&nbsp;&nbsp;Valor para el campo de destino, de tipo **string**, **number**, **boolean** u **object**. Obligatorio.
     
 _options_<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;El [parámetro opcional](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods) siguiente:
@@ -40,7 +39,7 @@ _callback_<br/>
 
     
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el parámetro de la función de devolución de llamada.
 
@@ -51,15 +50,15 @@ En el caso del método **setResourceFieldAsync**, el objeto [AsyncResult](../../
 |:-----|:-----|
 |[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Datos pasados en el parámetro opcional _asyncContext_, si se usó el parámetro.|
 |[error](../../reference/shared/asyncresult.error.md)|Información sobre el error si la propiedad **status** es igual a **failed**.|
-|[estado](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
+|[status](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
 |[value](../../reference/shared/asyncresult.value.md)|Este método no devuelve ningún valor.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Primero llame al método [getSelectedResourceAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) o [getResourceByIndexAsync](../../reference/shared/projectdocument.getresourcebyindexasync.md) para obtener el GUID del recurso y luego pase el GUID como el argumento _resourceId_ a **setResourceFieldAsync**. Solo se puede actualizar un único campo para un único recurso en cada llamada asincrónica.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el siguiente ejemplo de código se llama a [getSelectedResourceAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) para obtener el GUID del recurso seleccionado en ese momento en una vista de recursos. Luego se establecen dos valores de campo de recursos al llamar a **setResourceFieldAsync** recursivamente.
 
@@ -148,7 +147,7 @@ En el ejemplo se asume que el complemento tiene una referencia a la biblioteca d
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -162,23 +161,23 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **||
+|**Disponible en los conjuntos de requisitos**||
 |**Nivel de permisos mínimo**|[WriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
 |1.1|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [getSelectedResourceAsync](../../reference/shared/projectdocument.getselectedtaskasync.md)

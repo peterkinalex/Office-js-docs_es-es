@@ -1,11 +1,11 @@
-# Objeto TableCell (API de JavaScript para OneNote)
+# <a name="tablecell-object-(javascript-api-for-onenote)"></a>Objeto TableCell (API de JavaScript para OneNote)
 
 _Se aplica a: OneNote Online_  
 
 
 Representa una celda en una tabla de OneNote.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción|Comentarios|
 |:---------------|:--------|:----------|:-------|
@@ -14,15 +14,15 @@ Representa una celda en una tabla de OneNote.
 |rowIndex|int|Obtiene el índice de fila de la celda en la tabla. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-rowIndex)|
 |shadingColor|string|Obtiene y establece el color de sombreado de la celda.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-shadingColor)|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
 |paragraphs|[ParagraphCollection](paragraphcollection.md)|Obtiene la colección de objetos Paragraph en el objeto TableCell. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-paragraphs)|
 |parentRow|[TableRow](tablerow.md)|Obtiene la fila primaria de la celda. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-parentRow)|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
@@ -33,26 +33,26 @@ _Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
 |[clear()](#clear)|void|Borra el contenido de la celda.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-clear)|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-tableCell-load)|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### appendHtml(html: string)
+### <a name="appendhtml(html:-string)"></a>appendHtml(html: string)
 Agrega el HTML especificado en la parte inferior de TableCell.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableCellObject.appendHtml(html);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |Html|string|Cadena HTML que se anexará. Consulte el [HTML compatible](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) para la API de JavaScript de los complementos de OneNote.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -93,33 +93,33 @@ Adds the specified image to table cell.
 tableCellObject.appendImage(base64EncodedImage, width, height);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |base64EncodedImage|cadena|Cadena HTML que se anexará.|
 |width|double|Opcional. Ancho en la unidad de puntos. El valor predeterminado es null, que respeta el ancho de la imagen.|
 |height|double|Opcional. Alto en la unidad de puntos. El valor predeterminado es null, que respeta el alto de la imagen.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Image](image.md)
 
-### appendRichText(paragraphText: string)
+### <a name="appendrichtext(paragraphtext:-string)"></a>appendRichText(paragraphText: string)
 Agrega el texto especificado a la celda de la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableCellObject.appendRichText(paragraphText);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |paragraphText|string|Cadena HTML que se anexará.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [RichText](richtext.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -153,54 +153,54 @@ OneNote.run(function(ctx) {
 });
 ```
 
-### appendTable(rowCount: number, columnCount: number, values: string[][])
+### <a name="appendtable(rowcount:-number,-columncount:-number,-values:-string[][])"></a>appendTable(rowCount: number, columnCount: number, values: string[][])
 Agrega una tabla con el número especificado de filas y columnas a la celda de la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableCellObject.appendTable(rowCount, columnCount, values);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |rowCount|number|Necesario. Número de filas de la tabla.|
 |columnCount|number|Necesario. Número de columnas de la tabla.|
 |values|string[][]|Opcional. Matriz 2D opcional. Si se especifican las cadenas correspondientes en la matriz, se rellenan las celdas.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Table](table.md)
 
-### clear()
+### <a name="clear()"></a>clear()
 Borra el contenido de la celda.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableCellObject.clear();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 **id, cellIndex, rowIndex**
 ```js
 OneNote.run(function(ctx) {

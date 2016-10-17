@@ -1,5 +1,5 @@
 
-# Implementar e instalar complementos de Outlook para probarlos
+# <a name="deploy-and-install-outlook-add-ins-for-testing"></a>Implementar e instalar complementos de Outlook para probarlos
 
 
 Como parte del proceso de desarrollo del complemento de Outlook, se encontrará repetidamente implementando e instalando el complemento para probarlo, lo cual consiste en los siguientes pasos:
@@ -14,32 +14,32 @@ Como parte del proceso de desarrollo del complemento de Outlook, se encontrará 
 4. Pruebe el complemento, haciendo los cambios apropiados a la IU o los archivos de manifiesto, y repitiendo los pasos 2 y 3 para probar los cambios.
     
 
-## Creación de un archivo de manifiesto para el complemento.
+## <a name="creating-a-manifest-file-for-the-add-in"></a>Creación de un archivo de manifiesto para el complemento.
 
 Cada complemento se describe en un manifiesto XML, un documento que proporciona al servidor información sobre el complemento, proporciona información descriptiva sobre el componente al usuario e identifica la ubicación del archivo HTML de la interfaz de usuario del componente. Puede almacenar el manifiesto en una carpeta local o en un servidor siempre que el servidor de Exchange del buzón de correo que está probando pueda tener acceso a dicha ubicación. Se asume que el manifiesto se guardará en una carpeta local. Para obtener información sobre cómo crear un archivo de manifiesto [Manifiestos de complementos de Outlook](../outlook/manifests/manifests.md). 
 
 
-## Implementación de un complemento en un servidor web
+## <a name="deploying-an-add-in-to-a-web-server"></a>Implementación de un complemento en un servidor web
 
 Puede usar HTML y JavaScript para crear la interfaz de usuario del complemento. El archivo de origen generado se almacena en un servidor web al que puede tener acceso el servidor Exchange que hospeda el complemento. El archivo de origen es identificado por el elemento secundario  **SourceLocation** en el elemento [DesktopSettings](http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx), el elemento [TableSettings](http://msdn.microsoft.com/en-us/library/5c89cc7c-7ae0-49c9-fdd5-4c52118228f6%28Office.15%29.aspx) o el elemento [PhoneSettings](http://msdn.microsoft.com/en-us/library/13e4eae3-8e8c-fd55-a1c2-3297b485f327%28Office.15%29.aspx) que se especifican en el archivo de manifiesto del complemento.
 
 Una vez que haya desplegado los archivos de interfaz de usuario para el complemento, puede actualizar la interfaz de usuario del complemento y su comportamiento reemplazando el archivo HTML almacenado en el servidor web con una nueva versión del archivo HTML.
 
 
-## Instalación del complemento
+## <a name="installing-the-add-in"></a>Instalación del complemento
 
 
 Una vez que se haya realizado la preparación del archivo del manifiesto del complemento y se hayan implementado los archivos de la interfaz de usuario del complemento a un servidor web al que se pueda obtener acceso, se puede instalar el complemento para el servidor de Exchange usando un cliente enriquecido de Outlook, Outlook Web App o OWA para dispositivos; o bien, iniciando cmdlets remotos de Windows PowerShell.
 
 
-### Instalación de un complemento en un cliente enriquecido de Outlook
+### <a name="installing-an-add-in-in-an-outlook-rich-client"></a>Instalación de un complemento en un cliente enriquecido de Outlook
 
 Puede instalar un complemento si el buzón está en Exchange Online, Exchange 2013 o en una versión posterior. En Outlook para Windows, puede instalar complementos desde la vista Backstage de Office Fluent. Seleccione **Archivo** y **Administrar complementos**. Esto le permitirá iniciar sesión en el Centro de administración de Exchange. Después de iniciar sesión, continúe con el proceso de instalación (paso 4) en la sección siguiente.
 
 En Outlook para Mac, seleccione **Administrar complementos** en el extremo derecho de la barra de complementos y, después, inicie sesión en el Centro de Administración de Exchange. Continúe con el paso 4 en la sección siguiente.
 
 
-### Instalación de un complemento mediante Outlook Web App o Outlook.com
+### <a name="installing-an-add-in-by-using-outlook-web-app-or-outlook.com"></a>Instalación de un complemento mediante Outlook Web App o Outlook.com
 
 Para usar Outlook Web App (OWA) para instalar un complemento de Outlook, siga los pasos siguientes:
 
@@ -77,7 +77,7 @@ Para más información sobre el rol Mis aplicaciones personalizadas, vea [Rol Mi
 Al usar Office 365, Napa o Visual Studio para desarrollar complementos, se le asignará el rol de administrador de la organización, que le permite instalar complementos con un archivo o una URL en EAC, o bien con los cmdlets de PowerShell.
 
 
-### Instalación de un complemento con PowerShell remoto
+### <a name="installing-an-add-in-by-using-remote-powershell"></a>Instalación de un complemento con PowerShell remoto
 
 Una vez que haya creado una sesión remota de Windows PowerShell en su servidor de Exchange, puede instalar un complemento de Outlook con el cmdlet  **New-App** con el siguiente comando PowerShell.
 
@@ -98,7 +98,7 @@ Puede usar los siguientes cmdlets adicionales de PowerShell para administrar los
 -  **Remove-App**: elimina del servidor Exchange un complemento previamente instalado.
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

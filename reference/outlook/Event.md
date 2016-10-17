@@ -1,6 +1,6 @@
 
 
-# Evento
+# <a name="event"></a>Evento
 
 El objeto `event` se pasa como parámetro a las funciones del complemento que invocan los botones de comando directos. El objeto permite que el complemento identifique en qué botón se ha hecho clic y que indique el host que ha completado su procesamiento.
 
@@ -39,7 +39,7 @@ function testEventObject(event) {
 }
 ```
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
@@ -47,9 +47,9 @@ function testEventObject(event) {
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restringido|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-### Miembros
+### <a name="members"></a>Miembros
 
-####  source :Object
+####  <a name="source-:object"></a>source :Object
 
 Obtiene el identificador del botón de comando del complemento que ha invocado el método.
 
@@ -61,11 +61,11 @@ La propiedad `source` devuelve un objeto con las siguientes propiedades.
 
 Este valor puede usarse cuando más de un botón invoca la misma función, pero necesita realizar acciones diferentes basándose en el botón en el que se ha hecho clic.
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   Objeto
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
@@ -73,7 +73,7 @@ Este valor puede usarse cuando más de un botón invoca la misma función, pero 
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restringido|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-##### Ejemplo
+##### <a name="example"></a>Ejemplo
 
 ```
 // Function is used by two buttons:
@@ -92,15 +92,15 @@ function multiButton (event) {
 }
 ```
 
-### Métodos
+### <a name="methods"></a>Métodos
 
-####  completed()
+####  <a name="completed()"></a>completed()
 
 Indica que el complemento ha completado el procesamiento que se desencadenó mediante un botón de comando del complemento.
 
 Este método debe llamarse al final de una función que se ha invocado mediante un comando de complemento definido con un elemento `Action` con un atributo `xsi:type` establecido en `ExecuteFunction`. Al llamar a este método se indica al cliente de host que la función está completa y que puede limpiar cualquier estado que esté implicado al invocar la función. Por ejemplo, si el usuario cierra Outlook antes de que se llame a este método, Outlook le advertirá de que una función continúa ejecutándose.
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
@@ -108,7 +108,7 @@ Este método debe llamarse al final de una función que se ha invocado mediante 
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restringido|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-##### Ejemplo
+##### <a name="example"></a>Ejemplo
 
 ```
 function processItem (event) {

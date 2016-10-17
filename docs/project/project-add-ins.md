@@ -1,5 +1,5 @@
 
-# Complementos de panel de tareas para Project
+# <a name="task-pane-add-ins-for-project"></a>Complementos de panel de tareas para Project
 
 
 Project Standard 2013 y Project Profesional 2013 son compatibles con complementos de panel de tareas. Se pueden usar complementos generales de panel de tareas desarrollados para Word 2013 o Excel 2013. También se pueden desarrollar complementos personalizados que administren eventos de selección en Project y que integren datos de tareas, recursos, vistas y otros datos de nivel de celda en un proyecto con listas de SharePoint, complementos de SharePoint, elementos web, servicios web y aplicaciones empresariales.
@@ -8,7 +8,7 @@ Project Standard 2013 y Project Profesional 2013 son compatibles con complemento
 
 Vea una introducción a los complementos de Office en [Información general sobre la plataforma de complementos de Office](../../docs/overview/office-add-ins.md).
 
-## Escenarios de complementos para Project
+## <a name="add-in-scenarios-for-project"></a>Escenarios de complementos para Project
 
 
 Los gestores de proyectos pueden usar complementos de panel de tareas de Project para facilitar las tareas de gestión de proyectos. En lugar de salir de Project y abrir otra aplicación para buscar información utilizada con frecuencia, los gestores de proyectos pueden obtener acceso directamente a la información desde Project. El contenido de un complemento de panel de tareas puede ser contextual, en función de la tarea, el recurso, la vista u otros datos de celdas de diagramas de Gantt seleccionados, la vista del uso de tareas o la vista del uso de recursos.
@@ -38,7 +38,7 @@ Los escenarios de complementos para Project incluyen:
     Por ejemplo, consulte [Crear un complemento de Project que use REST con un servicio OData local de Project Server](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
     
 
-## Desarrollo de complementos de Project
+## <a name="developing-project-add-ins"></a>Desarrollo de complementos de Project
 
 
 La biblioteca JavaScript para Project complementos incluye extensiones del alias de espacio de nombres  **Office** que permiten a los desarrolladores obtener acceso a las propiedades de aplicaciones de Project y a las tareas, recursos y vistas de un proyecto. Las extensiones de la biblioteca JavaScript del archivo Project-15.js se usan en un complemento de Project creado con Visual Studio 2015. Los archivos Office.js, Office.debug.js, Project-15.js, Project-15.debug.js y todos los archivos relacionados también están incluidos en la descarga del SDK de Project 2013.
@@ -60,13 +60,13 @@ Cuando se instala la descarga del SDK de Project 2013, el subdirectorio  `\Sampl
 -  **HelloProject_OData:** es una solución de Visual Studio para Project Profesional 2013 que resume los datos del proyecto activo como, por ejemplo, los costes, el trabajo o el porcentaje completado, y los compara con los valores de promedio de todos los proyectos publicados en la instancia de Project Web App en la que está almacenado el proyecto activo. El desarrollo, la instalación y las pruebas del ejemplo, en los que se utiliza el protocolo REST con el servicio **ProjectData** de Project Web App, se describen en [Crear un complemento de Project que use REST con un servicio OData local de Project Server](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md).
     
 
-### Creación de un archivo de manifiesto de complemento
+### <a name="creating-an-add-in-manifest-file"></a>Creación de un archivo de manifiesto de complemento
 
 
 El archivo de manifiesto especifica la dirección URL de la página web del complemento o de la aplicación web, el tipo de complemento (de panel de tareas o de Project), las direcciones URL opcionales de contenido para otros idiomas y configuraciones regionales, y otras propiedades.
 
 
-### Procedimiento 1. Para crear el archivo de manifiesto del complemento para la búsqueda de Bing
+### <a name="procedure-1.-to-create-the-add-in-manifest-file-for-bing-search"></a>Procedimiento 1. Para crear el archivo de manifiesto del complemento para la búsqueda de Bing
 
 
 - Cree un archivo XML en un directorio local. El archivo XML incluye el elemento  **OfficeApp** y elementos secundarios, que se describen en [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md). Cree, por ejemplo, un archivo con el nombre BingSearch.xml que contenga el XML siguiente.
@@ -140,7 +140,7 @@ El archivo de manifiesto especifica la dirección URL de la página web del comp
 ```
 
 
-## Instalación de complementos de Project
+## <a name="installing-project-add-ins"></a>Instalación de complementos de Project
 
 
 En Project 2013 se pueden instalar complementos como soluciones independientes en un recurso compartido de archivos o en un catálogo privado de complementos. También puede revisar y comprar complementos en la Tienda Office pública.
@@ -153,7 +153,7 @@ En un recurso compartido de archivos puede haber varios archivos y subdirectorio
 En el Procedimiento 2, el complemento de búsqueda de Bing está instalado en el equipo local en el que Project 2013 está instalado. No obstante, como la infraestructura del complemento no utiliza directamente rutas de acceso de archivos locales como  `C:\Project\AppManifests`, se puede crear un recurso compartido de red en el equipo local. Si se desea, se puede crear un recurso compartido de archivos en un equipo remoto.
 
 
-### Procedimiento 2. Para instalar el complemento de búsqueda de Bing
+### <a name="procedure-2.-to-install-the-bing-search-add-in"></a>Procedimiento 2. Para instalar el complemento de búsqueda de Bing
 
 
 1. Cree un directorio local para los manifiestos de complemento. Cree, por ejemplo, el directorio  `C:\Project\AppManifests`.
@@ -170,13 +170,13 @@ En el Procedimiento 2, el complemento de búsqueda de Bing está instalado en el
     
      >**Nota** La Figura 1 muestra dos recursos compartidos de archivos y una dirección URL hipotética para un catálogo privado en la lista **Dirección de catálogo de confianza**. Un solo recurso compartido de archivos puede ser el predeterminado, y solo una dirección URL de catálogo puede ser el catálogo predeterminado. Por ejemplo, si establece `\\Server2\AppManifests` como valor predeterminado, Project desactiva la casilla **Predeterminado** para `\\ServerName\AppManifests`. Si cambia la selección predeterminada, puede elegir **Borrar** para quitar los complementos instalados y, después, volver a ejecutar Project. Si agrega un complemento para el recurso compartido de archivos o el catálogo de SharePoint predeterminado mientras Project está abierto, vuelva a ejecutar Project.
 
-    **Figura 1. Uso del Centro de confianza para agregar catálogos de manifiestos de complementos**
+    **Figura 1: Uso del Centro de confianza para agregar catálogos de manifiestos de complementos**
 
     ![Uso del Centro de confianza para agregar manifiestos de aplicaciones](../../images/pj15_AgaveOverview_TrustCenter.PNG)
 
 7. En la cinta de opciones  **Proyecto**, seleccione el menú desplegable  **Complementos para Office** y elija **Todo**. En el cuadro de diálogo  **Insertar complemento**, elija  **CARPETA COMPARTIDA** (vea la Figura 2).
     
-    **Figura 2. Inicio de un complemento que está en un recurso compartido de archivos**
+    **Figura 2: Inicio de un complemento que está en un recurso compartido de archivos**
 
     ![Inicio de una aplicación de Office que está en un recurso compartido de archivos](../../images/pj15_AgaveOverview_StartAgaveApp.PNG)
 
@@ -184,28 +184,28 @@ En el Procedimiento 2, el complemento de búsqueda de Bing está instalado en el
     
 El complemento de búsqueda de Bing aparece en un panel de tareas, como en la Figura 3. Puede cambiar el tamaño del panel de tareas manualmente y usar el complemento de búsqueda de Bing.
 
-**Figura 3. Uso del complemento de búsqueda de Bing**
+**Figura 3: Uso de la aplicación de búsqueda de Bing**
 
 ![Uso de la aplicación de búsqueda de Bing](../../images/pj15_AgaveOverview_BingSearch.gif)
 
 
-## Distribución de complementos de Project
+## <a name="distributing-project-add-ins"></a>Distribución de complementos de Project
 
 
 Se pueden distribuir complementos a través de un recurso compartido de archivos, un catálogo de complementos de una biblioteca de SharePoint o una Project Add-in del Tienda Office. Para obtener más información, consulte [Publicar el complemento para Office](../publish/publish.md).
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
-- [Información general sobre la plataforma de complementos para Office](../../docs/overview/office-add-ins.md)
+- [Office Add-ins platform overview (Información general sobre la plataforma de complementos para Office)](../../docs/overview/office-add-ins.md)
     
 - [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md)
     
 - [API de JavaScript para Office](../../reference/javascript-api-for-office.md)
     
-- [Procedimiento para crear el primer complemento de panel de tareas para Project 2013 con un editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
+- [Crear el primer complemento de panel de tareas para Project 2013 con un editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
     
 - [Crear un complemento de Project que use REST con un servicio OData local de Project Server](../project/create-a-project-add-in-that-uses-rest-with-an-on-premises-odata-service.md)
     

@@ -1,11 +1,11 @@
-# Objeto PageContent (API de JavaScript para OneNote)
+# <a name="pagecontent-object-(javascript-api-for-onenote)"></a>Objeto PageContent (API de JavaScript para OneNote)
 
 _Se aplica a: OneNote Online_  
 
 
 Representa una región de nivel superior en una página que contiene tipos de contenido de nivel superior, como Outline o Image. Un objeto PageContent se puede asignar a una posición XY.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción|Comentarios|
 |:---------------|:--------|:----------|:-------|
@@ -14,39 +14,39 @@ Representa una región de nivel superior en una página que contiene tipos de co
 |top|double|Obtiene o establece la posición superior (eje Y) del objeto PageContent.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-top)|
 |type|string|Obtiene el tipo del objeto PageContent. Solo lectura. Los valores posibles son: Outline, Image, Other.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-type)|
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
-|image|[Image (Imagen)](image.md)|Obtiene el elemento Image del objeto PageContent. Produce una excepción si PageContentType no es Image. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-image)|
+|image|[Image](image.md)|Obtiene el elemento Image del objeto PageContent. Produce una excepción si PageContentType no es Image. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-image)|
 |ink|[FloatingInk](floatingink.md)|Obtiene la tinta del objeto PageContent. Produce una excepción si PageContentType no es Ink. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-ink)|
 |outline|[Outline](outline.md)|Obtiene el elemento Outline del objeto PageContent. Produce una excepción si PageContentType no es Outline. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-outline)|
 |parentPage|[Page](page.md)|Obtiene la página que contiene el objeto PageContent. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-parentPage)|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
 |[delete()](#delete)|void|Elimina el objeto PageContent.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-delete)|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-pageContent-load)|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### delete()
+### <a name="delete()"></a>delete()
 Elimina el objeto PageContent.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 pageContentObject.delete();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 
@@ -72,18 +72,18 @@ OneNote.run(function (context) {
     }
 });
 ```
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void

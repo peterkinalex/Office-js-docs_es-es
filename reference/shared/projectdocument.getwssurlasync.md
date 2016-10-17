@@ -1,20 +1,20 @@
 
 
-# Método ProjectDocument.getWSSUrlAsync
+# <a name="projectdocument.getwssurlasync-method"></a>Método ProjectDocument.getWSSUrlAsync
 Obtiene de forma asincrónica la dirección URL de la lista sincronizada de tareas de SharePoint.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
-|**Agregado en**|1,0|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
+|**Agregado en**|1.0|
 
 ```js
 Office.context.document.getWSSUrlAsync([options,] [callback]);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
@@ -24,7 +24,7 @@ Office.context.document.getWSSUrlAsync([options,] [callback]);
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string** o **undefined**|Un elemento de cualquier tipo definido por el usuario que se devuelve en el objeto **AsyncResult** sin sufrir modificaciones.||
 | _callback_|**object**|Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.||
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el parámetro de la función de devolución de llamada.
 
@@ -35,15 +35,15 @@ Para el método **getWSSUrlAsync**, el objeto devuelto [AsyncResult](../../refer
 |:-----|:-----|
 |[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Datos pasados en el parámetro opcional _asyncContext_, si se usó el parámetro.|
 |[error](../../reference/shared/asyncresult.error.md)|Información sobre el error si la propiedad **status** es igual a **failed**.|
-|[estado](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
+|[status](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
 |[value](../../reference/shared/asyncresult.value.md)|Contiene las siguientes propiedades:<br/><br/><ul><li>La propiedad <b>listName</b> es el nombre de la lista de tareas sincronizadas de SharePoint.</li><li>La propiedad <b>serverUrl</b> es la dirección URL de la lista de tareas sincronizadas de SharePoint.</li></ul>|
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Si el proyecto activo no está sincronizado con una lista de tareas de SharePoint, los valores **listName** y **serverUrl** quedarán vacíos.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 El siguiente código de ejemplo llama a **getWSSUrlAsync** para obtener el nombre y la dirección URL de la lista sincronizada de tareas de SharePoint.
 
@@ -96,7 +96,7 @@ En el ejemplo se presupone que el complemento tiene una referencia a la bibliote
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -111,24 +111,24 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **||
+|**Disponible en los conjuntos de requisitos**||
 |**Nivel de permisos mínimo**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
-|1,0|Agregado|
+|1.0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [Objeto AsyncResult](../../reference/shared/asyncresult.md)

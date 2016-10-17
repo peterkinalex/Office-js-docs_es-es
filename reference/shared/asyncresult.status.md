@@ -1,6 +1,6 @@
 
-# Propiedad AsyncResult.status
-Obtiene el estado de la acción asíncrona.
+# <a name="asyncresult.status-property"></a>Propiedad AsyncResult.status
+Obtiene el estado de la operación asincrónica.
 
 |||
 |:-----|:-----|
@@ -12,12 +12,12 @@ var myStatus = asyncResult.status;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Un valor **[AsyncResultStatus](../../reference/shared/asyncresultstatus-enumeration.md)**.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 ```js
 function getData() {
@@ -37,7 +37,7 @@ function write(message){
 
 ```
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -61,7 +61,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 |**Versión**|**Cambios**|
 |:-----|:-----|

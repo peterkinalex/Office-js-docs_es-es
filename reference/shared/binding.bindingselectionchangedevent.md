@@ -1,23 +1,23 @@
 
-# Evento Binding.bindingSelectionChanged
-Se genera al cambiar la selección en el enlace.
+# <a name="binding.bindingselectionchanged-event"></a>Evento Binding.bindingSelectionChanged
+Se produce al cambiar la selección en el enlace.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Access, Excel y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|BindingEvents|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|BindingEvents|
 |**Modificado por última vez en Selección**|1.1|
 
 ```
 Office.EventType.BindingSelectionChanged
 ```
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Para agregar un controlador de eventos para el evento **BindingSelectionChanged** de un enlace, use el método [addHandlerAsync](../../reference/shared/binding.addhandlerasync.md) del objeto **Binding**. El controlador de eventos recibirá un argumento de tipo [BindingSelectionChangedEventArgs](../../reference/shared/binding.bindingselectionchangedeventargs.md).
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -37,7 +37,7 @@ function write(message){
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este evento es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este evento.
@@ -52,16 +52,16 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|:-----|:-----|
 |**Access**||v||
 |**Excel**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|BindingEvents|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Disponible en los conjuntos de requisitos**|BindingEvents|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

@@ -1,6 +1,6 @@
 
-# Evento Office.initialize
-Ocurre cuando se carga el entorno en tiempo de ejecución y el complemento está preparado para empezar a interactuar con la aplicación y el documento alojado. 
+# <a name="office.initialize-event"></a>Evento Office.initialize
+Se produce cuando se carga el entorno en tiempo de ejecución y el complemento está preparado para empezar a interactuar con la aplicación y el documento alojado. 
 
 |||
 |:-----|:-----|
@@ -12,7 +12,7 @@ Office.initialize = function (reason) {/* initialization code */}
 ```
 
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 El parámetro _reason_ de la función de escucha del evento **initialize** devuelve un valor de la enumeración [InitializationReason](../../reference/shared/initializationreason-enumeration.md) que especifica cómo se ha producido la inicialización. El complemento de contenido o panel de tareas puede inicializarse con dos procedimientos:
 
@@ -25,7 +25,7 @@ El parámetro _reason_ de la función de escucha del evento **initialize** devue
  >**Nota**: el parámetro reason de la función de escucha del evento **initialize** solo devuelve un valor de la enumeración **InitializationReason** para los complementos de contenido y panel de tareas (para los complementos de Outlook no devuelve ningún valor).
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 Puede usar el valor de **InitializationEnumeration** para implementar diferentes lógicas si se ha insertado el complemento por primera vez (es decir, si la aplicación no formaba parte del documento previamente). El ejemplo siguiente muestra un caso de lógica simple que usa el valor del parámetro _reason_ para mostrar cómo se ha inicializado el complemento de contenido o panel de tareas.
 
@@ -53,7 +53,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este evento es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este evento.
@@ -77,7 +77,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

@@ -1,35 +1,35 @@
-# Objeto RangeSort (API de JavaScript para Excel)
+# <a name="rangesort-object-(javascript-api-for-excel)"></a>Objeto RangeSort (API de JavaScript para Excel)
 
-_Se aplica a: Excel 2016, Excel Online, Excel para iOS y Office 2016_
+_Se aplica a: Excel 2016, Excel Online, Excel para iOS, Office 2016_
 
 Administra operaciones de ordenación en objetos Range.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 Ninguno
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 Ninguno
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)](#applyfields-sortfield-matchcase-bool-hasheaders-bool-orientation-string-method-string)|void|Realiza una operación de ordenación.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)
+### <a name="apply(fields:-sortfield[],-matchcase:-bool,-hasheaders:-bool,-orientation:-string,-method:-string)"></a>apply(fields: SortField[], matchCase: bool, hasHeaders: bool, orientation: string, method: string)
 Realiza una operación de ordenación.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |fields|SortField[]|La lista de condiciones por las que realizar la ordenación.|
@@ -38,10 +38,10 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 |orientation|string|Opcional. Indica si la operación ordena filas o columnas.  Los valores posibles son: Rows, Columns|
 |method|string|Opcional. Método de ordenación que se usa para los caracteres chinos.  Los valores posibles son: PinYin, StrokeCount|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";

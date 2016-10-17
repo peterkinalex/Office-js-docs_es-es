@@ -1,19 +1,19 @@
 
-# Método ProjectDocument.getSelectedDataAsync
+# <a name="projectdocument.getselecteddataasync-method"></a>Método ProjectDocument.getSelectedDataAsync
 Obtiene de forma asincrónica el valor de texto de los datos que contiene la selección actual de una o varias celdas del diagrama de Gantt.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
-|**Agregado en**|1,0|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
+|**Agregado en**|1.0|
 
 ```
 Office.context.document.getSelectedDataAsync(coercionType[, options][, callback]);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
@@ -22,11 +22,11 @@ Office.context.document.getSelectedDataAsync(coercionType[, options][, callback]
 | _coercionType_|[CoercionType](../../reference/shared/coerciontype-enumeration.md)|El tipo de la estructura de datos que se debe devolver. Obligatorio.<br/>Project 2013 solo admite **Office.CoercionType.Text** o `"text"`.||
 | _options_|**object**|Especifica cualquiera de los siguientes [parámetros opcionales](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods):||
 | _valueFormat_|[ValueFormat](../../reference/shared/valueformat-enumeration.md)|El formato que se debe usar para los valores de fecha o de número.<br/>Project 2013 ignora este parámetro y lo establece de forma interna en `unformatted`.||
-| _filterType_|[FilterType](../../reference/shared/filtertype-enumeration.md)|Especifica si se deben incluir solo los datos visibles o todos los datos. <br/>Project 2013 ignora este parámetro y lo establece de forma interna en  `all`.||
+| _filterType_|[FilterType](../../reference/shared/filtertype-enumeration.md)|Especifica si se deben incluir solo los datos visibles o todos los datos. <br/>Project 2013 ignora este parámetro y lo establece de forma interna en `all`.||
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string** o **undefined**|Un elemento de cualquier tipo definido por el usuario que se devuelve en el objeto **AsyncResult** sin sufrir modificaciones.||
 | _callback_|**object**|Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.||
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el parámetro de la función de devolución de llamada.
 
@@ -40,15 +40,15 @@ Para el método **getSelectedDataAsync**, el objeto devuelto [AsyncResult](../..
 |:-----|:-----|
 |[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Los datos que se han pasado en el parámetro opcional _asyncContext_, si se usó el parámetro.|
 |[error](../../reference/shared/asyncresult.error.md)|Información sobre el error si la propiedad **status** es igual a **failed**.|
-|[estado](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
+|[status](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
 |[value](../../reference/shared/asyncresult.value.md)|El valor de texto de las celdas seleccionadas.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 El método **ProjectDocument.getSelectedDataAsync** reemplaza el método [Document.getSelectedDataAsync](../../reference/shared/document.getselecteddataasync.md) y devuelve el valor de texto de los datos conforme a la selección de una o varias celdas en la vista de diagrama de Gantt. **ProjectDocument.getSelectedDataAsync** admite solo formato de texto como [CoercionType](../../reference/shared/coerciontype-enumeration.md) (no admite `matrix`, `table` ni otros formatos).
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 En el ejemplo de código siguiente se obtienen los valores de las celdas seleccionadas. Usa el parámetro opcional _asyncContext_ para pasar texto a la función de devolución de llamada.
 
@@ -104,7 +104,7 @@ En el ejemplo se asume que el complemento tiene una referencia a la biblioteca d
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -118,13 +118,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|Selección|
+|**Disponible en los conjuntos de requisitos**|Selección|
 |**Nivel de permisos mínimo**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 
@@ -133,13 +133,13 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
-|1,0|Agregado|
+|1.0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [Objeto AsyncResult](../../reference/shared/asyncresult.md)

@@ -1,21 +1,21 @@
 
-# Elemento Host
+# <a name="host-element"></a>Elemento Host
 Especifica un tipo individual de aplicación de Office en el que se debe activar el complemento.
 
 > **Importante**: La sintaxis del elemento **Host** varía dependiendo de si el elemento está definido dentro del [manifiesto básico](#basic-manifest) o dentro del nodo [VersionOverrides](#versionoverrides-node). Sin embargo, las funciones son las mismas.  
 
 
-## Manifiesto básico
+## <a name="basic-manifest"></a>Manifiesto básico
 
 Cuando se define en el manifiesto básico (bajo [OfficeApp](./officeapp.md)), el tipo de host está determinado en el atributo `Name`.   
 
-### Atributos
+### <a name="attributes"></a>Atributos
 | Atributo     | Tipo   | Necesario | Descripción                                      |
 |:--------------|:-------|:---------|:-------------------------------------------------|
-| [Nombre](#name) | string | necesario | El nombre del tipo de aplicación host de Office. |
+| [Name](#name) | string | necesario | El nombre del tipo de aplicación host de Office. |
 
 
-### Nombre
+### <a name="name"></a>Nombre
 Especifica el tipo de host al que se dirige este complemento. El valor debe ser uno de los siguientes:
 
 - `Document` (Word)
@@ -26,7 +26,7 @@ Especifica el tipo de host al que se dirige este complemento. El valor debe ser 
 - `Project` (Project)
 - `Workbook` (Excel)
 
-### Ejemplo
+### <a name="example"></a>Ejemplo
 ```xml
 <Hosts>
     <Host Name="Mailbox">
@@ -36,23 +36,23 @@ Especifica el tipo de host al que se dirige este complemento. El valor debe ser 
 
 ---
 
-## Nodo VersionOverrides
+## <a name="versionoverrides-node"></a>Nodo VersionOverrides
 Cuando se define en [VersionOverrides](./versionoverrides), el tipo de host está determinado en el atributo `xsi:type`. 
 
-### Atributos
+### <a name="attributes"></a>Atributos
 
 |  Atributo  |  Obligatorio  |  Descripción  |
 |:-----|:-----|:-----|
 |  [xsi:type](#xsitype)  |  Sí  | Describe el host de Office al que se aplica esta configuración.|
 
-### Elementos secundarios
+### <a name="child-elements"></a>Elementos secundarios
 
 |  Elemento |  Obligatorio  |  Descripción  |
 |:-----|:-----|:-----|
 |  [FormFactor](./formfactor.md)    |  Sí   |  Define el factor de forma afectado. |
 
 
-### xsi:type
+### <a name="xsi:type"></a>xsi:type
 Controla a qué host de Office (Word, Excel, PowerPoint, Outlook, OneNote) se aplica también la configuración contenida. El valor debe ser uno de los siguientes:
 
 - `Document` (Word)
@@ -61,7 +61,7 @@ Controla a qué host de Office (Word, Excel, PowerPoint, Outlook, OneNote) se ap
 - `Presentation` (PowerPoint)
 - `Workbook` (Excel)
 
-## Ejemplo de host 
+## <a name="host-example"></a>Ejemplo de host 
 ```xml
 <Hosts>
     <Host xsi:type="MailHost">

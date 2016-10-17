@@ -1,5 +1,5 @@
 
-# Enumeración GoToType
+# <a name="gototype-enumeration"></a>Enumeración GoToType
 Especifica el tipo de lugar u objeto hacia el que se debe navegar.
 
 |||
@@ -12,7 +12,7 @@ Office.GoToType
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Valores**
@@ -25,7 +25,7 @@ Office.GoToType
 |Office.GoToType.Slide|"slide"|Va a una diapositiva utilizando el Id. especificado.|PowerPoint|
 |Office.GoToType.Index|"index"|Va al índice especificado por número de diapositiva o enumeración:</br>**Office.Index.First**</br>**Office.Index.Last**</br>**Office.Index.Next**</br>**Office.Index.Previous**|PowerPoint|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que esta enumeración es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite esta enumeración.
@@ -45,11 +45,11 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

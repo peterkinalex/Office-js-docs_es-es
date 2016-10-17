@@ -1,11 +1,11 @@
 
-# Evento CustomXmlPart.dataNodeDeleted
-Ocurre cuando se suprime un nodo.
+# <a name="customxmlpart.datanodedeleted-event"></a>Evento CustomXmlPart.dataNodeDeleted
+Se produce cuando se elimina un nodo.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|CustomXmlParts|
 |**Modificado por última vez en**|1.1|
 
 ```
@@ -13,12 +13,12 @@ Office.EventType.DataNodeDeleted
 ```
 
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Para agregar un controlador de eventos para el evento **dataNodeDeleted**, use el método [addHandlerAsync](../../reference/shared/customxmlpart.addhandlerasync.md) del objeto **CustomXmlPart**.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 
@@ -41,7 +41,7 @@ function write(message){
 
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este evento es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este evento.
@@ -52,17 +52,17 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|:-----|:-----|
 |**Access**||||
 |**Excel**||||
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|CustomXmlParts|
+|**Disponible en los conjuntos de requisitos**|CustomXmlParts|
 |**Nivel de permisos mínimo**|[ReadWriteDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

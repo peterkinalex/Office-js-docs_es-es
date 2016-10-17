@@ -1,16 +1,16 @@
 
-# Labs.Core.ICompletionStatus
+# <a name="labs.core.icompletionstatus"></a>Labs.Core.ICompletionStatus
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
-Finalización del estado del laboratorio. El estado se pasa al finalizar el laboratorio para indicar el resultado de la interacción.
+Estado de finalización del laboratorio. El estado se pasa al finalizar el laboratorio para indicar el resultado de la interacción.
 
 ```
 interface ICompletionStatus
 ```
 
 
-## Properties
+## <a name="properties"></a>Propiedades
 
 Ninguno.
 

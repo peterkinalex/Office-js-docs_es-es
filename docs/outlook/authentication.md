@@ -1,9 +1,9 @@
 
-# Autenticar un complemento de Outlook con los tokens de identidad de Exchange
+# <a name="authenticate-an-outlook-add-in-by-using-exchange-identity-tokens"></a>Autenticar un complemento de Outlook con los tokens de identidad de Exchange
 
 Su complemento de Outlook puede proporcionar a sus clientes información de cualquier parte de Internet, ya sea desde el servidor que hospeda el complemento, desde su red interna o desde alguna otra parte de la nube. Si esa información está protegida, su complemento de correo necesitará una forma de asociar la cuenta de correo de Exchange con su servicio de información. Exchange 2013 puede habilitar el sistema de inicio de sesión único (SSO) para el complemento proporcionando un token que identifique la cuenta de correo que hace la solicitud. Puede asociar este token con un usuario registrado del complemento de manera que se pueda reconocer al usuario siempre que el complemento de Outlook se conecte al servicio.
 
-## Tokens de identidad
+## <a name="identity-tokens"></a>Tokens de identidad
 
 
 Dos de los complementos de ejemplo usan información que está disponible al público. Uno de ellos muestra un mapa de Bing para las direcciones de un mensaje y la otra muestra una vista previa de los vínculos de vídeo de YouTube de un mensaje. Pero su complemento de Outlook también puede obtener acceso a información que no sea de acceso público. Puede usar el servidor que hospeda el complemento para vincularlo con la información de la red interna o de cualquier parte de la nube.
@@ -36,7 +36,7 @@ Veamos los detalles. En los artículos siguientes, usaremos un sencillo compleme
 - [Autenticar un usuario con un token de identidad para Exchange](../outlook/validate-an-identity-token.md)
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

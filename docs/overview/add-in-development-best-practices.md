@@ -1,10 +1,10 @@
-﻿
-# Procedimientos recomendados para desarrollar complementos para Office
+
+# <a name="best-practices-for-developing-office-add-ins"></a>Procedimientos recomendados para desarrollar complementos para Office
 
 
 Los complementos eficaces ofrecen una funcionalidad única y atractiva que amplía las aplicaciones de Office de forma visualmente interesante. Para crear un complemento excelente, proporcione una experiencia atractiva la primera vez para sus usuarios, diseñe una experiencia de interfaz de usuario de primera clase y optimice el rendimiento de los complementos. Aplique los procedimientos recomendados descritos en este artículo para crear complementos que ayuden a los usuarios a completar las tareas de forma rápida y eficaz.
 
-## Proporcionar un valor claro
+## <a name="provide-clear-value"></a>Proporcionar un valor claro
 
 
 
@@ -13,11 +13,11 @@ Los complementos eficaces ofrecen una funcionalidad única y atractiva que ampl�
  - Habilitar escenarios nuevos dentro de Office.
  - Insertar servicios complementarios en los hosts de Office.
  - Mejorar la experiencia de Office para aumentar la productividad.
-- Asegúrese de que el valor de los complementos quede claro a los usuarios inmediatamente con la [creación de una primera experiencia atractiva](#creación-de-una-primera-experiencia-atractiva).
+- Asegúrese de que el valor de los complementos quede claro a los usuarios inmediatamente con la [creación de una primera experiencia atractiva](#create-an-engaging-first-run-experience).
 - Cree una [descripción eficaz para la Tienda Office](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx). Asegúrese de que las ventajas del complemento aparezcan claramente en el título y la descripción. No se base en su marca para comunicar lo que hace el complemento.
 
 
-## Crear una atractiva experiencia de primera vista
+## <a name="create-an-engaging-first-run-experience"></a>Crear una atractiva experiencia de primera vista
 
 
 
@@ -45,7 +45,7 @@ Los complementos eficaces ofrecen una funcionalidad única y atractiva que ampl�
 
 Para consultar plantillas donde se muestran modelos que puede aplicar cuando desarrolle su experiencia de primera ejecución, vea [Modelos de diseño de la experiencia del usuario para complementos de Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
-## Usar comandos de complementos
+## <a name="use-add-in-commands"></a>Usar comandos de complementos
 
 - Proporcione puntos de entrada relevantes de interfaz de usuario para el complemento con [comandos de complemento](../design/add-in-commands.md).
 
@@ -60,7 +60,8 @@ Para consultar plantillas donde se muestran modelos que puede aplicar cuando des
   - Asigne un nombre al grupo que coincida con el nombre del complemento. Si tiene varios grupos, asigne un nombre a cada grupo según la función de los comandos del grupo.
   - No agregue botones superfluos para aumentar el valor del complemento.
 
-     >  **Nota**  Los complementos que ocupen demasiado espacio podrían no aprobar la [validación de la Tienda Office](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
+     >
+  **Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
 
 - Para todos los iconos:
     - Coloque iconos y [etiquetas](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) pertinentes para los botones que identifiquen claramente la acción que el usuario va a realizar.
@@ -92,7 +93,7 @@ Para consultar plantillas donde se muestran modelos que puede aplicar cuando des
 
 
 
-## Aplicar principios de diseño de experiencia del usuario
+## <a name="apply-ux-design-principles"></a>Aplicar principios de diseño de experiencia del usuario
 
 
 
@@ -112,11 +113,11 @@ Para consultar plantillas donde se muestran modelos que puede aplicar cuando des
 
 - Tenga en cuenta la [accesibilidad](http://msdn.microsoft.com/library/3be1abbb-237a-48ec-8e17-72caa25a3cb2%28Office.15%29.aspx): cree un complemento con el que todos los usuarios puedan interactuar fácilmente y dé cabida a las tecnologías de asistencia como los lectores de pantalla.
 
-- Diseñe para todas las plataformas y métodos de entrada, como mouse o teclado y [función táctil](#función-táctil). Garantice que la interfaz de usuario responda a distintos factores de forma.
+- Diseñe para todas las plataformas y métodos de entrada, como mouse o teclado y [función táctil](#optimize-for-touch). Garantice que la interfaz de usuario responda a distintos factores de forma.
 
 Para consultar plantillas donde se apliquen principios de diseño que puede usar y personalizar cuando desarrolle un complemento, vea [Modelos de diseño de la experiencia del usuario para complementos de Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
-### Optimizar para la función táctil
+### <a name="optimize-for-touch"></a>Optimizar para la función táctil
 
 
 
@@ -135,7 +136,7 @@ Para consultar plantillas donde se apliquen principios de diseño que puede usar
  >**Nota**  Si está usando [Office UI Fabric](https://github.com/OfficeDev/Office-UI-Fabric) para sus elementos de diseño, muchos de estos elementos se controlan.
 
 
-## Optimizar y supervisar el rendimiento de los complementos
+## <a name="optimize-and-monitor-add-in-performance"></a>Optimizar y supervisar el rendimiento de los complementos
 
 
 
@@ -165,11 +166,11 @@ Para consultar plantillas donde se apliquen principios de diseño que puede usar
 - Supervise el estado del servicio y use telemetría para supervisar el éxito del usuario.
 
 
-## Comercializar el complemento
+## <a name="market-your-add-in"></a>Comercializar el complemento
 
 
 
-- Publique su complemento en la [Tienda Office](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx) y [promuévalo ](http://msdn.microsoft.com/library/b19e21f8-76f5-44e1-9971-bef79cad4c71%28Office.15%29.aspx) desde su sitio web. Cree una [descripción de la Tienda Office eficaz](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx).
+- Publique su complemento en la [Tienda Office](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx) y [promuévalo](http://msdn.microsoft.com/library/b19e21f8-76f5-44e1-9971-bef79cad4c71%28Office.15%29.aspx) desde su sitio web. Cree una [descripción de la Tienda Office eficaz](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx).
 
 - Use títulos concisos y descriptivos para el complemento. No incluya más de 128 caracteres.
 

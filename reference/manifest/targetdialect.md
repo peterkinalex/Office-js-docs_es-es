@@ -1,11 +1,11 @@
 
-# Elemento TargetDialect
+# <a name="targetdialect-element"></a>Elemento TargetDialect
  Define un dialecto compatible con este diccionario, representado como una cadena de nombre de referencia cultural.
 
  **Tipo de complemento:** Panel de tareas
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -15,17 +15,17 @@
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [TargetDialects](../../reference/manifest/targetdialects.md)
 
 
-## Observaciones
+## <a name="remarks"></a>Comentarios
 
 Especifique el valor en el formato de etiqueta de lenguaje BCP 47, como en `"en-US"`.
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

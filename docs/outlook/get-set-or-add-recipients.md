@@ -1,5 +1,5 @@
 
-# Obtener, establecer o agregar destinatarios al redactar una cita o un mensaje en Outlook
+# <a name="get,-set,-or-add-recipients-when-composing-an-appointment-or-message-in-outlook"></a>Obtener, establecer o agregar destinatarios al redactar una cita o un mensaje en Outlook
 
 
 La API de JavaScript para Office ofrece métodos asincrónicos ([Recipients.getAsync](../../reference/outlook/Recipients.md), [Recipients.setAsync](../../reference/outlook/Recipients.md) o [Recipients.addAysnc](../../reference/outlook/Recipients.md)) para, respectivamente, obtener, definir o agregar destinatarios en un formulario de redacción de una cita o un mensaje. Estos métodos asincrónicos solo están disponibles para complementos de redacción. Para usar estos métodos, asegúrese de configurar el manifiesto del complemento correctamente para que Outlook active el complemento en los formularios de redacción, como se describe en la sección [Crear complementos de Outlook para formularios de redacción](../outlook/compose-scenario.md).
@@ -27,7 +27,7 @@ Estas propiedades están disponibles para acceso de escritura en formularios que
 Como con la mayoría de los métodos asincrónicos en la API de JavaScript para Office, **getAsync**, **setAsync** y **addAsync** aceptan parámetros de entrada opcionales. Para más información sobre la especificación de estos parámetros de entrada opcionales, vea [Pasar parámetros opcionales a métodos asincrónicos](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-inline) en [Programación asincrónica en complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md).
 
 
-## Para obtener los destinatarios
+## <a name="to-get-recipients"></a>Para obtener los destinatarios
 
 
 En esta sección se muestra un ejemplo de código que obtiene los destinatarios de la cita o mensaje que se redacte y muestra sus direcciones de correo electrónico. El ejemplo de código presupone una regla en el manifiesto del complemento que activa el complemento en un formulario de redacción para una cita o mensaje, tal y como se muestra a continuación. 
@@ -139,7 +139,7 @@ function write(message){
 ```
 
 
-## Para definir los destinatarios
+## <a name="to-set-recipients"></a>Para definir los destinatarios
 
 
 En esta sección se muestra un ejemplo de código que define los destinatarios de la cita o mensaje que el usuario está redactando. Al definir los destinatarios, se sobrescribirán los destinatarios existentes. Al igual que en el ejemplo anterior, que obtiene los destinatarios de un formulario de redacción, este ejemplo presupone que el complemento se activa en formularios de redacción para mensajes y citas. En este ejemplo se verifica en primer lugar si el elemento redactado es una cita o un mensaje a fin de aplicar el método asincrónico  **Recipients.setAsync** en las propiedades adecuadas que representan los destinatarios de la cita o mensaje.
@@ -266,7 +266,7 @@ function write(message){
 ```
 
 
-## Para agregar destinatarios
+## <a name="to-add-recipients"></a>Para agregar destinatarios
 
 
 Si no desea sobrescribir los destinatarios existentes en una cita o mensaje, en lugar de usar  **Recipients.setAsync**, puede usar el método asincrónico  **Recipients.addAsync** para anexar destinatarios. El funcionamiento de **addAsync** se asemeja a **setAsync** en que requiere de un argumento de entrada _recipients_. Si lo desea, puede proporcionar un método de devolución de llamada y argumentos para la devolución de llamada mediante el parámetro asyncContext. A continuación, puede comprobar el estado, el resultado y los errores de la llamada asincrónica a  **addAsync** usando el parámetro de salida _asyncResult_ del método de devolución de llamada. El siguiente ejemplo comprueba si el elemento que se está redactando es una cita y le agrega dos asistentes obligatorios.
@@ -300,17 +300,17 @@ function addAttendees() {
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
 - [Obtener y definir datos de elementos en un formulario de redacción de Outlook](../outlook/get-and-set-item-data-in-a-compose-form.md)
     
-- [Obtención y definición de datos de elementos de Outlook en los formularios de lectura o redacción](../outlook/item-data.md)
+- [Obtener y establecer datos de elementos en formularios de lectura o redacción](../outlook/item-data.md)
     
 - [Crear complementos de Outlook para formularios de redacción](../outlook/compose-scenario.md)
     
-- [Programación asíncrona en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
+- [Programación asincrónica en los complementos de Office](../../docs/develop/asynchronous-programming-in-office-add-ins.md)
     
 - [Obtener o establecer el asunto al redactar una cita o un mensaje en Outlook](../outlook/get-or-set-the-subject.md)
     

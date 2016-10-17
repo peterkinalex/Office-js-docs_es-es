@@ -1,5 +1,5 @@
 
-# Obtener datos adjuntos de un elemento de Outlook desde el servidor
+# <a name="get-attachments-of-an-outlook-item-from-the-server"></a>Obtener datos adjuntos de un elemento de Outlook desde el servidor
 
 Un complemento de Outlook no puede pasar los datos adjuntos de un elemento seleccionado directamente al servicio remoto que se ejecuta en el servidor. En su lugar, lo que puede hacer es usar la API de datos adjuntos para enviar información sobre los datos adjuntos al servicio remoto. Luego, el servicio puede ponerse en contacto directamente con el servidor de Exchange para recuperar los datos adjuntos.
 
@@ -13,7 +13,7 @@ Para enviar información de datos adjuntos al servicio remoto, se usa la siguien
 - Función [Office.context.mailbox.getCallbackTokenAsync](../../reference/outlook/Office.context.mailbox.md): realiza una llamada asincrónica al servidor Exchange que hospeda el buzón para obtener un token de devolución de llamada que el servidor devuelve al servidor Exchange para autenticar una solicitud de datos adjuntos.
     
 
-## Usar la API de datos adjuntos
+## <a name="using-the-attachments-api"></a>Usar la API de datos adjuntos
 
 
 Para usar la API de datos adjuntos para obtener datos adjuntos de un buzón Exchange, siga estos pasos: 
@@ -33,7 +33,7 @@ Estos pasos se explican en detalle en las siguientes secciones con el código de
  >**Nota**  El código de estos ejemplos se ha abreviado para destacar la información de los datos adjuntos. El ejemplo contiene más código que sirve para autenticar el complemento en el servidor remoto y administrar el estado de la solicitud.
 
 
-### Activar el complemento
+### <a name="activate-the-add-in"></a>Activar el complemento
 
 
 Puede usar una regla [ItemHasAttachment](http://msdn.microsoft.com/en-us/library/031db7be-8a25-5185-a9c3-93987e10c6c2%28Office.15%29.aspx) en el archivo de manifiesto del complemento para mostrar su complemento de correo cuando el elemento seleccionado tenga datos adjuntos, como se muestra en el siguiente ejemplo.
@@ -44,7 +44,7 @@ Puede usar una regla [ItemHasAttachment](http://msdn.microsoft.com/en-us/library
 ```
 
 
-### Obtener un token de devolución de llamada
+### <a name="get-a-callback-token"></a>Obtener un token de devolución de llamada
 
 
 El objeto [Office.context.mailbox](../../reference/outlook/Office.context.mailbox.md) proporciona la función **getCallbackTokenAsync** para obtener un token que el servidor remoto puede usar para la autenticación con el servidor Exchange. En el siguiente código se muestra una función en un complemento que inicia la solicitud asincrónica para obtener el token de devolución de llamada y la función de devolución de llamada que obtiene la respuesta. El token de devolución de llamada se almacena en el objeto de solicitud de servicio que se define en la siguiente sección.
@@ -69,7 +69,7 @@ function attachmentTokenCallback(asyncResult, userContext) {
 ```
 
 
-### Enviar información de datos adjuntos al servicio remoto
+### <a name="send-attachment-information-to-the-remote-service"></a>Enviar información de datos adjuntos al servicio remoto
 
 
 El servicio remoto al que el complemento llama define los detalles sobre cómo se debe enviar la información de datos adjuntos al servicio. En este ejemplo, el servicio remoto es una aplicación API web creada mediante Visual Studio 2013. El servicio remoto espera que la información de datos adjuntos esté en un objeto JSON. Con el siguiente código se inicializa un objeto que contiene la información de datos adjuntos.
@@ -126,7 +126,7 @@ La propiedad  `Office.context.mailbox.item.attachments` contiene una colección 
 ```
 
 
-### Obtener los datos adjuntos del servidor Exchange
+### <a name="get-the-attachments-from-the-exchange-server"></a>Obtener los datos adjuntos del servidor Exchange
 
 
 El servicio remoto usa el método [GetAttachments](http://msdn.microsoft.com/en-us/library/office/dn600509%28v=exchg.80%29.aspx) de la API administrada de EWS o la operación [GetAttachment](http://msdn.microsoft.com/library/24d10a15-b942-415e-9024-a6375708f326%28Office.15%29.aspx) de EWS para recuperar los datos adjuntos del servidor. La aplicación de servicio necesita dos objetos para deserializar la cadena JSON y convertirla en objetos .NET Framework que se puedan usar en el servidor. En el código siguiente se muestran las definiciones de los objetos de deserialización.
@@ -159,7 +159,7 @@ namespace AttachmentsSample
 ```
 
 
-#### Uso de la API administrada de EWS para obtener datos adjuntos
+#### <a name="use-the-ews-managed-api-to-get-the-attachments"></a>Uso de la API administrada de EWS para obtener datos adjuntos
 
 Si utiliza la [API administrada de EWS](http://go.microsoft.com/fwlink/?LinkID=255472) en su servicio remoto, puede usar el método [GetAttachments](http://msdn.microsoft.com/en-us/library/office/dn600509%28v=exchg.80%29.aspx), el cual creará, enviará y recibirá una solicitud EWS SOAP para obtener los datos adjuntos. Se recomienda usar la API administrada de EWS porque requiere menos líneas de código y tiene una interfaz para realizar llamadas a EWS más intuitiva. El código siguiente realiza una solicitud para recuperar todos los datos adjuntos y devuelve el número y los nombres de los datos adjuntos procesados.
 
@@ -229,7 +229,7 @@ Si utiliza la [API administrada de EWS](http://go.microsoft.com/fwlink/?LinkID=2
 ```
 
 
-#### Uso de EWS para obtener datos adjuntos
+#### <a name="use-ews-to-get-the-attachments"></a>Uso de EWS para obtener datos adjuntos
 
 Si utiliza EWS en el servicio remoto, tendrá que crear una solicitud SOAP [GetAttachment](http://msdn.microsoft.com/library/24d10a15-b942-415e-9024-a6375708f326%28Office.15%29.aspx) para obtener los datos adjuntos del servidor Exchange. El código siguiente devuelve una cadena que proporciona la solicitud SOAP. El servicio remoto usa el método **String.Format** para insertar el Id. del dato adjunto en la cadena.
 
@@ -434,15 +434,17 @@ Cada respuesta de la operación  **GetAttachment** se envía al método **Proces
 ```
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 
 - [Crear complementos de Outlook para formularios de lectura](../outlook/read-scenario.md)
     
-- [Explore la API administrada de EWS, EWS y servicios web de Exchange](http://msdn.microsoft.com/library/0bc6f81d-cc10-42b0-ba5d-6f22ff55d51c%28Office.15%29.aspx)
+- 
+  [Explorar la API administrada de EWS, EWS y servicios web de Exchange](http://msdn.microsoft.com/library/0bc6f81d-cc10-42b0-ba5d-6f22ff55d51c%28Office.15%29.aspx)
     
-- [Empezar a trabajar con aplicaciones de cliente de la API administrada de EWS](http://msdn.microsoft.com/library/c2267733-6f4f-49e5-9614-1e4a24c3af1a%28Office.15%29.aspx)
+- 
+  [Empezar a trabajar con aplicaciones cliente de la API administrada de EWS](http://msdn.microsoft.com/library/c2267733-6f4f-49e5-9614-1e4a24c3af1a%28Office.15%29.aspx)
     
-- [Outlook-Power-Hour_Code-Samples](https://github.com/OfficeDev/Outlook-Power-Hour-Code-Samples):  `MyAttachments` y `AttachmentsDemo`
+- [Outlook-Power-Hour_Code-Samples](https://github.com/OfficeDev/Outlook-Power-Hour-Code-Samples): `MyAttachments` y `AttachmentsDemo`
     

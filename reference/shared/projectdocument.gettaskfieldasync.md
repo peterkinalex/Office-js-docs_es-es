@@ -1,32 +1,32 @@
 
 
-# Método ProjectDocument.getTaskFieldAsync
-Obtiene de forma asíncrona el valor del campo especificado para la tarea especificada.
+# <a name="projectdocument.gettaskfieldasync-method"></a>Método ProjectDocument.getTaskFieldAsync
+Obtiene de forma asincrónica el valor del campo especificado para la tarea especificada.
 
 |||
 |:-----|:-----|
 |**Hosts:**|Project|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
-|**Agregado en**|1,0|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|Selección|
+|**Agregado en**|1.0|
 
 ```js
 Office.context.document.getTaskFieldAsync(taskId, fieldId[, options][, callback]);
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 
 |**Nombre**|**Tipo**|**Descripción**|**Notas de compatibilidad**|
 |:-----|:-----|:-----|:-----|
-| _taskId_|**cadena**|El GUID de la tarea. Obligatorio.||
-| _fieldId_|[ProjectTaskFields](../../reference/shared/projecttaskfields-enumeration.md)|El ID del campo de destino. Requerido.||
+| _taskId_|**string**|El GUID de la tarea. Obligatorio.||
+| _fieldId_|[ProjectTaskFields](../../reference/shared/projecttaskfields-enumeration.md)|El ID del campo de destino. Obligatorio.||
 | _options_|**object**|Especifica cualquiera de los siguientes [parámetros opcionales](../../docs/develop/asynchronous-programming-in-office-add-ins.md#passing-optional-parameters-to-asynchronous-methods):||
 | _asyncContext_|**array**, **boolean**, **null**, **number**, **object**, **string** o **undefined**|Un elemento de cualquier tipo definido por el usuario que se devuelve en el objeto **AsyncResult** sin sufrir modificaciones.||
 | _callback_|**object**|Una función que se invoca cuando se devuelve la devolución de llamada, cuyo único parámetro es del tipo **AsyncResult**.||
 
-## Valor de devolución de llamada
+## <a name="callback-value"></a>Valor de devolución de llamada
 
 Cuando la función _callback_ se ejecute, recibirá un objeto [AsyncResult](../../reference/shared/asyncresult.md) al que puede obtener acceso desde el parámetro de la función de devolución de llamada.
 
@@ -38,15 +38,15 @@ Para el método **getTaskFieldAsync**, el objeto devuelto [AsyncResult](../../re
 |:-----|:-----|
 |[asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Datos pasados en el parámetro opcional _asyncContext_, si se usó el parámetro.|
 |[error](../../reference/shared/asyncresult.error.md)|Información sobre el error si la propiedad **status** es igual a **failed**.|
-|[estado](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
+|[status](../../reference/shared/asyncresult.status.md)|Estado **succeeded** o **failed** de la llamada asincrónica.|
 |[value](../../reference/shared/asyncresult.value.md)|Contiene la propiedad **fieldValue**, que representa el valor del campo especificado.|
 
-## Comentarios
+## <a name="remarks"></a>Comentarios
 
 Primero llame al método [getSelectedTaskAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) para obtener el GUID de la tarea, y luego páselo como el argumento _taskId_ a **getTaskFieldAsync**. Si la vista activa no es una vista de tareas (por ejemplo, una vista de Uso de tareas o Diagrama de Gantt), o si no hay tareas seleccionadas en una vista de tareas, [getSelectedTaskAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) devuelve un error 5001 (Error interno). Consulte [Método addHandlerAsync ](../../reference/shared/projectdocument.addhandlerasync.md) para ver un ejemplo que use el evento [ViewSelectionChanged](../../reference/shared/projectdocument.viewselectionchanged.event.md) y el método [getSelectedViewAsync](../../reference/shared/projectdocument.getselectedviewasync.md) para activar un botón según el tipo de vista activo.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 El siguiente código de ejemplo llama a [getSelectedTaskAsync](../../reference/shared/projectdocument.getselectedtaskasync.md) para obtener el GUID de la tarea que está seleccionada en una vista de tareas. A continuación, obtiene dos valores de campo de tareas mediante una llamada a **getTaskFieldAsync** recursivamente.
 
@@ -145,7 +145,7 @@ En el ejemplo se asume que el complemento tiene una referencia a la biblioteca d
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -159,25 +159,25 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **||
+|**Disponible en los conjuntos de requisitos**||
 |**Nivel de permisos mínimo**|[ReadDocument](../../docs/develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins.md)|
 |**Tipos de complementos**|Panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 
 |**Versión**|**Cambios**|
 |:-----|:-----|
-|1,0|Agregado|
+|1.0|Agregado|
 
-## Vea también
+## <a name="see-also"></a>Vea también
 
 
 
-#### Otros recursos
+#### <a name="other-resources"></a>Otros recursos
 
 
 [Método getSelectedTaskAsync](../../reference/shared/projectdocument.getselectedresourceasync.md)

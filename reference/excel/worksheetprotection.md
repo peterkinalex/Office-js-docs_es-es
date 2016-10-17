@@ -1,48 +1,48 @@
-# Objeto WorksheetProtection (API de JavaScript para Excel)
+# <a name="worksheetprotection-object-(javascript-api-for-excel)"></a>Objeto WorksheetProtection (API de JavaScript para Excel)
 
-_Se aplica a: Excel 2016, Excel Online, Excel para iOS y Office 2016_
+_Se aplica a: Excel 2016, Excel Online, Excel para iOS, Office 2016_
 
 Representa la protección de un objeto de hoja.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |protegido|bool|Indica si la hoja de cálculo está protegida. Solo lectura.|
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|opciones|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|Opciones de protección de la hoja. Solo lectura.|
+|options|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|Opciones de protección de la hoja. Solo lectura.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto de proxy con los detalles de protección de la hoja.|
-|[protect(options: WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoptions)|void|Proteger una hoja de cálculo. Produce una excepción si se ha protegido la hoja de cálculo.|
+|[protect(options: WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoption)|void|Proteger una hoja de cálculo. Produce una excepción si se ha protegido la hoja de cálculo.|
 |[unprotect()](#unprotect)|void|Desproteger una hoja de cálculo|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 Este ejemplo carga la información de protección de la hoja de cálculo activa.
 ```js
 Excel.run(function (ctx) {
@@ -61,26 +61,26 @@ Excel.run(function (ctx) {
 });
 ```
 
-### protect(options: WorksheetProtectionOptions)
+### <a name="protect(options:-worksheetprotectionoptions)"></a>protect(options: WorksheetProtectionOptions)
 Proteger una hoja de cálculo con las directivas de protección opcionales. Produce una excepción si se ha protegido la hoja de cálculo. 
 
 Si se especifican opciones, es posible habilitar o deshabilitar directivas individuales. Si no se especifica una directiva, está habilitado de forma predeterminada. 
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 worksheetProtectionObject.protect(options);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |opciones|WorksheetProtectionOptions|Opcional. Opciones de protección de la hoja.|
 
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var sheet = ctx.workbook.worksheets.getItem("Sheet1");
@@ -95,21 +95,21 @@ Excel.run(function (ctx) {
 });
 
 ```
-### unprotect()
+### <a name="unprotect()"></a>unprotect()
 Desproteger una hoja de cálculo. 
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 worksheetProtectionObject.unprotect();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var sheet = ctx.workbook.worksheets.getItem("Sheet1");  

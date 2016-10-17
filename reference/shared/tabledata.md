@@ -1,18 +1,18 @@
 
-# Objeto TableData
+# <a name="tabledata-object"></a>Objeto TableData
 Representa los datos en una tabla o un [TableBinding](../../reference/shared/binding.tablebinding.md).
 
 |||
 |:-----|:-----|
 |**Hosts:**|Excel y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TableBindings|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|TableBindings|
 |**Agregado en**|1.1|
 
 ```
 TableData
 ```
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -20,10 +20,10 @@ TableData
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|[encabezados](../../reference/shared/tabledata.headers.md)|Obtiene o establece los encabezados de la tabla.|
-|[Rows](../../reference/shared/tabledata.rows.md)|Obtiene o establece las filas de la tabla.|
+|[headers](../../reference/shared/tabledata.headers.md)|Obtiene o establece los encabezados de la tabla.|
+|[rows](../../reference/shared/tabledata.rows.md)|Obtiene o establece las filas de la tabla.|
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este objeto es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este objeto.
@@ -38,12 +38,12 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 
 |||
 |:-----|:-----|
-|**Disponible en los conjuntos de requisitos **|TableBindings|
-|**Tipos de complementos**|Panel de tareas y contenido|
+|**Disponible en los conjuntos de requisitos**|TableBindings|
+|**Tipos de complementos**|Contenido, panel de tareas|
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

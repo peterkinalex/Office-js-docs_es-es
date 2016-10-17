@@ -1,7 +1,7 @@
 
-# Labs.on
+# <a name="labs.on"></a>Labs.on
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
 Agrega un nuevo controlador para un evento especificado.
 
@@ -10,15 +10,15 @@ function on(event: string, handler: Core.IEventCallback): void
 ```
 
 
-## Parámetros
+## <a name="parameters"></a>Parámetros
 
 
 |**Nombre**|**Descripción**|
 |:-----|:-----|
-|evento|El evento que quiere agregar.|
+|event|El evento que quiere agregar.|
 |handler|El controlador de eventos que quiere agregar, mediante la interfaz [Labs.Core.IEventCallback](../../reference/office-mix/labs.core.ieventcallback.md).|
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Ninguno.
 

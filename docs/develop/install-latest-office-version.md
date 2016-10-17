@@ -1,4 +1,4 @@
-# Instalar la versión más reciente de Office 2016
+# <a name="install-the-latest-version-of-office-2016"></a>Instalar la versión más reciente de Office 2016
 
 Las nuevas características para desarrolladores, incluso algunas que aún están en versión preliminar, se entregan primero a los suscriptores que optan por recibir las versiones más recientes de Office. Para suscribirse a las versiones más recientes de Office 2016: 
 

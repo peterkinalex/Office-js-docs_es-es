@@ -1,16 +1,16 @@
 
-# Labs.Components.IInputComponent
+# <a name="labs.components.iinputcomponent"></a>Labs.Components.IInputComponent
 
- _**Hace referencia a:** apps for Office | Office Add-ins | Office Mix | PowerPoint_
+ _**Hace referencia a:** apps para Office | Complementos de Office | Office Mix | PowerPoint_
 
-Permite interactuar con un componente de entrada.
+Permite la interacción con un componente de entrada.
 
 ```
 interface IInputComponent extends Labs.Core.IComponent
 ```
 
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 
 |Nombre|Descripción|

@@ -1,11 +1,11 @@
 
-# Elemento IconUrl
+# <a name="iconurl-element"></a>Elemento IconUrl
 Especifica la dirección URL de la imagen que se usa para representar su complemento de Office en la UX de inserción y la Tienda Office.
 
  **Tipo de complemento:** Contenido, panel de tareas, correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,20 +13,20 @@ Especifica la dirección URL de la imagen que se usa para representar su complem
 ```
 
 
-## Puede contener:
+## <a name="can-contain:"></a>Puede contener:
 
 [Override](../../reference/manifest/override.md)
 
 
-## Atributos
+## <a name="attributes"></a>Atributos
 
 
 
-|**Atributo**|**Tipo**|**Necesario**|**Descripción**|
+|**Atributo**|**Tipo**|**Obligatorio**|**Descripción**|
 |:-----|:-----|:-----|:-----|
 |DefaultValue|string|necesario|Especifica el valor predeterminado de esta opción, expresado para la configuración regional especificada en el elemento [DefaultLocale](../../reference/manifest/defaultlocale.md).|
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 Para un complemento de correo, se muestra el icono en la interfaz de usuario **Archivo**  >  **Administrar complementos** (Outlook) o **Configuración**  >  **Administrar complementos** (Outlook Web App). Para un complemento de contenido o panel de tareas, se muestra el icono en la interfaz de usuario **Insertar**  >  **Complementos**. Para todos los tipos de complemento, también se usa el icono en el sitio de la Tienda Office si publica el complemento en la Tienda Office.
 

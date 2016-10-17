@@ -1,22 +1,22 @@
-# Objeto Document (API de JavaScript para Word)
+# <a name="document-object-(javascript-api-for-word)"></a>Objeto Document (API de JavaScript para Word)
 
 El objeto Document es el objeto del nivel superior. Un objeto Document contiene una o más secciones, controles de contenido y el cuerpo que contiene el contenido del documento.
 
-_Se aplica a: Word 2016, Word para iPad, Word para Mac_
+_Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 
-## Properties
+## <a name="properties"></a>Propiedades
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |Saved|bool|Indica si se guardaron los cambios en el documento. Un valor de true indica que el documento no cambió desde que se guardó. Solo lectura.|
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|cuerpo|[Body](body.md)|Obtiene el cuerpo del documento. El cuerpo es el texto excluidos los encabezados, los pies de página, las notas al pie, los cuadros de texto, etc. Solo lectura.|
+|body|[Body](body.md)|Obtiene el cuerpo del documento. El cuerpo es el texto excluidos los encabezados, los pies de página, las notas al pie, los cuadros de texto, etc. Solo lectura.|
 |contentControls|[ContentControlCollection](contentcontrolcollection.md)|Obtiene la colección de objetos de control de contenido que se encuentran en el documento actual. Esto incluye los controles de contenido en el cuerpo de los documentos, los encabezados, los pies de página, los cuadros de texto, etc. Solo lectura.|
-|Sections|[SectionCollection](sectioncollection.md)|Obtiene la colección de objetos de sección que se encuentran en el documento. Solo lectura.|
+|sections|[SectionCollection](sectioncollection.md)|Obtiene la colección de objetos de sección que se encuentran en el documento. Solo lectura.|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
@@ -24,23 +24,23 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac_
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 |[save()](#save)|void|Guarda el documento. Usará la convención de nomenclatura de archivos predeterminada de Word si el documento no se guardó anteriormente.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
-### getSelection()
+### <a name="getselection()"></a>getSelection()
 Obtiene la selección actual del documento. No se admiten selecciones múltiples.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 documentObject.getSelection();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -71,23 +71,23 @@ Word.run(function (context) {
 });
 ```
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -120,21 +120,21 @@ Word.run(function (context) {
 });
 ```
 
-### save()
+### <a name="save()"></a>save()
 Guarda el documento. Usará la convención de nomenclatura de archivos predeterminada de Word si el documento no se guardó anteriormente.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 documentObject.save();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 // Run a batch operation against the Word object model.
 Word.run(function (context) {
@@ -171,5 +171,5 @@ Word.run(function (context) {
 });
 ```
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).

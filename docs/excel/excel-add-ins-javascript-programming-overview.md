@@ -1,8 +1,8 @@
-# Introducción a la programación de API de JavaScript para Excel
+# <a name="excel-javascript-api-programming-overview"></a>Introducción a la programación de API de JavaScript para Excel
 
 En este artículo se describe cómo usar la API de JavaScript para Excel para crear complementos de Excel 2016. Es una introducción a los conceptos clave que son fundamentales para usar las API, como RequestContext, los objetos proxy de JavaScript, sync(), Excel.run() y load(). Los ejemplos de código del final del artículo muestran cómo aplicar los conceptos.
 
-## RequestContext
+## <a name="requestcontext"></a>RequestContext
 
 El objeto RequestContext facilita las solicitudes para la aplicación de Excel. Como el complemento de Office y la aplicación de Excel se ejecutan en dos procesos diferentes, se necesita un contexto de solicitud para tener acceso desde el complemento a Excel y a objetos relacionados, como hojas de cálculo y tablas. Un contexto de solicitud se crea como se muestra a continuación.
 
@@ -10,7 +10,7 @@ El objeto RequestContext facilita las solicitudes para la aplicación de Excel. 
 var ctx = new Excel.RequestContext();
 ```
 
-## Objetos proxy
+## <a name="proxy-objects"></a>Objetos proxy
 
 Los objetos de JavaScript de Excel declarados y usados en un complemento son objetos proxy para los objetos reales de un documento de Excel. Las acciones llevadas a cabo en los objetos proxy no se realizan en Excel y el estado del documento de Excel no se realiza en los objetos proxy mientras no se sincronice el estado del documento. El estado del documento se sincroniza cuando se ejecuta context.sync() (véase a continuación).
 
@@ -20,17 +20,17 @@ Por ejemplo, el objeto de JavaScript local `selectedRange` se declara para que h
 var selectedRange = ctx.workbook.getSelectedRange();
 ```
 
-## sync()
+## <a name="sync()"></a>sync()
 
 El método sync() disponible en el contexto de solicitud sincroniza el estado entre los objetos proxy de JavaScript y los objetos reales de Excel. Para ello, ejecuta las instrucciones situadas en la cola en el contexto y recupera las propiedades de los objetos de Office cargados para usarlos en el código.  Este método devuelve una promesa, que se resuelve cuando se completa la sincronización.
 
-## Excel.run(function(context) { batch })
+## <a name="excel.run(function(context)-{-batch-})"></a>Excel.run(function(context) { batch })
 
 Excel.run() ejecuta un script por lotes que realiza acciones en el modelo de objetos de Excel. Los comandos por lotes incluyen definiciones de objetos proxy locales de JavaScript y métodos sync() que sincronizan el estado entre los objetos locales y de Excel y la resolución de la promesa. La ventaja de procesamiento por lotes de las solicitudes en Excel.run() es que, cuando se resuelve la promesa, los objetos de intervalo de los que se realiza el seguimiento y que se asignaron durante la ejecución se liberarán automáticamente.
 
 El método de ejecución toma RequestContext y devuelve una promesa que, normalmente, solo es el resultado de ctx.sync(). Es posible ejecutar la operación por lotes fuera de Excel.run(). Sin embargo, en este caso, todas las referencias a objetos de intervalo deben seguirse y administrarse manualmente.
 
-## load()
+## <a name="load()"></a>load()
 
 El método load() se usa para rellenar los objetos proxy creados en la capa de JavaScript del complemento. Al intentar recuperar un objeto, como una hoja de cálculo, se crea en primer lugar un objeto proxy local en la capa de JavaScript. Dicho objeto puede usarse para poner en cola la configuración de sus propiedades y métodos de invocación. Sin embargo, para leer las propiedades o las relaciones de los objetos, deben invocarse primero los métodos load() y sync(). El método load() toma las propiedades y las relaciones que necesitan cargarse cuando se llama al método sync().
 
@@ -48,7 +48,7 @@ Donde,
 * `properties` es la lista de propiedades o nombres de relaciones que se van a cargar, especificados como cadenas delimitadas por comas o como una matriz de nombres. Consulte los métodos .load() de cada objeto para obtener más detalles.
 * `loadOption` especifica un objeto que describe las opciones selection, expansion, top y skip. Consulte las [opciones](../../reference/excel/loadoption.md) de carga de objetos para obtener más detalles.
 
-## Ejemplo: Escribir valores de una matriz a un objeto de intervalo
+## <a name="example:-write-values-from-an-array-to-a-range-object"></a>Ejemplo: Escribir valores de una matriz a un objeto de intervalo
 
 En el ejemplo siguiente se muestra cómo escribir los valores de una matriz a un objeto de intervalo.
 
@@ -83,7 +83,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-## Ejemplo: Copiar valores
+## <a name="example:-copy-values"></a>Ejemplo: Copiar valores
 
 En el ejemplo siguiente se muestra cómo copiar los valores del intervalo A1:A2 a B1:B2 de la hoja de cálculo activa usando el método load() del objeto de intervalo.
 
@@ -109,7 +109,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-## Selección de propiedades y relaciones
+## <a name="properties-and-relationships-selection"></a>Selección de propiedades y relaciones
 
 De forma predeterminada, object.load() selecciona todas las propiedades escalares y complejas del objeto que se está cargando. Las relaciones no se cargan de forma predeterminada (por ejemplo, el formato es un objeto de relación del objeto de intervalo). Sin embargo, recomendamos que marque las propiedades y las relaciones para que se carguen explícitamente y mejoren así el rendimiento. Para ello, especifique (en el parámetro `load()`) un subconjunto de propiedades y relaciones para que se incluya en la respuesta. El método Load permite dos tipos de entradas:
 
@@ -123,7 +123,7 @@ object.load  ('<var1>,<relation1/var2>');
 object.load (["var1", "relation1/var2"]);
 ```
 
-### Ejemplo
+### <a name="example"></a>Ejemplo
 
 La instrucción Load siguiente carga todas las propiedades del intervalo y, a continuación, expande el formato y el formato/relleno.
 
@@ -151,9 +151,9 @@ Excel.run(function (ctx) {
 });
 ```
 
-## Null-Input
+## <a name="null-input"></a>Null-Input
 
-### Entrada null en una matriz bidimensional
+### <a name="null-input-in-2-d-array"></a>Entrada null en una matriz bidimensional
 
 La entrada `null` dentro de una matriz bidimensional (para valores, formato numérico, fórmulas) se omite en la API de actualización. No se producirá ninguna actualización en el objetivo previsto cuando la entrada `null` se envíe en valores, en formato numérico o en una cuadrícula de fórmulas de valores.
 
@@ -165,7 +165,7 @@ En la solicitud de establecimiento siguiente, solo se establecen algunas partes 
   range.values = [["Eurasia", "29.96", "0.25", "15-Feb" ]];
   range.numberFormat = [[null, null, null, "m/d/yyyy;@"]];
 ```
-### Entrada null para una propiedad
+### <a name="null-input-for-a-property"></a>Entrada null para una propiedad
 
 `null` no es una entrada única válida para toda la propiedad. Por ejemplo, lo que se muestra a continuación no es válido, ya que no es posible establecer todos los valores en null u omitirlos.
 
@@ -180,7 +180,7 @@ Lo que se muestra a continuación tampoco es válido, ya que null no es un valor
  range.format.fill.color =  null;
 ```
 
-### Respuesta null
+### <a name="null-response"></a>Respuesta null
 
 La representación de propiedades de formato con valores no uniformes produciría la devolución de un valor null en la respuesta.
 
@@ -191,7 +191,7 @@ Ejemplo: Un intervalo puede consistir en una o más celdas. En los casos en los 
   "color" : null,
 ```
 
-### Entrada y salida en blanco
+### <a name="blank-input-and-output"></a>Entrada y salida en blanco
 
 Los valores en blanco en las solicitudes de actualización se tratan como instrucciones para borrar o restablecer la propiedad correspondiente. Un valor en blanco se representa mediante dos comillas dobles sin espacio en medio. `""`
 
@@ -214,9 +214,9 @@ En las operaciones de lectura, lo que cabe esperar es recibir valores en blanco 
   range.formula = [["", "", "=Rand()"]];
 ```
 
-## Rango sin delimitar
+## <a name="unbounded-range"></a>Rango sin delimitar
 
-### Lectura
+### <a name="read"></a>Lectura
 
 Una dirección de intervalo sin delimitar solo contiene identificadores de columna o fila e identificadores de fila o columna no especificadas (respectivamente), tales como:
 
@@ -225,7 +225,7 @@ Una dirección de intervalo sin delimitar solo contiene identificadores de colum
 
 Cuando la API realiza una solicitud para recuperar un rango sin delimitar (por ejemplo, `getRange('C:C')`), la respuesta devuelta contiene `null` para las propiedades de nivel de celda, como `values`, `text`, `numberFormat`, `formula`, etc. Otras propiedades de rango como `address`, `cellCount`, etc. reflejarán el rango sin delimitar.
 
-### Escritura
+### <a name="write"></a>Write
 
 El establecimiento de propiedades de nivel de celda (como valores, formato numérico, etc.) en el intervalo sin delimitar **no está permitido**, ya que la solicitud de entrada podría ser demasiado grande para controlarla.
 
@@ -241,20 +241,20 @@ Ejemplo: Lo que se muestra a continuación no es una solicitud de actualización
 Cuando se intenta realizar una operación de actualización en un intervalo así, la API devuelve un error.
 
 
-## Intervalo grande
+## <a name="large-range"></a>Intervalo grande
 
 Un intervalo grande es aquel cuyo tamaño es demasiado grande para una sola llamada a la API. Numerosos factores contenidos en el intervalo, como el número de celdas, los valores, el formato numérico y las fórmulas, pueden hacer que la respuesta sea tan grande que resulte inadecuada para la interacción con la API. La API hace lo que puede para devolver o escribir en los datos solicitados. Sin embargo, el gran tamaño puede generar una condición de error de la API debido al elevado uso de recursos.
 
 Para evitarlo, recomendamos usar la lectura o la escritura para el intervalo grande en varios tamaños de intervalo pequeños.
 
 
-## Copia de entrada única
+## <a name="single-input-copy"></a>Copia de entrada única
 
 Para poder actualizar un intervalo con los mismos valores o formato numérico o aplicar la misma fórmula en un intervalo, se usa la siguiente convención en la API establecida. En Excel, este comportamiento es similar a la entrada de valores o fórmulas en un intervalo en el modo CTRL+ENTRAR.
 
 La API buscará un *valor de celda único* y, si la dimensión del intervalo de destino no coincide con la dimensión del intervalo de entrada, aplicará la actualización a todo el intervalo en el modo CTRL+ENTRAR con el valor o la fórmula proporcionados en la solicitud.
 
-### Ejemplos
+### <a name="examples"></a>Ejemplos
 
 La siguiente solicitud actualiza el intervalo seleccionado con el texto "Due Date". Tenga en cuenta que el intervalo tiene 20 celdas, mientras que el texto proporcionado solo tiene un valor de celda.
 
@@ -321,7 +321,7 @@ Excel.run(function (ctx) {
 ```
 
 
-## Mensajes de error
+## <a name="error-messages"></a>Mensajes de error
 
 Los errores se devuelven usando un objeto de error que consta de un código y un mensaje. En la siguiente tabla se proporciona una lista de las posibles condiciones de error que pueden producirse.
 
@@ -347,9 +347,9 @@ Los errores se devuelven usando un objeto de error que consta de un código y un
 |InsertDeleteConflict|La operación de inserción o eliminación intentada dio lugar a un conflicto.|
 |InvalidOperation|La operación intentada no es válida en el objeto.|
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
-* [Crear su primer complemento de Excel](build-your-first-excel-add-in.md)
-* [Explorador de fragmentos de código](https://github.com/OfficeDev/office-js-snippet-explorer)
+* [Compilar el primer complemento de Excel](build-your-first-excel-add-in.md)
+* [Explorador de fragmento de código](https://github.com/OfficeDev/office-js-snippet-explorer)
 * [Ejemplos de código de complementos de Excel](http://dev.office.com/code-samples#?filters=excel,office%20add-ins)
 * [Referencia de la API de JavaScript de complementos de Excel](excel-add-ins-javascript-api-reference.md)

@@ -1,21 +1,21 @@
-# Objeto RangeBorderCollection (API de JavaScript para Excel)
+# <a name="rangebordercollection-object-(javascript-api-for-excel)"></a>Objeto RangeBorderCollection (API de JavaScript para Excel)
 
 Representa los objetos de borde que componen el borde del intervalo.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |count|int|Número de objetos de borde de la colección. Solo lectura.|
-|Items|[RangeBorder[]](rangeborder.md)|Colección de objetos rangeBorder. Solo lectura.|
+|items|[RangeBorder[]](rangeborder.md)|Colección de objetos rangeBorder. Solo lectura.|
 
-_Consulte los [jemplos](#jemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 Ninguno
 
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción|
 |:---------------|:--------|:----------|
@@ -23,26 +23,26 @@ Ninguno
 |[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Obtiene un objeto de borde mediante su índice.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### getItem(index: string)
+### <a name="getitem(index:-string)"></a>getItem(index: string)
 Obtiene un objeto de borde mediante su nombre. 
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeBorderCollectionObject.getItem(index);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |index|string|Valor de índice del objeto de borde que va a recuperarse.  Los valores posibles son: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [RangeBorder](rangeborder.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 Excel.run(function (ctx) { 
     var sheetName = "Sheet1";
@@ -64,7 +64,7 @@ Excel.run(function (ctx) {
 ```
 
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 
 Excel.run(function (ctx) { 
@@ -86,23 +86,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### getItemAt(index: number)
+### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
 Obtiene un objeto de borde mediante su índice.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 rangeBorderCollectionObject.getItemAt(index);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [RangeBorder](rangeborder.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 
 Excel.run(function (ctx) { 
@@ -124,22 +124,22 @@ Excel.run(function (ctx) {
 ```
 
 
-### load(param: object)
+### <a name="load(param:-object)"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js
 Excel.run(function (ctx) { 

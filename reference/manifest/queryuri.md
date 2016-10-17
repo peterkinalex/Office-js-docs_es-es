@@ -1,11 +1,11 @@
 
-# Elemento QueryUri
+# <a name="queryuri-element"></a>Elemento QueryUri
 Especifica la dirección URL del extremo para el servicio de consulta del diccionario.
 
  **Tipo de complemento:** Panel de tareas
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,12 +13,12 @@ Especifica la dirección URL del extremo para el servicio de consulta del diccio
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 [Dictionary](../../reference/manifest/dictionary.md)
 
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

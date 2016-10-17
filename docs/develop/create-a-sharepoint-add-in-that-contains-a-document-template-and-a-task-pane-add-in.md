@@ -1,5 +1,5 @@
 
-# Crear un complemento de SharePoint que contenga una plantilla de documento y un complemento de panel de tareas
+# <a name="create-a-sharepoint-add-in-that-contains-a-document-template-and-a-task-pane-add-in"></a>Crear un complemento de SharePoint que contenga una plantilla de documento y un complemento de panel de tareas
 
 
 Puede crear un Complemento de SharePoint que incluya una plantilla de documento (por ejemplo, un informe de gastos). El documento puede incluir un complemento de panel de tareas que interactúe con datos de SharePoint. Por ejemplo, los usuarios pueden rellenar los campos de una factura con datos de los servicios de conectividad empresarial (BCS) o crear un informe de gastos seleccionando una categoría de gastos de una lista de SharePoint.
@@ -7,7 +7,7 @@ Puede crear un Complemento de SharePoint que incluya una plantilla de documento 
 Este tutorial muestra cómo crear un Complemento de SharePoint que incluye un libro de Excel. El libro de Excel contiene un complemento de panel de tareas que usa la interfaz REST suministrada por SharePoint 2013 para rellenar un cuadro de lista desplegable con la fecha de SharePoint en el complemento de panel de tareas.
 
 
-## Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 
 
 Instale los siguientes componentes antes de empezar:
@@ -17,16 +17,16 @@ Instale los siguientes componentes antes de empezar:
 
 - Un entorno de desarrollo de SharePoint:
     
-      - To develop SharePoint Add-ins that target SharePoint in Office 365, see [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+      - Para desarrollar complementos de SharePoint destinados a SharePoint en Office 365, consulte [Cómo: configurar un entorno para el desarrollo de complementos de SharePoint en Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
     
-  - Para desarrollar Complementos de SharePoint orientados a una instalación local de SharePoint, vea [Procedimiento para preparar un entorno de desarrollo local para complementos para SharePoint](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29).
+  - Para desarrollar complementos de SharePoint destinados a una instalación local de SharePoint, consulte [Cómo: configurar un entorno de desarrollo local para complementos de SharePoint](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29).
     
 - [Visual Studio 2015 y Microsoft Office Developer Tools](https://www.visualstudio.com/features/office-tools-vs)
     
 - Excel 2013 o una cuenta de Office 365.
     
 
-## Crear un proyecto de Complemento de SharePoint en Visual Studio
+## <a name="create-a-sharepoint-add-in-project-in-visual-studio"></a>Crear un proyecto de Complemento de SharePoint en Visual Studio
 
 
 
@@ -50,7 +50,7 @@ Instale los siguientes componentes antes de empezar:
 7. En la siguiente página, seleccione  **SharePoint 2013** y, a continuación, elija el botón **Finalizar** para cerrar el cuadro de diálogo.
     
 
-## Agregar un elemento de complemento de panel de tareas.
+## <a name="add-a-task-pane-add-in-item"></a>Agregar un elemento de complemento de panel de tareas.
 
 
 Después, agregue un Office Add-in al proyecto. Puede agregar cualquier tipo de complemento que desee. En este tutorial agregaremos un complemento de panel de tareas.
@@ -73,7 +73,7 @@ Después, agregue un Office Add-in al proyecto. Puede agregar cualquier tipo de 
     Visual Studio agrega una biblioteca de documentos y una plantilla de libro para la biblioteca. El libro contiene un complemento de panel de tareas.
     
 
-## Agregar una biblioteca de documentos
+## <a name="add-a-document-library"></a>Agregar una biblioteca de documentos
 
 
 En este procedimiento, agregará una biblioteca de documentos y hará que el libro sea la plantilla predeterminada de la biblioteca de documentos.
@@ -103,11 +103,12 @@ En este procedimiento, agregará una biblioteca de documentos y hará que el lib
     
 12. En el diseñador de manifiestos, establezca el valor de la  **Página de inicio** en~appWebUrl/Lists/MyDocumentLibrary. Esto se convertirá en un valor de OfficeEnabledAddin/Lists/MyDocumentLibrary.
     
-     >**Nota** Esta dirección URL hace referencia a la biblioteca de documentos. Debe usar el token ~appWebUrl al principio de cualquier dirección URL del manifiesto de complemento de Office que hace referencia a elementos dentro de la Web de complemento. Para obtener más información sobre tokens de direcciones URL en un proyecto de complemento de SharePoint, consulte [Cadenas y tokens de direcciones URL en complementos de SharePoint](http://msdn.microsoft.com/library/800ec8cd-a448-46bc-b41e-d4030eeb4048%28Office.15%29.aspx).
+     >
+  **Nota** Esta dirección URL hace referencia a la biblioteca de documentos. Debe usar el token ~appWebUrl al principio de cualquier dirección URL del manifiesto de complemento de Office que hace referencia a elementos dentro de la web de complemento. Para obtener más información sobre tokens de direcciones URL en un proyecto de complemento de SharePoint, consulte [Cadenas y tokens de direcciones URL en complementos de SharePoint](http://msdn.microsoft.com/library/800ec8cd-a448-46bc-b41e-d4030eeb4048%28Office.15%29.aspx).
 13. Cierre el diseñador de manifiestos para guardar el cambio.
     
 
-## Consumir datos de SharePoint en el panel de tareas
+## <a name="consume-sharepoint-data-in-the-task-pane"></a>Consumir datos de SharePoint en el panel de tareas
 
 
 En este procedimiento, mostrará una lista de usuarios del sitio mediante el uso de la interfaz de transferencia de estado representacional (REST) que proporciona SharePoint 2013.
@@ -115,14 +116,16 @@ En este procedimiento, mostrará una lista de usuarios del sitio mediante el uso
 En este ejemplo, los datos de la lista de SharePoint solo se muestran, pero puede usar este tipo de datos como parte de un complemento de aprobación de documentos. Cuando un usuario elige un nombre de la lista, su código establece el valor de la columna del revisor en una lista de seguimiento de documentos. Un flujo de trabajo asociado a esa lista podría enviar una notificación de revisión a dicho usuario. Como alternativa, puede guardar el nombre seleccionado en la configuración del documento. A continuación, cuando un usuario abra el documento, podrá mostrar controles en el complemento de panel de tareas solo si el usuario actual y el usuario guardado en la configuración del documento coinciden. Para más información, vea los temas siguientes:
 
 
-- [Procedimiento para realizar operaciones básicas con extremos REST de SharePoint 2013](http://msdn.microsoft.com/library/e3000415-50a0-426e-b304-b7de18f2f7d9%28Office.15%29.aspx)
+- 
+  [Procedimiento para realizar operaciones básicas con extremos REST de SharePoint 2013](http://msdn.microsoft.com/library/e3000415-50a0-426e-b304-b7de18f2f7d9%28Office.15%29.aspx)
     
-- [Completar operaciones básicas con código de biblioteca de JavaScript en SharePoint 2013](http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx)
+- 
+  [Completar operaciones básicas con código de biblioteca de JavaScript en SharePoint 2013](http://msdn.microsoft.com/library/29089af8-dbc0-49b7-a1a0-9e311f49c826%28Office.15%29.aspx)
     
 - [Conservación de la configuración y del estado de los complementos](../../docs/develop/persisting-add-in-state-and-settings.md)
     
 
-1. En el  **Explorador de soluciones**, expanda las carpetas  **MyTaskPaneAddin** y **Inicio** y seleccione el archivo **Home.html**.
+1. En el **Explorador de soluciones**, expanda las carpetas **MyTaskPaneAddin** e **Inicio** y seleccione el archivo **Home.html**.
     
     El archivo Home.html se abre en el editor de código.
     
@@ -176,13 +179,13 @@ En este ejemplo, los datos de la lista de SharePoint solo se muestran, pero pued
 10. Desde la lista desplegable de la columna  **Permisos**, elija el elemento  **Lectura** item.
     
 
-## Depurar el complemento del panel de tareas
+## <a name="debug-the-task-pane-add-in"></a>Depurar el complemento del panel de tareas
 
 
 Puede depurar el complemento del panel de tareas abriendo el documento o iniciando el Complemento de SharePoint y, luego, abriendo un documento de la biblioteca.
 
 
-### Depuración del complemento del panel de tareas iniciando el documento
+### <a name="debugging-your-task-pane-add-in-by-starting-the-document"></a>Depuración del complemento del panel de tareas iniciando el documento
 
 
 
@@ -213,7 +216,7 @@ Puede depurar el complemento del panel de tareas abriendo el documento o inician
     La ejecución se detiene en el punto de interrupción que estableció junto al método `getDataFromSelection`.
     
 
-### Depuración del complemento de panel de tareas iniciando SharePoint
+### <a name="debugging-your-task-pane-add-in-by-starting-sharepoint"></a>Depuración del complemento de panel de tareas iniciando SharePoint
 
 
 
@@ -258,7 +261,7 @@ Puede depurar el complemento del panel de tareas abriendo el documento o inician
     
      >**Nota** Si el libro no contiene datos y desea agregarlos, en la barra de herramientas del libro, elija **EDITAR LIBRO** y **Editar en Excel en línea**.
 
-## Empaquetar y publicar el complemento
+## <a name="package-and-publish-the-add-in"></a>Empaquetar y publicar el complemento
 
 
 Cuando esté listo para empaquetar el complemento para publicarlo, abra el asistente para  **Publicar Complementos de SharePoint y Office**.
@@ -269,14 +272,14 @@ Cuando esté listo para empaquetar el complemento para publicarlo, abra el asist
     Aparecerá el asistente **Publicar complementos para Office y SharePoint**. Para obtener más información, consulte [Publicar complementos para SharePoint con Visual Studio](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx).
     
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
-- [Directrices de diseño para complementos de Office](../../docs/design/add-in-design.md)
+- [Instrucciones de diseño para complementos de Office](../../docs/design/add-in-design.md)
     
 - [Ciclo de vida de desarrollo de complementos de Office](../../docs/design/add-in-development-lifecycle.md)
     
-- [Publicar el complemento para Office](../publish/publish.md)
+- [Publicar el complemento de Office](../publish/publish.md)
     
 - [Información sobre la API de JavaScript para Office](../../docs/develop/understanding-the-javascript-api-for-office.md)
     

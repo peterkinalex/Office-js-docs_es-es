@@ -1,11 +1,11 @@
 
-# Elemento Override
+# <a name="override-element"></a>Elemento Override
 Permite especificar el valor de una opción para una configuración regional adicional.
 
  **Tipo de complemento:** Contenido, panel de tareas, correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
 
 ```XML
@@ -13,13 +13,13 @@ Permite especificar el valor de una opción para una configuración regional adi
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
 
 ||
 |:-----|
 |[CitationText](../../reference/manifest/citationtext.md)|
-|[Descripción](../../reference/manifest/description.md)|
+|[Description](../../reference/manifest/description.md)|
 |[DictionaryName](../../reference/manifest/dictionaryname.md)|
 |[DictionaryHomePage](../../reference/manifest/dictionaryhomepage.md)|
 |[DisplayName](../../reference/manifest/displayname.md)|
@@ -29,16 +29,16 @@ Permite especificar el valor de una opción para una configuración regional adi
 |[SourceLocation](../../reference/manifest/sourcelocation.md)|
 |[SupportUrl](../../reference/manifest/supporturl.md)|
 
-## Atributos
+## <a name="attributes"></a>Atributos
 
 
 
-|**Atributo**|**Tipo**|**Necesario**|**Descripción**|
+|**Atributo**|**Tipo**|**Obligatorio**|**Descripción**|
 |:-----|:-----|:-----|:-----|
 |Configuración regional|string|necesario|Especifica el nombre de referencia cultural de la configuración regional para esta invalidación en el formato de etiqueta de lenguaje BCP 47, como en `"en-US"`.|
 |Valor|string|necesario|Especifica el valor de la opción de configuración expresado para la configuración regional especificada.|
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

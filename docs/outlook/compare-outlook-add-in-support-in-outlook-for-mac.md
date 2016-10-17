@@ -1,9 +1,9 @@
 
-# Comparar la compatibilidad con el complemento de Outlook en Outlook para Mac con otros hosts de Outlook
+# <a name="compare-outlook-add-in-support-in-outlook-for-mac-with-other-outlook-hosts"></a>Comparar la compatibilidad con el complemento de Outlook en Outlook para Mac con otros hosts de Outlook
 
 Puede crear y ejecutar un complemento de Outlook del mismo modo en Outlook para Mac que en otros hosts, incluidos Outlook para Windows, OWA para dispositivos y Outlook Web App, sin personalizar el JavaScript para cada host. Las mismas llamadas desde el complemento a API de JavaScript para Office normalmente funcionan igual, excepto para las áreas descritas en la tabla siguiente.
 
- >**Nota**  Outlook para Mac admite API de JavaScript para Office en Outlook en modo de solo lectura.
+ >**Nota** Outlook para Mac admite la API de JavaScript para Office en Outlook en modo de solo lectura.
 
 |**Área**|**Outlook para Windows, OWA para dispositivos, Outlook Web App**|**Outlook para Mac**|
 |:-----|:-----|:-----|
@@ -16,7 +16,7 @@ Puede crear y ejecutar un complemento de Outlook del mismo modo en Outlook para 
 |Cadena que representa la zona horaria en las propiedades  **dateTimeCreated** y **dateTimeModified**|Por ejemplo: Jueves 13 de marzo de 2014 14:09:11 GMT + 0800 (hora estándar de China)|Por ejemplo: Jueves 13 de marzo de 2014 14:09:11 GMT + 0800 (Hora estándar del Centro)|
 |Precisión temporal de  **dateTimeCreated** y **dateTimeModified**|Si un complemento usa el código siguiente, la precisión será de hasta un milisegundo.<br/><pre lang="javascript">JSON.stringify(Office.context.mailbox.item, null, 4);</pre>|La precisión es sólo de hasta un segundo.|
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

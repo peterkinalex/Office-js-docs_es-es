@@ -1,6 +1,6 @@
 
 
-# Propiedad Office.context
+# <a name="office.context-property"></a>Propiedad Office.context
 Obtiene el objeto [Context](../../reference/shared/context.md) que representa el entorno en tiempo de ejecución del complemento y proporciona acceso a los objetos de primer nivel de la API, como [Document](../../reference/shared/document.md) y [Mailbox](http://msdn.microsoft.com/library/a3880d3b-8a09-4cf9-9274-f2682cb3b769%28Office.15%29.aspx).
 
 |||
@@ -13,12 +13,12 @@ var myDocument = Office.context.document;
 ```
 
 
-## Valor devuelto
+## <a name="return-value"></a>Valor devuelto
 
 Un objeto [Context](../../reference/shared/context.md).
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 Una Y mayúscula en la siguiente matriz indica que este método es compatible con la aplicación host de Office correspondiente. Una celda vacía indica que la aplicación host no admite este método.
@@ -42,7 +42,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 

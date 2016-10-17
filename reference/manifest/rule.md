@@ -1,11 +1,11 @@
 
-# Elemento Rule
+# <a name="rule-element"></a>Elemento Rule
 Especifica las reglas de activación que deberían evaluarse para este complemento de correo.
 
  **Tipo de complemento:** correo
 
 
-## Sintaxis:
+## <a name="syntax:"></a>Sintaxis:
 
  **Regla ItemIs**: define una regla que evalúa en verdadero si el elemento seleccionado es del tipo especificado.
 
@@ -66,31 +66,31 @@ Especifica las reglas de activación que deberían evaluarse para este complemen
 ```
 
 
-## Forma parte de:
+## <a name="contained-in:"></a>Forma parte de:
 
  _[OfficeApp](../../reference/manifest/officeapp.md)_
 
 
-## Atributos:
+## <a name="attributes:"></a>Atributos:
 
  **Atributos de la regla ItemIs**
 
 
 
-|**Atributo**|**Tipo**|**Necesario**|**Descripción**|
+|**Atributo**|**Tipo**|**Obligatorio**|**Descripción**|
 |:-----|:-----|:-----|:-----|
-|ItemType|ItemType (cadena)|necesario|Especifica el tipo de elemento con el que se debe coincidir. Puede ser uno de las siguientes:
+|ItemType|ItemType (cadena)|necesario|Especifica el tipo de elemento con el que se debe coincidir. Puede ser uno de los siguientes:
 
-|**ItemType**|**Corresponding ItemClass**|
+|**ItemType**|**ItemClass correspondiente**|
 |:-----|:-----|
 |Cita|IPM.Appointment|
 |Mensaje(1)|Incluye mensajes de correo electrónico, convocatorias de reunión, respuestas y cancelaciones.|
 |
-|FormType|ItemFormType (cadena)|necesario|Especifica si la aplicación debe aparecer en el formulario de edición o lectura para el elemento. Puede ser uno de las siguientes:|
+|FormType|ItemFormType (cadena)|necesario|Especifica si la aplicación debe aparecer en el formulario de edición o lectura para el elemento. Puede ser uno de las siguientes.|
 
 |**FormType**|**Descripción**|
 |:-----|:-----|
-|Lectura|Especifica activar el complemento de correo solo en formularios de lectura (del valor **ItemType** especificado).|
+|Read|Especifica activar el complemento de correo solo en formularios de lectura (del valor **ItemType** especificado).|
 |Editar|Especifica activar el complemento de correo solo en formularios de redacción (del valor **ItemType** especificado).|
 |ReadOrEdit|Especifica activar el complemento de correo en formularios de lectura y de redacción (del valor **ItemType** especificado).|
 |ItemClass|string|opcional|Especifica la clase de mensaje personalizada con la que se debe coincidir. Para obtener más información, consulte [Activar un complemento de correo de Outlook para una clase de mensaje específica](http://msdn.microsoft.com/library/f464a152-2dff-4fb3-bf98-c1a3639c3e80%28Office.15%29.aspx).|
@@ -107,7 +107,7 @@ Ninguno.
 
 
 
-|**Atributo**|**Tipo**|**Necesario**|**Descripción**|
+|**Atributo**|**Tipo**|**Obligatorio**|**Descripción**|
 |:-----|:-----|:-----|:-----|
 |EntityType|KnownEntityType (cadena)|necesario|Especifica el tipo de entidad que se tiene que encontrar para que la regla evalúe en verdadero. Puede ser uno de los siguientes:
 
@@ -127,15 +127,15 @@ Ninguno.
 
 
 
-|**Atributo**|**Tipo**|**Necesario**|**Descripción**|
+|**Atributo**|**Tipo**|**Obligatorio**|**Descripción**|
 |:-----|:-----|:-----|:-----|
 |RegExName|string|necesario|Especifica el nombre de una expresión regular para que pueda hacer referencia a dicha expresión en el código de su complemento.|
 |RegExValue|string|necesario|Especifica la expresión regular que se evaluará para determinar si se debe mostrar el complemento de correo. |
-|PropertyName|PropertyName (cadena)|necesario|Especifica el nombre de la propiedad que contra la que se evaluará la expresión regular. Puede ser uno de las siguientes:
+|PropertyName|PropertyName (cadena)|necesario|Especifica el nombre de la propiedad que contra la que se evaluará la expresión regular. Puede ser uno de los siguientes:
 
 |**PropertyName**|**Descripción**|
 |:-----|:-----|
-|Tema|Evalúa la expresión regular según el asunto del elemento.|
+|Subject|Evalúa la expresión regular según el asunto del elemento.|
 |BodyAsPlaintext|Evalúa la expresión regular según el cuerpo del elemento en texto sin formato.|
 |BodyAsHtml|Evalúa la expresión regular según el cuerpo del elemento si el cuerpo está disponible en HTML.|
 |SenderSTMPAddress|Evalúa la expresión regular según la dirección SMTP del remitente del elemento.|
@@ -144,11 +144,11 @@ Ninguno.
 
 
 
-|**Atributo**|**Tipo**|**Necesario**|**Descripción**|
+|**Atributo**|**Tipo**|**Obligatorio**|**Descripción**|
 |:-----|:-----|:-----|:-----|
-|Moda|string|necesario|Especifica el operador lógico que se usará al evaluar esta colección de reglas. Puede ser: "And" o "Or".|
+|Mode|string|necesario|Especifica el operador lógico que se usará al evaluar esta colección de reglas. Puede ser: "And" o "Or".|
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 
 

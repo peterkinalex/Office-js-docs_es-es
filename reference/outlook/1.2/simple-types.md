@@ -1,57 +1,57 @@
 
 
-# Tipos simples
+# <a name="simple-types"></a>Tipos simples
 
-####  AsyncResult
+####  <a name="asyncresult"></a>AsyncResult
 
 Un objeto que encapsula el resultado de una solicitud asincrónica, incluida la información de estado y error si la solicitud falla.
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
 |`asyncContext`| Object|Obtiene el elemento que se pasa al parámetro `asyncContext` opcional del método invocado, en el mismo estado en el que se pasó.|
 |`error`| Error|Obtiene un objeto Error que ofrece una descripción del error, en caso de existir.|
-|`status`| [Office.AsyncResultStatus](Office.md#asyncresultstatus-string)|Obtiene el estado de la acción asíncrona.|
+|`status`| [Office.AsyncResultStatus](Office.md#asyncresultstatus-string)|Obtiene el estado de la operación asincrónica.|
 |`value`| Object|Obtiene la carga o el contenido de una operación asincrónica, si la hay.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1.0|
 |Modo de Outlook aplicable| Redacción o lectura|
-#### AttachmentDetails
+#### <a name="attachmentdetails"></a>AttachmentDetails
 
 Representa datos adjuntos en un elemento del servidor. Solo modo Lectura.
 
 Una matriz de objetos `AttachmentDetail` se devuelve como la propiedad `attachments` de un objeto `Appointment` o `Message`.
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
-|`attachmentType`| [Office.MailboxEnums.AttachmentType](Office.MailboxEnums.md#attachmenttype-string)|Obtiene un valor que indica el tipo de datos adjuntos.|
+|`attachmentType`| [Office.MailboxEnums.AttachmentType](Office.MailboxEnums.md#attachmenttype-string)|Obtiene un valor que indica el tipo de los datos adjuntos.|
 |`contentType`| String|Obtiene el tipo de contenido MIME de los datos adjuntos.|
 |`id`| String|Obtiene el identificador de datos de adjuntos de Exchange de los datos adjuntos.|
 |`isInline`| Boolean|Obtiene un valor que indica si se deben mostrar los datos adjuntos en el cuerpo del elemento.|
 |`name`| String|Obtiene el nombre de los datos adjuntos|
 |`size`| Número|Obtiene el tamaño de los datos adjuntos en bytes.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
-#### Contacto
+#### <a name="contact"></a>Contacto
 
 Representa un contacto almacenado en el servidor. Solo modo Lectura.
 
 La lista de contactos asociados a un mensaje de correo electrónico o a una cita se devuelve en la propiedad `contacts` del objeto [`Entities`](simple-types.md#entities) que se devuelve mediante el método `getEntities` o `getEntitiesByType` del elemento activo.
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -62,22 +62,22 @@ La lista de contactos asociados a un mensaje de correo electrónico o a una cita
 |`phoneNumbers`| Array.&lt;[PhoneNumber](simple-types.md#phonenumber)&gt;| &lt;nullable&gt;|Una matriz que contiene un objeto `PhoneNumber` para cada número de teléfono asociado al contacto.|
 |`urls`| Array.&lt;String&gt;| &lt;nullable&gt;|Una matriz de cadenas que contiene las direcciones URL de Internet asociadas al contacto.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restringido|
 |Modo de Outlook aplicable| Lectura|
-####  EmailAddressDetails
+####  <a name="emailaddressdetails"></a>EmailAddressDetails
 
 Proporciona las propiedades de correo electrónico del remitente o los destinatarios especificados de un mensaje de correo o una cita.
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   Objeto
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -86,32 +86,32 @@ Proporciona las propiedades de correo electrónico del remitente o los destinata
 |`emailAddress`| String|Obtiene la dirección de correo electrónico SMTP.|
 |`recipientType`| [Office.MailboxEnums.RecipientType](Office.MailboxEnums.md#recipienttype-string)|Obtiene el tipo de dirección de correo electrónico de un destinatario.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
-#### EmailUser
+#### <a name="emailuser"></a>EmailUser
 
 Representa una cuenta de correo electrónico en Exchange Server.
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
 |`displayName`| String|Obtiene el nombre para mostrar asociado a una dirección de correo electrónico.|
 |`emailAddress`| String|Obtiene la dirección de correo electrónico SMTP.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
-#### Entidades
+#### <a name="entities"></a>Entidades
 
 Representa una colección de entidades presente en un mensaje de correo electrónico o en una cita. Solo modo Lectura.
 
@@ -127,7 +127,7 @@ El reconocimiento de entidades depende del reconocimiento del lenguaje natural b
 
 Cuando es el método `getEntitiesByType` el que devuelve las matrices de propiedades, solo la propiedad de la entidad especificada contiene datos; todas las demás propiedades son `null`.
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -139,18 +139,18 @@ Cuando es el método `getEntitiesByType` el que devuelve las matrices de propied
 |`taskSuggestions`| Array.&lt;[TaskSuggestion](simple-types.md#tasksuggestion)&gt;| &lt;nullable&gt;|Obtiene las sugerencias de tarea presentes en un mensaje de correo o una cita.|
 |`urls`| Array.&lt;String&gt;| &lt;nullable&gt;|Obtiene las direcciones URL de Internet presentes en un mensaje de correo o una cita.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
-#### LocalClientTime
+#### <a name="localclienttime"></a>LocalClientTime
 
 Representa una fecha y una hora en la zona horaria local del cliente. Solo modo Lectura.
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -163,14 +163,14 @@ Representa una fecha y una hora en la zona horaria local del cliente. Solo modo 
 |`milliseconds`| Número|Valor entero que representa los milisegundos.|
 |`timezoneOffset`| Número|Valor entero que representa el número de minutos de diferencia entre la zona horaria local y la hora UTC.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
-#### MeetingSuggestion
+#### <a name="meetingsuggestion"></a>MeetingSuggestion
 
 Representa una reunión sugerida encontrada en un elemento. Solo modo Lectura.
 
@@ -178,7 +178,7 @@ La lista de reuniones sugeridas en un mensaje de correo electrónico se devuelve
 
 Los valores `start` y `end` son representaciones de cadenas de un objeto Date que contiene la fecha y la hora en la que la reunión sugerida va a comenzar y finalizar. Los valores se encuentran en la zona horaria predeterminada especificada para el usuario actual.
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -189,24 +189,24 @@ Los valores `start` y `end` son representaciones de cadenas de un objeto Date qu
 |`start`| String|Obtiene la fecha y hora en que empezará una reunión sugerida.|
 |`subject`| String|Obtiene el asunto de una reunión sugerida.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
-#### PhoneNumber
+#### <a name="phonenumber"></a>PhoneNumber
 
 Representa un número de teléfono identificado en un elemento. Solo modo Lectura.
 
 Una matriz de objetos `PhoneNumber` que contiene los números de teléfono presentes en un mensaje de correo electrónico se devuelve en la propiedad `phoneNumbers` del objeto [`Entities`](simple-types.md#entities) que se devuelve al llamar al método [`getEntities`](Office.context.mailbox.item.md#getentities--entities) en el elemento seleccionado.
 
-##### Tipo:
+##### <a name="type:"></a>Tipo:
 
 *   Objeto
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -214,30 +214,30 @@ Una matriz de objetos `PhoneNumber` que contiene los números de teléfono prese
 |`phoneString`| String|Obtiene una cadena que contiene un número de teléfono. Esta cadena contiene solo los dígitos del número de teléfono y excluye caracteres como paréntesis y guiones si estos aparecen en el elemento original.|
 |`type`| String|Obtiene una cadena que identifica el tipo de número de teléfono: `Home`, `Work`, `Mobile`, `Unspecified`.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
-#### TaskSuggestion
+#### <a name="tasksuggestion"></a>TaskSuggestion
 
 Representa una tarea sugerida identificada en un elemento. Solo modo Lectura.
 
 La lista de tareas sugeridas en un mensaje de correo electrónico se devuelve en la propiedad `taskSuggestions` del objeto [`Entities`][`Entities`](simple-types.md#entities) que se devuelve cuando se llama al método [`getEntities`](Office.context.mailbox.item.md#getentities--entities) o [`getEntitiesByType`](Office.context.mailbox.item.md#getentitiesbytypeentitytype--nullable-arraystringcontactmeetingsuggestionphonenumbertasksuggestion) en el elemento activo.
 
-##### Propiedades:
+##### <a name="properties:"></a>Propiedades:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
 |`assignees`| Array.&lt;[EmailUser](simple-types.md#emailuser)&gt;|Obtiene los usuarios a los que se debe asignar una tarea sugerida.|
 |`taskString`| String|Obtiene el texto de un elemento identificado como sugerencia de tarea.|
 
-##### Requisitos
+##### <a name="requirements"></a>Requisitos
 
 |Requirement| Valor|
 |---|---|
-|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1,0|
+|[Versión del conjunto de requisitos mínimos del buzón](../tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|

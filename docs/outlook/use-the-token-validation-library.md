@@ -1,13 +1,13 @@
 
-# Usar la biblioteca de validación de tokens de API administrados de servicios Web Exchange
+# <a name="use-the-exchange-web-services-managed-api-token-validation-library"></a>Usar la biblioteca de validación de tokens de API administrados de servicios Web Exchange
 
 Puede identificar a los clientes de su complemento de Outlook con un token de identidad que su complemento solicite de un servidor que ejecute Exchange Server 2013 o Exchange Online. El token, con el formato de token web JSON, proporciona un identificador único de cuenta de correo electrónico en un servidor Exchange. La API administrada de servicios Web Exchange (EWS) proporciona clases auxiliares que simplifican el uso del token de identidad.
 
-## Requisitos previos para el uso de bibliotecas de validación
+## <a name="prerequisites-for-using-the-validation-library"></a>Requisitos previos para el uso de bibliotecas de validación
 
 Para validar un token de identidad de Exchange, tiene que instalar la [biblioteca de API administrada de EWS](https://www.nuget.org/packages/Microsoft.Exchange.WebServices).
 
-## Validación del token de identidad de Exchange
+## <a name="validate-the-exchange-identity-token"></a>Validación del token de identidad de Exchange
 
 La biblioteca de validación de la API administrada con EWS proporciona la clase **AppIdentityToken** para administrar los tokens de identidad de Exchange. En el método siguiente se muestra cómo crear una instancia de **AppIdentityToken** y llamar al método **Validate** para comprobar que el token es válido. El método admite los parámetros siguientes:
 
@@ -34,7 +34,7 @@ private AppIdentityToken CreateAndValidateIdentityToken(string rawToken, string 
 }
 ```
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 - [Autenticar un complemento de Outlook con los tokens de identidad de Exchange](../outlook/authentication.md)  
 - [Contenido del token de identidad de Exchange](../outlook/inside-the-identity-token.md)

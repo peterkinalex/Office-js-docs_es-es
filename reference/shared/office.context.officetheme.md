@@ -1,5 +1,5 @@
 
-# Propiedad Context.officeTheme
+# <a name="context.officetheme-property"></a>Propiedad Context.officeTheme
 Proporciona acceso a las propiedades de los colores del tema de Office.
 
  **Importante:** Actualmente, esta API solo funciona en Excel, Outlook, PowerPoint y Word en [Office 2016 Preview](https://products.office.com/en-us/office-2016-preview) para el escritorio de Windows.
@@ -8,7 +8,7 @@ Proporciona acceso a las propiedades de los colores del tema de Office.
 |||
 |:-----|:-----|
 |**Hosts:**|Excel, Outlook, PowerPoint y Word|
-|**Disponible en [el conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|No en un conjunto|
+|**Disponible en el [conjunto de requisitos](../../docs/overview/specify-office-hosts-and-api-requirements.md)**|No en un conjunto|
 |**Agregado en**|1.3|
 
 
@@ -18,7 +18,7 @@ Office.context.officeTheme
 ```
 
 
-## Miembros
+## <a name="members"></a>Miembros
 
 
 **Propiedades**
@@ -31,12 +31,12 @@ Office.context.officeTheme
 |[controlBackgroundColor](../../reference/shared/office.context.controlbackgroundcolor.md)|Obtiene el color de fondo del control del tema de Office.|
 |[controlForegroundColor](../../reference/shared/office.context.controlforegroundcolor.md)|Obtiene el color de primer plano del control del tema de Office.|
 
-## Observaciones
+## <a name="remarks"></a>Observaciones
 
 El uso de los colores del tema de Office le permite coordinar la combinación de colores del complemento con el tema actual de Office seleccionado por el usuario mediante **Archivo**  >  **Cuenta de Office**  >  interfaz de usuario **Tema de Office**, que se aplica a todas las aplicaciones host de Office. El uso de colores del tema de Office es idóneo para Outlook y para los complementos de panel de tareas.
 
 
-## Ejemplo
+## <a name="example"></a>Ejemplo
 
 
 ```js
@@ -53,7 +53,7 @@ function applyOfficeTheme(){
 ```
 
 
-## Detalles de compatibilidad
+## <a name="support-details"></a>Detalles de compatibilidad
 
 
 
@@ -64,7 +64,7 @@ function applyOfficeTheme(){
 |**Biblioteca**|Office.js|
 |**Espacio de nombres**|Office|
 
-## Historial de compatibilidad
+## <a name="support-history"></a>Historial de compatibilidad
 
 
 |**Versión**|**Cambios**|

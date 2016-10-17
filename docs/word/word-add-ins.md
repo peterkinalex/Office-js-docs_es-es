@@ -1,4 +1,4 @@
-# Crear el primer complemento de Word
+# <a name="build-your-first-word-add-in"></a>Crear el primer complemento de Word
 
 _Se aplica a: Word 2016, Word para iPad, Word para Mac_
 
@@ -8,7 +8,7 @@ Un complemento de Word se ejecuta en Word y puede interactuar con el contenido d
 
 >**Complemento de Word = manifest.xml + aplicación web**
 
-### Configúrelo
+### <a name="set-it-up"></a>Configúrelo
 En esta sección va a crear una sencilla aplicación web y el manifiesto de aplicación. La aplicación web le permitirá agregar texto reutilizable en el documento de Word.
 
 1- Cree una carpeta en la unidad local denominada BoilerplateAddin (por ejemplo, C:\\BoilerplateAddin). Guarde en esta carpeta todos los archivos creados en los pasos siguientes.
@@ -175,7 +175,7 @@ En esta sección va a crear una sencilla aplicación web y el manifiesto de apli
 
 En este punto, tiene implementado su primer complemento. Ahora debe indicarle a Word dónde encontrar el complemento.
 
-#### Pruebe esto en Word 2016 para Windows
+#### <a name="try-this-out-in-word-2016-for-windows"></a>Pruebe esto en Word 2016 para Windows
 
 1. Inicie Word y abra un documento.
 2. Seleccione la pestaña **Archivo** y haga clic en **Opciones**.
@@ -195,7 +195,7 @@ Ahora puede ejecutar el complemento que creó. Siga estos pasos para verlo en ac
 6. Seleccione los botones para que el texto reutilizable se introduzca en el documento de Word.
 
 
-### Pruebe esto en Word 2016 para Mac
+### <a name="try-it-out-in-word-2016-for-mac"></a>Pruebe esto en Word 2016 para Mac
 
 Ahora puede ejecutar el complemento que creó. Siga estos pasos para verlo en acción:
 
@@ -206,14 +206,14 @@ Ahora puede ejecutar el complemento que creó. Siga estos pasos para verlo en ac
 __Figura 1. Complemento de contenido reutilizable cargado en Word__
 ![Imagen de la aplicación de Word con el complemento de texto reutilizable cargado.](../../images/boilerplateAddin.png "Sencillo complemento de Word para escribir texto reutilizable.")
 
-## Denos su opinión
+## <a name="give-us-your-feedback"></a>Denos su opinión
 
 Su opinión es importante para nosotros.
 
 * Consulte los documentos e infórmenos sobre las dudas y problemas que encuentre con una [incidencia de soporte técnico](https://github.com/OfficeDev/office-js-docs/issues).
 * Envíenos comentarios sobre su experiencia en programación y lo que le gustaría ver en versiones futuras o ejemplos de código. Use el [sitio de UserVoice](http://officespdev.uservoice.com/) para publicar sugerencias e ideas.
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
 * [Introducción a los complementos de Office](https://dev.office.com/getting-started/addins?product=word)
 * [Complementos de Word en GitHub](https://github.com/OfficeDev?utf8=%E2%9C%93&query=Word)

@@ -1,21 +1,21 @@
-# Elemento Resources
+# <a name="resources-element"></a>Elemento Resources
 
-Contiene iconos, cadenas y las direcciones URL para el nodo [VersionOverrides](./versionoverrides.md). Un elemento del manifiesto especifica un recurso por medio del **identificador** del recurso. Así se contribuye a mantener el tamaño del manifiesto manejable, sobre todo cuando los recursos tienen diferentes versiones para diferentes configuraciones regionales. El **identificador** debe ser único dentro del manifiesto y puede tener un máximo de 32 caracteres.
+Contiene iconos, cadenas y las direcciones URL para el nodo [VersionOverrides](./versionoverrides.md). Un elemento del manifiesto especifica un recurso por medio del **identificador** del recurso. Así se contribuye a mantener el tamaño del manifiesto manejable, en especial cuando los recursos tienen diferentes versiones para diferentes configuraciones regionales. El **identificador** debe ser único dentro del manifiesto y puede tener un máximo de 32 caracteres.
 
 Cada recurso puede tener uno o varios elementos secundarios **Override** para definir un recurso diferente en una configuración regional determinada.
 
-## Elementos secundarios
+## <a name="child-elements"></a>Elementos secundarios
 
 |  Elemento |  Tipo  |  Descripción  |
 |:-----|:-----|:-----|
-|  [Images](#images)            |  image   |  Proporciona la URL HTTPS a una imagen para un icono. |
-|  **Urls**                |  url     |  Proporciona una ubicación URL HTTPS. La URL puede tener 2048 caracteres como máximo. |
+|  [Images](#images)            |  image   |  Proporciona la dirección URL HTTPS a una imagen para un icono. |
+|  **Urls**                |  url     |  Proporciona una ubicación URL HTTPS. La dirección URL puede tener 2048 caracteres como máximo. |
 |  **ShortStrings** |  string  |  Texto de los elementos **Label** y **Title**. Cada **cadena** contiene un máximo de 125 caracteres.|
-|  **LongStrings**  |  string  | Texto de los atributos de **Description**. Cada **cadena** contiene un máximo de 250 caracteres.|
+|  **LongStrings**  |  string  | Texto de los atributos **Description**. Cada **cadena** contiene un máximo de 250 caracteres.|
 
->**Nota** Debe usar la Capa de sockets seguros (SSL) en todas las direcciones URL en los elementos **Image** y **Url**.
+>**Nota** debe usar la Capa de sockets seguros (SSL) en todas las direcciones URL en los elementos **Image** y **Url**.
 
-### Imágenes
+### <a name="images"></a>Imágenes
 Cada icono debe tener tres elementos **Image**, uno por cada uno de los tres tamaños obligatorios:
 - 16x16
 - 32x32
@@ -31,7 +31,7 @@ También se admiten los siguientes tamaños adicionales, pero no son obligatorio
 > **Importante: ** Outlook necesita almacenar en caché recursos de imagen por motivos de rendimiento. Por este motivo, el servidor donde se hospede un recurso de imagen no tiene que agregar directivas Cache-Control al encabezado de respuesta. Si lo hace, Outlook lo sustituirá automáticamente por una imagen genérica o una imagen predeterminada.    
 
 
-## Ejemplos de recursos 
+## <a name="resources-examples"></a>Ejemplos de recursos 
 
 ```XML
 <Resources>
