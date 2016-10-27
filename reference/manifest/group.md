@@ -20,7 +20,7 @@ Necesario. Identificador único para el grupo. Es una cadena con un máximo de 1
 Obligatorio. La etiqueta del grupo. El atributo  **resid** debe estar establecido en el valor del atributo **id** de un elemento **String** en el elemento [ShortStrings](./resources.md#shortstrings) del elemento [Resources](./resources.md).
 
 ## <a name="control"></a>Control
-Un grupo necesita como mínimo un control. Actualmente, solo se admiten [botones](./control.md#button-control) y [menús](./menu.md#menu-control). 
+Un grupo necesita como mínimo un control. Actualmente, solo son compatibles [botones](./control.md#button-control) y [menús](./control.md#menu-dropdown-button-controls). 
 
 ```xml
 <Group id="msgreadCustomTab.grp1">

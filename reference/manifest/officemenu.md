@@ -20,7 +20,7 @@ Especifica un menú integrado de la aplicación de cliente de Office en el que s
 
 ## <a name="control"></a>Control
 
-Cada elemento **OfficeMenu** requiere por lo menos uno o varios controles de [menú](./menu.md#menu-control). 
+Cada elemento **OfficeMenu** requiere por lo menos uno o varios controles de [menú](./control.md#menu-dropdown-button-controls). 
 
 
 ## <a name="example"></a>Ejemplo

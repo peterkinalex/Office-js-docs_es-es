@@ -38,7 +38,7 @@ tableCollectionObject.add(address, hasHeaders);
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|address|string|Dirección o nombre del objeto de intervalo que representa el origen de datos. Si la dirección no contiene un nombre de hoja, se usa la hoja activa en ese momento.|
+|address|string|Dirección o nombre del objeto de intervalo que representa el origen de datos. Tenga en cuenta que la dirección del intervalo debe incluir la hoja de cálculo en la que debe agregarse la tabla. Por ejemplo, `Sheet1!A1:D4`.|
 |hasHeaders|bool|Valor booleano que indica si los datos que se están importando tienen etiquetas de columna. Si el origen no contiene encabezados (es decir, cuando esta propiedad se establece en false), Excel generará automáticamente un encabezado desplazando los datos hacia abajo una fila.|
 
 #### <a name="returns"></a>Valores devueltos

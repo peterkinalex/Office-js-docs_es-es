@@ -24,8 +24,6 @@ Para los servicios que lo admiten, proporcionamos una biblioteca de JavaScript q
 
 [Office-js-helpers](https://github.com/OfficeDev/office-js-helpers)
 
-La carpeta \demo del repositorio contiene un complemento de ejemplo que usa la biblioteca para obtener acceso a varios servicios populares como Google, Facebook y Office 365.
-
 Vea también la sección **Bibliotecas** más adelante en este artículo.
 
 ## <a name="using-the-authorization-code-flow-in-office-add-ins"></a>Usar el flujo de código de autorización en los complementos de Office
@@ -39,7 +37,8 @@ Hay muchas bibliotecas disponibles para implementar el flujo de código de autor
 
 ### <a name="relay/proxy-functions"></a>Funciones de proxy o de transmisión
 
-Puede usar el flujo de código de autorización incluso con una aplicación web sin servidor. Para ello, se almacenan los valores de *client ID* (id. de cliente) y *client secret* (secreto de cliente) en una función simple que se hospeda en un servicio como [Azure Functions](https://azure.microsoft.com/en-us/services/functions) o [Amazon Lambda](https://aws.amazon.com/lambda). La función intercambia un código determinado por un *token de acceso* adecuado y lo transmite de vuelta al cliente. La seguridad de este método depende de lo protegido que esté el acceso a la función.
+Puede usar el flujo de código de autorización incluso con una aplicación web sin servidor. Para ello, se almacenan los valores de *client ID* (id. de cliente) y *client secret* (secreto de cliente) en una función simple que se hospeda en un servicio como [Azure Functions](https://azure.microsoft.com/en-us/services/functions) o [Amazon Lambda](https://aws.amazon.com/lambda). 
+La función intercambia un código determinado por un *token de acceso* adecuado y lo transmite de vuelta al cliente. La seguridad de este método depende de lo protegido que esté el acceso a la función.
 
 Para usar esta técnica, el complemento muestra una interfaz o una ventana emergente en la que se ve la pantalla de inicio de sesión del servicio en línea (Google, Facebook etc.). Cuando el usuario inicia sesión y concede al complemento permiso para acceder a sus recursos en el servicio en línea, el desarrollador recibe un código que se puede enviar a la función en línea. Los servicios descritos en la sección **Servicios intermediarios** de este artículo usan un flujo similar a este. 
 

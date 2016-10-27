@@ -46,7 +46,7 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserta texto en el párrafo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Realiza una búsqueda con el valor searchOptions especificado en el ámbito del objeto de párrafo. Los resultados de la búsqueda son una colección de objetos de intervalo.|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selecciona y se desplaza por la interfaz de usuario de Word hasta el párrafo. El modo de selección puede ser 'Select', 'Start' o 'End'. 'Select' es el valor predeterminado.|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|nulo|Selecciona y se desplaza por la interfaz de usuario de Word hasta el párrafo. El modo de selección puede ser 'Select', 'Start' o 'End'. 'Select' es el valor predeterminado.|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -350,7 +350,7 @@ Word.run(function (context) {
 El ejemplo [Word-Add-in-DocumentAssembly][paragraph.insertContentControl] muestra cómo se puede usar el método insertContentControl.
 
 ### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
-Inserta un documento en el párrafo actual en la ubicación especificada. El valor insertLocation puede ser 'Start' o 'End'.
+Inserta un documento en el párrafo actual en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
@@ -361,9 +361,9 @@ paragraphObject.insertFileFromBase64(base64File, insertLocation);
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |base64File|string|Necesario. Contenido del archivo codificado en Base64 que se va a insertar.|
-|insertLocation|InsertLocation|Necesario. El valor puede ser "Start" o "End".|
+|insertLocation|InsertLocation|Obligatorio. El valor puede ser 'Replace', 'Start' o 'End'.|
 
-#### <a name="returns"></a>Valores devueltos
+#### <a name="returns"></a>Devuelve
 [Range](range.md)
 
 #### <a name="examples"></a>Ejemplos
@@ -415,9 +415,9 @@ paragraphObject.insertHtml(html, insertLocation);
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |Html|string|Necesario. HTML que se va a insertar en el párrafo.|
-|insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
+|insertLocation|InsertLocation|Obligatorio. El valor puede ser 'Replace', 'Start' o 'End'.|
 
-#### <a name="returns"></a>Valores devueltos
+#### <a name="returns"></a>Devuelve
 [Range](range.md)
 
 #### <a name="examples"></a>Ejemplos
@@ -459,7 +459,7 @@ Word.run(function (context) {
 ```
 
 ### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
-Inserta una imagen en el párrafo en la ubicación especificada. El valor insertLocation puede ser 'Before', 'After', 'Start' o 'End'.
+Inserta una imagen en el párrafo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
@@ -470,9 +470,9 @@ paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |base64EncodedImage|string|Necesario. HTML que se va a insertar en el párrafo.|
-|insertLocation|InsertLocation|Necesario. El valor puede ser "Before", "After", "Start" o "End".|
+|insertLocation|InsertLocation|Obligatorio. El valor puede ser 'Replace', 'Start' o 'End'.|
 
-#### <a name="returns"></a>Valores devueltos
+#### <a name="returns"></a>Devuelve
 [InlinePicture](inlinepicture.md)
 
 #### <a name="examples"></a>Ejemplos
@@ -517,7 +517,7 @@ Word.run(function (context) {
 El ejemplo [Word-Add-in-DocumentAssembly][paragraph.insertpicture] proporciona otro ejemplo de cómo se puede insertar una imagen en un párrafo.
 
 ### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
-Inserta OOXML o wordProcessingML en el párrafo en la ubicación especificada. El valor insertLocation puede ser "Replace", "Start" o "End".
+Inserta OOXML o wordProcessingML en el párrafo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
@@ -528,10 +528,13 @@ paragraphObject.insertOoxml(ooxml, insertLocation);
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |ooxml|string|Necesario. OOXML o wordProcessingML que se va a insertar en el párrafo.|
-|insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
+|insertLocation|InsertLocation|Obligatorio. El valor puede ser 'Replace', 'Start' o 'End'.|
 
-#### <a name="returns"></a>Valores devueltos
-[Range](range.md)
+#### <a name="returns"></a>Devuelve
+[Intervalo](range.md)
+
+#### <a name="known-issues"></a>Problemas conocidos
+Este método da como resultado una latencia elevada en Word en línea, que puede afectar a la experiencia de los usuarios de su complemento. Se recomienda utilizar este método solo cuando no hay otra solución disponible. 
 
 #### <a name="examples"></a>Ejemplos
 ```js
@@ -640,9 +643,9 @@ paragraphObject.insertText(text, insertLocation);
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |text|string|Necesario. Texto que se va a insertar.|
-|insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
+|insertLocation|InsertLocation|Obligatorio. El valor puede ser 'Replace', 'Start' o 'End'.|
 
-#### <a name="returns"></a>Valores devueltos
+#### <a name="returns"></a>Devuelve
 [Range](range.md)
 
 #### <a name="examples"></a>Ejemplos

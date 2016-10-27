@@ -10,7 +10,7 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 |cannotDelete|bool|Obtiene o establece un valor que indica si el usuario puede eliminar el control de contenido. Esta propiedad y removeWhenEdited son mutuamente excluyentes.|
 |cannotEdit|bool|Obtiene o establece un valor que indica si el usuario puede editar el contenido del control de contenido.|
 |color|string|Obtiene o establece el color del control de contenido. El color se establece en el formato "#RRGGBB" o mediante el nombre del color.|
-|placeholderText|string|Obtiene o establece el texto de marcador de posición del control de contenido. Se mostrará texto atenuado cuando el control de contenido esté vacío.|
+|placeholderText|cadena|Obtiene o establece el texto de marcador de posición del control de contenido. Se mostrará texto atenuado cuando el control de contenido esté vacío. Esta propiedad no se admite actualmente en Word en línea.|
 |removeWhenEdited|bool|Obtiene o establece un valor que indica si el control de contenido se elimina después de su edición. Esta propiedad y cannotDelete son mutuamente excluyentes.|
 |style|string|Obtiene o establece el estilo usado para el control de contenido. Este es el nombre del estilo preinstalado o personalizado.|
 |etiqueta|string|Obtiene o establece una etiqueta para identificar un control de contenido. El complemento de ejemplo [Silly stories](https://aka.ms/sillystorywordaddin) muestra cómo se puede usar la propiedad **Tag**.|
@@ -411,7 +411,8 @@ contentControlObject.insertInlinePictureFromBase64(image, insertLocation);
 #### <a name="returns"></a>Valores devueltos
 [InlinePicture](inlinepicture.md)
 
-
+#### <a name="known-issues"></a>Problemas conocidos
+En Word en línea se admite solo el valor 'Replace' para el parámetro _insertLocation_. Si utiliza los valores de 'Start' o 'End', se producirá un error en la operación.
 
 ### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Inserta OOXML o wordProcessingML en el control de contenido en la ubicación especificada. El valor insertLocation puede ser "Replace", "Start" o "End".
@@ -428,7 +429,10 @@ contentControlObject.insertOoxml(ooxml, insertLocation);
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
 #### <a name="returns"></a>Valores devueltos
-[Range](range.md)
+[Intervalo](range.md)
+
+#### <a name="known-issues"></a>Problemas conocidos
+Este método da como resultado una latencia elevada en Word en línea, que puede afectar a la experiencia de los usuarios de su complemento. Se recomienda utilizar este método solo cuando no hay otra solución disponible. 
 
 #### <a name="examples"></a>Ejemplos
 ```js
@@ -541,7 +545,10 @@ contentControlObject.insertText(text, insertLocation);
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
 #### <a name="returns"></a>Valores devueltos
-[Range](range.md)
+[Intervalo](range.md)
+
+#### <a name="known-issues"></a>Problemas conocidos
+En Word en línea se admite solo el valor 'Replace' para el parámetro _insertLocation_. Si utiliza los valores de 'Start' o 'End', se producirá un error en la operación.
 
 #### <a name="examples"></a>Ejemplos
 ```js

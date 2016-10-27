@@ -47,7 +47,7 @@ Estarán disponibles en más plataformas próximamente.
 ## <a name="syntax"></a>Sintaxis
 
 ```js
-office.context.ui.displayDialogAsync(startAddress, options, callback);
+Office.context.ui.displayDialogAsync(startAddress, options, callback);
 ```
 ##<a name="examples"></a>Ejemplos
 
@@ -72,7 +72,7 @@ Las opciones de configuración siguientes están disponibles para un cuadro de d
 |:---------------|:--------|:----------|
 |**width**|object|Opcional. Define el ancho del cuadro de diálogo como porcentaje de la pantalla actual. El valor predeterminado es 80 %. La resolución mínima es de 250 píxeles.|
 |**height**|object|Opcional. Define la altura del cuadro de diálogo como porcentaje de la pantalla actual. El valor predeterminado es 80 %. La resolución mínima es de 150 píxeles.|
-|**displayInIFrame**|object|Opcional. Determina si se debe mostrar el cuadro de diálogo dentro de un IFrame en clientes de Office Online. Esta configuración se omite por los clientes de escritorio. Los valores posibles son:<ul><li>False (predeterminado): se mostrará el cuadro de diálogo como una nueva ventana de explorador (elemento emergente). Se recomienda para las páginas de autenticación que no se pueden mostrar en un IFrame. </li><li>True: se mostrará el cuadro de diálogo como una superposición flotante con un IFrame. Es adecuado para mejorar el rendimiento y la experiencia del usuario.</li>|
+|**displayInIframe**|objeto|Opcional. Determina si se debe mostrar el cuadro de diálogo dentro de un IFrame en clientes de Office Online. Esta configuración se omite por los clientes de escritorio. Los valores posibles son:<ul><li>falso (predeterminado): se mostrará el cuadro de diálogo como una nueva ventana de explorador (elemento emergente). Se recomienda para las páginas de autenticación que no se pueden mostrar en un IFrame. </li><li>verdadero: se mostrará el cuadro de diálogo como una superposición flotante con un IFrame. Es la mejor opción para mejorar el rendimiento y la experiencia del usuario.</li>|
 
 
 ## <a name="callback-value"></a>Valor de devolución de llamada

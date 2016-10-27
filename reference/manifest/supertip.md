@@ -1,5 +1,5 @@
 ## <a name="supertip"></a>Supertip
-Define una información sobre herramientas enriquecida (título y descripción). Lo usan los controles [Button](./button.md) y [Menu](./menu-control.md). 
+Defina una información sobre herramientas enriquecida (título y descripción). Lo usan los controles [Button](./control.md#button-control) y [Menu](./control.md#menu-dropdown-button-controls). 
 
 ## <a name="child-elements"></a>Elementos secundarios
 |  Elemento |  Obligatorio  |  Descripción  |

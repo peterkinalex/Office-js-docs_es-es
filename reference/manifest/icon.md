@@ -1,5 +1,5 @@
-# <a name="icon-element"></a>Elemento Icon
-Define los elementos de **Image** para los controles de [Button](./button.md) y [Menu](./menu-control.md).
+# <a name="icon-element"></a>Elemento de icono
+Defina los elementos de la **imagen** para los controles [Button](./control.md#button-control) y [Menu](./control.md#menu-dropdown-button-controls).
 
 ## <a name="child-elements"></a>Elementos secundarios
 |  Elemento |  Obligatorio  |  Descripción  |

@@ -125,5 +125,5 @@ La tabla siguiente resume el comportamiento del enlace en Word.
 
 - [Referencias de esquema y API de complementos de Office](../reference/reference.md)
     
-- [Ciclo de vida de desarrollo de complementos de Office](../docs/design/add-in-development-lifecycle.md)
+- [Ciclo de vida del desarrollo de complementos de Office](../docs/develop/add-in-development-lifecycle.md)
     

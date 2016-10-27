@@ -151,11 +151,13 @@ function addOutlineToPage() {
 
 3. Vaya a [OneNote Online](https://www.onenote.com/notebooks) y abra un bloc de notas.
 
-4. Elija **Insertar > Complementos de Office**. Se abrirá el cuadro de diálogo Complementos de Office.
-  - Si ha iniciado sesión con su cuenta de consumidor, elija la pestaña **MIS COMPLEMENTOS** y después elija **Cargar mi complemento**.
-  - Si ha iniciado sesión con su cuenta escolar o de trabajo, elija la pestaña **MI ORGANIZACIÓN** y después elija **Cargar mi complemento**. 
+4. Elija **Insertar > Complementos de Office**. Se abrirá el cuadro de diálogo de complementos de Office.
+
+  -Si ha iniciado sesión con su cuenta de consumidor, elija la pestaña **MIS COMPLEMENTOS** y después elija **Cargar mi complemento**.
   
-  La siguiente imagen muestra la pestaña **MIS COMPLEMENTOS** en blocs de notas de consumidor.
+  -Si ha iniciado sesión con su cuenta escolar o de trabajo, elija la pestaña **MI ORGANIZACIÓN** y después elija **Cargar mi complemento**. 
+  
+  La siguiente imagen muestra la pestaña **MIS COMPLEMENTOS** para blocs de notas de consumidor.
 
   ![El cuadro de diálogo Complementos de Office con la pestaña MIS COMPLEMENTOS](../../images/onenote-office-add-ins-dialog.png)
 
@@ -164,20 +166,22 @@ function addOutlineToPage() {
 6. El complemento se abre en un iFrame junto a la página de OneNote. Escriba texto en el área de texto y, después, elija **Agregar esquema**. El texto que escriba se agregará a la página. 
 
 ## <a name="troubleshooting-and-tips"></a>Solución de problemas y sugerencias
-- Puede depurar el complemento con las herramientas de desarrollo del navegador. Si usa el servidor web de Gulp y realiza la depuración en Internet Explorer o en Chrome, puede guardar los cambios de forma local y, después, actualizar el iframe del complemento.
+-Puede depurar el complemento con las herramientas de desarrollo del navegador. Si usa el servidor web Gulp y realiza la depuración en Internet Explorer o en Chrome, puede guardar los cambios de forma local y, después, actualizar el iFrame de los complementos.
 
-- Al inspeccionar un objeto de OneNote, las propiedades que están disponibles actualmente para su uso se muestran como valores reales. Las propiedades que es necesario cargar se muestran como *undefined*. Expanda el nodo `_proto_` para ver las propiedades que se han definido en el objeto pero que aún no se han cargado.
+-Al inspeccionar un objeto de OneNote, las propiedades que están disponibles actualmente para su uso se muestran como valores reales. Las propiedades que necesitan cargarse se muestran como *undefined*. Expanda el nodo `_proto_` para ver las propiedades que se han definido en el objeto pero aún no se han cargado.
 
       ![Unloaded OneNote object in the debugger](../../images/onenote-debug.png)
 
-- Necesita habilitar el contenido mixto en el explorador si el complemento usa recursos HTTP. Los complementos de producción solo tienen que usar recursos HTTPS seguros.
+-Necesita habilitar el contenido mixto en el explorador si el complemento usa algún recurso HTTP. Los complementos de producción solo deberían usar recursos HTTPS seguros.
 
--  Los complementos de panel de tareas se pueden abrir desde cualquier lugar, pero solo se pueden insertar complementos en contenidos normales de página normal (es decir, no en títulos, imágenes, iFrames, etc.). 
+-Los complementos del panel de tareas se pueden abrir desde cualquier lugar, pero solo se pueden insertar complementos de contenido en contenido de páginas normales (es decir, no en títulos, imágenes, iFrames, etc.). 
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
-- [Introducción a la programación de API de JavaScript para OneNote](onenote-add-ins-programming-overview.md)
-- [Referencia de la API de JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
-- [Rubric Grader sample (Ejemplo de Rubric Grader)](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
-- [Office Add-ins platform overview (Información general sobre la plataforma de complementos para Office)](https://dev.office.com/docs/add-ins/overview/office-add-ins)
+-[Introducción a la programación de API de JavaScript para OneNote](onenote-add-ins-programming-overview.md)
 
+-[Referencia de la API de JavaScript de OneNote](../../reference/onenote/onenote-add-ins-javascript-reference.md)
+
+-[Ejemplo de Rubric Grader](https://github.com/OfficeDev/OneNote-Add-in-Rubric-Grader)
+
+-[Introducción la plataforma de complementos para Office](https://dev.office.com/docs/add-ins/overview/office-add-ins)

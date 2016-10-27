@@ -20,7 +20,7 @@ El elemento VersionOverrides incluye los siguientes elementos secundarios:
 
 En el diagrama siguiente se muestra la jerarquía de los elementos usados para definir comandos de complemento. 
 
-![Jerarquía de los elementos de comandos de complementos en el manifiesto](../../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
+![Jerarquía de los elementos de comandos de complementos en el manifiesto](../../../images/080da303-51c4-4882-b74a-7ba11517c0ad.png)
 
 ## <a name="rule-changes-for-outlook-add-in-commands"></a>Cambios en las reglas para comandos de complemento de Outlook
 

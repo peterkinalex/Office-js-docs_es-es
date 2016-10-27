@@ -35,7 +35,7 @@ Los complementos eficaces ofrecen una funcionalidad única y atractiva que ampl�
 
     ![Captura de pantalla que muestra un complemento de contenido con datos junto a un complemento de contenido sin datos](../../images/7de2215f-ccef-4f82-aa9d-babcbddae0c6.png)
 
-- Ofrezca [pruebas gratuitas](http://msdn.microsoft.com/library/145d9466-3c3d-4294-aa23-82068a8e7ae9.aspx%28Office.15%29.aspx#sectionSection1). Si el complemento requiere una suscripción, haga que ciertas funcionalidades estén disponibles sin una suscripción.
+- Ofrezca [pruebas gratuitas](https://msdn.microsoft.com/en-us/library/dn456317.aspx#Anchor_1). Si el complemento requiere una suscripción, haga que ciertas funcionalidades estén disponibles sin una suscripción.
 
 - Simplifique el registro. Rellene previamente la información (correo electrónico, nombre para mostrar) y omita las comprobaciones de correo electrónico.
 
@@ -60,32 +60,9 @@ Para consultar plantillas donde se muestran modelos que puede aplicar cuando des
   - Asigne un nombre al grupo que coincida con el nombre del complemento. Si tiene varios grupos, asigne un nombre a cada grupo según la función de los comandos del grupo.
   - No agregue botones superfluos para aumentar el valor del complemento.
 
-     >
-  **Note**  Add-ins that take up too much space might not pass [Office Store validation](https://msdn.microsoft.com/library/cd90836a-523e-42f5-ab02-5123cdf9fefe(Office.15).aspx).
+     > **Nota**  Los complementos que ocupan demasiado espacio podrían no superar la [validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx).
 
-- Para todos los iconos:
-    - Coloque iconos y [etiquetas](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) pertinentes para los botones que identifiquen claramente la acción que el usuario va a realizar.
-
-
- - Use el formato PNG con un fondo transparente.
-
- - Incluya [los ocho tamaños admitidos](https://msdn.microsoft.com/EN-US/library/mt267547.aspx#bk_resources). Así creará la mejor experiencia para todas las resoluciones compatibles.
-
-  - Siga la línea del estilo visual de Office. Por ejemplo:
-
-    - Use formas sencillas y evite usar varios colores. Los gráficos complejos son difíciles de ver en los tamaños y las resoluciones reducidos.
-
-    - No reutilice metáforas visuales para distintos comandos. Si se usa un mismo icono para diferentes acciones, pueden darse confusiones.
-
-    - Cree etiquetas de botón claras y concisas. Use una combinación de información textual y visual para transmitir un significado.
-
-    - Pruebe los iconos en temas de Office claros y oscuros, así como en configuraciones de contraste alto. Tenga en cuenta que los iconos pueden resultar difíciles de ver en un fondo oscuro o en el modo de contraste alto.
-
-    - Use posiciones y tamaños de icono coherentes para favorecer la alineación visual en la cinta de opciones.
-
-
-    ![Captura de pantalla que muestra unos botones de comando del complemento que coinciden con el estilo de Office junto a otros botones que no coinciden con el estilo](../../images/31e11214-61e8-41c1-888c-29d167cb9486.png)
-
+- Para todos los iconos, siga las [directrices de diseño de iconos](../design/design-icons.md).
 
 - Proporcione una versión del complemento que también funcione en hosts que no sean compatibles con comandos. Un solo manifiesto de complemento puede funcionar en hosts compatibles con comandos y no compatibles con comandos.
 
@@ -109,9 +86,9 @@ Para consultar plantillas donde se muestran modelos que puede aplicar cuando des
 
 - No incluya imágenes sin licencia.
 
-- Use un [lenguaje claro y sencillo](http://msdn.microsoft.com/library/8cef4fce-e6a1-459b-951f-47ac03ec95a6%28Office.15%29.aspx) en el complemento.
+- Use un [lenguaje claro y sencillo](../design/voice-guidelines.md) en el complemento.
 
-- Tenga en cuenta la [accesibilidad](http://msdn.microsoft.com/library/3be1abbb-237a-48ec-8e17-72caa25a3cb2%28Office.15%29.aspx): cree un complemento con el que todos los usuarios puedan interactuar fácilmente y dé cabida a las tecnologías de asistencia como los lectores de pantalla.
+- Tenga en cuenta la [accesibilidad](../design/accessibility-guidelines.md): cree un complemento con el que todos los usuarios puedan interactuar fácilmente y dé cabida a las tecnologías de asistencia como los lectores de pantalla.
 
 - Diseñe para todas las plataformas y métodos de entrada, como mouse o teclado y [función táctil](#optimize-for-touch). Garantice que la interfaz de usuario responda a distintos factores de forma.
 

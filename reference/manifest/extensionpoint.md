@@ -85,7 +85,7 @@ El punto de extensión CustomPane define un complemento que se activa cuando se 
 |:-----|:-----|:-----|
 |  **RequestedHeight** | No |  La altura solicitada, en píxeles, para el panel de visualización cuando se ejecuta en un equipo de escritorio. Puede ser de 32 a 450 píxeles.  |
 |  **SourceLocation**  | Sí |  La dirección URL del archivo de código fuente del complemento. Hace referencia a un elemento **Url** en el elemento [Resources](./resources.md).  |
-|  **Rule**  | Sí |  La regla o colección de reglas que especifican cuándo se activa el complemento. Para obtener más información, consulte [Reglas de activación para complementos de Outlook](../../outlook/manifests/activation-rules.md). |
+|  **Rule**  | Sí |  La regla o colección de reglas que especifican cuándo se activa el complemento. Para obtener más información, consulte [Reglas de activación para complementos de Outlook](../../docs/outlook/manifests/activation-rules.md). |
 |  **DisableEntityHighlighting**  | No |  Especifica si es necesario desactivar el resaltado de entidades. |
 
 

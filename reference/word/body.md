@@ -360,7 +360,10 @@ bodyObject.insertOoxml(ooxml, insertLocation);
 |insertLocation|InsertLocation|Necesario. El valor puede ser "Replace", "Start" o "End".|
 
 #### <a name="returns"></a>Valores devueltos
-[Range](range.md)
+[Intervalo](range.md)
+
+#### <a name="known-issues"></a>Problemas conocidos
+Este método da como resultado una latencia elevada en Word en línea, que puede afectar a la experiencia de los usuarios de su complemento. Se recomienda utilizar este método solo cuando no hay otra solución disponible. 
 
 #### <a name="examples"></a>Ejemplos
 ```js

@@ -37,7 +37,7 @@ Especifica el tipo de host al que se dirige este complemento. El valor debe ser 
 ---
 
 ## <a name="versionoverrides-node"></a>Nodo VersionOverrides
-Cuando se define en [VersionOverrides](./versionoverrides), el tipo de host está determinado en el atributo `xsi:type`. 
+Cuando se define en [VersionOverrides](./versionoverrides.md), el tipo de host está determinado en el atributo `xsi:type`. 
 
 ### <a name="attributes"></a>Atributos
 
