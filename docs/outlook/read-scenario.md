@@ -1,5 +1,5 @@
 
-# <a name="create-outlook-add-ins-for-read-forms"></a>Crear complementos de Outlook para formularios de lectura
+# <a name="create-outlook-addins-for-read-forms"></a>Crear complementos de Outlook para formularios de lectura
 
 Los complementos de lectura son complementos de Outlook que se activan en el panel de lectura o en el inspector de lectura de Outlook. A diferencia de los complementos de redacción (complementos de Outlook que se activan cuando un usuario crea un mensaje o una cita), los complementos de lectura están disponibles cuando los usuarios:
 
@@ -18,10 +18,10 @@ En todos estos escenarios de lectura, Outlook activa los complementos cuando se 
 
 **Figura 1: El panel del complemento muestra el complemento de Mapas de Bing en acción para el mensaje de Outlook seleccionado que contiene una dirección**
 
-![Aplicación de correo Mapa de Bing en Outlook](../../images/off15appsdk_BingMapMailAppScreenshot.jpg)
+![Aplicación de mapa de Bing en Outlook](../../images/off15appsdk_BingMapMailAppScreenshot.jpg)
 
 
-## <a name="types-of-add-ins-available-in-read-mode"></a>Tipos de complementos disponibles en modo lectura
+## <a name="types-of-addins-available-in-read-mode"></a>Tipos de complementos disponibles en modo lectura
 
 
 Los complementos de lectura pueden ser cualquier combinación de los siguientes tipos.
@@ -31,10 +31,8 @@ Los complementos de lectura pueden ser cualquier combinación de los siguientes 
     
 - [Complementos de Outlook contextuales](../outlook/contextual-outlook-add-ins.md)
     
-- [Complementos de panel de tareas de Outlook personalizados](../outlook/custom-pane-outlook-add-ins.md)
-    
 
-## <a name="api-features-available-to-read-add-ins"></a>Características de la API disponibles para complementos de lectura
+## <a name="api-features-available-to-read-addins"></a>Características de la API disponibles para complementos de lectura
 
 
 Para obtener una lista de las características que ofrece la API de JavaScript para Office a los complementos en los formularios de lectura, vea las tablas 1 y 2 de [Características de aplicación de correo por versión](http://msdn.microsoft.com/library/f34e2f44-8c9d-4e90-b1d7-3f29506adb92%28Office.15%29.aspx). 

@@ -58,7 +58,7 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |**Access**||v||
 |**Excel**|v|v|v|
 |**PowerPoint**|v|v|v|
-|**Word**|v||v|
+|**Word**|v|v|v|
 
 |||
 |:-----|:-----|

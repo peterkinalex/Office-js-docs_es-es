@@ -1,7 +1,7 @@
 
 # <a name="use-php-to-validate-an-identity-token"></a>Usar PHP para validar un token de identidad
 
-Su complemento de Outlook le puede enviar un token de identidad, pero antes de que confíe en la solicitud será necesario que valide el token para asegurarse de que procede del servidor Exchange esperado. En el ejemplo de este artículo se usa PHP para validar el token de identidad; sin embargo, puede usar cualquier lenguaje de programación para hacer la validación. Los pasos necesarios para validar el token se describen en el [borrador de Internet de JWT (Token web de JSON)](http://self-issued.info/docs/draft-goland-json-web-token-00.html).
+Su complemento de Outlook le puede enviar un token de identidad, pero antes de que confíe en la solicitud será necesario que valide el token para asegurarse de que procede del servidor Exchange esperado. En el ejemplo de este artículo se usa PHP para validar el token de identidad; sin embargo, puede usar cualquier lenguaje de programación para hacer la validación. Los pasos necesarios para validar el token se describen en el [borrador de Internet de JWT (Token web de JSON)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html).
 
 Le sugerimos que use un proceso de cuatro pasos para validar el token de identidad y obtener el identificador único del usuario: 
 

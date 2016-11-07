@@ -1,7 +1,7 @@
 
-# <a name="activation-rules-for-outlook-add-ins"></a>Reglas de activación para complementos de Outlook
+# <a name="activation-rules-for-outlook-addins"></a>Reglas de activación para complementos de Outlook
 
-Outlook activa algunos tipos de complementos si la cita o el mensaje que el usuario está leyendo o redactando cumple las reglas de activación del complemento. Esto es cierto para todos los complementos que usan el esquema del manifiesto 1.1 y para los complementos de panel personalizados. El usuario puede decidir que el complemento de la interfaz de usuario de Outlook inicie el elemento actual.
+Outlook activa algunos tipos de complemento si el mensaje o la cita que lee o redacta el usuario cumple las reglas de activación de los mismos. Esto se aplica a todos los complementos que utilizan el esquema de manifiesto 1.1. A continuación, el usuario puede elegir el complemento de la interfaz de usuario de Outlook para que se inicie con el elemento actual.
 
 En la siguiente ilustración se muestran complementos de Outlook activados en la barra de complementos del mensaje en el panel de lectura. 
 
@@ -24,11 +24,11 @@ En la tabla siguiente se muestran los tipos de reglas disponibles. Puede obtener
 
 |**Nombre de la regla**|**Formularios correspondientes**|**Descripción**|
 |:-----|:-----|:-----|
-|[ItemIs](#itemis-rule)|Lectura, redacción, panel personalizado|Comprueba si el elemento actual es del tipo especificado (mensaje o cita). También puede comprobar la clase del elemento y tipo de formulario, y opcionalmente la clase de mensaje del elemento.|
-|[ItemHasAttachment](#itemhasattachment-rule)|Lectura, panel personalizado|Comprueba si el elemento seleccionado contiene datos adjuntos.|
-|[ItemHasKnownEntity](#itemhasknownentity-rule)|Lectura, panel personalizado|Comprueba si el elemento seleccionado contiene una o más entidades conocidas. Más información: [Coincidencia de cadenas en un elemento de Outlook como entidades conocidas](../../outlook/match-strings-in-an-item-as-well-known-entities.md).|
-|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|Lectura, panel personalizado|Comprueba si la dirección de correo del remitente, el asunto o el cuerpo del elemento seleccionado contienen algún resultado con una expresión regular.Más información: [Usar las reglas de activación de las expresiones regulares para mostrar un complemento de Outlook](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md).|
-|[RuleCollection](#rulecollection-rule)|Lectura, redacción, panel personalizado|Combina un conjunto de reglas de forma que se puedan formar reglas más complejas.|
+|[ItemIs](#itemis-rule)|Lectura, Redacción|Comprueba si el elemento actual es del tipo especificado (mensaje o cita). También puede comprobar la clase del elemento y tipo de formulario, y opcionalmente la clase de mensaje del elemento.|
+|[ItemHasAttachment](#itemhasattachment-rule)|Lectura|Comprueba si el elemento seleccionado contiene datos adjuntos.|
+|[ItemHasKnownEntity](#itemhasknownentity-rule)|Lectura|Comprueba si el elemento seleccionado contiene una o más entidades conocidas. Más información: [Coincidencia de cadenas en un elemento de Outlook como entidades conocidas](../../outlook/match-strings-in-an-item-as-well-known-entities.md).|
+|[ItemHasRegularExpressionMatch](#itemhasregularexpressionmatch-rule)|Lectura|Comprueba si la dirección de correo del remitente, el asunto o el cuerpo del elemento seleccionado contienen algún resultado con una expresión regular.Más información: [Usar las reglas de activación de las expresiones regulares para mostrar un complemento de Outlook](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md).|
+|[RuleCollection](#rulecollection-rule)|Lectura, Redacción|Combina un conjunto de reglas de forma que se puedan formar reglas más complejas.|
 
 ## <a name="itemis-rule"></a>Regla ItemIs
 
@@ -178,8 +178,7 @@ Para proporcionar una experiencia satisfactoria con los complementos de Outlook,
 - [Complementos de Outlook](../../outlook/outlook-add-ins.md)
 - [Crear complementos de Outlook para formularios de redacción](../../outlook/compose-scenario.md)
 - [Límites para la activación y API de JavaScript para complementos de Outlook](../../outlook/limits-for-activation-and-javascript-api-for-outlook-add-ins.md)
-- 
-  [Tipos de elementos y clases de mensajes](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- [Tipos de elementos y clases de mensajes](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
 - [Usar las reglas de activación de las expresiones regulares para mostrar un complemento de Outlook](../../outlook/use-regular-expressions-to-show-an-outlook-add-in.md)
 - [Coincidencia de cadenas en un elemento de Outlook como entidades conocidas](../../outlook/match-strings-in-an-item-as-well-known-entities.md)
     

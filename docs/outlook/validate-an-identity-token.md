@@ -1,7 +1,7 @@
 
 # <a name="validate-an-exchange-identity-token"></a>Validar un token de identidad de Exchange
 
-Su complemento de Outlook le puede enviar un token de identidad, pero antes de que confíe en la solicitud será necesario que valide el token para asegurarse de que procede del servidor Exchange esperado. Con el ejemplo de este artículo se le mostrará cómo validar el token de identidad de Exchange con un objeto de validación escrito en C#. No obstante, para hacer la validación se puede usar cualquier lenguaje de programación. Los pasos que hay que seguir para validar el token se describen en el [borrador de Internet de token JWT (token web de JSON)](http://self-issued.info/docs/draft-goland-json-web-token-00.mdl). 
+Su complemento de Outlook le puede enviar un token de identidad, pero antes de que confíe en la solicitud será necesario que valide el token para asegurarse de que procede del servidor Exchange esperado. Con el ejemplo de este artículo se le mostrará cómo validar el token de identidad de Exchange con un objeto de validación escrito en C#. No obstante, para hacer la validación se puede usar cualquier lenguaje de programación. Los pasos que hay que seguir para validar el token se describen en el [borrador de Internet de token JWT (token web de JSON)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). 
 
 Le recomendamos usar este procedimiento de cuatro pasos para validar el token de identidad y obtener el identificador único de usuario. En primer lugar, extraiga el token web JSON (JWT) de una cadena con codificación URL Base64. En segundo lugar, asegúrese de que el token tenga el formato correcto, que es para su complemento de Outlook, que no ha expirado y que se puede extraer una dirección URL válida para el documento de metadatos de autenticación. Después, recupere el documento de metadatos de autenticación del servidor Exchange y valide la firma adjunta al token de identidad. Por último, calcule un identificador único para el usuario. Para hacerlo, calcule el hash del id. de Exchange con la URL del documento de metadatos de autenticación. Aunque el proceso pueda parecer complejo en conjunto, cada paso individual es bastante sencillo. Puede descargar de Internet la solución que contiene estos ejemplos en [Outlook-Add-in-JavaScript-ValidateIdentityToken](https://github.com/OfficeDev/Outlook-Add-in-JavaScript-ValidateIdentityToken).
  
@@ -54,7 +54,7 @@ El patrón de diseño Factory Method  **Decode** divide el JWT del servidor Exch
     }
 ```
 
-El método **Base64Decode** implementa la lógica de descodificación que se describe en el apéndice "Notas sobre la implementación de la codificación base64url sin relleno" del[Borrador de Internet de token web JSON (JWT)](http://self-issued.info/docs/draft-goland-json-web-token-00.mdl).
+El método **Base64Decode** implementa la lógica de descodificación que se describe en el apéndice "Notas sobre la implementación de la codificación base64url sin relleno" del[Borrador de Internet de token web JSON (JWT)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html).
 
 
 

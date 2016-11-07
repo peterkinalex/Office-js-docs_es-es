@@ -1,5 +1,5 @@
 
-# <a name="requirements-for-running-office-add-ins"></a>Requisitos para ejecutar complementos de Office
+# <a name="requirements-for-running-office-addins"></a>Requisitos para ejecutar complementos de Office
 
 
 En este artículo se describen los requisitos de software y de dispositivo para ejecutar complementos de Office.
@@ -25,7 +25,7 @@ Para probar y ejecutar un complemento de Outlook, la cuenta de correo electróni
 
 
 
-## <a name="client-requirements:-windows-desktop-and-tablet"></a>Requisitos de cliente: dispositivo de escritorio y tableta con Windows
+## <a name="client-requirements-windows-desktop-and-tablet"></a>Requisitos de cliente: dispositivo de escritorio y tableta con Windows
 
 Para desarrollar un Complemento de Office, se necesita el siguiente software en los clientes de escritorio de Office o clientes web que ejecuten dispositivos de escritorio, portátiles o tabletas basados en Windows:
 
@@ -34,16 +34,16 @@ Para desarrollar un Complemento de Office, se necesita el siguiente software en 
 
     - La versión de 32 bits o de 64 bits de Office 2013 o una versión posterior, en ejecución en Windows 7 o una versión posterior.
 
-    - Excel 2013, Outlook 2013, PowerPoint 2013, Project Profesional 2013, Project 2013 SP1, Word 2013 o una versión posterior del cliente de Office, si desea probar o ejecutar un Complemento de Office específicamente para uno de estos clientes de escritorio de Office. Los clientes de escritorio de Office pueden instalarse de forma local o a través de Hacer clic y ejecutar en el equipo cliente.
+    - Excel 2013, Outlook 2013, PowerPoint 2013, Project Profesional 2013, Project 2013 SP1, Word 2013 o una versión posterior del cliente de Office, si desea probar o ejecutar un Complemento de Office específicamente para uno de estos clientes de escritorio de Office. Los clientes de escritorio de Office se pueden instalar de manera local o con Hacer clic y ejecutar en el equipo cliente.
 
-- Internet Explorer 9 o posterior (se debe instalar, pero no es necesario que sea el explorador predeterminado). Para admitir Complementos de Office, el cliente de Office que actúa como host usa componentes del explorador que forman parte de Internet Explorer 9 o de una versión posterior.
+- Internet Explorer 11 o posterior, que debe estar instalado, pero no tiene por qué ser el explorador predeterminado. Para admitir los complementos de Office, el cliente de Office que actúa como host utiliza componentes de explorador que forman parte de Internet Explorer 11 o posterior.
 
-- Uno de los siguientes exploradores predeterminados: Internet Explorer 9, Safari 5.0.6, Firefox 5, Chrome 13 o una versión posterior de cualquiera de ellos.
+- Uno de los siguientes como el explorador predeterminado: Internet Explorer 11 o posterior, o la versión más reciente de Edge, Chrome, Firefox o Safari (Mac OS).
 
 - Un editor de HTML y JavaScript, como el Bloc de notas, [Visual Studio y Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs) o una herramienta de desarrollo web de terceros.
 
 
-## <a name="client-requirements:-os-x-desktop"></a>Requisitos de cliente: escritorio de OS X
+## <a name="client-requirements-os-x-desktop"></a>Requisitos de cliente: escritorio de OS X
 
 Outlook para Mac, que se distribuye como parte de Office 365, admite complementos de Outlook. La ejecución de complementos de Outlook en Outlook para Mac tiene los mismos requisitos que el propio Outlook para Mac: el sistema operativo debe ser como mínimo OS X v10.10 "Yosemite". Ya que Outlook para Mac usa WebKit como motor de diseño para presentar las páginas del complemento, no existen dependencias de explorador adicionales.
 
@@ -52,12 +52,12 @@ Estas son las versiones mínimas del cliente de Office para Mac que admiten comp
 - Excel para Mac versión 15.19 (160206) 
 - PowerPoint para Mac versión 15.24 (160614)
 
-## <a name="client-requirements:-browser-support-for-office-online-web-clients-and-sharepoint"></a>Requisitos de cliente: compatibilidad del explorador con clientes web de Office Online y SharePoint
+## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Requisitos del cliente: Compatibilidad del explorador con clientes web de Office Online y SharePoint
 
-Cualquier explorador que admita ECMAScript 5.1, HTML5 y CSS3, como Internet Explorer 9, Chrome 13, Firefox 5, Safari 5.0.6 o una versión posterior de estos exploradores.
+Cualquier explorador que admita ECMAScript 5.1, HTML5 y CSS3, como Internet Explorer 11 o posterior, o la última versión de Edge, Chrome, Firefox o Safari (Mac OS).
 
 
-## <a name="client-requirements:-non-windows-smartphone-and-tablet"></a>Requisitos de cliente: smartphone y tabletas sin Windows
+## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>Requisitos de cliente: smartphones y tabletas sin Windows
 
 Se necesita el siguiente software para probar y ejecutar complementos de Outlook específicamente para OWA para dispositivos y Outlook Web App cuando se ejecutan en un explorador en smartphones o tabletas que no son Windows.
 

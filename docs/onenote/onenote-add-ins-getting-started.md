@@ -1,4 +1,4 @@
-# <a name="build-your-first-onenote-add-in"></a>Crear el primer complemento de OneNote
+# <a name="build-your-first-onenote-addin"></a>Crear el primer complemento de OneNote
 
 En este artículo se indican los pasos necesarios para crear un complemento de panel de tareas sencillo que agrega texto a una página de OneNote.
 
@@ -7,7 +7,7 @@ En la imagen siguiente se muestra el complemento que creará.
    ![El complemento de OneNote que se crea con este tutorial](../../images/onenote-first-add-in.png)
 
 <a name="setup"></a>
-## <a name="step-1:-set-up-your-dev-environment-and-create-an-add-in-project"></a>Paso 1: Configurar el entorno de desarrollo y crear un proyecto de complemento
+## <a name="step-1-set-up-your-dev-environment-and-create-an-addin-project"></a>Paso 1: Configurar el entorno de desarrollo y crear un proyecto de complemento
 Siga las instrucciones para [Crear un complemento de Office con cualquier editor](../get-started/create-an-office-add-in-using-any-editor.md) para instalar los requisitos previos necesarios y ejecutar el generador de Yeoman Office para crear un nuevo proyecto de complemento. En la tabla siguiente se enumeran los atributos del proyecto para seleccionar en el generador de Yeoman.
 
 | Opción | Valor |
@@ -19,14 +19,14 @@ Siga las instrucciones para [Crear un complemento de Office con cualquier editor
 | Tecnología que se usará | HTML, CSS y JavaScript |
 
 <a name="develop"></a>
-## <a name="step-2:-modify-the-add-in"></a>Paso 2: Modificar el complemento
+## <a name="step-2-modify-the-addin"></a>Paso 2: Modificar el complemento
 Puede editar el complemento con cualquier editor de texto o IDE. Si aún no ha probado Visual Studio Code, puede [descargarlo de forma gratuita](https://code.visualstudio.com/) en Linux, Mac OS X y Windows.
 
 1. Abra **home.html** en la carpeta *app/home*. 
 
 2. Edite las referencias a la API de JavaScript para Office y los estilos y componentes de [Office UI Fabric](http://dev.office.com/fabric).
 
-  a. Quite la marca de comentario del vínculo a fabric.components.min.css.
+  a. Elimine la marca de comentario del vínculo a fabric.components.min.css.
   
   b. Reemplace la referencia del script a Office.js con la siguiente referencia a la versión *beta*.
 
@@ -128,7 +128,7 @@ function addOutlineToPage() {
 ```
 
 <a name="test"></a>
-## <a name="step-3:-test-the-add-in-on-onenote-online"></a>Paso 3: Probar el complemento en OneNote Online
+## <a name="step-3-test-the-addin-on-onenote-online"></a>Paso 3: Probar el complemento en OneNote Online
 1. Ejecute el servidor web de Gulp.  
 
   a. Abra un símbolo del sistema **cmd** y vaya a la carpeta del proyecto del complemento. 
@@ -170,7 +170,7 @@ function addOutlineToPage() {
 
 -Al inspeccionar un objeto de OneNote, las propiedades que están disponibles actualmente para su uso se muestran como valores reales. Las propiedades que necesitan cargarse se muestran como *undefined*. Expanda el nodo `_proto_` para ver las propiedades que se han definido en el objeto pero aún no se han cargado.
 
-      ![Unloaded OneNote object in the debugger](../../images/onenote-debug.png)
+![Objeto de OneNote no cargado en el depurador](../../images/onenote-debug.png)
 
 -Necesita habilitar el contenido mixto en el explorador si el complemento usa algún recurso HTTP. Los complementos de producción solo deberían usar recursos HTTPS seguros.
 

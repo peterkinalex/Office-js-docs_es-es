@@ -1,12 +1,9 @@
 
-# <a name="outlook-add-in-manifests"></a>Manifiestos de complementos de Outlook
+# <a name="outlook-addin-manifests"></a>Manifiestos de complementos de Outlook
 
 Un complemento de Outlook está formado por dos componentes: el manifiesto del complemento XML y una página web, compatible con la biblioteca de JavaScript para complementos de Office (office.js). En el manifiesto se describe cómo se integra el complemento en diferentes clientes de Outlook. Actualmente hay tres versiones del esquema del manifiesto, incluida **VersionOverrides**. Le recomendamos que use la versión 1.1 del esquema del manifiesto y **VersionOverrides** 1.0 para crear el complemento. A continuación encontrará un ejemplo.
 
  >**Nota**  Todos los valores de la dirección URL en el siguiente ejemplo comienzan con "YOUR_WEB_SERVER". Este valor es un marcador de posición. En un manifiesto válido real, estos valores tendrían direcciones URL web https válidas.
-
-
-
 
 ```XML
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -112,16 +109,6 @@ Un complemento de Outlook está formado por dos componentes: el manifiesto del c
 
                 <DesktopFormFactor>
                     <FunctionFile resid="functionFile" />
-
-                    <!-- Custom pane, only applies to read form -->
-                    <ExtensionPoint xsi:type="CustomPane">
-                        <RequestedHeight>100</RequestedHeight>
-                        <SourceLocation resid="customPaneUrl" />
-                        <Rule xsi:type="RuleCollection" Mode="Or">
-                            <Rule xsi:type="ItemIs" ItemType="Message" />
-                            <Rule xsi:type="ItemIs" ItemType="AppointmentAttendee" />
-                        </Rule>
-                    </ExtensionPoint>
 
                     <!-- Message compose form -->
                     <ExtensionPoint xsi:type="MessageComposeCommandSurface">
@@ -549,7 +536,6 @@ Un complemento de Outlook está formado por dos componentes: el manifiesto del c
                 <bt:Url id="functionFile" DefaultValue="YOUR_WEB_SERVER/FunctionFile/Functions.html" />
                 <bt:Url id="readTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/TaskPane/TaskPane.html" />
                 <bt:Url id="composeTaskPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppCompose/TaskPane/TaskPane.html" />
-                <bt:Url id="customPaneUrl" DefaultValue="YOUR_WEB_SERVER/AppRead/CustomPane/CustomPane.html" />
             </bt:Urls>
             <bt:ShortStrings>
                 <bt:String id="groupLabel" DefaultValue="Add-in Demo" />
@@ -794,7 +780,7 @@ Las reglas de activación se pueden usar para activar un complemento en función
 Para obtener información detallada y ejemplos de reglas de activación, vea [Reglas de activación para complementos de Outlook](../../outlook/manifests/activation-rules.md).
 
 
-## <a name="next-steps:-add-in-commands"></a>Pasos siguientes: comandos de complementos
+## <a name="next-steps-addin-commands"></a>Pasos siguientes: comandos de complementos
 
 
 Después de definir un manifiesto básico, [defina comandos de complementos para el complemento](../../outlook/manifests/define-add-in-commands.md). Los comandos de complementos presentan un botón en la cinta para que los usuarios puedan activar el complemento de una forma sencilla e intuitiva. Para obtener más información, consulte [Comandos de complementos de Outlook](../../outlook/add-in-commands-for-outlook.md).
@@ -810,8 +796,7 @@ Después de definir un manifiesto básico, [defina comandos de complementos para
     
 - [Localización de complementos para Office](../../develop/localization.md)
     
-- 
-  [Crear un complemento de correo para Outlook que se ejecute en equipos de escritorio, tabletas y dispositivos móviles (esquema v1.1)](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
+- [Crear un complemento de correo para Outlook que se ejecute en equipos de escritorio, tabletas y dispositivos móviles (esquema v1.1)](http://msdn.microsoft.com/library/8d425fb3-8a7c-429d-87b3-8046e964b153%28Office.15%29.aspx)
     
 - [Privacidad, permisos y seguridad para los complementos de Outlook](../../outlook/privacy-and-security.md)
     
@@ -821,8 +806,7 @@ Después de definir un manifiesto básico, [defina comandos de complementos para
     
 - [Referencia de esquema para manifiestos de Complementos de Office (v1.1)](../../overview/add-in-manifests.md)
     
-- 
-  [Tipos de elementos y clases de mensajes](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
+- [Tipos de elementos y clases de mensajes](http://msdn.microsoft.com/library/15b709cc-7486-b6c7-88a3-4a4d8e0ab292%28Office.15%29.aspx)
     
 - [Instrucciones de diseño para complementos de Office](../../design/add-in-design.md)
     

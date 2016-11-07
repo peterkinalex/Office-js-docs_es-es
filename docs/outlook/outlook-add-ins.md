@@ -1,5 +1,5 @@
 
-# <a name="outlook-add-ins"></a>Complementos de Outlook
+# <a name="outlook-addins"></a>Complementos de Outlook
 
 Los complementos de Outlook son integraciones creadas por terceros en Outlook con la nueva plataforma basada en tecnologías web. Los complementos de Outlook tienen tres aspectos principales:
 
@@ -21,26 +21,20 @@ Entre los elementos de Outlook compatibles con los complementos de correo se inc
 Los puntos de extensión son la forma en que los complementos se integran con Outlook. La integración se puede hacer de las siguientes maneras:
 
 
-- Los complementos pueden declarar los botones que aparecen en superficies de comando a través de mensajes y citas. Para obtener más información, consulte [Comandos de complemento para Outlook](../outlook/add-in-commands-for-outlook.md).
+- Los complementos pueden declarar los botones que aparecen en superficies de comando a través de mensajes y citas. Para obtener más información, vea [Comandos de complementos de Outlook](../outlook/add-in-commands-for-outlook.md).
     
     **Un complemento con botones de comandos en la cinta de opciones**
 
-    ![Forma sin IU de comando de complemento](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
+    ![Forma sin UI de comando de complemento](../../images/41e46a9c-19ec-4ccc-98e6-a227283623d1.png)
 
-- Los complementos pueden desvincular coincidencias de expresiones regulares o entidades detectadas en mensajes y citas. Para obtener más información, consulte [Complementos de Outlook contextuales](../outlook/contextual-outlook-add-ins.md).
+- Los complementos pueden desvincular coincidencias de expresiones regulares o entidades detectadas en mensajes y citas. Para obtener más información, vea [Complementos de Outlook contextuales](../outlook/contextual-outlook-add-ins.md).
     
     **Un complemento contextual para una entidad resaltada (una dirección)**
 
-    ![Muestra una aplicación contextual en una tarjeta](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
-
-- Los complementos pueden aparecer en un panel horizontal encima del cuerpo del mensaje o de la cita. Esto se basa en reglas complejas, como la presencia de datos adjuntos o la clase de elemento de Exchange de la cita o el mensaje. Para obtener más información, vea [Panel personalizado Complementos de Outlook](../outlook/custom-pane-outlook-add-ins.md).
-    
-    **Un complemento con un panel personalizado en modo lectura**
-
-    ![Muestra un panel personalizado en un formulario de lectura de mensajes.](../../images/c585ab0a-6c33-42d0-a20f-5deb8b54f480.png)
+    ![Muestra una aplicación contextual de una tarjeta](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
 
 
-## <a name="mailbox-items-available-to-add-ins"></a>Elementos del buzón disponibles para los complementos
+## <a name="mailbox-items-available-to-addins"></a>Elementos del buzón disponibles para los complementos
 
 
 Los complementos de Outlook están disponibles en los mensajes o citas mientras se redactan o leen, pero no en otros elementos. Outlook no activa complementos si el elemento de mensaje actual de un formulario de redacción o lectura cumple una de las condiciones siguientes:
@@ -65,7 +59,7 @@ En general, Outlook puede activar complementos en formularios de lectura para el
 Los complementos de Outlook son compatibles con Outlook 2013 y versiones posteriores, Outlook 2016 para Mac, Outlook Web App para Exchange 2013 local, Outlook Web App en Office 365 y Outlook.com. No todas las características más recientes son compatibles con todos los clientes al mismo tiempo. Consulte los distintos temas y referencias de API para ver en qué hosts se admiten y en cuáles no.
 
 
-## <a name="get-started-building-outlook-add-ins"></a>Introducción a la compilación de complementos de Outlook
+## <a name="get-started-building-outlook-addins"></a>Introducción a la compilación de complementos de Outlook
 
 
 Para empezar a compilar complementos de Outlook, vea [Introducción a los complementos de Outlook para Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted).
@@ -77,9 +71,7 @@ Para empezar a compilar complementos de Outlook, vea [Introducción a los comple
 - [Introducción a las características y la arquitectura de los complementos de Outlook](../outlook/overview.md)
 - [Procedimientos recomendados para desarrollar complementos de Office](../../docs/overview/add-in-development-best-practices.md)
 - [Instrucciones de diseño para complementos de Office](../../docs/design/add-in-design.md)
-- 
-  [Licencias de complementos de Office y SharePoint](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
+- [Licencias de complementos de Office y SharePoint](http://msdn.microsoft.com/library/3e0e8ff6-66d6-44ff-b0c2-59108ebd9181%28Office.15%29.aspx)
 - [Publicar el complemento de Office](../publish/publish.md)
-- 
-  [Enviar complementos de Office y SharePoint, y aplicaciones web de Office 365 a la Tienda Office](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
+- [Enviar complementos de Office y SharePoint, y aplicaciones web de Office 365 a la Tienda Office](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx)
 

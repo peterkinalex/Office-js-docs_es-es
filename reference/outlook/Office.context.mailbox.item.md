@@ -2,7 +2,7 @@
 
 # <a name="item"></a>elemento
 
-## <a name="[office](office.md)[.context](office.context.md)[.mailbox](office.context.mailbox.md).item"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).item
+## <a name="officeofficemdcontextofficecontextmdmailboxofficecontextmailboxmditem"></a>[Office](Office.md)[.context](Office.context.md)[.mailbox](Office.context.mailbox.md).item
 
 El espacio de nombres `item` se usa para acceder al mensaje seleccionado actualmente, a una convocatoria de reunión o a una cita. Puede determinar el tipo del `item` mediante la propiedad [itemType](Office.context.mailbox.item.md#itemtype-officemailboxenumsitemtype).
 
@@ -34,11 +34,11 @@ Office.initialize = function () {
 
 ### <a name="members"></a>Miembros
 
-#### <a name="attachments-:array.<[attachmentdetails](simple-types.md#attachmentdetails)>"></a>attachments :Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
+#### <a name="attachments-arrayattachmentdetailssimpletypesmdattachmentdetails"></a>attachments :Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
 
 Obtiene una matriz de datos adjuntos para el elemento. Solo modo Lectura.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   Array.<[AttachmentDetails](simple-types.md#attachmentdetails)>
 
@@ -74,11 +74,11 @@ if (_Item.attachments.length > 0) {
 // Do something with outputString
 ```
 
-####  <a name="bcc-:[recipients](recipients.md)"></a>bcc :[Recipients](Recipients.md)
+####  <a name="bcc-recipientsrecipientsmd"></a>bcc :[Recipients](Recipients.md)
 
-Obtiene o establece los destinatarios en la línea CCO (copia carbón oculta) de un mensaje. Solo modo Redacción.
+Obtiene o establece los destinatarios en la línea CCO (copia carbón oculta) de un mensaje. Solo modo  Redacción.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   [Destinatarios](Recipients.md)
 
@@ -101,11 +101,11 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="body-:[body](body.md)"></a>body :[Body](Body.md)
+####  <a name="body-bodybodymd"></a>body :[Body](Body.md)
 
 Obtiene un objeto que proporciona métodos para manipular el cuerpo de un elemento.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   [Cuerpo](Body.md)
 
@@ -128,7 +128,7 @@ La propiedad `cc` devuelve una matriz que contiene un objeto `EmailAddressDetail
 
 La propiedad `cc` devuelve un objeto `Recipients` que proporciona métodos para manipular los destinatarios en la línea **CC** del mensaje.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -151,7 +151,7 @@ function callback(asyncResult) {
 }
 ```
 
-####  <a name="(nullable)-conversationid-:string"></a>(nullable) conversationId :String
+####  <a name="nullable-conversationid-string"></a>(nullable) conversationId :String
 
 Obtiene un identificador de la conversación de correo electrónico que contiene un mensaje determinado.
 
@@ -159,7 +159,7 @@ Puede obtener un entero para esta propiedad si la aplicación de correo se activ
 
 Obtiene un valor NULL para esta propiedad para un nuevo elemento de un formulario de redacción. Si el usuario establece un asunto y guarda el elemento, la propiedad `conversationId` devolverá un valor.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   String
 
@@ -170,11 +170,11 @@ Obtiene un valor NULL para esta propiedad para un nuevo elemento de un formulari
 |[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
-#### <a name="datetimecreated-:date"></a>dateTimeCreated :Date
+#### <a name="datetimecreated-date"></a>dateTimeCreated :Date
 
 Obtiene la fecha y hora de creación de un elemento. Solo modo Lectura.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   Fecha
 
@@ -192,11 +192,11 @@ Obtiene la fecha y hora de creación de un elemento. Solo modo Lectura.
 var created = Office.context.mailbox.item.dateTimeCreated;
 ```
 
-#### <a name="datetimemodified-:date"></a>dateTimeModified :Date
+#### <a name="datetimemodified-date"></a>dateTimeModified :Date
 
 Obtiene la fecha y hora en que se modificó por última vez un elemento. Solo modo Lectura.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   Fecha
 
@@ -214,7 +214,7 @@ Obtiene la fecha y hora en que se modificó por última vez un elemento. Solo mo
 var modified = Office.context.mailbox.item.dateTimeModified;
 ```
 
-####  <a name="end-:date|[time](time.md)"></a>end :Date|[Time](Time.md)
+####  <a name="end-datetimetimemd"></a>end :Date|[Time](Time.md)
 
 Obtiene o establece la fecha y la hora de finalización de la cita.
 
@@ -230,7 +230,7 @@ La propiedad `end` devuelve un objeto `Time`.
 
 Si usa el método [`Time.setAsync`](Time.md#setasyncdatetime-options-callback) para establecer la hora de finalización, use el método [`convertToUtcClientTime`](Office.context.mailbox.md#converttoutcclienttimeinput--date) para convertir la hora local del cliente en un valor UTC para el servidor.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   Date | [Time](Time.md)
 
@@ -263,13 +263,13 @@ Office.context.mailbox.item.end.setAsync(endTime, options, function(result) {
 });
 ```
 
-#### <a name="from-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>from :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="from-emailaddressdetailssimpletypesmdemailaddressdetails"></a>from :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Obtiene la dirección de correo electrónico del remitente de un mensaje. Solo modo Lectura.
 
 Las propiedades `from` y [`sender`](Office.context.mailbox.item.md#sender-emailaddressdetails) representan a la misma persona, a menos que un delegado envíe el mensaje. En ese caso, la propiedad `from` representa a la persona que delega y la propiedad sender representa al delegado.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -280,11 +280,11 @@ Las propiedades `from` y [`sender`](Office.context.mailbox.item.md#sender-emaila
 |[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
-#### <a name="internetmessageid-:string"></a>internetMessageId :String
+#### <a name="internetmessageid-string"></a>internetMessageId :String
 
 Obtiene el identificador de mensaje de Internet de un mensaje de correo electrónico. Solo modo Lectura.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   String
 
@@ -302,7 +302,7 @@ Obtiene el identificador de mensaje de Internet de un mensaje de correo electró
 var internetMessageId = Office.context.mailbox.item.internetMessageId;
 ```
 
-#### <a name="itemclass-:string"></a>itemClass :String
+#### <a name="itemclass-string"></a>itemClass :String
 
 Obtiene la clase de elemento Servicios Web Exchange del elemento seleccionado. Solo modo Lectura.
 
@@ -315,7 +315,7 @@ La propiedad `itemClass` especifica la clase de mensaje del elemento seleccionad
 
 Puede crear clases de mensaje personalizadas para ampliar una clase de mensaje predeterminada. Por ejemplo, puede crear una clase de mensaje de cita personalizada `IPM.Appointment.Contoso`.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   String
 
@@ -333,15 +333,15 @@ Puede crear clases de mensaje personalizadas para ampliar una clase de mensaje p
 var itemClass = Office.context.mailbox.item.itemClass;
 ```
 
-#### <a name="(nullable)-itemid-:string"></a>(nullable) itemId :String
+#### <a name="nullable-itemid-string"></a>(nullable) itemId :String
 
 Obtiene el identificador de elemento de Servicios Web Exchange para el elemento actual. Solo modo Lectura.
 
 El identificador que devuelve la propiedad `itemId` es el mismo que el identificador de elemento de Servicios Web Exchange. La propiedad `itemId` no es idéntica al identificador de entrada de Outlook.
 
-La propiedad `itemId` devuelve `null` en el modo redacción para los elementos que no se han guardado en el servidor. Si se requiere un identificador de elemento, el método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) puede usarse para guardar el elemento en el servidor, que devolverá el identificador de elemento en el parámetro [`AsyncResult.value`](simple-types.md#asyncresult) de la función de devolución de llamada.
+La propiedad `itemId` no está disponible en el modo redacción. Si se requiere un identificador de elemento, el método [`saveAsync`](Office.context.mailbox.item.md#saveasyncoptions-callback) puede usarse para guardar el elemento en el servidor, que devolverá el identificador de elemento en el parámetro [`AsyncResult.value`](simple-types.md#asyncresult) de la función de devolución de llamada.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   String
 
@@ -366,13 +366,13 @@ if (itemId === null || itemId == undefined) {
 }
 ```
 
-####  <a name="itemtype-:[office.mailboxenums.itemtype](office.mailboxenums.md#itemtype-string)"></a>itemType :[Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
+####  <a name="itemtype-officemailboxenumsitemtypeofficemailboxenumsmditemtypestring"></a>itemType :[Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
 
 Obtiene el tipo de elemento que representa una instancia.
 
 La propiedad `itemType` devuelve uno de los valores de enumeración de `ItemType`, lo que indica si la instancia del objeto `item` es un mensaje o una cita.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   [Office.MailboxEnums.ItemType](Office.MailboxEnums.md#itemtype-string)
 
@@ -393,7 +393,7 @@ else
   // do something else
 ```
 
-####  <a name="location-:string|[location](location.md)"></a>location :String|[Location](Location.md)
+####  <a name="location-stringlocationlocationmd"></a>location :String|[Location](Location.md)
 
 Obtiene o establece la ubicación de una cita.
 
@@ -405,7 +405,7 @@ La propiedad `location` devuelve una cadena que contiene la ubicación de la cit
 
 La propiedad `location` devuelve un objeto `Location` que proporciona métodos para obtener y establecer la ubicación de la cita.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   String | [Location](Location.md)
 
@@ -429,13 +429,13 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="normalizedsubject-:string"></a>normalizedSubject :String
+#### <a name="normalizedsubject-string"></a>normalizedSubject :String
 
 Obtiene el asunto de un elemento, con todos los prefijos quitados (incluidos `RE:` y `FWD:`). Solo modo Lectura.
 
 La propiedad normalizedSubject obtiene el asunto del elemento, con los prefijos estándar (como `RE:` y `FW:`) agregados por los programas de correo electrónico. Para obtener el asunto del elemento con los prefijos intactos, use la propiedad [`subject`](Office.context.mailbox.item.md#subject-stringsubject).
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   String
 
@@ -453,11 +453,11 @@ La propiedad normalizedSubject obtiene el asunto del elemento, con los prefijos 
 var normalizedSubject = Office.context.mailbox.item.normalizedSubject;
 ```
 
-####  <a name="notificationmessages-:[notificationmessages](notificationmessages.md)"></a>notificationMessages :[NotificationMessages](NotificationMessages.md)
+####  <a name="notificationmessages-notificationmessagesnotificationmessagesmd"></a>notificationMessages :[NotificationMessages](NotificationMessages.md)
 
 Obtiene los mensajes de notificación de un elemento.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   [NotificationMessages](NotificationMessages.md)
 
@@ -469,7 +469,7 @@ Obtiene los mensajes de notificación de un elemento.
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
 |[Destinatarios](Recipients.md)|
-####  <a name="optionalattendees-:array.<[emailaddressdetails](simple-types.md#emailaddressdetails)>"></a>optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>
+####  <a name="optionalattendees-arrayemailaddressdetailssimpletypesmdemailaddressdetails"></a>optionalAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>
 Obtiene o establece una lista de direcciones de correo para los asistentes opcionales.
 
 ##### <a name="read-mode"></a>Modo de lectura
@@ -480,7 +480,7 @@ La propiedad `optionalAttendees` devuelve una matriz que contiene un objeto `Ema
 
 La propiedad `optionalAttendees` devuelve un objeto `Recipients` que proporciona métodos para obtener y establecer los asistentes opcionales para una reunión.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -503,11 +503,11 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="organizer-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>organizer :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="organizer-emailaddressdetailssimpletypesmdemailaddressdetails"></a>organizer :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
 Obtiene la dirección de correo electrónico del organizador de una reunión especificada. Solo modo Lectura.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -526,7 +526,7 @@ var organizerName = Office.context.mailbox.item.organizer.displayName;
 var organizerAddress = Office.context.mailbox.item.organizer.emailAddress;
 ```
 
-####  <a name="requiredattendees-:array.<[emailaddressdetails](simple-types.md#emailaddressdetails)>|[recipients](recipients.md)"></a>requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
+####  <a name="requiredattendees-arrayemailaddressdetailssimpletypesmdemailaddressdetailsrecipientsrecipientsmd"></a>requiredAttendees :Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)>|[Recipients](Recipients.md)
 
 Obtiene o define una lista de direcciones de correo electrónico para los asistentes necesarios.
 
@@ -538,7 +538,7 @@ La propiedad `requiredAttendees` devuelve una matriz que contiene un objeto `Ema
 
 La propiedad `requiredAttendees` devuelve un objeto `Recipients` que proporciona métodos para obtener y establecer los asistentes requeridos para una reunión.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -561,11 +561,11 @@ function callback(asyncResult) {
 }
 ```
 
-#### <a name="resources-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="resources-emailaddressdetailssimpletypesmdemailaddressdetails"></a>resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
-Obtiene los recursos necesarios para una cita. Solo modo Lectura.
+Obtiene los recursos requeridos para una cita. Solo modo Lectura.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -576,13 +576,13 @@ Obtiene los recursos necesarios para una cita. Solo modo Lectura.
 |[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.0|
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
-#### <a name="sender-:[emailaddressdetails](simple-types.md#emailaddressdetails)"></a>sender :[EmailAddressDetails](simple-types.md#emailaddressdetails)
+#### <a name="sender-emailaddressdetailssimpletypesmdemailaddressdetails"></a>sender :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
-Obtiene la dirección de correo electrónico del remitente de un mensaje de correo. Solo modo Lectura.
+Obtiene la dirección de correo electrónico del remitente de un mensaje de correo electrónico. Solo modo Lectura.
 
 Las propiedades [`from`](Office.context.mailbox.item.md#from-emailaddressdetails) y `sender` representan a la misma persona, a menos que un delegado envíe el mensaje. En ese caso, la propiedad `from` representa a la persona que delega y la propiedad sender representa al delegado.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
 
@@ -601,7 +601,7 @@ var senderName = Office.context.mailbox.item.sender.displayName;
 var senderAddress = Office.context.mailbox.item.sender.emailAddress;
 ```
 
-####  <a name="start-:date|[time](time.md)"></a>start :Date|[Time](Time.md)
+####  <a name="start-datetimetimemd"></a>start :Date|[Time](Time.md)
 
 Obtiene o establece la fecha y la hora de inicio de la cita.
 
@@ -617,7 +617,7 @@ La propiedad `start` devuelve un objeto `Time`.
 
 Si usa el método [`Time.setAsync`](Time.md#setasyncdatetime-options-callback) para establecer la hora de inicio, use el método [`convertToUtcClientTime`](Office.context.mailbox.md#converttoutcclienttimeinput--date) para convertir la hora local del cliente en un valor UTC para el servidor.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   Date | [Time](Time.md)
 
@@ -650,7 +650,7 @@ Office.context.mailbox.item.start.setAsync(startTime, options, function(result) 
 });
 ```
 
-####  <a name="subject-:string|[subject](subject.md)"></a>subject :String|[Subject](Subject.md)
+####  <a name="subject-stringsubjectsubjectmd"></a>subject :String|[Subject](Subject.md)
 
 Obtiene o establece la descripción que se muestra en el campo de asunto de un elemento.
 
@@ -676,7 +676,7 @@ function callback(asyncResult) {
 }
 ```
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   String | [Subject](Subject.md)
 
@@ -699,7 +699,7 @@ La propiedad `to` devuelve una matriz que contiene un objeto `EmailAddressDetail
 
 La propiedad `to` devuelve un objeto `Recipients` que proporciona métodos para manipular los destinatarios en la línea **Para** del mensaje.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   Array.<[EmailAddressDetails](simple-types.md#emailaddressdetails)> | [Recipients](Recipients.md)
 
@@ -724,7 +724,7 @@ function callback(asyncResult) {
 
 ### <a name="methods"></a>Métodos
 
-####  <a name="addfileattachmentasync(uri,-attachmentname,-[options],-[callback])"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
+####  <a name="addfileattachmentasyncuri-attachmentname-options-callback"></a>addFileAttachmentAsync(uri, attachmentName, [options], [callback])
 
 Agrega un archivo a un mensaje o cita como datos adjuntos.
 
@@ -732,11 +732,11 @@ El método `addFileAttachmentAsync` carga el archivo en el URI especificado y lo
 
 Después, puede usar el identificador con el método [`removeAttachmentAsync`](Office.context.mailbox.item.md#removeattachmentasyncattachmentid-options-callback) para quitar los datos adjuntos en la misma sesión.
 
-##### <a name="parameters:removeattachmentasyncattachmentid-options-callback"></a>Parameters:removeattachmentasyncattachmentid-options-callback
+##### <a name="parametersremoveattachmentasyncattachmentidoptionscallback"></a>Parameters:removeattachmentasyncattachmentid-options-callback
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
 |`uri`| String||El URI que proporciona la ubicación del archivo que se va a adjuntar al mensaje o a la cita. La longitud máxima es de 2048 caracteres.|
-|`attachmentName`| String||El nombre de los datos adjuntos que se muestra mientras estos se cargan La longitud máxima es de 255 caracteres.|
+|`attachmentName`| String||El nombre de los datos adjuntos que se muestra mientras estos se cargan. La longitud máxima es de 255 caracteres.|
 |`options`| Object| &lt;optional&gt;|Un objeto literal que contiene una o más de las siguientes propiedades.<br/><br/>**Propiedades**<br/><table class="nested-table"><thead><tr><th>Nombre</th><th>Tipo</th><th>Atributos</th><th>Descripción</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Los desarrolladores pueden proporcionar cualquier objeto que quieran para tener acceso al método de devolución de llamada.</td></tr></tbody></table>|
 |`callback`| función| &lt;optional&gt;|Cuando el método finaliza, la función que se pasa en el parámetro `callback` se llama con un único parámetro, `asyncResult`, que es un objeto [`AsyncResult`](simple-types.md#asyncresult). <br/>Si se realiza correctamente, se proporcionará el identificador de los datos adjuntos en la propiedad `asyncResult.value`.<br/>Si se produce un error en la carga de los datos adjuntos, el objeto `asyncResult` contendrá un objeto `Error` que proporciona una descripción del error.<br/><table class="nested-table"><thead><tr><th>Código de error</th><th>Descripción</th></tr></thead><tbody><tr><td><code>AttachmentSizeExceeded</code></td><td>Los datos adjuntos son más grandes de lo permitido.</td></tr><tr><td><code>FileTypeNotSupported</code></td><td>Los datos adjuntos tienen una extensión que no está permitida.</td></tr><tr><td><code>NumberOfAttachmentsExceeded</code></td><td>El mensaje o cita tiene demasiados datos adjuntos.</td></tr></tbody></table>|
 
@@ -768,7 +768,7 @@ function addAttachment() {
 }
 ```
 
-####  <a name="additemattachmentasync(itemid,-attachmentname,-[options],-[callback])"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
+####  <a name="additemattachmentasyncitemid-attachmentname-options-callback"></a>addItemAttachmentAsync(itemId, attachmentName, [options], [callback])
 
 Agrega un elemento de Exchange (por ejemplo, un mensaje) como datos adjuntos al mensaje o a la cita.
 
@@ -778,12 +778,12 @@ Después, puede usar el identificador con el método [`removeAttachmentAsync`](O
 
 Si el complemento de Office se ejecuta en Outlook Web App, el método `addItemAttachmentAsync` puede adjuntar elementos a otros elementos distintos del elemento que quiere editar. No obstante, esta acción no es compatible y no se recomienda.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
-|`itemId`| String||El identificador de Exchange del elemento que quiere adjuntar. La longitud máxima es de 100 caracteres.|
-|`attachmentName`| String||El asunto del elemento que quiere adjuntar. La longitud máxima es de 255 caracteres.|
+|`itemId`| String||El identificador de Exchange del elemento que debe adjuntarse. La longitud máxima es de 100 caracteres.|
+|`attachmentName`| String||El asunto del elemento que debe adjuntarse. La longitud máxima es de 255 caracteres.|
 |`options`| Object| &lt;optional&gt;|Un objeto literal que contiene una o más de las siguientes propiedades.<br/><br/>**Propiedades**<br/><table class="nested-table"><thead><tr><th>Nombre</th><th>Tipo</th><th>Atributos</th><th>Descripción</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Los desarrolladores pueden proporcionar cualquier objeto que quieran para tener acceso al método de devolución de llamada.</td></tr></tbody></table>|
 |`callback`| función| &lt;optional&gt;|Cuando el método finaliza, la función que se pasa en el parámetro `callback` se llama con un único parámetro, `asyncResult`, que es un objeto [`AsyncResult`](simple-types.md#asyncresult). <br/>Si se realiza correctamente, se proporcionará el identificador de los datos adjuntos en la propiedad `asyncResult.value`.<br/>Si se produce un error al agregar los datos adjuntos, el objeto `asyncResult` contendrá un objeto `Error` que proporciona una descripción del error.<br/><table class="nested-table"><thead><tr><th>Código de error</th><th>Descripción</th></tr></thead><tbody><tr><td><code>NumberOfAttachmentsExceeded</code></td><td>El mensaje o cita tiene demasiados datos adjuntos.</td></tr></tbody></table>|
 
@@ -820,7 +820,7 @@ function addAttachment() {
 }
 ```
 
-####  <a name="close()"></a>close()
+####  <a name="close"></a>close()
 
 Cierra el elemento actual que se está redactando.
 
@@ -835,7 +835,7 @@ En el cliente de escritorio de Outlook, si el mensaje es una respuesta directa, 
 |[Versión del conjunto de requisitos mínimos del buzón](./tutorial-api-requirement-sets.md)| 1.3|
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restringido|
 |Modo de Outlook aplicable| Redacción|
-#### <a name="displayreplyallform(formdata)"></a>displayReplyAllForm(formData)
+#### <a name="displayreplyallformformdata"></a>displayReplyAllForm(formData)
 
 Muestra un formulario de respuesta que incluye el remitente y todos los destinatarios del mensaje seleccionado o el organizador y todos los asistentes de la cita seleccionada.
 
@@ -845,7 +845,7 @@ Si cualquiera de los parámetros de cadena supera sus límites, `displayReplyAll
 
 Cuando se especifican los datos adjuntos en el parámetro `formData.attachments`, Outlook y Outlook Web App intentan descargar todos los datos adjuntos y adjuntarlos al formulario de respuesta. Si se produce un error al agregar los datos adjuntos, se muestra un error en la interfaz de usuario del formulario. Si esto no es posible, no se produce ningún mensaje de error.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -943,7 +943,7 @@ Office.context.mailbox.item.displayReplyAllForm(
 });
 ```
 
-#### <a name="displayreplyform(formdata)"></a>displayReplyForm(formData)
+#### <a name="displayreplyformformdata"></a>displayReplyForm(formData)
 
 Muestra un formulario de respuesta que incluye solo el remitente del mensaje seleccionado o el organizador de la cita seleccionada.
 
@@ -953,7 +953,7 @@ Si cualquiera de los parámetros de cadena supera sus límites, `displayReplyFor
 
 Cuando se especifican los datos adjuntos en el parámetro `formData.attachments`, Outlook y Outlook Web App intentan descargar todos los datos adjuntos y adjuntarlos al formulario de respuesta. Si se produce un error al agregar los datos adjuntos, se muestra un error en la interfaz de usuario del formulario. Si esto no es posible, no se produce ningún mensaje de error.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -1051,7 +1051,7 @@ Office.context.mailbox.item.displayReplyForm(
 });
 ```
 
-#### <a name="getentities()-→-{[entities](simple-types.md#entities)}"></a>getEntities() → {[Entities](simple-types.md#entities)}
+#### <a name="getentities-entitiessimpletypesmdentities"></a>getEntities() → {[Entities](simple-types.md#entities)}
 
 Obtiene las entidades que se encuentran en el elemento seleccionado.
 
@@ -1063,7 +1063,7 @@ Obtiene las entidades que se encuentran en el elemento seleccionado.
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
 
-##### <a name="returns:"></a>Valores devueltos:
+##### <a name="returns"></a>Valores devueltos:
 
 Tipo: 
 [Entidades](simple-types.md#entities)
@@ -1076,11 +1076,11 @@ En el ejemplo siguiente, se tiene acceso a las entidades de contactos del artíc
 var contacts = Office.context.mailbox.item.getEntities().contacts;
 ```
 
-#### <a name="getentitiesbytype(entitytype)-→-(nullable)-{array.<(string|[contact](simple-types.md#contact)|[meetingsuggestion](simple-types.md#meetingsuggestion)|[phonenumber](simple-types.md#phonenumber)|[tasksuggestion](simple-types.md#tasksuggestion))>}"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
+#### <a name="getentitiesbytypeentitytype-nullable-arraystringcontactsimpletypesmdcontactmeetingsuggestionsimpletypesmdmeetingsuggestionphonenumbersimpletypesmdphonenumbertasksuggestionsimpletypesmdtasksuggestion"></a>getEntitiesByType(entityType) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
 Obtiene una matriz de todas las entidades del tipo de entidad especificado presentes en el elemento seleccionado.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -1094,7 +1094,7 @@ Obtiene una matriz de todas las entidades del tipo de entidad especificado prese
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restringido|
 |Modo de Outlook aplicable| Lectura|
 
-##### <a name="returns:"></a>Valores devueltos:
+##### <a name="returns"></a>Valores devueltos:
 
 Si el valor que se pasa a `entityType` no es un miembro válido de la enumeración de `EntityType`, el método devuelve un valor NULL. Si no está presente ninguna entidad del tipo especificado en el elemento, el método devuelve una matriz vacía. De otro modo, el tipo de los objetos en la matriz devuelta depende del tipo de entidad solicitada en el parámetro `entityType`.
 
@@ -1102,13 +1102,13 @@ Aunque el nivel de permiso mínimo para usar este método es **Restricted**, alg
 
 | Valor de `entityType` | Tipo de objetos de la matriz devuelta | Nivel de permiso requerido |
 | --- | --- | --- |
-| `Address` | String | **Restringido** |
+| `Address` | Cadena | **Restringido** |
 | `Contact` | Contacto | **ReadItem** |
-| `EmailAddress` | String | **ReadItem** |
+| `EmailAddress` | Cadena | **ReadItem** |
 | `MeetingSuggestion` | MeetingSuggestion | **ReadItem** |
 | `PhoneNumber` | PhoneNumber | **Restringido** |
 | `TaskSuggestion` | TaskSuggestion | **ReadItem** |
-| `URL` | String | **Restringido** |
+| `URL` | Cadena | **Restringido** |
 
 Tipo: Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
 
@@ -1130,13 +1130,13 @@ Office.initialize = function () {
 }
 ```
 
-#### <a name="getfilteredentitiesbyname(name)-→-(nullable)-{array.<(string|[contact](simple-types.md#contact)|[meetingsuggestion](simple-types.md#meetingsuggestion)|[phonenumber](simple-types.md#phonenumber)|[tasksuggestion](simple-types.md#tasksuggestion))>}"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
+#### <a name="getfilteredentitiesbynamename-nullable-arraystringcontactsimpletypesmdcontactmeetingsuggestionsimpletypesmdmeetingsuggestionphonenumbersimpletypesmdphonenumbertasksuggestionsimpletypesmdtasksuggestion"></a>getFilteredEntitiesByName(name) → (nullable) {Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>}
 
 Devuelve entidades conocidas en el elemento seleccionado que pasan el filtro con nombre definido en el archivo XML de manifiesto.
 
 El método `getFilteredEntitiesByName` devuelve las entidades que coinciden con la expresión regular definida en el elemento de regla [ItemHasKnownEntity](https://msdn.microsoft.com/en-us/library/office/fp161166.aspx) del archivo XML de manifiesto con el valor de elemento `FilterName` especificado.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -1150,14 +1150,14 @@ El método `getFilteredEntitiesByName` devuelve las entidades que coinciden con 
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
 
-##### <a name="returns:"></a>Valores devueltos:
+##### <a name="returns"></a>Valores devueltos:
 
 Si no existe ningún elemento `ItemHasKnownEntity` en el manifiesto con un valor de elemento `FilterName` que coincida con el parámetro `name`, el método devuelve `null`. Si el parámetro `name` no coincide con un elemento `ItemHasKnownEntity` del manifiesto, pero no existen entidades en el elemento actual que coincidan, el método devuelve una matriz vacía.
 
 Tipo: 
 Array.<(String|[Contact](simple-types.md#contact)|[MeetingSuggestion](simple-types.md#meetingsuggestion)|[PhoneNumber](simple-types.md#phonenumber)|[TaskSuggestion](simple-types.md#tasksuggestion))>
 
-#### <a name="getregexmatches()-→-{object}"></a>getRegExMatches() → {Object}
+#### <a name="getregexmatches-object"></a>getRegExMatches() → {Object}
 
 Devuelve valores de cadena en el elemento seleccionado que coinciden con las expresiones regulares definidas en el archivo XML de manifiesto.
 
@@ -1194,7 +1194,7 @@ Si especifica una regla `ItemHasRegularExpressionMatch` en la propiedad body de 
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
 
-##### <a name="returns:"></a>Valores devueltos:
+##### <a name="returns"></a>Valores devueltos:
 
 Un objeto que contiene matrices de cadenas que coinciden con las expresiones regulares definidas en el archivo XML de manifiesto. El nombre de cada matriz es igual al valor correspondiente del atributo `RegExName` de la regla `ItemHasRegularExpressionMatch` coincidente o al atributo `FilterName` de la regla `ItemHasKnownEntity` coincidente.
 
@@ -1216,7 +1216,7 @@ var fruits = allMatches.fruits;
 var veges = allMatches.veggies;
 ```
 
-#### <a name="getregexmatchesbyname(name)-→-(nullable)-{array.<string>}"></a>getRegExMatchesByName(name) → (nullable) {Array.<String>}
+#### <a name="getregexmatchesbynamename-nullable-arraystring"></a>getRegExMatchesByName(name) → (nullable) {Array.<String>}
 
 Devuelve valores de cadena en el elemento seleccionado que coinciden con la expresión regular de nombre definida en el archivo XML de manifiesto.
 
@@ -1224,7 +1224,7 @@ El método `getRegExMatchesByName` devuelve las cadenas que coinciden con la exp
 
 Si especifica una regla `ItemHasRegularExpressionMatch` en la propiedad body de un elemento, la expresión regular debe filtrar aún más el cuerpo y no debe intentar devolver todo el cuerpo del elemento. Usar una expresión regular como `.*` para obtener todo el cuerpo de un elemento no siempre devuelve los resultados esperados.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -1238,7 +1238,7 @@ Si especifica una regla `ItemHasRegularExpressionMatch` en la propiedad body de 
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Lectura|
 
-##### <a name="returns:"></a>Valores devueltos:
+##### <a name="returns"></a>Valores devueltos:
 
 Una matriz que contiene las cadenas que coinciden con la expresión regular definida en el archivo XML de manifiesto.
 
@@ -1257,13 +1257,13 @@ var fruits = Office.context.mailbox.item.getRegExMatchesByName("fruits");
 var veggies = Office.context.mailbox.item.getRegExMatchesByName("veggies");
 ```
 
-####  <a name="getselecteddataasync(coerciontype,-[options],-callback)-→-{string}"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
+####  <a name="getselecteddataasynccoerciontype-options-callback-string"></a>getSelectedDataAsync(coercionType, [options], callback) → {String}
 
 Devuelve asincrónicamente datos seleccionados desde el asunto o el cuerpo de un mensaje.
 
 Si no hay ninguna selección, pero el cursor está en el cuerpo o el asunto, el método devuelve null para los datos seleccionados. Si se selecciona un campo que no sea el cuerpo o el asunto, el método devuelve el error `InvalidSelection`.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -1281,7 +1281,7 @@ Para tener acceso a los datos seleccionados desde el método de devolución de l
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadWriteItem|
 |Modo de Outlook aplicable| Redacción|
 
-##### <a name="returns:"></a>Valores devueltos:
+##### <a name="returns"></a>Valores devueltos:
 
 Los datos seleccionados como cadena con formato determinado por `coercionType`.
 
@@ -1313,13 +1313,13 @@ function setCallback(asyncResult) {
 }
 ```
 
-####  <a name="loadcustompropertiesasync(callback,-[usercontext])"></a>loadCustomPropertiesAsync(callback, [userContext])
+####  <a name="loadcustompropertiesasynccallback-usercontext"></a>loadCustomPropertiesAsync(callback, [userContext])
 
 Carga de forma asincrónica las propiedades personalizadas de este complemento en el elemento seleccionado.
 
 Las propiedades personalizadas se almacenan como pares de clave/valor según la aplicación y el elemento. Este método devuelve un objeto `CustomProperties` en la devolución de llamada, que proporciona métodos para tener acceso a las propiedades personalizadas específicas del elemento y el complemento actual. Las propiedades personalizadas no están cifradas en el elemento, por lo que no debería usarse como almacenamiento seguro.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -1363,17 +1363,17 @@ function saveCallback(asyncResult) {
 }
 ```
 
-####  <a name="removeattachmentasync(attachmentid,-[options],-[callback])"></a>removeAttachmentAsync(attachmentId, [options], [callback])
+####  <a name="removeattachmentasyncattachmentid-options-callback"></a>removeAttachmentAsync(attachmentId, [options], [callback])
 
 Quita los datos adjuntos de un mensaje o cita.
 
 El método `removeAttachmentAsync` quita del elemento los datos adjuntos con el identificador especificado. Como práctica recomendada, debe usar el identificador de datos adjuntos para quitar datos adjuntos solo si la misma aplicación de correo ha agregado los datos adjuntos en la misma sesión. En Outlook Web App y OWA para los dispositivos, el identificador de datos adjuntos es válido solo en la misma sesión. Una sesión finaliza cuando el usuario cierra la aplicación, o si el usuario comienza a redactar en un formulario en línea y posteriormente se extrae el formulario en línea para continuar en una ventana independiente.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
-|`attachmentId`| String||El identificador de los datos adjuntos para quitar. La longitud máxima de la cadena es de 100 caracteres.|
+|`attachmentId`| String||El identificador de los datos adjuntos que se deben quitar. La longitud máxima de la cadena es de 100 caracteres.|
 |`options`| Object| &lt;optional&gt;|Un objeto literal que contiene una o más de las siguientes propiedades.<br/><br/>**Propiedades**<br/><table class="nested-table"><thead><tr><th>Nombre</th><th>Tipo</th><th>Atributos</th><th>Descripción</th></tr></thead><tbody><tr><td><code>asyncContext</code></td><td>Object</td><td>&lt;optional&gt;</td><td>Los desarrolladores pueden proporcionar cualquier objeto que quieran para tener acceso al método de devolución de llamada.</td></tr></tbody></table>|
 |`callback`| función| &lt;optional&gt;|Cuando el método finaliza, la función que se pasa en el parámetro `callback` se llama con un único parámetro, `asyncResult`, que es un objeto [`AsyncResult`](simple-types.md#asyncresult). <br/>Si se produce un error en la eliminación de los datos adjuntos, la propiedad `asyncResult.error` contendrá un código de error con el motivo del error.<br/><table class="nested-table"><thead><tr><th>Código de error</th><th>Descripción</th></tr></thead><tbody><tr><td><code>InvalidAttachmentId</code></td><td>El identificador de datos adjuntos no existe.</td></tr></tbody></table>|
 
@@ -1400,13 +1400,13 @@ Office.context.mailbox.item.removeAttachmentAsync(
 );
 ```
 
-####  <a name="saveasync([options],-callback)"></a>saveAsync([options], callback)
+####  <a name="saveasyncoptions-callback"></a>saveAsync([options], callback)
 
 Guarda un elemento de forma asincrónica.
 
 Cuando se invoca, este método guarda el mensaje actual como un borrador y devuelve el identificador de elemento a través del método de devolución de llamada. En el modo en línea de Outlook Web App o Outlook, el elemento se guarda en el servidor. En modo en caché de Outlook, se guarda el elemento en la caché local.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -1441,11 +1441,11 @@ A continuación, se muestra un ejemplo del parámetro `result` que se ha pasado 
 }
 ```
 
-####  <a name="setselecteddataasync(data,-[options],-callback)"></a>setSelectedDataAsync(data, [options], callback)
+####  <a name="setselecteddataasyncdata-options-callback"></a>setSelectedDataAsync(data, [options], callback)
 
 Inserta asincrónicamente datos en el cuerpo o el asunto de un mensaje.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|

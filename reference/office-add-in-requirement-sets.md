@@ -1,5 +1,5 @@
 
-# <a name="office-add-in-requirement-sets"></a>Conjuntos de requisitos de complementos de Office
+# <a name="office-addin-requirement-sets"></a>Conjuntos de requisitos de complementos de Office
 
 Los conjuntos de requisitos son grupos con nombre de miembros de la API. Los complementos de Office usan conjuntos de requisitos especificados en el manifiesto o una comprobación en tiempo de ejecución para determinar si un host de Office es compatible con las API que necesita el complemento. Para obtener más información, consulte [Especificar los hosts de Office y los requisitos de la API](../docs/overview/specify-office-hosts-and-api-requirements.md).
 
@@ -23,7 +23,7 @@ Para obtener información sobre los conjuntos de requisitos para Outlook, consul
 | CompressedFile    | 1.1 |PowerPoint<br>Word 2013 y posterior<br>Word 2016 para Mac<br>Word Online<br>Word para iPad<br/>Excel Online<br/>PowerPoint Online|Admite salida al formato Office Open XML (OOXML) como una matriz de bytes<br>(Office.FileType.Compressed) cuando se usa el método Document.getFileAsync.|
 | CustomXmlParts    | 1.1 |Word 2013 y posterior<br>Word 2016 para Mac<br>Word Online<br>Word para iPad|CustomXmlNode.getNodesAsync<br>CustomXmlNode.getNodeValueAsync<br>CustomXmlNode.getXmlAsync<br>CustomXmlNode.setNodeValueAsync<br>CustomXmlNode.setXmlAsync<br>CustomXmlPart.addHandlerAsync<br>CustomXmlPart.deleteAsync<br>CustomXmlPart.getNodesAsync<br>CustomXmlPart.getXmlAsync<br>CustomXmlPart.removeHandlerAsync<br>CustomXmlParts.addAsync<br>CustomXmlParts.getByIdAsync<br>CustomXmlParts.getByNamespaceAsync<br>CustomXmlPrefixMappings.addNamespaceAsync<br>CustomXmlPrefixMappings.getNamespaceAsync<br>CustomXmlPrefixMappings.getPrefixAsync|
 | DialogAPI | 1.1 | Excel<br>PowerPoint<br>Word 2016<br>Outlook|Office.context.ui.displayDialogAsync()<br>Office.context.ui.messageParent()<br>Office.context.ui.close()|
-| DocumentEvents    | 1.1 | Excel<br>Excel Online<br>PowerPoint<br>Word 2013 y posterior<br>Word 2016 para Mac<br>Word Online<br>Word para iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
+| DocumentEvents    | 1.1 | Excel<br>Excel Online<br>PowerPoint Online<br>Word 2013 y posterior<br>Word 2016 para Mac<br>Word Online<br>Word para iPad|Document.addHandlerAsync<br>Document.removeHandlerAsync|
 | Archivo  | 1.1 | PowerPoint<br>Word 2013 y posterior<br>Word 2016 para Mac<br>Word Online<br>Word para iPad<br>PowerPoint Online|Document.getFileAsync<br>File.closeAsync<br>File.getSliceAsync|
 | HtmlCoercion  | 1.1 | Word 2013 y posterior<br>Word 2016 para Mac<br>Word Online<br>Word para iPad|Admite la coerción a HTML (Office.CoercionType.Html) al leer y escribir datos mediante los métodos Document.getSelectedDataAsync,<br>Document.setSelectedDataAsync, Binding.getDataAsync o Binding.setDataAsync.|
 | ImageCoercion | 1.1 | Word 2013 y posterior<br>Word 2016 para Mac<br>Word Online<br>Word para iPad|Admite la conversión a una imagen (Office.CoercionType.Image) al escribir datos mediante el método Document.setSelectedDataAsync.|
@@ -41,7 +41,7 @@ Para obtener información sobre los conjuntos de requisitos para Outlook, consul
 | TextCoercion  | 1.1 | Excel<br>Excel Online<br>PowerPoint<br>Project<br>Word 2013 y posterior<br>Word 2016 para Mac<br>Word Online<br>Word para iPad|Admite la coerción al formato de texto (Office.CoercionType.Text) cuando se leen y escriben datos con los métodos Document.getSelectedDataAsync, Document.setSelectedDataAsync, Binding.getDataAsync o Binding.setDataAsync.|
 | TextFile  | 1.1 | Word 2013 y posterior<br>Word 2016 para Mac<br>Word Online<br>Word para iPad<br/>|Admite salida en formato de texto (Office.FileType.Text) cuando se usa el método Document.getFileAsync.|
 
-## <a name="methods-that-aren't-part-of-a-requirement-set"></a>Métodos no incluidos en un conjunto de requisitos
+## <a name="methods-that-arent-part-of-a-requirement-set"></a>Métodos no incluidos en un conjunto de requisitos
 
 
 Los siguientes métodos de la API de JavaScript para Office no forman parte de ningún conjunto de requisitos. Si el complemento necesita cualquiera de estos métodos, use los elementos **Methods** y **Method** del manifiesto del complemento para declarar que son necesarios o realice la comprobación en tiempo de ejecución mediante una instrucción if. Para obtener más información, consulte [Especificar los hosts de Office y los requisitos de la API](../docs/overview/specify-office-hosts-and-api-requirements.md).

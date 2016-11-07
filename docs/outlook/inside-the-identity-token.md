@@ -6,12 +6,12 @@ Descubra qué hay dentro de un token de identidad de Exchange 2013.
 
 El token de identidad de autenticación que envía el servidor Exchange al complemento de Outlook es opaco para el complemento. No debe examinar el contenido del token para enviarlo al servidor, pero cuando escriba el código del servicio web que interactúa con el complemento de Outlook, necesitará saber qué hay dentro del token de identidad.
 
-## <a name="what-is-an-identity-token?"></a>¿Qué es un token de identidad?
+## <a name="what-is-an-identity-token"></a>¿Qué es un token de identidad?
 
 
 Un token de identidad es una cadena con codificación URL base64 que está autofirmada por el servidor Exchange que la envió. El token no está cifrado, y la clave pública que usa para validar la firma se almacena en el servidor Exchange que emitió el token. El token tiene tres partes: un encabezado, una carga y una firma. En la cadena del token, las partes están separadas por el carácter "." para facilitar la tarea de división del token.
 
-Exchange 2013 usa un token web JSON (JWT) para el token de identidad. Para obtener información sobre tokens JWT, consulte el [borrador de Internet del token web JSON (JWT)](http://self-issued.info/docs/draft-goland-json-web-token-00.html).
+Exchange 2013 usa un token web JSON (JWT) para el token de identidad. Para obtener información sobre tokens JWT, consulte el [borrador de Internet del token web JSON (JWT)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html).
 
 
 ### <a name="identity-token-header"></a>Encabezado del token de identidad
