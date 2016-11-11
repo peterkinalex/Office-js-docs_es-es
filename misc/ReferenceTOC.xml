@@ -47,8 +47,8 @@
     
 	<Item text="SupportUrl" url="manifest/supporturl" SEODescription="Especifica la dirección URL de una página que proporciona información de soporte para su complemento." />
     <Item text="TabletSettings" url="manifest/tabletsettings" Scope="outlook" SEODescription="Especifica la configuración de control que se aplica cuando su complemento de correo se usa en una tableta." />
-    <Item text="Elemento TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="Define un dialecto compatible con este diccionario, representado como una cadena de nombre de referencia cultural." />
-    <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="Define los dialectos compatibles con este diccionario." />
+    <Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="Define una variedad regional admitida por este diccionario, representada como una cadena de nombre de referencia cultural." />
+    <Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="Define las variedades regionales admitidas por este diccionario." />
     <Item text="Versión" url="manifest/version" SEODescription="Especifica la versión de su complemento de Office." />
 	<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="Elemento raíz que contiene la información de los comandos del complemento implementados por el complemento."> 
 		<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="Especifica la acción que se realiza cuando el usuario selecciona los controles Button o Menu" />
@@ -139,7 +139,7 @@
     <Item text="TableRowCollection" url="excel/tablerowcollection" SEODescription="Representa una colección de todas las filas que forman parte de la tabla." />
     <Item text="TableSort" url="excel/tablesort" SEODescription="Administra operaciones de ordenación en objetos Table." />
     <Item text="TrackedObjectsCollection" url="excel/trackedobjectscollection" SEODescription="Permite que los complementos administren las referencias de objeto de intervalo en lotes sync()." />
-    <Item text="Workbook" url="excel/workbook" SEODescription="Contiene los objetos de libro relacionados, como hojas de cálculo, tablas, intervalos, etc." />
+    <Item text="Libro" url="excel/workbook" SEODescription="Contiene los objetos de libro relacionados, como hojas de cálculo, tablas, intervalos, etc." />
     <Item text="Worksheet" url="excel/worksheet" SEODescription="Representa una cuadrícula de celdas que contienen datos, tablas y gráficos." />
     <Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="Representa una colección de objetos de hoja de cálculo que forman parte del libro." />
     <Item text="WorksheetFunctions" url="excel/functions" SEODescription="Se usa como contenedor de las funciones de hoja de cálculo de Excel que pueden llamarse a través de JavaScript o REST." />

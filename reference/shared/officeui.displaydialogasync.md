@@ -1,4 +1,4 @@
-# <a name="ui.displaydialogasync-method"></a>Método UI.displayDialogAsync
+# <a name="uidisplaydialogasync-method"></a>Método UI.displayDialogAsync
 
 Muestra un cuadro de diálogo en un host de Office. 
 
@@ -51,9 +51,16 @@ Office.context.ui.displayDialogAsync(startAddress, options, callback);
 ```
 ##<a name="examples"></a>Ejemplos
 
-Para ver un ejemplo simple que usa el método **displayDialogAsync**, consulte [Office Add-in Dialog API example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/) (Ejemplo del complemento de Office Dialog API) en GitHub.
+Para ver un ejemplo sencillo que usa el método **displayDialogAsync**, consulte [Office Add-in Dialog API example](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example/) (Ejemplo del complemento de Office Dialog API) en GitHub.
 
-Para ver un ejemplo que muestra un escenario de autenticación, consulte el ejemplo [Office Add-in Office 365 Client Authentication for AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth) (Complemento de Office para autenticación de cliente de Office 365 para AngularJS) en GitHub.
+Para ver un ejemplo que muestre escenarios de autenticación, consulte:
+
+- [Complemento de PowerPoint en gráfico de inserción de Microsoft Graph ASP.Net](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
+- [Complemento de Office Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Complemento de Excel ASP.NET QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
+- [Ejemplo de autenticación de servidor de complementos de Office para ASP.net MVC](https://github.com/dougperkes/Office-Add-in-AspNetMvc-ServerAuth/tree/Office2016DisplayDialog)
+- [Autenticación de cliente de Office 365 de complementos de Office para AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth)
+
 
  
 ## <a name="parameters"></a>Parámetros
@@ -72,7 +79,7 @@ Las opciones de configuración siguientes están disponibles para un cuadro de d
 |:---------------|:--------|:----------|
 |**width**|object|Opcional. Define el ancho del cuadro de diálogo como porcentaje de la pantalla actual. El valor predeterminado es 80 %. La resolución mínima es de 250 píxeles.|
 |**height**|object|Opcional. Define la altura del cuadro de diálogo como porcentaje de la pantalla actual. El valor predeterminado es 80 %. La resolución mínima es de 150 píxeles.|
-|**displayInIframe**|objeto|Opcional. Determina si se debe mostrar el cuadro de diálogo dentro de un IFrame en clientes de Office Online. Esta configuración se omite por los clientes de escritorio. Los valores posibles son:<ul><li>falso (predeterminado): se mostrará el cuadro de diálogo como una nueva ventana de explorador (elemento emergente). Se recomienda para las páginas de autenticación que no se pueden mostrar en un IFrame. </li><li>verdadero: se mostrará el cuadro de diálogo como una superposición flotante con un IFrame. Es la mejor opción para mejorar el rendimiento y la experiencia del usuario.</li>|
+|**displayInIframe**|object|Opcional. Determina si se debe mostrar el cuadro de diálogo dentro de un IFrame en clientes de Office Online. Esta configuración se omite por los clientes de escritorio. Los valores posibles son:<ul><li>falso (predeterminado): se mostrará el cuadro de diálogo como una nueva ventana de explorador (elemento emergente). Se recomienda para las páginas de autenticación que no se pueden mostrar en un IFrame. </li><li>verdadero: se mostrará el cuadro de diálogo como una superposición flotante con un IFrame. Es la mejor opción para mejorar el rendimiento y la experiencia del usuario.</li>|
 
 
 ## <a name="callback-value"></a>Valor de devolución de llamada
@@ -87,7 +94,18 @@ En la función de devolución de llamada que se ha remitido al método **display
 |[AsyncResult.value](../../reference/shared/asyncresult.value.md)|Acceso al objeto [Dialog](../../reference/shared/officeui.dialog.md).|
 |[AsyncResult.status](../../reference/shared/asyncresult.status.md)|Determinar si la operación se ha completado correctamente o no.|
 |[AsyncResult.error](../../reference/shared/asyncresult.error.md)|Tener acceso a un objeto [Error](../../reference/shared/error.md) que proporcione información sobre el error si la operación no se ha llevado a cabo correctamente.|
-|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Acceda al valor o al objeto definidos por el usuario si ha remitido uno como parámetro _asyncContext_.|
+|[AsyncResult.asyncContext](../../reference/shared/asyncresult.asynccontext.md)|Acceda al valor u objeto definidos por el usuario si ha pasado uno como parámetro _asyncContext_.|
+
+### <a name="errors-from-displaydialogasync"></a>Errores de displayDialogAsync
+
+Además de los errores del sistema y de la plataforma en general, los siguientes errores son específicos para llamar a **displayDialogAsync**.
+
+|**Número de código**|**Significado**|
+|:-----|:-----|
+|12004|El dominio de la dirección URL pasado a `displayDialogAsync` no es de confianza. El dominio debe estar en el mismo dominio que la página de host (incluido el número de protocolo y de puerto), o debe registrarse en la sección `<AppDomains>` del manifiesto del complemento.|
+|12005|La dirección URL pasada a `displayDialogAsync` utiliza el protocolo HTTP. Se necesita HTTPS. (En algunas versiones de Office, el mensaje de error devuelto con 12005 es el mismo devuelto para 12004).|
+|12007|Ya hay un cuadro de diálogo abierto en el panel de tareas. Un complemento de panel de tareas solo puede tener abierto un cuadro de diálogo al mismo tiempo.|
+
 
 
 ## <a name="design-considerations"></a>Consideraciones sobre diseño

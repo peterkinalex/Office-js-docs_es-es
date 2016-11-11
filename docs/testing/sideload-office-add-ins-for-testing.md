@@ -1,15 +1,18 @@
 
-# <a name="sideload-office-add-ins-in-office-online-for-testing"></a>Transferir localmente complementos de Office en Office Online para pruebas
+# <a name="sideload-office-addins-in-office-online-for-testing"></a>Transferir localmente complementos de Office en Office Online para pruebas
 
 Puede instalar un complemento de Office para realizar pruebas sin tener que colocarlo primero en un catálogo de complementos con una instalación de prueba. La instalación de prueba se puede realizar en Office 365 o en Office Online. El procedimiento es ligeramente distinto para las dos plataformas. 
 
 Cuando se transfiere localmente un complemento, el manifiesto de este se almacena en el almacenamiento local del navegador, por lo que si se quiere borrar el caché del navegador o cambiar a un navegador diferente, el complemento se debe transferir localmente de nuevo.
 
 
- >**Nota**  Sideloading as described in this article is supported on Word, Excel, and PowerPoint. To sideload an Outlook add-in, see [Transferir localmente complementos de Outlook para pruebas](sideload-outlook-add-ins-for-testing.md).
+ >**Nota:**  La transferencia local tal y como se describe en este artículo se admite en Word, Excel y PowerPoint. Para transferir de forma local un complemento de Outlook, consulte [Transferir localmente complementos de Outlook para pruebas](sideload-outlook-add-ins-for-testing.md).
 
+En el siguiente vídeo, se le guiará por el proceso de transferir de forma local el complemento en Office Online o en la aplicación de escritorio de Office.
 
-## <a name="sideload-an-office-add-in-on-office-365"></a>Sideload an Office Add-in on Office 365
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
+
+## <a name="sideload-an-office-addin-on-office-365"></a>Transferencia local de un complemento de Office en Office 365
 
 
 1. Inicie sesión en su cuenta de Office 365.
@@ -29,7 +32,7 @@ Cuando se transfiere localmente un complemento, el manifiesto de este se almacen
 6. Verify that your complemento is installed. For example, if it is an add-in command, it should appear on either the ribbon or the context menu. If it is a task pane add-in the pane should appear.
     
 
-## <a name="sideload-an-office-add-in-on-office-online"></a>Transferir localmente un complemento de Office en Office Online
+## <a name="sideload-an-office-addin-on-office-online"></a>Transferir localmente un complemento de Office en Office Online
 
 
 

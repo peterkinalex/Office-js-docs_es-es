@@ -1,11 +1,11 @@
 
 # <a name="targetdialect-element"></a>Elemento TargetDialect
- Define un dialecto compatible con este diccionario, representado como una cadena de nombre de referencia cultural.
+ Define una variedad regional admitida por este diccionario, representada como una cadena de nombre de referencia cultural.
 
  **Tipo de complemento:** Panel de tareas
 
 
-## <a name="syntax:"></a>Sintaxis:
+## <a name="syntax"></a>Sintaxis:
 
 
 ```XML
@@ -15,7 +15,7 @@
 ```
 
 
-## <a name="contained-in:"></a>Forma parte de:
+## <a name="contained-in"></a>Forma parte de:
 
 [TargetDialects](../../reference/manifest/targetdialects.md)
 

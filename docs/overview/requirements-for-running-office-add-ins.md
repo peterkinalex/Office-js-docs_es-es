@@ -38,7 +38,7 @@ Para desarrollar un Complemento de Office, se necesita el siguiente software en 
 
 - Internet Explorer 11 o posterior, que debe estar instalado, pero no tiene por qué ser el explorador predeterminado. Para admitir los complementos de Office, el cliente de Office que actúa como host utiliza componentes de explorador que forman parte de Internet Explorer 11 o posterior.
 
-- Uno de los siguientes como el explorador predeterminado: Internet Explorer 11 o posterior, o la versión más reciente de Edge, Chrome, Firefox o Safari (Mac OS).
+- Uno de los exploradores siguientes como explorador predeterminado: Internet Explorer 11 o posterior, o la versión más reciente de Microsoft Edge, Chrome, Firefox o Safari (Mac OS).
 
 - Un editor de HTML y JavaScript, como el Bloc de notas, [Visual Studio y Microsoft Developer Tools](https://www.visualstudio.com/features/office-tools-vs) o una herramienta de desarrollo web de terceros.
 
@@ -54,7 +54,7 @@ Estas son las versiones mínimas del cliente de Office para Mac que admiten comp
 
 ## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Requisitos del cliente: Compatibilidad del explorador con clientes web de Office Online y SharePoint
 
-Cualquier explorador que admita ECMAScript 5.1, HTML5 y CSS3, como Internet Explorer 11 o posterior, o la última versión de Edge, Chrome, Firefox o Safari (Mac OS).
+Cualquier explorador que admita ECMAScript 5.1, HTML5 y CSS3, como Internet Explorer 11 o posterior, o la versión más reciente de Microsoft Edge, Chrome, Firefox o Safari (Mac OS).
 
 
 ## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>Requisitos de cliente: smartphones y tabletas sin Windows
