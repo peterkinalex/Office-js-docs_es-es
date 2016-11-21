@@ -1,4 +1,4 @@
-# <a name="uidisplaydialogasync-method"></a>Método UI.displayDialogAsync
+﻿# <a name="uidisplaydialogasync-method"></a>Método UI.displayDialogAsync
 
 Muestra un cuadro de diálogo en un host de Office. 
 
@@ -38,7 +38,8 @@ Para detectar esta API en tiempo de ejecución, use el siguiente código.
 ### <a name="supported-platforms"></a>Plataformas compatibles
 El conjunto de requisitos de DialogAPI actualmente es compatible con las siguientes plataformas:
 
-  - Office 2016 para escritorio de Windows (versión 16.0.6741.0000 o posteriores)
+  - Office 2013 para escritorio de Windows (compilación 15.0.4855.1000 o posteriores)
+  - Office 2016 para escritorio de Windows (compilación 16.0.6741.0000 o posteriores)
   - Office para IPad (versión 1.22 o posteriores)
   - Office para Mac (versión 15.20 o posteriores) 
 
@@ -67,7 +68,7 @@ Para ver un ejemplo que muestre escenarios de autenticación, consulte:
 
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|startAddress|cadena|Acepta la dirección URL HTTPS(TLS) inicial que se abre en el cuadro de diálogo. <ul><li>La página inicial debe estar en el mismo dominio que la página primaria. Después de cargar la página inicial, puede ir a otros dominios.</li><li>Cualquier página que llame a [office.context.ui.messageParent](officeui.messageparent.md) también debe estar en el mismo dominio que la página principal.</li></ul>|
+|startAddress|string|Acepta la dirección URL HTTPS(TLS) inicial que se abre en el cuadro de diálogo. <ul><li>La página inicial debe estar en el mismo dominio que la página primaria. Después de cargar la página inicial, puede ir a otros dominios.</li><li>Cualquier página que llame a [office.context.ui.messageParent](officeui.messageparent.md) también debe estar en el mismo dominio que la página principal.</li></ul>|
 |options|object|Opcional. Acepta un objeto de opciones para definir los comportamientos de los cuadros de diálogo.|
 |callback|objeto|Acepta un método de devolución de llamada para controlar el intento de creación de cuadro de diálogo.|
     

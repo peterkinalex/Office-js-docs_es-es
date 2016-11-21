@@ -28,9 +28,9 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 **Hosts compatibles, por plataforma**
 
 
-||**Office para escritorio de Windows**|**Office Online (en el explorador)**|**Office para iPad**|
-|:-----|:-----|:-----|:-----|
-|**PowerPoint**|v||v|
+||**Office para escritorio de Windows**|**Office Online (en el explorador)**|**Office para Mac**|**Office para iPad**|
+|:-----|:-----|:-----|:-----|:-----|
+|**PowerPoint**|v||v|v|
 
 |||
 |:-----|:-----|

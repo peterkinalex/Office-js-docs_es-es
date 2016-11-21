@@ -87,6 +87,7 @@
     <Item text="SearchResultCollection" url="word/searchresultcollection" FriendlyUrl="word/referencesearchresultcollection" Scope="word" SEODescription="Contiene una colección de objetos de intervalo como resultado de una operación de búsqueda." />
     <Item text="Sección" url="word/section" FriendlyUrl="word/referencesection" Scope="word" SEODescription="Representa una sección de un documento de Word." />
     <Item text="SectionCollection" url="word/sectioncollection" FriendlyUrl="word/referencesectioncollection" Scope="word" SEODescription="Contiene la colección de objetos de sección del documento." />
+	<Item text="Conjuntos de requisitos de la API de JavaScript de Word" url="requirement-sets/word-api-requirement-sets" Scope="word" SEODescription="Obtenga información sobre los conjuntos de requisitos de Word, las aplicaciones de host de Office que admiten ese conjunto de requisitos y la compilación o números de versión de esas aplicaciones." />
   </Item>
   
   <Item text="Excel" url="excel" Scope="excel">
@@ -140,10 +141,11 @@
     <Item text="TableSort" url="excel/tablesort" SEODescription="Administra operaciones de ordenación en objetos Table." />
     <Item text="TrackedObjectsCollection" url="excel/trackedobjectscollection" SEODescription="Permite que los complementos administren las referencias de objeto de intervalo en lotes sync()." />
     <Item text="Libro" url="excel/workbook" SEODescription="Contiene los objetos de libro relacionados, como hojas de cálculo, tablas, intervalos, etc." />
-    <Item text="Worksheet" url="excel/worksheet" SEODescription="Representa una cuadrícula de celdas que contienen datos, tablas y gráficos." />
+    <Item text="Hoja de cálculo" url="excel/worksheet" SEODescription="Representa una cuadrícula de celdas que contienen datos, tablas y gráficos." />
     <Item text="WorksheetCollection" url="excel/worksheetcollection" SEODescription="Representa una colección de objetos de hoja de cálculo que forman parte del libro." />
     <Item text="WorksheetFunctions" url="excel/functions" SEODescription="Se usa como contenedor de las funciones de hoja de cálculo de Excel que pueden llamarse a través de JavaScript o REST." />
     <Item text="WorksheetProtection" url="excel/worksheetprotection" SEODescription="Representa la protección de un objeto de hoja." />
+	<Item text="Conjuntos de requisitos de la API de JavaScript de Excel" url="requirement-sets/excel-api-requirement-sets" Scope="excel" SEODescription="Obtenga información sobre los conjuntos de requisitos de Excel, las aplicaciones de host de Office que admiten ese conjunto de requisitos y la compilación o números de versión de esas aplicaciones." />
   </Item>
   
   <Item text="Outlook" url="outlook" Scope="Outlook">
@@ -412,11 +414,12 @@
     <Item text="Sectiongroupcollection" url="onenote/sectiongroupcollection" SEODescription="Referencia de los complementos de OneNote." />
     <Item text="Outline" url="onenote/outline" SEODescription="Referencia de los complementos de OneNote." />
     <Item text="Image" url="onenote/image" SEODescription="Referencia de los complementos de OneNote." />
+	<Item text="Conjuntos de requisitos de la API de JavaScript de OneNote" url="requirement-sets/onenote-api-requirement-sets" SEODescription="Obtenga información sobre los conjuntos de requisitos de OneNote, las aplicaciones de host de Office que admiten esos conjuntos de requisitos y las versiones de la compilación o fecha de disponibilidad." />
   </Item>  
   <Item text="API compartida" url="shared/shared-api">
     <Item text="API de JavaScript para Office" url="javascript-api-for-office" SEODescription="La API de JavaScript para Office incluye objetos, métodos, propiedades, eventos y enumeraciones que se pueden usar en el código de sus complementos de Office." />
 	<Item text="Novedades en la API de JavaScript para Office" url="what's-changed-in-the-javascript-api-for-office" SEODescription="La API de JavaScript para Office se actualiza periódicamente con objetos, métodos, propiedades, eventos y enumeraciones nuevos y actualizados para ampliar la funcionalidad de los complementos de Office." />
-	<Item text="Conjuntos de requisitos de complementos de Office" url="office-add-in-requirement-sets" SEODescription="Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o mediante una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento." />
+	<Item text="Conjuntos de requisitos comunes de Office" url="requirement-sets/office-add-in-requirement-sets" SEODescription="Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o mediante una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento." />
 	<Item text="Códigos de error de la API de JavaScript de Office" url="javascript-api-for-office-error-codes" SEODescription="Los mensajes de error que pueden surgir al usar la API de JavaScript para Office (Office.js)." />
 	<Item text="Enumeraciones" url="shared/enumerations" FriendlyUrl="reference/enumerationsenumerations">
       <Item text="Enumeración ActiveView" url="shared/activeview-enumeration" FriendlyUrl="reference/enumerationsactiveview-enumeration" Scope="powerpoint" SEODescription="Especifica el estado de la vista activa del documento (por ejemplo, si el usuario puede editar o no el documento)." />
@@ -642,7 +645,8 @@
     <Item text="Office UI" url="shared/officeui" Scope="outlook, excel, word, powerpoint" SEODescription="Proporciona objetos y métodos usados para crear componentes de interfaz de usuario para complementos.">
     	<Item text="Objeto Dialog" url="shared/officeui.dialog" Scope="outlook, excel, word, powerpoint" SEODescription="El objeto que se devuelve cuando se llama al método displayDialogAsync." />
     	<Item text="Método DisplayDialog" url="shared/officeui.displaydialogasync" Scope="outlook, excel, word, powerpoint" SEODescription="Muestra un cuadro de diálogo web dentro de hosts de Office." />
-    	<Item text="Método MessageParent" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="Entrega un mensaje desde el cuadro de diálogo a su pagina primaria o de apertura." />
+    	<Item text="Método MessageParent" url="shared/officeui.messageparent" Scope="outlook, excel, word, powerpoint" SEODescription="Entrega un mensaje desde el cuadro de diálogo a su página primaria o de apertura." />
+		<Item text="Conjuntos de requisitos de la API de cuadros de diálogo" url="requirement-sets/dialog-api-requirement-sets" Scope="outlook, excel, word, powerpoint" SEODescription="Obtenga información sobre los conjuntos de requisitos de la API de cuadros de diálogo, las aplicaciones de host de Office que admiten ese conjunto de requisitos y la compilación o números de versión de la aplicación de Office." />
     </Item>
   </Item>
   <Item text="Abrir especificaciones" url="openspec" Scope="Excel, PowerPoint, Word, Outlook, OneNote" SEODescription="Obtenga información acerca de los esfuerzos continuos para diseñar API y envíe sus comentarios" />
