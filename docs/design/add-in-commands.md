@@ -1,10 +1,10 @@
-c
-# <a name="addin-commands-for-excel-word-and-powerpoint"></a>Comandos de complementos para Excel, Word y PowerPoint
+# <a name="add-in-commands-for-excel-word-and-powerpoint"></a>Comandos de complementos para Excel, Word y PowerPoint
 
 Los comandos de complementos son elementos de la interfaz de usuario que amplían la interfaz de usuario de Office e inician acciones en el complemento. Puede agregar un botón a la cinta, o bien un elemento a un menú contextual. Cuando el usuario selecciona un comando de complemento, se inician acciones como ejecutar código de JavaScript o mostrar una página del complemento en el panel de tareas. Los comandos de complementos ayudan a los usuarios a encontrar y usar su complemento, lo que puede aumentar la adopción y reutilización del complemento y mejorar la retención de clientes.
 
-Para obtener información general sobre la característica, vea el vídeo [Add-in Commands in Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551) (Comandos de complementos en la cinta de Office).
+Para obtener información general sobre la característica, vea el vídeo [Add-in Commands in the Office Ribbon](https://channel9.msdn.com/events/Build/2016/P551) (Comandos de complementos en la cinta de Office).
 
+>**Nota:** Los catálogos de SharePoint no son compatibles con los comandos de complementos. Puede implementar comandos de complementos mediante una [implementación centralizada](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) o la [Tienda Office](https://msdn.microsoft.com/en-us/library/jj220033.aspx), o usar una [instalación de prueba](https://dev.office.com/docs/add-ins/testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins) para implementar el comando de complementos para realizar pruebas. 
 
 **Complemento con comandos que se ejecuta en la versión para equipos de escritorio de Excel**
 ![Comandos de complementos](../../images/addincommands1.png)
@@ -39,11 +39,11 @@ Los comandos de complementos se admiten actualmente en las plataformas siguiente
 
 Estarán disponibles en más plataformas próximamente.
 
-## <a name="get-started-with-addin-commands"></a>Introducción a los comandos de complementos
+## <a name="get-started-with-add-in-commands"></a>Introducción a los comandos de complementos
 
-La mejor manera de comenzar a usar comandos de complementos es mediante **ejemplos**. Consulte [Office Add-in commands samples (Ejemplos de comandos de complementos de Office)](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) en GitHub.
+La mejor manera de empezar a usar comandos de complementos es mediante **ejemplos**. Consulte los [ejemplos de comandos de complementos de Office](https://github.com/OfficeDev/Office-Add-in-Commands-Samples/) en GitHub.
 
-Para obtener información detallada de referencia a manifiesto, consulte [Define add-in commands in your manifest (Definir comandos de complementos en su manifiesto)](http://dev.office.com/docs/add-ins/outlook/manifests/define-add-in-commands).
+Para obtener información detallada sobre la referencia del manifiesto, consulte [Define add-in commands in your manifest](http://dev.office.com/docs/add-ins/outlook/manifests/define-add-in-commands) (Definir comandos de complementos en su manifiesto).
 
 
 

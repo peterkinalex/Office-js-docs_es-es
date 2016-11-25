@@ -32,6 +32,9 @@ Para obtener más información sobre los requisitos de servidor y aplicación ho
 |:-----|:-----|:-----|:-----|:-----|
 |**PowerPoint**|v||v|v|
 
+>**Nota: Este evento no se iniciará en los escenarios de PowerPoint Online, ya que el modo SlideShow se trata como una nueva sesión. Para obtener la vista activa, debe consultarla durante Office.Initialize.
+ 
+
 |||
 |:-----|:-----|
 |**Introducido en**|1.1|

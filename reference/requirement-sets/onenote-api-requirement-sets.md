@@ -1,6 +1,6 @@
 # <a name="onenote-javascript-api-requirement-sets"></a>Conjuntos de requisitos de la API de JavaScript de OneNote
 
-Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o usan una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento. Para obtener más información, consulte [Specify Office hosts and API requirements (Especificar hosts de Office y requisitos de la API)](../docs/overview/specify-office-hosts-and-api-requirements.md).
+Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o usan una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento. Para obtener más información, consulte [Specify Office hosts and API requirements (Especificar hosts de Office y requisitos de la API)](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 En la siguiente tabla se enumeran los conjuntos de requisitos de OneNote, las aplicaciones de host de Office que admiten esos conjuntos de requisitos y las versiones de la compilación o fecha de disponibilidad.
 

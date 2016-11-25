@@ -1,6 +1,6 @@
 # <a name="excel-javascript-api-requirement-sets"></a>Conjuntos de requisitos de la API de JavaScript de Excel
 
-Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o usan una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento. Para obtener más información, consulte [Specify Office hosts and API requirements (Especificar hosts de Office y requisitos de la API)](../docs/overview/specify-office-hosts-and-api-requirements.md).
+Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o usan una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento. Para obtener más información, consulte [Specify Office hosts and API requirements (Especificar hosts de Office y requisitos de la API)](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 Los complementos de Excel se ejecutan en varias versiones de Office, incluida Office 2016 para Windows, Office para iPad, Office para Mac y Office Online. En la siguiente tabla se enumeran los conjuntos de requisitos de Excel, las aplicaciones de host de Office que admiten ese conjunto de requisitos y el número o las versiones de compilación de esas aplicaciones. 
 
@@ -31,7 +31,7 @@ Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel e
 |[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_Método_ > [addFromNamedItem(name: string, bindingType: string, id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addfromnameditemname-string-bindingtype-string-id-string)|Agregar un enlace nuevo basándose en un elemento con nombre del libro.|1.3|
 |[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_Método_ > [addFromSelection(bindingType: string, id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#addfromselectionbindingtype-string-id-string)|Agregar un enlace nuevo basándose en la selección actual.|1.3|
 |[bindingCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md)|_Método_ > [getItemOrNull(id: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/bindingcollection.md#getitemornullid-string)|Obtiene un objeto de enlace por identificador. Si el objeto de enlace no existe, la propiedad isNull del objeto devuelto será True.|1.3|
-|[chartCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/chartcollection.md)|_Método_ > [getItemOrNull(name: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/chartcollection.md#getitemornullname-string)|Obtiene un gráfico mediante su nombre. Si hay varios gráficos con el mismo nombre, se devolverá el primero.|1.3|
+|[chartCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/chartcollection.md)|_Método_ > [getItemOrNull(name: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/chartcollection.md#getitemornullname-string)|Obtiene un gráfico mediante su nombre. Si hay varias tablas con el mismo nombre, se devolverá la primera.|1.3|
 |[namedItemCollection](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/nameditemcollection.md)|_Método_ > [getItemOrNull(name: string)](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/nameditemcollection.md#getitemornullname-string)|Obtiene un objeto NamedItem mediante su nombre. Si el objeto NamedItem no existe, la propiedad isNull del objeto devuelto será True.|1.3|
 |[pivotTable](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md)|_Propiedad_ > name|Nombre la tabla dinámica.|1.3|
 |[pivotTable](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec/reference/excel/pivottable.md)|_Relación_ > worksheet|La hoja de cálculo que contiene la tabla dinámica actual. Solo lectura.|1.3|
@@ -82,7 +82,7 @@ Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel e
 |[chart](../excel/chart.md)|_Propiedad_ > id|Obtiene un gráfico en función de su posición en la colección. Solo lectura.|1.2|
 |[chart](../excel/chart.md)|_Relación_ > worksheet|La hoja de cálculo que contiene el gráfico actual. Solo lectura.|1.2|
 |[chart](../excel/chart.md)|_Método_ > [getImage(height: number, width: number, fittingMode: string)](../excel/chart.md#getimageheight-number-width-number-fittingmode-string)|Representa el gráfico como una imagen con codificación Base64 al escalar el gráfico a las dimensiones especificadas.|1.2|
-|[filter](../excel/filter.md)|_Relación_ > criteria|El filtro aplicado actualmente en la columna especificada. Solo lectura.|1.2|
+|[filter](../excel/filter.md)|_Relación_ > criteria|Filtro aplicado actualmente en la columna especificada. Solo lectura.|1.2|
 |[filter](../excel/filter.md)|_Método_ > [apply(criteria: FilterCriteria)](../excel/filter.md#applycriteria-filtercriteria)|Aplicar los criterios de filtro especificados en la columna especificada.|1.2|
 |[filter](../excel/filter.md)|_Método_ > [applyBottomItemsFilter(count: number)](../excel/filter.md#applybottomitemsfiltercount-number)|Aplicar un filtro de "Elemento inferior" a la columna para el número de elementos especificado.|1.2|
 |[filter](../excel/filter.md)|_Método_ > [applyBottomPercentFilter(percent: number)](../excel/filter.md#applybottompercentfilterpercent-number)|Aplicar un filtro de "Porcentaje inferior" a la columna para el porcentaje de elementos especificado.|1.2|
@@ -106,19 +106,19 @@ Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel e
 |[filterDatetime](../excel/filterdatetime.md)|_Propiedad_ > date|La fecha en formato ISO8601 usada para filtrar los datos.|1.2|
 |[filterDatetime](../excel/filterdatetime.md)|_Propiedad_ > specificity|El grado de especificidad de la fecha que se usará para mantener datos. Por ejemplo, si la fecha es 02-04-2005 y la especificidad se establece en "mes", la operación de filtrado conservará todas las filas con fecha de abril de 2005. Los valores posibles son: Year, Monday, Day, Hour, Minute, Second.|1.2|
 |[formatProtection](../excel/formatprotection.md)|_Propiedad_ > formulaHidden|Indica si Excel oculta la fórmula de las celdas del rango. Un valor null indica que el rango no tiene una configuración de fórmula oculta uniforme.|1.2|
-|[formatProtection](../excel/formatprotection.md)|_Propiedad_ > locked|Indica si Excel bloquea las celdas del objeto. Un valor NULL indica que el intervalo no tiene una configuración de bloqueo uniforme.|1.2|
+|[formatProtection](../excel/formatprotection.md)|_Propiedad_ > locked|Indica si Excel bloquea las celdas del objeto. Un valor nulo indica que todo el rango no tiene una configuración de bloqueo uniforme.|1.2|
 |[icon](../excel/icon.md)|_Propiedad_ > index|Representa el índice del icono en el conjunto concreto.|1.2|
 |[icon](../excel/icon.md)|_Propiedad_ > set|Representa el conjunto al que pertenece el icono. Los valores posibles son: Invalid, ThreeArrows, ThreeArrowsGray, ThreeFlags, ThreeTrafficLights1, ThreeTrafficLights2, ThreeSigns, ThreeSymbols, ThreeSymbols2, FourArrows, FourArrowsGray, FourRedToBlack, FourRating, FourTrafficLights, FiveArrows, FiveArrowsGray, FiveRating, FiveQuarters, ThreeStars, ThreeTriangles, FiveBoxes.|1.2|
 |[range](../excel/range.md)|_Propiedad_ > columnHidden|Representa si todas las columnas del intervalo actual están ocultas.|1.2|
 |[range](../excel/range.md)|_Propiedad_ > formulasR1C1|Representa la fórmula en notación de estilo R1C1.|1.2|
-|[range](../excel/range.md)|_Propiedad_ > hidden|Representa si todas las celdas del intervalo actual están ocultas. Solo lectura.|1.2|
+|[range](../excel/range.md)|_Propiedad_ > hidden|Representa si todas las celdas del rango actual están ocultas. Solo lectura.|1.2|
 |[range](../excel/range.md)|_Propiedad_ > rowHidden|Representa si todas las filas del intervalo actual están ocultas.|1.2|
 |[range](../excel/range.md)|_Relación_ > sort|Representa la ordenación del intervalo del intervalo actual. Solo lectura.|1.2|
 |[range](../excel/range.md)|_Método_ > [merge(across: bool)](../excel/range.md#mergeacross-bool)|Combina las celdas del intervalo en una región de la hoja de cálculo.|1.2|
 |[range](../excel/range.md)|_Método_ > [unmerge()](../excel/range.md#unmerge)|Separa las celdas del intervalo en celdas independientes.|1.2|
-|[rangeFormat](../excel/rangeformat.md)|_Propiedad_ > columnWidth|Obtiene o establece el ancho de todas las columnas del intervalo. Si los anchos de columna no son uniformes, se devolverá NULL.|1.2|
-|[rangeFormat](../excel/rangeformat.md)|_Propiedad_ > rowHeight|Obtiene o establece el alto de todas las filas del intervalo. Si los altos de fila no son uniformes, se devolverá NULL.|1.2|
-|[rangeFormat](../excel/rangeformat.md)|_Relación_ > protection|Devuelve el objeto de protección de formato de un intervalo. Solo lectura.|1.2|
+|[rangeFormat](../excel/rangeformat.md)|_Propiedad_ > columnWidth|Obtiene o establece el ancho de todas las columnas del rango. Si los anchos de columna no son uniformes, se devolverá null.|1.2|
+|[rangeFormat](../excel/rangeformat.md)|_Propiedad_ > rowHeight|Obtiene o establece el alto de todas las filas del rango. Si los altos de fila no son uniformes, se devolverá null.|1.2|
+|[rangeFormat](../excel/rangeformat.md)|_Relación_ > protection|Devuelve el objeto de protección de formato de un rango. Solo lectura.|1.2|
 |[rangeFormat](../excel/rangeformat.md)|_Método_ > [autofitColumns()](../excel/rangeformat.md#autofitcolumns)|Cambia el ancho de las columnas del intervalo actual para obtener el ajuste perfecto (según los datos actuales de las columnas).|1.2|
 |[rangeFormat](../excel/rangeformat.md)|_Método_ > [autofitRows()](../excel/rangeformat.md#autofitrows)|Cambia el alto de las filas del intervalo actual para obtener el ajuste perfecto (según los datos actuales de las columnas).|1.2|
 |[rangeReference](../excel/rangereference.md)|_Propiedad_ > address|Representa las filas visibles del intervalo actual.|1.2|
@@ -130,12 +130,12 @@ Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel e
 |[sortField](../excel/sortfield.md)|_Propiedad_ > sortOn|Representa el tipo de ordenación de esta condición. Los valores posibles son: Value, CellColor, FontColor, Icon.|1.2|
 |[sortField](../excel/sortfield.md)|_Relación_ > icon|Representa el icono que es el destino de la condición si la ordenación se realiza según el icono de la celda.|1.2|
 |[table](../excel/table.md)|_Relación_ > sort|Representa la ordenación de la tabla. Solo lectura.|1.2|
-|[table](../excel/table.md)|_Relación_ > worksheet|La hoja de cálculo que contiene la tabla actual. Solo lectura.|1.2|
+|[table](../excel/table.md)|_Relación_ > worksheet|Hoja de cálculo que contiene la tabla actual. Solo lectura.|1.2|
 |[table](../excel/table.md)|_Método_ > [clearFilters()](../excel/table.md#clearfilters)|Borra todos los filtros aplicados actualmente en la tabla.|1.2|
-|[table](../excel/table.md)|_Método_ > [convertToRange()](../excel/table.md#converttorange)|Convierte la tabla en un intervalo de celdas normal. Se conservan todos los datos.|1.2|
+|[table](../excel/table.md)|_Método_ > [convertToRange()](../excel/table.md#converttorange)|Convierte la tabla en un rango de celdas normal. Se conservan todos los datos.|1.2|
 |[table](../excel/table.md)|_Método_ > [reapplyFilters()](../excel/table.md#reapplyfilters)|Vuelve a aplicar todos los filtros aplicados actualmente en la tabla.|1.2|
 |[tableColumn](../excel/tablecolumn.md)|_Relación_ > filter|Recupera el filtro aplicado a la columna. Solo lectura.|1.2|
-|[tableSort](../excel/tablesort.md)|_Propiedad_ > matchCase|Indica si la última ordenación de la tabla distinguía mayúsculas de minúsculas. Solo lectura.|1.2|
+|[tableSort](../excel/tablesort.md)|_Propiedad_ > matchCase|Indica si última ordenación de la tabla distinguía mayúsculas de minúsculas. Solo lectura.|1.2|
 |[tableSort](../excel/tablesort.md)|_Propiedad_ > method|Representa el método de ordenación de caracteres chinos usado por última vez para ordenar la tabla. Solo lectura. Los valores posibles son: PinYin, StrokeCount.|1.2|
 |[tableSort](../excel/tablesort.md)|_Relación_ > fields|Representa las condiciones actuales que se usaron por última vez para ordenar la tabla. Solo lectura.|1.2|
 |[tableSort](../excel/tablesort.md)|_Método_ > [apply(fields: SortField[], matchCase: bool, method: string)](../excel/tablesort.md#applyfields-sortfield-matchcase-bool-method-string)|Realiza una operación de ordenación.|1.2|
@@ -164,5 +164,6 @@ API de JavaScript de Excel 1.1 es la primera versión de la API. Para obtener m�
     
 ## <a name="additional-resources"></a>Recursos adicionales
 
-- [Especificar los hosts de Office y los requisitos de la API](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Manifiesto XML de complementos para Office](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [Especificar los hosts de Office y los requisitos de la API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md)
+

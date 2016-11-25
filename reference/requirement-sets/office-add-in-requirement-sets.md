@@ -1,18 +1,18 @@
 # <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos comunes de la API de Office
 
-Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o usan una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento. Para obtener más información, consulte [Specify Office hosts and API requirements (Especificar hosts de Office y requisitos de la API)](../docs/overview/specify-office-hosts-and-api-requirements.md).
+Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o usan una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento. Para obtener más información, consulte [Specify Office hosts and API requirements (Especificar hosts de Office y requisitos de la API)](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 Para obtener información sobre la compatibilidad de los complementos con el host de Office, consulte [Disponibilidad de plataformas y hosts de los complementos de Office](https://dev.office.com/add-in-availability).
 
-## <a name="hostspecific-api-requirement-sets"></a>Conjuntos de requisitos de la API específica del host
+## <a name="host-specific-api-requirement-sets"></a>Conjuntos de requisitos de la API específica del host
 
 Para obtener información sobre los conjuntos de requisitos de la API de cuadros de diálogo, de Excel, Word, OneNote y Outlook, consulte:
 
-- [Conjuntos de requisitos de la API de JavaScript de Excel](excel-api-requirement-sets.md)
-- [Conjuntos de requisitos de la API de JavaScript de Word](word-api-requirement-sets.md)
-- [Conjuntos de requisitos de la API de JavaScript de OneNote](onenote-api-requirement-sets.md)
-- [Información sobre los conjuntos de requisitos de la API de Outlook](../outlook/tutorial-api-requirement-sets.md)
-[Conjuntos de requisitos de la API de cuadros de diálogo](dialog-api-requirement-sets.md)
+- [Conjuntos de requisitos de la API de JavaScript de Excel](excel-api-requirement-sets.md) (ExcelApi)
+- [Conjuntos de requisitos de la API de JavaScript de Word](word-api-requirement-sets.md) (WordApi)
+- [Conjuntos de requisitos de la API de JavaScript de OneNote](onenote-api-requirement-sets.md) (OneNoteApi)
+- [Entender los conjuntos de requisitos de la API de Outlook](../outlook/tutorial-api-requirement-sets.md)(buzón de correo)
+- [Conjuntos de requisitos de la API de cuadros de diálogo](dialog-api-requirement-sets.md) (DialogApi)
 
 ## <a name="common-api-requirement-sets"></a>Conjuntos de requisitos comunes de la API
 
@@ -68,7 +68,9 @@ Los siguientes métodos de la API de JavaScript para Office no forman parte de n
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
-- [Especificar los hosts de Office y los requisitos de la API](../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Especificar los hosts de Office y los requisitos de la API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md)
+
 
 
 

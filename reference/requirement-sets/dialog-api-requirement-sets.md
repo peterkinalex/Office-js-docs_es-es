@@ -1,7 +1,7 @@
 
 # <a name="dialog-api-requirement-sets"></a>Conjuntos de requisitos de la API de cuadros de diálogo
 
-Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o usan una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento. Para obtener más información, consulte [Specify Office hosts and API requirements (Especificar hosts de Office y requisitos de la API)](../docs/overview/specify-office-hosts-and-api-requirements.md).
+Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o usan una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento. Para obtener más información, consulte [Specify Office hosts and API requirements (Especificar hosts de Office y requisitos de la API)](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
 Los complementos de Office se ejecutan en varias versiones de Office. En la siguiente tabla se enumeran los conjuntos de requisitos de la API de cuadros de diálogo, las aplicaciones de host de Office que admiten ese conjunto de requisitos y la compilación o números de versión de la aplicación de Office.
 
@@ -25,5 +25,6 @@ La API de cuadros de diálogo 1.1 es la primera versión de la API. Para obtener
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
-- [Especificar los hosts de Office y los requisitos de la API](../docs/overview/specify-office-hosts-and-api-requirements.md)
-- [Manifiesto XML de complementos para Office](https://dev.office.com/docs/add-ins/overview/add-in-manifests)
+- [Especificar los hosts de Office y los requisitos de la API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
+- [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md)
+
