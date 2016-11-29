@@ -6,6 +6,11 @@ Las características que se describen aquí podrían estar en distintas fases de
 
 _**Importante:** Las características que se enumeran aquí aún están en la fase de diseño y revisión, y todavía no están disponibles. Estas características y API están sujetas a cambios._
 
+## <a name="visio-javascript-apis"></a>API de JavaScript para Visio
+Visio Online es la nueva forma de ver y compartir los diagramas para Visio en la web. Además, también puede usar la API de JavaScript para Visio 1.1 para ampliar las funcionalidades de Visio Online. Use dichas API con los diagramas de Visio incrustados en una página de SharePoint. Sin embargo, tenga en cuenta que la API de JavaScript para Visio actualmente no se aplica a los [complementos de Office](https://dev.office.com/docs/add-ins/overview/office-add-ins).
+
+**Consulte la página de [API de JavaScript para Visio 1.1](https://github.com/OfficeDev/office-js-docs/tree/VisioJs_1.1_Openspec) para obtener más información y enviar sus comentarios al respecto.**
+
 ## <a name="new-excel-javascript-apis"></a>Nuevas API de JavaScript para Excel
 Únase a nosotros en la revisión del diseño de las nuevas API de JavaScript para Excel. Las API nuevas y actualizadas incluyen elementos customXML, actualización de tabla dinámica, vista filtrada de rango, rango y tabla como imagen, anexar varias filas a una tabla y más. 
 
