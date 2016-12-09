@@ -1,4 +1,4 @@
-# <a name="chartfill-object-(javascript-api-for-excel)"></a>Objeto ChartFill (API de JavaScript para Excel)
+# <a name="chartfill-object-javascript-api-for-excel"></a>Objeto ChartFill (API de JavaScript para Excel)
 
 Representa el formato de relleno para un elemento de gráfico.
 
@@ -12,15 +12,15 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[clear()](#clear)|void|Borra el color de relleno de un elemento de gráfico.|
-|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Establece el formato de relleno de un elemento de gráfico en un color uniforme.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[clear()](#clear)|void|Borra el color de relleno de un elemento de gráfico.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[setSolidColor(color: string)](#setsolidcolorcolor-string)|void|Establece el formato de relleno de un elemento de gráfico en un color uniforme.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 Borra el color de relleno de un elemento de gráfico.
 
 #### <a name="syntax"></a>Sintaxis
@@ -40,7 +40,7 @@ Borrar el formato de línea de las líneas de cuadrícula principales del eje de
 
 ```js
 Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;   
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;   
     gridlines.format.line.clear();
     return ctx.sync().then(function() {
             console.log("Chart Major Gridlines Format Cleared");
@@ -53,7 +53,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="setsolidcolor(color:-string)"></a>setSolidColor(color: string)
+### <a name="setsolidcolorcolor-string"></a>setSolidColor(color: string)
 Establece el formato de relleno de un elemento de gráfico en un color uniforme.
 
 #### <a name="syntax"></a>Sintaxis
@@ -63,7 +63,7 @@ chartFillObject.setSolidColor(color);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |color|string|Código de color HTML que representa el color de la línea de borde con el formato #RRGGBB (por ejemplo, "FFA500") o como un color HTML con nombre (por ejemplo, "naranja").|
 
 #### <a name="returns"></a>Valores devueltos

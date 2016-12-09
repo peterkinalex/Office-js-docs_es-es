@@ -1,13 +1,13 @@
-# <a name="binding-object-(javascript-api-for-excel)"></a>Objeto Binding (API de JavaScript para Excel)
+# <a name="binding-object-javascript-api-for-excel"></a>Objeto Binding (API de JavaScript para Excel)
 
 Representa un enlace de Office.js que se define en el libro.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción
-|:---------------|:--------|:----------|
-|id|string|Representa el identificador de enlace. Solo lectura.|
-|type|string|Devuelve el tipo de enlace. Solo lectura. Los valores posibles son: Range, Table, Text.|
+| Propiedad     | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|id|string|Representa el identificador de enlace. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Devuelve el tipo de enlace. Solo lectura. Los valores posibles son: Range, Table, Text.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -17,17 +17,32 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[getRange()](#getrange)|[Range](range.md)|Devuelve el intervalo representado por el enlace. Se producirá un error si el enlace no es del tipo correcto.|
-|[getTable()](#gettable)|[Table](table.md)|Devuelve la tabla representada por el enlace. Se producirá un error si el enlace no es del tipo correcto.|
-|[getText()](#gettext)|string|Devuelve el texto representado por el enlace. Se producirá un error si el enlace no es del tipo correcto.|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|Elimina el enlace.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Devuelve el intervalo representado por el enlace. Se producirá un error si el enlace no es del tipo correcto.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getTable()](#gettable)|[Table](table.md)|Devuelve la tabla representada por el enlace. Se producirá un error si el enlace no es del tipo correcto.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getText()](#gettext)|string|Devuelve el texto representado por el enlace. Se producirá un error si el enlace no es del tipo correcto.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="getrange()"></a>getRange()
+### <a name="delete"></a>delete()
+Elimina el enlace.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+bindingObject.delete();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+void
+
+### <a name="getrange"></a>getRange()
 Devuelve el intervalo representado por el enlace. Se producirá un error si el enlace no es del tipo correcto.
 
 #### <a name="syntax"></a>Sintaxis
@@ -61,7 +76,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="gettable()"></a>getTable()
+### <a name="gettable"></a>getTable()
 Devuelve la tabla representada por el enlace. Se producirá un error si el enlace no es del tipo correcto.
 
 #### <a name="syntax"></a>Sintaxis
@@ -93,7 +108,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="gettext()"></a>getText()
+### <a name="gettext"></a>getText()
 Devuelve el texto representado por el enlace. Se producirá un error si el enlace no es del tipo correcto.
 
 #### <a name="syntax"></a>Sintaxis
@@ -113,7 +128,7 @@ string
 Excel.run(function (ctx) { 
     var binding = ctx.workbook.bindings.getItemAt(0);
     var text = binding.getText();
-    ctx.load('text');
+    binding.load('text');
     return ctx.sync().then(function() {
         console.log(text);
     });
@@ -126,7 +141,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -136,8 +151,8 @@ object.load(param);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, acepta un objeto [loadOption](loadoption.md).|
+|:---------------|:--------|:----------|:---|
+|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos
 void

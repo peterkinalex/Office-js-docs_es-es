@@ -1,13 +1,13 @@
-# <a name="tablerowcollection-object-(javascript-api-for-excel)"></a>Objeto TableRowCollection (API de JavaScript para Excel)
+# <a name="tablerowcollection-object-javascript-api-for-excel"></a>Objeto TableRowCollection (API de JavaScript para Excel)
 
 Representa una colección de todas las filas que forman parte de la tabla.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción
-|:---------------|:--------|:----------|
-|count|int|Devuelve el número de filas de la tabla. Solo lectura.|
-|items|[TableRow[]](tablerow.md)|Colección de objetos TableRow. Solo lectura.|
+| Propiedad     | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|count|int|Devuelve el número de filas de la tabla. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[TableRow[]](tablerow.md)|Colección de objetos tableRow. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -17,17 +17,17 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Agrega una nueva fila a la tabla.|
-|[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Obtiene una fila basada en su posición en la colección.|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Agrega una o más filas a la tabla. El objeto devuelto será el superior de las filas recién agregadas.|[1.1, 1.1 para agregar una única fila; 1.4 permite agregar varias filas.](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Obtiene una fila basada en su posición en la colección.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="add(index:-number,-values:-(boolean-or-string-or-number)[][])"></a>add(index: number, values: (boolean or string or number)[][])
-Agrega una nueva fila a la tabla.
+### <a name="addindex-number-values-boolean-or-string-or-number"></a>add(index: number, values: (boolean or string or number)[][])
+Agrega una o más filas a la tabla. El objeto devuelto será el superior de las filas recién agregadas.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
@@ -36,9 +36,9 @@ tableRowCollectionObject.add(index, values);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
-|index|number|Opcional. Especifica la posición relativa de la nueva fila. Si es null, se produce la adición al final. Las filas situadas debajo de la fila insertada se desplazan hacia abajo. Indexado con cero.|
-|values|(boolean or string or number)[][]|Opcional. Matriz bidimensional de valores sin formato de la fila de la tabla.|
+|:---------------|:--------|:----------|:---|
+|index|number|Opcional. Especifica la posición relativa de la nueva fila. Si es NULL o -1, se produce la adición al final. Las filas situadas debajo de la fila insertada se desplazan hacia abajo. Indizado con cero.|
+|valores|(boolean or string or number)[][]|Opcional. Matriz bidimensional de valores sin formato de la fila de la tabla.|
 
 #### <a name="returns"></a>Valores devueltos
 [TableRow](tablerow.md)
@@ -62,7 +62,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 Obtiene una fila basada en su posición en la colección.
 
 #### <a name="syntax"></a>Sintaxis
@@ -72,7 +72,7 @@ tableRowCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
 #### <a name="returns"></a>Valores devueltos
@@ -95,7 +95,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -105,7 +105,7 @@ object.load(param);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos

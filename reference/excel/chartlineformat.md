@@ -1,12 +1,12 @@
-# <a name="chartlineformat-object-(javascript-api-for-excel)"></a>Objeto ChartLineFormat (API de JavaScript para Excel)
+# <a name="chartlineformat-object-javascript-api-for-excel"></a>Objeto ChartLineFormat (API de JavaScript para Excel)
 
 Encapsula las opciones de formato para los elementos de línea.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción
-|:---------------|:--------|:----------|
-|color|string|Código de color HTML que representa el color de las líneas del gráfico.|
+| Propiedad     | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|color|string|Código de color HTML que representa el color de las líneas del gráfico.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -16,15 +16,15 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[clear()](#clear)|void|Borra el formato de línea de un elemento de gráfico.|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[clear()](#clear)|void|Borra el formato de línea de un elemento de gráfico.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 Borra el formato de línea de un elemento de gráfico.
 
 #### <a name="syntax"></a>Sintaxis
@@ -44,7 +44,7 @@ Borrar el formato de línea de las líneas de cuadrícula principales del eje de
 
 ```js
 Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueaxis.majorGridlines;   
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;   
     gridlines.format.line.clear();
     return ctx.sync().then(function() {
             console.log("Chart Major Gridlines Format Cleared");
@@ -57,7 +57,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -67,7 +67,7 @@ object.load(param);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos
@@ -77,16 +77,16 @@ void
 Establecer las líneas de cuadrícula principales del eje de valores en rojo.
 
 ```js
-Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.axes.valueaxis.majorGridlines;
+Excel.run(function (ctx) {
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;
     gridlines.format.line.color = "#FF0000";
-    return ctx.sync().then(function() {
-            console.log("Chart Gridlines Color Updated");
+    return ctx.sync().then(function () {
+        console.log("Chart Gridlines Color Updated");
     });
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
+}).catch(function (error) {
+    console.log("Error: " + error);
+    if (error instanceof OfficeExtension.Error) {
+        console.log("Debug info: " + JSON.stringify(error.debugInfo));
+    }
 });
 ```

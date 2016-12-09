@@ -1,32 +1,32 @@
-# <a name="charttitle-object-(javascript-api-for-excel)"></a>Objeto ChartTitle (API de JavaScript para Excel)
+# <a name="charttitle-object-javascript-api-for-excel"></a>Objeto ChartTitle (API de JavaScript para Excel)
 
 Representa un objeto de título de gráfico de un gráfico.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción
-|:---------------|:--------|:----------|
-|overlay|bool|Valor booleano que representa si el título del gráfico se superpondrá al gráfico o no.|
-|text|string|Representa el texto del título de un gráfico.|
-|visible|bool|Valor booleano que representa la visibilidad de un objeto de título del gráfico.|
+| Propiedad     | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|overlay|bool|Valor booleano que representa si el título del gráfico se superpondrá al gráfico o no.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|text|string|Representa el texto del título de un gráfico.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|visible|bool|Un valor booleano que representa la visibilidad de un objeto de título del gráfico.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción|
-|:---------------|:--------|:----------|
-|format|[ChartTitleFormat](charttitleformat.md)|Representa el formato de un título del gráfico, que incluye el formato de relleno y de fuente. Solo lectura.|
+| Relación | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|format|[ChartTitleFormat](charttitleformat.md)|Representa el formato de un título del gráfico, que incluye el formato de relleno y de fuente. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -36,14 +36,14 @@ object.load(param);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos
 void
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
-Obtener la propiedad `text` del título del gráfico de Chart1.
+Obtener la propiedad `text` del título del gráfico de Gráfico1.
 
 ```js
 Excel.run(function (ctx) { 
@@ -59,9 +59,10 @@ return ctx.sync().then(function() {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
 });
+});
 ```
 
-Establecer la propiedad `text` del título del gráfico en "My Chart" y hacer que aparezca en la parte superior del gráfico sin que se superponga.
+Establecer la propiedad `text` del título del gráfico en "Mi gráfico" y hacer que aparezca en la parte superior del gráfico sin que se superponga.
 
 ```js
 Excel.run(function (ctx) { 
@@ -78,5 +79,6 @@ return ctx.sync().then(function() {
         if (error instanceof OfficeExtension.Error) {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
+});
 });
 ```

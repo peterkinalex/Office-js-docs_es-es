@@ -1,6 +1,4 @@
-# <a name="filter-object-(javascript-api-for-excel)"></a>Objeto Filter (API de JavaScript para Excel)
-
-_Se aplica a: Excel 2016, Excel Online, Excel para iOS, Office 2016_
+# <a name="filter-object-javascript-api-for-excel"></a>Objeto Filter (API de JavaScript para Excel)
 
 Administra el filtrado de la columna de una tabla.
 
@@ -9,33 +7,33 @@ Administra el filtrado de la columna de una tabla.
 Ninguno
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción|
-|:---------------|:--------|:----------|
-|criteria|[FilterCriteria](filtercriteria.md)|Filtro aplicado actualmente en la columna especificada. Solo lectura.|
+| Relación | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|criteria|[FilterCriteria](filtercriteria.md)|Filtro aplicado actualmente en la columna especificada. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[apply(criteria: FilterCriteria)](#applycriteria-filtercriteria)|void|Aplica los criterios de filtro especificados en la columna especificada. Se puede conseguir la misma funcionalidad con cualquiera de los siguientes métodos auxiliares.|
-|[applyBottomItemsFilter(count: number)](#applybottomitemsfiltercount-number)|void|Aplica un filtro de "Elemento inferior" a la columna para el número de elementos especificado.|
-|[applyBottomPercentFilter(percent: number)](#applybottompercentfilterpercent-number)|void|Aplica un filtro de "Porcentaje inferior" a la columna para el porcentaje de elementos especificado.|
-|[applyCellColorFilter(color: string)](#applycellcolorfiltercolor-string)|void|Aplica un filtro de "Color de celda" a la columna para el color especificado.|
-|[applyCustomFilter(criteria1: string, criteria2: string, oper: FilterOperator)](#applycustomfiltercriteria1-string-criteria2-string-oper-filteroperator)|void|Aplica un filtro de "Icono" a la columna para las cadenas de criterios especificadas.|
-|[applyDynamicFilter(criteria: string)](#applydynamicfiltercriteria-string)|void|Aplica un filtro "Dinámico" a la columna.|
-|[applyFontColorFilter(color: string)](#applyfontcolorfiltercolor-string)|void|Aplica un filtro de "Color de fuente" a la columna para el color especificado.|
-|[applyIconFilter(icon: Icon)](#applyiconfiltericon-icon)|void|Aplica un filtro de "Icono" a la columna para el icono especificado.|
-|[applyTopItemsFilter(count: number)](#applytopitemsfiltercount-number)|void|Aplica un filtro de "Elemento superior" a la columna para el número de elementos especificado.|
-|[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|Aplica un filtro de "Porcentaje superior" a la columna para el porcentaje de elementos especificado.|
-|[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|Aplica un filtro de "Valores" a la columna para los valores especificados.|
-|[clear()](#clear)|void|Borra el filtro de la columna especificada.|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[apply(criteria: FilterCriteria)](#applycriteria-filtercriteria)|void|Aplicar los criterios de filtro especificados en la columna especificada.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyBottomItemsFilter(count: number)](#applybottomitemsfiltercount-number)|void|Aplicar un filtro de "Elemento inferior" a la columna para el número de elementos especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyBottomPercentFilter(percent: number)](#applybottompercentfilterpercent-number)|void|Aplicar un filtro de "Porcentaje inferior" a la columna para el porcentaje de elementos especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyCellColorFilter(color: string)](#applycellcolorfiltercolor-string)|void|Aplicar un filtro de "Color de celda" a la columna para el color especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyCustomFilter(criteria1: string, criteria2: string, oper: string)](#applycustomfiltercriteria1-string-criteria2-string-oper-string)|void|Aplicar un filtro de "Icono" a la columna para las cadenas de criterios especificadas.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyDynamicFilter(criteria: string)](#applydynamicfiltercriteria-string)|void|Aplicar un filtro "Dinámico" a la columna.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyFontColorFilter(color: string)](#applyfontcolorfiltercolor-string)|void|Aplicar un filtro de "Color de fuente" a la columna para el color especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyIconFilter(icon: Icon)](#applyiconfiltericon-icon)|void|Aplicar un filtro de "Icono" a la columna para el icono especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyTopItemsFilter(count: number)](#applytopitemsfiltercount-number)|void|Aplicar un filtro de "Elemento superior" a la columna para el número de elementos especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|Aplicar un filtro de "Porcentaje superior" a la columna para el porcentaje de elementos especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|Aplicar un filtro de "Valores" a la columna para los valores especificados.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[clear()](#clear)|void|Borrar el filtro de la columna especificada.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="apply(criteria:-filtercriteria)"></a>apply(criteria: FilterCriteria)
-Aplica los criterios de filtro especificados en la columna especificada. Se puede conseguir la misma funcionalidad con cualquiera de los siguientes métodos auxiliares. 
+### <a name="applycriteria-filtercriteria"></a>apply(criteria: FilterCriteria)
+Aplicar los criterios de filtro especificados en la columna especificada.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
@@ -44,35 +42,13 @@ filterObject.apply(criteria);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |criterios|FilterCriteria|Criterios que se aplicarán.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-En el ejemplo siguiente se muestra cómo aplicar un filtro personalizado con el método genérico apply().
-
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    var filterCriteria = { 
-        filterOn: Excel.FilterOn.custom,
-        criterion1: ">50",
-        operator: Excel.FilterOperator.and,
-        criterion2: "<100"
-        } 
-    column.filter.apply(filterCriteria);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
-### <a name="applybottomitemsfilter(count:-number)"></a>applyBottomItemsFilter(count: number)
+### <a name="applybottomitemsfiltercount-number"></a>applyBottomItemsFilter(count: number)
 Aplica un filtro de "Elemento inferior" a la columna para el número de elementos especificado.
 
 #### <a name="syntax"></a>Sintaxis
@@ -82,27 +58,13 @@ filterObject.applyBottomItemsFilter(count);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |count|number|Número de elementos desde la parte inferior que se van a mostrar.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.applyBottomItemsFilter(3);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
-### <a name="applybottompercentfilter(percent:-number)"></a>applyBottomPercentFilter(percent: number)
+### <a name="applybottompercentfilterpercent-number"></a>applyBottomPercentFilter(percent: number)
 Aplica un filtro de "Porcentaje inferior" a la columna para el porcentaje de elementos especificado.
 
 #### <a name="syntax"></a>Sintaxis
@@ -112,28 +74,14 @@ filterObject.applyBottomPercentFilter(percent);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |signo de porcentaje|number|Porcentaje de elementos desde la parte inferior que se van a mostrar.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.applyBottomPercentFilter(30);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-### <a name="applycellcolorfilter(color:-string)"></a>applyCellColorFilter(color: string)
+### <a name="applycellcolorfiltercolor-string"></a>applyCellColorFilter(color: string)
 Aplica un filtro de "Color de celda" a la columna para el color especificado.
-
 
 #### <a name="syntax"></a>Sintaxis
 ```js
@@ -142,28 +90,14 @@ filterObject.applyCellColorFilter(color);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |color|string|Color de fondo de las celdas que se van a mostrar.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.applyCellColorFilter('red');
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
-### <a name="applycustomfilter(criteria1:-string,-criteria2:-string,-oper:-filteroperator)"></a>applyCustomFilter(criteria1: string, criteria2: string, oper: FilterOperator)
-Aplica un filtro de "Icono" a la columna para las cadenas de criterios especificadas.
+### <a name="applycustomfiltercriteria1-string-criteria2-string-oper-string"></a>applyCustomFilter(criteria1: string, criteria2: string, oper: string)
+Aplicar un filtro de "Icono" a la columna para las cadenas de criterios especificadas.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
@@ -172,30 +106,15 @@ filterObject.applyCustomFilter(criteria1, criteria2, oper);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |criteria1|string|Primera cadena de criterios.|
 |criteria2|string|Opcional. Segunda cadena de criterios.|
-|oper|FilterOperator|Opcional. Operador que describe cómo se combinan los dos criterios.|
+|oper|string|Opcional. El operador que describe cómo se combinan los dos criterios.  Los valores posibles son: And, Or.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.applyCustomFilter('>50','<100','and');
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
-### <a name="applydynamicfilter(criteria:-string)"></a>applyDynamicFilter(criteria: string)
+### <a name="applydynamicfiltercriteria-string"></a>applyDynamicFilter(criteria: string)
 Aplica un filtro "Dinámico" a la columna.
 
 #### <a name="syntax"></a>Sintaxis
@@ -205,27 +124,13 @@ filterObject.applyDynamicFilter(criteria);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |criterios|string|Criterios dinámicos que se aplicarán.  Los valores posibles son: Unknown, AboveAverage, AllDatesInPeriodApril, AllDatesInPeriodAugust, AllDatesInPeriodDecember, AllDatesInPeriodFebruray, AllDatesInPeriodJanuary, AllDatesInPeriodJuly, AllDatesInPeriodJune, AllDatesInPeriodMarch, AllDatesInPeriodMay, AllDatesInPeriodNovember, AllDatesInPeriodOctober, AllDatesInPeriodQuarter1, AllDatesInPeriodQuarter2, AllDatesInPeriodQuarter3, AllDatesInPeriodQuarter4, AllDatesInPeriodSeptember, BelowAverage, LastMonth, LastQuarter, LastWeek, LastYear, NextMonth, NextQuarter, NextWeek, NextYear, ThisMonth, ThisQuarter, ThisWeek, ThisYear, Today, Tomorrow, YearToDate y Yesterday.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.applyDynamicFilter(Excel.DynamicFilterCriteria.aboveAverage);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
-### <a name="applyfontcolorfilter(color:-string)"></a>applyFontColorFilter(color: string)
+### <a name="applyfontcolorfiltercolor-string"></a>applyFontColorFilter(color: string)
 Aplica un filtro de "Color de fuente" a la columna para el color especificado.
 
 #### <a name="syntax"></a>Sintaxis
@@ -235,27 +140,13 @@ filterObject.applyFontColorFilter(color);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |color|string|Color de fuente de las celdas que se van a mostrar.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.applyFontColorFilter('red');
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
-### <a name="applyiconfilter(icon:-icon)"></a>applyIconFilter(icon: Icon)
+### <a name="applyiconfiltericon-icon"></a>applyIconFilter(icon: Icon)
 Aplica un filtro de "Icono" a la columna para el icono especificado.
 
 #### <a name="syntax"></a>Sintaxis
@@ -265,27 +156,13 @@ filterObject.applyIconFilter(icon);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |icono|Icono|Iconos de las celdas que se van a mostrar.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.applyIconFilter(Excel.icons.fiveArrows.yellowDownInclineArrow);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
-### <a name="applytopitemsfilter(count:-number)"></a>applyTopItemsFilter(count: number)
+### <a name="applytopitemsfiltercount-number"></a>applyTopItemsFilter(count: number)
 Aplica un filtro de "Elemento superior" a la columna para el número de elementos especificado.
 
 #### <a name="syntax"></a>Sintaxis
@@ -295,28 +172,13 @@ filterObject.applyTopItemsFilter(count);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |count|number|Número de elementos desde la parte superior que se van a mostrar.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.applyTopItemsFilter(3);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
-
-### <a name="applytoppercentfilter(percent:-number)"></a>applyTopPercentFilter(percent: number)
+### <a name="applytoppercentfilterpercent-number"></a>applyTopPercentFilter(percent: number)
 Aplica un filtro de "Porcentaje superior" a la columna para el porcentaje de elementos especificado.
 
 #### <a name="syntax"></a>Sintaxis
@@ -326,26 +188,13 @@ filterObject.applyTopPercentFilter(percent);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |signo de porcentaje|number|Porcentaje de elementos desde la parte superior que se van a mostrar.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.applyTopPercentFilter(30);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-### <a name="applyvaluesfilter(values:-()[])"></a>applyValuesFilter(values: ()[])
+### <a name="applyvaluesfiltervalues-"></a>applyValuesFilter(values: ()[])
 Aplica un filtro de "Valores" a la columna para los valores especificados.
 
 #### <a name="syntax"></a>Sintaxis
@@ -355,27 +204,13 @@ filterObject.applyValuesFilter(values);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |values|()[]|Lista de valores que se va a mostrar.|
 
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.applyValuesFilter(['a','b']);
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 Desactiva el filtro de la columna especificada.
 
 #### <a name="syntax"></a>Sintaxis
@@ -389,21 +224,7 @@ Ninguno
 #### <a name="returns"></a>Valores devueltos
 void
 
-#### <a name="example"></a>Ejemplo
-```js
-Excel.run(function (ctx) { 
-    var column = ctx.workbook.tables.getItem("Table1").columns.getItemAt(0);
-    column.filter.clear();
-    return ctx.sync(); 
-}).catch(function(error) {
-        console.log("Error: " + error);
-        if (error instanceof OfficeExtension.Error) {
-            console.log("Debug info: " + JSON.stringify(error.debugInfo));
-        }
-});
-```
-
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -413,7 +234,7 @@ object.load(param);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos

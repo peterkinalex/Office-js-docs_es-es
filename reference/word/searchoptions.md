@@ -1,4 +1,4 @@
-# <a name="searchoptions-object-(javascript-api-for-word)"></a>Objeto SearchOptions (API de JavaScript para Word)
+# <a name="searchoptions-object-javascript-api-for-word"></a>Objeto SearchOptions (API de JavaScript para Word)
 
 Especifica las opciones que se van a incluir en una operación de búsqueda.
 
@@ -14,7 +14,7 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 |matchSoundsLike|bool|**Esta opción quedó en desuso en la actualización de junio de 2016**. Obtiene o establece un valor que indica si se van a buscar palabras que se parezcan a la cadena de búsqueda. Corresponde a la casilla Se parece a en el cuadro de diálogo Buscar y reemplazar.|
 |matchSuffix|bool|Obtiene o establece un valor que indica si se van a buscar palabras que finalicen por la cadena de búsqueda. Corresponde a la casilla Coincidir sufijo en el cuadro de diálogo Buscar y reemplazar.|
 |matchWholeWord|bool|Obtiene o establece un valor que indica si se van a buscar solamente palabras completas y no texto que forme parte de una palabra más larga. Corresponde a la casilla Solo palabras completas en el cuadro de diálogo Buscar y reemplazar.|
-|matchWildCards|bool|Obtiene o establece un valor que indica si la búsqueda se realizará usando operadores de búsqueda especiales. Corresponde a la casilla Usar caracteres comodín en el cuadro de diálogo Buscar y reemplazar.|
+|matchWildCards|bool|Obtiene o establece un valor que indica si la búsqueda se realizará usando operadores de búsqueda especiales. Corresponde a la casilla Usar caracteres comodín en el cuadro de diálogo Buscar y reemplazar. Consulte la siguiente Guía de caracteres comodín para obtener información importante sobre el uso de esta opción.|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -38,7 +38,7 @@ Ninguno
 
 ## <a name="method-details"></a>Detalles del método
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -218,6 +218,9 @@ Word.run(function (context) {
 |De n a m apariciones del carácter o expresión anteriores|{n,m} |10{1,3} busca 10, 100 y 1000.|
 |Una o más apariciones del carácter o expresión anteriores|@ |lo@t busca lot y loot.|
 
+### <a name="escaping-the-special-characters"></a>Evitar los caracteres especiales
+
+La búsqueda con caracteres comodín es realmente lo mismo que la búsqueda en una expresión regular. Existen caracteres especiales en expresiones regulares, incluidos '[', ']', '(', ')', '{', '}', '\*', '?', '<', '>', '!' y '@'. Si uno de estos caracteres forma parte de la cadena literal que está buscando el código, entonces necesita evitarse, de forma que Word sepa que debe tratarse de manera literal y no como parte de la lógica de la expresión regular. Para evitar un carácter en la búsqueda de la interfaz de usuario de Word, este se precederá con un carácter '\', pero para evitarlo mediante programación, colóquelo entre caracteres '[]'. Por ejemplo, '[\*]\*' busca cualquier cadena que comience con '\*' seguido de cualquier número de otros caracteres. 
 
 ## <a name="support-details"></a>Detalles de compatibilidad
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).

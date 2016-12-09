@@ -1,25 +1,26 @@
-# <a name="formatprotection-object-javascript-api-for-excel"></a>Objeto FormatProtection (API de JavaScript para Excel)
+# <a name="pivottable-object-javascript-api-for-excel"></a>Objeto PivotTable (API de JavaScript para Excel)
 
-Representa la protección de formato de un objeto de intervalo.
+Representa una tabla dinámica de Excel.
 
 ## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|formulaHidden|bool|Indica si Excel oculta la fórmula de las celdas del rango. Un valor null indica que el rango no tiene una configuración de fórmula oculta uniforme.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|locked|bool|Indica si Excel bloquea las celdas del objeto. Un valor NULL indica que el intervalo completo no tiene una configuración de bloqueo uniforme.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Nombre de la tabla dinámica.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 ## <a name="relationships"></a>Relaciones
-Ninguno
-
+| Relación | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|worksheet|[Worksheet](worksheet.md)|La hoja de cálculo que contiene la tabla dinámica actual. Solo lectura.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[refresh()](#refresh)|void|Actualiza la tabla dinámica.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -36,6 +37,20 @@ object.load(param);
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
+
+#### <a name="returns"></a>Valores devueltos
+void
+
+### <a name="refresh"></a>refresh()
+Actualiza la tabla dinámica.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+pivotTableObject.refresh();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
 
 #### <a name="returns"></a>Valores devueltos
 void

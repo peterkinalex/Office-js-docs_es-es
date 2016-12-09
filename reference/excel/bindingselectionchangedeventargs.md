@@ -1,0 +1,15 @@
+# <a name="bindingselectionchangedeventargs-object-javascript-api-for-excel"></a>Objeto BindingSelectionChangedEventArgs (API de JavaScript para Excel)
+
+Proporciona información sobre el enlace que ha generado el evento SelectionChanged.
+
+## <a name="properties"></a>Propiedades
+
+Ninguno
+
+## <a name="relationships"></a>Relaciones
+Ninguno
+
+
+## <a name="methods"></a>Métodos
+Ninguna
+

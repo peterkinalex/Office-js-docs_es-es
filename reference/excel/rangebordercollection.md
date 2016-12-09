@@ -1,13 +1,13 @@
-# <a name="rangebordercollection-object-(javascript-api-for-excel)"></a>Objeto RangeBorderCollection (API de JavaScript para Excel)
+# <a name="rangebordercollection-object-javascript-api-for-excel"></a>Objeto RangeBorderCollection (API de JavaScript para Excel)
 
 Representa los objetos de borde que componen el borde del intervalo.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción
-|:---------------|:--------|:----------|
-|count|int|Número de objetos de borde de la colección. Solo lectura.|
-|items|[RangeBorder[]](rangeborder.md)|Colección de objetos rangeBorder. Solo lectura.|
+| Propiedad     | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|count|entero|Número de objetos de borde de la colección. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[RangeBorder[]](rangeborder.md)|Colección de objetos rangeBorder. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -17,17 +17,17 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Obtiene un objeto de borde mediante su nombre.|
-|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Obtiene un objeto de borde mediante su índice.|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[getItem(index: string)](#getitemindex-string)|[RangeBorder](rangeborder.md)|Obtiene un objeto de borde mediante su nombre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[RangeBorder](rangeborder.md)|Obtiene un objeto de borde mediante su índice.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="getitem(index:-string)"></a>getItem(index: string)
-Obtiene un objeto de borde mediante su nombre. 
+### <a name="getitemindex-string"></a>getItem(index: string)
+Obtiene un objeto de borde mediante su nombre.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
@@ -36,7 +36,7 @@ rangeBorderCollectionObject.getItem(index);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|string|Valor de índice del objeto de borde que va a recuperarse.  Los valores posibles son: EdgeTop, EdgeBottom, EdgeLeft, EdgeRight, InsideVertical, InsideHorizontal, DiagonalDown, DiagonalUp.|
 
 #### <a name="returns"></a>Valores devueltos
@@ -72,7 +72,7 @@ Excel.run(function (ctx) {
     var rangeAddress = "A1:F8";
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
-    var border = ctx.workbook.borders.getItemAt(0);
+    var border = range.format.borders.getItemAt(0);
     border.load('sideIndex');
     return ctx.sync().then(function() {
             console.log(border.sideIndex);
@@ -86,7 +86,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 Obtiene un objeto de borde mediante su índice.
 
 #### <a name="syntax"></a>Sintaxis
@@ -96,7 +96,7 @@ rangeBorderCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
 #### <a name="returns"></a>Valores devueltos
@@ -110,7 +110,7 @@ Excel.run(function (ctx) {
     var rangeAddress = "A1:F8";
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
-    var border = ctx.workbook.borders.getItemAt(0);
+    var border = range.format.borders.getItemAt(0);
     border.load('sideIndex');
     return ctx.sync().then(function() {
             console.log(border.sideIndex);
@@ -124,7 +124,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -134,7 +134,7 @@ object.load(param);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos
@@ -148,7 +148,7 @@ Excel.run(function (ctx) {
     var worksheet = ctx.workbook.worksheets.getItem(sheetName);
     var range = worksheet.getRange(rangeAddress);
     var borders = range.format.borders;
-    borders.load('items');
+    border.load('items');
     return ctx.sync().then(function() {
         console.log(borders.count);
         for (var i = 0; i < borders.items.length; i++)

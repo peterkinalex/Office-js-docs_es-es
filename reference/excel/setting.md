@@ -1,13 +1,12 @@
-# <a name="formatprotection-object-javascript-api-for-excel"></a>Objeto FormatProtection (API de JavaScript para Excel)
+# <a name="setting-object-javascript-api-for-excel"></a>Objeto Setting (API de JavaScript para Excel)
 
-Representa la protección de formato de un objeto de intervalo.
+Setting representa un par clave-valor de una configuración que se conserva en el documento.
 
 ## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|formulaHidden|bool|Indica si Excel oculta la fórmula de las celdas del rango. Un valor null indica que el rango no tiene una configuración de fórmula oculta uniforme.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|locked|bool|Indica si Excel bloquea las celdas del objeto. Un valor NULL indica que el intervalo completo no tiene una configuración de bloqueo uniforme.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|key|string|Devuelve la clave que representa el identificador de la configuración. Solo lectura.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -19,10 +18,25 @@ Ninguno
 
 | Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|Elimina la configuración.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
+
+### <a name="delete"></a>delete()
+Elimina la configuración.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+settingObject.delete();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+void
 
 ### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.

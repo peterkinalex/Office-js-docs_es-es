@@ -6,17 +6,19 @@ Los complementos de Excel se ejecutan en varias versiones de Office, incluida Of
 
 |  Conjunto de requisitos  |  Office 2016 para Windows*  |  Office 2016 para iPad  |  Office 2016 para Mac  | Office Online  |
 |:-----|-----|:-----|:-----|:-----|
-| ExcelApi 1.3  | Versión 1608 o posterior| 1.27 o posterior |  15.27 o posterior| Septiembre de 2016 | 
-| ExcelApi 1.2  | Versión 1601 o posterior | 1.21 o posterior | 15.22 o posterior| Enero de 2016 |
+| ExcelApi 1.3  | Versión 1608 (compilación 7369.2055) o posterior| 1.27 o posterior |  15.27 o posterior| Septiembre de 2016 | 
+| ExcelApi 1.2  | Versión 1601 (compilación 6741.2088) o posterior | 1.21 o posterior | 15.22 o posterior| Enero de 2016 |
 | ExcelApi 1.1  | Versión 1509 (compilación 4266.1001) o posterior | 1.19 o posterior | 15.20 o posterior| Enero de 2016 |
 
 > &#42; **Nota**: El número de compilación para Office 2016 que se ha instalado mediante MSI es 16.0.4266.1001. Esta versión solo contiene el conjunto de requisitos de ExcelApi 1.1.
 
 Para obtener más información sobre las versiones y números de compilación, consulte:
 
-- [Números de versión y compilación de las versiones del canal de actualización para los clientes de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx)
+- 
+  [Números de versión y compilación de las versiones del canal de actualización para los clientes de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [¿Qué versión de Office estoy usando?](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
-- [Dónde puede encontrar el número de versión y de compilación de una aplicación de cliente de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- 
+  [Dónde puede encontrar el número de versión y de compilación de una aplicación de cliente de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos comunes de la API de Office
 Para obtener información sobre los conjuntos de requisitos comunes de la API, consulte [Office common API requirement sets (Conjuntos de requisitos comunes de la API de Office)](office-add-in-requirement-sets.md).
@@ -166,4 +168,3 @@ API de JavaScript de Excel 1.1 es la primera versión de la API. Para obtener m�
 
 - [Especificar los hosts de Office y los requisitos de la API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md)
-

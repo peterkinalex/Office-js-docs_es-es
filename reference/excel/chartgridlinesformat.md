@@ -1,4 +1,4 @@
-# <a name="chartgridlinesformat-object-(javascript-api-for-excel)"></a>Objeto ChartGridlinesFormat (API de JavaScript para Excel)
+# <a name="chartgridlinesformat-object-javascript-api-for-excel"></a>Objeto ChartGridlinesFormat (API de JavaScript para Excel)
 
 Encapsula las propiedades de formato de las líneas de cuadrícula del gráfico.
 
@@ -7,20 +7,20 @@ Encapsula las propiedades de formato de las líneas de cuadrícula del gráfico.
 Ninguno
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción|
-|:---------------|:--------|:----------|
-|line|[ChartLineFormat](chartlineformat.md)|Representa el formato de línea de gráfico. Solo lectura.|
+| Relación | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|line|[ChartLineFormat](chartlineformat.md)|Representa el formato de línea de gráfico. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -30,7 +30,7 @@ object.load(param);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos

@@ -1,15 +1,15 @@
-# <a name="nameditem-object-(javascript-api-for-excel)"></a>Objeto NamedItem (API de JavaScript para Excel)
+# <a name="nameditem-object-javascript-api-for-excel"></a>Objeto NamedItem (API de JavaScript para Excel)
 
-Representa un nombre definido para un intervalo de celdas o un valor. Los nombres pueden ser objetos primitivos con nombre (como puede verse en el tipo siguiente), un objeto de intervalo o una referencia a un intervalo. Este objeto puede usarse para obtener un objeto de intervalo asociado a nombres.
+Representa un nombre definido para un rango de celdas o un valor. Los nombres pueden ser objetos primitivos con nombre (como puede verse en el tipo siguiente), un objeto de rango o una referencia a un rango. Este objeto puede usarse para obtener un objeto de rango asociado a nombres.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción
-|:---------------|:--------|:----------|
-|name|string|Nombre del objeto. Solo lectura.|
-|type|string|Indica el tipo de referencia que está asociado al nombre. Solo lectura. Los valores posibles son: String, Integer, Double, Boolean, Range.|
-|value|object|Representa la fórmula a la que tiene que hacer referencia el nombre, según su definición (por ejemplo, =Hoja14!$B$2:$H$12, =4,75, etc.). Solo lectura.|
-|visible|bool|Especifica si el objeto está visible o no.|
+| Propiedad     | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|name|string|El nombre del objeto. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Indica el tipo de referencia que está asociado al nombre. Solo lectura. Los valores posibles son: String, Integer, Double, Boolean, Range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|value|object|Representa la fórmula a la que debe hacer referencia el nombre, según su definición. Por ejemplo =Sheet14!$B$2:$H$12, =4.75, etc. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|visible|bool|Especifica si el objeto es visible o no.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -19,15 +19,15 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[getRange()](#getrange)|[Range](range.md)|Devuelve el objeto de intervalo asociado al nombre. Produce una excepción si el tipo del elemento con nombre no es un intervalo.|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[getRange()](#getrange)|[Range](range.md)|Devuelve el objeto de intervalo asociado al nombre. Produce una excepción si el tipo del elemento con nombre no es un intervalo.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="getrange()"></a>getRange()
+### <a name="getrange"></a>getRange()
 Devuelve el objeto de intervalo asociado al nombre. Produce una excepción si el tipo del elemento con nombre no es un intervalo.
 
 #### <a name="syntax"></a>Sintaxis
@@ -43,7 +43,7 @@ Ninguno
 
 #### <a name="examples"></a>Ejemplos
 
-Devuelve el objeto de intervalo que está asociado al nombre. `null` si el nombre no es del tipo `Range`. Nota: Esta API actualmente solo admite elementos del ámbito del libro.
+Devuelve el objeto Range que está asociado al nombre. `null` si el nombre no es del tipo `Range`. Nota: Esta API actualmente solo admite elementos del ámbito del libro.**
 
 ```js
 Excel.run(function (ctx) { 
@@ -62,7 +62,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -72,7 +72,7 @@ object.load(param);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos

@@ -1,12 +1,12 @@
-# <a name="application-object-(javascript-api-for-excel)"></a>Objeto Application (API de JavaScript para Excel)
+# <a name="application-object-javascript-api-for-excel"></a>Objeto Application (API de JavaScript para Excel)
 
 Representa la aplicación de Excel que administra el libro.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción
-|:---------------|:--------|:----------|
-|calculationMode|string|Devuelve el modo de cálculo usado en el libro. Solo lectura. Los valores posibles son: `Automatic` Excel controla el recálculo; `AutomaticExceptTables` Excel controla el recálculo pero omite los cambios de las tablas; `Manual` el cálculo se realiza cuando el usuario lo solicita.|
+| Propiedad     | Tipo   |Descripción|Conjunto req.|
+|:---------------|:--------|:----------|:----------|
+|calculationMode|string|Devuelve el modo de cálculo usado en el libro. Solo lectura. Los valores posibles son: `Automatic` Excel controla el recálculo; `AutomaticExceptTables` Excel controla el recálculo pero omite los cambios de las tablas; `Manual` el cálculo se realiza cuando el usuario lo solicita.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -16,15 +16,15 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalcula todos los libros abiertos actualmente en Excel.|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción|Conjunto req.|
+|:---------------|:--------|:----------|:----------|
+|[calculate(calculationType: string)](#calculatecalculationtype-string)|void|Recalcula todos los libros abiertos actualmente en Excel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="calculate(calculationtype:-string)"></a>calculate(calculationType: string)
+### <a name="calculatecalculationtype-string"></a>calculate(calculationType: string)
 Recalcula todos los libros abiertos actualmente en Excel.
 
 #### <a name="syntax"></a>Sintaxis
@@ -35,7 +35,7 @@ applicationObject.calculate(calculationType);
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|calculationType|string|Especifica el tipo de cálculo que se va a usar. Los valores posibles son: `Recalculate` opción predeterminada, realiza el cálculo normal calculando todas las fórmulas del libro; `Full` fuerza el cálculo completo de los datos; `FullRebuild` fuerza el cálculo completo de los datos y vuelve a crear las dependencias.|
+|calculationType|string|Especifica el tipo de cálculo que se va a usar. Los valores posibles son: `Recalculate` Este es un recálculo suave y se usa principalmente para la compatibilidad con versiones anteriores. `Full` Recalcula todas las celdas que Excel ha marcado como modificadas, es decir, dependientes de datos cambiados o volátiles, y las celdas que se han marcado mediante programación como modificadas. `FullRebuild` Recalcula todas las celdas de todos los libros abiertos.|
 
 #### <a name="returns"></a>Valores devueltos
 void
@@ -54,7 +54,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -84,4 +84,3 @@ Excel.run(function (ctx) {
         }
 });
 ```
-

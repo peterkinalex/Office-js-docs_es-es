@@ -1,13 +1,13 @@
-# <a name="tablerow-object-(javascript-api-for-excel)"></a>Objeto TableRow (API de JavaScript para Excel)
+# <a name="tablerow-object-javascript-api-for-excel"></a>Objeto TableRow (API de JavaScript para Excel)
 
 Representa una fila de una tabla.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción
-|:---------------|:--------|:----------|
-|index|int|Devuelve el número de índice de la fila dentro de la colección de filas de la tabla. Indizado con cero. Solo lectura.|
-|values|object[][]|Representa los valores sin formato del intervalo especificado. Los datos devueltos pueden ser de tipo cadena, número o booleano. La celda que contenga un error devolverá la cadena de error.|
+| Propiedad     | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|index|entero|Devuelve el número de índice de la fila dentro de la colección de filas de la tabla. Indizado con cero. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|values|object[][]|Representa los valores sin formato del rango especificado. Los datos devueltos pueden ser de tipo string, number o boolean. La celda que contenga un error devolverá la cadena de error.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -17,16 +17,16 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[delete()](#delete)|void|Elimina la fila de la tabla.|
-|[getRange()](#getrange)|[Range](range.md)|Devuelve el objeto de intervalo asociado a toda la fila.|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[delete()](#delete)|void|Elimina la fila de la tabla.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Devuelve el objeto de intervalo asociado a toda la fila.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 Elimina la fila de la tabla.
 
 #### <a name="syntax"></a>Sintaxis
@@ -45,10 +45,9 @@ void
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(2);
     row.delete();
     return ctx.sync(); 
-    });
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {
@@ -58,7 +57,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getrange()"></a>getRange()
+### <a name="getrange"></a>getRange()
 Devuelve el objeto de intervalo asociado a toda la fila.
 
 #### <a name="syntax"></a>Sintaxis
@@ -77,7 +76,7 @@ Ninguno
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(0);
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(0);
     var rowRange = row.getRange();
     rowRange.load('address');
     return ctx.sync().then(function() {
@@ -92,7 +91,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -102,7 +101,7 @@ object.load(param);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos
@@ -112,7 +111,7 @@ void
 ```js
 Excel.run(function (ctx) { 
     var tableName = 'Table1';
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItem(0);
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItem(0);
     row.load('index');
     return ctx.sync().then(function() {
         console.log(row.index);
@@ -129,7 +128,8 @@ Excel.run(function (ctx) {
 Excel.run(function (ctx) { 
     var tables = ctx.workbook.tables;
     var newValues = [["New", "Values", "For", "New", "Row"]];
-    var row = ctx.workbook.tables.getItem(tableName).tableRows.getItemAt(2);
+    var tableName = 'Table1';
+    var row = ctx.workbook.tables.getItem(tableName).rows.getItemAt(2);
     row.values = newValues;
     row.load('values');
     return ctx.sync().then(function() {

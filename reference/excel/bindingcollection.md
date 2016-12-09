@@ -1,13 +1,13 @@
-# <a name="bindingcollection-object-(javascript-api-for-excel)"></a>Objeto BindingCollection (API de JavaScript para Excel)
+# <a name="bindingcollection-object-javascript-api-for-excel"></a>Objeto BindingCollection (API de JavaScript para Excel)
 
 Representa la colección de todos los objetos de enlace que forman parte del libro.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción
-|:---------------|:--------|:----------|
-|count|entero|Devuelve el número de enlaces incluidos en la colección. Solo lectura.|
-|items|[Binding[]](binding.md)|Colección de objetos de enlace. Solo lectura.|
+| Propiedad     | Tipo   |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|count|int|Devuelve el número de enlaces incluidos en la colección. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|items|[Binding[]](binding.md)|Colección de objetos de enlace. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -17,16 +17,73 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción|
-|:---------------|:--------|:----------|
-|[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Obtiene un objeto de enlace por identificador.|
-|[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Obtiene un objeto de enlace según su posición en la matriz de elementos.|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|[add(range: Range or string, bindingType: string, id: string)](#addrange-range-or-string-bindingtype-string-id-string)|[Binding](binding.md)|Agregar un enlace nuevo a un intervalo determinado.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[addFromNamedItem(name: string, bindingType: string, id: string)](#addfromnameditemname-string-bindingtype-string-id-string)|[Binding](binding.md)|Agregar un enlace nuevo basándose en un elemento con nombre del libro.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[addFromSelection(bindingType: string, id: string)](#addfromselectionbindingtype-string-id-string)|[Binding](binding.md)|Agregar un enlace nuevo basándose en la selección actual.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Obtiene un objeto de enlace por identificador.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Obtiene un objeto de enlace según su posición en la matriz de elementos.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(id: string)](#getitemornullid-string)|[Binding](binding.md)|Obtiene un objeto de enlace por identificador. Si el objeto de enlace no existe, la propiedad isNull del objeto devuelto será True.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="getitem(id:-string)"></a>getItem(id: string)
+### <a name="addrange-range-or-string-bindingtype-string-id-string"></a>add(range: Range or string, bindingType: string, id: string)
+Agregar un enlace nuevo a un intervalo determinado.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+bindingCollectionObject.add(range, bindingType, id);
+```
+
+#### <a name="parameters"></a>Parámetros
+| Parámetro    | Tipo   |Descripción|
+|:---------------|:--------|:----------|:---|
+|range|Range o string|Intervalo al que se va a vincular el enlace. Puede ser un objeto de intervalo de Excel o una cadena. Si es una cadena, debe incluir la dirección completa, incluido el nombre de la hoja|
+|bindingType|string|Tipo de enlace.  Los valores posibles son: Range, Table, Text|
+|id|string|Nombre del enlace.|
+
+#### <a name="returns"></a>Valores devueltos
+[Binding](binding.md)
+
+### <a name="addfromnameditemname-string-bindingtype-string-id-string"></a>addFromNamedItem(name: string, bindingType: string, id: string)
+Agregar un enlace nuevo basándose en un elemento con nombre del libro.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+bindingCollectionObject.addFromNamedItem(name, bindingType, id);
+```
+
+#### <a name="parameters"></a>Parámetros
+| Parámetro    | Tipo   |Descripción|
+|:---------------|:--------|:----------|:---|
+|name|string|Nombre desde el que se va a crear el enlace.|
+|bindingType|string|Tipo de enlace.  Los valores posibles son: Range, Table, Text|
+|id|string|Nombre del enlace.|
+
+#### <a name="returns"></a>Valores devueltos
+[Binding](binding.md)
+
+### <a name="addfromselectionbindingtype-string-id-string"></a>addFromSelection(bindingType: string, id: string)
+Agregar un enlace nuevo basándose en la selección actual.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+bindingCollectionObject.addFromSelection(bindingType, id);
+```
+
+#### <a name="parameters"></a>Parámetros
+| Parámetro    | Tipo   |Descripción|
+|:---------------|:--------|:----------|:---|
+|bindingType|string|Tipo de enlace.  Los valores posibles son: Range, Table, Text|
+|id|string|Nombre del enlace.|
+
+#### <a name="returns"></a>Valores devueltos
+[Binding](binding.md)
+
+### <a name="getitemid-string"></a>getItem(id: string)
 Obtiene un objeto de enlace por identificador.
 
 #### <a name="syntax"></a>Sintaxis
@@ -36,7 +93,7 @@ bindingCollectionObject.getItem(id);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |id|string|Identificador del objeto de contenido que se va a recuperar.|
 
 #### <a name="returns"></a>Valores devueltos
@@ -47,54 +104,42 @@ bindingCollectionObject.getItem(id);
 Crear un enlace de tabla para supervisar los cambios en los datos de la tabla. Cuando se modifica algún dato, el color de fondo de la tabla cambiará a naranja.
 
 ```js
-(function () {
-    // Create myTable
-    Excel.run(function (ctx) {
-        var table = ctx.workbook.tables.add("Sheet1!A1:C4", true);
-        table.name = "myTable";
-        return ctx.sync().then(function () {
-            console.log("MyTable is Created!");
-
-            //Create a new table binding for myTable
-            Office.context.document.bindings.addFromNamedItemAsync("myTable", Office.CoercionType.Table, { id: "myBinding" }, function (asyncResult) {
-                if (asyncResult.status == "failed") {
-                    console.log("Action failed with error: " + asyncResult.error.message);
-                }
-                else {
-                    // If successful, add the event handler to the table binding.
-                    Office.select("bindings#myBinding").addHandlerAsync(Office.EventType.BindingDataChanged, onBindingDataChanged);
-                }
-            });
-        })
-        .catch(function (error) {
-            console.log(JSON.stringify(error));
-        });
+function addEventHandler() {
+    //Create Table1
+Excel.run(function (ctx) { 
+    ctx.workbook.tables.add("Sheet1!A1:C4", true);
+    return ctx.sync().then(function() {
+             console.log("My Diet Data Inserted!");
+    })
+    .catch(function (error) {
+             console.log(JSON.stringify(error));
     });
+});
+    //Create a new table binding for Table1
+Office.context.document.bindings.addFromNamedItemAsync("Table1", Office.CoercionType.Table, { id: "myBinding" }, function (asyncResult) {
+    if (asyncResult.status == "failed") {
+        console.log("Action failed with error: " + asyncResult.error.message);
+    }
+    else {
+        // If succeeded, then add event handler to the table binding.
+        Office.select("bindings#myBinding").addHandlerAsync(Office.EventType.BindingDataChanged, onBindingDataChanged);
+    }
+});
+}
     
-    // When data in the table is changed, this event is triggered.
-    function onBindingDataChanged(eventArgs) {
-        Excel.run(function (ctx) {
-            // Highlight the table in orange to indicate data changed.
-            var fill = ctx.workbook.tables.getItem("myTable").getDataBodyRange().format.fill;
-            fill.load("color");
-            return ctx.sync().then(function () {
-                if (fill.color != "Orange") {
-                    ctx.workbook.bindings.getItem(eventArgs.binding.id).getTable().getDataBodyRange().format.fill.color = "Orange";
- 
-                    console.log("The value in this table got changed!");
-                }
-                else
-                    
-            })
-                .then(ctx.sync)
-            .catch(function (error) {
-                console.log(JSON.stringify(error));
-            });
-        });
-    } 
-})();
- 
-
+// when data in the table is changed, this event will be triggered.
+function onBindingDataChanged(eventArgs) {
+Excel.run(function (ctx) { 
+    // highlight the table in orange to indicate data has been changed.
+    ctx.workbook.bindings.getItem(eventArgs.binding.id).getTable().getDataBodyRange().format.fill.color = "Orange";
+    return ctx.sync().then(function() {
+            console.log("The value in this table got changed!");
+    })
+    .catch(function (error) {
+            console.log(JSON.stringify(error));
+    });
+});
+}
 
 ```
 
@@ -118,7 +163,7 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemat(index:-number)"></a>getItemAt(index: number)
+### <a name="getitematindex-number"></a>getItemAt(index: number)
 Obtiene un objeto de enlace según su posición en la matriz de elementos.
 
 #### <a name="syntax"></a>Sintaxis
@@ -128,7 +173,7 @@ bindingCollectionObject.getItemAt(index);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
+|:---------------|:--------|:----------|:---|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
 #### <a name="returns"></a>Valores devueltos
@@ -152,7 +197,23 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="getitemornullid-string"></a>getItemOrNull(id: string)
+Obtiene un objeto de enlace por identificador. Si el objeto de enlace no existe, la propiedad isNull del objeto devuelto será True.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+bindingCollectionObject.getItemOrNull(id);
+```
+
+#### <a name="parameters"></a>Parámetros
+| Parámetro    | Tipo   |Descripción|
+|:---------------|:--------|:----------|:---|
+|id|string|Identificador del objeto de contenido que se va a recuperar.|
+
+#### <a name="returns"></a>Valores devueltos
+[Binding](binding.md)
+
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -162,8 +223,8 @@ object.load(param);
 
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, acepta un objeto [loadOption](loadoption.md).|
+|:---------------|:--------|:----------|:---|
+|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos
 void
@@ -177,7 +238,6 @@ Excel.run(function (ctx) {
         for (var i = 0; i < bindings.items.length; i++)
         {
             console.log(bindings.items[i].id);
-            console.log(bindings.items[i].index);
         }
     });
 }).catch(function(error) {
