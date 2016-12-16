@@ -3,7 +3,7 @@
 
 Puede usar Visual Studio para desarrollar y depurar add-ins en Windows, pero no se puede usar para depurar add-ins en un iPad ni en un Mac. Como los add-ins se desarrollan en HTML y Javascript, están diseñados para que funcionen en distintas plataformas, pero puede haber diferencias sutiles en la forma en que cada explorador presenta el código HTML. En este tema se describe cómo depurar los add-ins que se ejecutan en iPad o Mac. 
 
-## <a name="debugging-with-vorlon.js"></a>Depurar con Vorlon.js 
+## <a name="debugging-with-vorlonjs"></a>Depurar con Vorlon.js 
 
 Vorlon.js es un depurador de páginas web, similar a las herramientas de F12, que está diseñado para trabajar de forma remota y permite depurar páginas web en diferentes dispositivos. Para más información, vea el [sitio web de Vorlon](http://www.vorlonjs.com).  
 
@@ -19,7 +19,7 @@ Para instalar y configurar Vorlon:
 
 5.  Ejecute el servidor Vorlon con el comando `sudo vorlon`. 
 
-6.  Abra una ventana del explorador y vaya a [http://localhost:1337](http://localhost:1337), que es la interfaz de Vorlon. Confíe en el certificado de seguridad cuando se le solicite. El certificado de seguridad se encuentra también en la carpeta Vorlon, en /Server/cert. 
+6.  Abra una ventana del explorador y vaya a [http://localhost:1337](http://localhost:1337), que es la interfaz de Vorlon. Cuando se le pida, elija **Siempre** confiar en el certificado de seguridad. El certificado de seguridad se encuentra también en la carpeta Vorlon, en /Server/cert. 
 
 7.  Agregue la siguiente etiqueta de secuencia de comandos a la sección `<head>` del archivo home.html (o al archivo HTML principal) del complemento:
 ```    

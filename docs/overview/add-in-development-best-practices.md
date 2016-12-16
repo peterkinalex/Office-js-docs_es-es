@@ -4,9 +4,9 @@
 
 Los complementos eficaces ofrecen una funcionalidad única y atractiva que amplía las aplicaciones de Office de forma visualmente interesante. Para crear un complemento excelente, proporcione una experiencia atractiva la primera vez para sus usuarios, diseñe una experiencia de interfaz de usuario de primera clase y optimice el rendimiento de los complementos. Aplique los procedimientos recomendados descritos en este artículo para crear complementos que ayuden a los usuarios a completar las tareas de forma rápida y eficaz.
 
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+
 ## <a name="provide-clear-value"></a>Proporcionar un valor claro
-
-
 
 - Cree complementos que ayuden a los usuarios a completar las tareas con rapidez y eficacia. Céntrese en escenarios relevantes para las aplicaciones de Office. Por ejemplo:
  - Realizar las tareas de creación básicas de formas más rápida y fácil, y reducir las interrupciones.

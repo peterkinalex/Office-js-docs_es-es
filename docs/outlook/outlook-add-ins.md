@@ -1,5 +1,5 @@
 
-# <a name="outlook-addins"></a>Complementos de Outlook
+# <a name="outlook-add-ins"></a>Complementos de Outlook
 
 Los complementos de Outlook son integraciones creadas por terceros en Outlook con la nueva plataforma basada en tecnologías web. Los complementos de Outlook tienen tres aspectos principales:
 
@@ -14,6 +14,7 @@ Los complementos de Outlook son diferentes de los complementos COM o VSTO, que s
 
 Entre los elementos de Outlook compatibles con los complementos de correo se incluyen mensajes de correo, convocatorias, respuestas o cancelaciones de reuniones y citas. Cada complemento de correo define el contexto en el que está disponible, incluidos los tipos de elementos y si el usuario está leyendo o redactando un elemento.
 
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
 
 ## <a name="extension-points"></a>Puntos de extensión
 
@@ -34,7 +35,7 @@ Los puntos de extensión son la forma en que los complementos se integran con Ou
     ![Muestra una aplicación contextual de una tarjeta](../../images/59bcabc2-7cb0-4b9b-bb9f-06089dca9c31.png)
 
 
-## <a name="mailbox-items-available-to-addins"></a>Elementos del buzón disponibles para los complementos
+## <a name="mailbox-items-available-to-add-ins"></a>Elementos del buzón disponibles para los complementos
 
 
 Los complementos de Outlook están disponibles en los mensajes o citas mientras se redactan o leen, pero no en otros elementos. Outlook no activa complementos si el elemento de mensaje actual de un formulario de redacción o lectura cumple una de las condiciones siguientes:
@@ -59,7 +60,7 @@ En general, Outlook puede activar complementos en formularios de lectura para el
 Los complementos de Outlook son compatibles con Outlook 2013 y versiones posteriores, Outlook 2016 para Mac, Outlook Web App para Exchange 2013 local, Outlook Web App en Office 365 y Outlook.com. No todas las características más recientes son compatibles con todos los clientes al mismo tiempo. Consulte los distintos temas y referencias de API para ver en qué hosts se admiten y en cuáles no.
 
 
-## <a name="get-started-building-outlook-addins"></a>Introducción a la compilación de complementos de Outlook
+## <a name="get-started-building-outlook-add-ins"></a>Introducción a la compilación de complementos de Outlook
 
 
 Para empezar a compilar complementos de Outlook, vea [Introducción a los complementos de Outlook para Office 365](https://dev.outlook.com/MailAppsGettingStarted/GetStarted).

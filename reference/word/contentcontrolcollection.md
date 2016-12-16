@@ -1,4 +1,4 @@
-# <a name="contentcontrolcollection-object-(javascript-api-for-word)"></a>Objeto ContentControlCollection (API de JavaScript para Word)
+# <a name="contentcontrolcollection-object-javascript-api-for-word"></a>Objeto ContentControlCollection (API de JavaScript para Word)
 
 Contiene una colección de objetos ContentControl. Los controles de contenido son regiones delimitadas y posiblemente con etiquetas de un documento que funcionan como contenedores para tipos de contenido específicos. Los controles de contenido individuales pueden incluir contenido como imágenes, tablas o párrafos de texto con formato. Actualmente, solo se admiten controles de contenido de texto enriquecido.
 
@@ -24,7 +24,7 @@ Ninguno
 
 ## <a name="method-details"></a>Detalles del método
 
-### <a name="getbyid(id:-number)"></a>getById(id: number)
+### <a name="getbyidid-number"></a>getById(id: number)
 Obtiene un control de contenido mediante su identificador.
 
 #### <a name="syntax"></a>Sintaxis
@@ -65,7 +65,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="getbytag(tag:-string)"></a>getByTag(tag: string)
+### <a name="getbytagtag-string"></a>getByTag(tag: string)
 Obtiene los controles de contenido que tienen la etiqueta especificada.
 
 #### <a name="syntax"></a>Sintaxis
@@ -112,10 +112,10 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>Información adicional
-El ejemplo [Word-Add-in-DocumentAssembly][contentControls.getByTag] contiene otro ejemplo sobre cómo usar el método getByTag.
+En el ejemplo [Word-Add-in-DocumentAssembly][contentControls.getByTag], se ve otro ejemplo sobre cómo usar el método getByTag.
 
 
-### <a name="getbytitle(title:-string)"></a>getByTitle(title: string)
+### <a name="getbytitletitle-string"></a>getByTitle(title: string)
 Obtiene los controles de contenido que tienen el título especificado.
 
 #### <a name="syntax"></a>Sintaxis
@@ -162,9 +162,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>Información adicional
-El ejemplo [Word-Add-in-DocumentAssembly][contentControls.getByTitle] contiene otro ejemplo sobre cómo usar el método getByTitle.
+En el ejemplo [Word-Add-in-DocumentAssembly][contentControls.getByTitle], se ve otro ejemplo sobre cómo usar el método getByTitle.
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -252,6 +252,6 @@ El ejemplo de complemento [Silly stories](https://aka.ms/sillystorywordaddin) mu
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-[contentControls.getByTag]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L300 "get by tag"
-[contentControls.getByTitle]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L331 "get by title"
+[contentControls.getByTag]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L300 "obtener por etiqueta"
+[contentControls.getByTitle]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L331 "obtener por título"
 

@@ -3,7 +3,11 @@
 
 ¿Quiere crear una solución que amplíe las funciones de Word (por ejemplo, una solución para el ensamblado automatizado de documentos o una que enlace y tenga acceso a datos en un documento de Word desde otros orígenes de datos)? Puede usar la plataforma de complementos de Office, que incluye la API de JavaScript para Word y la API de JavaScript para Office, para ampliar las funciones de los clientes de Word que se ejecutan en equipos de escritorio de Windows, en equipos Mac o en la nube.
 
-Los complementos de Word son una de las muchas opciones de desarrollo que tiene en la [plataforma de complementos de Office](../overview/office-add-ins.md). Puede usar los comandos de complemento para ampliar la interfaz de usuario de Word e iniciar paneles de tareas que ejecuten código JavaScript que interactúe con el contenido de un documento de Word. Cualquier código que pueda ejecutar en un explorador también se puede ejecutar en un complemento de Word. Los complementos que interactúan con contenido en un documento de Word crean solicitudes para actuar en objetos de Word y sincronizar el estado de los objetos. En la ilustración siguiente se muestra un ejemplo de un complemento de Word que se ejecuta en un panel de tareas.
+Los complementos de Word son una de las muchas opciones de desarrollo que tiene en la [plataforma de complementos de Office](../overview/office-add-ins.md). Puede usar los comandos de complemento para ampliar la interfaz de usuario de Word e iniciar paneles de tareas que ejecuten código JavaScript que interactúe con el contenido de un documento de Word. Cualquier código que pueda ejecutar en un explorador también se puede ejecutar en un complemento de Word. Los complementos que interactúan con contenido en un documento de Word crean solicitudes para actuar en objetos de Word y sincronizar el estado de los objetos. 
+
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+
+En la ilustración siguiente se muestra un ejemplo de un complemento de Word que se ejecuta en un panel de tareas.
 
 **Figura 1: Complemento que se ejecuta en un panel de tareas de Word**
 
@@ -65,7 +69,7 @@ Para más información sobre cómo diseñar un complemento de Word de primer niv
 
 Después de desarrollar el complemento, puede [publicarlo](../publish/publish.md) en un recurso compartido de red, en un catálogo de aplicaciones o en la Tienda Office.
 
-## <a name="what's-coming-up-for-word-add-ins?"></a>¿Qué novedades habrá próximamente para los complementos de Word?
+## <a name="whats-coming-up-for-word-add-ins"></a>¿Qué novedades habrá próximamente para los complementos de Word?
 
 Cuando diseñemos y desarrollemos nuevas API para complementos de Word, estarán disponibles y nos podrá enviar sus comentarios en la página [Especificaciones de la API abierta](../../reference/openspec.md). Descubra las nuevas características que están en proceso para las API de JavaScript para Word y envíe sus comentarios sobre nuestras especificaciones de diseño.
 

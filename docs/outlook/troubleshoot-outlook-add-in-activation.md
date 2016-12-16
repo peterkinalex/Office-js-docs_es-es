@@ -5,7 +5,7 @@
 La activación de los complementos de Outlook es contextual y se basa en las reglas de activación del manifiesto del complemento. Cuando las condiciones del elemento seleccionado actualmente cumplen las reglas de activación del complemento, la aplicación host activa y muestra el botón de complemento en la interfaz de usuario de Outlook (en el panel de selección del complemento para complementos de redacción y en la barra de complementos para complementos de lectura). Pero, si el complemento no se activa de la manera esperada, tiene que fijarse en las siguientes áreas para buscar las posibles razones.
 
 <a name="troubleshootingmailapps"></a>
-## <a name="is-the-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013?"></a>¿Está el buzón de usuario en una versión de Exchange Server que sea, como mínimo, Exchange 2013?
+## <a name="is-the-user-mailbox-on-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>¿Está el buzón de usuario en una versión de Exchange Server que sea, como mínimo, Exchange 2013?
 
 
 En primer lugar, asegúrese de que la cuenta de correo electrónico del usuario que está probando está en una versión de Exchange Server que sea como mínimo Exchange 2013. Si usa características específicas que se publicaron después de Exchange 2013, asegúrese de que la cuenta del usuario se encuentre en la versión adecuada de Exchange.
@@ -25,8 +25,8 @@ Puede verificar la versión de Exchange 2013 con uno de los siguientes métodos:
     
       2. En la pestaña **Desarrollador** de la cinta de opciones, seleccione **Visual Basic**.
     
-     >
-  **Note**  Not seeing the  **Developer** tab? See [How to: Show the Developer Tab on the Ribbon](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) to turn it on. 3. En el Editor de Visual Basic, seleccione  **Vista**,  **Ventana Ejecución**.
+     >**Note**  Not seeing the  **Developer** tab? See [How to: Show the Developer Tab on the Ribbon](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) to turn it on. 
+	  3. En el Editor de Visual Basic, seleccione  **Vista**,  **Ventana Ejecución**.
     
       4. Para mostrar la versión de Exchange Server, escriba lo siguiente en la ventana Ejecución. La versión principal del valor devuelto debe ser igual a o superior a 15.
     
@@ -49,7 +49,7 @@ Puede verificar la versión de Exchange 2013 con uno de los siguientes métodos:
         
 
 
-## <a name="is-the-add-in-disabled?"></a>¿Está el complemento deshabilitado?
+## <a name="is-the-add-in-disabled"></a>¿Está el complemento deshabilitado?
 
 
 Cualquiera de los clientes enriquecidos de Outlook puede deshabilitar un complemento por razones de rendimiento, como un exceso en los umbrales de uso del núcleo o la memoria de la CPU, tolerancia ante bloqueos y duración del procesamiento de todas las expresiones regulares para un complemento. Cuando esto ocurre, el cliente enriquecido de Outlook muestra una notificación de que está deshabilitando el complemento. 
@@ -67,7 +67,7 @@ Para comprobar si un complemento está deshabilitado, use uno de los siguientes 
 - En Outlook para Mac, seleccione  **Administrar complementos** en la barra de complementos. Inicie sesión en el Centro de administración de Exchange y compruebe si el complemento está habilitado.
     
 
-## <a name="does-the-tested-item-support-outlook-add-ins?-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013?"></a>¿Son los elementos probados compatibles con complementos de Outlook? ¿Se entregan con una versión de Exchange Server que sea, como mínimo, Exchange 2013?
+## <a name="does-the-tested-item-support-outlook-add-ins-is-the-selected-item-delivered-by-a-version-of-exchange-server-that-is-at-least-exchange-2013"></a>¿Son los elementos probados compatibles con complementos de Outlook? ¿Se entregan con una versión de Exchange Server que sea, como mínimo, Exchange 2013?
 
 
 Si el complemento de Outlook es uno de lectura y debe activarse cuando el usuario está viendo un mensaje (incluyendo mensajes de correo electrónico, convocatorias de reunión, respuestas y cancelaciones) o una cita, aunque estos elementos por lo general son compatibles con complementos, se hace una excepción en los casos siguientes:
@@ -92,7 +92,7 @@ Incluso si un elemento de correo no pertenece a ninguno de los tipos anteriores 
 Si su complemento es de redacción y debe activarse cuando el usuario crea un mensaje o una convocatoria de reunión, compruebe que el elemento no esté protegido por IRM.
 
 
-## <a name="is-the-add-in-manifest-installed-properly,-and-does-outlook-have-a-cached-copy?"></a>¿Está el manifiesto de complemento instalado correctamente? ¿Tiene Outlook una copia de él en la memoria caché?
+## <a name="is-the-add-in-manifest-installed-properly-and-does-outlook-have-a-cached-copy"></a>¿Está el manifiesto de complemento instalado correctamente? ¿Tiene Outlook una copia de él en la memoria caché?
 
 
 Este escenario se aplica solo a Outlook para Windows. Normalmente, cuando instala un complemento de Outlook para un buzón, Exchange Server copia el manifiesto de complemento desde la ubicación que usted indique al buzón de ese Exchange Server. Cada vez que se inicia Outlook, lee todos los manifiestos instalados para ese buzón en una memoria caché temporal en la ubicación siguiente: 
@@ -108,7 +108,7 @@ La figura 1 muestra un resumen de los pasos necesarios para comprobar si Outlook
 
 **Figura 1: Gráfico de flujo de los pasos necesarios para comprobar si Outlook guardó en la memoria caché correctamente una versión del manifiesto**
 
-![Diagrama de flujo para comprobar el manifiesto](../../images/off15appsdk_TroubleshootManifest.png)El procedimiento siguiente describe los detalles.
+![Diagrama de flujo para comprobar manifiesto](../../images/off15appsdk_TroubleshootManifest.png)El procedimiento siguiente describe los detalles.
 
 
 
@@ -157,13 +157,17 @@ La figura 1 muestra un resumen de los pasos necesarios para comprobar si Outlook
 7. Si no lo activa, vuelva al paso 3 para comprobar de nuevo si Outlook leyó el manifiesto correctamente.
     
 
-## <a name="are-you-using-the-appropriate-activation-rules?"></a>¿Está usando las reglas de activación adecuadas?
+## <a name="is-the-add-in-manifest-valid"></a>¿El manifiesto del complemento es válido?
+
+Intente usar [el registro de tiempo de ejecución](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest) para depurar los problemas de manifiesto de complementos.
+
+## <a name="are-you-using-the-appropriate-activation-rules"></a>¿Está usando las reglas de activación adecuadas?
 
 
 Desde la versión 1.1 del esquema de manifiestos Complementos de Office, puede crear complementos que se activan cuando el usuario se encuentra en un formulario de redacción (complementos de redacción) o en un formulario de lectura (complementos de lectura). Asegúrese de que especifica las reglas de activación adecuadas para cada uno de los tipos de formulario que el complemento debe activar. Por ejemplo, puede activar los complementos de redacción usando únicamente reglas [ItemIs](http://msdn.microsoft.com/en-us/library/f7dac4a3-1574-9671-1eda-47f092390669%28Office.15%29.aspx) con el atributo **FormType** definido como **Edit** o **ReadOrEdit** y no podrá usar ningún otro tipo de reglas, como [ItemHasKnownEntity](http://msdn.microsoft.com/en-us/library/87e10fd2-eab4-c8aa-bec3-dff92d004d39%28Office.15%29.aspx) o [ItemHasRegularExpressionMatch](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx) para los complementos de redacción. Para obtener más información, vea [Reglas de activación para complementos de Outlook](../outlook/manifests/activation-rules.md).
 
 
-## <a name="if-you-use-a-regular-expression,-is-it-properly-specified?"></a>Si utiliza una expresión regular, ¿se especifica correctamente?
+## <a name="if-you-use-a-regular-expression-is-it-properly-specified"></a>Si utiliza una expresión regular, ¿se especifica correctamente?
 
 
 Las expresiones regulares de las reglas de activación forman parte del archivo de manifiesto XML de un complemento de lectura. Si una expresión regular usa ciertos caracteres, asegúrese de seguir la secuencia de escape correspondiente compatible con procesadores XML. En la tabla 1 se enumeran los caracteres especiales. 
@@ -180,7 +184,7 @@ Las expresiones regulares de las reglas de activación forman parte del archivo 
 |<|Signo de menor que|&amp;lt;|
 |>|Signo de mayor que|&amp;gt;|
 
-## <a name="if-you-use-a-regular-expression,-is-the-read-add-in-activating-in-outlook-web-app-or-owa-for-devices,-but-not-in-any-of-the-outlook-rich-clients?"></a>Si utiliza una expresión regular, ¿el complemento de lectura se activa en Outlook Web App o en OWA para dispositivos, pero no lo hace en ninguno de los clientes enriquecidos de Outlook?
+## <a name="if-you-use-a-regular-expression-is-the-read-add-in-activating-in-outlook-web-app-or-owa-for-devices-but-not-in-any-of-the-outlook-rich-clients"></a>Si utiliza una expresión regular, ¿el complemento de lectura se activa en Outlook Web App o en OWA para dispositivos, pero no lo hace en ninguno de los clientes enriquecidos de Outlook?
 
 
 Los clientes enriquecidos de Outlook usan un motor de expresiones regulares distinto del que usan Outlook Web App y OWA para dispositivos. Los clientes enriquecidos de Outlook usan el motor de expresiones regulares C++ proporcionado como parte de la biblioteca de plantillas estándar de Visual Studio. Este motor se ajusta a las normas ECMAScript 5. Outlook Web App y OWA para dispositivos usan una evaluación de expresiones regulares que forma parte de JavaScript, la proporciona el explorador y es compatible con un superconjunto de ECMAScript 5. 
@@ -190,7 +194,7 @@ En la mayor parte de los casos, estas aplicaciones host encuentran los mismos re
 Pruebe la expresión regular exhaustivamente. Si devuelve resultados distintos, reescríbala para que sea compatible con los dos motores. Para comprobar los resultados de la evaluación en un cliente enriquecido de Outlook, escriba un pequeño programa C++ que aplique la expresión regular a una muestra del texto con el que está tratando de obtener coincidencias. Si se ejecuta en Visual Studio, el programa de pruebas C++ utilizará la biblioteca de plantillas estándar para simular el comportamiento del cliente enriquecido de Outlook al ejecutar la misma expresión regular. Para comprobar los resultados de la evaluación en Outlook Web App o en OWA para dispositivos, use su comprobador de expresiones regulares de JavaScript favorito.
 
 
-## <a name="if-you-use-an-itemis,-itemhasattachment,-or-itemhasregularexpressionmatch-rule,-have-you-verified-the-related-item-property?"></a>Si utiliza una regla ItemIs, ItemHasAttachment o ItemHasRegularExpressionMatch, ¿ha comprobado la propiedad de elemento relacionada?
+## <a name="if-you-use-an-itemis-itemhasattachment-or-itemhasregularexpressionmatch-rule-have-you-verified-the-related-item-property"></a>Si utiliza una regla ItemIs, ItemHasAttachment o ItemHasRegularExpressionMatch, ¿ha comprobado la propiedad de elemento relacionada?
 
 
 Si utiliza una regla de activación  **ItemHasRegularExpressionMatch**, compruebe si el valor del atributo  **PropertyName** es el que espera para el elemento seleccionado. He aquí algunas sugerencias para depurar las propiedades correspondientes:
@@ -239,18 +243,14 @@ Si la regla de activación  **ItemHasRegularExpressionMatch** especifica **Subje
 
 |**Tipo de regla**|**Comprobar esta propiedad MAPI**|
 |:-----|:-----|
-|Regla **ItemHasRegularExpressionMatch** con **Subject**|
-  [PidTagSubject](http://msdn.microsoft.com/en-us/library/aa7ba4d9-c5e0-4ce7-a34e-65f675223bc9%28Office.15%29.aspx)|
-|Regla **ItemHasRegularExpressionMatch** con **SenderSMTPAddress**|
-  [PidTagSenderSmtpAddress](http://msdn.microsoft.com/en-us/library/321cde5a-05db-498b-a9b8-cb54c8a14e34%28Office.15%29.aspx) y [PidTagSentRepresentingSmtpAddress](http://msdn.microsoft.com/en-us/library/5ed122a2-0967-4de3-a2ee-69f81ae77b16%28Office.15%29.aspx)|
-|**ItemIs**|
-  [PidTagMessageClass](http://msdn.microsoft.com/en-us/library/1e704023-1992-4b43-857e-0a7da7bc8e87%28Office.15%29.aspx)|
-|**ItemHasAttachment**|
-  [PidTagHasAttachments](http://msdn.microsoft.com/en-us/library/fd236d74-2868-46a8-bb3d-17f8365931b6%28Office.15%29.aspx)|
+|Regla **ItemHasRegularExpressionMatch** con **Subject**|[PidTagSubject](http://msdn.microsoft.com/en-us/library/aa7ba4d9-c5e0-4ce7-a34e-65f675223bc9%28Office.15%29.aspx)|
+|Regla **ItemHasRegularExpressionMatch** con **SenderSMTPAddress**|[PidTagSenderSmtpAddress](http://msdn.microsoft.com/en-us/library/321cde5a-05db-498b-a9b8-cb54c8a14e34%28Office.15%29.aspx) y [PidTagSentRepresentingSmtpAddress](http://msdn.microsoft.com/en-us/library/5ed122a2-0967-4de3-a2ee-69f81ae77b16%28Office.15%29.aspx)|
+|**ItemIs**|[PidTagMessageClass](http://msdn.microsoft.com/en-us/library/1e704023-1992-4b43-857e-0a7da7bc8e87%28Office.15%29.aspx)|
+|**ItemHasAttachment**|[PidTagHasAttachments](http://msdn.microsoft.com/en-us/library/fd236d74-2868-46a8-bb3d-17f8365931b6%28Office.15%29.aspx)|
 Tras comprobar el valor de la propiedad puede utilizar una herramienta de evaluación de expresiones regulares para probar si la expresión regular encuentra un resultado en ese valor.
 
 
-## <a name="does-the-host-application-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect?"></a>¿La aplicación host aplica todas las expresiones regulares a la porción del cuerpo del elemento tal como esperaba?
+## <a name="does-the-host-application-apply-all-the-regular-expressions-to-the-portion-of-the-item-body-as-you-expect"></a>¿La aplicación host aplica todas las expresiones regulares a la porción del cuerpo del elemento tal como esperaba?
 
 
 Esta sección es válida para todas las reglas de activación que usan expresiones regulares (en concreto, las que se aplican al cuerpo del elemento, que pueden tener un tamaño grande y un tiempo de evaluación de resultados más prolongado). Tenga en cuenta que, aunque la propiedad de elemento de la que depende una regla de activación tenga el valor que espera, es posible que la aplicación host no pueda evaluar todas las expresiones regulares del valor completo de la propiedad de elemento. Para proporcionar un rendimiento razonable y controlar el uso de recursos excesivo por parte de un complemento de lectura, Outlook, Outlook Web App y OWA para dispositivos establecen los siguientes límites de procesamiento de expresiones regulares en reglas de activación en el tiempo de ejecución:
@@ -287,15 +287,14 @@ Esta sección es válida para todas las reglas de activación que usan expresion
     
 - [Abrir el Visor de eventos](http://windows.microsoft.com/en-US/windows7/Open-Event-Viewer)
     
-- 
-  [ItemHasAttachment complexType](http://msdn.microsoft.com/en-us/library/031db7be-8a25-5185-a9c3-93987e10c6c2%28Office.15%29.aspx)
+- [ItemHasAttachment complexType](http://msdn.microsoft.com/en-us/library/031db7be-8a25-5185-a9c3-93987e10c6c2%28Office.15%29.aspx)
     
-- 
-  [ItemHasRegularExpressionMatch complexType](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx)
+- [ItemHasRegularExpressionMatch complexType](http://msdn.microsoft.com/en-us/library/bfb726cd-81b0-a8d5-644f-2ca90a5273fc%28Office.15%29.aspx)
     
-- 
-  [ItemIs complexType](http://msdn.microsoft.com/en-us/library/926249ab-2d2f-39f5-1d73-fab1c989966f%28Office.15%29.aspx)
+- [ItemIs complexType](http://msdn.microsoft.com/en-us/library/926249ab-2d2f-39f5-1d73-fab1c989966f%28Office.15%29.aspx)
     
-- 
-  [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
+- [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
     
+- - [Use el registro de tiempo de ejecución para depurar el manifiesto](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest).
+    
+

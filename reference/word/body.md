@@ -1,4 +1,4 @@
-# <a name="body-object-(javascript-api-for-word)"></a>Objeto Body (API de JavaScript para Word)
+# <a name="body-object-javascript-api-for-word"></a>Objeto Body (API de JavaScript para Word)
 
 Representa el cuerpo de un documento o una sección.
 
@@ -42,7 +42,7 @@ _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 ## <a name="method-details"></a>Detalles del método
 
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 Borra el contenido del objeto de cuerpo. El usuario puede realizar la operación de deshacer en el contenido borrado.
 
 #### <a name="syntax"></a>Sintaxis
@@ -83,7 +83,7 @@ Word.run(function (context) {
 
 El ejemplo de complemento [Silly stories](https://aka.ms/sillystorywordaddin) muestra cómo se usa el método **clear** para borrar el contenido de un documento.
 
-### <a name="gethtml()"></a>getHtml()
+### <a name="gethtml"></a>getHtml()
 Obtiene la representación HTML del objeto de cuerpo.
 
 #### <a name="syntax"></a>Sintaxis
@@ -122,7 +122,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="getooxml()"></a>getOoxml()
+### <a name="getooxml"></a>getOoxml()
 Obtiene la representación OOXML (Office Open XML) del objeto de cuerpo.
 
 #### <a name="syntax"></a>Sintaxis
@@ -161,7 +161,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreakbreaktype-breaktype-insertlocation-insertlocation"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 Inserta un salto en la ubicación especificada. Un salto solo puede insertarse en el cuerpo principal del documento, excepto si se trata de un salto de línea, que puede insertarse en cualquier objeto de cuerpo. El valor insertLocation puede ser "Start" o "End".
 
 #### <a name="syntax"></a>Sintaxis
@@ -205,7 +205,7 @@ Word.run(function (ctx) {
     }
 });
 ```
-### <a name="insertcontentcontrol()"></a>insertContentControl()
+### <a name="insertcontentcontrol"></a>insertContentControl()
 Ajusta el objeto de cuerpo con un control de contenido de texto enriquecido.
 
 #### <a name="syntax"></a>Sintaxis
@@ -243,7 +243,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
+### <a name="insertfilefrombase64base64file-string-insertlocation-insertlocation"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
 Inserta un documento en el cuerpo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -288,7 +288,7 @@ Word.run(function (context) {
 
 El ejemplo de complemento [Silly stories](https://aka.ms/sillystorywordaddin) muestra cómo se puede usar el método **insertFileFromBase64** para insertar archivos docx desde un servicio.
 
-### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation: InsertLocation)
+### <a name="inserthtmlhtml-string-insertlocation-insertlocation"></a>insertHtml(html: string, insertLocation: InsertLocation)
 Inserta HTML en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -330,7 +330,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### <a name="insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
 Inserta una imagen en el cuerpo en la ubicación especificada. El valor insertLocation puede ser 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -345,7 +345,7 @@ bodyObject.insertInlinePictureFromBase64(image, insertLocation);
 #### <a name="returns"></a>Valores devueltos
 [InlinePicture](inlinepicture.md)
 
-### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxmlooxml-string-insertlocation-insertlocation"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Inserta OOXML en la ubicación especificada.  El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -391,9 +391,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>Información adicional
-Lea [Crear complementos mejores para Word con Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) para obtener instrucciones sobre cómo trabajar con OOXML. El ejemplo [Word-Add-in-DocumentAssembly][body.insertOoxml] muestra cómo puede usar esta API para ensamblar un documento.
+Lea [Crear complementos mejores para Word con Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) para obtener instrucciones sobre cómo trabajar con OOXML. En el ejemplo [Word-Add-in-DocumentAssembly][body.insertOoxml], se muestra cómo puede usar esta API para ensamblar un documento.
 
-### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraphparagraphtext-string-insertlocation-insertlocation"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Inserta un párrafo en la ubicación especificada. El valor insertLocation puede ser 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -436,9 +436,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>Información adicional
-El ejemplo [Word-Add-in-DocumentAssembly][body.insertParagraph] muestra cómo puede usar el método insertParagraph para ensamblar un documento.
+En el ejemplo [Word-Add-in-DocumentAssembly][body.insertParagraph], se muestra cómo puede usar el método insertParagraph para ensamblar un documento.
 
-### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation: InsertLocation)
+### <a name="inserttexttext-string-insertlocation-insertlocation"></a>insertText(text: string, insertLocation: InsertLocation)
 Inserta texto en el cuerpo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -479,7 +479,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -526,7 +526,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
+### <a name="searchsearchtext-string-searchoptions-paramtypestringssearchoptions"></a>search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Realiza una búsqueda con las opciones de búsqueda especificadas en el ámbito del objeto de cuerpo. Los resultados de la búsqueda son una colección de objetos de intervalo.
 
 #### <a name="syntax"></a>Sintaxis
@@ -537,7 +537,7 @@ bodyObject.search(searchText, searchOptions);
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|searchText|cadena|Necesario. El texto de búsqueda.|
+|searchText|string|Necesario. Texto de búsqueda.|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Opcional. Opciones de la búsqueda.|
 
 #### <a name="returns"></a>Valores devueltos
@@ -586,9 +586,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>Información adicional
-El ejemplo [Word-Add-in-DocumentAssembly][body.search] proporciona otro ejemplo sobre cómo buscar en un documento.
+En el ejemplo [Word-Add-in-DocumentAssembly][body.search], se proporciona otro ejemplo sobre cómo buscar en un documento.
 
-### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
+### <a name="selectselectionmode-selectionmode"></a>select(selectionMode: SelectionMode)
 Selecciona el cuerpo y se desplaza por la interfaz de usuario de Word hasta él. Los valores de selectionMode pueden ser 'Select', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -656,7 +656,7 @@ Word.run(function (context) {
     }
 });
 ```
-### <a name="get-the-style-and-the-font-size,-font-name,-and-font-color-properties-on-the-body-object."></a>Obtener el estilo y el tamaño de fuente, el nombre de la fuente y las propiedades de color de fuente del objeto de cuerpo.
+### <a name="get-the-style-and-the-font-size-font-name-and-font-color-properties-on-the-body-object"></a>Obtener el estilo y el tamaño de fuente, el nombre de la fuente y las propiedades de color de fuente del objeto de cuerpo.
 
 ```js
 // Run a batch operation against the Word object model.
@@ -694,6 +694,6 @@ Word.run(function (context) {
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-[body.insertOoxml]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L127 "insert OOXML"
-[body.insertParagraph]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L153 "insert paragraph"
-[body.search]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L261 "body search"
+[body.insertOoxml]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L127 "insertar OOXML"
+[body.insertParagraph]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L153 "insertar párrafo"
+[body.search]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L261 "búsqueda en el cuerpo"

@@ -2,6 +2,8 @@
 
 En este artículo se describe cómo usar la API de JavaScript para Excel para crear complementos de Excel 2016. Es una introducción a los conceptos clave que son fundamentales para usar las API, como RequestContext, los objetos proxy de JavaScript, sync(), Excel.run() y load(). Los ejemplos de código del final del artículo muestran cómo aplicar los conceptos.
 
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+
 ## <a name="requestcontext"></a>RequestContext
 
 El objeto RequestContext facilita las solicitudes para la aplicación de Excel. Como el complemento de Office y la aplicación de Excel se ejecutan en dos procesos diferentes, se necesita un contexto de solicitud para tener acceso desde el complemento a Excel y a objetos relacionados, como hojas de cálculo y tablas. Un contexto de solicitud se crea como se muestra a continuación.
@@ -20,17 +22,17 @@ Por ejemplo, el objeto de JavaScript local `selectedRange` se declara para que h
 var selectedRange = ctx.workbook.getSelectedRange();
 ```
 
-## <a name="sync()"></a>sync()
+## <a name="sync"></a>sync()
 
 El método sync() disponible en el contexto de solicitud sincroniza el estado entre los objetos proxy de JavaScript y los objetos reales de Excel. Para ello, ejecuta las instrucciones situadas en la cola en el contexto y recupera las propiedades de los objetos de Office cargados para usarlos en el código.  Este método devuelve una promesa, que se resuelve cuando se completa la sincronización.
 
-## <a name="excel.run(function(context)-{-batch-})"></a>Excel.run(function(context) { batch })
+## <a name="excelrunfunctioncontext-batch-"></a>Excel.run(function(context) { batch })
 
 Excel.run() ejecuta un script por lotes que realiza acciones en el modelo de objetos de Excel. Los comandos por lotes incluyen definiciones de objetos proxy locales de JavaScript y métodos sync() que sincronizan el estado entre los objetos locales y de Excel y la resolución de la promesa. La ventaja de procesamiento por lotes de las solicitudes en Excel.run() es que, cuando se resuelve la promesa, los objetos de intervalo de los que se realiza el seguimiento y que se asignaron durante la ejecución se liberarán automáticamente.
 
 El método de ejecución toma RequestContext y devuelve una promesa que, normalmente, solo es el resultado de ctx.sync(). Es posible ejecutar la operación por lotes fuera de Excel.run(). Sin embargo, en este caso, todas las referencias a objetos de intervalo deben seguirse y administrarse manualmente.
 
-## <a name="load()"></a>load()
+## <a name="load"></a>load()
 
 El método load() se usa para rellenar los objetos proxy creados en la capa de JavaScript del complemento. Al intentar recuperar un objeto, como una hoja de cálculo, se crea en primer lugar un objeto proxy local en la capa de JavaScript. Dicho objeto puede usarse para poner en cola la configuración de sus propiedades y métodos de invocación. Sin embargo, para leer las propiedades o las relaciones de los objetos, deben invocarse primero los métodos load() y sync(). El método load() toma las propiedades y las relaciones que necesitan cargarse cuando se llama al método sync().
 
@@ -48,7 +50,7 @@ Donde,
 * `properties` es la lista de propiedades o nombres de relaciones que se van a cargar, especificados como cadenas delimitadas por comas o como una matriz de nombres. Consulte los métodos .load() de cada objeto para obtener más detalles.
 * `loadOption` especifica un objeto que describe las opciones selection, expansion, top y skip. Consulte las [opciones](../../reference/excel/loadoption.md) de carga de objetos para obtener más detalles.
 
-## <a name="example:-write-values-from-an-array-to-a-range-object"></a>Ejemplo: Escribir valores de una matriz a un objeto de intervalo
+## <a name="example-write-values-from-an-array-to-a-range-object"></a>Ejemplo: Escribir valores de una matriz a un objeto de intervalo
 
 En el ejemplo siguiente se muestra cómo escribir los valores de una matriz a un objeto de intervalo.
 
@@ -83,7 +85,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-## <a name="example:-copy-values"></a>Ejemplo: Copiar valores
+## <a name="example-copy-values"></a>Ejemplo: Copiar valores
 
 En el ejemplo siguiente se muestra cómo copiar los valores del intervalo A1:A2 a B1:B2 de la hoja de cálculo activa usando el método load() del objeto de intervalo.
 
@@ -165,7 +167,7 @@ En la solicitud de establecimiento siguiente, solo se establecen algunas partes 
   range.values = [["Eurasia", "29.96", "0.25", "15-Feb" ]];
   range.numberFormat = [[null, null, null, "m/d/yyyy;@"]];
 ```
-### <a name="null-input-for-a-property"></a>Entrada null para una propiedad
+### <a name="null-input-for-a-property"></a>entrada NULL para una propiedad
 
 `null` no es una entrada única válida para toda la propiedad. Por ejemplo, lo que se muestra a continuación no es válido, ya que no es posible establecer todos los valores en null u omitirlos.
 
@@ -174,7 +176,7 @@ En la solicitud de establecimiento siguiente, solo se establecen algunas partes 
 
 ```
 
-Lo que se muestra a continuación tampoco es válido, ya que null no es un valor de color válido.
+Lo que se muestra a continuación tampoco es válido, ya que NULL no es un valor de color válido.
 
 ```js
  range.format.fill.color =  null;

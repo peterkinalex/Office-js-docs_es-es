@@ -12,24 +12,36 @@ Visio Online es la nueva forma de ver y compartir los diagramas para Visio en la
 **Consulte la página de [API de JavaScript para Visio 1.1](https://github.com/OfficeDev/office-js-docs/tree/VisioJs_1.1_Openspec) para obtener más información y enviar sus comentarios al respecto.**
 
 ## <a name="new-excel-javascript-apis"></a>Nuevas API de JavaScript para Excel
-Únase a nosotros en la revisión del diseño de las nuevas API de JavaScript para Excel. Las API nuevas y actualizadas incluyen elementos customXML, actualización de tabla dinámica, vista filtrada de rango, rango y tabla como imagen, anexar varias filas a una tabla y más. 
+Únase a nosotros en la revisión del diseño de las nuevas API de JavaScript para Excel. Las API nuevas y actualizadas incluyen partes customXML, método de agregar elemento con nombre, formato condicional, etc. 
 
-**Consulte la [página de la API 1.3 de JavaScript para Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.3_OpenSpec) para obtener más información y enviar sus comentarios.**
+**Consulte la [página de la API 1.4 de JavaScript para Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.4_OpenSpec) para obtener más información y enviar sus comentarios.**
 
-## <a name="new-word-javascript-apis"></a>Nuevas API de JavaScript para Word
+## <a name="new-word-javascript-apis-13"></a>Nuevas API de JavaScript para Word (1.3)
 La actualización 1.3 de la API de JavaScript de Word contiene el conjunto de cambios más grande que hemos implementado desde que se presentó esta API. Con la nueva API, podrá: 
 
-* Crear y modificar documentos en memoria
 * Crear y obtener acceso a objetos de lista
 * Crear y obtener acceso a objetos de tabla
 * Tener más opciones para obtener acceso a objetos de rango y compararlos
+* Propiedades del documento
 
 Estos cambios se han implementado en casi todos los objetos de la API de JavaScript de Word. Esta funcionalidad está ahora disponible o lo estará pronto en la versión preliminar de escritorio de Word 2016 para Windows y Mac y en el iPad. Actualice los clientes a la última compilación mensual y empiece a implementar estas excelentes características.
 
 **Consulte la [página de la API 1.3 de JS de Word](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word) para obtener más información y enviar sus comentarios.**
 
-## <a name="document-properties-access"></a>Obtener acceso a las propiedades del documento
-Estamos trabajando en agregar la posibilidad de que los complementos web obtengan acceso a propiedades de nivel de documento (get, set). Esta característica permitirá a los complementos integrar las propiedades del documento como parte de los flujos de trabajo personalizados o leer o establecer las propiedades del documento. Word y Excel y, potencialmente, PowerPoint, admitirán esta característica. La característica funcionará también en la API de REST de Excel (Excel admite el servicio REST). Presentaremos la idea de diseño básica y trabajaremos los casos de uso y fragmentos de código sobre cómo funcionará la API cuando se agregue. Agradecemos sus comentarios sobre el diseño. 
+## <a name="new-word-javascript-apis-14"></a>Nuevas API de JavaScript para Word (1.4)
+La actualización 1.4 de la API de JavaScript para Word contiene importantes adiciones, entre otras:
 
-**Consulte la [página de especificaciones abiertas de las propiedades del documento](https://github.com/OfficeDev/office-js-docs/tree/DocumentProperties_OpenSpec) para obtener más información y enviar sus comentarios.**
+* Crear y modificar documentos en memoria
+* Configuración de API mediante sintaxis basada en promesas
+* Documento XML personalizado mediante sintaxis basada en promesas
+* Insertar marcador 
+* tabla combinar celdas
+* Combinación de filas y división de columnas de tabla
+
+**Consulte la [página de la API 1.4 de JS de Word](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_Openspec/word) para obtener más información y enviar sus comentarios.**
+
+## <a name="host-platform-information-and-diagnostic-information"></a>Hospedar la información de plataforma y la información de diagnóstico 
+Vea las adiciones planificadas al objeto Office.Context con el fin de proporcionar a los programadores información de entorno de tiempo de ejecución de complementos e información de diagnóstico. 
+
+**Consulte las [especificaciones de adiciones de contexto de Office](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec) para obtener más información y enviar sus comentarios.**
 

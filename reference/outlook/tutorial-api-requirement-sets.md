@@ -1,4 +1,4 @@
- 
+	
 
 # <a name="understanding-outlook-api-requirement-sets"></a>Entender los conjuntos de requisitos de la API de Outlook
 
@@ -42,10 +42,10 @@ Los siguientes clientes admiten complementos de Outlook.
 
 | Client | Conjuntos admitidos de requisitos de la API |
 | --- | --- |
-| Outlook 2016 para Windows | 1.1, 1.2, 1.3 |
+| Outlook 2016 para Windows | 1.1, 1.2, 1.3, 1.4 |
 | Outlook 2016 para Mac | 1.1 |
 | Outlook 2013 para Windows | 1.1, 1.2, 1.3 |
-| Outlook en la web (Office 365 y Outlook.com) | 1.1, 1.2, 1.3 |
+| Outlook en la web (Office 365 y Outlook.com) | 1.1, 1.2, 1.3, 1.4 |
 | Outlook Web App (Exchange 2013 local) | 1.1 |
 | Outlook Web App (Exchange 2016 local) | 1.1, 1.2. 1.3 |
 >**Nota** La compatibilidad con la versión 1.3 de Outlook 2013 se ha agregado como parte de la [actualización del 8 de diciembre de 2015 para Outlook 2013 (KB3114349)](https://support.microsoft.com/en-us/kb/3114349)    

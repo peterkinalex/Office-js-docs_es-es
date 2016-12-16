@@ -1,15 +1,15 @@
 
-# <a name="addin-commands-for-outlook"></a>Comandos de complementos de Outlook
+# <a name="add-in-commands-for-outlook"></a>Comandos de complementos de Outlook
 
 
 Los comandos de Outlook de correo ofrecen formas de iniciar acciones específicas de los complementos desde la cinta agregando botones o menús desplegables. Esto permite a los usuarios obtener acceso a los complementos de una forma simple, intuitiva y discreta. Como ofrecen mayor funcionalidad de forma perfecta, los comandos de complementos se pueden usar para crear soluciones más atractivas.
 
-> **Nota**: Los comandos de complemento solo están disponibles en Outlook 2016 y Outlook 2013 para Windows. Para admitir los comandos de complemento se necesita la [actualización de seguridad del 8 de marzo de 2016](https://support.microsoft.com/en-us/kb/3114829).
+> **Nota**: Los comandos de complemento solo están disponibles en Outlook 2016 y Outlook 2013 para Windows y Outlook en la web para Office 365 y Outlook.com. Para admitir los comandos de complemento en Outlook 2013 se necesita la [actualización de seguridad del 8 de marzo de 2016](https://support.microsoft.com/en-us/kb/3114829).
 
-Los comandos de complemento solo están disponibles para complementos contextuales que no usen reglas [temHasAttachment, ItemHasKnownEntity o ItemHasRegularExpressionMatch](manifests/activation-rules.md) que limiten los tipos de elementos en los que se activen. Pero los complementos contextuales pueden presentar comandos distintos dependiendo de si el elemento seleccionado es un mensaje o cita, y pueden elegir aparecer en escenarios de lectura o redacción. Usar comandos de complemento cuando sea posible es un [procedimiento recomendado](../../docs/overview/add-in-development-best-practices.md).
+Los comandos de complemento solo están disponibles para complementos contextuales que no usen reglas [ItemHasAttachment, ItemHasKnownEntity o ItemHasRegularExpressionMatch](manifests/activation-rules.md) que limiten los tipos de elementos en los que se activen. Pero los complementos contextuales pueden presentar comandos distintos dependiendo de si el elemento seleccionado es un mensaje o cita, y pueden elegir aparecer en escenarios de lectura o redacción. Usar comandos de complemento cuando sea posible es un [procedimiento recomendado](../../docs/overview/add-in-development-best-practices.md).
 
 
-## <a name="creating-the-addin-command"></a>Crear el comando del complemento
+## <a name="creating-the-add-in-command"></a>Crear el comando del complemento
 
 Los comandos de complemento se declaran en el manifiesto del complemento, en el elemento  **VersionOverrides**. Este elemento es una adición al esquema de manifiesto v1.1 que garantiza la compatibilidad inversa. En un cliente que no admite  **VersionOverrides**, los complementos existentes seguirán funcionando como lo hacían sin los comandos de complementos.
 
@@ -20,7 +20,7 @@ Cuando un complemento debe proporcionar actualizaciones de estado, como indicado
 Los desarrolladores tienen que definir iconos para todos los tamaños necesarios para que los comandos de complemento se adapten correctamente a la cinta. Los iconos tienen tamaños de 80 x 80, 32 x 32 y 16 x 16 píxeles.
 
 
-## <a name="how-do-addin-commands-appear"></a>¿Cómo aparecen los comandos de complementos?
+## <a name="how-do-add-in-commands-appear"></a>¿Cómo aparecen los comandos de complementos?
 
 Un comando de complemento aparece en la cinta como un botón. Cuando un usuario instala un complemento, sus comandos aparecen en la interfaz de usuario como un grupo de botones con el nombre del complemento. Esto puede aparecer en una pestaña predeterminada de la cinta o en una pestaña personalizada. Para los mensajes, el lugar predeterminado son las pestañas **Inicio** o **Mensajes**. Para el calendario, la pestaña predeterminada es **Reunión**, **Repetición de la reunión**, **Serie de reuniones** o **Cita**. Para las extensiones de módulo, el lugar predeterminado es una pestaña personalizada. En la pestaña predeterminada, cada complemento puede tener un grupo de la barra de herramientas con un máximo de 6 comandos. En las pestañas personalizadas, el complemento puede tener hasta 10 grupos, cada uno con 6 comandos. Los complementos se limitan a solo una pestaña personalizada.
 
@@ -32,7 +32,7 @@ A medida que la cinta se llena, los comandos de los complementos se adaptan (con
 Al agregar un comando de complemento a un complemento, el nombre de este último se elimina de la barra de aplicaciones. Solo permanece el botón de comando de complemento en la cinta de opciones.
 
 
-## <a name="what-ux-shapes-exist-for-addin-commands"></a>¿Qué experiencia del usuario existe para los comandos de complementos?
+## <a name="what-ux-shapes-exist-for-add-in-commands"></a>¿Qué experiencia del usuario existe para los comandos de complementos?
 
 La forma de experiencia del usuario para un comando de complemento consiste en una ficha de cinta de la aplicación host que contiene botones que pueden realizar varias funciones. En este momento se admiten tres formas de interfaz de usuario:
 
@@ -68,7 +68,7 @@ En la captura de pantalla anterior se muestra un ejemplo de un panel de tareas v
 Si un usuario elige otro comando de complemento que abre un panel de tareas, el panel se reemplaza por el comando usado recientemente. Si un usuario elige un botón de comando de complemento que ejecuta una función, o un menú desplegable mientras está abierto el panel de tareas, la acción se completa y el panel de tareas permanece abierto.
 
 
-### <a name="dropdown-menu"></a>Menú desplegable
+### <a name="drop-down-menu"></a>Menú desplegable
 
 Un comando de complemento de menú desplegable define una lista estática de botones que se presentan en el menú desplegable. Los botones dentro del menú pueden ser cualquier combinación de botones que ejecuten una función o botones que abran un panel de tareas. No se admiten los submenús.
 
@@ -76,7 +76,7 @@ Un comando de complemento de menú desplegable define una lista estática de bot
 ![Botón que despliega un menú en la cinta de Outlook.](../../images/3eff90d6-7822-4fdb-9153-68f754c0c746.png)
 
 
-## <a name="where-do-addin-commands-appear-in-the-ui"></a>¿Dónde aparecen los comandos de complementos en la IU?
+## <a name="where-do-add-in-commands-appear-in-the-ui"></a>¿Dónde aparecen los comandos de complementos en la IU?
 
 Los comandos de complementos se admiten en cuatro situaciones:
 

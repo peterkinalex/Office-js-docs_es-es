@@ -1,6 +1,5 @@
 
-# <a name="deploy-and-publish-your-office-addin"></a>Implementar y publicar el complemento de Office
-
+# <a name="deploy-and-publish-your-office-add-in"></a>Implementar y publicar el complemento de Office
 
 Puede usar uno de varios métodos a la hora de implementar el complemento de Office para pruebas o para distribuirlo a los usuarios: 
 
@@ -10,8 +9,9 @@ Puede usar uno de varios métodos a la hora de implementar el complemento de Off
 - [Catálogo de SharePoint](publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md): úselo como parte del proceso de desarrollo para probar el complemento o en un entorno local para distribuir el complemento a los usuarios de su organización.
 
 Las opciones disponibles dependen del tipo de complemento que cree y del host de Office al que esté destinado.
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
 
-### <a name="deployment-options-for-word-excel-and-powerpoint-addins"></a>Opciones de implementación de complementos para Word, Excel y PowerPoint
+## <a name="deployment-options-for-word-excel-and-powerpoint-add-ins"></a>Opciones de implementación de complementos para Word, Excel y PowerPoint
 
 | Punto de extensión            | Transferencia local | Vista previa del Centro de administración de Office 365 |Tienda Office  | Catálogo de SharePoint  |
 |:----------------|:-----------:|:------------------:|:-------------------------------:|:------------:|
@@ -21,7 +21,7 @@ Las opciones disponibles dependen del tipo de complemento que cree y del host de
 
 > **NOTA:** No se admiten los catálogos de SharePoint en Office 2016 para Mac. Para implementar complementos de Office en clientes Mac, debe enviarlos a la [Tienda Office].    
 
-### <a name="deployment-options-for-outlook-addins"></a>Opciones de implementación para complementos de Outlook
+## <a name="deployment-options-for-outlook-add-ins"></a>Opciones de implementación para complementos de Outlook
 
 | Punto de extensión     | Transferencia local | Servidor Exchange | Tienda Office |
 |:---------|:-----------:|:---------------:|:------------:|

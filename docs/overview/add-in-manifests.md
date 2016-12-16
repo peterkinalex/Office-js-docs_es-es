@@ -1,5 +1,5 @@
-
-# <a name="office-addins-xml-manifest"></a>Manifiesto XML de complementos para Office
+	
+# <a name="office-add-ins-xml-manifest"></a>Manifiesto XML de complementos para Office
 
 
 El archivo de manifiesto XML de un complemento de Office describe cómo tiene que activarse el complemento cuando el usuario final lo instale y use con las aplicaciones y los documentos de Office. 
@@ -15,7 +15,8 @@ El archivo de manifiesto XML basado en este esquema permite a un complemento de 
 - Declarar los permisos que solicite la Complemento de Office, como leer o escribir en el documento.
     
 - Para los complementos de Office de Outlook, defina las reglas que especifican el contexto en que se activarán e interactuarán con un elemento de convocatoria de reunión, cita o mensaje.
-    
+
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
 
 ## <a name="required-elements"></a>Elementos requeridos
 
@@ -35,32 +36,32 @@ En la tabla siguiente se especifican los elementos necesarios para los tres tipo
 
 |**Elemento**|**Contenido**|**Panel de tareas**|**Outlook**|
 |:-----|:-----|:-----|:-----|
-|[OfficeApp](http://msdn.microsoft.com/es-es/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx)|X|X|X|
-|[Id](http://msdn.microsoft.com/es-es/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx)|X|X|X|
-|[Versión](http://msdn.microsoft.com/es-es/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx)|X|X|X|
-|[ProviderName](http://msdn.microsoft.com/es-es/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx)|X|X|X|
-|[DefaultLocale](http://msdn.microsoft.com/es-es/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx)|X|X|X|
-|[DisplayName](http://msdn.microsoft.com/es-es/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx)|X|X|X|
-|[Descripción](http://msdn.microsoft.com/es-es/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx)|X|X|X|
+|[OfficeApp](http://msdn.microsoft.com/en-us/library/68f1cada-66f8-4341-45f5-14e0634c24fb%28Office.15%29.aspx)|X|X|X|
+|[Id](http://msdn.microsoft.com/en-us/library/67c4344a-935c-09d6-1282-55ee61a2838b%28Office.15%29.aspx)|X|X|X|
+|[Versión](http://msdn.microsoft.com/en-us/library/6a8bbaa5-ee8c-6824-4aba-cb1a804269f6%28Office.15%29.aspx)|X|X|X|
+|[ProviderName](http://msdn.microsoft.com/en-us/library/0062693a-fafa-ea2d-051a-75dac0f6c323%28Office.15%29.aspx)|X|X|X|
+|[DefaultLocale](http://msdn.microsoft.com/en-us/library/04796a3a-3afa-dc85-db66-4677560c185c%28Office.15%29.aspx)|X|X|X|
+|[DisplayName](http://msdn.microsoft.com/en-us/library/529159ca-53bf-efcf-c245-e572dab0ef57%28Office.15%29.aspx)|X|X|X|
+|[Descripción](http://msdn.microsoft.com/en-us/library/bcce6bad-23d0-7631-7d8c-1064b8453b5a%28Office.15%29.aspx)|X|X|X|
 |[IconUrl](http://msdn.microsoft.com/library/c7dac2d4-4fda-6fc7-3774-49f02b2d3e1e%28Office.15%29.aspx)|X|X|X|
 |[HighResolutionIconUrl](http://msdn.microsoft.com/library/ff7b2647-ec8e-70dc-4e4a-e1a1377ff3f2%28Office.15%29.aspx)|||X|
-|[DefaultSettings (ContentApp)](http://msdn.microsoft.com/es-es/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx)<br/>[DefaultSettings (TaskPaneApp)](http://msdn.microsoft.com/es-es/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx)|X|X||
-|[SourceLocation (ContentApp)](http://msdn.microsoft.com/es-es/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx)<br/>[SourceLocation (TaskPaneApp)](http://msdn.microsoft.com/es-es/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx)|X|X||
-|[DesktopSettings](http://msdn.microsoft.com/es-es/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx)|||X|
-|[SourceLocation (MailApp)](http://msdn.microsoft.com/es-es/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx)|||X|
-|[Permisos (ContentApp)](http://msdn.microsoft.com/es-es/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx)<br/>[Permisos (TaskPaneApp)](http://msdn.microsoft.com/es-es/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx)<br/>[Permisos (MailApp)](http://msdn.microsoft.com/es-es/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx)|X|X|X|
-|[Regla (RuleCollection)](http://msdn.microsoft.com/es-es/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx)<br/>[Regla (MailApp)](http://msdn.microsoft.com/es-es/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx)|||X|
-|[Diccionario](http://msdn.microsoft.com/es-es/library/f78898f4-059e-d5dc-5eab-1f6b92214068%28Office.15%29.aspx)||||
-|[* Requisitos (MailApp)](http://msdn.microsoft.com/es-es/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx)||X|
-|[* Conjunto](http://msdn.microsoft.com/es-es/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx)<br/>[** Conjuntos (MailAppRequirements)](http://msdn.microsoft.com/es-es/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx)|||X|
-|[* Formulario](http://msdn.microsoft.com/es-es/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx)<br/>[**FormSettings](http://msdn.microsoft.com/es-es/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx)|||X|
-|[* Conjuntos (requisitos)](http://msdn.microsoft.com/es-es/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx)||X|
+|[DefaultSettings (ContentApp)](http://msdn.microsoft.com/en-us/library/f7edc689-551f-1a17-ea81-ffd58f534557%28Office.15%29.aspx)<br/>[DefaultSettings (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/36e3d139-56a4-fb3d-0a21-cbd14e606765%28Office.15%29.aspx)|X|X||
+|[SourceLocation (ContentApp)](http://msdn.microsoft.com/en-us/library/00d95bb0-e8f5-647f-790a-0aa3aabc8141%28Office.15%29.aspx)<br/>[SourceLocation (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/e6ea8cd4-7c8b-1da7-d8f8-8d3c80a088bc%28Office.15%29.aspx)|X|X||
+|[DesktopSettings](http://msdn.microsoft.com/en-us/library/da9fd085-b8cc-2be0-d329-2aa1ef5d3f1c%28Office.15%29.aspx)|||X|
+|[SourceLocation (MailApp)](http://msdn.microsoft.com/en-us/library/3792d389-bebd-d19a-9d90-35b7a0bfc623%28Office.15%29.aspx)|||X|
+|[Permisos (ContentApp)](http://msdn.microsoft.com/en-us/library/9f3dcf9c-fced-c115-4f0d-38d60fb7c583%28Office.15%29.aspx)<br/>[Permisos (TaskPaneApp)](http://msdn.microsoft.com/en-us/library/d4cfe645-353d-8240-8495-f76fb36602fe%28Office.15%29.aspx)<br/>[Permisos (MailApp)](http://msdn.microsoft.com/en-us/library/c20cdf29-74b0-564c-e178-b75d148b36d1%28Office.15%29.aspx)|X|X|X|
+|[Regla (RuleCollection)](http://msdn.microsoft.com/en-us/library/c6ce9d52-4b53-c6a6-de7e-c64106135c81%28Office.15%29.aspx)<br/>[Regla (MailApp)](http://msdn.microsoft.com/en-us/library/56dfc32e-2b8c-1724-05be-5595baf38aa3%28Office.15%29.aspx)|||X|
+|[Diccionario](http://msdn.microsoft.com/en-us/library/f78898f4-059e-d5dc-5eab-1f6b92214068%28Office.15%29.aspx)||||
+|[* Requisitos (MailApp)](http://msdn.microsoft.com/en-us/library/9536ea30-34f7-76b5-7f30-1508626840e4%28Office.15%29.aspx)||X|
+|[* Conjunto](http://msdn.microsoft.com/en-us/library/1506daa1-332c-30e1-6402-3371bcd0b895%28Office.15%29.aspx)<br/>[** Conjuntos (MailAppRequirements)](http://msdn.microsoft.com/en-us/library/2a6a2484-eeee-37e4-43bc-c185e8ae0d1d%28Office.15%29.aspx)|||X|
+|[* Formulario](http://msdn.microsoft.com/en-us/library/77a8ac83-c22b-1225-4fc4-ba4038b68648%28Office.15%29.aspx)<br/>[**FormSettings](http://msdn.microsoft.com/en-us/library/0d1a311d-939d-78c1-e968-89ddf7ebc4b4%28Office.15%29.aspx)|||X|
+|[* Conjuntos (requisitos)](http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx)||X|
 |[*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
 
 *Se agregó en el esquema de manifiesto de complemento de Office versión 1.1.
 
 
-## <a name="validate-the-office-addins-manifest"></a>Validar el manifiesto de los complementos de Office
+## <a name="validate-the-office-add-ins-manifest"></a>Validar el manifiesto de los complementos de Office
 
 Para ayudar a asegurarse de que el archivo de manifiesto que describe el complemento de Office es correcto y está completo, valídelo de acuerdo con los archivos [definición de esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas). Puede utilizar una herramienta de validación de esquemas XML o [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) para validar el manifiesto. 
 
@@ -75,14 +76,14 @@ Para utilizar una herramienta de línea de comandos de validación de esquemas X
 
 
 
-## <a name="specify-domains-you-want-to-open-in-the-addin-window"></a>Especifique los dominios que quiere abrir en la ventana del complemento
+## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especifique los dominios que quiere abrir en la ventana del complemento
 
 
 De forma predeterminada, si el complemento intenta ir a una dirección URL de un dominio que no es el dominio que hospeda la página de inicio (según lo especificado en el elemento [SourceLocation](../../reference/manifest/sourcelocation.md) del archivo de manifiesto), esa dirección URL se abrirá en una nueva ventana del explorador fuera del panel de complementos de la aplicación host de Office. Este comportamiento predeterminado protege al usuario de la navegación a páginas inesperadas en el panel de complementos desde elementos **iframe** insertados.
 
 Para reemplazar este comportamiento, especifique cada dominio que quiera abrir en la ventana de complemento de la lista de los dominios especificados en el elemento [AppDomains](../../reference/manifest/appdomains.md) del archivo de manifiesto. Si el complemento intenta ir a una dirección URL en un dominio que no esté en la lista, esa dirección URL se abrirá en una ventana nueva del explorador (fuera del panel de complementos).
 
-El siguiente ejemplo de manifiesto XML hospeda su página de complemento principal en el dominio `https://www.contoso.com` tal como se especifica en el elemento **SourceLocation**. También especifica el dominio `https://www.northwindtraders.com` en un elemento [AppDomain](http://msdn.microsoft.com/es-es/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) dentro de la lista de elementos **AppDomains**. Si el complemento va a una página en el dominio www.northwindtraders.com, esa página se abrirá en el panel de complementos.
+El siguiente ejemplo de manifiesto XML hospeda su página de complemento principal en el dominio `https://www.contoso.com` tal como se especifica en el elemento **SourceLocation**. También especifica el dominio `https://www.northwindtraders.com` en un elemento [AppDomain](http://msdn.microsoft.com/en-us/library/2a0353ec-5e09-6fbf-1636-4bb5dcebb9bf%28Office.15%29.aspx) dentro de la lista de elementos **AppDomains**. Si el complemento va a una página en el dominio www.northwindtraders.com, esa página se abrirá en el panel de complementos.
 
 
 ```XML
@@ -109,7 +110,7 @@ El siguiente ejemplo de manifiesto XML hospeda su página de complemento princip
 
 En las secciones siguientes se muestran ejemplos de archivos XML de manifiesto versión 1.1 para complementos de Outlook, de contenido y de panel de tareas.
 
-### <a name="office-addin-manifest-v11-example-with-commands-and-fallback-task-pane"></a>Ejemplo de manifiesto de complemento de Office versión 1.1 con comandos y panel de tareas de reserva
+### <a name="office-add-in-manifest-v11-example-with-commands-and-fallback-task-pane"></a>Ejemplo de manifiesto de complemento de Office versión 1.1 con comandos y panel de tareas de reserva
 [Esquema del manifiesto de panel de tareas](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/taskpane)
 
 ```XML
@@ -305,7 +306,7 @@ En las secciones siguientes se muestran ejemplos de archivos XML de manifiesto v
 </OfficeApp>
 ```
 
-### <a name="content-addin-manifest-v11-example"></a>Ejemplo de manifiesto de complemento de contenido versión 1.1
+### <a name="content-add-in-manifest-v11-example"></a>Ejemplo de manifiesto de complemento de contenido versión 1.1
 [Esquema del manifiesto de contenido](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/content)
 
 
@@ -342,7 +343,7 @@ En las secciones siguientes se muestran ejemplos de archivos XML de manifiesto v
 </OfficeApp>
 ```
 
-### <a name="outlook-addin-manifest-v11-example"></a>Ejemplo de manifiesto de complemento de Outlook versión 1.1
+### <a name="outlook-add-in-manifest-v11-example"></a>Ejemplo de manifiesto de complemento de Outlook versión 1.1
 [Esquema del manifiesto de contenido](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas/mail)
 
 

@@ -2,6 +2,8 @@
 
 OneNote introduce una API de JavaScript para complementos de OneNote Online. Puede crear complementos de panel de tareas, complementos de contenido y comandos de complementos que interactúan con objetos de OneNote y se conectan a servicios web o a otros recursos basados en Web.
 
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+
 Los complementos están formados por dos componentes básicos:
 
 - Una **aplicación web** formada por una página web y los archivos de JavaScript, CSS o de otro tipo. Estos archivos se hospedan en un servidor web o un servicio de hospedaje de sitios web, como Microsoft Azure. En OneNote Online, la aplicación web se muestra en un control de explorador o iframe.
@@ -19,7 +21,7 @@ Los complementos usan el contexto de tiempo de ejecución de la aplicación host
 - Una **API avanzada** para operaciones específicas de OneNote a la que se tiene acceso a través del objeto **Application**.
 - Una **API común** que se comparte con todas las aplicaciones de Office y a la que se tiene acceso a través del objeto **Document**.
 
-#### <a name="accessing-the-rich-api-through-the-*application*-object"></a>Acceso a la API avanzada a través del objeto *Application*
+#### <a name="accessing-the-rich-api-through-the-application-object"></a>Acceso a la API avanzada a través del objeto *Application*
 
 Use el objeto **Application** para tener acceso a objetos de OneNote como **Notebook**, **Section** y **Page**. Con las API avanzadas, puede ejecutar operaciones por lotes en objetos de proxy. El flujo básico sería parecido a este: 
 
@@ -69,7 +71,7 @@ Por ejemplo:
 
 Consulte los objetos y operaciones de OneNote compatibles en la [referencia de la API](../../reference/onenote/onenote-add-ins-javascript-reference.md).
 
-### <a name="accessing-the-common-api-through-the-*document*-object"></a>Acceso a la API común a través del objeto *Document*
+### <a name="accessing-the-common-api-through-the-document-object"></a>Acceso a la API común a través del objeto *Document*
 
 Use el objeto **Document** para tener acceso a la API común, como los métodos [getSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.getselecteddataasync) y [setSelectedDataAsync](https://dev.office.com/reference/add-ins/shared/document.setselecteddataasync). 
 
@@ -93,14 +95,10 @@ Los complementos de OneNote solo son compatibles con las siguientes API comunes:
 
 | API | Notas |
 |:------|:------|
-| 
-  [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | **Office.CoercionType.Text** y **Office.CoercionType.Matrix** solo |
-| 
-  [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | **Office.CoercionType.Text**, **Office.CoercionType.Image** y **Office.CoercionType.Html** solo | 
-| 
-  [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | Las opciones de configuración solo son compatibles con complementos de contenido | 
-| 
-  [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | Las opciones de configuración solo son compatibles con complementos de contenido | 
+| [Office.context.document.getSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142294.aspx) | **Office.CoercionType.Text** y **Office.CoercionType.Matrix** solo |
+| [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | **Office.CoercionType.Text**, **Office.CoercionType.Image** y **Office.CoercionType.Html** solo | 
+| [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | Las opciones de configuración solo son compatibles con complementos de contenido | 
+| [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | Las opciones de configuración solo son compatibles con complementos de contenido | 
 | [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
 
 En general, solo se usa la API común para realizar una acción que no es compatible con la API avanzada. Para más información sobre el uso de la API común, vea la [documentación](https://dev.office.com/docs/add-ins/overview/office-add-ins) y la [referencia](https://dev.office.com/reference/add-ins/javascript-api-for-office) de Complementos de Office.

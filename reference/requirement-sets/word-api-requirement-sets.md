@@ -4,19 +4,20 @@ Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los com
 
 Los complementos de Word se ejecutan en varias versiones de Office, incluida Office 2016 para Windows, Office para iPad, Office para Mac y Office Online. En la siguiente tabla se enumeran los conjuntos de requisitos de Word, las aplicaciones de host de Office que admiten ese conjunto de requisitos y la compilación o números de versión de esas aplicaciones.
 
-|  Conjunto de requisitos  |   Office 2016 para Windows*  |  Office 2016 para iPad  |  Office 2016 para Mac  | Office Online  |
-|:-----|-----|:-----|:-----|:-----|
-| WordApi 1.3  | En la versión preliminar, versión 1605 (compilación 6925.1000) o posterior| En la versión preliminar, mayo de 2016, 1.22 o posterior | En la versión preliminar, 15.22 o posterior| Estamos trabajando en ello. | 
-| WordApi 1.2  | Actualización de diciembre de 2015, versión 1601 (compilación 6568.1000) o posterior | Enero de 2016, 1.18 o posterior | Enero de 2016, 15.19 o posterior| Septiembre de 2016 | 
-| WordApi 1.1  | Versión 1509 (compilación 4266.1001) o posterior| Enero de 2016, 1.18 o posterior | Enero de 2016, 15.19 o posterior| Septiembre de 2016 | 
+|  Conjunto de requisitos  |   Office 2016 para Windows*  |  Office 2016 para iPad  |  Office 2016 para Mac  | Office Online  | Office Online Server  |
+|:-----|-----|:-----|:-----|:-----|:-----|
+| WordApi 1.3  | En la versión preliminar, versión 1605 (compilación 6925.1000) o posterior| En la versión preliminar, mayo de 2016, 1.22 o posterior | En la versión preliminar, 15.22 o posterior| Estamos trabajando en ello. ||
+| WordApi 1.2  | Actualización de diciembre de 2015, versión 1601 (compilación 6568.1000) o posterior | Enero de 2016, 1.18 o posterior | Enero de 2016, 15.19 o posterior| Septiembre de 2016 | Versión 1608 (compilación 7601.6800) o posterior|
+| WordApi 1.1  | Versión 1509 (compilación 4266.1001) o posterior| Enero de 2016, 1.18 o posterior | Enero de 2016, 15.19 o posterior| Septiembre de 2016 | |
 
-> &#42; **Nota**: El número de compilación para Office 2016 que se ha instalado mediante MSI es 16.0.4266.1001. Esta versión solo contiene el conjunto de requisitos de WordApi 1.1.
+> **Nota**: El número de compilación para Office 2016 que se ha instalado mediante MSI es 16.0.4266.1001. Esta versión solo contiene el conjunto de requisitos de WordApi 1.1.
 
-Para obtener más información sobre las versiones y números de compilación, consulte:
+Para obtener más información sobre las versiones, números de compilación y Office Online Server, consulte:
 
 - [Números de versión y compilación de las versiones del canal de actualización para los clientes de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [¿Qué versión de Office estoy usando?](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
 - [Dónde puede encontrar el número de versión y de compilación de una aplicación de cliente de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- [Información general de Office Online Server](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos comunes de la API de Office
 Para obtener información sobre los conjuntos de requisitos comunes de la API, consulte [Office common API requirement sets (Conjuntos de requisitos comunes de la API de Office)](office-add-in-requirement-sets.md).

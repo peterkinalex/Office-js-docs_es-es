@@ -1,20 +1,20 @@
-# Objeto Application (API de JavaScript para OneNote)
+# <a name="application-object-javascript-api-for-onenote"></a>Objeto Application (API de JavaScript para OneNote)
 
 _Se aplica a: OneNote Online_
 
 
 Representa el objeto de nivel superior que contiene todos los objetos de OneNote a los que se puede hacer referencia globalmente, como blocs de notas, el bloc de notas activo y la sección activa.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 Ninguno
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
-|blocs de notas|[NotebookCollection](notebookcollection.md)|Obtiene la colección de blocs de notas que están abiertos en la instancia de la aplicación de OneNote. En OneNote Online, solo se abre un bloc de notas en la instancia de la aplicación. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-notebooks)|
+|Blocs de notas|[NotebookCollection](notebookcollection.md)|Obtiene la colección de blocs de notas que están abiertos en la instancia de la aplicación de OneNote. En OneNote Online, solo se abre un bloc de notas en la instancia de la aplicación. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-notebooks)|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
@@ -30,24 +30,24 @@ Ninguno
 |[navigateToPage(page: Page)](#navigatetopagepage-page)|void|Abre la página especificada en la instancia de la aplicación.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPage)|
 |[navigateToPageWithClientUrl(url: string)](#navigatetopagewithclienturlurl-string)|[Page](page.md)|Obtiene la página especificada y la abre en la instancia de la aplicación.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-application-navigateToPageWithClientUrl)|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### getActiveNotebook()
+### <a name="getactivenotebook"></a>getActiveNotebook()
 Obtiene el bloc de notas activo si existe alguno. Si no hay ningún bloc de notas activo, lanza ItemNotFound.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.getActiveNotebook();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Notebook](notebook.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
         
@@ -77,21 +77,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveNotebookOrNull()
+### <a name="getactivenotebookornull"></a>getActiveNotebookOrNull()
 Obtiene el bloc de notas activo si existe alguno. Si no hay ningún bloc de notas activo, devuelve NULL.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.getActiveNotebookOrNull();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Notebook](notebook.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 
@@ -122,21 +122,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveOutline()
+### <a name="getactiveoutline"></a>getActiveOutline()
 Obtiene el esquema activo si existe alguno. Si no hay ninguno, lanza ItemNotFound.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.getActiveOutline();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Outline](outline.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 
@@ -163,21 +163,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveOutlineOrNull()
+### <a name="getactiveoutlineornull"></a>getActiveOutlineOrNull()
 Obtiene el esquema activo si existe. De lo contrario, devuelve NULL.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.getActiveOutlineOrNull();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Outline](outline.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 
@@ -205,21 +205,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActivePage()
+### <a name="getactivepage"></a>getActivePage()
 Obtiene la página activa si existe alguna. Si no hay ninguna página activa, lanza ItemNotFound.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.getActivePage();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Page](page.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
         
@@ -249,21 +249,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActivePageOrNull()
+### <a name="getactivepageornull"></a>getActivePageOrNull()
 Obtiene la página activa si existe alguna. Si no hay ninguna página activa, devuelve NULL.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.getActivePageOrNull();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Page](page.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 
@@ -294,21 +294,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveSection()
+### <a name="getactivesection"></a>getActiveSection()
 Obtiene la sección activa si existe alguna. Si no hay ninguna sección activa, lanza ItemNotFound.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.getActiveSection();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
-[Sección](section.md)
+#### <a name="returns"></a>Valores devueltos
+[Section](section.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
         
@@ -338,21 +338,21 @@ OneNote.run(function (context) {
 ```
 
 
-### getActiveSectionOrNull()
+### <a name="getactivesectionornull"></a>getActiveSectionOrNull()
 Obtiene la sección activa si existe alguna. Si no hay ninguna sección activa, devuelve NULL.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.getActiveSectionOrNull();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
-[Sección](section.md)
+#### <a name="returns"></a>Valores devueltos
+[Section](section.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 
@@ -382,39 +382,39 @@ OneNote.run(function (context) {
 ```
 
 
-### load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-### navigateToPage(page: Page)
+### <a name="navigatetopagepage-page"></a>navigateToPage(page: Page)
 Abre la página especificada en la instancia de la aplicación.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.navigateToPage(page);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |page|Page|La página que se abrirá.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js        
 OneNote.run(function (context) {
         
@@ -448,23 +448,23 @@ OneNote.run(function (context) {
 ```
 
 
-### navigateToPageWithClientUrl(url: string)
+### <a name="navigatetopagewithclienturlurl-string"></a>navigateToPageWithClientUrl(url: string)
 Obtiene la página especificada y la abre en la instancia de la aplicación.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 applicationObject.navigateToPageWithClientUrl(url);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |url|string|La URL del cliente de la página que se abrirá.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [Page](page.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function (context) {
 

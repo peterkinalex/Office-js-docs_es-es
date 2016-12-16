@@ -20,7 +20,7 @@ En la siguiente tabla se enumeran los mensajes de error comunes que los usuarios
 |Error: El objeto no admite la propiedad o el método 'defineProperty'|Confirme que Internet Explorer no se está ejecutando en modo de compatibilidad. Vaya a Herramientas >  **Configuración de Vista de compatibilidad**.|
 |Lo sentimos, no pudimos cargar la aplicación porque la versión de su explorador no es compatible. Haga clic aquí para ver una lista de las versiones de explorador compatibles.|Asegúrese de que el explorador admite el almacenamiento local HTML5 o restablezca su configuración de Internet Explorer.Para obtener información sobre los exploradores compatibles, vea [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).|
 
-## <a name="outlook-add-in-doesn't-work-correctly"></a>El complemento de Outlook no funciona correctamente
+## <a name="outlook-add-in-doesnt-work-correctly"></a>El complemento de Outlook no funciona correctamente
 
 Si un complemento de Outlook que se ejecuta en Windows no funciona correctamente, pruebe a activar la depuración de scripts en Internet Explorer. 
 
@@ -32,7 +32,7 @@ Si un complemento de Outlook que se ejecuta en Windows no funciona correctamente
 Se recomienda desactivar estas opciones solo para solucionar el problema. Si las deja desactivadas, recibirá mensajes mientras navegue. Una vez resuelto el problema, vuelva a activar  **Deshabilitar depuración de scripts (Internet Explorer)** y **Deshabilitar depuración de scripts (otros)**.
 
 
-## <a name="add-in-doesn't-activate-in-office-2013"></a>El complemento no se activa en Office 2013
+## <a name="add-in-doesnt-activate-in-office-2013"></a>El complemento no se activa en Office 2013
 
 Si el complemento no se activa cuando el usuario realiza los pasos siguientes:
 
@@ -45,6 +45,9 @@ Si el complemento no se activa cuando el usuario realiza los pasos siguientes:
     
 Compruebe que están instaladas las últimas actualizaciones de Office o descargue la [actualización de Office 2013](https://support.microsoft.com/en-us/kb/2986156/).
 
+## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>El complemento no se carga en el panel de tareas o hay otros problemas con el manifiesto del complemento
+
+Intente usar [el registro de tiempo de ejecución](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest) para depurar los problemas de manifiesto de complementos.
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
@@ -59,4 +62,6 @@ Compruebe que están instaladas las últimas actualizaciones de Office o descarg
 - [Crear y depurar complementos de Office en Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
     
 - [Implementar e instalar complementos de Outlook para probarlos](../outlook/testing-and-tips.md)
+    
+- [Use el registro de tiempo de ejecución para depurar el manifiesto](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest).
     

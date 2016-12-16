@@ -1,11 +1,12 @@
 
-# <a name="requirements-for-running-office-addins"></a>Requisitos para ejecutar complementos de Office
+# <a name="requirements-for-running-office-add-ins"></a>Requisitos para ejecutar complementos de Office
 
 
 En este artículo se describen los requisitos de software y de dispositivo para ejecutar complementos de Office.
 
->**Nota:** Para consultar una lista detallada de dónde se pueden usar actualmente los complementos de Office, vea la página [Disponibilidad de plataformas y hosts de los complementos de Office](http://dev.office.com/add-in-availability). 
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
 
+Para consultar una lista detallada de dónde se pueden usar actualmente los complementos de Office, vea la página [Disponibilidad de plataformas y hosts de los complementos de Office](http://dev.office.com/add-in-availability).
 
 ## <a name="server-requirements"></a>Requisitos de servidor
 
@@ -52,12 +53,12 @@ Estas son las versiones mínimas del cliente de Office para Mac que admiten comp
 - Excel para Mac versión 15.19 (160206) 
 - PowerPoint para Mac versión 15.24 (160614)
 
-## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Requisitos del cliente: Compatibilidad del explorador con clientes web de Office Online y SharePoint
+## <a name="client-requirements-browser-support-for-office-online-web-clients-and-sharepoint"></a>Requisitos de cliente: compatibilidad del explorador con clientes web de Office Online y SharePoint
 
 Cualquier explorador que admita ECMAScript 5.1, HTML5 y CSS3, como Internet Explorer 11 o posterior, o la versión más reciente de Microsoft Edge, Chrome, Firefox o Safari (Mac OS).
 
 
-## <a name="client-requirements-nonwindows-smartphone-and-tablet"></a>Requisitos de cliente: smartphones y tabletas sin Windows
+## <a name="client-requirements-non-windows-smartphone-and-tablet"></a>Requisitos de cliente: smartphones y tabletas sin Windows
 
 Se necesita el siguiente software para probar y ejecutar complementos de Outlook específicamente para OWA para dispositivos y Outlook Web App cuando se ejecutan en un explorador en smartphones o tabletas que no son Windows.
 

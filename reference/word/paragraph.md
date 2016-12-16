@@ -1,4 +1,4 @@
-# <a name="paragraph-object-(javascript-api-for-word)"></a>Objeto Paragraph (API de JavaScript para Word)
+# <a name="paragraph-object-javascript-api-for-word"></a>Objeto Paragraph (API de JavaScript para Word)
 
 Representa un solo párrafo de una selección, intervalo, control de contenido o cuerpo del documento.
 
@@ -8,7 +8,7 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 | Propiedad     | Tipo   |Descripción
 |:---------------|:--------|:----------|
 |outlineLevel|int|Obtiene o establece el nivel de esquema del párrafo.|
-|style|string|Obtiene o establece el estilo usado en el párrafo. Este es el nombre del estilo preinstalado o personalizado. El ejemplo [Word-Add-in-DocumentAssembly][paragraph.style] muestra cómo se puede establecer el estilo de párrafo.|
+|style|string|Obtiene o establece el estilo usado en el párrafo. Este es el nombre del estilo preinstalado o personalizado. En el ejemplo [Word-Add-in-DocumentAssembly][paragraph.style], se muestra cómo se puede establecer el estilo de párrafo.|
 |text|string|Obtiene el texto del párrafo. Solo lectura.|
 
 ## <a name="relationships"></a>Relaciones
@@ -20,7 +20,7 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 |font|[Font](font.md)|Obtiene el formato de texto del párrafo. Úselo para obtener y establecer el nombre de la fuente, el tamaño, el color y otras propiedades. Solo lectura.|
 |inlinePictures|[InlinePictureCollection](inlinepicturecollection.md)|Obtiene la colección de objetos inlinePicture que se encuentran en el párrafo. La colección no incluye imágenes flotantes. Solo lectura.|
 |leftIndent|**float**|Obtiene o establece el valor de sangría izquierda (en puntos) del párrafo.|
-|lineSpacing|**float**|Obtiene o establece el interlineado (en puntos) del párrafo especificado. En la interfaz de usuario de Word, este valor se divide entre 12.|
+|lineSpacing|**float**|Obtiene o establece el espaciado de línea (en puntos) del párrafo especificado. En la interfaz de usuario de Word, este valor se divide entre 12.|
 |lineUnitAfter|**float**|Obtiene o establece la cantidad de espaciado (en líneas de cuadrícula) después del párrafo.|
 |lineUnitBefore|**float**|Obtiene o establece la cantidad de espaciado (en líneas de cuadrícula) antes del párrafo.|
 |parentContentControl|[ContentControl](contentcontrol.md)|Obtiene el control de contenido que contiene el párrafo. Devuelve null si no hay un control de contenido principal. Solo lectura.|
@@ -46,11 +46,11 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac, Word Online_
 |[insertText(text: string, insertLocation: InsertLocation)](#inserttexttext-string-insertlocation-insertlocation)|[Range](range.md)|Inserta texto en el párrafo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 |[search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)](#searchsearchtext-string-searchoptions-paramtypestringssearchoptions)|[SearchResultCollection](searchresultcollection.md)|Realiza una búsqueda con el valor searchOptions especificado en el ámbito del objeto de párrafo. Los resultados de la búsqueda son una colección de objetos de intervalo.|
-|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|nulo|Selecciona y se desplaza por la interfaz de usuario de Word hasta el párrafo. El modo de selección puede ser 'Select', 'Start' o 'End'. 'Select' es el valor predeterminado.|
+|[select(selectionMode: SelectionMode)](#selectselectionmode-selectionmode)|void|Selecciona y se desplaza por la interfaz de usuario de Word hasta el párrafo. El modo de selección puede ser 'Select', 'Start' o 'End'. 'Select' es el valor predeterminado.|
 
 ## <a name="method-details"></a>Detalles del método
 
-### <a name="clear()"></a>clear()
+### <a name="clear"></a>clear()
 Borra el contenido del objeto de párrafo. El usuario puede realizar la operación de deshacer en el contenido borrado.
 
 #### <a name="syntax"></a>Sintaxis
@@ -97,7 +97,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 Elimina el párrafo y su contenido del documento.
 
 #### <a name="syntax"></a>Sintaxis
@@ -144,7 +144,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="gethtml()"></a>getHtml()
+### <a name="gethtml"></a>getHtml()
 Obtiene la representación HTML del objeto de párrafo.
 
 #### <a name="syntax"></a>Sintaxis
@@ -191,7 +191,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="getooxml()"></a>getOoxml()
+### <a name="getooxml"></a>getOoxml()
 Obtiene la representación Office Open XML (OOXML) del objeto de párrafo.
 
 #### <a name="syntax"></a>Sintaxis
@@ -238,7 +238,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertbreak(breaktype:-breaktype,-insertlocation:-insertlocation)"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
+### <a name="insertbreakbreaktype-breaktype-insertlocation-insertlocation"></a>insertBreak(breakType: BreakType, insertLocation: InsertLocation)
 Inserta un salto en la ubicación especificada. Un salto solo puede insertarse en párrafos que se encuentran en el cuerpo principal del documento, excepto si se trata de un salto de línea, que puede insertarse en cualquier objeto de cuerpo. El valor insertLocation puede ser "Before" o "After".
 
 #### <a name="syntax"></a>Sintaxis
@@ -295,7 +295,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="insertcontentcontrol()"></a>insertContentControl()
+### <a name="insertcontentcontrol"></a>insertContentControl()
 Ajusta el objeto de párrafo con un control de contenido de texto enriquecido.
 
 #### <a name="syntax"></a>Sintaxis
@@ -347,9 +347,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>Información adicional
-El ejemplo [Word-Add-in-DocumentAssembly][paragraph.insertContentControl] muestra cómo se puede usar el método insertContentControl.
+En el ejemplo [Word-Add-in-DocumentAssembly][paragraph.insertContentControl], se muestra cómo se puede establecer el método insertContentControl.
 
-### <a name="insertfilefrombase64(base64file:-string,-insertlocation:-insertlocation)"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
+### <a name="insertfilefrombase64base64file-string-insertlocation-insertlocation"></a>insertFileFromBase64(base64File: string, insertLocation: InsertLocation)
 Inserta un documento en el párrafo actual en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -363,7 +363,7 @@ paragraphObject.insertFileFromBase64(base64File, insertLocation);
 |base64File|string|Necesario. Contenido del archivo codificado en Base64 que se va a insertar.|
 |insertLocation|InsertLocation|Obligatorio. El valor puede ser 'Replace', 'Start' o 'End'.|
 
-#### <a name="returns"></a>Devuelve
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
 #### <a name="examples"></a>Ejemplos
@@ -403,7 +403,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="inserthtml(html:-string,-insertlocation:-insertlocation)"></a>insertHtml(html: string, insertLocation: InsertLocation)
+### <a name="inserthtmlhtml-string-insertlocation-insertlocation"></a>insertHtml(html: string, insertLocation: InsertLocation)
 Inserta HTML en el párrafo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -417,7 +417,7 @@ paragraphObject.insertHtml(html, insertLocation);
 |Html|string|Necesario. HTML que se va a insertar en el párrafo.|
 |insertLocation|InsertLocation|Obligatorio. El valor puede ser 'Replace', 'Start' o 'End'.|
 
-#### <a name="returns"></a>Devuelve
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
 #### <a name="examples"></a>Ejemplos
@@ -458,7 +458,7 @@ Word.run(function (context) {
 
 ```
 
-### <a name="insertinlinepicturefrombase64(base64encodedimage:-string,-insertlocation:-insertlocation)"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
+### <a name="insertinlinepicturefrombase64base64encodedimage-string-insertlocation-insertlocation"></a>insertInlinePictureFromBase64(base64EncodedImage: string, insertLocation: InsertLocation)
 Inserta una imagen en el párrafo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -472,7 +472,7 @@ paragraphObject.insertInlinePictureFromBase64(base64EncodedImage, insertLocation
 |base64EncodedImage|string|Necesario. HTML que se va a insertar en el párrafo.|
 |insertLocation|InsertLocation|Obligatorio. El valor puede ser 'Replace', 'Start' o 'End'.|
 
-#### <a name="returns"></a>Devuelve
+#### <a name="returns"></a>Valores devueltos
 [InlinePicture](inlinepicture.md)
 
 #### <a name="examples"></a>Ejemplos
@@ -514,9 +514,9 @@ Word.run(function (context) {
 ```
 
 #### <a name="additional-information"></a>Información adicional
-El ejemplo [Word-Add-in-DocumentAssembly][paragraph.insertpicture] proporciona otro ejemplo de cómo se puede insertar una imagen en un párrafo.
+En el ejemplo [Word-Add-in-DocumentAssembly][paragraph.insertpicture], se proporciona otro ejemplo de cómo se puede insertar una imagen en un párrafo.
 
-### <a name="insertooxml(ooxml:-string,-insertlocation:-insertlocation)"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
+### <a name="insertooxmlooxml-string-insertlocation-insertlocation"></a>insertOoxml(ooxml: string, insertLocation: InsertLocation)
 Inserta OOXML o wordProcessingML en el párrafo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -530,7 +530,7 @@ paragraphObject.insertOoxml(ooxml, insertLocation);
 |ooxml|string|Necesario. OOXML o wordProcessingML que se va a insertar en el párrafo.|
 |insertLocation|InsertLocation|Obligatorio. El valor puede ser 'Replace', 'Start' o 'End'.|
 
-#### <a name="returns"></a>Devuelve
+#### <a name="returns"></a>Valores devueltos
 [Intervalo](range.md)
 
 #### <a name="known-issues"></a>Problemas conocidos
@@ -577,7 +577,7 @@ Word.run(function (context) {
 #### <a name="additional-information"></a>Información adicional
 Lea [Crear complementos mejores para Word con Office Open XML](https://msdn.microsoft.com/en-us/library/office/dn423225.aspx) para obtener instrucciones sobre cómo trabajar con OOXML.
 
-### <a name="insertparagraph(paragraphtext:-string,-insertlocation:-insertlocation)"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
+### <a name="insertparagraphparagraphtext-string-insertlocation-insertlocation"></a>insertParagraph(paragraphText: string, insertLocation: InsertLocation)
 Inserta un párrafo en la ubicación especificada. El valor insertLocation puede ser 'Before' o 'After'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -631,7 +631,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="inserttext(text:-string,-insertlocation:-insertlocation)"></a>insertText(text: string, insertLocation: InsertLocation)
+### <a name="inserttexttext-string-insertlocation-insertlocation"></a>insertText(text: string, insertLocation: InsertLocation)
 Inserta texto en el párrafo en la ubicación especificada. El valor insertLocation puede ser 'Replace', 'Start' o 'End'.
 
 #### <a name="syntax"></a>Sintaxis
@@ -645,7 +645,7 @@ paragraphObject.insertText(text, insertLocation);
 |text|string|Necesario. Texto que se va a insertar.|
 |insertLocation|InsertLocation|Obligatorio. El valor puede ser 'Replace', 'Start' o 'End'.|
 
-#### <a name="returns"></a>Devuelve
+#### <a name="returns"></a>Valores devueltos
 [Range](range.md)
 
 #### <a name="examples"></a>Ejemplos
@@ -685,7 +685,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis
@@ -747,7 +747,7 @@ Word.run(function (context) {
 });
 ```
 
-### <a name="search(searchtext:-string,-searchoptions:-paramtypestrings.searchoptions)"></a>search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
+### <a name="searchsearchtext-string-searchoptions-paramtypestringssearchoptions"></a>search(searchText: string, searchOptions: ParamTypeStrings.SearchOptions)
 Realiza una búsqueda con el valor searchOptions especificado en el ámbito del objeto de párrafo. Los resultados de la búsqueda son una colección de objetos de intervalo.
 
 #### <a name="syntax"></a>Sintaxis
@@ -758,13 +758,13 @@ paragraphObject.search(searchText, searchOptions);
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|searchText|cadena|Necesario. El texto de búsqueda.|
+|searchText|string|Necesario. Texto de búsqueda.|
 |[searchOptions](searchoptions.md)|ParamTypeStrings.SearchOptions|Opcional. Opciones de la búsqueda.|
 
 #### <a name="returns"></a>Valores devueltos
 [SearchResultCollection](searchresultcollection.md)
 
-### <a name="select(selectionmode:-selectionmode)"></a>select(selectionMode: SelectionMode)
+### <a name="selectselectionmode-selectionmode"></a>select(selectionMode: SelectionMode)
 Selecciona y se desplaza por la interfaz de usuario de Word hasta el párrafo.
 
 #### <a name="syntax"></a>Sintaxis
@@ -822,6 +822,6 @@ Word.run(function (context) {
 Use el [conjunto de requisitos](../office-add-in-requirement-sets.md) en las comprobaciones en tiempo de ejecución para asegurarse de que la aplicación es compatible con la versión de host de Word. Para obtener más información sobre los requisitos de servidor y aplicación host de Office, consulte [Requisitos para ejecutar complementos de Office](../../docs/overview/requirements-for-running-office-add-ins.md).
 
 
-[paragraph.insertContentControl]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L161 "#insertar-control-de-contenido"
-[paragraph.style]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L172 "establecer-estilo"
-[paragraph.insertpicture]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L236 "insertar-imagen"
+[paragraph.insertContentControl]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L161 "insertar control de contenido"
+[paragraph.style]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L172 "establecer estilo"
+[paragraph.insertpicture]: https://github.com/OfficeDev/Word-Add-in-DocumentAssembly/blob/master/WordAPIDocAssemblySampleWeb/App/Home/Home.js#L236 "insertar imagen"

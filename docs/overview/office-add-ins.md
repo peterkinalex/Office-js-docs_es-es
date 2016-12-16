@@ -12,9 +12,11 @@ Puede usar los complementos de Office para:
     
 **Los complementos de Office son compatibles con diferentes versiones de Office** como Office para escritorio de Windows, Office Online, Office para Mac y Office para iPad.
 
->**Nota:** Para consultar una lista detallada de dónde se pueden usar actualmente los complementos de Office, vea la página [Disponibilidad de plataformas y hosts de los complementos de Office](http://dev.office.com/add-in-availability). 
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
 
-## <a name="what-can-an-office-add-in-do?"></a>¿Qué puede hacer un complemento de Office?
+Para consultar una lista detallada de dónde se pueden usar actualmente los complementos de Office, vea la página [Disponibilidad de plataformas y hosts de los complementos de Office](http://dev.office.com/add-in-availability). 
+
+## <a name="what-can-an-office-add-in-do"></a>¿Qué puede hacer un complemento de Office?
 
 Un complemento de Office puede hacer lo mismo que puede hacer cualquier página web dentro del explorador, por ejemplo:
 
@@ -42,7 +44,7 @@ Se pueden crear los siguientes tipos de complementos de Office:
 - Complementos de Excel y PowerPoint que crean objetos
 - Complementos de Outlook que amplían funciones
 
-### <a name="word,-excel,-and-powerpoint-add-ins-that-extend-functionality"></a>Complementos de Word, Excel y PowerPoint que amplían funciones 
+### <a name="word-excel-and-powerpoint-add-ins-that-extend-functionality"></a>Complementos de Word, Excel y PowerPoint que amplían funciones 
 Puede **agregar una nueva función** a Word, Excel o PowerPoint, registre el complemento con un [manifiesto de complemento de panel de tareas](../design/add-in-commands.md). Este manifiesto es compatible con **dos modos de integración**:
 
 - Comandos de complementos
@@ -110,7 +112,9 @@ El manifiesto especifica la configuración y las funcionalidades del complemento
     
 - El nombre para mostrar, la descripción, el identificador, la versión y la configuración regional predeterminada del complemento.
     
-- Cómo se integra el complemento con Office: - Para los complementos que amplían Word, Excel, PowerPoint y Outlook: La extensión nativa que apunta al complemento se usa para exponer funciones, como los botones de la cinta. Para complementos que crean nuevos objetos insertables: La dirección URL de la página predeterminada que se carga para el objeto.
+- Cómo se integra el complemento con Office: 
+      - Para los complementos que amplían Word, Excel, PowerPoint y Outlook: La extensión nativa que apunta al complemento se usa para exponer funciones, como los botones de la cinta.
+      - Para complementos que crean nuevos objetos insertables: La dirección URL de la página predeterminada que se carga para el objeto.
        
     
 - El nivel de permiso y los requisitos de acceso a datos del complemento.

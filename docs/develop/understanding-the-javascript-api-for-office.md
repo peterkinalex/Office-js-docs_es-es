@@ -5,6 +5,8 @@
 
 Este artículo proporciona información acerca de la API de JavaScript para Office y cómo usarla. Para obtener información de referencia, consulte [API de JavaScript para Office](../../reference/javascript-api-for-office.md). Para obtener información sobre cómo actualizar los archivos de proyecto de Visual Studio a la versión más reciente de la API de JavaScript para Office, consulte [Actualizar la versión de la API de JavaScript para Office y los archivos de esquema de manifiesto](../../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md).
 
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+
 ## <a name="referencing-the-javascript-api-for-office-library-in-your-add-in"></a>Referencia a la biblioteca de la API de JavaScript para Office en el complemento
 
 La biblioteca de la [API de JavaScript para Office](../../reference/javascript-api-for-office.md) está formada por el archivo Office.js y los archivos .js específicos de la aplicación host asociada, como Excel-15.js y Outlook-15.js. El método más sencillo para hacer referencia a la API es usar nuestra CDN. Para hacerlo, agregue el siguiente `<script>` a la etiqueta `<head>` de la página:  
@@ -20,7 +22,7 @@ Para más información sobre la CDN de Office.js, incluido cómo se administra e
 ## <a name="initializing-your-add-in"></a>Inicializar el complemento
 
 
- **Se aplica a:** Todo tipo de complementos
+ **Se aplica a:** todos los tipos de complementos
 
 
 Office.js proporciona un evento de inicialización que se desencadena cuando la API está totalmente cargada y lista para empezar a interactuar con el usuario. Puede usar el controlador de eventos **initialize** para implementar los escenarios comunes de inicialización del complemento, como pedir al usuario que seleccione algunas celdas en Excel y después insertar un gráfico que se inicializa con los valores seleccionados. También puede usar el controlador de eventos initialize para inicializar otra lógica personalizada para el complemento, tal como establecer enlaces, pedir los valores predeterminados de la configuración del complemento, etc.

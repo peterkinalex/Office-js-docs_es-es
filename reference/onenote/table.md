@@ -1,11 +1,11 @@
-# Objeto Table (API de JavaScript para OneNote)
+# <a name="table-object-javascript-api-for-onenote"></a>Objeto Table (API de JavaScript para OneNote)
 
 _Se aplica a: OneNote Online_  
 
 
 Representa una tabla en una página de OneNote.
 
-## Propiedades
+## <a name="properties"></a>Propiedades
 
 | Propiedad     | Tipo   |Descripción|Comentarios|
 |:---------------|:--------|:----------|:-------|
@@ -14,15 +14,15 @@ Representa una tabla en una página de OneNote.
 |id|string|Obtiene el identificador de la tabla. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-id)|
 |rowCount|int|Obtiene el número de filas de la tabla. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rowCount)|
 
-_Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
+_Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
-## Relaciones
+## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
 |paragraph|[Paragraph](paragraph.md)|Obtiene el objeto Paragraph que contiene el objeto Table. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-paragraph)|
 |rows|[TableRowCollection](tablerowcollection.md)|Obtiene todas las filas de la tabla. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-rows)|
 
-## Métodos
+## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
@@ -35,26 +35,26 @@ _Consulte los [ejemplos](#ejemplos) de acceso a la propiedad._
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-load)|
 |[setShadingColor(colorCode: string)](#setshadingcolorcolorcode-string)|void|Establece el color de sombreado de todas las celdas de la tabla.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-table-setShadingColor)|
 
-## Detalles del método
+## <a name="method-details"></a>Detalles del método
 
 
-### appendColumn(values: string[])
+### <a name="appendcolumnvalues-string"></a>appendColumn(values: string[])
 Agrega una columna al final de la tabla. Los valores, si se especifican, se establecen en la nueva columna. De lo contrario, la columna está vacía.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.appendColumn(values);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |values|string[]|Opcional. Opcional. Cadenas para insertar en la nueva columna, especificadas como una matriz. No debe tener más valores que filas de la tabla.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -87,23 +87,23 @@ OneNote.run(function(ctx) {
 ```
 
 
-### appendRow(values: string[])
+### <a name="appendrowvalues-string"></a>appendRow(values: string[])
 Agrega una fila al final de la tabla. Los valores, si se especifican, se establecen en la nueva fila. De lo contrario, la fila está vacía.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.appendRow(values);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |values|string[]|Opcional. Opcional. Cadenas para insertar en la nueva fila, especificadas como una matriz. No debe tener más valores que columnas de la tabla.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [TableRow](tablerow.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -136,38 +136,38 @@ OneNote.run(function(ctx) {
 ```
 
 
-### clear()
+### <a name="clear"></a>clear()
 Borra el contenido de la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.clear();
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 Ninguno
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-### getCell(rowIndex: number, cellIndex: number)
+### <a name="getcellrowindex-number-cellindex-number"></a>getCell(rowIndex: number, cellIndex: number)
 Obtiene la celda de tabla de una fila y columna especificadas.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.getCell(rowIndex, cellIndex);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |rowIndex|number|Índice de la fila.|
 |cellIndex|number|Índice de la celda de la fila.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [TableCell](tablecell.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -200,24 +200,24 @@ OneNote.run(function(ctx) {
 ```
 
 
-### insertColumn(index: number, values: string[])
+### <a name="insertcolumnindex-number-values-string"></a>insertColumn(index: number, values: string[])
 Inserta una columna en el índice especificado de la tabla. Los valores, si se especifican, se establecen en la nueva columna. De lo contrario, la columna está vacía.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.insertColumn(index, values);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |index|number|Índice donde se insertará la columna en la tabla.|
 |values|string[]|Opcional. Opcional. Cadenas para insertar en la nueva columna, especificadas como una matriz. No debe tener más valores que filas de la tabla.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -250,24 +250,24 @@ OneNote.run(function(ctx) {
 ```
 
 
-### insertRow(index: number, values: string[])
+### <a name="insertrowindex-number-values-string"></a>insertRow(index: number, values: string[])
 Inserta una fila en el índice especificado de la tabla. Los valores, si se especifican, se establecen en la nueva fila. De lo contrario, la fila está vacía.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.insertRow(index, values);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |index|number|Índice donde se insertará la fila en la tabla.|
 |values|string[]|Opcional. Opcional. Cadenas para insertar en la nueva fila, especificadas como una matriz. No debe tener más valores que columnas de la tabla.|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 [TableRow](tablerow.md)
 
-#### Ejemplos
+#### <a name="examples"></a>Ejemplos
 ```js
 OneNote.run(function(ctx) {
     var app = ctx.application;
@@ -300,38 +300,38 @@ OneNote.run(function(ctx) {
 ```
 
 
-### load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 object.load(param);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
 
-### setShadingColor(colorCode: string)
+### <a name="setshadingcolorcolorcode-string"></a>setShadingColor(colorCode: string)
 Establece el color de sombreado de todas las celdas de la tabla.
 
-#### Sintaxis
+#### <a name="syntax"></a>Sintaxis
 ```js
 tableObject.setShadingColor(colorCode);
 ```
 
-#### Parámetros
+#### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |colorCode|string|El código de color que hay que establecer en las celdas./param|
 
-#### Valores devueltos
+#### <a name="returns"></a>Valores devueltos
 void
-### Ejemplos de acceso a la propiedad
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 **columnCount, rowCount, id**
 ```js
 OneNote.run(function(ctx) {
