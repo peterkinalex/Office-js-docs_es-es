@@ -47,7 +47,7 @@ Compruebe que están instaladas las últimas actualizaciones de Office o descarg
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>El complemento no se carga en el panel de tareas o hay otros problemas con el manifiesto del complemento
 
-Intente usar [el registro de tiempo de ejecución](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest) para depurar los problemas de manifiesto de complementos.
+Vea [Validar y solucionar problemas relacionados con el manifiesto](troubleshoot-manifest.md) para depurar problemas del manifiesto del complemento.
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
@@ -63,5 +63,5 @@ Intente usar [el registro de tiempo de ejecución](https://dev.office.com/docs/a
     
 - [Implementar e instalar complementos de Outlook para probarlos](../outlook/testing-and-tips.md)
     
-- [Use el registro de tiempo de ejecución para depurar el manifiesto](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest).
+- [Validar y solucionar problemas con el manifiesto](troubleshoot-manifest.md)
     

@@ -1,4 +1,4 @@
-	
+
 # <a name="office-add-ins-xml-manifest"></a>Manifiesto XML de complementos para Office
 
 
@@ -16,7 +16,8 @@ El archivo de manifiesto XML basado en este esquema permite a un complemento de 
     
 - Para los complementos de Office de Outlook, defina las reglas que especifican el contexto en que se activarán e interactuarán con un elemento de convocatoria de reunión, cita o mensaje.
 
->**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajusta a las [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados (para más información, consulte la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) y el [host del complemento de Office y la página de disponibilidad](https://dev.office.com/add-in-availability)).
+
 
 ## <a name="required-elements"></a>Elementos requeridos
 
@@ -58,25 +59,10 @@ En la tabla siguiente se especifican los elementos necesarios para los tres tipo
 |[* Conjuntos (requisitos)](http://msdn.microsoft.com/en-us/library/509be287-b532-87c6-71ac-64f3a4bbd3af%28Office.15%29.aspx)||X|
 |[*Hosts](http://msdn.microsoft.com/library/f9a739c1-3daf-c03a-2bd9-4a2a6b870101%28Office.15%29.aspx)||X|
 
-*Se agregó en el esquema de manifiesto de complemento de Office versión 1.1.
+* Se agregó en el esquema de manifiesto de complemento de Office versión 1.1.
 
 
-## <a name="validate-the-office-add-ins-manifest"></a>Validar el manifiesto de los complementos de Office
-
-Para ayudar a asegurarse de que el archivo de manifiesto que describe el complemento de Office es correcto y está completo, valídelo de acuerdo con los archivos [definición de esquema XML (XSD)](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas). Puede utilizar una herramienta de validación de esquemas XML o [Visual Studio](../get-started/create-and-debug-office-add-ins-in-visual-studio.md) para validar el manifiesto. 
-
-Para usar Visual Studio, vaya a Compilar > Publicar y elija **Realizar comprobaciones de validación**.
-
-Para utilizar una herramienta de línea de comandos de validación de esquemas XML para validar el manifiesto:
-
-1.  Instale [tar](https://www.gnu.org/software/tar/) y [libxml](http://xmlsoft.org/FAQ.html) si no lo ha hecho todavía. 
-2.  Ejecute el comando siguiente. Reemplace XSD_FILE con la ruta de acceso al archivo XSD de manifiesto y XML_FILE con la ruta de acceso al archivo XML de manifiesto.
-
-    xmllint --noout --schema XSD_FILE XML_FILE
-
-
-
-## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especifique los dominios que quiere abrir en la ventana del complemento
+## <a name="specify-domains-you-want-to-open-in-the-add-in-window"></a>Especificar los dominios que quiere abrir en la ventana del complemento
 
 
 De forma predeterminada, si el complemento intenta ir a una dirección URL de un dominio que no es el dominio que hospeda la página de inicio (según lo especificado en el elemento [SourceLocation](../../reference/manifest/sourcelocation.md) del archivo de manifiesto), esa dirección URL se abrirá en una nueva ventana del explorador fuera del panel de complementos de la aplicación host de Office. Este comportamiento predeterminado protege al usuario de la navegación a páginas inesperadas en el panel de complementos desde elementos **iframe** insertados.
@@ -435,6 +421,10 @@ En las secciones siguientes se muestran ejemplos de archivos XML de manifiesto v
 
 ```
 
+## <a name="validate-and-troubleshoot-issues-with-your-manifest"></a>Validar y solucionar problemas con el manifiesto
+
+Para resolver problemas relacionados con el manifiesto, consulte [Validar y solucionar problemas con el manifiesto](../../docs/testing/troubleshoot-manifest.md). Ahí encontrará información sobre cómo validar el manifiesto con la [definición del esquema XML (XSD) ](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas), y también sobre cómo usar el registro en tiempo de ejecución para depurar el manifiesto.
+
 ## <a name="additional-resources"></a>Recursos adicionales
 
 
@@ -442,5 +432,5 @@ En las secciones siguientes se muestran ejemplos de archivos XML de manifiesto v
 - [Especificar los hosts de Office y los requisitos de la API](../../docs/overview/specify-office-hosts-and-api-requirements.md)
 - [Localización de complementos para Office](../../docs/develop/localization.md)
 - [Referencia de esquema para manifiestos de complementos de Office](https://github.com/OfficeDev/office-js-docs/tree/master/docs/overview/schemas)
-- [Usar el registro de tiempo de ejecución para depurar el manifiesto](../develop/use-runtime-logging-to-debug-manifest.md)
+- [Validar y solucionar problemas con el manifiesto](../../docs/testing/troubleshoot-manifest.md)
 

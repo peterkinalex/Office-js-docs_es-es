@@ -12,7 +12,8 @@ Puede usar los complementos de Office para:
     
 **Los complementos de Office son compatibles con diferentes versiones de Office** como Office para escritorio de Windows, Office Online, Office para Mac y Office para iPad.
 
->**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajusta a las [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados (para más información, consulte la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) y el [host del complemento de Office y la página de disponibilidad](https://dev.office.com/add-in-availability)).
+
 
 Para consultar una lista detallada de dónde se pueden usar actualmente los complementos de Office, vea la página [Disponibilidad de plataformas y hosts de los complementos de Office](http://dev.office.com/add-in-availability). 
 
@@ -113,7 +114,7 @@ El manifiesto especifica la configuración y las funcionalidades del complemento
 - El nombre para mostrar, la descripción, el identificador, la versión y la configuración regional predeterminada del complemento.
     
 - Cómo se integra el complemento con Office: 
-      - Para los complementos que amplían Word, Excel, PowerPoint y Outlook: La extensión nativa que apunta al complemento se usa para exponer funciones, como los botones de la cinta.
+      - Para los complementos que amplían Word, Excel, PowerPoint y Outlook: La extensión nativa que apunta al complemento se usa para exponer funciones, como los botones de la cinta. 
       - Para complementos que crean nuevos objetos insertables: La dirección URL de la página predeterminada que se carga para el objeto.
        
     

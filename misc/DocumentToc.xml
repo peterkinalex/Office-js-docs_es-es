@@ -35,8 +35,7 @@
 		<Item text="Definir comandos de complemento" url="outlook/manifests/define-add-in-commands" SEODescription="Use el elemento VersionOverrides en el manifiesto del complemento para definir comandos de complemento." />
 		<Item text="Especificar los hosts de Office" url="overview/specify-office-hosts-and-api-requirements" SEODescription="Obtenga información sobre cómo especificar hosts de Office y requisitos de la API en el manifiesto." /> 	
 		<Item text="Solicitar permisos para el uso de API en complementos de contenido y de panel de tareas" url="develop/requesting-permissions-for-api-use-in-content-and-task-pane-add-ins" SEODescription="Especifique en el manifiesto el nivel de acceso a la API que requiere el complemento." />
-		<Item text="Actualizar la versión de API y manifiestos" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Actualice a la versión 1.1 los archivos de JavaScript (archivos .js específicos de la aplicación y Office.js) y el archivo de validación del manifiesto del complemento usados en el proyecto de complemento de Office." />
-		<Item text="Usar el registro de tiempo de ejecución para depurar su manifiesto" url="develop/use-runtime-logging-to-debug-manifest" SEODescription="Use el registro de tiempo de ejecución para depurar el manifiesto del complemento de Office." />
+		<Item text="Actualizar la versión de API y manifiestos" url="develop/update-your-javascript-api-for-office-and-manifest-schema-version" SEODescription="Actualice los archivos de JavaScript (archivos .js específicos de la aplicación y Office.js) y el archivo de validación del manifiesto del complemento usados en el proyecto de complemento de Office a la versión 1.1." />		
 	</Item>	
 	<Item text="API de JavaScript para Office" url="develop/understanding-the-javascript-api-for-office" SEODescription="Comprender las áreas funcionales de la API de JavaScript para Office, que se implementa en el archivo Office.js.">
 		<Item text="Asistencia para complementos de paneles de tareas" url="develop/support-for-task-pane-and-content-add-ins" SEODescription="Describe los diferentes niveles de permisos que se pueden declarar en el manifiesto del complemento de contenido o de panel de tareas para especificar el nivel de acceso de la API de JavaScript que requiere su complemento para las características." />
@@ -51,7 +50,7 @@
 	<Item text="Localización" url="develop/localization" SEODescription="Proporcione contenido de localización regional específica para los complementos de Office, incluidas cadenas de IU, nombre de complemento, descripción, icono, archivo de origen y formato de fecha y hora." />
     <Item text="Rendimiento" url="develop/resource-limits-and-performance-optimization" SEODescription="Aplique límites de uso de recursos a sus complementos de Office y optimice el rendimiento de estos." />
   </Item>
-  <Item text="Prueba" url="testing">
+  <Item text="Probar y depurar" url="testing">
     	<Item text="Transferir localmente complementos de Office para pruebas" url="testing/create-a-network-shared-folder-catalog-for-task-pane-and-content-add-ins" SEODescription="Instale un complemento de Office que se ejecute en Windows para realizar pruebas." Scope="Excel, Word, PowerPoint, Project, Access" />
 		<Item text="Transferir localmente complementos de Office en Office Online para pruebas" url="testing/sideload-office-add-ins-for-testing" SEODescription="Consulte cómo cargar un complemento en una aplicación de Office para realizar pruebas." />
 	    <Item text="Transferir localmente complementos de Outlook para pruebas" url="testing/sideload-outlook-add-ins-for-testing" SEODescription="Instale un complemento de Outlook para realizar pruebas." />
@@ -60,11 +59,13 @@
     	<Item text="Depurar en Office Online" url="testing/debug-add-ins-in-office-online" SEODescription="Use Office Online para depurar complementos sin ejecutar Office en la plataforma Windows (por ejemplo, si está desarrollando en un Mac)." />
     	<Item text="Depurar en iPad y Mac" url="testing/debug-office-add-ins-on-ipad-and-mac" SEODescription="Depure los complementos de Office que se estén ejecutando en iPad o Mac mediante el inspector web remoto Weinre." />
         <Item text="Solucionar problemas de los usuarios" url="testing/testing-and-troubleshooting" SEODescription="Solucione los problemas que los usuarios tienen con los complementos de Office." />
+		<Item text="Validar y solucionar problemas con el manifiesto" url="testing/troubleshoot-manifest" SEODescription="Solucionar problemas con el manifiesto de complementos de Office" />
 	</Item>
   <Item text="Publicar" url="publish/publish">
     <Item text="Hospedar un complemento para Office en Microsoft Azure" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Use Visual Studio 2015 y las herramientas de desarrollo de Microsoft Office para publicar y, a continuación, alojar un complemento de Office en Microsoft Azure." />
     <Item text="Empaquetar el complemento usando Visual Studio o Napa" url="publish/package-your-add-in-using-napa-or-visual-studio" SEODescription="Empaquete su complemento de Office para prepararlo para la publicación." />
     <Item text="Publicar complementos de panel de tareas y de contenido en un catálogo de complementos" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configurar los clientes de Office para que su complemento esté disponible en el cuadro de diálogo Complementos de Office" />
+	<Item text="Enviar complementos a la Tienda Office" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
   </Item>
   
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="Use las API de JavaScript para compilar complementos para Word." Scope="word">
@@ -146,4 +147,5 @@
   <Item text="Access" url="access" Scope="access">
     <Item text="Complementos de aplicación web de Access" url="access/access-web-app-add-ins" SEOKeyword="Complementos de Access" SEODescription="Cree un complemento de Office que amplíe el acceso a aplicaciones web con HTML y JavaScript personalizados." Scope="access" />
   </Item>
+  <Item text="Referencia de la API de JavaScript" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
 </Menu>

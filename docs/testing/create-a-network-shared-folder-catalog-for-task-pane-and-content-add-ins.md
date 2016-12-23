@@ -1,5 +1,5 @@
 
-# <a name="sideload-office-addins-for-testing"></a>Transferir localmente complementos de Office para pruebas
+# <a name="sideload-office-add-ins-for-testing"></a>Transferir localmente complementos de Office para pruebas
 
 Puede instalar un complemento de Office para realizar pruebas en un cliente de Office que se ejecuta en Windows mediante un catálogo de carpeta compartida para publicar el manifiesto en un recurso compartido de archivos de red. 
 
@@ -43,7 +43,7 @@ En el siguiente vídeo, se le guiará por el proceso de transferir de forma loca
 
 9. Cierre la aplicación de Office para que los cambios surtan efecto.
     
-## <a name="sideload-your-addin"></a>Transferir localmente el complemento
+## <a name="sideload-your-add-in"></a>Transferir localmente el complemento
 
 
 1. Coloque el archivo de manifiesto de cualquier complemento que se esté probando en el catálogo de carpetas compartidas.
@@ -57,6 +57,6 @@ En el siguiente vídeo, se le guiará por el proceso de transferir de forma loca
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
-- [Usar el registro de tiempo de ejecución para depurar el manifiesto](../develop/use-runtime-logging-to-debug-manifest.md)
+- [Validar y solucionar problemas con el manifiesto](troubleshoot-manifest.md)
 - [Publicar el complemento de Office](../publish/publish.md)
     

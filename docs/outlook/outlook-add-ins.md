@@ -14,7 +14,7 @@ Los complementos de Outlook son diferentes de los complementos COM o VSTO, que s
 
 Entre los elementos de Outlook compatibles con los complementos de correo se incluyen mensajes de correo, convocatorias, respuestas o cancelaciones de reuniones y citas. Cada complemento de correo define el contexto en el que está disponible, incluidos los tipos de elementos y si el usuario está leyendo o redactando un elemento.
 
->**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajusta a las [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados (para más información, consulte la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) y el [host del complemento de Office y la página de disponibilidad](https://dev.office.com/add-in-availability)).
 
 ## <a name="extension-points"></a>Puntos de extensión
 

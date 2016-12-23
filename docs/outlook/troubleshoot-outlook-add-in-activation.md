@@ -25,8 +25,8 @@ Puede verificar la versión de Exchange 2013 con uno de los siguientes métodos:
     
       2. En la pestaña **Desarrollador** de la cinta de opciones, seleccione **Visual Basic**.
     
-     >**Note**  Not seeing the  **Developer** tab? See [How to: Show the Developer Tab on the Ribbon](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) to turn it on. 
-	  3. En el Editor de Visual Basic, seleccione  **Vista**,  **Ventana Ejecución**.
+     >**Note**  Not seeing the  **Developer** tab? See [How to: Show the Developer Tab on the Ribbon](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) to turn it on.
+	 3. En el Editor de Visual Basic, seleccione  **Vista**,  **Ventana Ejecución**.
     
       4. Para mostrar la versión de Exchange Server, escriba lo siguiente en la ventana Ejecución. La versión principal del valor devuelto debe ser igual a o superior a 15.
     
@@ -159,7 +159,7 @@ La figura 1 muestra un resumen de los pasos necesarios para comprobar si Outlook
 
 ## <a name="is-the-add-in-manifest-valid"></a>¿El manifiesto del complemento es válido?
 
-Intente usar [el registro de tiempo de ejecución](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest) para depurar los problemas de manifiesto de complementos.
+Vea [Validar y solucionar problemas relacionados con el manifiesto](../testing/troubleshoot-manifest.md) para depurar problemas del manifiesto del complemento.
 
 ## <a name="are-you-using-the-appropriate-activation-rules"></a>¿Está usando las reglas de activación adecuadas?
 
@@ -295,6 +295,6 @@ Esta sección es válida para todas las reglas de activación que usan expresion
     
 - [MailApp complexType](http://msdn.microsoft.com/en-us/library/696b9fcf-cd10-3f20-4d49-86d3690c887a%28Office.15%29.aspx)
     
-- - [Use el registro de tiempo de ejecución para depurar el manifiesto](https://dev.office.com/docs/add-ins/develop/use-runtime-logging-to-debug-manifest).
+- [Validar y solucionar problemas con el manifiesto](../testing/troubleshoot-manifest.md)
     
 

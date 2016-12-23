@@ -2,7 +2,7 @@
 
 OneNote introduce una API de JavaScript para complementos de OneNote Online. Puede crear complementos de panel de tareas, complementos de contenido y comandos de complementos que interactúan con objetos de OneNote y se conectan a servicios web o a otros recursos basados en Web.
 
->**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajustan a la [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados en el elemento Requirements del manifiesto (vea la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3)).
+>**Nota:** Al generar el complemento, si va a [publicar](../publish/publish.md) el complemento en la Tienda Office, asegúrese de que se ajusta a las [directivas de validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx). Por ejemplo, para superar la validación, el complemento debe funcionar en todas las plataformas que sean compatibles con los métodos especificados (para más información, consulte la [sección 4.12](https://msdn.microsoft.com/en-us/library/jj220035.aspx#Anchor_3) y el [host del complemento de Office y la página de disponibilidad](https://dev.office.com/add-in-availability)).
 
 Los complementos están formados por dos componentes básicos:
 
@@ -99,9 +99,7 @@ Los complementos de OneNote solo son compatibles con las siguientes API comunes:
 | [Office.context.document.setSelectedDataAsync](https://msdn.microsoft.com/en-us/library/office/fp142145.aspx) | **Office.CoercionType.Text**, **Office.CoercionType.Image** y **Office.CoercionType.Html** solo | 
 | [var mySetting = Office.context.document.settings.get(name);](https://msdn.microsoft.com/en-us/library/office/fp142180.aspx) | Las opciones de configuración solo son compatibles con complementos de contenido | 
 | [Office.context.document.settings.set(name, value);](https://msdn.microsoft.com/en-us/library/office/fp161063.aspx) | Las opciones de configuración solo son compatibles con complementos de contenido | 
-| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||
-
-En general, solo se usa la API común para realizar una acción que no es compatible con la API avanzada. Para más información sobre el uso de la API común, vea la [documentación](https://dev.office.com/docs/add-ins/overview/office-add-ins) y la [referencia](https://dev.office.com/reference/add-ins/javascript-api-for-office) de Complementos de Office.
+| [Office.EventType.DocumentSelectionChanged](https://dev.office.com/reference/add-ins/shared/document.selectionchanged.event) ||En general, solo se usa la API común para realizar una acción que no es compatible con la API avanzada. Para más información sobre el uso de la API común, vea la [documentación](https://dev.office.com/docs/add-ins/overview/office-add-ins) y la [referencia](https://dev.office.com/reference/add-ins/javascript-api-for-office) de Complementos de Office.
 
 
 <a name="om-diagram"></a>

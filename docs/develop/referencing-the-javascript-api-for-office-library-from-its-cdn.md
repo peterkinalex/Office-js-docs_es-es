@@ -1,5 +1,5 @@
 
-# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-(cdn)"></a>Referencia a la biblioteca de la API de JavaScript para Office desde su red de entrega de contenido (CDN)
+# <a name="referencing-the-javascript-api-for-office-library-from-its-content-delivery-network-cdn"></a>Referencia a la biblioteca de la API de JavaScript para Office desde su red de entrega de contenido (CDN)
 
 
 La biblioteca de la [API de JavaScript para Office](../../reference/javascript-api-for-office.md) está formada por el archivo Office.js y los archivos .js específicos de la aplicación host asociada, como Excel-15.js y Outlook-15.js. 
@@ -11,7 +11,7 @@ El método más sencillo para hacer referencia a la API es usar nuestra CDN. Par
 <script src="https://appsforoffice.microsoft.com/lib/1/hosted/Office.js" type="text/javascript"></script>
 ```
 
-El `/1/` delante de `office.js` en la URL de CDN especifica que es necesario usar la versión incremental más reciente de la versión 1 de Office.js. Como la API de JavaScript para Office mantiene la compatibilidad con versiones anteriores, la versión más reciente seguirá siendo compatible con los miembros de la API que se introdujeron en la versión 1. Si necesita actualizar un proyecto existente, consulte [Actualizar la versión de la API de JavaScript para Office y los archivos de esquema del manifiesto] (../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md). 
+El  `/1/` delante de `office.js` en la dirección URL de CDN especifica el uso de la versión incremental más reciente dentro de la versión 1 de Office.js. Debido a que la API de JavaScript para Office mantiene compatibilidad con versiones anteriores, la versión más reciente seguirá admitiendo miembros de la API que se incorporaron anteriormente en la versión 1. Si necesita actualizar un proyecto existente, consulte [Actualizar la versión de la API de JavaScript para Office y los archivos de esquema de manifiesto](../docs/develop/update-your-javascript-api-for-office-and-manifest-schema-version.md). 
 
 Si tiene previsto publicar su complemento de Office desde la Tienda Office, tendrá que usar esta referencia de CDN. Las referencias locales solo son adecuadas para escenarios internos, de desarrollo y de depuración.
 
