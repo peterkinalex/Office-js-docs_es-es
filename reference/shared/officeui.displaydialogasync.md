@@ -36,14 +36,7 @@ Para detectar esta API en tiempo de ejecución, use el siguiente código.
 
 
 ### <a name="supported-platforms"></a>Plataformas compatibles
-El conjunto de requisitos de DialogAPI actualmente es compatible con las siguientes plataformas:
-
-  - Office 2013 para escritorio de Windows (compilación 15.0.4855.1000 o posteriores)
-  - Office 2016 para escritorio de Windows (compilación 16.0.6741.0000 o posteriores)
-  - Office para IPad (versión 1.22 o posteriores)
-  - Office para Mac (versión 15.20 o posteriores) 
-
-Estarán disponibles en más plataformas próximamente. 
+Para obtener información acerca de las plataformas compatibles, consulte [Conjuntos de requisitos de la API de cuadros de diálogo](../requirement-sets/dialog-api-requirement-sets.md).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -68,7 +61,7 @@ Para ver un ejemplo que muestre escenarios de autenticación, consulte:
 
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
-|startAddress|string|Acepta la dirección URL HTTPS(TLS) inicial que se abre en el cuadro de diálogo. <ul><li>La página inicial debe estar en el mismo dominio que la página primaria. Después de cargar la página inicial, puede ir a otros dominios.</li><li>Cualquier página que llame a [office.context.ui.messageParent](officeui.messageparent.md) también debe estar en el mismo dominio que la página principal.</li></ul>|
+|startAddress|cadena|Acepta la dirección URL HTTPS(TLS) inicial que se abre en el cuadro de diálogo. <ul><li>La página inicial debe estar en el mismo dominio que la página primaria. Después de cargar la página inicial, puede ir a otros dominios.</li><li>Cualquier página que llame a [office.context.ui.messageParent](officeui.messageparent.md) también debe estar en el mismo dominio que la página principal.</li></ul>|
 |options|object|Opcional. Acepta un objeto de opciones para definir los comportamientos de los cuadros de diálogo.|
 |callback|objeto|Acepta un método de devolución de llamada para controlar el intento de creación de cuadro de diálogo.|
     
@@ -80,7 +73,7 @@ Las opciones de configuración siguientes están disponibles para un cuadro de d
 |:---------------|:--------|:----------|
 |**width**|object|Opcional. Define el ancho del cuadro de diálogo como porcentaje de la pantalla actual. El valor predeterminado es 80 %. La resolución mínima es de 250 píxeles.|
 |**height**|object|Opcional. Define la altura del cuadro de diálogo como porcentaje de la pantalla actual. El valor predeterminado es 80 %. La resolución mínima es de 150 píxeles.|
-|**displayInIframe**|objeto|Opcional. Determina si se debe mostrar el cuadro de diálogo dentro de un IFrame. **Esta configuración solo se aplica en clientes de Office Online**, se omite para los clientes de escritorio. Los valores posibles son:<ul><li>falso (predeterminado): se mostrará el cuadro de diálogo como una nueva ventana de explorador (elemento emergente). Se recomienda para las páginas de autenticación que no se pueden mostrar en un IFrame. </li><li>verdadero: se mostrará el cuadro de diálogo como una superposición flotante con un IFrame. Es la mejor opción para mejorar el rendimiento y la experiencia del usuario.</li>|
+|**displayInIframe**|object|Opcional. Determina si se debe mostrar el cuadro de diálogo dentro de un IFrame. **Esta configuración solo se aplica en clientes de Office Online**, se omite para los clientes de escritorio. Los valores posibles son:<ul><li>falso (predeterminado): se mostrará el cuadro de diálogo como una nueva ventana de explorador (elemento emergente). Se recomienda para las páginas de autenticación que no se pueden mostrar en un IFrame. </li><li>verdadero: se mostrará el cuadro de diálogo como una superposición flotante con un IFrame. Es la mejor opción para mejorar el rendimiento y la experiencia del usuario.</li>|
 
 
 ## <a name="callback-value"></a>Valor de devolución de llamada

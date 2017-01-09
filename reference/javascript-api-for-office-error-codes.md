@@ -57,7 +57,7 @@ La tabla siguiente enumera los códigos, nombres y mensajes de error mostrados, 
 |5006|Tiempo de espera de sesión|Se agotó el tiempo de espera de la sesión del documento. Vuelva a cargar el documento. |Se agotó el tiempo de espera de la sesión.|
 |5007|Llamada de API no válida|La enumeración no se admite en el contexto actual.|La enumeración no se admite en el contexto actual.|
 |5009|Permiso denegado|Acceso denegado.|El complemento no tiene permiso para llamar a la API específica.|
-|6000|Nodo no válido|No se encontró el nodo especificado.|No se encontró el nodo  **CustomXmlPart**.|
+|6000|Nodo no válido|No se encontró el nodo especificado.|No se encontró el nodo **CustomXmlPart**.|
 |6100|Error de XML personalizado|Error de XML personalizado.|Llamada de API no válida|
 |7000|Id. no válido|El id. especificado no existe.|Id. no válido.|
 |7001|Navegación no válida|El objeto se encuentra en un lugar donde no se admite la navegación.|El usuario puede encontrar el objeto, pero no puede navegar hasta él. (Por ejemplo, en Word, el enlace es al encabezado, pie de página o un comentario).|
@@ -74,7 +74,7 @@ La tabla siguiente enumera los códigos, nombres y mensajes de error mostrados, 
 
 ## <a name="binding-creation-error-conditions"></a>Condiciones para no poder crear enlaces
 
-Cuando se crea un enlace en la API, el desarrollador de soluciones tiene que indicar el tipo de enlace que desea usar. Las tablas siguientes resumen las diferentes posibilidades y los comportamientos de enlace resultantes que se esperan.
+Cuando se crea un enlace en la API, debe indicar el tipo de enlace que quiere usar. En las tablas siguientes se enumeran los tipos de enlace y los comportamientos de enlace resultantes que se esperan.
 
 
 ### <a name="behavior-in-excel"></a>Comportamiento en Excel
@@ -85,9 +85,9 @@ La tabla siguiente resume el comportamiento del enlace en Excel.
 
 |**Tipo de enlace especificado**|**Selección real**|**Comportamiento**|
 |:-----|:-----|:-----|
-|Matriz|Intervalo de celdas (incluye dentro de una tabla y una sola celda).|Se crea un enlace de tipo  _matriz_ en las celdas seleccionadas.No se espera ninguna modificación en el documento.|
-|Matriz|Texto seleccionado en la celda.|Se crea un enlace de tipo  _matriz_ en toda la celda.No se espera ninguna modificación en el documento.|
-|Matriz|Selección múltiple o no válida (por ejemplo, el usuario selecciona una imagen, objeto, WordArt, etc.).|No se puede crear el enlace.|
+|Matriz|Intervalo de celdas (incluye dentro de una tabla y una sola celda).|Un enlace del tipo _matriz_ se crea en las celdas seleccionadas. No se espera ninguna modificación en el documento.|
+|Matriz|Texto seleccionado en la celda.|Un enlace del tipo _matriz_ se crea en toda la celda. No se espera ninguna modificación en el documento.|
+|Matriz|Selección múltiple o no válida (por ejemplo, el usuario selecciona una imagen, un objeto o WordArt).|No se puede crear el enlace.|
 |Tabla|Intervalo de celdas (incluye una sola celda).|No se puede crear el enlace.|
 |Tabla|Intervalo de celdas en una tabla (incluye una sola celda de una tabla, toda la tabla o texto de una celda en una tabla).|Se crea un enlace en toda la tabla.|
 |Tabla|Media selección en una tabla y media selección fuera de la tabla.|No se puede crear el enlace.|

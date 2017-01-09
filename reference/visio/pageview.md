@@ -7,12 +7,13 @@ Representa la clase de vista de página.
 
 ## <a name="properties"></a>Propiedades
 
-Ninguno
+| Propiedad | Tipo |Descripción| Comentarios|
+|:---------------|:--------|:----------|:---|
+|zoom|int|Nivel de zoom de la página de GetSet.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|zoom|[Doble](double.md)|Nivel de Zoom de GetSet Page.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-pageView-zoom)|
+
+Ninguno
 
 ## <a name="methods"></a>Métodos
 
@@ -70,7 +71,7 @@ pageViewObject.fitToWindow();
 Ninguno
 
 #### <a name="returns"></a>Valores devueltos
-vacío
+void
 
 ### <a name="isshapeinviewportshape-shape"></a>isShapeInViewport(Shape: Forma)
 Para comprobar si la forma está en vista de la página o no.

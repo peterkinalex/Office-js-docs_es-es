@@ -38,7 +38,7 @@ La actualización 1.4 de la API de JavaScript para Word contiene importantes adi
 * tabla combinar celdas
 * Combinación de filas y división de columnas de tabla
 
-**Consulte la [página de la API 1.4 de JS de Word](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_Openspec/word) para obtener más información y enviar sus comentarios.**
+**Consulte la [página de la API 1.4 de JS de Word](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec) para obtener más información y enviar sus comentarios.**
 
 ## <a name="host-platform-information-and-diagnostic-information"></a>Hospedar la información de plataforma y la información de diagnóstico 
 Vea las adiciones planificadas al objeto Office.Context con el fin de proporcionar a los programadores información de entorno de tiempo de ejecución de complementos e información de diagnóstico. 

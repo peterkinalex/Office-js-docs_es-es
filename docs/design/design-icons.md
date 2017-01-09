@@ -44,6 +44,10 @@ Los iconos de escritorio de Office 2016 son imágenes de mapa de bits. Los difer
 - 64 px (recomendado)
 - 80 px (obligatorio)  
 
+Asegúrese de volver a dibujar los iconos para todos los tamaños en lugar de reducirlos para que se ajusten a ellos.
+
+![Ilustración que muestra la recomendación de cambiar el tamaño de los iconos en lugar de reducirlos](../../images/icon_resizing.png)
+
 <!--
 The following table shows the icon sizes that render for different modes at different DPI settings.
 
