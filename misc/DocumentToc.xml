@@ -16,7 +16,7 @@
       	<Item text="Diseños para complementos de contenido" url="design/ui-elements/layout-for-content-add-ins" SEODescription="Cree un aspecto coherente para los complementos de contenido usando el diseño recomendado." />
       	<Item text="Diseño de complementos del panel de tareas" url="design/ui-elements/layout-for-task-pane-add-ins" SEODescription="Cree un aspecto coherente para los complementos del panel de tareas usando el diseño recomendado." />
       	<Item text="Diseño de complementos de Outlook" url="design/ui-elements/layouts-for-outlook-add-ins" SEODescription="Usar estos diseños para complementos de correo" Scope="outlook" />
-      	<Item text="Usar la IU de Fabric de Office" url="design/ui-elements/using-office-ui-fabric" SEODescription="Explica los conceptos básicos para el uso de Fabric." />
+      	<Item text="Usar Office UI Fabric JS" url="design/ui-elements/using-office-ui-fabric-js" SEODescription="Explica los conceptos básicos para el uso de Fabric JS." />
       </Item>	
     	<Item text="Modelos de diseño de la experiencia del usuario" url="design/ux-design-patterns" SEODescription="Use las plantillas de modelos de diseño de la experiencia del usuario para los complementos de Office al crear extensiones de la interfaz de usuario." />
 	<Item text="Comandos de complementos para Excel, Word y PowerPoint" url="design/add-in-commands" SEODescription="Use comandos de complementos en su complemento para ampliar la interfaz de usuario predeterminada de Office en Excel, Word y PowerPoint." />
@@ -90,11 +90,12 @@
     <Item text="Complementos de Outlook contextuales" url="outlook/contextual-outlook-add-ins" SEODescription="Active un complemento de Outlook en función del texto especificado en un mensaje o una cita." Scope="outlook" />
     <Item text="Complementos de extensión de módulo de Outlook " url="outlook/extension-module-outlook-add-ins" FriendlyUrl="outlookmodule-extension-outlook-add-ins" Scope="outlook" SEODescription="Extienda la interfaz de usuario de Outlook agregando extensiones de módulo en la barra de exploración." /> 
 	<Item text="API" url="outlook/apis" SEODescription="Obtenga información sobre cómo especificar las API necesarias para el complemento de Outlook." Scope="outlook" />
-	<Item text="Manifiestos" url="overview/add-in-manifests" Scope="outlook" SEODescription="Use el manifiesto XML para especificar cómo se activa el complemento.">
-      <Item text="Manifiestos" url="outlook/manifests/manifests" SEODescription="Cree un manifiesto para un complemento de Outlook destinado a un formulario de lectura o redacción." Scope="outlook" /><Item text="Reglas de activación" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Defina reglas de activación en un manifiesto de complemento de Outlook para especificar cuando Outlook debe mostrar el complemento." Scope="outlook" />
-      <Item text="Definir comandos de complemento" url="outlook/manifests/define-add-in-commands" SEODescription="Use el elemento VersionOverrides en el manifiesto del complemento de Outlook para definir comandos de complemento." Scope="outlook" />
-  	</Item>
-  <Item text="Obtener y establecer datos de elementos en formularios de lectura o redacción" url="outlook/item-data" SEODescription="Obtenga información sobre los métodos para obtener o establecer datos en un mensaje o una cita desde un complemento de Outlook" Scope="outlook" />
+	<Item text="Manifiestos" url="outlook/manifests/manifests" Scope="outlook" SEODescription="Cree un manifiesto para un complemento de Outlook destinado a un formulario de lectura o redacción.">
+      <Item text="Reglas de activación" url="outlook/manifests/activation-rules" FriendlyUrl="outlook/manifestsactivation-rules" SEODescription="Defina reglas de activación en un manifiesto de complemento de Outlook para especificar cuando Outlook debe mostrar el complemento." Scope="outlook" />
+      <Item text="Definir comandos de complemento" url="outlook/manifests/define-add-in-commands" SEODescription="Use el elemento VersionOverrides en el manifiesto del complemento de Outlook para definir los comandos de complemento." Scope="outlook" />
+      <Item text="Panel de tareas anclable" url="outlook/manifests/pinnable-taskpane" SEODescription="Implemente un panel de tareas anclable en un complemento de Outlook." Scope="outlook" />
+  </Item>
+  <Item text="Obtener y establecer datos de elementos en formularios de lectura o de redacción" url="outlook/item-data" SEODescription="Obtenga información sobre los métodos para obtener o establecer datos en un mensaje o una cita desde un complemento de Outlook" Scope="outlook" />
 	<Item text="Obtener y establecer metadatos de complementos" url="outlook/metadata-for-an-outlook-add-in" SEODescription="Aprenda a cargar y almacenar los datos personalizados a los que solo el complemento de Outlook puede tener acceso: a través de la configuración de itinerancia y las propiedades." Scope="outlook" />
 	<Item text="Privacidad y seguridad" url="outlook/privacy-and-security" SEODescription="Usuarios finales" Scope="outlook">
 		<Item text="Comprender los permisos de los complementos de Outlook" url="outlook/understanding-outlook-add-in-permissions" SEODescription="Especifique niveles de permisos en el manifiesto del complemento de Outlook." />

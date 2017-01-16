@@ -1,5 +1,5 @@
 
-#<a name="use-office-ui-fabric-in-office-addins"></a>Usar el Tejido de la interfaz de usuario de Office en Complementos de Office.
+#<a name="use-office-ui-fabric-261-in-office-add-ins"></a>Usar Office UI Fabric 2.6.1 en complementos de Office
 
 Si va a compilar un complemento de Office, le recomendamos que use el [Tejido de la interfaz de usuario de Office](https://github.com/OfficeDev/Office-UI-Fabric) para crear la experiencia de usuario. Los siguientes pasos le guiarán por los principios básicos para el uso del Tejido.  
 

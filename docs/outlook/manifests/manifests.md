@@ -1,5 +1,5 @@
 
-# <a name="outlook-addin-manifests"></a>Manifiestos de complementos de Outlook
+# <a name="outlook-add-in-manifests"></a>Manifiestos de complementos de Outlook
 
 Un complemento de Outlook está formado por dos componentes: el manifiesto del complemento XML y una página web, compatible con la biblioteca de JavaScript para complementos de Office (office.js). En el manifiesto se describe cómo se integra el complemento en diferentes clientes de Outlook. Actualmente hay tres versiones del esquema del manifiesto, incluida **VersionOverrides**. Le recomendamos que use la versión 1.1 del esquema del manifiesto y **VersionOverrides** 1.0 para crear el complemento. A continuación encontrará un ejemplo.
 
@@ -780,11 +780,12 @@ Las reglas de activación se pueden usar para activar un complemento en función
 Para obtener información detallada y ejemplos de reglas de activación, vea [Reglas de activación para complementos de Outlook](../../outlook/manifests/activation-rules.md).
 
 
-## <a name="next-steps-addin-commands"></a>Pasos siguientes: comandos de complementos
+## <a name="next-steps-add-in-commands"></a>Pasos siguientes: comandos de complementos
 
 
 Después de definir un manifiesto básico, [defina comandos de complementos para el complemento](../../outlook/manifests/define-add-in-commands.md). Los comandos de complementos presentan un botón en la cinta para que los usuarios puedan activar el complemento de una forma sencilla e intuitiva. Para obtener más información, consulte [Comandos de complementos de Outlook](../../outlook/add-in-commands-for-outlook.md).
 
+Para obtener un complemento de ejemplo que define los comandos de complemento, consulte [command-demo](https://github.com/jasonjoh/command-demo).
 
 ## <a name="additional-resources"></a>Recursos adicionales
 

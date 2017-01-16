@@ -61,9 +61,9 @@ Use un botón de comando de complemento para abrir un panel de tareas en escenar
 El ancho predeterminado del panel de tareas vertical es de 300 píxeles. Se puede modificar el tamaño en Outlook Explorer y en el Inspector. El panel puede cambiar de tamaño de la misma forma que el panel de tareas y de listas.
 
 
-![Botón que abre un panel de tareas en la cinta de Outlook.](../../images/c8e03da8-9f71-4f9b-813f-1cdea43d433c.png)
+![Botón que abre un panel de tareas en la cinta de opciones de Outlook.](../../images/c8e03da8-9f71-4f9b-813f-1cdea43d433c.png)
 
-En la captura de pantalla anterior se muestra un ejemplo de un panel de tareas vertical. El panel se abre con el nombre del comando de complemento en la esquina superior izquierda. También hay un botón **X** en la esquina superior derecha del panel para que el usuario pueda cerrar el complemento cuando termine de usarlo. Este panel no persiste de un mensaje a otro. El complemento proporciona todos los elementos de la interfaz de usuario representados en el panel de tareas, además del nombre del complemento y el botón Cerrar.
+En esta captura de pantalla, se muestra un ejemplo de panel de tareas vertical. El panel se abre con el nombre del comando de complemento en la esquina superior izquierda. Los usuarios podrán usar el botón **X** de la esquina superior derecha del panel para cerrar el complemento cuando hayan terminado de usarlo. De forma predeterminada, este panel no se conservará en los mensajes. Los complementos pueden [admitir el anclado](./manifests/pinnable-taskpane.md) del panel de tareas y recibir eventos cuando se seleccione un mensaje nuevo. Aparte del nombre del complemento y del botón de cierre, el complemento proporciona todos los elementos de la interfaz de usuario que se representan en el panel de tareas.
 
 Si un usuario elige otro comando de complemento que abre un panel de tareas, el panel se reemplaza por el comando usado recientemente. Si un usuario elige un botón de comando de complemento que ejecuta una función, o un menú desplegable mientras está abierto el panel de tareas, la acción se completa y el panel de tareas permanece abierto.
 
