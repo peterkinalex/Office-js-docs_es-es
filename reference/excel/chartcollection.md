@@ -20,9 +20,9 @@ Ninguno
 | Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |[add(type: string, sourceData: Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|Crea un gráfico nuevo.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Obtiene un gráfico mediante su nombre. Si hay varios gráficos con el mismo nombre, se devolverá el primero.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Obtiene un gráfico mediante su nombre. Si hay varias tablas con el mismo nombre, se devolverá la primera.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Obtiene un gráfico basado en su posición en la colección.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|Obtiene un gráfico mediante su nombre. Si hay varios gráficos con el mismo nombre, se devolverá el primero.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|Obtiene un gráfico mediante su nombre. Si hay varias tablas con el mismo nombre, se devolverá la primera.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
@@ -39,9 +39,14 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|:---|
-|type|string|Representa el tipo de un gráfico. Los valores posibles son: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc.|
+|type|string|Representa el tipo de un gráfico.  Consulte los tipos de gráfico disponibles a continuación.|
 |sourceData|Range|El objeto Range correspondiente a los datos de origen.|
-|seriesBy|string|Opcional. Especifica la manera en que las columnas o las filas se usan como series de datos en el gráfico.  Los valores posibles son: Auto, Columns, Rows|
+|seriesBy|string|Opcional. Especifica la manera en que las columnas o las filas se usan como series de datos en el gráfico.  Los valores posibles son: Automático, columnas, filas|
+
+**A continuación, se muestran los tipos de gráfico válidos:**
+
+`ColumnClustered`, `ColumnStacked`, `ColumnStacked100`, `_3DColumnClustered`, `_3DColumnStacked`, `_3DColumnStacked100`, `BarClustered`, `BarStacked`, `BarStacked100`, `_3DBarClustered`, `_3DBarStacked`, `_3DBarStacked100`, `LineStacked`, `LineStacked100`, `LineMarkers`, `LineMarkersStacked`, `LineMarkersStacked100`, `PieOfPie`, `PieExploded`, `_3DPieExploded`, `BarOfPie`, `XYScatterSmooth`, `XYScatterSmoothNoMarkers`, `XYScatterLines`, `XYScatterLinesNoMarkers`, `AreaStacked`, `AreaStacked100`, `_3DAreaStacked`, `_3DAreaStacked100`, `DoughnutExploded`, `RadarMarkers`, `RadarFilled`, `Surface`, `SurfaceWireframe`, `SurfaceTopView`, `SurfaceTopViewWireframe`, `Bubble`, `Bubble3DEffect`, `StockHLC`, `StockOHLC`, `StockVHLC`, `StockVOHLC`, `CylinderColClustered`, `CylinderColStacked`, `CylinderColStacked100`, `CylinderBarClustered`, `CylinderBarStacked`, `CylinderBarStacked100`, `CylinderCol`, `ConeColClustered`, `ConeColStacked`, `ConeColStacked100`, `ConeBarClustered`, `ConeBarStacked`, `ConeBarStacked100`, `ConeCol`, `PyramidColClustered`, `PyramidColStacked`, `PyramidColStacked100`, `PyramidBarClustered`, `PyramidBarStacked`, `PyramidBarStacked100`, `PyramidCol`, `_3DColumn`, `Line`, `_3DLine`, `_3DPie`, `Pie`, `XYScatter`, `_3DArea`, `Area`, `Doughnut`, `Radar`
+
 
 #### <a name="returns"></a>Valores devueltos
 [Chart](chart.md)

@@ -30,4 +30,10 @@ Al diseñar y desarrollar complementos de Office, le conviene asegurarse de que 
 - Proporcione una manera de que los usuarios activen la descripción de títulos o audio con orígenes de audio.
 - Proporcione alternativas al sonido como medio para alertar a los usuarios, como indicaciones visuales o vibraciones.
 
+##<a name="accessibility-resources"></a>Recursos de accesibilidad
+
+- [Directrices de accesibilidad para contenido web (WCAG) 2.0](http://www.w3.org/TR/wcag2ict/#REF-WCAG20)
+- [Guía para aplicar las WCAG 2.0 a información que no pertenece a la Web y a tecnologías de la información (WCAG2ICT)](http://www.w3.org/TR/wcag2ict/)
+- [Estándar europeo sobre los requisitos de accesibilidad de las tecnologías de la información (TIC)](http://www.etsi.org/deliver/etsi_en/301500_301599/301549/01.00.00_20/en_301549v010000c.pdf)
+
 

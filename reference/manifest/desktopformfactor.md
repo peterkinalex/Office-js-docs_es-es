@@ -1,12 +1,8 @@
-# <a name="formfactor-element"></a>Elemento FormFactor
+# <a name="desktopformfactor-element"></a>Elemento DesktopFormFactor
 
-Especifica la configuración para un complemento para un factor de forma determinado. Por ejemplo, definir un `Host` con los tipos `MailHost` y `DesktopFormFactor` se aplicará a Outlook para escritorio pero _no_ a Outlook Web App o Outlook.com. Contiene toda la información de complemento para dicho factor de forma excepto para el nodo **Resources**.
+Especifica la configuración de un complemento para un factor de forma de escritorio. El factor de forma de escritorio incluye Office para Windows, Office para Mac y Office Online. Contiene toda la información sobre complementos para dicho factor de forma, excepto para el nodo **Resources**.
 
-Cada definición FormFactor contiene el elemento **FunctionFile** y uno o más elementos **ExtensionPoint**. Para obtener más información, consulte [Elemento FunctionFile](./functionfile.md) y [Elemento ExtensionPoint](./extensionpoint.md). 
-
-Se admiten los siguientes FormFactors:
-
-- `DesktopFormFactor` (Office para clientes Windows o Mac)
+Cada definición DesktopFormFactor contiene el elemento **FunctionFile** y uno o más elementos **ExtensionPoint**. Para obtener más información, consulte [Elemento FunctionFile](./functionfile.md) y [Elemento ExtensionPoint](./extensionpoint.md). 
 
 ## <a name="child-elements"></a>Elementos secundarios
 
@@ -16,7 +12,7 @@ Se admiten los siguientes FormFactors:
 | [FunctionFile](./functionfile.md)     | Sí      | Una dirección URL de un archivo que contiene funciones de JavaScript.|
 | [GetStarted](./getstarted.md)         | No       | Define la llamada que aparece cuando se instala el complemento en hosts de Word, Excel o PowerPoint. |
 
-## <a name="formfactor-example"></a>Ejemplo de FormFactor
+## <a name="desktopformfactor-example"></a>Ejemplo de DesktopFormFactor
 
 ```xml
 ...

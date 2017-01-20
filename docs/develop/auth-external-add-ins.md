@@ -35,10 +35,9 @@ Tenemos algunos complementos de muestra que usan el flujo de código de autoriza
 
 Hay muchas bibliotecas disponibles para implementar el flujo de código de autorización en distintos lenguajes y marcos de trabajo. Para obtener más información, consulte la sección **Bibliotecas** más adelante en este artículo.
 
-### <a name="relay/proxy-functions"></a>Funciones de proxy o de transmisión
+### <a name="relayproxy-functions"></a>Funciones de proxy o de transmisión
 
-Puede usar el flujo de código de autorización incluso con una aplicación web sin servidor. Para ello, se almacenan los valores de *client ID* (id. de cliente) y *client secret* (secreto de cliente) en una función simple que se hospeda en un servicio como [Azure Functions](https://azure.microsoft.com/en-us/services/functions) o [Amazon Lambda](https://aws.amazon.com/lambda). 
-La función intercambia un código determinado por un *token de acceso* adecuado y lo transmite de vuelta al cliente. La seguridad de este método depende de lo protegido que esté el acceso a la función.
+Puede usar el flujo de código de autorización incluso con una aplicación web sin servidor. Para ello, se almacenan los valores de *client ID* (id. de cliente) y *client secret* (secreto de cliente) en una función simple que se hospeda en un servicio como [Azure Functions](https://azure.microsoft.com/en-us/services/functions) o [Amazon Lambda](https://aws.amazon.com/lambda). La función intercambia un código determinado por un *token de acceso* adecuado y lo transmite de vuelta al cliente. La seguridad de este método depende de lo protegido que esté el acceso a la función.
 
 Para usar esta técnica, el complemento muestra una interfaz o una ventana emergente en la que se ve la pantalla de inicio de sesión del servicio en línea (Google, Facebook etc.). Cuando el usuario inicia sesión y concede al complemento permiso para acceder a sus recursos en el servicio en línea, el desarrollador recibe un código que se puede enviar a la función en línea. Los servicios descritos en la sección **Servicios intermediarios** de este artículo usan un flujo similar a este. 
 
@@ -56,12 +55,16 @@ Hay bibliotecas disponibles para muchos lenguajes y plataformas y para ambos flu
 
 ## <a name="middleman-services"></a>Servicios intermediarios
 
-El complemento puede usar un servicio intermediario, como Auth0, que proporcione tokens de acceso para muchos servicios en línea populares o que simplifique el proceso de habilitar el inicio de sesión social para el complemento. Con muy poco código, el complemento puede usar script del lado cliente o código del lado servidor para conectarse al intermediario y enviar los tokens que necesita el servicio en línea. Todo el código que implementa la autorización se encuentra en el servicio intermediario. 
+El complemento puede usar un servicio intermediario, como OAuth.io o Auth0, que proporcione tokens de acceso para muchos servicios en línea populares o que simplifique el proceso de habilitar el inicio de sesión social para el complemento. Con muy poco código, el complemento puede usar scripts del lado cliente o código del lado servidor para conectarse al intermediario y enviar los tokens que necesita el servicio en línea. Todo el código que implementa la autorización se encuentra en el servicio intermediario. 
 
 Tenemos un ejemplo que usa Auth0 para habilitar el inicio de sesión social con cuentas de Facebook Google y Microsoft:
 
 [Office-Add-in-Auth0](https://github.com/OfficeDev/Office-Add-in-Auth0)
 
-## <a name="what-is-cors?"></a>¿Qué es CORS?
+En este ejemplo, se usa OAuth.io para obtener tokens de acceso de Facebook y Google:
+
+[Office-Add-in-OAuth.io](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
+
+## <a name="what-is-cors"></a>¿Qué es CORS?
 
 CORS es el acrónimo de [Cross Origin Resource Sharing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) (Uso compartido de recursos entre orígenes). Para obtener información sobre cómo usar CORS dentro de los complementos, consulte [Abordar las limitaciones de la directiva de mismo origen en complementos para Office](http://dev.office.com/docs/add-ins/develop/addressing-same-origin-policy-limitations).

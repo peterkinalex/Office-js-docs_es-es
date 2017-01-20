@@ -1,12 +1,10 @@
-
 # <a name="create-add-ins-for-access-web-apps"></a>Crear complementos para aplicaciones web de Access
 
 
 
 Este artículo explica cómo usar Visual Studio 2015 para desarrollar un complemento de Office dirigido a aplicaciones web de Access.
 
->
-  **Nota:** Para obtener información sobre cómo desarrollar soluciones para Access con VBA, consulte [Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx) en MSDN.
+>**Nota:** Para obtener información sobre cómo desarrollar soluciones para Access con VBA, consulte [Access](https://msdn.microsoft.com/en-us/library/fp179695.aspx) en MSDN.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -18,15 +16,17 @@ Para crear una Complemento de Office dirigida a aplicaciones web de Access, nece
 - Un sitio de SharePoint Online (incluido en muchas suscripciones a Office 365). Este sitio debe tener un catálogo de complementos. Para más información, vea [Procedimiento para configurar un catálogo de complementos en SharePoint](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md).
 
 
- >**Nota**  Complementos de Office trabajará con aplicaciones web de Access alojado en SharePoint Online o Office 365. La aplicación de escritorio Access 2013 no es compatible con Complementos de Office. Complementos de Office dirigidas a aplicaciones web de Access son compatibles con la version 1.1 y posteriores de Office.js.
+ >**Nota:** Los complementos de Office funcionarán con aplicaciones web de Access alojadas en SharePoint Online o en Office 365. La aplicación de escritorio de Access 2013 no admite complementos de Office. Los complementos de Office dirigidos a aplicaciones web de Access se admiten en la versión 1.1 y versiones posteriores de Office.js.
 
 
-## <a name="create-a-project-in-visual-studio"></a>Crear un proyecto de complemento para Access en Visual Studio
+## <a name="create-a-project-in-visual-studio"></a>Crear un proyecto en Visual Studio
 
 
 1.  Abra Visual Studio y, en el menú, elija **Archivo**, **Nuevo**, **Proyecto**. Se abrirá el cuadro de diálogo **Nuevo proyecto**.
 
-2. En el cuadro de diálogo  **Nuevo proyecto**, en el panel izquierdo, vaya a  **Instalado**,  **Plantillas**,  **Visual C#**,  **Office/SharePoint**,  **Complementos de Office**.
+2. En el cuadro de diálogo  **Nuevo proyecto** del panel izquierdo, vaya a  **Instalado**,  **Plantillas**,  **Visual C#**,  **Office/SharePoint**,  **Complementos de Office**.
+
+ >**Nota:**  Si no ha instalado esta plantilla y quiere obtener más información, consulte la publicación de blog Latest Microsoft Office Developer Tools for Visual Studio 2015 (Últimas herramientas para desarrolladores de Office para Visual Studio 2015), que encontrará en https://blogs.msdn.microsoft.com/visualstudio/2015/11/23/latest-microsoft-office-developer-tools-for-visual-studio-2015.
 
 3. En el cuadro de diálogo  **Nuevo proyecto**, elija en el panel central  **Complemento de Office**.
 
@@ -56,7 +56,7 @@ Para crear una Complemento de Office dirigida a aplicaciones web de Access, nece
  >**Nota**  No puede depurar el complemento sin implementarlo con unaAccess web app.
 
 
-## <a name="review-the-manifest-and-the-home.html-file"></a>Revisar el manifiesto y el archivo Home.Html
+## <a name="review-the-manifest-and-the-homehtml-file"></a>Revisar el manifiesto y el archivo Home.Html
 
 
 1. En el proyecto de Visual Studio, abra el archivo  **Home.html** y busque las líneas que hacen referencia a la biblioteca de scripts de office.js.
@@ -112,7 +112,7 @@ Para que un usuario de encuentre y use un complemente, debe estar registrado en 
 
 3. En la página  **Contenidos del sitio: Sus aplicaciones**, use la barra de búsqueda en la parte superior de la pagina para buscar  **Access Aplicación para Project**.
 
-4. Ahora debe ver un icono para la **Aplicación de Access**.
+4. Ahora debe ver un icono para la aplicación de **Access Aplicación para Project**.
 
      >**Nota** Recuerde que no es el complemento de Office, es un nueva aplicación web de Access. Esta aplicación web de Access hospedará el complemento de Office.
 5. Al elegir este icono llega al cuadro de diálogo  **Agregar una aplicación de Access**. Escriba un nombre único para su Accessaplicación y seleccione  **Crear**. SharePoint puede tardar un tiempo en crear su aplicación. Al finalizar, verá su Accessaplicación en la página  **Contenidos del sitio** con una etiqueta **Nueva** al lado.

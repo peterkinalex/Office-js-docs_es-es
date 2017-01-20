@@ -1,5 +1,5 @@
 # <a name="action-element"></a>Elemento Action
- Especifica la acción que se realiza cuando el usuario selecciona los controles de [Botón](./control.md#button-control) o [Menú](./control.md#menu-dropdown-button-controls).
+Especifica la acción que se realiza cuando el usuario selecciona los controles de [Botón](./control.md#button-control) o [Menú](./control.md#menu-dropdown-button-controls).
  
 ## <a name="attributes"></a>Atributos
 
@@ -64,9 +64,9 @@ El ejemplo siguiente muestra dos acciones que comparten el mismo **TaskpaneId**.
 ```  
 
 ## <a name="supportspinning"></a>SupportsPinning
-Elemento opcional cuando **xsi: Type** es "ShowTaskpane". Los elementos que contengan [VersionOverrides](./versionoverrides.md) deben tener un valor de atributo `xsi:type` de `VersionOverridesV1_1`. Incluya este elemento con el valor `true` para admitir el anclado de paneles de tareas. El usuario podrá "anclar" el panel de tareas, lo provocará que permanezca abierto cuando se cambie la selección.
+Elemento opcional cuando **xsi:type** es "ShowTaskpane". Los elementos que contengan [VersionOverrides](./versionoverrides.md) deben tener un valor de atributo `xsi:type` de `VersionOverridesV1_1`. Incluya este elemento con el valor `true` para admitir el anclado de paneles de tareas. El usuario podrá "anclar" el panel de tareas, lo que hará que permanezca abierto cuando se cambie la selección. Para obtener más información, consulte [Implementar un panel de tareas anclable en Outlook](../../docs/outlook/manifests/pinnable-taskpane).
 
->**Nota:** Actualmente, este elemento solo se admite en Outlook 2016.
+> **Nota**: Actualmente, SupportsPinning solo se admite en Outlook 2016 para Windows (compilación 7628.1000 o posteriores).
 
 ```xml
 <Action xsi:type="ShowTaskpane">

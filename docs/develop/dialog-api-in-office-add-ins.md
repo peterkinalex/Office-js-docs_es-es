@@ -155,7 +155,10 @@ if (loginSuccess) {
 }
 ```
 
-Para ver un ejemplo que utiliza mensajería condicional, consulte el ejemplo de [Complemento de Office que usa el servicio de Auth0 para simplificar el inicio de sesión social](https://github.com/OfficeDev/Office-Add-in-Auth0).
+Para obtener ejemplos que usan mensajería condicional, consulte 
+
+- [Complemento de Office que usa el servicio de Auth0 para simplificar el inicio de sesión social](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Complemento de Office que usa el servicio OAuth.io para simplificar el acceso a servicios en línea populares](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 El código del controlador en la página host utiliza el valor de la propiedad `messageType` para crear una rama como en el ejemplo siguiente. Tenga en cuenta que la función `showUserName` es la misma que en el ejemplo anterior y que la función `showNotification` muestra el error en la interfaz de usuario de la página host. 
 
@@ -302,7 +305,10 @@ var clientID = localStorage.getItem("clientID");
 // var clientID = localStorage.clientID;
 ```
 
-Para obtener un complemento de ejemplo que utiliza almacenamiento local de esta manera, vea el ejemplo de [Complemento de Office que usa el servicio de Auth0 para simplificar el inicio de sesión social](https://github.com/OfficeDev/Office-Add-in-Auth0).
+Para obtener ejemplos de complementos que usan el almacenamiento local de este modo, consulte 
+
+- [Complemento de Office que usa el servicio de Auth0 para simplificar el inicio de sesión social](https://github.com/OfficeDev/Office-Add-in-Auth0)
+- [Complemento de Office que usa el servicio OAuth.io para simplificar el acceso a servicios en línea populares](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 ### <a name="using-query-parameters"></a>Uso de los parámetros de consulta
 
@@ -353,7 +359,7 @@ Para un complemento de ejemplo que utiliza esta trama, consulte el [Complemento 
 
 #### <a name="addressing-slow-network"></a>Direccionamiento de una red lenta
 
-Si la red o el proveedor de identidad son lentos, es posible que el cuadro de diálogo no se abra inmediatamente cuando el usuario selecciona la interfaz de usuario. Puede parecer que no está sucediendo nada. Para garantizar una mejor experiencia, es necesario que la primera página que se abre en el cuadro de diálogo sea una página local alojada en el dominio del complemento, es decir, en el dominio de la ventana host. Esta página puede tener una interfaz de usuario simple que diga "Espere, le estamos redirigiendo a la página donde puede iniciar sesión en *NOMBRE DEL PROVEEDOR*". 
+Si la red o el proveedor de identidad son lentos, es posible que el cuadro de diálogo no se abra inmediatamente cuando el usuario selecciona el elemento de interfaz de usuario. Puede parecer que no está sucediendo nada. Para garantizar una mejor experiencia, es necesario que la primera página que se abre en el cuadro de diálogo sea una página local alojada en el dominio del complemento, es decir, en el dominio de la ventana host. Esta página puede tener una interfaz de usuario simple que diga "Espere, le estamos redirigiendo a la página donde puede iniciar sesión en *NOMBRE DEL PROVEEDOR*". 
 
 El código de esta página construye la URL de la página de inicio de sesión del proveedor de identidad mediante la información que se pasa al cuadro de diálogo, tal como se describe en [Pasar información al cuadro de diálogo](#passing-information-to-the-dialog-box). A continuación, le redirige a la página de inicio de sesión. En este diseño, la página del proveedor no es la primera página que se abre en el cuadro de diálogo, por lo que no es necesario añadir a la lista el dominio del proveedor en la sección `<AppDomains>` del manifiesto de complementos
 
@@ -385,7 +391,8 @@ Puede usar las API de diálogo para gestionar este proceso utilizando un flujo s
 Los siguientes ejemplos utilizan las API de cuadros de diálogo para este propósito:
 
 - [Insertar gráficos de Excel con Microsoft Graph en un complemento de PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): Almacena el token de acceso en una base de datos.
-- [Complemento de Excel con ASP.NET y QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks): Pasa el token de acceso en `messageParent`.
+- [Complemento de Excel con ASP.NET y QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks): pasa el token de acceso en `messageParent`.
+- [Complemento de Office que usa el servicio OAuth.io para simplificar el acceso a servicios en línea populares](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 #### <a name="more-information-about-authentication-and-authorization-in-add-ins"></a>Más información sobre la autenticación y autorización en los complementos
 

@@ -3,6 +3,8 @@
 
 Si va a compilar un complemento de Office, le recomendamos que use el [Tejido de la interfaz de usuario de Office](https://github.com/OfficeDev/Office-UI-Fabric) para crear la experiencia de usuario. Los siguientes pasos le guiarán por los principios básicos para el uso del Tejido.  
 
+> **Nota:** Para obtener más información sobre Office UI Fabric JS, consulte [Usar Office UI Fabric en complementos de Office](https://dev.office.com/docs/add-ins/design/using-office-ui-fabric-js).
+
 ##<a name="1-set-up-fabric"></a>1. Configurar el Tejido
 Agregue las líneas siguientes al código HTML en la sección de encabezado para que haga referencia al Tejido desde la CDN.
 

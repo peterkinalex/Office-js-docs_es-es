@@ -47,7 +47,7 @@
 			<Item text="Control" url="manifest/control" SEODescription="Especifica la acción que se realiza cuando el usuario selecciona un botón o menú." />
 			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="Especifica la ficha y un grupo para comandos del complemento." />
 			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="Define dónde expone su funcionalidad un complemento." />
-			<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="Especifica la configuración de un complemento para un factor de forma determinado." />
+			<Item text="DesktopFormFactor" url="manifest/desktopformfactor" Scope="excel, word, powerpoint" SEODescription="Especifica la configuración de un complemento para un factor de forma determinado." />
 			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="Especifica el archivo de código fuente para las operaciones que expone un complemento a través de comandos que ejecutan una función de JavaScript en lugar de mostrar la UI." />
 			<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="Proporciona información que usa la llamada que aparece cuando el complemento se instala en hosts de Word, Excel y PowerPoint." />
 			<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="Define un grupo de puntos de extensión de UI en una pestaña." />

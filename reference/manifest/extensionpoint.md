@@ -1,6 +1,6 @@
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
- Define dónde expone su funcionalidad un complemento en la interfaz de usuario de Office. El elemento **ExtensionPoint** es un elemento secundario de [FormFactor](./formfactor.md). 
+ Define dónde expone su funcionalidad un complemento en la interfaz de usuario de Office. El elemento **ExtensionPoint** es un elemento secundario de [DesktopFormFactor](./desktopformfactor.md). 
 
 ## <a name="attributes"></a>Atributos
 
@@ -9,7 +9,7 @@
 |  **xsi:type**  |  Sí  | El tipo de punto de extensión que se está definiendo.|
 
 
-## <a name="extension-points-for-word-excel-powerpoint-and-onenote-addin-commands"></a>Puntos de extensión para comandos de complemento de Word, Excel, PowerPoint y OneNote
+## <a name="extension-points-for-word-excel-powerpoint-and-onenote-add-in-commands"></a>Puntos de extensión para comandos de complemento de Word, Excel, PowerPoint y OneNote
 
 - **PrimaryCommandSurface**: la cinta de opciones en Office.
 - **ContextMenu**: el menú contextual que aparece cuando se hace clic con el botón derecho en la interfaz de usuario de Office.
@@ -66,13 +66,13 @@ Los ejemplos siguientes muestran cómo usar el elemento  **ExtensionPoint** con 
 |**Tooltip**|Opcional. La información sobre herramientas del grupo. El atributo  **resid** debe establecerse en el valor del atributo **id** de un elemento **String**. El elemento  **String** es un elemento secundario del elemento **LongStrings**, que a su vez lo es de  **Resources**.|
 |**Control**|Cada grupo necesita al menos un control. Un elemento  **Control** puede ser un **Button** o un **Menu**. Use  **Menu** para especificar una lista desplegable de controles de botón. Actualmente, solo se admiten botones y menús.Consulte las secciones [Controles de botones](#button-controls) y [Controles de menú](#menu-controls) para obtener más información.<br/>**Nota** Para que sea más fácil solucionar los problemas, le recomendamos que agregue un elemento **Control** y los elementos secundarios **Resources** relacionados de uno en uno.
 
-## <a name="extension-points-for-outlook-addin-commands"></a>Puntos de extensión para comandos de complemento de Outlook
+## <a name="extension-points-for-outlook-add-in-commands"></a>Puntos de extensión para comandos de complemento de Outlook
 
 - [MessageReadCommandSurface](#messagereadcommandsurface) 
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
-- [Module](#module) (solo puede usarse en el [DesktopFormFactor](./formfactor.md).)
+- [Module](#module) (solo puede usarse en el [DesktopFormFactor](./desktopformfactor.md).)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 Este punto de extensión coloca botones en la superficie del comando de la vista de lectura de correo. En el escritorio de Outlook aparece en la cinta.

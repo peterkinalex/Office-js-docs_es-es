@@ -4,6 +4,8 @@ _Se aplica a: Word 2016, Word para iPad, Word para Mac_
 
 La API de JavaScript para Word forma parte del modelo de programación de complementos de Office para extender las aplicaciones de Office. El modelo de programación de complementos usa aplicaciones web para hospedar la extensión en Word. Ahora puede ampliar Word con cualquier plataforma web o con el lenguaje que prefiera.
 
+> **Nota**: Si quiere desarrollar complementos de Word 2013, deberá usar la [API de Javascript de Office]( https://dev.office.com/docs/add-ins/word/word-add-ins-programming-overview#javascript-apis-for-word) compartida. Puede obtener más información sobre las plataformas y las API disponibles [en esta página](https://dev.office.com/add-in-availability). Los temas se aplican en todos los hosts, excepto si se especifica que se aplican a Word 2016.
+
 Un complemento de Word se ejecuta en Word y puede interactuar con el contenido del documento con las nuevas API de JavaScript para Word disponibles en Word 2016. Internamente, crear un complemento es un proceso de dos partes: 1) una aplicación web que puede hospedar en cualquier lugar y 2) el [manifiesto del complemento](../../docs/overview/add-in-manifests.md) que Word usa para conocer dónde se hospeda la aplicación web (el manifiesto proporciona mucha más información, como puede ver en la [introducción a la programación](word-add-ins-programming-overview.md)).
 
 >**Complemento de Word = manifest.xml + aplicación web**

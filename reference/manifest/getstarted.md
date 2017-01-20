@@ -1,6 +1,6 @@
 # <a name="getstarted-element"></a>Elemento GetStarted
 
-Proporciona información que la llamada usa que aparece cuando el complemento se instala en hosts de Word, Excel, PowerPoint y OneNote. El elemento **GetStarted** es un elemento secundario de [FormFactor](./formfactor.md).
+Proporciona información usada por la llamada que se muestra cuando el complemento se instala en hosts de Word, Excel, PowerPoint y OneNote. El elemento **GetStarted** es un elemento secundario de [DesktopFormFactor](./desktopformfactor.md).
 
 ## <a name="child-elements"></a>Elementos secundarios
 

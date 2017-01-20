@@ -49,10 +49,10 @@ Cuando se define en [VersionOverrides](./versionoverrides.md), el tipo de host e
 
 |  Elemento |  Obligatorio  |  Descripción  |
 |:-----|:-----|:-----|
-|  [FormFactor](./formfactor.md)    |  Sí   |  Define el factor de forma afectado. |
+|  [DesktopFormFactor](./desktopformfactor.md)    |  Sí   |  Define la configuración del factor de forma de escritorio. |
 
 
-### <a name="xsi:type"></a>xsi:type
+### <a name="xsitype"></a>xsi:type
 Controla a qué host de Office (Word, Excel, PowerPoint, Outlook, OneNote) se aplica también la configuración contenida. El valor debe ser uno de los siguientes:
 
 - `Document` (Word)
