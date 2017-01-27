@@ -3,7 +3,8 @@
   <Item text="Información general" url="overview">
     <Item text="Información general sobre la plataforma" url="overview/office-add-ins" SEODescription="Obtenga información sobre los complementos de Office que permiten que su solución sea una parte nativa de Office en Windows, Office Online, Mac y iPad." />
 	<Item text="Requisitos para ejecutar complementos" url="overview/requirements-for-running-office-add-ins" SEODescription="Obtenga información sobre los requisitos de software y de dispositivos para ejecutar Complementos de Office." />	
-	<Item text="Procedimientos recomendados para el desarrollo de complementos" url="overview/add-in-development-best-practices" SEODescription="Aplique procedimientos recomendados para crear complementos de Office que optimicen la experiencia del usuario." />
+	<Item text="Procedimientos recomendados para el desarrollo de complementos" url="overview/add-in-development-best-practices" SEODescription="Aplique los procedimientos recomendados para crear complementos de Office que optimicen la experiencia del usuario." />
+	<Item text="Disponibilidad del host y  de la plataforma" url="https://dev.office.com/add-in-availability" IsExternal="true" />
 	</Item>
   <Item text="Introducción" url="get-started">
     <Item text="Usar Visual Studio" url="get-started/create-and-debug-office-add-ins-in-visual-studio" SEODescription="Comenzar a crear un complemento de Office con Visual Studio" />
@@ -148,5 +149,5 @@
   <Item text="Access" url="access" Scope="access">
     <Item text="Complementos de aplicación web de Access" url="access/access-web-app-add-ins" SEOKeyword="Complementos de Access" SEODescription="Cree un complemento de Office que amplíe el acceso a aplicaciones web con HTML y JavaScript personalizados." Scope="access" />
   </Item>
-
+<Item text="Referencia de la API de JavaScript" url="https://dev.office.com/reference/add-ins/javascript-api-for-office" IsExternal="true" />
 </Menu>

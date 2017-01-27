@@ -10,7 +10,7 @@ Es posible que desee abrir un cuadro de diálogo desde un panel de tareas, un co
 - Proporcionar más espacio en pantalla, o incluso una pantalla completa, para algunas tareas en su complemento.
 - Hospedar un vídeo que sería demasiado pequeño si se limitara a un panel de tareas.
 
->**Nota:** Debido a que una interfaz de usuario superpuesta puede molestar a los usuarios, evite abrir un diálogo desde un panel de tareas, a menos que el escenario lo requiera. Si se plantea cómo utilizar el área de superficie de un panel de tareas, tenga en cuenta que los paneles de tareas pueden organizarse por pestañas. Para ver un ejemplo, consulte el ejemplo de complemento [JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker).
+>**Nota:** Debido a que una interfaz de usuario superpuesta puede molestar a los usuarios, evite abrir un diálogo desde un panel de tareas, a menos que el escenario lo requiera. Si se plantea cómo usar el área de superficie de un panel de tareas, tenga en cuenta que los paneles de tareas pueden organizarse por pestañas. Para ver un ejemplo, consulte el ejemplo de complemento [JavaScriptSalesTracker](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker).
 
 La siguiente imagen muestra un ejemplo de un cuadro de diálogo. 
 
@@ -24,7 +24,7 @@ Las API de JavaScript para Office admiten los siguientes escenarios con un objet
 
 ### <a name="opening-a-dialog-box"></a>Abrir un cuadro de diálogo
 
-Para abrir un cuadro de diálogo, el código en el panel de tareas llama al método [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) y le pasa la URL de la página que debe abrir. A continuación puede ver un ejemplo simple:
+Para abrir un cuadro de diálogo, el código en el panel de tareas llama al método [displayDialogAsync](../../reference/shared/officeui.displaydialogasync.md) y le pasa la URL del recurso que debe abrir. Suele ser una página, pero puede ser un método de controlador en una aplicación MVC, una ruta, un método de servicio web o cualquier otro tipo de recurso. En este artículo, "página" y "página web" hacen referencia al recurso del cuadro de diálogo. A continuación puede ver un ejemplo simple:
 
 ```js
 Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html'); 
@@ -33,9 +33,9 @@ Office.context.ui.displayDialogAsync('https://myAddinDomain/myDialog.html');
 > **Notas**:
 
 > - La URL utiliza el protocolo HTTP**S**. Esto es obligatorio para todas las páginas cargadas en un cuadro de diálogo, no solo para la primera página.
-> - El dominio es el mismo que el dominio de la página host, que puede ser la página en un panel de tareas o el [archivo de función](https://dev.office.com/reference/add-ins/manifest/functionfile) de un comando de complementos. Esto no es necesario para la primera página cargada en el cuadro de diálogo, pero si la primera página no está en el mismo dominio que su complemento, tendrá que indicar ese dominio en el elemento [`<AppDomains>`](../../reference/manifest/appdomains.md) en su manifiesto del complemento.
+> - El dominio es el mismo que el dominio de la página host, que puede ser la página en un panel de tareas o el [archivo de función](https://dev.office.com/reference/add-ins/manifest/functionfile) de un comando de complementos. Obligatorio: la página, el método de controlador y cualquier otro recurso que se pase al método `displayDialogAsync` deben estar en el mismo dominio que la página host. 
 
-Después de cargar la primera página, los usuarios podrán acceder a cualquier sitio web que utilice HTTPS. También puede diseñar la primera página para redirigirla inmediatamente a otro sitio. 
+Después de cargar la primera página u otro recurso, los usuarios podrán acceder a cualquier sitio web u otro recurso que use HTTPS. También puede diseñar la primera página para redirigirla inmediatamente a otro sitio. 
 
 De manera predeterminada, el cuadro de diálogo ocupará el 80 % de alto y ancho de la pantalla del dispositivo, pero puede establecer porcentajes diferentes pasando un objeto de configuración al método, como se muestra en el ejemplo siguiente.
 
@@ -48,6 +48,20 @@ Para obtener un complemento de ejemplo que haga esto, vea el [ejemplo de la API 
 Establezca ambos valores al 100 % para obtener lo que es una experiencia de pantalla completa. (El valor máximo efectivo es 99,5 % y la ventana sigue siendo movible y redimensionable).
 
 >**Nota:** Solo se puede abrir un cuadro de diálogo desde una ventana host. Al intentar abrir otro cuadro de diálogo se genera un error. (Consulte [Errores de displayDialogAsync](#errors-from-displaydialogAsync) para obtener más información). Por ejemplo, si un usuario abre un cuadro de diálogo desde un panel de tareas, no podrá abrir un segundo cuadro de diálogo desde una página diferente en el panel de tareas. Sin embargo, cuando se abre un cuadro de diálogo desde un [comando de complementos](https://dev.office.com/docs/add-ins/design/add-in-commands), el comando abre un nuevo archivo HTML (aunque no se vea) cada vez que se selecciona. Esto crea una nueva ventana host (que no se ve), por lo que cada ventana puede iniciar su propio cuadro de diálogo. 
+
+### <a name="take-advantage-of-a-performance-option-in-office-online"></a>Aprovechar las ventajas de una opción de rendimiento en Office Online
+
+La propiedad `displayInIframe` es una propiedad adicional en el objeto de configuración que se puede pasar a `displayDialogAsync`. Cuando esta propiedad se establece en `true` y el complemento se ejecuta en un documento abierto en Office Online, el cuadro de diálogo se abrirá como un objeto iframe flotante en lugar de como una ventana independiente, lo que permitirá que lo haga más rápido. A continuación puede ver un ejemplo.
+
+```js
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe; true}); 
+```
+
+El valor predeterminado es `false`, que equivale a omitir la propiedad por completo.
+
+Si no se está ejecutando el complemento en Office Online, `displayInIframe` se omite, aunque su presencia no tienen ningún efecto negativo.
+
+> **Nota:** Debería ***no*** usar `displayInIframe: true` si el cuadro de diálogo redirigirá a una página que no se puede abrir en un iframe. Por ejemplo, las páginas de inicio de muchos servicios web conocidos, como los servicios de cuentas de Google y Microsoft, no se pueden abrir en un iframe. 
 
 ### <a name="sending-information-from-the-dialog-box-to-the-host-page"></a>Enviar información desde el cuadro de diálogo a la página host
 
@@ -217,7 +231,7 @@ Además de los errores del sistema y de la plataforma en general, hay tres error
 
 |Número de código|Significado|
 |:-----|:-----|
-|12004|El dominio de la dirección URL pasada a `displayDialogAsync` no es de confianza. El dominio debe estar en el mismo dominio que la página host (incluido el número de protocolo y de puerto) ** o **, o debe registrarse en la sección `<AppDomains>` del manifiesto del complemento.|
+|12004|El dominio de la dirección URL pasada a `displayDialogAsync` no es de confianza. El dominio debe estar en el mismo dominio que la página host (incluido el número de puerto y el protocolo).|
 |12005|La dirección URL pasada a `displayDialogAsync` utiliza el protocolo HTTP. Se necesita HTTPS. (En algunas versiones de Office, el mensaje de error devuelto con 12005 es el mismo devuelto para 12004).|
 |12007|Ya hay un cuadro de diálogo abierto en la ventana host. Una ventana host, como un panel de tareas, solo puede tener abierto un cuadro de diálogo al mismo tiempo.|
 
@@ -267,8 +281,7 @@ function processDialogEvent(arg) {
             showNotification("The dialog box has been directed to a page that it cannot find or load, or the URL syntax is invalid.");
             break;
         case 12003:
-            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");
-            break;
+            showNotification("The dialog box has been directed to a URL with the HTTP protocol. HTTPS is required.");            break;
         case 12006:
             showNotification("Dialog closed.");
             break;
@@ -281,7 +294,7 @@ function processDialogEvent(arg) {
 
 Para obtener un complemento que controle los errores de esta manera, vea el [ejemplo de la API de cuadros de diálogo del complemento de Office](https://github.com/OfficeDev/Office-Add-in-Dialog-API-Simple-Example).
 
-  
+ 
 ## <a name="passing-information-to-the-dialog-box"></a>Pasar información al cuadro de diálogo
 
 A veces la página host necesita pasar información al cuadro de diálogo. Hay dos formas principales de hacerlo:
@@ -322,7 +335,7 @@ Para ver un ejemplo que utiliza esta técnica, consulte [Insertar gráficos de E
 
 El código de la ventana de diálogo puede analizar la URL y leer el valor del parámetro.
 
->**Nota:** Office agrega automáticamente un parámetro de consulta llamado `_host_info` a la URL que se pasa a `displayDialogAsync`. (Se anexa después de los parámetros de consulta personalizados, si los hay. No se anexa a ninguna URL subsiguiente a la que se dirija el cuadro de diálogo). Microsoft puede cambiar el contenido de este valor o eliminarlo por completo, en el futuro, por lo que su código no debe leerlo. El mismo valor se agregará al almacenamiento de sesión del cuadro de diálogo. De nuevo, *su código no debe leer ni escribir en este valor*.
+ Office agrega automáticamente un parámetro de consulta llamado `_host_info` a la URL que se pasa a `displayDialogAsync`. (Se anexa después de los parámetros de consulta personalizados, si los hay. No se anexa a ninguna URL subsiguiente a la que se dirija el cuadro de diálogo). Microsoft puede cambiar el contenido de este valor o eliminarlo por completo, en el futuro, por lo que su código no debe leerlo. El mismo valor se agregará al almacenamiento de sesión del cuadro de diálogo. De nuevo, *su código no debe leer ni escribir en este valor*.
 
 ## <a name="using-the-dialog-apis-to-show-a-video"></a>Uso de las API de diálogo para mostrar un vídeo
 
@@ -335,38 +348,32 @@ Para mostrar un vídeo en un cuadro de diálogo:
             frameborder="0" allowfullscreen>
         </iframe>
 
-2.  La página de video.dialogbox.html debe estar en el mismo dominio
-3.   que la página host o estar en un dominio que esté registrado en la sección `<AppDomains>` del manifiesto de complemento.
-3.  Utilice una llamada de `displayDialogAsync` en la página host para abrir video.dialogbox.html.
+2.  La página de video.dialogbox.html debe estar en el mismo dominio que la página host.
+3.  Use una llamada de `displayDialogAsync` en la página host para abrir video.dialogbox.html.
 4.  Si el complemento necesita saber cuándo el usuario cierra el cuadro de diálogo, registre un controlador para el evento `DialogEventReceived` y gestione el evento 12006. Para más información, consulte la sección de [Errores y eventos en la ventana de diálogo](#errors-and-events-in-the-dialog-window).
 
 Para ver un ejemplo que muestre un vídeo en un cuadro de diálogo, vea el [modelo de diseño de placemat de vídeo](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code/tree/master/templates/first-run/video-placemat) en el repositorio de los [ Modelos de diseño de la experiencia de usuario para complementos de Office](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns-Code).
 
 ![Captura de pantalla de un vídeo que se muestra en un cuadro de diálogo de complemento.](../../images/VideoPlacematDialogOpen.PNG)
 
-## <a name="using-the-dialog-apis-in-an-authentication-flow"></a>Utilizar las API de cuadros de diálogo en un flujo de autenticación
+## <a name="using-the-dialog-apis-in-an-authentication-flow"></a>Usar las API de cuadros de diálogo en un flujo de autenticación
 
-Un escenario principal para las API de diálogo consiste en habilitar la autenticación con un proveedor de recursos o identidad que no permite que su página de inicio de sesión se abra en un iframe, como Microsoft Account, Office 365, Google y Facebook. El siguiente es un flujo de autenticación simple y típico:
+Un escenario principal para las API de diálogo consiste en habilitar la autenticación con un proveedor de recursos o identidad que no permite que su página de inicio de sesión se abra en un iframe, como Microsoft Account, Office 365, Google y Facebook. 
 
-1. El usuario selecciona un elemento de la interfaz de usuario en la página host para iniciar sesión. El controlador del elemento llama a `displayDialogAsync` y pasa la URL de la página de inicio de sesión de un proveedor de identidad. *Debido a que esta es la primera página abierta en el cuadro de diálogo y no tiene el mismo dominio que la ventana host, su dominio debe aparecer en la sección `<AppDomains>` del manifiesto de complementos.* La URL incluye un parámetro de consulta que indica al proveedor de identidades que debe redirigir la ventana de diálogo después de que el usuario haya iniciado sesión en una página específica En este artículo, llamaremos a la página "redirectPage.html". (* Debe ser una página en el mismo dominio que la ventana host *, porque la única manera de que la ventana de diálogo pase los resultados del intento de inicio de sesión es con una llamada de `messageParent`, que solo se puede llamar desde una página con el mismo dominio que la ventana host). 
+>**Nota:** Al usar las API de cuadro de diálogo para este escenario, *no* use la opción `displayInIframe: true` en la llamada a `displayDialogAsync`. Para obtener más información sobre esta opción, consulte la información proporcionada anteriormente en este artículo. 
+
+El siguiente es un flujo de autenticación simple y típico: 
+
+1. La primera página que se abre en el cuadro de diálogo es una página local (u otro recurso) alojada en el dominio del complemento, es decir, en el dominio de la ventana host. Esta página puede tener una interfaz de usuario simple que diga "Espere, le estamos redirigiendo a la página donde puede iniciar sesión en *NOMBRE DEL PROVEEDOR*". El código de esta página construye la URL de la página de inicio de sesión del proveedor de identidad mediante la información que se pasa al cuadro de diálogo, tal como se describe en [Pasar información al cuadro de diálogo](#passing-information-to-the-dialog-box). 
+2. A continuación, la ventana de diálogo redirige a la página de inicio de sesión. La URL incluye un parámetro de consulta que indica al proveedor de identidades que debe redirigir la ventana de diálogo después de que el usuario haya iniciado sesión en una página específica. En este artículo, llamaremos a esta página "redirectPage.html". (*Debe ser una página en el mismo dominio que la ventana host *, porque la única manera de que la ventana de diálogo pase los resultados del intento de inicio de sesión es con una llamada de `messageParent`, que solo se puede llamar desde una página con el mismo dominio que la ventana host). 
 2. El servicio del proveedor de identidad procesa la solicitud GET entrante desde la ventana de diálogo. Si el usuario ya ha iniciado sesión, inmediatamente redirige la ventana a redirectPage.html e incluye datos del usuario como un parámetro de consulta. Si el usuario aún no ha iniciado sesión, la página de inicio de sesión del proveedor aparece en la ventana y el usuario puede iniciar sesión. Para la mayoría de proveedores, si el usuario no puede iniciar sesión correctamente, el proveedor muestra una página de error en la ventana de diálogo y no redirige a redirectPage.html. El usuario debe cerrar la ventana seleccionando **X** en la esquina. Si el usuario inicia sesión correctamente, la ventana de diálogo se redirige a redirectPage.html y los datos de usuario se incluyen como un parámetro de consulta.
 3. Cuando se abre la página redirectPage.html, llama a `messageParent` para informar del acceso correcto o incorrecto a la página host y, de forma opcional, también informa de los datos del usuario o de error. 
 4. El evento `DialogMessageReceived` se inicia en la página host y su controlador cierra la ventana de diálogo y, de forma opcional, realiza otro procesamiento del mensaje. 
 
-Para un complemento de ejemplo que utiliza esta trama, consulte el [Complemento de Excel con ASP.NET y QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks)
-
-### <a name="alternate-authentication-and-authorization-scenarios"></a>Escenarios alternativos de autenticación y autorización
-
-#### <a name="addressing-slow-network"></a>Direccionamiento de una red lenta
-
-Si la red o el proveedor de identidad son lentos, es posible que el cuadro de diálogo no se abra inmediatamente cuando el usuario selecciona el elemento de interfaz de usuario. Puede parecer que no está sucediendo nada. Para garantizar una mejor experiencia, es necesario que la primera página que se abre en el cuadro de diálogo sea una página local alojada en el dominio del complemento, es decir, en el dominio de la ventana host. Esta página puede tener una interfaz de usuario simple que diga "Espere, le estamos redirigiendo a la página donde puede iniciar sesión en *NOMBRE DEL PROVEEDOR*". 
-
-El código de esta página construye la URL de la página de inicio de sesión del proveedor de identidad mediante la información que se pasa al cuadro de diálogo, tal como se describe en [Pasar información al cuadro de diálogo](#passing-information-to-the-dialog-box). A continuación, le redirige a la página de inicio de sesión. En este diseño, la página del proveedor no es la primera página que se abre en el cuadro de diálogo, por lo que no es necesario añadir a la lista el dominio del proveedor en la sección `<AppDomains>` del manifiesto de complementos
-
 Para ejemplos de complementos que usan esta trama, consulte:
 
-- [Insertar gráficos de Excel con Microsoft Graph en un complemento de PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart)
-- [Autenticación de cliente de Office 365 de complementos de Office para AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth).
+- [Insertar gráficos de Excel con Microsoft Graph en un complemento de PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): El recurso que se abre inicialmente en la ventana de diálogo es un método de controlador que no tienen visualización propia. Redirige a la página de inicio de sesión de Office 365.
+- [Autenticación de cliente de Office 365 de complementos de Office para AngularJS](https://github.com/OfficeDev/Word-Add-in-AngularJS-Client-OAuth): El recurso que se abre inicialmente en la ventana de dialogo es una página. 
 
 #### <a name="supporting-multiple-identity-providers"></a>Compatibilidad con múltiples proveedores de identidades
 
@@ -391,7 +398,6 @@ Puede usar las API de diálogo para gestionar este proceso utilizando un flujo s
 Los siguientes ejemplos utilizan las API de cuadros de diálogo para este propósito:
 
 - [Insertar gráficos de Excel con Microsoft Graph en un complemento de PowerPoint](https://github.com/OfficeDev/PowerPoint-Add-in-Microsoft-Graph-ASPNET-InsertChart): Almacena el token de acceso en una base de datos.
-- [Complemento de Excel con ASP.NET y QuickBooks](https://github.com/OfficeDev/Excel-Add-in-ASPNET-QuickBooks): pasa el token de acceso en `messageParent`.
 - [Complemento de Office que usa el servicio OAuth.io para simplificar el acceso a servicios en línea populares](https://github.com/OfficeDev/Office-Add-in-OAuth.io)
 
 #### <a name="more-information-about-authentication-and-authorization-in-add-ins"></a>Más información sobre la autenticación y autorización en los complementos

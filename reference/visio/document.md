@@ -1,9 +1,9 @@
 # <a name="document-object-javascript-api-for-visio"></a>Objeto Document (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
+>**Nota:** Las API de JavaScript para Visio no están disponibles actualmente para su uso en entornos de producción o de versión preliminar.
 
-Representa la clase de documento.
+Representa la clase Document.
 
 ## <a name="properties"></a>Propiedades
 
@@ -12,7 +12,7 @@ Ninguno
 ## <a name="relationships"></a>Relaciones
 | Relación | Tipo   |Descripción| Comentarios|
 |:---------------|:--------|:----------|:---|
-|aplicación|[Aplicación](application.md)|Representa una instancia de aplicación de Visio que contiene este documento. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-application)|
+|aplicación|[Application](application.md)|Representa una instancia de aplicación de Visio que contiene este documento. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-application)|
 |pages|[PageCollection](pagecollection.md)|Representa una colección de páginas asociadas con el documento. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-pages)|
 
 ## <a name="methods"></a>Métodos
@@ -85,7 +85,7 @@ documentObject.setActivePage(PageName);
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|:---|
-|PageName|string|Nombre de la página|
+|PageName|cadena|Nombre de la página|
 
 #### <a name="returns"></a>Valores devueltos
 void

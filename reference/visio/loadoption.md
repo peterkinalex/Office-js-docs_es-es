@@ -1,5 +1,7 @@
 # <a name="object-load-options-javascript-api-for-visio"></a>Objeto Load Options (API de JavaScript para Visio)
 
+>**Nota:** Las API de JavaScript para Visio no están disponibles actualmente para su uso en entornos de producción o de versión preliminar.
+
 Representa un objeto que se puede pasar al método Load para especificar el conjunto de propiedades y las relaciones que van a cargar tras la ejecución del método **sync()** que sincroniza los estados entre los objetos de Visio y los correspondientes objetos proxy de JavaScript. Usa opciones como los parámetros Select y Expand para especificar un conjunto de propiedades que se va a cargar en el objeto y también permite la paginación en la colección.
 
 También se puede suministrar una cadena que contenga las propiedades de relaciones que se cargarán, o bien proporcionar una matriz que contenga la lista de propiedades y relaciones que se cargarán. Vea el ejemplo siguiente.

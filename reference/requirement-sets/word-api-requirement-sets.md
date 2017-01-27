@@ -6,7 +6,7 @@ Los complementos de Word se ejecutan en varias versiones de Office, incluida Off
 
 |  Conjunto de requisitos  |   Office 2016 para Windows*  |  Office 2016 para iPad  |  Office 2016 para Mac  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
-| WordApi 1.3  | En la versión preliminar, versión 1605 (compilación 6925.1000) o posterior| En la versión preliminar, mayo de 2016, 1.22 o posterior | En la versión preliminar, 15.22 o posterior| Estamos trabajando en ello. ||
+| WordApi 1.3  | En la versión preliminar, versión 1605 (compilación 6925.1000) o posterior| En la versión preliminar, mayo de 2016, 1.22 o posterior | En la versión preliminar, la 15.22 o versiones posteriores| En la versión preliminar. ||
 | WordApi 1.2  | Actualización de diciembre de 2015, versión 1601 (compilación 6568.1000) o posterior | Enero de 2016, 1.18 o posterior | Enero de 2016, 15.19 o posterior| Septiembre de 2016 | Versión 1608 (compilación 7601.6800) o posterior|
 | WordApi 1.1  | Versión 1509 (compilación 4266.1001) o posterior| Enero de 2016, 1.18 o posterior | Enero de 2016, 15.19 o posterior| Septiembre de 2016 | |
 
@@ -14,10 +14,13 @@ Los complementos de Word se ejecutan en varias versiones de Office, incluida Off
 
 Para obtener más información sobre las versiones, números de compilación y Office Online Server, consulte:
 
-- [Números de versión y compilación de las versiones del canal de actualización para los clientes de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx)
+- 
+  [Números de versión y compilación de las versiones del canal de actualización para los clientes de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [¿Qué versión de Office estoy usando?](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
-- [Dónde puede encontrar el número de versión y de compilación de una aplicación de cliente de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
-- [Información general de Office Online Server](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
+- 
+  [Dónde puede encontrar el número de versión y de compilación de una aplicación de cliente de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- 
+  [Información general de Office Online Server](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos comunes de la API de Office
 Para obtener información sobre los conjuntos de requisitos comunes de la API, consulte [Office common API requirement sets (Conjuntos de requisitos comunes de la API de Office)](office-add-in-requirement-sets.md).

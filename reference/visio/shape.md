@@ -1,9 +1,9 @@
 # <a name="shape-object-javascript-api-for-visio"></a>Objeto de forma (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
+>**Nota:** Las API de JavaScript para Visio no están disponibles actualmente para su uso en entornos de producción o de versión preliminar.
 
-Representa la clase de forma.
+Representa la clase Shape.
 
 ## <a name="properties"></a>Propiedades
 

@@ -71,6 +71,8 @@ Los clientes que aún no son compatibles con comandos de complementos (Office 20
 
 Use un manifiesto de complemento de contenido para integrar **objetos basados en web que se pueden insertar dentro de documentos**. Los complementos de contenido le permiten integrar visualizaciones de datos avanzadas basadas en web, contenido multimedia insertado (como un reproductor de vídeo de YouTube o una galería de imágenes) y otro contenido externo.
 
+>**Nota:** Actualmente, los complementos de contenido no admiten los comandos de complementos.
+
 **Complemento de contenido**
 
 ![En complemento de contenido](../../images/DK2_AgaveOverview05.png)
@@ -114,8 +116,8 @@ El manifiesto especifica la configuración y las funcionalidades del complemento
 - El nombre para mostrar, la descripción, el identificador, la versión y la configuración regional predeterminada del complemento.
     
 - Cómo se integra el complemento con Office: 
-      - Para los complementos que amplían Word, Excel, PowerPoint y Outlook: La extensión nativa que apunta al complemento se usa para exponer funciones, como los botones de la cinta. 
-      - Para complementos que crean nuevos objetos insertables: La dirección URL de la página predeterminada que se carga para el objeto.
+      - Para complementos que amplían Word/Excel/PowerPoint/Outlook: Los puntos de extensión nativos que apuntan al complemento se usan para exponer funciones, como los botones de la cinta. 
+      - Para complementos que crean objetos que se pueden insertar: La dirección URL de la página predeterminada que se carga para el objeto.
        
     
 - El nivel de permiso y los requisitos de acceso a datos del complemento.

@@ -1,9 +1,10 @@
 # <a name="shapecollection-object-javascript-api-for-visio"></a>Objeto ShapeCollection (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
-Representa la colección de forma.
+>**Nota:** Las API de JavaScript para Visio no están disponibles actualmente para su uso en entornos de producción o de versión preliminar.
+
+Representa la colección de formas.
 
 ## <a name="properties"></a>Propiedades
 

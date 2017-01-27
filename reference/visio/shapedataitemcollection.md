@@ -1,9 +1,9 @@
 # <a name="shapedataitemcollection-object-javascript-api-for-visio"></a>Objeto ShapeDataItemCollection (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
+>**Nota:** Las API de JavaScript para Visio no están disponibles actualmente para su uso en entornos de producción o de versión preliminar.
 
-Representa el ShapeDataItemCollection de una forma determinada.
+Representa la clase ShapeDataItemCollection de una forma determinada.
 
 ## <a name="properties"></a>Propiedades
 
@@ -53,7 +53,7 @@ shapeDataItemCollectionObject.getItem(key);
 #### <a name="parameters"></a>Parámetros
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|:---|
-|Key|string|La clave es el nombre de la ShapeDataItem que se va a recuperar.|
+|Key|cadena|La clave es el nombre de la ShapeDataItem que se va a recuperar.|
 
 #### <a name="returns"></a>Valores devueltos
 [ShapeDataItem](shapedataitem.md)

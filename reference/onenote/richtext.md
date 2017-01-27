@@ -1,4 +1,4 @@
-# <a name="richtext-object-(javascript-api-for-onenote)"></a>Objeto RichText (API de JavaScript para OneNote)
+# <a name="richtext-object-javascript-api-for-onenote"></a>Objeto RichText (API de JavaScript para OneNote)
 
 _Se aplica a: OneNote Online_  
 
@@ -10,6 +10,7 @@ Representa un objeto RichText en un Paragraph.
 | Propiedad     | Tipo   |Descripción|Comentarios|
 |:---------------|:--------|:----------|:-------|
 |id|string|Obtiene el id. del objeto RichText. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-id)|
+|languageId|string|El identificador de idioma del texto. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-languageId)|
 |text|string|Obtiene el contenido de texto del objeto RichText. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-text)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
@@ -23,12 +24,27 @@ _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 | Método           | Tipo de valor devuelto    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:-------|
+|[getHtml()](#gethtml)|string|Obtener el HTML del texto enriquecido|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-getHtml)|
 |[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-richText-load)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="gethtml"></a>getHtml()
+Obtener el HTML del texto enriquecido
+
+#### <a name="syntax"></a>Sintaxis
+```js
+richTextObject.getHtml();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+string
+
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis

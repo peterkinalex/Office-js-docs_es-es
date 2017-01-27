@@ -14,7 +14,9 @@ Los complementos contextuales son diferentes de los que implican datos adjuntos 
     
 Actualmente, los complementos contextuales se limitan a Outlook Web App.
 
-## <a name="how-to-make-a-contextual-add-in"></a>Cómo hacer un complemento contextual
+>**Nota:** Los complementos contextuales no admiten los comandos de complementos.
+
+## <a name="how-to-make-a-contextual-add-in"></a>Cómo crear un complemento contextual
 
 Para crear un complemento contextual, su manifiesto de complemento debe especificar la entidad o la expresión regular que puede activarlo. La entidad puede ser cualquiera de las propiedades del objeto [Entities](../../reference/outlook/simple-types.md). Por lo tanto, el manifiesto del complemento debe contener una regla de tipo  **ItemHasKnownEntity** o **ItemHasRegularExpressionMatch**. En el ejemplo siguiente se muestra cómo especificar una entidad que es un número de teléfono:
 

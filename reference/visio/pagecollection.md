@@ -1,9 +1,9 @@
 # <a name="pagecollection-object-javascript-api-for-visio"></a>Objeto PageCollection (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
+>**Nota:** Las API de JavaScript para Visio no están disponibles actualmente para su uso en entornos de producción o de versión preliminar.
 
-Representa una colección de objetos de la página que forman parte del documento.
+Representa una colección de objetos Page que forman parte del documento.
 
 ## <a name="properties"></a>Propiedades
 
