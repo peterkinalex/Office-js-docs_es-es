@@ -7,16 +7,19 @@ Los complementos de Office se ejecutan en varias versiones de Office. En la sigu
 
 |  Conjunto de requisitos  |  Office 2013 para Windows | Office 2016 para Windows*   |  Office 2016 para iPad  |  Office 2016 para Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|:-----|
-| DialogApi 1.1  | Compilación 15.0.4855.1000 o posterior | Versión 1602 (compilación 6741.0000) o posterior | 1.22 o posterior | 15.20 o posterior| Estamos trabajando en ello. | Versión 1608 (compilación 7601.6800) o posterior|
+| DialogApi 1.1  | Compilación 15.0.4855.1000 o posterior | Versión 1602 (compilación 6741.0000) o posterior | 1.22 o posterior | 15.20 o posterior| Enero de 2017 | Versión 1608 (compilación 7601.6800) o posterior|
 
 >**Nota:** El número de compilación para Office 2016 que se ha instalado mediante MSI es 16.0.4266.1001. Para usar la API de cuadros de diálogo, ejecute la actualización de Office para obtener la última versión. 
 
 Para obtener más información sobre las versiones, números de compilación y Office Online Server, consulte:
 
-- [Números de versión y compilación de las versiones del canal de actualización para los clientes de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx)
+- 
+  [Números de versión y compilación de las versiones del canal de actualización para los clientes de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx)
 - [¿Qué versión de Office estoy usando?](https://support.office.com/en-us/article/What-version-of-Office-am-I-using-932788b8-a3ce-44bf-bb09-e334518b8b19?ui=en-US&rs=en-US&ad=US&fromAR=1)
-- [Dónde puede encontrar el número de versión y de compilación de una aplicación de cliente de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
-- [Información general de Office Online Server](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
+- 
+  [Dónde puede encontrar el número de versión y de compilación de una aplicación de cliente de Office 365](https://technet.microsoft.com/en-us/library/mt592918.aspx#Anchor_1)
+- 
+  [Información general de Office Online Server](https://technet.microsoft.com/en-us/library/jj219437(v=office.16).aspx)
 
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos comunes de la API de Office
 Para obtener información sobre los conjuntos de requisitos comunes de la API, consulte [Office common API requirement sets (Conjuntos de requisitos comunes de la API de Office)](office-add-in-requirement-sets.md).

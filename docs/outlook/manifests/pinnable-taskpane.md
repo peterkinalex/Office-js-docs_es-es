@@ -12,6 +12,8 @@ El primer paso es agregar la compatibilidad con el anclado (debe realizarse en e
 
 El elemento `SupportsPinning` se define en el esquema de la versión 1.1 de VersionOverrides, así que deberá incluir un elemento [VersionOverrides](../../../reference/manifest/versionoverrides.md) tanto para la versión 1.0 como para la 1.1.
 
+> **Nota**: Si tiene pensado [publicar](../../publish/publish.md) su complemento de Outlook en la Tienda Office, cuando utilice el elemento **SupportsPinning**, para poder superar la [validación de la Tienda Office](https://msdn.microsoft.com/en-us/library/jj220035.aspx), el contenido del complemento no puede ser estático y debe mostrar claramente los datos relacionados con el mensaje que está abierto o seleccionado en el buzón de correo.
+
 ```xml
 <!-- Task pane button -->
 <Control xsi:type="Button" id="msgReadOpenPaneButton">

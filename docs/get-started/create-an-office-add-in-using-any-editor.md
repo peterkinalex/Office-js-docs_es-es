@@ -18,7 +18,7 @@ Para ejecutar el generador de Yeoman Office, necesita lo siguiente:
 - [Gulp](http://gulpjs.com/)
 - [TSD](http://definitelytyped.org/tsd/)
     
-Solo Git y npm requieren una instalación independiente. Los otros se pueden instalar mediante npm.
+Solo Git y npm requieren una instalación independiente. Los demás programas pueden instalarse mediante npm.
 
 Cuando instale Git, use los valores predeterminados pero elija las opciones siguientes: 
 
@@ -214,13 +214,43 @@ Puede usar la transferencia local para instalar el complemento para pruebas:
 - [Transferir complementos de Outlook para pruebas](../outlook/testing-and-tips.md)
     
 
-## <a name="debugging-your-office-add-in"></a>Depurar el complemento de Office
+## <a name="debug-your-add-in"></a>Depurar un complemento
 
-Un complemento se puede depurar de varias formas:
+Puede depurar un complemento de varias formas:
 
+- Asociar un depurador del panel de tareas (Office 2016 para Windows).
+- Utilizar herramientas de desarrollo de su explorador.
+- Usar las herramientas de desarrollador F12 en Windows 10.
 
-- Puede usar los clientes web de Office y abrir las herramientas de desarrollo del explorador para depurar el complemento como cualquier otra aplicación de JavaScript del lado cliente. 
-- Si está usando Office de escritorio en Windows 10, puede [Depurar complementos con las herramientas de desarrollo F12 en Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
+### <a name="attach-debugger-from-the-task-pane"></a>Asociar un depurador del panel de tareas
+
+En Office 2016 para Windows, compilación 77xx.xxxx o una versión posterior, puede asociar un depurador del panel de tareas. 
+
+Para iniciar la herramienta **Asociar depurador**, elija la esquina superior derecha del panel de tareas para activar el menú **Personalidad** (tal como se muestra en el círculo rojo de la imagen siguiente).   
+
+![Captura de pantalla del menú Asociar depurador](../../images/attach-debugger.png)
+
+Seleccione **Asociar depurador**. Se abrirá el cuadro de diálogo **Depurador Just-In-Time de Visual Studio**, como se indica en la imagen siguiente. 
+
+![Captura de pantalla del diálogo Depurador JIT de Visual Studio](../../images/visual-studio-debugger.png)
+
+A continuación, puede asociar y depurar en Visual Studio.   
+
+  >  **Nota**:  [Visual Studio 2015](https://www.visualstudio.com/downloads/) es el único depurador que actualmente es compatible con [Update 3](https://msdn.microsoft.com/en-us/library/mt752379.aspx). Si no tiene Visual Studio instalado, al seleccionar la opción **Asociar depurador** no se lleva a cabo ninguna acción.  
+  
+Para obtener más información al respecto, vea lo siguiente:
+
+-   Para iniciar y usar el Explorador DOM en Visual Studio, vea la sugerencia 4 de la sección [Tips and Tricks](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates/#tips_tricks) (Sugerencias y trucos) de la publicación de blog [Building great-looking apps for Office using the new project templates](https://blogs.msdn.microsoft.com/officeapps/2013/04/16/building-great-looking-apps-for-office-using-the-new-project-templates) (Crear aplicaciones para Office con un gran diseño mediante las nuevas plantillas de proyecto).
+-   Para establecer puntos de interrupción, consulte el artículo [Usar puntos de interrupción](https://msdn.microsoft.com/en-US/library/5557y8b4.aspx).
+-   Para utilizar F12, consulte [Usar las herramientas de desarrollo F12](https://msdn.microsoft.com/en-us/library/bg182326(v=vs.85).aspx).
+
+### <a name="browser-developer-tools"></a>Herramientas de desarrollo del explorador 
+
+Puede usar los clientes web de Office y abrir las herramientas de desarrollo del explorador para depurar un complemento como cualquier otra aplicación de JavaScript del lado cliente. 
+
+### <a name="f12-developer-tools-on-windows-10"></a>Herramientas de desarrollo F12 de Windows 10
+
+Si está usando el cliente de escritorio de Office en Windows 10, puede [Depurar complementos con las herramientas de desarrollo F12 en Windows 10](../testing/debug-add-ins-using-f12-developer-tools-on-windows-10.md).
     
 ## <a name="additional-resources"></a>Recursos adicionales
 

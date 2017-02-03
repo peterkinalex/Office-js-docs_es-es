@@ -54,7 +54,7 @@ Establezca ambos valores al 100 % para obtener lo que es una experiencia de pant
 La propiedad `displayInIframe` es una propiedad adicional en el objeto de configuración que se puede pasar a `displayDialogAsync`. Cuando esta propiedad se establece en `true` y el complemento se ejecuta en un documento abierto en Office Online, el cuadro de diálogo se abrirá como un objeto iframe flotante en lugar de como una ventana independiente, lo que permitirá que lo haga más rápido. A continuación puede ver un ejemplo.
 
 ```js
-Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe; true}); 
+Office.context.ui.displayDialogAsync('https://myDomain/myDialog.html', {height: 30, width: 20, displayInIframe: true}); 
 ```
 
 El valor predeterminado es `false`, que equivale a omitir la propiedad por completo.
@@ -335,7 +335,7 @@ Para ver un ejemplo que utiliza esta técnica, consulte [Insertar gráficos de E
 
 El código de la ventana de diálogo puede analizar la URL y leer el valor del parámetro.
 
- Office agrega automáticamente un parámetro de consulta llamado `_host_info` a la URL que se pasa a `displayDialogAsync`. (Se anexa después de los parámetros de consulta personalizados, si los hay. No se anexa a ninguna URL subsiguiente a la que se dirija el cuadro de diálogo). Microsoft puede cambiar el contenido de este valor o eliminarlo por completo, en el futuro, por lo que su código no debe leerlo. El mismo valor se agregará al almacenamiento de sesión del cuadro de diálogo. De nuevo, *su código no debe leer ni escribir en este valor*.
+> **Nota**: Office agrega automáticamente un parámetro de consulta llamado `_host_info` a la URL que se pasa a `displayDialogAsync`. (Se anexa después de los parámetros de consulta personalizados, si los hay. No se anexa a ninguna URL subsiguiente a la que se dirija el cuadro de diálogo). Microsoft puede cambiar el contenido de este valor o eliminarlo por completo, en el futuro, por lo que su código no debe leerlo. El mismo valor se agregará al almacenamiento de sesión del cuadro de diálogo. De nuevo, *su código no debe leer ni escribir en este valor*.
 
 ## <a name="using-the-dialog-apis-to-show-a-video"></a>Uso de las API de diálogo para mostrar un vídeo
 
