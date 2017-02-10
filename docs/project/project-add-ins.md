@@ -47,10 +47,7 @@ Para crear un complemento, puede usar un editor de texto simple para crear una p
 
 Para aplicaciones personalizadas complejas y para una depuración más sencilla, le recomendamos usar Visual Studio 2015 para el desarrollo de sitios web para complementos. Visual Studio 2015 incluye plantillas para proyectos de complementos, en las que se puede elegir el tipo de complemento (panel de tareas, contenido o correo) y la aplicación host (Project, Word, Excel o Outlook). Puede ver un ejemplo específico de Project que se integra con los datos de Project Online en [Conexión de un complemento de panel de tareas de Project a PWA](http://blogs.msdn.com/b/project_programmability/archive/2012/11/02/connecting-a-project-task-pane-app-to-pwa.aspx), en el blog Project Programmability de MSDN.
 
-
- >**Nota**  La versión de Project 2013 no es compatible con Napa.
-
-Cuando se instala la descarga del SDK de Project 2013, el subdirectorio  `\Samples\Apps\` incluye las siguientes complementos de muestra:
+Cuando se instala la descarga del SDK de Project 2013, el subdirectorio `\Samples\Apps\` incluye los siguientes complementos de muestra:
 
 
 -  **Búsqueda de Bing:**  El archivo de manifiesto BingSearch.xml apunta a la página de búsqueda de Bing para dispositivos móviles. Como la aplicación web de Bing ya existe en Internet, el complemento de búsqueda de Bing no usa otros archivos de código de origen ni modelos de objetos de complementos para Project.
@@ -66,7 +63,7 @@ Cuando se instala la descarga del SDK de Project 2013, el subdirectorio  `\Sampl
 El archivo de manifiesto especifica la dirección URL de la página web del complemento o de la aplicación web, el tipo de complemento (de panel de tareas o de Project), las direcciones URL opcionales de contenido para otros idiomas y configuraciones regionales, y otras propiedades.
 
 
-### <a name="procedure-1.-to-create-the-add-in-manifest-file-for-bing-search"></a>Procedimiento 1. Para crear el archivo de manifiesto del complemento para la búsqueda de Bing
+### <a name="procedure-1-to-create-the-add-in-manifest-file-for-bing-search"></a>Procedimiento 1. Para crear el archivo de manifiesto del complemento para la búsqueda de Bing
 
 
 - Cree un archivo XML en un directorio local. El archivo XML incluye el elemento  **OfficeApp** y elementos secundarios, que se describen en [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md). Cree, por ejemplo, un archivo con el nombre BingSearch.xml que contenga el XML siguiente.
@@ -153,7 +150,7 @@ En un recurso compartido de archivos puede haber varios archivos y subdirectorio
 En el Procedimiento 2, el complemento de búsqueda de Bing está instalado en el equipo local en el que Project 2013 está instalado. No obstante, como la infraestructura del complemento no utiliza directamente rutas de acceso de archivos locales como  `C:\Project\AppManifests`, se puede crear un recurso compartido de red en el equipo local. Si se desea, se puede crear un recurso compartido de archivos en un equipo remoto.
 
 
-### <a name="procedure-2.-to-install-the-bing-search-add-in"></a>Procedimiento 2. Para instalar el complemento de búsqueda de Bing
+### <a name="procedure-2-to-install-the-bing-search-add-in"></a>Procedimiento 2. Para instalar el complemento de búsqueda de Bing
 
 
 1. Cree un directorio local para los manifiestos de complemento. Cree, por ejemplo, el directorio  `C:\Project\AppManifests`.

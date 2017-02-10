@@ -11,8 +11,7 @@
 		<Item text="Descripción" url="manifest/description" SEODescription="Especifica la descripción de su complemento de Office como una cadena de no más de 250 caracteres." />
 		<Item text="DesktopSettings" url="manifest/desktopsettings" Scope="outlook" SEODescription="Especifica la ubicación del código fuente y la configuración de control que se aplican cuando su complemento de correo se usa en un equipo de escritorio." />
 		<Item text="Dictionary" url="manifest/dictionary" Scope="excel, word, powerpoint, project" SEODescription="Define la configuración para un complemento de panel de tareas que implementa la compatibilidad con diccionarios adicionales." />
-		<Item text="DictionaryHomePage" url="manifest/dictionaryhomepage" Scope="excel, word, powerpoint, project" SEODescription="Especifica la dirección URL de la página principal del diccionario." />
-		<Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="Especifica el nombre de este diccionario." />
+		<Item text="DictionaryHomePage" url="manifest/dictionaryhomepage" Scope="excel, word, powerpoint, project" SEODescription="Especifica la dirección URL de la página principal del diccionario." />		<Item text="DictionaryName" url="manifest/dictionaryname" Scope="excel, word, powerpoint, project" SEODescription="Especifica el nombre de este diccionario." />
 		<Item text="DisableEntityHighlighting" url="manifest/disableentityhighlighting" Scope="outlook" SEODescription="Especifica si se debe desactivar el resaltado de entidades para su complemento de correo." />
 		<Item text="DisplayName" url="manifest/displayname" SEODescription="Especifica el nombre de su complemento de Office como una cadena de hasta 125 caracteres." />
 		<Item text="Form" url="manifest/form" Scope="outlook" SEODescription="Define la configuración de la experiencia de usuario para los formularios que su complemento de correo usará cuando se ejecute en un dispositivo concreto (escritorio, tableta o teléfono)." />
@@ -42,21 +41,23 @@
 		<Item text="TargetDialect" url="manifest/targetdialect" Scope="excel, word, powerpoint, project" SEODescription="Define una variedad regional admitida por este diccionario, representada como una cadena de nombre de referencia cultural." />
 		<Item text="TargetDialects" url="manifest/targetdialects" Scope="excel, word, powerpoint, project" SEODescription="Define las variedades regionales admitidas por este diccionario." />
 		<Item text="Versión" url="manifest/version" SEODescription="Especifica la versión de su complemento de Office." />
-		<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint" SEODescription="Elemento raíz que contiene la información de los comandos del complemento implementados por el complemento.">
-			<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint" SEODescription="Especifica la acción que se realiza cuando el usuario selecciona los controles Button o Menu" />
+		<Item text="VersionOverrides" url="manifest/versionoverrides" Scope="excel, word, powerpoint, outlook" SEODescription="Elemento raíz que contiene la información de los comandos del complemento implementados por el complemento.">
+			<Item text="Action" url="manifest/action" Scope="excel, word, powerpoint, outlook" SEODescription="Especifica la acción que se realiza cuando el usuario selecciona los controles Button o Menu" />
 			<Item text="Control" url="manifest/control" SEODescription="Especifica la acción que se realiza cuando el usuario selecciona un botón o menú." />
-			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint" SEODescription="Especifica la ficha y un grupo para comandos del complemento." />
-			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint" SEODescription="Define dónde expone su funcionalidad un complemento." />
-			<Item text="DesktopFormFactor" url="manifest/desktopformfactor" Scope="excel, word, powerpoint" SEODescription="Especifica la configuración de un complemento para un factor de forma determinado." />
-			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint" SEODescription="Especifica el archivo de código fuente para las operaciones que expone un complemento a través de comandos que ejecutan una función de JavaScript en lugar de mostrar la UI." />
+
+			<Item text="CustomTab" url="manifest/customtab" Scope="excel, word, powerpoint, outlook" SEODescription="Especifica la ficha y un grupo para comandos del complemento." />
+			<Item text="ExtensionPoint" url="manifest/extensionpoint" Scope="excel, word, powerpoint, outlook" SEODescription="Define dónde expone su funcionalidad un complemento." />
+			<Item text="FormFactor" url="manifest/formfactor" Scope="excel, word, powerpoint" SEODescription="Especifica la configuración de un complemento para un factor de forma determinado." />
+			<Item text="FunctionFile" url="manifest/functionfile" Scope="excel, word, powerpoint, outlook" SEODescription="Especifica el archivo de código fuente para las operaciones que expone un complemento a través de comandos que ejecutan una función de JavaScript en lugar de mostrar la UI." />
 			<Item text="GetStarted" url="manifest/getstarted" Scope="excel, word, powerpoint" SEODescription="Proporciona información que usa la llamada que aparece cuando el complemento se instala en hosts de Word, Excel y PowerPoint." />
-			<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint" SEODescription="Define un grupo de puntos de extensión de UI en una pestaña." />
-			<Item text="Hosts" url="manifest/hosts" Scope="excel, word, powerpoint" SEODescription="Especifica los tipos de aplicación host de Office que admite su complemento de Office." />
-			<Item text="Icono" url="manifest/icon" Scope="excel, word, powerpoint" SEODescription="Define los elementos de imagen para los controles Button y Menu." />
+			<Item text="Group" url="manifest/group" Scope="excel, word, powerpoint, outlook" SEODescription="Define un grupo de puntos de extensión de UI en una pestaña." />
+			<Item text="Hosts" url="manifest/hosts" Scope="excel, word, powerpoint, outlook" SEODescription="Especifica los tipos de aplicación host de Office que admite su complemento de Office." />
+			<Item text="Icono" url="manifest/icon" Scope="excel, word, powerpoint, outlook" SEODescription="Define los elementos de imagen para los controles Button y Menu." />
+      <Item text="MobileFormFactor" url="manifest/mobileformfactor" Scope="outlook" SEODescription="Especifica la configuración de un complemento para un factor de forma móvil." />
 			<Item text="OfficeMenu" url="manifest/officemenu" Scope="excel, word, powerpoint" SEODescription="Define una colección de controles que se agregarán al menú contextual de Office." />
-			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint" SEODescription="Especifica la pestaña existente que se va a utilizar para un comando del complemento." />
-			<Item text="Resources" url="manifest/resources" Scope="excel, word, powerpoint" SEODescription="Contiene iconos, cadenas y direcciones URL para el nodo VersionOverrides." />
-			<Item text="SuperTip" url="manifest/supertip" Scope="excel, word, powerpoint" SEODescription="Define una información sobre herramientas enriquecida (título y descripción)." />
+			<Item text="OfficeTab" url="manifest/officetab" Scope="excel, word, powerpoint, outlook" SEODescription="Especifica la pestaña existente que se va a utilizar para un comando del complemento." />
+			<Item text="Resources" url="manifest/resources" Scope="excel, word, powerpoint, outlook" SEODescription="Contiene iconos, cadenas y direcciones URL para el nodo VersionOverrides." />
+			<Item text="SuperTip" url="manifest/supertip" Scope="excel, word, powerpoint, outlook" SEODescription="Define una información sobre herramientas enriquecida (título y descripción)." />
 		</Item>
 	</Item>
 	<Item text="Word" url="word/word-add-ins-reference-overview" Scope="word" SEODescription="Proporciona una visión general de la API de Javascript de Word.">

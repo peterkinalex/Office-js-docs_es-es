@@ -33,7 +33,7 @@ La biblioteca de labs.js sirve como capa de abstracción en la biblioteca office
 
 El primer paso es registrarse en un Sitio para desarrolladores de Office 365. Esto permite hospedar y probar el laboratorio antes de enviarlo a la Tienda Office. El sitio permite publicar el complemento en Aplicaciones para Office Mix y probarlo en un entorno activo.
 
-Para obtener más información, consulte [Configurar un entorno de desarrollo para complementos para SharePoint en Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx). Solo debe seguir los dos primeros pasos. La instalación de las herramientas de desarrollador de "Napa" es opcional.
+Para obtener más información, vea [Configurar un entorno de desarrollo para complementos para SharePoint en Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx). 
 
 
 ### <a name="set-up-an-app-catalog-on-sharepoint-online"></a>Configurar un catálogo de aplicaciones en SharePoint Online
@@ -71,7 +71,7 @@ Empiece por actualizar el catálogo de PowerPoint 2013. Inicie PowerPoint 2013 y
 Por último, vuelva a iniciar sesión con la cuenta de desarrollador. Elija el nombre de inicio de sesión en la esquina superior derecha en PowerPoint 2013 e inicie sesión con su cuenta de desarrollador. Ahora puede insertar el complemento.
 
 
-### <a name="insert,-publish,-and-view-your-app"></a>Insertar, publicar y ver la aplicación
+### <a name="insert-publish-and-view-your-app"></a>Insertar, publicar y ver la aplicación
 
 Para insertar el complemento en el catálogo, elija la cinta  **Insertar** y luego elija **Tienda** en la sección **Aplicaciones**. Elija  **Mi organización** y verá el complemento en el catálogo de complemento. Elija el complemento, seleccione **Insertar** y complemento (laboratorio) se inserta en el documento de PowerPoint 2013.
 

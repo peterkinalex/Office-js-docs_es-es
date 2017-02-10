@@ -1,22 +1,19 @@
 
-# <a name="create-a-dictionary-task-pane-addin"></a>Crear un complemento de panel de tareas de diccionario
+# <a name="create-a-dictionary-task-pane-add-in"></a>Crear un complemento de panel de tareas de diccionario
 
 
 En este artículo se muestra un ejemplo de un complemento de panel de tareas y el servicio web asociado que proporciona definiciones de diccionarios o sinónimos para la selección actual del usuario en un documento de Word 2013. 
 
 Una Complemento de Office de diccionario se basa en el complemento de panel de tareas estándar con funciones complementarias para la consulta y presentación de definiciones de un servicio web XML de diccionarios en lugares adicionales de la interfaz de usuario de la aplicación de Office. 
 
-En un complemento de panel de tareas de diccionario normal, un usuario selecciona una palabra o frase en el documento y, después, la lógica de JavaScript que hay detrás del complemento pasa esta selección al servicio web XML del proveedor de diccionario. Luego, se actualiza la página web del proveedor de diccionario para mostrar las definiciones de la selección al usuario. 
-El componente de servicio web XML devuelve tres definiciones como máximo en el formato definido por el esquema XML de OfficeDefinitions, que se muestran al usuario en otros lugares de la UI de la aplicación host de Office. 
-La figura 1 muestra la experiencia de visualización y selección de un complemento de diccionario de marca Bing que se ejecuta en Word 2013.
+En un complemento de panel de tareas de diccionario normal, un usuario selecciona una palabra o frase en el documento y, después, la lógica de JavaScript que hay detrás del complemento pasa esta selección al servicio web XML del proveedor de diccionario. Luego, se actualiza la página web del proveedor de diccionario para mostrar las definiciones de la selección al usuario. El componente de servicio web XML devuelve tres definiciones como máximo en el formato definido por el esquema XML de OfficeDefinitions, que se muestran al usuario en otros lugares de la UI de la aplicación host de Office. La figura 1 muestra la experiencia de visualización y selección de un complemento de diccionario de marca Bing que se ejecuta en Word 2013.
 
 **Figura 1: Complemento de diccionario que muestra definiciones para la palabra seleccionada**
 
 
 ![Aplicación de diccionario que muestra una definición](../../images/DictionaryAgave01.jpg)
 
-Tiene que decidir si, al hacer clic en el vínculo **Ver más** de la interfaz de usuario HTML del complemento de diccionario, se mostrará más información en el panel de tareas o se abrirá una ventana independiente del explorador con la página web completa para la palabra o frase seleccionada. 
-En la ilustración 2 se muestra el comando de menú contextual **Definir** que permite a los usuarios abrir rápidamente los diccionarios instalados. En las ilustraciones 3, 4 y 5 se muestran los lugares de la interfaz de usuario de Office donde se usan los servicios XML de diccionarios para proporcionar las definiciones en Word 2013.
+Tiene que decidir si, al hacer clic en el vínculo **Ver más** de la interfaz de usuario HTML del complemento de diccionario, se mostrará más información en el panel de tareas o se abrirá una ventana independiente del explorador con la página web completa para la palabra o frase seleccionada. En la ilustración 2 se muestra el comando de menú contextual **Definir** que permite a los usuarios abrir rápidamente los diccionarios instalados. En las ilustraciones 3, 4 y 5 se muestran los lugares de la interfaz de usuario de Office donde se usan los servicios XML de diccionarios para proporcionar las definiciones en Word 2013.
 
 **Figura 2: Comando Definir del menú contextual**
 
@@ -181,7 +178,7 @@ public class WebService : System.Web.Services.WebService {
 ```
 
 
-## <a name="creating-the-components-of-a-dictionary-addin"></a>Creación de los componentes de un complemento de diccionario
+## <a name="creating-the-components-of-a-dictionary-add-in"></a>Creación de los componentes de un complemento de diccionario
 
 
 Un complemento de diccionario consta de tres archivos de componentes principales.
@@ -194,7 +191,7 @@ Un complemento de diccionario consta de tres archivos de componentes principales
 - Un archivo JavaScript que proporciona la lógica para obtener la selección del usuario desde el documento, envía la selección como una consulta al servicio web y muestra los resultados devueltos en la UI del complemento.
     
 
-### <a name="creating-a-dictionary-addins-manifest-file"></a>Creación del archivo de manifiesto del complemento de diccionario
+### <a name="creating-a-dictionary-add-ins-manifest-file"></a>Creación del archivo de manifiesto del complemento de diccionario
 
 A continuación se muestra un ejemplo de archivo de manifiesto para un complemento de diccionario.
 
@@ -202,7 +199,7 @@ A continuación se muestra un ejemplo de archivo de manifiesto para un complemen
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
-  <Id>DemoDict</Id>
+  <Id>7164e750-dc86-49c0-b548-1bac57abdc7c</Id>
   <Version>15.0</Version>
   <ProviderName>Microsoft Office Demo Dictionary</ProviderName>
   <DefaultLocale>en-us</DefaultLocale>
@@ -444,7 +441,7 @@ Para este elemento, se pueden especificar valores para configuraciones regionale
 ```
 
 
-### <a name="creating-a-dictionary-addins-html-user-interface"></a>Creación de una interfaz de usuario HTML del complemento de diccionario
+### <a name="creating-a-dictionary-add-ins-html-user-interface"></a>Creación de una interfaz de usuario HTML del complemento de diccionario
 
 
 Los dos ejemplos siguientes muestran los archivos HTML y CSS para la UI del complemento de la demo del diccionario. Para ver cómo se muestra la UI en el panel de tareas del complemento, consulte la Figura 6, después del código. Para conocer la manera en que la implementación de JavaScript en el archivo Dictionary.js proporciona la lógica de programación para esta UI de HTML, consulte "Escritura de la implementación de JavaScript", inmediatamente después de esta sección.

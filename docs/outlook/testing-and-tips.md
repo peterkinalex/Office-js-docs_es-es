@@ -39,7 +39,7 @@ Puede instalar un complemento si el buzón está en Exchange Online, Exchange 20
 En Outlook para Mac, seleccione **Administrar complementos** en el extremo derecho de la barra de complementos y, después, inicie sesión en el Centro de Administración de Exchange. Continúe con el paso 4 en la sección siguiente.
 
 
-### <a name="installing-an-add-in-by-using-outlook-web-app-or-outlook.com"></a>Instalación de un complemento mediante Outlook Web App o Outlook.com
+### <a name="installing-an-add-in-by-using-outlook-web-app-or-outlookcom"></a>Instalación de un complemento mediante Outlook Web App o Outlook.com
 
 Para usar Outlook Web App (OWA) para instalar un complemento de Outlook, siga los pasos siguientes:
 
@@ -58,8 +58,7 @@ Para usar Outlook Web App (OWA) para instalar un complemento de Outlook, siga lo
     
 
 >**Nota** Si no usa ninguna de las siguientes características para desarrollar el complemento: 
-- Inquilino desarrollador de Office 365
-- Herramientas de desarrollo de Office 365 de Napa
+- Inquilino de Office 365 Developer
 - Visual Studio
 
 Y, si no tiene el rol "Mis aplicaciones personalizadas", como mínimo, en su Exchange Server, solo podrá instalar complementos desde la Tienda Office. Para probar el complemento o instalar complementos en general especificando un nombre de archivo o dirección URL del manifiesto del complemento, debe solicitar al administrador de Exchange que le proporcione los permisos necesarios.
@@ -72,9 +71,9 @@ Si es necesario, el administrador puede ejecutar el cmdlet siguiente para asigna
 
 ```$users = Get-Mailbox *$users | ForEach-Object { New-ManagementRoleAssignment -Role "My Custom Apps" -User $_.Alias}```
 
-Para más información sobre el rol Mis aplicaciones personalizadas, vea [Rol Mis aplicaciones personalizadas](http://technet.microsoft.com/en-us/library/aa0321b3-2ec0-4694-875b-7a93d3d99089%28EXCHG.150%29.aspx). 
+Para obtener más información sobre el rol Mis aplicaciones personalizadas, vea [Rol Mis aplicaciones personalizadas](http://technet.microsoft.com/en-us/library/aa0321b3-2ec0-4694-875b-7a93d3d99089%28EXCHG.150%29.aspx). 
 
-Al usar Office 365, Napa o Visual Studio para desarrollar complementos, se le asignará el rol de administrador de la organización, que le permite instalar complementos con un archivo o una URL en EAC, o bien con los cmdlets de PowerShell.
+Al usar Office 365 o Visual Studio para desarrollar complementos, se le asignará el rol de administrador de la organización, que le permite instalar complementos con un archivo o una dirección URL en el EAC, o bien con los cmdlets de PowerShell.
 
 
 ### <a name="installing-an-add-in-by-using-remote-powershell"></a>Instalación de un complemento con PowerShell remoto

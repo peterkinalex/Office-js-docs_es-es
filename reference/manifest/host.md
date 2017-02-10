@@ -50,6 +50,7 @@ Cuando se define en [VersionOverrides](./versionoverrides.md), el tipo de host e
 |  Elemento |  Obligatorio  |  Descripción  |
 |:-----|:-----|:-----|
 |  [DesktopFormFactor](./desktopformfactor.md)    |  Sí   |  Define la configuración del factor de forma de escritorio. |
+|  [MobileFormFactor](./mobileformfactor.md)    |  No   |  Define la configuración del factor de forma móvil. **Nota:** Este elemento solo se admite en Outlook para iOS. |
 
 
 ### <a name="xsitype"></a>xsi:type

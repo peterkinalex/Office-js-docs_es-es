@@ -1,4 +1,4 @@
-# <a name="paragraph-object-(javascript-api-for-onenote)"></a>Objeto Paragraph (API de JavaScript para OneNote)
+# <a name="paragraph-object-javascript-api-for-onenote"></a>Objeto Paragraph (API de JavaScript para OneNote)
 
 _Se aplica a: OneNote Online_  
 
@@ -9,7 +9,7 @@ Contenedor para el contenido visible en una página. Un Paragraph puede contener
 
 | Propiedad     | Tipo   |Descripción|Comentarios|
 |:---------------|:--------|:----------|:-------|
-|id|string|Obtiene el identificador del objeto Paragraph. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-id)|
+|id|string|Obtiene el id. del objeto Paragraph. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-id)|
 |type|string|Obtiene el tipo del objeto Paragraph. Solo lectura. Los valores posibles son: RichText, Image, Table, Other.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=OneNote-paragraph-type)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
@@ -42,7 +42,7 @@ _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="delete()"></a>delete()
+### <a name="delete"></a>delete()
 Elimina el párrafo
 
 #### <a name="syntax"></a>Sintaxis
@@ -94,7 +94,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="inserthtmlassibling(insertlocation:-string,-html:-string)"></a>insertHtmlAsSibling(insertLocation: string, html: string)
+### <a name="inserthtmlassiblinginsertlocation-string-html-string"></a>insertHtmlAsSibling(insertLocation: string, html: string)
 Inserta el contenido HTML especificado
 
 #### <a name="syntax"></a>Sintaxis
@@ -106,7 +106,7 @@ paragraphObject.insertHtmlAsSibling(insertLocation, html);
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |insertLocation|string|La ubicación del nuevo contenido relativa a Paragraph actual.  Los valores posibles son: Before, After|
-|html|string|Una cadena HTML que describe la presentación visual del contenido. Consulte el [HTML compatible](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) para la API de JavaScript de los complementos de OneNote.|
+|Html|string|Una cadena HTML que describe la presentación visual del contenido. Consulte el [HTML compatible](../../docs/onenote/onenote-add-ins-page-content.md#supported-html) para la API de JavaScript de los complementos de OneNote.|
 
 #### <a name="returns"></a>Valores devueltos
 void
@@ -148,7 +148,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="insertimageassibling(insertlocation:-string,-base64encodedimage:-string,-width:-double,-height:-double)"></a>insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
+### <a name="insertimageassiblinginsertlocation-string-base64encodedimage-string-width-double-height-double"></a>insertImageAsSibling(insertLocation: string, base64EncodedImage: string, width: double, height: double)
 Inserta la imagen en la posición de inserción especificada.
 
 #### <a name="syntax"></a>Sintaxis
@@ -160,7 +160,7 @@ paragraphObject.insertImageAsSibling(insertLocation, base64EncodedImage, width, 
 | Parámetro    | Tipo   |Descripción|
 |:---------------|:--------|:----------|
 |insertLocation|string|La ubicación de la tabla relativa a Paragraph actual.  Los valores posibles son: Before, After|
-|base64EncodedImage|cadena|Cadena HTML que se anexará.|
+|base64EncodedImage|string|Cadena HTML que se anexará.|
 |width|double|Opcional. Ancho en la unidad de puntos. El valor predeterminado es null, que respeta el ancho de la imagen.|
 |height|double|Opcional. Alto en la unidad de puntos. El valor predeterminado es null, que respeta el alto de la imagen.|
 
@@ -204,7 +204,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="insertrichtextassibling(insertlocation:-string,-paragraphtext:-string)"></a>insertRichTextAsSibling(insertLocation: string, paragraphText: string)
+### <a name="insertrichtextassiblinginsertlocation-string-paragraphtext-string"></a>insertRichTextAsSibling(insertLocation: string, paragraphText: string)
 Inserta el texto del párrafo en la posición de inserción especificada.
 
 #### <a name="syntax"></a>Sintaxis
@@ -258,7 +258,7 @@ OneNote.run(function (context) {
 ```
 
 
-### <a name="inserttableassibling(insertlocation:-string,-rowcount:-number,-columncount:-number,-values:-string[][])"></a>insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
+### <a name="inserttableassiblinginsertlocation-string-rowcount-number-columncount-number-values-string"></a>insertTableAsSibling(insertLocation: string, rowCount: number, columnCount: number, values: string[][])
 Agrega una tabla con el número especificado de filas y columnas antes o después del párrafo actual.
 
 #### <a name="syntax"></a>Sintaxis
@@ -277,7 +277,7 @@ paragraphObject.insertTableAsSibling(insertLocation, rowCount, columnCount, valu
 #### <a name="returns"></a>Valores devueltos
 [Table](table.md)
 
-### <a name="load(param:-object)"></a>load(param: object)
+### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
 
 #### <a name="syntax"></a>Sintaxis

@@ -64,6 +64,7 @@ El ejemplo siguiente muestra dos acciones que comparten el mismo **TaskpaneId**.
 ```  
 
 ## <a name="supportspinning"></a>SupportsPinning
+
 Elemento opcional cuando **xsi:type** es "ShowTaskpane". Los elementos que contengan [VersionOverrides](./versionoverrides.md) deben tener un valor de atributo `xsi:type` de `VersionOverridesV1_1`. Incluya este elemento con el valor `true` para admitir el anclado de paneles de tareas. El usuario podrá "anclar" el panel de tareas, lo que hará que permanezca abierto cuando se cambie la selección. Para obtener más información, consulte [Implementar un panel de tareas anclable en Outlook](../../docs/outlook/manifests/pinnable-taskpane).
 
 > **Nota**: Actualmente, SupportsPinning solo se admite en Outlook 2016 para Windows (compilación 7628.1000 o posteriores).

@@ -20,7 +20,7 @@ En este tema se da por sentado que no tiene experiencia en el uso de Azure. Cuan
 ![Sitio web de un complemento de Office hospedado en Microsoft Azure](../../images/off15app_HowToPublishA4OtoAzure_fig17.png)
 
 
-## <a name="set-up-your-development-computer-with-azure-sdk-for-.net,-an-azure-subscription,-and-office-2013"></a>Configure su equipo de desarrollo con el SDK de Azure para .NET, una suscripción a Azure y Office 2013
+## <a name="set-up-your-development-computer-with-azure-sdk-for-net-an-azure-subscription-and-office-2013"></a>Configure su equipo de desarrollo con el SDK de Azure para .NET, una suscripción a Azure y Office 2013
 
 
 
@@ -44,7 +44,7 @@ En este tema se da por sentado que no tiene experiencia en el uso de Azure. Cuan
 Para que el tutorial sea sencillo y se centre en el uso de Azure con un complemento de Office, usará un recurso compartido de archivos local, como un catálogo de confianza donde almacenará el archivo de manifiesto XML del complemento. Si va a usar el complemento en una o varias empresas, puede conservar el archivo de manifiesto del complemento en SharePoint o publicar el complemento en la Tienda Office. 
 
 
-## <a name="step-1:-create-a-network-file-share-to-host-your-add-in-manifest-file"></a>Paso 1: crear un recurso compartido de archivos de red para hospedar el archivo de manifiesto del complemento
+## <a name="step-1-create-a-network-file-share-to-host-your-add-in-manifest-file"></a>Paso 1: crear un recurso compartido de archivos de red para hospedar el archivo de manifiesto del complemento
 
 
 
@@ -59,7 +59,7 @@ Para que el tutorial sea sencillo y se centre en el uso de Azure con un compleme
 5. En **Uso compartido de archivos**, elija la flecha desplegable y, después, elija **Todos** >  **Agregar**  >  **Compartir**.
     
 
-## <a name="step-2:-add-the-file-share-to-the-trusted-add-ins-catalog-so-that-office-client-applications-will-trust-the-location-where-you-install-office-add-ins"></a>Paso 2: agregar el recurso compartido de archivos al catálogo de complementos de confianza de modo que las aplicaciones cliente de Office confíen en la ubicación en la que instala las Complementos de Office
+## <a name="step-2-add-the-file-share-to-the-trusted-add-ins-catalog-so-that-office-client-applications-will-trust-the-location-where-you-install-office-add-ins"></a>Paso 2: agregar el recurso compartido de archivos al catálogo de complementos de confianza de modo que las aplicaciones cliente de Office confíen en la ubicación en la que instala las Complementos de Office
 
 
 
@@ -74,7 +74,7 @@ Para que el tutorial sea sencillo y se centre en el uso de Azure con un compleme
 5. Active la casilla  **Mostrar en el menú**. Cuando almacena un archivo de manifiesto XML de un complemento en un recurso compartido que es un catálogo de complementos de confianza, el complemento aparece en  **Carpeta compartida** en el cuadro de diálogo **Complementos de Office**.
     
 
-## <a name="step-3:-create-a-website-in-azure"></a>Paso 3: crear un sitio web en Azure
+## <a name="step-3-create-a-website-in-azure"></a>Paso 3: crear un sitio web en Azure
 
 
 Hay varias formas de crear un sitio web de Azure vacío. Si usa Visual Studio 2015, siga los pasos que se describen en [Uso de Visual Studio 2015](../publish/host-an-office-add-in-on-microsoft-azure.md#using-visual-studio-2015) para crear un sitio web de Azure desde el IDE de Visual Studio. También puede seguir los pasos descritos en [Uso del portal de administración de Azure](../publish/host-an-office-add-in-on-microsoft-azure.md#using-the-azure-management-portal) para crear el sitio web de Azure.
@@ -135,7 +135,7 @@ Hay varias formas de crear un sitio web de Azure vacío. Si usa Visual Studio 20
     Paso 4: crear un complemento para Office en Visual Studio 
     
 
-## <a name="step-4:-create-an-office-add-in-in-visual-studio"></a>Paso 4: crear un complemento para Office en Visual Studio
+## <a name="step-4-create-an-office-add-in-in-visual-studio"></a>Paso 4: crear un complemento para Office en Visual Studio
 
 
 
@@ -153,7 +153,7 @@ Hay varias formas de crear un sitio web de Azure vacío. Si usa Visual Studio 20
     
 Se crea una Complemento de Office básica que está lista para publicar en Azure. Dado que nos estamos enfocando en cómo debe publicarse en Azure, no realizaremos cambios en este complemento de ejemplo que creó mediante la plantilla estándar de Complemento de Office en Visual Studio.
 
-## <a name="step-5:-publish-your-office-add-in-to-the-azure-website"></a>Paso 5: publicar el complemento para Office en el sitio web de Azure
+## <a name="step-5-publish-your-office-add-in-to-the-azure-website"></a>Paso 5: publicar el complemento para Office en el sitio web de Azure
 
 
 
@@ -180,7 +180,7 @@ Se crea una Complemento de Office básica que está lista para publicar en Azure
     To see the webpage for your add-in, change the URL to use https: and add the path of your add-in's default HTML page.
     
 
-## <a name="step-6:-edit-the-add-in-manifest-file-to-point-to-the-office-add-in-on-azure"></a>Paso 6: editar el archivo de manifiesto del complemento para que apunte a la Complemento de Office en Azure.
+## <a name="step-6-edit-the-add-in-manifest-file-to-point-to-the-office-add-in-on-azure"></a>Paso 6: editar el archivo de manifiesto del complemento para que apunte a la Complemento de Office en Azure.
 
 
 
@@ -199,7 +199,7 @@ Se crea una Complemento de Office básica que está lista para publicar en Azure
 7. Vaya al recurso compartido de archivos de red que creó anteriormente en este tema y pegue el archivo de manifiesto en la carpeta.
     
 
-## <a name="step-7:-insert-and-run-the-add-in-in-the-office-client-application"></a>Paso 7: insertar y ejecutar el complemento en la aplicación cliente de Office
+## <a name="step-7-insert-and-run-the-add-in-in-the-office-client-application"></a>Paso 7: insertar y ejecutar el complemento en la aplicación cliente de Office
 
 
 
@@ -220,5 +220,5 @@ Se crea una Complemento de Office básica que está lista para publicar en Azure
 
 - [Publicar el complemento de Office](../publish/publish.md)
     
-- [Empaquetar el complemento con Napa o Visual Studio para prepararlo para su publicación](../publish/package-your-add-in-using-napa-or-visual-studio.md)
+- [Empaquetar el complemento con Visual Studio para prepararlo para su publicación](../publish/package-your-add-in-using-visual-studio.md)
     

@@ -1,5 +1,5 @@
 # <a name="group-element"></a>Elemento Group
-Define un grupo de puntos de extensión de UI en una ficha.  En las pestañas personalizadas, el complemento puede crear hasta 10 grupos. Cada grupo está limitado a 6 controles, independientemente de la pestaña donde aparezca. Los complementos están limitados a una pestaña personalizada.
+Define un grupo de controles de interfaz de usuario en un pestaña.  En las pestañas personalizadas, el complemento puede crear hasta 10 grupos. Cada grupo está limitado a 6 controles, independientemente de la pestaña donde aparezca. Los complementos están limitados a una pestaña personalizada.
 
 ## <a name="attributes"></a>Atributos
 
@@ -16,11 +16,11 @@ Define un grupo de puntos de extensión de UI en una ficha.  En las pestañas pe
 ## <a name="id-attribute"></a>Atributo id
 Necesario. Identificador único para el grupo. Es una cadena con un máximo de 125 caracteres. Debe ser único dentro del manifiesto o el grupo no podrá procesarse.
 
-## <a name="label"></a>Label 
+## <a name="label"></a>Etiqueta 
 Obligatorio. La etiqueta del grupo. El atributo  **resid** debe estar establecido en el valor del atributo **id** de un elemento **String** en el elemento [ShortStrings](./resources.md#shortstrings) del elemento [Resources](./resources.md).
 
 ## <a name="control"></a>Control
-Un grupo necesita como mínimo un control. Actualmente, solo son compatibles [botones](./control.md#button-control) y [menús](./control.md#menu-dropdown-button-controls). 
+Un grupo necesita como mínimo un control.
 
 ```xml
 <Group id="msgreadCustomTab.grp1">

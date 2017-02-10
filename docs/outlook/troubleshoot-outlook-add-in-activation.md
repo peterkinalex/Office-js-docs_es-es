@@ -25,8 +25,8 @@ Puede verificar la versión de Exchange 2013 con uno de los siguientes métodos:
     
       2. En la pestaña **Desarrollador** de la cinta de opciones, seleccione **Visual Basic**.
     
-     >**Note**  Not seeing the  **Developer** tab? See [How to: Show the Developer Tab on the Ribbon](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) to turn it on.
-	 3. En el Editor de Visual Basic, seleccione  **Vista**,  **Ventana Ejecución**.
+     >**Nota** ¿No ve la pestaña **Desarrollador**? Vea [Cómo: Mostrar la pestaña Desarrollador en la cinta de opciones](http://msdn.microsoft.com/en-us/library/ce7cb641-44f2-4a40-867e-a7d88f8e98a9%28Office.15%29.aspx) para activarla.
+      3. En el Editor de Visual Basic, seleccione **Vista**, **Ventana Inmediato**.
     
       4. Para mostrar la versión de Exchange Server, escriba lo siguiente en la ventana Ejecución. La versión principal del valor devuelto debe ser igual a o superior a 15.
     
@@ -112,7 +112,7 @@ La figura 1 muestra un resumen de los pasos necesarios para comprobar si Outlook
 
 
 
-1. Si ha modificado el manifiesto mientras estaba abierto Outlook y no usa Napa, Visual Studio 2012 o una versión posterior de Visual Studio para desarrollar el complemento, debe desinstalar el complemento y reinstalarlo con el Centro de administración de Exchange. 
+1. Si ha modificado el manifiesto mientras estaba abierto Outlook y no usa Visual Studio 2012 o una versión posterior de Visual Studio para desarrollar el complemento, debe desinstalar el complemento y reinstalarlo con el Centro de administración de Exchange. 
     
 2. Reinicie Outlook y compruebe si ahora activa el complemento.
     

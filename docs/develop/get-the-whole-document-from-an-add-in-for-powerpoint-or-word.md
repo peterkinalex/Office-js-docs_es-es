@@ -19,7 +19,7 @@ En este artículo se supone que se usa un editor de texto para crear el compleme
     
 - Un archivo de manifiesto XML (GetDoc_App.xml) para el complemento, disponible en un catálogo de complementos o una carpeta de red compartida. El archivo de manifiesto debe apuntar a la ubicación del archivo HTML mencionado anteriormente.
     
-También puede crear un complemento para PowerPoint o Word mediante Visual Studio 2015 o Herramientas de desarrollo de Office 365 de Napa. Para obtener más información sobre cómo crear Complementos de Office, consulte la tabla 1.
+También puede crear un complemento para PowerPoint o Word con [Visual Studio 2015](get-started/create-and-debug-office-add-ins-in-visual-studio) o con [cualquier editor](get-started/create-an-office-add-in-using-any-editor). 
 
 
 ### <a name="core-concepts-to-know-for-creating-a-task-pane-add-in"></a>Conceptos básicos que deben considerarse al crear un complemento de panel de tareas

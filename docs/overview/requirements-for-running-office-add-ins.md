@@ -15,7 +15,7 @@ Para poder instalar y ejecutar cualquier Complemento de Office., primero debe im
 Para todos los tipos de complementos (contenido, Outlook, complementos de panel de tareas y comandos de complemento), tendrá que implementar los archivos de página web del complemento en un servidor web o un servicio de hospedaje de sitios web, como [Microsoft Azure](../publish/host-an-office-add-in-on-microsoft-azure.md).
 
 
- >**Nota:** Cuando desarrolla y depura un complemento en Visual Studio, Visual Studio implementa y ejecuta los archivos de la página web de su aplicación de forma local con IIS Express y no necesita un servidor web adicional. De forma similar, cuando desarrolla y depura con Napa en el explorador, implementa y ejecuta los archivos de página web de su aplicación desde el almacenamiento asociado con la cuenta usada para iniciar sesión en Napa.
+ >**Nota:**   Cuando desarrolla y depura un complemento en Visual Studio, Visual Studio implementa y ejecuta los archivos de la página web del complemento localmente con IIS Express, y no necesita un servidor web adicional. 
 
 Para complementos de panel de tareas y contenido, en las aplicaciones host de Office (aplicaciones web de Access, Word, Excel, PowerPoint o Project), también necesita un [catálogo de complementos](../publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog.md) en SharePoint para cargar el archivo de manifiesto XML del complemento.
 

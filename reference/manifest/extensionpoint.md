@@ -1,6 +1,6 @@
 # <a name="extensionpoint-element"></a>Elemento ExtensionPoint
 
- Define dónde expone su funcionalidad un complemento en la interfaz de usuario de Office. El elemento **ExtensionPoint** es un elemento secundario de [DesktopFormFactor](./desktopformfactor.md). 
+ Define dónde expone su función un complemento en la interfaz de usuario de Office. El elemento **ExtensionPoint** es un elemento secundario de [DesktopFormFactor](./desktopformfactor.md) o de [MobileFormFactor](./mobileformfactor.md). 
 
 ## <a name="attributes"></a>Atributos
 
@@ -72,7 +72,8 @@ Los ejemplos siguientes muestran cómo usar el elemento  **ExtensionPoint** con 
 - [MessageComposeCommandSurface](#messagecomposecommandsurface) 
 - [AppointmentOrganizerCommandSurface](#appointmentorganizercommandsurface) 
 - [AppointmentAttendeeCommandSurface](#appointmentattendeecommandsurface)
-- [Module](#module) (solo puede usarse en el [DesktopFormFactor](./desktopformfactor.md).)
+- [Module](#module) (solo puede usarse en el elemento [DesktopFormFactor](./desktopformfactor.md)).
+- [MobileMessageReadCommandSurface](#mobilemessagereadcommandsurface)
 
 ### <a name="messagereadcommandsurface"></a>MessageReadCommandSurface
 Este punto de extensión coloca botones en la superficie del comando de la vista de lectura de correo. En el escritorio de Outlook aparece en la cinta.
@@ -198,3 +199,37 @@ Este punto de extensión coloca botones en la cinta para la extensión de módul
 |  [OfficeTab](./officetab.md) |  Agrega los comandos a la pestaña de la cinta predeterminada.  |
 |  [CustomTab](./customtab.md) |  Agrega los comandos a la pestaña de la cinta personalizada.  |
 
+### <a name="mobilemessagereadcommandsurface"></a>MobileMessageReadCommandSurface
+Este punto de extensión coloca botones en la superficie del comando de la vista de lectura de correo en el factor de forma móvil.
+
+> **Nota:** Este tipo de elemento solo se admite en Outlook para iOS.
+
+**Elementos secundarios**
+
+|  Elemento |  Descripción  |
+|:-----|:-----|
+|  [Group](./group.md) |  Agrega un grupo de botones a la superficie de comando.  |
+|  [Control](./control.md) |  Agrega un único botón a la superficie de comando.  |
+
+Los elementos **ExtensionPoint** de este tipo solo pueden tener un elemento secundario, un elemento **Group** o un elemento **Control**.
+
+Los elementos **Control** que se incluyen en este punto de extensión deben tener el atributo **xsi:type** establecido en `MobileButton`.
+
+#### <a name="group-example"></a>Ejemplo de grupo
+```xml
+<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+  <Group id="mobileGroupID">
+    <Label resid="residAppName"/>
+    <!-- one or more Control elements -->
+  </Group>
+</ExtensionPoint>
+```
+
+#### <a name="control-example"></a>Ejemplo de control
+```xml
+<ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
+  <Control id="mobileButton1" xsi:type="MobileButton">
+    <!-- Control definition -->
+  </Control>
+</ExtensionPoint>
+```

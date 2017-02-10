@@ -24,9 +24,11 @@ Proporciona acceso al modelo de objetos del complemento de Outlook para Microsof
 
 ### <a name="members"></a>Miembros
 
-#### <a name="ewsurl-:string"></a>ewsUrl :String
+#### <a name="ewsurl-string"></a>ewsUrl :String
 
 Obtiene la URL del punto de conexión de los Servicios web de Exchange (EWS) para esta cuenta de correo electrónico. Solo modo Lectura.
+
+> **Nota:** Este miembro no se admite en Outlook para iOS ni en Outlook para Android.
 
 El valor `ewsUrl` puede usarse por un servicio remoto para realizar llamadas EWS al buzón del usuario. Por ejemplo, puede crear un servicio remoto para [obtener datos adjuntos desde el elemento seleccionado](https://msdn.microsoft.com/EN-US/library/office/dn148008.aspx).
 
@@ -34,7 +36,7 @@ La aplicación debe tener el permiso **ReadItem** especificado en su manifiesto 
 
 En el modo de redacción debe llamar al método [`saveAsync`](Office.context.mailbox.item#saveAsync) antes de poder usar el miembro `ewsUrl`. Su aplicación debe tener permisos **ReadWriteItem** para llamar al método `saveAsync`.
 
-##### <a name="type:"></a>Tipo:
+##### <a name="type"></a>Tipo:
 
 *   String
 
@@ -48,13 +50,15 @@ En el modo de redacción debe llamar al método [`saveAsync`](Office.context.mai
 
 ### <a name="methods"></a>Métodos
 
-####  <a name="converttoewsid(itemid,-restversion)-→-{string}"></a>convertToEwsId(itemId, restVersion) → {String}
+####  <a name="converttoewsiditemid-restversion--string"></a>convertToEwsId(itemId, restVersion) → {String}
 
 Convierte un identificador de elemento con formato para REST al formato EWS.
 
+> **Nota:** Este método no se admite en Outlook para iOS ni en Outlook para Android.
+
 Los identificadores de elemento obtenidos a través de una API de REST (como la [API de correo de Outlook](https://msdn.microsoft.com/office/office365/APi/mail-rest-operations) o [Microsoft Graph](http://graph.microsoft.io/)) usan un formato diferente al formato que usa Exchange Web Services (EWS). El método `convertToEwsId` convierte un identificador con formato REST al formato adecuado para EWS.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -69,7 +73,7 @@ Los identificadores de elemento obtenidos a través de una API de REST (como la 
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restringido|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-##### <a name="returns:"></a>Valores devueltos:
+##### <a name="returns"></a>Valores devueltos:
 
 Tipo: String
 
@@ -84,7 +88,7 @@ var restId = 'AAMkAGVlOTZjNTM3LW...';
 var ewsId = Office.context.mailbox.convertToEwsId(restId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-####  <a name="converttolocalclienttime(timevalue)-→-{[localclienttime](simple-types.md#localclienttime)}"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
+####  <a name="converttolocalclienttimetimevalue--localclienttimesimple-typesmdlocalclienttime"></a>convertToLocalClientTime(timeValue) → {[LocalClientTime](simple-types.md#localclienttime)}
 
 Obtiene un diccionario con información de tiempo en el tiempo del cliente local.
 
@@ -92,7 +96,7 @@ Las fechas y horas usadas por una aplicación de correo para Outlook o Outlook W
 
 Si se está ejecutando la aplicación de correo en Outlook, el método `convertToLocalClientTime` devolverá un objeto de diccionario con los valores establecidos para la zona horaria del equipo cliente. Si se está ejecutando la aplicación de correo en Outlook Web App, el método `convertToLocalClientTime` devolverá un objeto de diccionario con los valores establecidos para la zona horaria especificada en el CEF.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -106,17 +110,19 @@ Si se está ejecutando la aplicación de correo en Outlook, el método `convertT
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-##### <a name="returns:"></a>Valores devueltos:
+##### <a name="returns"></a>Valores devueltos:
 
 Tipo: [LocalClientTime](simple-types.md#localclienttime)
 
-####  <a name="converttorestid(itemid,-restversion)-→-{string}"></a>convertToRestId(itemId, restVersion) → {String}
+####  <a name="converttorestiditemid-restversion--string"></a>convertToRestId(itemId, restVersion) → {String}
 
 Convierte un identificador de elemento con formato para EWS al formato REST.
 
+> **Nota:** Este método no se admite en Outlook para iOS ni en Outlook para Android.
+
 Los identificadores de elemento obtenidos a través de EWS o de la propiedad `itemId` usan un formato diferente al formato que usan las API de REST (como la [API de correo de Outlook](https://msdn.microsoft.com/office/office365/APi/mail-rest-operations) o [Microsoft Graph](http://graph.microsoft.io/)). El método `convertToRestId` convierte un identificador con formato EWS al formato adecuado para REST.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -131,7 +137,7 @@ Los identificadores de elemento obtenidos a través de EWS o de la propiedad `it
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| Restringido|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-##### <a name="returns:"></a>Valores devueltos:
+##### <a name="returns"></a>Valores devueltos:
 
 Tipo: String
 
@@ -146,13 +152,13 @@ var ewsId = Office.context.mailbox.item.itemId;
 var restId = Office.context.mailbox.convertToRestId(ewsId, Office.MailboxEnums.RestVersion.v2_0);
 ```
 
-####  <a name="converttoutcclienttime(input)-→-{date}"></a>convertToUtcClientTime(input) → {Date}
+####  <a name="converttoutcclienttimeinput--date"></a>convertToUtcClientTime(input) → {Date}
 
 Obtiene un objeto Date del diccionario que contiene información de tiempo.
 
 El método `convertToUtcClientTime` convierte un diccionario que contiene la fecha y la hora locales en un objeto Date con los valores correctos para la fecha y la hora locales.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -166,7 +172,7 @@ El método `convertToUtcClientTime` convierte un diccionario que contiene la fec
 |[Nivel de permisos mínimo](../../docs/outlook/understanding-outlook-add-in-permissions.md)| ReadItem|
 |Modo de Outlook aplicable| Redacción o lectura|
 
-##### <a name="returns:"></a>Valores devueltos:
+##### <a name="returns"></a>Valores devueltos:
 
 Objeto Date con el tiempo expresado en UTC.
 
@@ -178,9 +184,11 @@ Objeto Date con el tiempo expresado en UTC.
 
 </dl>
 
-####  <a name="displayappointmentform(itemid)"></a>displayAppointmentForm(itemId)
+####  <a name="displayappointmentformitemid"></a>displayAppointmentForm(itemId)
 
 Muestra una cita de calendario existente.
+
+> **Nota:** Este método no se admite en Outlook para iOS ni en Outlook para Android.
 
 El método `displayAppointmentForm` abre una cita de calendario existente en una nueva ventana del escritorio o en un cuadro de diálogo en los dispositivos móviles.
 
@@ -190,7 +198,7 @@ En Outlook Web App, este método abre el formato especificado solo si el cuerpo 
 
 Si el identificador de elemento especificado no identifica una cita existente, se abrirá una página en blanco en el dispositivo o equipo cliente y no se generará ningún mensaje de error.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -210,9 +218,11 @@ Si el identificador de elemento especificado no identifica una cita existente, s
 Office.context.mailbox.displayAppointmentForm(appointmentId);
 ```
 
-####  <a name="displaymessageform(itemid)"></a>displayMessageForm(itemId)
+####  <a name="displaymessageformitemid"></a>displayMessageForm(itemId)
 
 Muestra un mensaje existente.
+
+> **Nota:** Este método no se admite en Outlook para iOS ni en Outlook para Android.
 
 El método `displayMessageForm` abre un mensaje existente en una nueva ventana del escritorio o en un cuadro de diálogo en los dispositivos móviles.
 
@@ -222,7 +232,7 @@ Si el identificador de elemento especificado no identifica un mensaje existente,
 
 No use el valor `displayMessageForm` con un `itemId` que represente una cita. Use el método `displayAppointmentForm` para mostrar una cita existente y `displayNewAppointmentForm` para mostrar un formulario para crear una cita nueva.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -242,9 +252,11 @@ No use el valor `displayMessageForm` con un `itemId` que represente una cita. Us
 Office.context.mailbox.displayMessageForm(messageId);
 ```
 
-#### <a name="displaynewappointmentform(parameters)"></a>displayNewAppointmentForm(parameters)
+#### <a name="displaynewappointmentformparameters"></a>displayNewAppointmentForm(parameters)
 
-Muestra un formulario para crear una cita de calendario.
+Muestra un formulario para crear una nueva cita de calendario.
+
+> **Nota:** Este método no se admite en Outlook para iOS ni en Outlook para Android.
 
 El método `displayNewAppointmentForm` abre un formulario que permite al usuario crear una nueva cita o reunión. Si se especifican parámetros, los campos de formulario de cita se rellenan automáticamente con el contenido de los parámetros.
 
@@ -254,7 +266,7 @@ En el cliente enriquecido de Outlook y Outlook RT, si se especifica cualquier as
 
 Si cualquiera de los parámetros supera los límites de tamaño especificados o si se especifica un nombre de parámetro desconocido, se genera una excepción.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Descripción|
 |---|---|---|
@@ -288,7 +300,7 @@ Office.context.mailbox.displayNewAppointmentForm(
   });
 ```
 
-#### <a name="getcallbacktokenasync(callback,-[usercontext])"></a>getCallbackTokenAsync(callback, [userContext])
+#### <a name="getcallbacktokenasynccallback-usercontext"></a>getCallbackTokenAsync(callback, [userContext])
 
 Obtiene una cadena que contiene un token usado para obtener datos adjuntos o un elemento de Exchange Server.
 
@@ -300,7 +312,7 @@ La aplicación debe tener el permiso **ReadItem** especificado en su manifiesto 
 
 En el modo de redacción debe llamar al método [`saveAsync`](Office.context.mailbox.item#saveAsync) para obtener un identificador de elemento para pasar al método `getCallbackTokenAsync`. Su aplicación debe tener permisos **ReadWriteItem** para llamar al método `saveAsync`.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -327,13 +339,13 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="getuseridentitytokenasync(callback,-[usercontext])"></a>getUserIdentityTokenAsync(callback, [userContext])
+####  <a name="getuseridentitytokenasynccallback-usercontext"></a>getUserIdentityTokenAsync(callback, [userContext])
 
 Obtiene un token que identifica al usuario y al complemento de Office.
 
 El método `getUserIdentityTokenAsync` devuelve un token que puede usar para identificar y [autenticar el complemento y el usuario mediante un sistema de terceros](https://msdn.microsoft.com/EN-US/library/office/fp179828.aspx).
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|
@@ -361,9 +373,11 @@ function cb(asyncResult) {
 }
 ```
 
-####  <a name="makeewsrequestasync(data,-callback,-[usercontext])"></a>makeEwsRequestAsync(data, callback, [userContext])
+####  <a name="makeewsrequestasyncdata-callback-usercontext"></a>makeEwsRequestAsync(data, callback, [userContext])
 
 Realiza una solicitud asincrónica a un servicio de Servicios Web Exchange (EWS) en el servidor Exchange que hospeda el buzón del usuario.
+
+> **Nota:** Este método no se admite en Outlook para iOS ni en Outlook para Android.
 
 El método `makeEwsRequestAsync` envía una solicitud de EWS en nombre del complemento a Exchange.
 
@@ -389,7 +403,7 @@ Si usa el método `makeEwsRequestAsync` en aplicaciones de correo que se ejecuta
 
 No es necesario establecer el valor de codificación si la aplicación de correo se ejecuta en Outlook en la web. Puede averiguar si su aplicación de correo se ejecuta en Outlook o en Outlook en la web usando la propiedad mailbox.diagnostics.hostName. Para averiguar qué versión de Outlook se está ejecutando, use la propiedad mailbox.diagnostics.hostVersion.
 
-##### <a name="parameters:"></a>Parámetros:
+##### <a name="parameters"></a>Parámetros:
 
 |Nombre| Tipo| Atributos| Descripción|
 |---|---|---|---|

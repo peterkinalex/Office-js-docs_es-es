@@ -19,13 +19,12 @@ A continuación, se indican los requisitos previos para crear un complemento de 
      >**Nota** Project Standard 2013 también puede hospedar complementos de panel de tareas, pero no puede iniciar sesión en Project Web App.
 - Visual Studio 2015 con Office Developer Tools para Visual Studio incluye plantillas para la creación de Complementos de Office y SharePoint. Asegúrese de haber instalado la versión más reciente de Office Developer Tools. Vea la sección  _Herramientas_ en [Descargas de complementos para Office y SharePoint](http://msdn.microsoft.com/en-us/office/apps/fp123627.aspx).
     
-     >**Nota** Napa no se puede usar para crear complementos de panel de tareas de Project 2013.
 - Los procedimientos y ejemplos de códigos de este artículo dan acceso al servicio  **ProjectData** de Project Server 2013 en un dominio local. Los métodos jQuery de este artículo no funcionan con Project Online.
     
     Comprobar que el servicio **ProjectData** sea accesible desde el equipo de desarrollo
     
 
-### <a name="procedure-1.-to-verify-that-the-projectdata-service-is-accessible"></a>Procedimiento 1. Comprobar que el servicio ProjectData sea accesible
+### <a name="procedure-1-to-verify-that-the-projectdata-service-is-accessible"></a>Procedimiento 1. Comprobar que el servicio ProjectData sea accesible
 
 
 1- Para permitir que el explorador muestre directamente los datos XML desde una consulta de REST, deshabilite la vista de lectura de fuentes. Para más información sobre cómo hacer esto en Internet Explorer, vea el procedimiento 1, paso 4 en [Consulta de fuentes OData de datos de informes de Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
@@ -62,7 +61,7 @@ Office Developer Tools para Visual Studio incluye una plantilla para complemento
 - El proyecto web se denomina  **HelloProjectODataWeb**. Incluye páginas web, archivos JavaScript, archivos CSS, imágenes, referencias y archivos de configuración para el contenido web en el panel de tareas. El proyecto web se orienta a .NET Framework 4. En los procedimientos 4 y 5 se muestra cómo modificar los archivos en el proyecto web para crear la funcionalidad del complemento  **HelloProjectOData**.
     
 
-### <a name="procedure-2.-to-create-the-helloprojectodata-add-in-for-project"></a>Procedimiento 2. Crear el complemento HelloProjectOData para Project
+### <a name="procedure-2-to-create-the-helloprojectodata-add-in-for-project"></a>Procedimiento 2. Crear el complemento HelloProjectOData para Project
 
 
 1. Ejecute Visual Studio 2015 como administrador y después seleccione  **Nuevo proyecto** en la página Inicio.
@@ -102,7 +101,7 @@ El manifiesto para el proyecto  **HelloProjectOData** es el archivo HelloProject
 Para más información sobre el manifiesto, vea [Manifiesto XML de complementos de Office](../../docs/overview/add-in-manifests.md) y [Referencia de esquema para manifiestos de complementos de Office (versión 1.1)](../overview/add-in-manifests.md).
 
 
-### <a name="procedure-3.-to-modify-the-add-in-manifest"></a>Procedimiento 3. Modificar el manifiesto del complemento
+### <a name="procedure-3-to-modify-the-add-in-manifest"></a>Procedimiento 3. Modificar el manifiesto del complemento
 
 
 1. En Visual Studio, abra el archivo HelloProjectOData.xml.
@@ -164,7 +163,7 @@ En el panel de tareas, el nombre para mostrar del complemento, que es el valor d
      >**Nota** En este ejemplo, los datos de costo y de trabajo para el proyecto activo se derivan de los valores publicados. Si cambia los valores en Project, el servicio **ProjectData** no tiene los cambios hasta que se publique el proyecto.
 
 
-### <a name="procedure-4.-to-create-the-html-content"></a>Procedimiento 4. Crear el contenido HTML
+### <a name="procedure-4-to-create-the-html-content"></a>Procedimiento 4. Crear el contenido HTML
 
 1. En el elemento  **head** del archivo Home.html, agregue todos los elementos **link** adicionales para los archivos CSS que el complemento use. La plantilla de proyecto de Visual Studio incluye un vínculo para el archivo App.css que puede usar para los estilos CSS personalizados.
     
@@ -281,7 +280,7 @@ JavaScript incluye constantes globales para la consulta de REST y variables glob
 El resto del archivo HelloProjectOData.js incluye dos funciones: la función  **retrieveOData** se llama cuando el usuario selecciona **Comparar todos los proyectos**; y la función  **parseODataResult** calcula promedios y después rellena la tabla comparativa con valores que tienen formatos de color y unidades.
 
 
-### <a name="procedure-5.-to-create-the-javascript-code"></a>Procedimiento 5. Crear el código JavaScript
+### <a name="procedure-5-to-create-the-javascript-code"></a>Procedimiento 5. Crear el código JavaScript
 
 
 1. Elimine todo el código del archivo HelloProjectOData.js predeterminado y después agregue las variables globales y la función  **Office.initialize**. Los nombres de las variables que están escritos todos en mayúscula indican que son constantes; se usan más adelante con la variable  **_pwa** para crear la consulta de REST en este ejemplo.
@@ -568,7 +567,7 @@ Las pruebas básicas deben incluir lo siguiente:
 - Ejecute el complemento nuevamente y cree un proyecto que tenga tareas con datos de costo y trabajo. Puede guardar el proyecto en Project Web App, pero no lo publique. Compruebe que el complemento muestre datos de Project Server, pero que aparezca  **ND** para el proyecto actual.
     
 
-### <a name="procedure-6.-to-test-the-add-in"></a>Procedimiento 6. Probar el complemento
+### <a name="procedure-6-to-test-the-add-in"></a>Procedimiento 6. Probar el complemento
 
 
 1. Ejecute Project Profesional 2013, conéctese con Project Web App y después cree un proyecto de prueba. Asigne tareas a recursos locales o empresariales, establezca diversos valores de porcentaje completado en algunas tareas y después publique el proyecto. Salga de Project, lo que permitirá que Visual Studio inicie Project para depurar el complemento.
@@ -579,7 +578,7 @@ Las pruebas básicas deben incluir lo siguiente:
     
     **Figura 4: Iniciar el complemento HelloProjectOData**
 
-    ![Prueba de la aplicación HelloprojectOData](../../images/pj15_HelloProjectData_TestTheApp.png)
+    ![Probar la aplicación HelloprojectOData](../../images/pj15_HelloProjectData_TestTheApp.png)
 
 4. En el panel de tareas  **Hola ProjectData**, seleccione  **Obtener extremo de ProjectData**. La línea  **projectDataEndPoint** debe mostrar la dirección URL del servicio **ProjectData** y el botón **Comparar todos los proyectos** debe estar habilitado (vea la figura 5).
     
@@ -587,7 +586,7 @@ Las pruebas básicas deben incluir lo siguiente:
     
     **Figura 5: Visualización de los resultados de la consulta de REST**
 
-    ![Visualización de los resultados de la consulta de REST](../../images/pj15_HelloProjectData_RESTresults.gif)
+    ![Vista de los resultados de la consulta de REST](../../images/pj15_HelloProjectData_RESTresults.gif)
 
 6. Revise el resultado en el cuadro de texto. Debería mostrar la ruta del documento, la consulta de REST, la información de estado y los resultados JSON de las llamadas a  **ajax** y **parseODataResult**. El resultado ayuda a entender, crear y depurar código en el método  **parseODataResult**, como por ejemplo  `projCost += Number(res.d.results[i].ProjectCost);`.
     
@@ -665,8 +664,7 @@ Aun cuando el complemento haya funcionado correctamente en las pruebas anteriore
 - Si modifica el complemento y lo publica, debe ejecutar pruebas similares nuevamente con el complemento publicado. Para otras consideraciones, vea [Pasos siguientes](#next-steps).
     
 
- >
-  **Nota**  Existen límites para la cantidad de datos que se pueden devolver en una consulta del servicio  **ProjectData** y varían según la entidad. Por ejemplo, el conjunto de entidades **Projects** tiene un límite predeterminado de 100 proyectos por consulta, pero el límite predeterminado de **Risks** es de 200. En una instalación de producción, el código del ejemplo **HelloProjectOData** se tendría que modificar para habilitar consultas de más de 100 proyectos. Si desea más información, consulte [Pasos siguientes](#next-steps) y [Consulta de fuentes OData de datos de informes de Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
+ >**Nota**  Existen límites para la cantidad de datos que se pueden devolver en una consulta del servicio  **ProjectData** y varían según la entidad. Por ejemplo, el conjunto de entidades **Projects** tiene un límite predeterminado de 100 proyectos por consulta, pero el límite predeterminado de **Risks** es de 200. En una instalación de producción, el código del ejemplo **HelloProjectOData** se tendría que modificar para habilitar consultas de más de 100 proyectos. Si desea más información, consulte [Pasos siguientes](#next-steps) y [Consulta de fuentes OData de datos de informes de Project](http://msdn.microsoft.com/library/3eafda3b-f006-48be-baa6-961b2ed9fe01%28Office.15%29.aspx).
 
 
 ## <a name="example-code-for-the-helloprojectodata-add-in"></a>Ejemplo de código para el complemento HelloProjectOData
@@ -1129,9 +1127,9 @@ Si modifica el complemento  **HelloProjectOData** para el uso en producción, si
 
 - Vuelva a escribir la función **retrieveOData** para habilitar las consultas de más de 100 proyectos. Por ejemplo, puede obtener el número de proyectos con una consulta `~/ProjectData/Projects()/$count` y usar los operadores _$skip_ y _$top_ en la consulta de REST para los datos del proyecto. Ejecute varias consultas en un bucle y, después, calcule el promedio de los datos de cada consulta. Cada consulta de datos del proyecto tendrá la forma siguiente: `~/ProjectData/Projects()?skip= [numSkipped]&amp;$top=100&amp;$filter=[filter]&amp;$select=[field1,field2, ???????]`.
     
-    Para obtener más información, consulte [Opciones de la consulta del sistema OData mediante el punto de conexión de REST](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). También puede usar el comando [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) en Windows PowerShell para reemplazar el tamaño de página predeterminado para una consulta del conjunto de entidades **Proyectos** (o cualquiera de los 33 conjuntos de entidades). Consulte [ProjectData: referencia del servicio OData de Project](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
+    For more information, see [OData System Query Options Using the REST Endpoint](http://msdn.microsoft.com/library/8a938b9b-7fdb-45a3-a04c-4d2d5cf2e353.aspx). You can also use the [Set-SPProjectOdataConfiguration](http://technet.microsoft.com/library/jj219516%28v=office.15%29.aspx) command in Windows PowerShell to override the default page size for a query of the **Projects** entity set (or any of the 33 entity sets). See [ProjectData - Project OData service reference](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx).
     
-- Para implementar el complemento, consulte [Publicar el complemento para Office](../publish/publish.md).
+- Para implementar el complemento, vea [Publicar el complemento para Office](../publish/publish.md).
     
 
 ## <a name="additional-resources"></a>Recursos adicionales
@@ -1142,8 +1140,7 @@ Si modifica el complemento  **HelloProjectOData** para el uso en producción, si
     
 - [Crear el primer complemento de panel de tareas para Project 2013 con un editor de texto](../project/create-your-first-task-pane-add-in-for-project-by-using-a-text-editor.md)
     
-- 
-  [ProjectData: referencia del servicio OData de Project](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
+- [ProjectData: referencia del servicio OData de Project](http://msdn.microsoft.com/library/1ed14ee9-1a1a-4960-9b66-c24ef92cdf6b%28Office.15%29.aspx)
     
 - [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md)
     
