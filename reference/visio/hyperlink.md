@@ -1,13 +1,13 @@
 # <a name="hyperlink-object-javascript-api-for-visio"></a>Objeto de hipervínculo (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio no están disponibles actualmente para su uso en entornos de producción o de versión preliminar.
+>**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
 Representa el hipervínculo.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Comentarios|
+| Propiedad       | Tipo    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:---|
 |dirección|string|Obtiene la dirección del objeto de hipervínculo. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
 |descripción|string|Obtiene la descripción de un hipervínculo. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-description)|
@@ -37,7 +37,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
@@ -54,7 +54,7 @@ Visio.run(function (ctx) {
         console.log(hyperlink.description);
         console.log(hyperlink.address);
         console.log(hyperlink.subAddress);
-    });
+     });
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {

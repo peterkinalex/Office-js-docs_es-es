@@ -64,4 +64,4 @@ function writeText(event) {
 }
 ```
 
- >**Importante** La llamada a **event.completed** indica que se ha controlado correctamente el evento. Cuando se llama a una función varias veces, como puede ser haciendo varios clics en el mismo comando de complemento, se ponen automáticamente en cola de todos los eventos. El primer evento se ejecuta automáticamente, mientras que los demás eventos permanecen en la cola. Cuando la función llama a **event.completed**, se ejecuta la siguiente llamada en cola a esa función. Debe implementar **event.completed**; de lo contrario, no se ejecutará la función.
+ >**Importante** La llamada a **event.completed** indica que se ha controlado correctamente el evento. Cuando se llama a una función varias veces, como puede ser haciendo varios clics en el mismo comando de complemento, se ponen automáticamente en cola de todos los eventos. El primer evento se ejecuta automáticamente, mientras que los demás eventos permanecen en la cola. Cuando la función llama a **event.completed**, se ejecuta la siguiente llamada en cola a esa función. Es necesario llamar a **event.completed**; de lo contrario, no se ejecutará la función.

@@ -16,6 +16,8 @@ Los complementos son una gran manera de que los partners extiendan las funciones
 
     El complemento debe diseñarse mediante patrones nativos para la plataforma en la que Outlook se está ejecutando. Para conseguirlo, asegúrese de respetar e implementar la interacción y las instrucciones visuales que establece cada plataforma. Outlook tiene sus propias instrucciones y también es importante tenerlas en cuenta. Un complemento bien diseñado será una combinación apropiada de su experiencia, de la plataforma y de Outlook.
 
+    Significa que el complemento tendrá que ser visualmente diferente cuando se ejecute en Outlook para iOS y en Outlook para Android (cuando lancemos la compatibilidad para dicha versión). Es recomendable echar un vistazo a [Framework7](https://framework7.io/) para obtener ayuda con el estilo. Publicaremos pautas actualizadas, sobre todo para Android, conforme nos acerquemos al lanzamiento de la compatibilidad con complementos de Outlook para Android.
+
 3. **Haga que sea agradable de usar y obtenga los detalles correctos**
 
     Los usuarios disfrutan usando productos que son atractivos a nivel funcional y visual. Puede ayudar a garantizar el éxito de su complemento diseñando una experiencia en la que haya considerado cuidadosamente cada detalle visual y de interacción. Los pasos necesarios para completar una tarea deben ser claros y relevantes. Idealmente, ninguna acción debe necesitar más de uno o dos clics. Intente no sacar al usuario de contexto para completar una acción. Un usuario debe poder entrar y salir fácilmente del complemento y volver a lo que estuviera realizando anteriormente. Un complemento no pretende ser un destino en el que invertir mucho tiempo; es una mejora de nuestras características principales. Si se ha realizado correctamente, el complemento nos ayudará a cumplir con el objetivo de que los usuarios sean más productivos.
@@ -28,7 +30,7 @@ Los complementos son una gran manera de que los partners extiendan las funciones
 
 > **Nota:** Aunque los principios anteriores se aplican a todos los puntos de conexión y plataformas, los siguientes patrones y ejemplos son específicos de complementos móviles en la plataforma de iOS.
 
-Para ayudarle a crear un complemento bien diseñado, tenemos [plantillas](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/tree/master/Helpful%20Templates/Outlook%20Mobile/iOS) que contienen patrones móviles de iOS que funcionan dentro del entorno de Outlook Mobile. Aprovechar estos patrones específicos ayudará a garantizar que su complemento se sienta nativo en la plataforma de iOS y en Outlook Mobile. Estos patrones también se detallan a continuación. Aunque no es exhaustivo, este es el comienzo de una biblioteca que seguiremos creando hasta que revelemos partners de paradigmas adicionales que quieran incluir en sus complementos.  
+Para ayudarle a crear un complemento bien diseñado, tenemos [plantillas](https://github.com/OfficeDev/Office-Add-in-UX-Design-Patterns/tree/master/Helpful%20Templates/Outlook%20Mobile) que contienen patrones móviles de iOS que funcionan dentro del entorno de Outlook Mobile. Aprovechar estos patrones específicos ayudará a garantizar que su complemento se sienta nativo en la plataforma de iOS y en Outlook Mobile. Estos patrones también se detallan a continuación. Aunque no es exhaustivo, este es el comienzo de una biblioteca que seguiremos creando hasta que revelemos partners de paradigmas adicionales que quieran incluir en sus complementos.  
 
 ### <a name="overview"></a>Información general
 

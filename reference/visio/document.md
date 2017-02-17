@@ -1,7 +1,7 @@
 # <a name="document-object-javascript-api-for-visio"></a>Objeto Document (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio no están disponibles actualmente para su uso en entornos de producción o de versión preliminar.
+>**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
 Representa la clase Document.
 
@@ -10,7 +10,7 @@ Representa la clase Document.
 Ninguno
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción| Comentarios|
+| Relación | Tipo    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:---|
 |aplicación|[Application](application.md)|Representa una instancia de aplicación de Visio que contiene este documento. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-application)|
 |pages|[PageCollection](pagecollection.md)|Representa una colección de páginas asociadas con el documento. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-pages)|
@@ -67,7 +67,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
@@ -83,9 +83,9 @@ documentObject.setActivePage(PageName);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
-|PageName|cadena|Nombre de la página|
+|PageName|string|Nombre de la página|
 
 #### <a name="returns"></a>Valores devueltos
 void

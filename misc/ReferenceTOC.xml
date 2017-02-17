@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|OneNote|PowerPoint|Project|Access|" SupportedVersion="|V1.3|V1.2|V1.1|">
-	<Item text="Manifiesto" url="manifest">
+<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|Word|Excel|Outlook|OneNote|PowerPoint|Project|Access|Visio" SupportedVersion="|V1.3|V1.2|V1.1|">
+	<Item text="Manifiesto" url="manifest" Scope="excel, word, powerpoint, project, outlook, onenote, access">
 		<Item text="AllowSnapshot" url="manifest/allowsnapshot" Scope="excel, powerpoint" SEODescription="Especifica si una imagen de instantánea de su complemento de contenido debe guardarse con el documento host." />
 		<Item text="AlternateId" url="manifest/alternateid" Scope="excel, word, powerpoint, access, project" SEODescription="Especifica el id. alternativo para su complemento de Office tal y como lo emite la Tienda Office." />
 		<Item text="AppDomain" url="manifest/appdomain" SEODescription="Especifica un dominio adicional que se usará para cargar páginas en la ventana del complemento." />
@@ -286,7 +286,22 @@
 		<Item text="Image" url="onenote/image" SEODescription="Referencia de los complementos de OneNote." />
 		<Item text="Conjuntos de requisitos de la API de JavaScript de OneNote" url="requirement-sets/onenote-api-requirement-sets" SEODescription="Obtenga información sobre los conjuntos de requisitos de OneNote, las aplicaciones de host de Office que admiten esos conjuntos de requisitos y las versiones de la compilación o fecha de disponibilidad." />
 	</Item>
-	<Item text="API compartida" url="shared/shared-api">
+	<Item text="Visio" url="visio/visio-javascript-reference-overview" Scope="visio"> 
+		<Item text="Aplicación" url="visio/application" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="Documento" url="visio/document" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="Hipervínculo" url="visio/hyperlink" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="loadOption" url="visio/loadoption" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="Página" url="visio/page" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="PageCollection" url="visio/pagecollection" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="Vista de página" url="visio/pageview" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="Shape" url="visio/shape" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="ShapeCollection" url="visio/shapecollection" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="ShapeDataItem" url="visio/shapedataitem" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="ShapeView" url="visio/shapeview" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+	</Item> 
+	<Item text="API compartida" url="shared/shared-api" Scope="excel, word, powerpoint, project, outlook, onenote, access">
 		<Item text="API de JavaScript para Office" url="javascript-api-for-office" SEODescription="La API de JavaScript para Office incluye objetos, métodos, propiedades, eventos y enumeraciones que se pueden usar en el código de sus complementos de Office." />
 		<Item text="Novedades en la API de JavaScript para Office" url="what's-changed-in-the-javascript-api-for-office" SEODescription="La API de JavaScript para Office se actualiza periódicamente con objetos, métodos, propiedades, eventos y enumeraciones nuevos y actualizados para ampliar la funcionalidad de los complementos de Office." />
 		<Item text="Conjuntos de requisitos comunes de Office" url="requirement-sets/office-add-in-requirement-sets" SEODescription="Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o mediante una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento." />

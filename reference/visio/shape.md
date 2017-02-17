@@ -1,13 +1,13 @@
 # <a name="shape-object-javascript-api-for-visio"></a>Objeto de forma (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio no están disponibles actualmente para su uso en entornos de producción o de versión preliminar.
+>**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
 Representa la clase Shape.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Comentarios|
+| Propiedad       | Tipo    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:---|
 |id|int|Identificador de la forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-id)|
 |name|string|Nombre de la forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-name)|
@@ -17,7 +17,7 @@ Representa la clase Shape.
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción| Comentarios|
+| Relación | Tipo    |Descripción| Comentarios|
 |:---------------|:--------|:----------|:---|
 |hipervínculos|[HyperlinkCollection](hyperlinkcollection.md)|Devuelve la colección hipervínculos para un objeto de forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-hyperlinks)|
 |shapeDataItems|[ShapeDataItemCollection](shapedataitemcollection.md)|Devuelve la sección de datos de la forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-shapeDataItems)|
@@ -41,7 +41,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 

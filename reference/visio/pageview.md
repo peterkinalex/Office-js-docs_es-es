@@ -1,9 +1,9 @@
 # <a name="pageview-object-javascript-api-for-visio"></a>Objeto PageView (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio no están disponibles actualmente para su uso en entornos de producción o de versión preliminar.
+>**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
-Representa la clase PageView
+Representa la clase de vista de página.
 
 ## <a name="properties"></a>Propiedades
 
@@ -36,7 +36,7 @@ pageViewObject.centerViewportOnShape(ShapeId);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |ShapeId|número|ShapeId para que se vea en el centro.|
 
@@ -82,7 +82,7 @@ pageViewObject.isShapeInViewport(Shape);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |Shape|Shape|Forma que se va a comprobar.|
 
@@ -98,7 +98,7 @@ object.load(param);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
@@ -106,7 +106,7 @@ object.load(param);
 vacío
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |Posición|Posición|Objeto de posición que especifica la nueva posición de la página en la vista.|
 

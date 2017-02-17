@@ -14,7 +14,7 @@ Solo necesita cinco participantes para revelar la mayoría de problemas de uso d
 
 > **Nota:** Recomendamos que pruebe la facilidad de uso de su complemento en varias plataformas. Para [publicar su complemento en la Tienda Office](https://msdn.microsoft.com/en-us/library/office/jj220037.aspx), este debe funcionar en todas las [plataformas que admiten los métodos que define](https://dev.office.com/add-in-availability).
 
-## <a name="1---sign-up-for-a-testing-service"></a>1.   Registrarse en un servicio de pruebas
+## <a name="1----sign-up-for-a-testing-service"></a>1.    Registrarse en un servicio de pruebas
 
 Para obtener más información, vea [Selecting an Online Tool for Unmoderated Remote User Testing (Seleccionar una herramienta en línea para realizar pruebas de usuario remoto sin moderar)](https://www.nngroup.com/articles/unmoderated-user-testing-tools/).
 
@@ -58,23 +58,23 @@ El discriminador es el conjunto de preguntas y requisitos que presentará a los 
 Por ejemplo, si quiere encontrar participantes que estén familiarizados con GitHub, para filtrar usuarios que puedan tergiversar su identidad, incluya errores en la lista de posibles respuestas.
 
 **¿Con cuáles de los siguientes repositorios de código fuente está familiarizado?**  
- a. SourceShelf [*Rechazar*]  
- b. CodeContainer [*Rechazar*]  
- c. GitHub [*Debe seleccionar*]  
- d. BitBucket [*Puede seleccionar*]  
- e. CloudForge [*Puede seleccionar*]  
+ a.    SourceShelf [*Rechazar*]  
+ b.    CodeContainer [*Rechazar*]  
+ c.    GitHub [*Debe seleccionar*]  
+ d.    BitBucket [*Puede seleccionar*]  
+ e.    CloudForge [*Puede seleccionar*]  
 
 
 Si está planeando probar una compilación en directo de su complemento, las siguientes preguntas pueden seleccionar usuarios que puedan hacer esto. 
 
    **Esta prueba necesita que tenga Microsoft PowerPoint 2016. ¿Tiene PowerPoint 2016?**  
-   a.   Sí [*Debe seleccionar*]  
-   b.   No [*Rechazar*]  
-   c.   No lo sé [*Rechazar*]  
+   a.    Sí [*Debe seleccionar*]  
+   b.    No [*Rechazar*]  
+   c.    No lo sé [*Rechazar*]  
 
    **Esta prueba necesita que instale un complemento gratuito para PowerPoint 2016 y que cree una cuenta gratuita para usarlo. ¿Está dispuesto a instalar un complemento y crear una cuenta gratuita?**  
-    a.  Sí [*Debe seleccionar*]  
-    b.  No [*Rechazar*]  
+    a.    Sí [*Debe seleccionar*]  
+    b.    No [*Rechazar*]  
 
 Para obtener más información, vea [Screener Questions Best Practices (Procedimientos recomendados de preguntas del discriminador)](http://help.usertesting.com/customer/en/portal/articles/2077835-screener-question-best-practices).
  

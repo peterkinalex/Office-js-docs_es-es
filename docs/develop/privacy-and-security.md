@@ -72,12 +72,12 @@ Si quiere que sus complementos de Office estén disponibles para el público, pu
 - Admite un sistema de revisión del usuario para que los complementos disponibles promuevan una comunidad autocontrolada.
     
 
-## <a name="addressing-end-users'-privacy-concerns"></a>Solucionar las dudas sobre privacidad de los usuarios finales
+## <a name="addressing-end-users-privacy-concerns"></a>Solucionar las dudas sobre privacidad de los usuarios finales
 
 Esta sección responde a las dudas sobre privacidad de los usuarios relacionadas con el uso de complementos de Office. En primer lugar, se describe la protección que ofrece la plataforma de complementos de Office desde el punto de vista del cliente (usuario final). Después, proporciona al desarrollador instrucciones sobre cómo cumplir las expectativas de los usuarios y cómo administrar de forma segura la información de identificación personal (DCP) de estos. 
 
 
-### <a name="end-users'-perspective"></a>Perspectiva del usuario final
+### <a name="end-users-perspective"></a>Perspectiva del usuario final
 
 Los complementos de Office se diseñan con tecnologías web que se ejecutan en un control del explorador o **iframe**. Por este motivo, el uso de los complementos resulta muy similar a la exploración de sitios web en Internet o en una intranet. Los complementos pueden ser externos a una organización (si se adquieren en la Tienda Office) o internos (si adquiere el complemento en un catálogo de complementos de Exchange Server o SharePoint, o en un recurso compartido de archivos de una organización). Los complementos tienen acceso limitado a la red y la mayoría de ellos puede escribir o leer en el elemento de correo o documento activo. La plataforma del complemento aplicará ciertas restricciones antes de que un usuario o un administrador instale o inicie un complemento. Pero, al igual que ocurre con cualquier modelo de extensibilidad, los usuarios tienen que tomar precauciones antes de iniciar un complemento desconocido.
 
@@ -115,7 +115,7 @@ Los desarrolladores y administradores de TI encontrarán directrices generales p
 - Si almacena datos de DCP de los usuarios, asegúrese de comunicárselo y de ofrecer una forma para que puedan revisarlos y eliminarlos si así lo prefieren. Si envía el complemento a la Tienda Office, puede explicar brevemente cuáles son los datos que recopila y el uso que realiza de ellos en la declaración de privacidad.
     
 
-## <a name="developers'-permission-choices-and-security-practices"></a>Opciones de permisos y procedimientos de seguridad para desarrolladores
+## <a name="developers-permission-choices-and-security-practices"></a>Opciones de permisos y procedimientos de seguridad para desarrolladores
 
 Siga estas directrices generales para disfrutar de la compatibilidad con el modelo de seguridad de complementos de Office y obtenga información detallada sobre cada tipo de complemento.
 
@@ -209,7 +209,7 @@ Para atacar el origen de un complemento, un usuario malintencionado podría escr
 - Vea [Desarrollo de complementos seguros](http://msdn.microsoft.com/en-us/library/windows/apps/hh849625.aspx) para conocer otros procedimientos recomendados para crear soluciones web más seguras.
     
 
-### <a name="tips-to-prevent-"clickjacking""></a>Sugerencias para evitar el "secuestro de clics"
+### <a name="tips-to-prevent-clickjacking"></a>Sugerencias para evitar el "secuestro de clics"
 
 Como los complementos de Office se representan en un iframe cuando se ejecutan con un explorador con aplicaciones host de Office Online, use las sugerencias siguientes para minimizar el riesgo del [secuestro de clics](http://en.wikipedia.org/wiki/Clickjacking), una técnica que usan los hackers para engañar a los usuarios con el objetivo de que revelen información confidencial.
 
@@ -226,7 +226,7 @@ A continuación verá algunos ejemplos de cómo puede conseguir la confirmación
     
 - Envíe un mensaje de texto al usuario que incluya un código de confirmación que este pueda escribir en el complemento.
     
-- Abra una nueva ventana del explorador que contenga un mensaje de confirmación.
+- Abra un diálogo de confirmación en una ventana del explorador nueva a una página que no pueda incorporar con IFrame. Suele ser el patrón que se utiliza en las páginas de inicio de sesión. Use la [API de cuadros de diálogo](https://dev.office.com/docs/add-ins/develop/dialog-api-in-office-add-ins) para crear un cuadro de diálogo. 
     
 Asegúrese también de que la dirección a través de la cual va a contactar con el usuario no procede de un posible atacante. Por ejemplo, para confirmaciones de pago, use la dirección que aparece en el archivo de la cuenta autorizada del usuario.
 
@@ -263,7 +263,7 @@ Es importante que los desarrolladores también sigan los siguientes procedimient
 Al margen de las reglas de uso de recursos, los desarrolladores de complementos de Outlook también tienen que asegurarse de que los complementos cumplen los límites a la hora de especificar las reglas de activación y usar la API de JavaScript. Para más información, vea [Límites de activación y API de JavaScript para complementos de Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx).
 
 
-## <a name="it-administrators'-control"></a>Control de administradores de TI
+## <a name="it-administrators-control"></a>Control de administradores de TI
 
 En un entorno corporativo, los administradores de TI tienen la máxima autoridad para habilitar o deshabilitar el acceso a la Tienda Office y a los catálogos privados. 
 
@@ -271,20 +271,15 @@ En un entorno corporativo, los administradores de TI tienen la máxima autoridad
 ## <a name="additional-resources"></a>Recursos adicionales
 
 
-- 
-  [Solicitar permisos para el uso de API en complementos de contenido y de panel de tareas](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
+- [Solicitar permisos para el uso de API en complementos de contenido y de panel de tareas](http://msdn.microsoft.com/library/da2efadc-4ebf-45fe-be39-397ac1eb1dbd.aspx)
     
-- 
-  [Privacidad, permisos y seguridad para los complementos de Outlook](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
+- [Privacidad, permisos y seguridad para los complementos de Outlook](http://msdn.microsoft.com/library/44208fc4-05d4-42d8-ab20-faa89624de1c.aspx)
     
-- 
-  [Comprender los permisos de los complementos de Outlook](http://msdn.microsoft.com/library/5bca69f2-b287-4e19-8f0f-78d896b2a3d3.aspx)
+- [Comprender los permisos de los complementos de Outlook](http://msdn.microsoft.com/library/5bca69f2-b287-4e19-8f0f-78d896b2a3d3.aspx)
     
-- 
-  [Límites para la activación y API de JavaScript para complementos de Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
+- [Límites para la activación y API de JavaScript para complementos de Outlook](http://msdn.microsoft.com/library/e0c9e3d0-517e-4333-b8bd-e169c51a07f6.aspx)
     
-- 
-  [Abordar las limitaciones de la directiva de mismo origen en complementos para Office](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
+- [Abordar las limitaciones de la directiva de mismo origen en complementos para Office](http://msdn.microsoft.com/library/36c800ae-1dda-4ea8-a558-37c89ffb161b.aspx)
     
 - [Directiva de mismo origen](http://www.w3.org/Security/wiki/Same_Origin_Policy)
     
