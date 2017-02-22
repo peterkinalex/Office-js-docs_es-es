@@ -1,6 +1,6 @@
 # <a name="visio-javascript-apis-reference"></a>Referencia de las API de JavaScript para Visio
 
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
+>**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción. 
 
 Puede utilizar las API de JavaScript Visio para incrustar los diagramas de Visio en SharePoint Online. Un diagrama de Visio incrustado es un diagrama que se almacena en una biblioteca de documentos de SharePoint y que se muestra en una página de SharePoint. Para incrustar un diagrama de Visio, visualícelo en un elemento HTML &lt;iframe&gt;. A continuación, puede utilizar las API de JavaScript de Visio para trabajar mediante programación con el diagrama incrustado.
 
@@ -13,18 +13,17 @@ Puede utilizar las API de JavaScript para Visio para:
 * Escribir controladores personalizados para los eventos del mouse dentro del dibujo 
 * Exponer los datos del diagrama, como texto de forma, datos de forma e hipervínculos, a su solución.
 
-Este artículo describe cómo usar las API de JavaScript para Visio con Visio Online para crear sus soluciones para SharePoint Online. Es una introducción a los conceptos clave que son fundamentales para usar las API, como **EmbeddedContext**, **RequestContext** y objetos proxy de JavaScript, **sync()**, **Visio.run()** y métodos **load()**. Los ejemplos de código muestran cómo aplicar estos conceptos.
+Este artículo describe cómo usar las API de JavaScript para Visio con Visio Online para crear sus soluciones para SharePoint Online. Es una introducción a los conceptos clave que son fundamentales para usar las API, como **EmbeddedSession**, **RequestContext** y objetos proxy de JavaScript, y los métodos **sync()**, **Visio.run()** y **load()**. Los ejemplos de código muestran cómo aplicar estos conceptos.
 
-## <a name="embeddedcontext"></a>EmbeddedContext
+## <a name="embeddedsession"></a>EmbeddedSession
 
-El objeto EmbeddedContext inicializa la comunicación entre el marco del desarrollador y el marco de Visio Online.
+El objeto EmbeddedSession inicializa la comunicación entre el marco del desarrollador y el marco de Visio Online.
 
 ```js
-OfficeExtension.Embedded.getEmbeddedContext({
-                sessionInfo: sessionInfo,
-                timeoutInMilliseconds: 60000,
-                forceRefresh: true
-            })
+       var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
+       session.init().then(function () {     
+              OfficeExtension.ClientRequestContext._overrideSession = session;
+       });
 ```
 
 ## <a name="requestcontext"></a>RequestContext
@@ -108,78 +107,62 @@ Los errores se devuelven usando un objeto de error que consta de un código y un
 Puede utilizar el ejemplo de esta sección para empezar. En este ejemplo se muestra cómo visualizar el texto de la forma de la forma seleccionada. Para empezar, cree una página en SharePoint Online o edite una página existente. Agregue un elemento web editor de scripts en la página y copie y pegue el código siguiente. Después, lo único que necesita es agregar la URL de un diagrama de Visio que esté almacenada en SharePoint Online.
 
 ```js
-<script src='https://visioonlineapi.azurewebsites.net/visio.embed.js' type='text/javascript'/> </script> 
- 
-Enter Visio File Url:<br/> 
-<script language="javascript"> 
-document.write("<input type='text' id='fileUrl' size='120'/>"); 
-document.write("<input type='button' value='InitEmbeddedFrame' onclick='initEmbeddedFrame()' />"); 
-document.write("<br />"); 
-document.write("<input type='button' value='SelectedShapeText' onclick='getSelectedShapeText()' />"); 
-document.write("<textarea id='ResultOutput' style='width:350px;height:60px'> </textarea>"); 
-document.write("<div id='iframeHost' />"); 
- 
-var textArea; 
-// Loads the Visio application and Initializes communication between developer frame and Visio online frame 
-function initEmbeddedFrame() { 
-        textArea = document.getElementById('ResultOutput'); 
- var sessionInfo = Math.random().toString(); 
- var origin = window.location["origin"] || window.location.protocol + "//" + window.location.host; 
- var iframeElement =  document.createElement("iframe"); 
- iframeElement.id = "embed-iframe"; 
- iframeElement.style.height = "900px"; 
- iframeElement.style.width = "100%"; 
- var url = document.getElementById('fileUrl').value; 
- if (!url) { 
-     window.alert("File URL should not be empty"); 
- } 
- // APIs are enabled for EmbedView action only.    
- url = url.replace("action=view","action=embedview"); 
- url = url.replace("action=interactivepreview","action=embedview"); 
-     
- iframeElement.src = url + "&EmbeddingPageOrigin=" + encodeURIComponent(origin) + "&EmbeddingPageSessionInfo=" + encodeURIComponent(sessionInfo); 
-     // load the Visio online application in Iframe     
- document.getElementById("iframeHost").appendChild(iframeElement);   
-          
-      OfficeExtension.Embedded.getEmbeddedContext({ 
-      sessionInfo: sessionInfo, 
-     timeoutInMilliseconds: 60000, 
-      forceRefresh: true 
- }).then(function (context) { 
-     // Initilization is successful  
-     OfficeExtension.Embedded._initInternalConfiguration("webembedrichapi.debug.js"); 
-     textArea.value  = "Initilization is successful"; 
-  }).catch(function (ex) { 
-           // Initilization is failed :-( 
-     textArea.value  = "Initilization is failed :-("; 
-        }); 
-     } 
- 
-// Code for getting selected Shape Text using the shapes collection object 
-function getSelectedShapeText() { 
-    Visio.run(function (ctx) {   
-    var page = ctx.document.getActivePage(); 
-     var shapes = page.shapes; 
-       shapes.load(); 
-           return ctx.sync().then(function () { 
-          textArea.value = "Please select a Shape in the Diagram"; 
-          for(var i=0; i<shapes.items.length;i++) 
-      { 
-         var shape = shapes.items[i]; 
-                if ( shape.select == true) 
-            { 
-             textArea.value = shape.text; 
-                 return; 
-                } 
-      } 
-   }); 
-     }).catch(function(error) { 
-  textArea.value = "Error: "; 
-  if (error instanceof OfficeExtension.Error) { 
-   textArea.value += "Debug info: " + JSON.stringify(error.debugInfo); 
-  } 
-    }); 
-} 
+<script src='https://visioonlineapi.azurewebsites.net/visio.js' type='text/javascript'></script>
+
+Enter Visio File Url:<br/>
+<script language="javascript">
+document.write("<input type='text' id='fileUrl' size='120'/>");
+document.write("<input type='button' value='InitEmbeddedFrame' onclick='initEmbeddedFrame()' />");
+document.write("<br />");
+document.write("<input type='button' value='SelectedShapeText' onclick='getSelectedShapeText()' />");
+document.write("<textarea id='ResultOutput' style='width:350px;height:60px'> </textarea>");
+document.write("<div id='iframeHost' />");
+
+var textArea;
+// Loads the Visio application and Initializes communication between devloper frame and Visio online frame
+function initEmbeddedFrame() {
+        textArea = document.getElementById('ResultOutput');
+    var url = document.getElementById('fileUrl').value;
+    if (!url) {
+        window.alert("File URL should not be empty");
+    }
+    // APIs are enabled for EmbedView action only.   
+    url = url.replace("action=view","action=embedview");
+    url = url.replace("action=interactivepreview","action=embedview");
+  
+       var session = new OfficeExtension.EmbeddedSession(url, { id: "embed-iframe",container: document.getElementById("iframeHost") });
+       return session.init().then(function () {
+        // Initilization is successful 
+        textArea.value  = "Initilization is successful";
+        OfficeExtension.ClientRequestContext._overrideSession = session;
+    });
+     }
+
+// Code for getting selected Shape Text using the shapes collection object
+function getSelectedShapeText() {
+    Visio.run(function (ctx) {     
+       var page = ctx.document.getActivePage();
+        var shapes = page.shapes;
+          shapes.load();
+           return ctx.sync().then(function () {
+                textArea.value = "Please select a Shape in the Diagram";
+                for(var i=0; i<shapes.items.length;i++)
+            {
+               var shape = shapes.items[i];
+                   if ( shape.select == true)
+                  {
+                   textArea.value = shape.text;
+                    return;
+                   }
+            }
+      });
+     }).catch(function(error) {
+        textArea.value = "Error: ";
+        if (error instanceof OfficeExtension.Error) {
+            textArea.value += "Debug info: " + JSON.stringify(error.debugInfo);
+        }
+    });
+}
 </script>
 ```
 
