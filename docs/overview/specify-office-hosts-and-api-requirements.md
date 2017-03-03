@@ -56,7 +56,7 @@ Si usa comprobaciones en tiempo de ejecución, haga referencia a la versión má
 Al especificar hosts de Office o requisitos de la API, es necesario tener en cuenta varios factores. En el diagrama siguiente se muestra cómo decidir la técnica que usar en el complemento.
 
 
-![Elegir la mejor opción para el complemento al especificar los requisitos de API o de hosts de Office](../../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
+![Elegir la mejor opción para el complemento al especificar los requisitos de API o hosts de Office](../../images/e3498f8f-7c7c-461c-84f3-b93910b088b9.png)
 
 - Si el complemento se ejecuta en un host de Office, establezca el elemento **Hosts** en el manifiesto. Para obtener más información, consulte [Establecer el elemento Hosts](../../docs/overview/specify-office-hosts-and-api-requirements.md#set-the-hosts-element).
     
@@ -100,7 +100,7 @@ El elemento  **Hosts** puede contener uno o varios elementos **Host**. El elemen
 ## <a name="set-the-requirements-element-in-the-manifest"></a>Establecer el elemento Requirements en el manifiesto
 
 
-El elemento  **Requirements** especifica los conjuntos de requisitos mínimos o miembros de la API que deben ser compatibles con el host de Office para ejecutar su complemento. El elemento **Requirements** puede especificar tanto los conjuntos de requisitos como los métodos individuales que se usan en su complemento. En la versión 1.1 del esquema de manifiesto de complemento, el elemento **Requirements** es opcional para todas las complementos, excepto las complementos de Outlook.
+El elemento **Requirements** especifica los conjuntos de requisitos mínimos o los miembros de API que debe admitir el host de Office para ejecutar su complemento. El elemento **Requirements** puede especificar conjuntos de requisitos y métodos individuales que se han usado en el complemento. En la versión 1.1 del esquema del manifiesto del complemento, el elemento **Requirements** es opcional para todos los complementos, excepto para los complementos de Outlook.
 
 
  >**Precaución:**  Use el elemento **Requirements** únicamente para especificar conjuntos de requisitos críticos o miembros de la API que debe usar el complemento. Si la plataforma o el host de Office no son compatibles con los conjuntos de requisitos o los miembros de la API especificados en el elemento **Requirements**, el complemento no se ejecutará en la plataforma o el host ni se mostrará en **Mis complementos**. Por esta razón, es recomendable que el complemento esté disponible en todas las plataformas de un host de Office, como Excel para Windows, Excel Online y Excel para iPad. Para que el complemento esté disponible en _todos_ los hosts y plataformas de Office, use comprobaciones en tiempo de ejecución en lugar del elemento **Requirements**.
@@ -135,7 +135,7 @@ En el siguiente ejemplo de código se muestra un complemento que se carga en tod
     
 - El elemento  **Set** especifica los conjuntos de requisitos que el host de Office debe admitir para ejecutar la complemento. El atributo **Name** especifica el nombre del conjunto de requisitos. El atributo **MinVersion** especifica la versión mínima del conjunto de requisitos. **MinVersion** invalida el valor de **DefaultMinVersion**. Para obtener más información sobre los conjuntos de requisitos y las versiones del conjunto de requisitos a los que pertenecen los miembros de la API, consulte [Conjuntos de requisitos de complementos de Office](../../reference/office-add-in-requirement-sets.md).
     
-- El elemento  **Methods** puede contener uno o varios elementos **Method**. No puede usar el elemento  **Methods** con complementos de Outlook.
+- El elemento **Methods** puede contener uno o más elementos **Method**. No puede usar el elemento **Methods** con complementos de Outlook.
     
 - El elemento  **Method** especifica un método individual que debe ser compatible con el host de Office en el que se ejecuta la complemento. El atributo **Name** es obligatorio y especifica el nombre del método completo con su objeto principal.
     
@@ -172,7 +172,7 @@ El siguiente ejemplo de código muestra cómo un complemento puede proporcionar 
 ```js
 if (Office.context.requirements.isSetSupported('WordApi', 1.1)
 {
-    // Run code that provides additional functionality using the JavaScript API for Word when the add-in runs in Word 2016.
+       // Run code that provides additional functionality using the JavaScript API for Word when the add-in runs in Word 2016.
 }
 else if (Office.context.requirements.isSetSupported('CustomXmlParts')
 {
@@ -213,7 +213,7 @@ if (Office.context.document.setSelectedDataAsync)
 
 - [Manifiesto XML de complementos para Office](../../docs/overview/add-in-manifests.md)
     
-- [Conjuntos de requisitos de complementos de Office](../../reference/office-add-in-requirement-sets.md)
+- [Conjuntos de requisitos de complementos de Office](../../reference/requirement-sets/office-add-in-requirement-sets.md)
     
 - [Word-Add-in-Get-Set-EditOpen-XML ](https://github.com/OfficeDev/Word-Add-in-Get-Set-EditOpen-XML)
     

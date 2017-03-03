@@ -66,7 +66,7 @@
     <Item text="Hospedar un complemento para Office en Microsoft Azure" url="publish/host-an-office-add-in-on-microsoft-azure" SEODescription="Use Visual Studio 2015 y Microsoft Office Developer Tools para publicar y, después, hospedar un complemento de Office en Microsoft Azure." />
     <Item text="Empaquetar el complemento con Visual Studio" url="publish/package-your-add-in-using-visual-studio" SEODescription="Empaquete su complemento de Office para prepararlo para la publicación." />
     <Item text="Publicar complementos de panel de tareas y de contenido en un catálogo de complementos" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configurar los clientes de Office para que su complemento esté disponible en el cuadro de diálogo Complementos de Office" />
-	<Item text="Enviar complementos a la Tienda Office" url="https://msdn.microsoft.com/en-us/library/office/jj220037.aspx" IsExternal="true" />
+	<Item text="Enviar complementos a la Tienda Office" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
   </Item>
   
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="Use las API de JavaScript para compilar complementos para Word." Scope="word">
