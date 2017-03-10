@@ -4,9 +4,9 @@ Representa la colección de todos los objetos de enlace que forman parte del lib
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|count|int|Devuelve el número de enlaces incluidos en la colección. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|count|entero|Devuelve el número de enlaces incluidos en la colección. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[Binding[]](binding.md)|Colección de objetos de enlace. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
@@ -22,10 +22,10 @@ Ninguno
 |[add(range: Range or string, bindingType: string, id: string)](#addrange-range-or-string-bindingtype-string-id-string)|[Binding](binding.md)|Agregar un enlace nuevo a un intervalo determinado.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[addFromNamedItem(name: string, bindingType: string, id: string)](#addfromnameditemname-string-bindingtype-string-id-string)|[Binding](binding.md)|Agregar un enlace nuevo basándose en un elemento con nombre del libro.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |[addFromSelection(bindingType: string, id: string)](#addfromselectionbindingtype-string-id-string)|[Binding](binding.md)|Agregar un enlace nuevo basándose en la selección actual.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|entero|Obtiene el número de enlaces de la colección.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(id: string)](#getitemid-string)|[Binding](binding.md)|Obtiene un objeto de enlace por identificador.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Binding](binding.md)|Obtiene un objeto de enlace según su posición en la matriz de elementos.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(id: string)](#getitemornullid-string)|[Binding](binding.md)|Obtiene un objeto de enlace por identificador. Si el objeto de enlace no existe, la propiedad isNull del objeto devuelto será True.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(id: string)](#getitemornullobjectid-string)|[Binding](binding.md)|Obtiene un objeto de enlace por identificador. Si no existe el objeto de enlace, devolverá un objeto nulo.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -39,7 +39,7 @@ bindingCollectionObject.add(range, bindingType, id);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |range|Range o string|Intervalo al que se va a vincular el enlace. Puede ser un objeto de intervalo de Excel o una cadena. Si es una cadena, debe incluir la dirección completa, incluido el nombre de la hoja|
 |bindingType|string|Tipo de enlace.  Los valores posibles son: Range, Table, Text|
@@ -57,7 +57,7 @@ bindingCollectionObject.addFromNamedItem(name, bindingType, id);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |name|string|Nombre desde el que se va a crear el enlace.|
 |bindingType|string|Tipo de enlace.  Los valores posibles son: Range, Table, Text|
@@ -75,13 +75,27 @@ bindingCollectionObject.addFromSelection(bindingType, id);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |bindingType|string|Tipo de enlace.  Los valores posibles son: Range, Table, Text|
 |id|string|Nombre del enlace.|
 
 #### <a name="returns"></a>Valores devueltos
 [Binding](binding.md)
+
+### <a name="getcount"></a>getCount()
+Obtiene el número de enlaces de la colección.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+bindingCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+entero
 
 ### <a name="getitemid-string"></a>getItem(id: string)
 Obtiene un objeto de enlace por identificador.
@@ -92,7 +106,7 @@ bindingCollectionObject.getItem(id);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |id|string|Identificador del objeto de contenido que se va a recuperar.|
 
@@ -172,7 +186,7 @@ bindingCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
@@ -197,37 +211,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemornullid-string"></a>getItemOrNull(id: string)
-Obtiene un objeto de enlace por identificador. Si el objeto de enlace no existe, la propiedad isNull del objeto devuelto será True.
+### <a name="getitemornullobjectid-string"></a>getItemOrNullObject(id: string)
+Obtiene un objeto de enlace por identificador. Si no existe el objeto de enlace, devolverá un objeto nulo.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
-bindingCollectionObject.getItemOrNull(id);
+bindingCollectionObject.getItemOrNullObject(id);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |id|string|Identificador del objeto de contenido que se va a recuperar.|
 
 #### <a name="returns"></a>Valores devueltos
 [Binding](binding.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js

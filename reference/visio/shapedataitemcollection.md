@@ -1,15 +1,14 @@
 # <a name="shapedataitemcollection-object-javascript-api-for-visio"></a>Objeto ShapeDataItemCollection (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
 Representa la clase ShapeDataItemCollection de una forma determinada.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad       | Tipo    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|elementos|[ShapeDataItem[]](shapedataitem.md)|Colección de objetos shapeDataItem. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-items)|
+| Propiedad       | Tipo    |Descripción|
+|:---------------|:--------|:----------|
+|elementos|[ShapeDataItem[]](shapedataitem.md)|Colección de objetos shapeDataItem. Solo lectura.|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -19,11 +18,11 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|Obtiene el número de elementos de datos de formas.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-getCount)|
-|[getItem(clave: cadena)](#getitemkey-string)|[ShapeDataItem](shapedataitem.md)|Obtiene el ShapeDataItem mediante su nombre.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-getItem)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItemCollection-load)|
+| Método           | Tipo de valor devuelto    |Descripción|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|Obtiene el número de elementos de datos de formas.|
+|[getItem(key: string)](#getitemkey-string)|[ShapeDataItem](shapedataitem.md)|Obtiene el elemento ShapeDataItem mediante su nombre.|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
 ## <a name="method-details"></a>Detalles del método
 

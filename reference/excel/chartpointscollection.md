@@ -4,9 +4,9 @@ Colección de todos los puntos del gráfico dentro de una serie de un gráfico.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|count|int|Devuelve el número de puntos del gráfico de la colección. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|count|entero|Devuelve el número de puntos del gráfico de la serie. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[ChartPoint[]](chartpoint.md)|Colección de objetos chartPoint. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
@@ -17,13 +17,27 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto Set|
 |:---------------|:--------|:----------|:----|
+|[getCount()](#getcount)|entero|Devuelve el número de puntos del gráfico de la serie.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartPoint](chartpoint.md)|Recupera un punto basándose en su posición dentro de la serie.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
+
+### <a name="getcount"></a>getCount()
+Devuelve el número de puntos del gráfico de la serie.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+chartPointsCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+entero
 
 ### <a name="getitematindex-number"></a>getItemAt(index: number)
 Recupera un punto basándose en su posición dentro de la serie.
@@ -34,7 +48,7 @@ chartPointsCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
@@ -42,7 +56,7 @@ chartPointsCollectionObject.getItemAt(index);
 [ChartPoint](chartpoint.md)
 
 #### <a name="examples"></a>Ejemplos
-Establecer el color de borde de los primeros puntos de la colección de puntos.
+Establece el color de borde de los primeros puntos de la colección de puntos.
 
 ```js
 Excel.run(function (ctx) { 
@@ -57,25 +71,9 @@ Excel.run(function (ctx) {
             console.log("Debug info: " + JSON.stringify(error.debugInfo));
         }
 });
-```
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
+```### Property access examples
 
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
-### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
-
-Obtener los nombres de los puntos de la colección de puntos.
+Get the names of points in the points collection
 
 ```js
 Excel.run(function (ctx) { 
@@ -92,7 +90,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-Obtener el número de puntos.
+Obtiene el número de puntos.
 
 ```js
 Excel.run(function (ctx) { 

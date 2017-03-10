@@ -4,19 +4,20 @@ Una hoja de cálculo de Excel es una cuadrícula de celdas. Puede contener datos
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |id|string|Devuelve un valor que identifica de forma única la hoja de cálculo de un libro determinado. El valor del identificador permanece igual, incluso cuando se cambia el nombre de la hoja de cálculo o cuando esta se mueve. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Nombre para mostrar de la hoja de cálculo.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |position|entero|Posición de base cero de la hoja de cálculo dentro del libro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|visibility|string|La visibilidad de la hoja de cálculo. Los valores posibles son: Visible, Hidden, VeryHidden.|[1.1, 1.1 para la visibilidad de lectura; 1.2 para configurarla.](../requirement-sets/excel-api-requirement-sets.md)|
+|visibility|string|La visibilidad de la hoja de cálculo. Los valores posibles son: Visible, Hidden, VeryHidden.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción| Conjunto req.|
+| Relación | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |charts|[ChartCollection](chartcollection.md)|Devuelve la colección de gráficos que forman parte de la hoja de cálculo. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|names|[NamedItemCollection](nameditemcollection.md)|Colección de nombres en el ámbito de la hoja de cálculo actual. Solo lectura.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |pivotTables|[PivotTableCollection](pivottablecollection.md)|Colección de tablas dinámicas que forman parte de la hoja de cálculo. Solo lectura.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |protection|[WorksheetProtection](worksheetprotection.md)|Devuelve el objeto de protección de hoja de una hoja de cálculo. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |tables|[TableCollection](tablecollection.md)|Colección de tablas que forman parte de la hoja de cálculo. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -29,8 +30,8 @@ _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 |[delete()](#delete)|void|Elimina la hoja de cálculo del libro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Obtiene el objeto de rango que contiene la celda en función de los números de fila y columna. La celda puede estar fuera de los límites del rango principal, siempre y cuando permanezca dentro de la cuadrícula de la hoja de cálculo.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Obtiene el objeto de intervalo especificado por la dirección o el nombre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|El rango usado es el rango más pequeño que abarque las celdas que tienen asignado un valor o un formato. Si la hoja de cálculo está en blanco, esta función devolverá la celda superior izquierda.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|El rango usado es el rango más pequeño que abarque todas las celdas que tengan asignado un valor o un formato. Si toda la hoja está en blanco, esta función devuelve la celda superior izquierda (es decir, *no* genera un error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|El rango usado es el rango más pequeño que abarque todas las celdas que tengan asignado un valor o un formato. Si toda la hoja está en blanco, esta función devolverá un objeto NULL.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -106,7 +107,7 @@ worksheetObject.getCell(row, column);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |row|number|Número de fila de la celda que se va a recuperar. Indizado con cero.|
 |column|number|Número de columna de la celda que se va a recuperar. Indexado con cero.|
@@ -143,7 +144,7 @@ worksheetObject.getRange(address);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |address|string|Opcional. Dirección o nombre del intervalo. Si no se especifica, se devuelve todo el intervalo de la hoja de cálculo.|
 
@@ -191,8 +192,8 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getusedrangevaluesonly"></a>getUsedRange(valuesOnly)
-El rango usado es el rango más pequeño que abarque las celdas que tienen asignado un valor o un formato. Si la hoja de cálculo está en blanco, esta función devolverá la celda superior izquierda.
+### <a name="getusedrangevaluesonly-apisetversion"></a>getUsedRange(valuesOnly: [ApiSet(Version)
+El rango usado es el rango más pequeño que abarque todas las celdas que tengan asignado un valor o un formato. Si toda la hoja está en blanco, esta función devuelve la celda superior izquierda (es decir, *no* genera un error).
 
 #### <a name="syntax"></a>Sintaxis
 ```js
@@ -200,7 +201,7 @@ worksheetObject.getUsedRange(valuesOnly);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |valuesOnly|[ApiSet(Version|Solo tiene en cuenta las celdas con valores como celdas usadas (ignora el formato).|
 
@@ -227,21 +228,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
+### <a name="getusedrangeornullobjectvaluesonly-bool"></a>getUsedRangeOrNullObject(valuesOnly: bool)
+El rango usado es el rango más pequeño que abarque todas las celdas que tengan asignado un valor o un formato. Si toda la hoja está en blanco, esta función devolverá un objeto NULL.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
-object.load(param);
+worksheetObject.getUsedRangeOrNullObject(valuesOnly);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
+|valuesOnly|bool|Opcional. Solo tiene en cuenta las celdas con valores como celdas usadas.|
 
 #### <a name="returns"></a>Valores devueltos
-void
+[Range](range.md)
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 Obtener las propiedades de la hoja de cálculo en función del nombre de la hoja.

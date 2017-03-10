@@ -7,8 +7,9 @@ Proporciona información sobre el documento que ha generado el evento SelectionC
 Ninguno
 
 ## <a name="relationships"></a>Relaciones
-Ninguno
-
+| Relación | Tipo    |Descripción| Conjunto Set|
+|:---------------|:--------|:----------|:----|
+|workbook|[Workbook](workbook.md)|Obtiene el objeto de libro de trabajo que ha generado el evento SelectionChanged.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 Ninguna

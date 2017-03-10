@@ -4,7 +4,7 @@ Representa una colección de series del gráfico.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |count|int|Devuelve el número de series incluidas en la colección. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[ChartSeries[]](chartseries.md)|Colección de objetos chartSeries. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -17,13 +17,27 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto Set|
 |:---------------|:--------|:----------|:----|
+|[getCount()](#getcount)|entero|Devuelve el número de series incluidas en la colección.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[ChartSeries](chartseries.md)|Recupera una serie basada en su posición en la colección.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
+
+### <a name="getcount"></a>getCount()
+Devuelve el número de series incluidas en la colección.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+chartSeriesCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+entero
 
 ### <a name="getitematindex-number"></a>getItemAt(index: number)
 Recupera una serie basada en su posición en la colección.
@@ -34,7 +48,7 @@ chartSeriesCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
@@ -43,7 +57,7 @@ chartSeriesCollectionObject.getItemAt(index);
 
 #### <a name="examples"></a>Ejemplos
 
-Obtener el nombre de la primera serie de la colección de series.
+Obtiene el nombre de la primera serie de la colección de series.
 
 ```js
 Excel.run(function (ctx) { 
@@ -60,22 +74,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 Obtener los nombres de las series de la colección de series.
 

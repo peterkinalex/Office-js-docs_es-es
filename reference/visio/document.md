@@ -1,7 +1,6 @@
 # <a name="document-object-javascript-api-for-visio"></a>Objeto Document (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
 Representa la clase Document.
 
@@ -10,18 +9,20 @@ Representa la clase Document.
 Ninguno
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|aplicación|[Application](application.md)|Representa una instancia de aplicación de Visio que contiene este documento. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-application)|
-|pages|[PageCollection](pagecollection.md)|Representa una colección de páginas asociadas con el documento. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-pages)|
+| Relación | Tipo    |Descripción|
+|:---------------|:--------|:----------|
+|application|[Aplicación](application.md)|Representa una instancia de aplicación de Visio que contiene este documento. Solo lectura.|
+|páginas|[PageCollection](pagecollection.md)|Representa una colección de páginas asociadas con el documento. Solo lectura.|
+|vista|[DocumentView](documentview.md)|Devuelve el objeto DocumentView. Solo lectura.|
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|[getActivePage()](#getactivepage)|[Página](page.md)|Devuelve la página activa del documento.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-getActivePage)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-load)|
-|[setActivePage(PageName: cadena)](#setactivepagepagename-string)|vacío|Establece la página activa del documento.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-document-setActivePage)|
+| Método           | Tipo de valor devuelto    |Descripción|
+|:---------------|:--------|:----------|
+|[getActivePage()](#getactivepage)|[Página](page.md)|Devuelve la página activa del documento.|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
+|[setActivePage(PageName: cadena)](#setactivepagepagename-string)|vacío|Establece la página activa del documento.|
+|[startDataRefresh()](#startdatarefresh)|void|Activa la actualización de los datos del diagrama en todas las páginas.|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -106,7 +107,33 @@ Visio.run(function (ctx) {
 ```
 
 
-### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
+### <a name="startdatarefresh"></a>startDataRefresh()
+Activa la actualización de los datos del diagrama en todas las páginas.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+documentObject.startDataRefresh();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+void
+
+#### <a name="examples"></a>Ejemplos
+```js
+Visio.run(function (ctx) { 
+    var document = ctx.document;
+    document.startDataRefresh();
+    return ctx.sync();
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```### Property access examples
 ```js
 Visio.run(function (ctx) { 
     var pages = ctx.document.pages;
@@ -114,6 +141,20 @@ Visio.run(function (ctx) {
     return ctx.sync().then(function () {
         console.log("Pages Count: " +pageCount.value);
         });
+}).catch(function(error) {
+        console.log("Error: " + error);
+        if (error instanceof OfficeExtension.Error) {
+            console.log("Debug info: " + JSON.stringify(error.debugInfo));
+        }
+});
+```
+
+### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
+```js
+Visio.run(function (ctx) { 
+    var documentView = ctx.document.view;
+    documentView.disableHyperlinks();
+    return ctx.sync();
 }).catch(function(error) {
         console.log("Error: " + error);
         if (error instanceof OfficeExtension.Error) {

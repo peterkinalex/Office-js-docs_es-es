@@ -4,7 +4,7 @@ Representa una colección de todas las filas que forman parte de la tabla.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |count|int|Devuelve el número de filas de la tabla. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[TableRow[]](tablerow.md)|Colección de objetos tableRow. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -19,9 +19,9 @@ Ninguno
 
 | Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Agrega una o más filas a la tabla. El objeto devuelto será el superior de las filas recién agregadas.|[1.1, 1.1 para agregar una única fila; 1.4 permite agregar varias filas.](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableRow](tablerow.md)|Agrega una o más filas a la tabla. El objeto devuelto será el superior de las filas recién agregadas.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|entero|Obtiene el número de filas de la tabla.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[TableRow](tablerow.md)|Obtiene una fila basada en su posición en la colección.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -35,10 +35,10 @@ tableRowCollectionObject.add(index, values);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |index|number|Opcional. Especifica la posición relativa de la nueva fila. Si es NULL o -1, se produce la adición al final. Las filas situadas debajo de la fila insertada se desplazan hacia abajo. Indizado con cero.|
-|valores|(boolean or string or number)[][]|Opcional. Matriz bidimensional de valores sin formato de la fila de la tabla.|
+|values|(boolean or string or number)[][]|Opcional. Matriz bidimensional de valores sin formato de la fila de la tabla.|
 
 #### <a name="returns"></a>Valores devueltos
 [TableRow](tablerow.md)
@@ -62,6 +62,20 @@ Excel.run(function (ctx) {
 });
 ```
 
+### <a name="getcount"></a>getCount()
+Obtiene el número de filas de la tabla.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+tableRowCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+entero
+
 ### <a name="getitematindex-number"></a>getItemAt(index: number)
 Obtiene una fila basada en su posición en la colección.
 
@@ -71,7 +85,7 @@ tableRowCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
@@ -94,22 +108,6 @@ Excel.run(function (ctx) {
         }
 });
 ```
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js

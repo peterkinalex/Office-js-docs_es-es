@@ -7,8 +7,9 @@ Proporciona información sobre la configuración que ha generado el evento Setti
 Ninguno
 
 ## <a name="relationships"></a>Relaciones
-Ninguno
-
+| Relación | Tipo    |Descripción| Conjunto Set|
+|:---------------|:--------|:----------|:----|
+|configuración|[SettingCollection](settingcollection.md)|Obtiene el objeto Setting que representa el enlace que ha generado el evento SettingsChanged.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 Ninguna

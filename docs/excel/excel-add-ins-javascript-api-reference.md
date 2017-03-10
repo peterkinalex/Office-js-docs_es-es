@@ -3,9 +3,9 @@
 Puede usar la API de JavaScript para Excel para crear complementos para Excel 2016. En la lista siguiente se muestran los objetos de Excel de alto nivel que están disponibles en la API. Cada vínculo a la página del objeto contiene una descripción de las propiedades, las relaciones y los métodos disponibles en el objeto. Explore los vínculos para más información.
 
 * [Workbook](../../reference/excel/workbook.md): objeto de nivel superior que contiene los objetos de libro relacionados, como hojas de cálculo, tablas, intervalos, etc. También puede usarse para enumerar las referencias relacionadas.
-* [Worksheet](../../reference/excel/worksheet.md): miembro de la colección Worksheets. La colección Worksheets contiene todos los objetos de hoja de cálculo de un libro.
-    * [Colección Worksheet](../../reference/excel/worksheetcollection.md): colección de todos los objetos de libro que forman parte del libro.
-* [Range](../../reference/excel/range.md): representa una celda, una fila, una columna o una selección de celdas con uno o más bloques contiguos de celdas.
+* [Worksheet](../../reference/excel/worksheet.md): miembro de la colección Worksheet. La colección Worksheet contiene todos los objetos de hoja de cálculo de un libro.
+    * [Colección Worksheet](../../reference/excel/worksheetcollection.md): Colección de todos los objetos Whorksheet que forman parte del libro.
+* [Range](../../reference/excel/range.md): Representa una celda, una fila, una columna o una selección de celdas con uno o más bloques contiguos de celdas.
 * [Table](../../reference/excel/table.md): representa una colección de celdas organizadas diseñada para facilitar la administración de los datos.
     * [Colección Table](../../reference/excel/tablecollection.md): colección de tablas de un libro o una hoja de cálculo.
     * [Colección TableColumn](../../reference/excel/tablecolumncollection.md): colección de todas las columnas de una tabla.

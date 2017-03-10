@@ -20,9 +20,9 @@ Ninguno
 |:---------------|:--------|:----------|:----|
 |[add(name: string)](#addname-string)|[Worksheet](worksheet.md)|Agrega una nueva hoja al libro. La hoja de cálculo se agregará al final de las hojas de cálculo existentes. Si desea activar la hoja de cálculo recién agregada, llame en ella a ".activate().|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getActiveWorksheet()](#getactiveworksheet)|[Worksheet](worksheet.md)|Obtiene la hoja de cálculo activa en estos momentos del libro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount(visibleOnly: bool)](#getcountvisibleonly-bool)|entero|Obtiene el número de hojas de cálculo de la colección.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(key: string)](#getitemkey-string)|[Worksheet](worksheet.md)|Obtiene un objeto de hoja de cálculo mediante su nombre o identificador.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNullObject(key: string)](#getitemornullkey-string)|[Worksheet](worksheet.md)|Obtiene un objeto de hoja de cálculo mediante su nombre o identificador. Si la hoja de cálculo no existe, la propiedad isNull del objeto devuelto será True.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: cadena)](#getitemornullobjectkey-string)|[Worksheet](worksheet.md)|Obtiene un objeto de hoja de cálculo mediante su nombre o identificador. Si la hoja de cálculo no existe, devolverá un objeto NULL.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -94,6 +94,22 @@ Excel.run(function (ctx) {
 ```
 
 
+### <a name="getcountvisibleonly-bool"></a>getCount(visibleOnly: bool)
+Obtiene el número de hojas de cálculo de la colección.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+worksheetCollectionObject.getCount(visibleOnly);
+```
+
+#### <a name="parameters"></a>Parámetros
+| Parámetro       | Tipo    |Descripción|
+|:---------------|:--------|:----------|:---|
+|visibleOnly|bool|Opcional. Devuelve solo las hojas de cálculo visibles si está establecido en "true". |
+
+#### <a name="returns"></a>Valores devueltos
+int
+
 ### <a name="getitemkey-string"></a>getItem(key: string)
 Obtiene un objeto de hoja de cálculo mediante su nombre o identificador.
 
@@ -110,12 +126,12 @@ worksheetCollectionObject.getItem(key);
 #### <a name="returns"></a>Valores devueltos
 [Worksheet](worksheet.md)
 
-### <a name="getitemornullkey-string"></a>getItemOrNull(key: string)
-Obtiene un objeto de hoja de cálculo mediante su nombre o identificador. Si la hoja de cálculo no existe, la propiedad isNull del objeto devuelto será True.
+### <a name="getitemornullobjectkey-string"></a>getItemOrNullObject(key: string)
+Obtiene un objeto de hoja de cálculo mediante su nombre o identificador. Si la hoja de cálculo no existe, devolverá un objeto NULL.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
-worksheetCollectionObject.getItemOrNull(key);
+worksheetCollectionObject.getItemOrNullObject(key);
 ```
 
 #### <a name="parameters"></a>Parámetros
@@ -125,22 +141,6 @@ worksheetCollectionObject.getItemOrNull(key);
 
 #### <a name="returns"></a>Valores devueltos
 [Worksheet](worksheet.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro       | Tipo    |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 ```js
 Excel.run(function (ctx) { 

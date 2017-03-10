@@ -28,7 +28,7 @@ rangeSortObject.apply(fields, matchCase, hasHeaders, orientation, method);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |fields|SortField[]|La lista de condiciones por las que realizar la ordenación.|
 |matchCase|bool|Opcional. Indica si la ordenación de cadenas distingue mayúsculas de minúsculas.|

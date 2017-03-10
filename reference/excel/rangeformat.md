@@ -1,25 +1,25 @@
 # <a name="rangeformat-object-javascript-api-for-excel"></a>Objeto RangeFormat (API de JavaScript para Excel)
 
-Objeto de formato que encapsula la fuente, el relleno, los bordes, la alineación y otras propiedades del intervalo.
+Objeto de formato que encapsula la fuente, el relleno, los bordes, la alineación y otras propiedades del rango.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|columnWidth|double|Obtiene o establece el ancho de todas las columnas del rango. Si los anchos de columna no son uniformes, se devolverá NULL.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|columnWidth|double|Obtiene o establece el ancho de todas las columnas del rango. Si los anchos de columna no son uniformes, se devolverá null.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |horizontalAlignment|string|Representa la alineación horizontal del objeto especificado. Los valores posibles son: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|rowHeight|double|Obtiene o establece el alto de todas las filas del rango. Si los altos de fila no son uniformes, se devolverá NULL.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|rowHeight|double|Obtiene o establece el alto de todas las filas del rango. Si los altos de fila no son uniformes, se devolverá null.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |verticalAlignment|string|Representa la alineación vertical del objeto especificado. Los valores posibles son: Top, Center, Bottom, Justify, Distributed.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|wrapText|bool|Indica si Excel ajusta el texto del objeto. Un valor NULL indica que el intervalo completo no tiene una configuración de ajuste uniforme.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|wrapText|bool|Indica si Excel ajusta el texto del objeto. Un valor null indica que el intervalo no tiene una configuración de ajuste uniforme.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción| Conjunto req.|
+| Relación | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|borders|[RangeBorderCollection](rangebordercollection.md)|Colección de objetos Border que se aplica al intervalo global seleccionado. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|fill|[RangeFill](rangefill.md)|Devuelve el objeto de relleno definido en el intervalo global. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|font|[RangeFont](rangefont.md)|Devuelve el objeto de fuente definido en el intervalo global seleccionado. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|borders|[RangeBorderCollection](rangebordercollection.md)|Colección de objetos de borde que se aplica al rango global seleccionado. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|fill|[RangeFill](rangefill.md)|Devuelve el objeto de relleno definido en el rango global. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|font|[RangeFont](rangefont.md)|Devuelve el objeto de fuente definido en el rango global. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |protection|[FormatProtection](formatprotection.md)|Devuelve el objeto de protección de formato de un rango. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
@@ -28,7 +28,6 @@ _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 |:---------------|:--------|:----------|:----|
 |[autofitColumns()](#autofitcolumns)|void|Cambia el ancho de las columnas del intervalo actual para obtener el ajuste perfecto (según los datos actuales de las columnas).|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[autofitRows()](#autofitrows)|void|Cambia el alto de las filas del intervalo actual para obtener el ajuste perfecto (según los datos actuales de las columnas).|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -57,22 +56,6 @@ rangeFormatObject.autofitRows();
 
 #### <a name="parameters"></a>Parámetros
 Ninguno
-
-#### <a name="returns"></a>Valores devueltos
-void
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos
 void

@@ -16,9 +16,9 @@ Los siguientes pasos le guiarán por los conceptos básicos para el uso de Fabri
 ##<a name="1-add-the-fabric-cdn-references"></a>1. Agregar las referencias a Fabric en la red CDN
 Para hacer referencia a Fabric desde la red CDN, agregue el siguiente código HTML a la página.
 
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css">
-    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css">
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.min.css">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/css/fabric.components.min.css">
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.4.0/js/fabric.min.js"></script>
 
 Y eso es todo. Ya puede empezar a usar Fabric en su complemento. 
 
@@ -37,26 +37,26 @@ Fabric proporciona varios componentes de experiencia de usuario, como botones o 
 
 > **Nota:** Agregaremos componentes adicionales con el tiempo. 
 
-- [Ruta de navegación](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Breadcrumb.md)
-- [Botón](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Button.md)
-- [Casilla](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/CheckBox.md)
-- [ChoiceFieldGroup](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ChoiceFieldGroup.md)
-- [Selector de fecha](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/DatePicker.md) (para obtener un ejemplo que muestre cómo implementar el selector de fecha en un complemento, consulte el ejemplo de código [Seguimiento de ventas de Excel](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)).
-- [Lista desplegable](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Dropdown.md)
-- [Etiqueta](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Label.md)
-- [Vínculo](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Link.md)
-- [Lista](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/List.md) (considere la posibilidad de cambiar los estilos predeterminados del componente por defecto en las CSS).
-- [MessageBanner](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBanner.md)
-- [MessageBar](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/MessageBar.md)
-- [Superposición](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Overlay.md)
-- [Panel](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Panel.md)
-- [Barra dinámica](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Pivot.md)
-- [ProgressIndicator](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/ProgressIndicator.md)
-- [Cuadro de búsqueda](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/SearchBox.md)
-- [Control de giro](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Spinner.md)
-- [Tabla](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Table.md)
-- [TextField](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/TextField.md)
-- [Botón de alternancia](https://github.com/OfficeDev/office-ui-fabric-js/blob/master/ghdocs/components/Toggle.md)
+- [Ruta de navegación](https://dev.office.com/fabric-js/Components/Breadcrumb/Breadcrumb.html)
+- [Botón](https://dev.office.com/fabric-js/Components/Button/Button.html) (Considere la posibilidad de usar la variante pequeña del botón en el complemento).
+- [Casilla](https://dev.office.com/fabric-js/Components/CheckBox/CheckBox.html)
+- [ChoiceFieldGroup](https://dev.office.com/fabric-js/Components/ChoiceFieldGroup/ChoiceFieldGroup.html)
+- [Selector de fecha](https://dev.office.com/fabric-js/Components/DatePicker/DatePicker.html) (para obtener un ejemplo que muestre cómo implementar el selector de fecha en un complemento, consulte el ejemplo de código [Seguimiento de ventas de Excel](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)).
+- [Lista desplegable](https://dev.office.com/fabric-js/Components/Dropdown/Dropdown.html)
+- [Etiqueta](https://dev.office.com/fabric-js/Components/Label/Label.html)
+- [Vínculo](https://dev.office.com/fabric-js/Components/Link/Link.html)
+- [Lista](https://dev.office.com/fabric-js/Components/List/List.html) (considere la posibilidad de cambiar los estilos predeterminados del componente por defecto en las CSS).
+- [MessageBanner](https://dev.office.com/fabric-js/Components/MessageBanner/MessageBanner.html)
+- [MessageBar](https://dev.office.com/fabric-js/Components/MessageBar/MessageBar.html)
+- [Superposición](https://dev.office.com/fabric-js/Components/Overlay/Overlay.html)
+- [Panel](https://dev.office.com/fabric-js/Components/Panel/Panel.html)
+- [Barra dinámica](https://dev.office.com/fabric-js/Components/Pivot/Pivot.html)
+- [ProgressIndicator](https://dev.office.com/fabric-js/Components/ProgressIndicator/ProgressIndicator.html)
+- [Cuadro de búsqueda](https://dev.office.com/fabric-js/Components/SearchBox/SearchBox.html)
+- [Control de giro](https://dev.office.com/fabric-js/Components/Spinner/Spinner.html)
+- [Table](https://dev.office.com/fabric-js/Components/Table/Table.html)
+- [TextField](https://dev.office.com/fabric-js/Components/TextField/TextField.html)
+- [Botón de alternancia](https://dev.office.com/fabric-js/Components/Toggle/Toggle.html)
    
 ## <a name="updating-your-add-in-to-use-fabric-js"></a>Actualizar el complemento para usar Fabric JS
 Si ha estado usando una versión anterior de Office UI Fabric y le gustaría actualizar a Fabric JS, asegúrese de obtener información acerca de los nuevos componentes, de incorporarlos y de probarlos en su complemento. Tenga en cuenta las siguientes cuestiones a modo de ayuda para planear sus actualizaciones:

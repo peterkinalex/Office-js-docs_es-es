@@ -37,7 +37,6 @@ El método de ejecución toma RequestContext y devuelve una promesa que, normalm
 El método load() se usa para rellenar los objetos proxy creados en la capa de JavaScript del complemento. Al intentar recuperar un objeto, como una hoja de cálculo, se crea en primer lugar un objeto proxy local en la capa de JavaScript. Dicho objeto puede usarse para poner en cola la configuración de sus propiedades y métodos de invocación. Sin embargo, para leer las propiedades o las relaciones de los objetos, deben invocarse primero los métodos load() y sync(). El método load() toma las propiedades y las relaciones que necesitan cargarse cuando se llama al método sync().
 
 _Sintaxis:_
-
 ```js
 object.load(string: properties);
 //or
@@ -47,7 +46,7 @@ object.load({loadOption});
 ```
 Donde,
 
-* `properties` es la lista de propiedades o nombres de relaciones que se van a cargar, especificados como cadenas delimitadas por comas o como una matriz de nombres. Consulte los métodos .load() de cada objeto para obtener más detalles.
+o* `properties` es la lista de propiedades o nombres de relaciones que se van a cargar, especificados como cadenas delimitadas por comas o como una matriz de nombres. Consulte los métodos .load() de cada objeto para obtener más detalles.
 * `loadOption` especifica un objeto que describe las opciones selection, expansion, top y skip. Consulte las [opciones](../../reference/excel/loadoption.md) de carga de objetos para obtener más detalles.
 
 ## <a name="example-write-values-from-an-array-to-a-range-object"></a>Ejemplo: Escribir valores de una matriz a un objeto de intervalo
@@ -57,7 +56,7 @@ En el ejemplo siguiente se muestra cómo escribir los valores de una matriz a un
 Excel.run() contiene un lote de instrucciones. Como parte de este lote, se crea un objeto proxy que hace referencia a un intervalo (dirección A1:B2) de la hoja de cálculo activa. El valor de este objeto proxy de intervalo se establece localmente. Para poder leer los valores, se le indica a la propiedad `text` del rango que debe cargarse en el objeto proxy. Todos estos comandos se ponen en cola y se ejecutan cuando se llama a ctx.sync(). El método sync() devuelve una promesa que puede usarse para encadenarla con otras operaciones.
 
 ```js
-// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
+l// Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
 Excel.run(function (ctx) {
 
     // Create a proxy object for the sheet
@@ -67,7 +66,7 @@ Excel.run(function (ctx) {
                  ["Type", "Estimate"],
                  ["Transportation", 1670]
                  ];
-    // Create a proxy object for the range
+.    // Create a proxy object for the range
     var range = sheet.getRange("A1:B2");
 
     // Assign array value to the proxy object's values property.
@@ -93,8 +92,8 @@ En el ejemplo siguiente se muestra cómo copiar los valores del intervalo A1:A2 
 // Run a batch operation against the Excel object model. Use the context argument to get access to the Excel document.
 Excel.run(function (ctx) {
 
-    // Create a proxy object for the range
-    var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2");
+    // Create a proxy object for the range and load the values property
+    var range = ctx.workbook.worksheets.getActiveWorksheet().getRange("A1:A2").load("values");
 
     // Synchronizes the state between JavaScript proxy objects and real objects in Excel by executing instructions queued on the context
     return ctx.sync().then(function() {
@@ -335,13 +334,13 @@ Los errores se devuelven usando un objeto de error que consta de un código y un
 |InvalidBinding  |Este enlace de objeto ya no es válido debido a actualizaciones anteriores.|
 |InvalidSelection|La selección actual no es válida para esta operación.|
 |Unauthenticated |La información de autenticación necesaria falta o no es válida.|
-|AccessDenied   |No se puede realizar la operación solicitada.|
-|ItemNotFound   |El recurso solicitado no existe.|
+|AccessDenied    |No se puede realizar la operación solicitada.|
+|ItemNotFound    |El recurso solicitado no existe.|
 |ActivityLimitReached|Se alcanzó el límite de actividad.|
 |GeneralException|Se produjo un error interno al procesar la solicitud.|
 |NotImplemented  |La característica solicitada no se implementó.|
 |ServiceNotAvailable|El servicio no está disponible.|
-|Conflict   |No se pudo procesar la solicitud debido a un conflicto.|
+|Conflict    |No se pudo procesar la solicitud debido a un conflicto.|
 |ItemAlreadyExists|El recurso que se está creando ya existe.|
 |UnsupportedOperation|No se admite la operación que se está intentando.|
 |RequestAborted|La solicitud se anuló durante el tiempo de ejecución.|

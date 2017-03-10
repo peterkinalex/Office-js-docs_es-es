@@ -12,9 +12,9 @@ Visio Online es la nueva forma de ver y compartir los diagramas para Visio en la
 **Consulte la página de [API de JavaScript para Visio 1.1](https://github.com/OfficeDev/office-js-docs/tree/VisioJs_1.1_Openspec) para obtener más información y enviar sus comentarios al respecto.**
 
 ## <a name="new-excel-javascript-apis"></a>Nuevas API de JavaScript para Excel
-Únase a nosotros en la revisión del diseño de las nuevas API de JavaScript para Excel. Las API nuevas y actualizadas incluyen partes customXML, método de agregar elemento con nombre, formato condicional, etc. 
+Únase a nosotros en la revisión del diseño de las nuevas API de JavaScript para Excel. Las API nuevas y actualizadas incluyen partes customXML, formato condicional, etc. 
 
-**Consulte la [página de la API 1.4 de JavaScript para Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_1.4_OpenSpec) para obtener más información y enviar sus comentarios.**
+**Consulte la [página de diseño abierto de JavaScript para Excel](https://github.com/OfficeDev/office-js-docs/tree/ExcelJs_OpenSpec) para obtener más información y enviar sus comentarios.**
 
 ## <a name="new-word-javascript-apis-13"></a>Nuevas API de JavaScript para Word (1.3)
 La actualización 1.3 de la API de JavaScript de Word contiene el conjunto de cambios más grande que hemos implementado desde que se presentó esta API. Con la nueva API, podrá: 
@@ -26,7 +26,7 @@ La actualización 1.3 de la API de JavaScript de Word contiene el conjunto de ca
 
 Estos cambios se han implementado en casi todos los objetos de la API de JavaScript de Word. Esta funcionalidad está ahora disponible o lo estará pronto en la versión preliminar de escritorio de Word 2016 para Windows y Mac y en el iPad. Actualice los clientes a la última compilación mensual y empiece a implementar estas excelentes características.
 
-**Consulte la [página de la API 1.3 de JS de Word](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word) para obtener más información y enviar sus comentarios.**
+**Consulte la [página de diseño abierto de la API 1.3 de JS de Word](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.3_Openspec/word) para obtener más información y enviar sus comentarios.**
 
 ## <a name="new-word-javascript-apis-14"></a>Nuevas API de JavaScript para Word (1.4)
 La actualización 1.4 de la API de JavaScript para Word contiene importantes adiciones, entre otras:
@@ -38,10 +38,13 @@ La actualización 1.4 de la API de JavaScript para Word contiene importantes adi
 * tabla combinar celdas
 * Combinación de filas y división de columnas de tabla
 
-**Consulte la [página de la API 1.4 de JS de Word](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec) para obtener más información y enviar sus comentarios.**
+**Consulte la [página de diseño abierto de la API 1.4 de JS de Word](https://github.com/OfficeDev/office-js-docs/tree/WordJs_1.4_OpenSpec) para obtener más información y enviar sus comentarios.**
 
-## <a name="host-platform-information-and-diagnostic-information"></a>Hospedar la información de plataforma y la información de diagnóstico 
-Vea las adiciones planificadas al objeto Office.Context con el fin de proporcionar a los programadores información de entorno de tiempo de ejecución de complementos e información de diagnóstico. 
+## <a name="host-platform-information-and-diagnostic-information"></a>Host, información de plataforma e información de diagnóstico 
+Vea las [adiciones](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec) planificadas para el objeto Office.Context con el fin de proporcionar a los programadores información de entorno de tiempo de ejecución de complementos e información de diagnóstico. 
+
+## <a name="single-sign-on-capability"></a>Funcionalidad de inicio de sesión único 
+Explore el diseño inicial para habilitar el inicio de sesión único en los complementos de Office [aquí](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec)
 
 **Consulte las [especificaciones de adiciones de contexto de Office](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec) para obtener más información y enviar sus comentarios.**
 

@@ -4,7 +4,7 @@ Representa un enlace de Office.js que se define en el libro.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |id|string|Representa el identificador de enlace. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |type|string|Devuelve el tipo de enlace. Solo lectura. Los valores posibles son: Range, Table, Text.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -23,7 +23,6 @@ Ninguno
 |[getRange()](#getrange)|[Range](range.md)|Devuelve el intervalo representado por el enlace. Se producirá un error si el enlace no es del tipo correcto.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTable()](#gettable)|[Table](table.md)|Devuelve la tabla representada por el enlace. Se producirá un error si el enlace no es del tipo correcto.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getText()](#gettext)|string|Devuelve el texto representado por el enlace. Se producirá un error si el enlace no es del tipo correcto.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -140,22 +139,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js

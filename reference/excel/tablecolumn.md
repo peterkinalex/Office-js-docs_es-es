@@ -4,19 +4,19 @@ Representa una columna en una tabla.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |id|int|Devuelve una clave única que identifica la columna de la tabla. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |index|int|Devuelve el número de índice de la columna dentro de la colección de columnas de la tabla. Indizado con cero. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|name|string|Devuelve el nombre de la columna de la tabla. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Representa el nombre de la columna de la tabla.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |values|object[][]|Representa los valores sin formato del rango especificado. Los datos devueltos pueden ser de tipo string, number o boolean. La celda que contenga un error devolverá la cadena de error.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción| Conjunto req.|
+| Relación | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|filter|[Filter](filter.md)|Recupera el filtro aplicado a la columna. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|filtro|[Filter](filter.md)|Recupera el filtro aplicado a la columna. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 
@@ -27,7 +27,6 @@ _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado a la fila de encabezado de la columna.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange()](#getrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado a toda la columna.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado a la fila de totales de la columna.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -196,22 +195,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js

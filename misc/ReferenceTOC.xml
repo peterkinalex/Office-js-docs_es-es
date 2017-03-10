@@ -287,19 +287,31 @@
 		<Item text="Conjuntos de requisitos de la API de JavaScript de OneNote" url="requirement-sets/onenote-api-requirement-sets" SEODescription="Obtenga información sobre los conjuntos de requisitos de OneNote, las aplicaciones de host de Office que admiten esos conjuntos de requisitos y las versiones de la compilación o fecha de disponibilidad." />
 	</Item>
 	<Item text="Visio" url="visio/visio-javascript-reference-overview" Scope="visio"> 
-		<Item text="Aplicación" url="visio/application" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="Documento" url="visio/document" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="Hipervínculo" url="visio/hyperlink" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="loadOption" url="visio/loadoption" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="Página" url="visio/page" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="PageCollection" url="visio/pagecollection" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="Vista de página" url="visio/pageview" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="Shape" url="visio/shape" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="ShapeCollection" url="visio/shapecollection" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="ShapeDataItem" url="visio/shapedataitem" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" SEODescription="Referencia de la API de JavaScript de Visio." /> 
-		<Item text="ShapeView" url="visio/shapeview" SEODescription="Referencia de la API de JavaScript de Visio." /> 
+		<Item text="Application" url="visio/application" /> 
+		<Item text="BoundingBox" url="visio/boundingbox" />
+		<Item text="Comment" url="visio/comment" />
+		<Item text="CommentCollection" url="visio/commentcollection" />
+		<Item text="DataRefreshCompleteEventArgs" url="visio/datarefreshcompleteeventargs" />
+		<Item text="Document" url="visio/document" />
+		<Item text="DocumentView" url="visio/documentview" />
+		<Item text="Highlight" url="visio/highlight" />
+		<Item text="Hyperlink" url="visio/hyperlink" /> 
+		<Item text="HyperlinkCollection" url="visio/hyperlinkcollection" /> 
+		<Item text="LoadOption" url="visio/loadoption" /> 
+		<Item text="Page" url="visio/page" /> 
+		<Item text="PageCollection" url="visio/pagecollection" /> 
+		<Item text="PageLoadCompleteEventArgs" url="visio/pageloadcompleteeventargs" />
+		<Item text="PageView" url="visio/pageview" /> 
+		<Item text="Position" url="visio/position" />
+		<Item text="Selection" url="visio/selection" />
+		<Item text="SelectionChangedEventArgs" url="visio/selectionchangedeventargs" />
+		<Item text="Shape" url="visio/shape" /> 
+		<Item text="ShapeCollection" url="visio/shapecollection" /> 
+		<Item text="ShapeDataItem" url="visio/shapedataitem" /> 
+		<Item text="ShapeDataItemCollection" url="visio/shapedataitemcollection" /> 
+		<Item text="ShapeMouseEnterEventArgs" url="visio/shapemouseentereventargs" />
+		<Item text="ShapeMouseLeaveEventArgs" url="visio/shapemouseleaveeventargs" />
+		<Item text="ShapeView" url="visio/shapeview" /> 
 	</Item> 
 	<Item text="API compartida" url="shared/shared-api" Scope="excel, word, powerpoint, project, outlook, onenote, access">
 		<Item text="API de JavaScript para Office" url="javascript-api-for-office" SEODescription="La API de JavaScript para Office incluye objetos, métodos, propiedades, eventos y enumeraciones que se pueden usar en el código de sus complementos de Office." />

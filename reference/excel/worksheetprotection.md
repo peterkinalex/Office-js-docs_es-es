@@ -4,41 +4,24 @@ Representa la protección de un objeto de hoja.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|protected|booleano|Indica si la hoja de cálculo está protegida. Solo lectura. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|protected|bool|Indica si la hoja de cálculo está protegida. Solo lectura. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción| Conjunto req.|
+| Relación | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|options|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|Opciones de protección de la hoja. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|opciones|[WorksheetProtectionOptions](worksheetprotectionoptions.md)|Opciones de protección de la hoja. Solo lectura. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto Set|
 |:---------------|:--------|:----------|:----|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[protect(options: WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoptions)|void|Protege una hoja de cálculo. Produce un error si se ha protegido la hoja de cálculo.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[protect(options: WorksheetProtectionOptions)](#protectoptions-worksheetprotectionoptions)|vacío|Protege una hoja de cálculo. Produce un error si se ha protegido la hoja de cálculo.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[unprotect()](#unprotect)|void|Desprotege una hoja de cálculo.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
 
 ### <a name="protectoptions-worksheetprotectionoptions"></a>protect(options: WorksheetProtectionOptions)
 Protege una hoja de cálculo. Produce un error si se ha protegido la hoja de cálculo.
@@ -49,7 +32,7 @@ worksheetProtectionObject.protect(options);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |opciones|WorksheetProtectionOptions|Opcional. Opciones de protección de la hoja.|
 

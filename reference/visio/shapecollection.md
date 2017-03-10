@@ -2,15 +2,13 @@
 
 Se aplica a: _Visio Online_
 
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
-
 Representa la colección de formas.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad       | Tipo    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|elementos|[Shape[]](shape.md)|Una colección de objetos de forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-items)|
+| Propiedad       | Tipo    |Descripción|
+|:---------------|:--------|:----------|
+|elementos|[Shape[]](shape.md)|Una colección de objetos de forma. Solo lectura.|
 
 ## <a name="relationships"></a>Relaciones
 Ninguno
@@ -18,11 +16,11 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|Obtiene el número de formas de una colección.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-getCount)|
-|[getItem(clave: número o cadena)](#getitemkey-number-or-string)|[Forma](shape.md)|Obtiene una forma mediante su clave (nombre o índice).|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-getItem)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeCollection-load)|
+| Método           | Tipo de valor devuelto    |Descripción|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|Obtiene el número de formas de una colección.|
+|[getItem(key: number or string)](#getitemkey-number-or-string)|[Forma](shape.md)|Obtiene una forma mediante su clave (nombre o índice).|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
 ## <a name="method-details"></a>Detalles del método
 

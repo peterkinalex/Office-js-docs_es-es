@@ -1,17 +1,16 @@
 # <a name="hyperlink-object-javascript-api-for-visio"></a>Objeto de hipervínculo (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
 Representa el hipervínculo.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad       | Tipo    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|dirección|string|Obtiene la dirección del objeto de hipervínculo. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-address)|
-|descripción|string|Obtiene la descripción de un hipervínculo. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-description)|
-|subAddress|string|Obtiene la subdirección del objeto de hipervínculo. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-subAddress)|
+| Propiedad       | Tipo    |Descripción|
+|:---------------|:--------|:----------|
+|address|string|Obtiene la dirección del objeto de hipervínculo. Solo lectura.|
+|descripción|string|Obtiene la descripción de un hipervínculo. Solo lectura.|
+|subAddress|string|Obtiene la subdirección del objeto de hipervínculo. Solo lectura.|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -21,9 +20,9 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlink-load)|
+| Método           | Tipo de valor devuelto    |Descripción|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
 ## <a name="method-details"></a>Detalles del método
 

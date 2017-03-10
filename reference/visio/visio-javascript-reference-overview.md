@@ -1,7 +1,5 @@
 # <a name="visio-javascript-apis-reference"></a>Referencia de las API de JavaScript para Visio
 
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción. 
-
 Puede utilizar las API de JavaScript Visio para incrustar los diagramas de Visio en SharePoint Online. Un diagrama de Visio incrustado es un diagrama que se almacena en una biblioteca de documentos de SharePoint y que se muestra en una página de SharePoint. Para incrustar un diagrama de Visio, visualícelo en un elemento HTML &lt;iframe&gt;. A continuación, puede utilizar las API de JavaScript de Visio para trabajar mediante programación con el diagrama incrustado.
 
 ![El diagrama de Visio en iframe en la página de SharePoint junto con el elemento web de editor de scripts](../../images/visio-api-block-diagram.png)
@@ -13,7 +11,7 @@ Puede utilizar las API de JavaScript para Visio para:
 * Escribir controladores personalizados para los eventos del mouse dentro del dibujo 
 * Exponer los datos del diagrama, como texto de forma, datos de forma e hipervínculos, a su solución.
 
-Este artículo describe cómo usar las API de JavaScript para Visio con Visio Online para crear sus soluciones para SharePoint Online. Es una introducción a los conceptos clave que son fundamentales para usar las API, como **EmbeddedSession**, **RequestContext** y objetos proxy de JavaScript, y los métodos **sync()**, **Visio.run()** y **load()**. Los ejemplos de código muestran cómo aplicar estos conceptos.
+En este artículo se describe cómo usar las API de JavaScript para Visio con Visio Online para crear sus soluciones para SharePoint Online. Es una introducción a conceptos clave que son fundamentales para usar las API, como **EmbeddedSession**, **RequestContext** y objetos proxy de JavaScript, y los métodos **sync()**, **Visio.run()** y **load()**. Los ejemplos de código muestran cómo aplicar estos conceptos.
 
 ## <a name="embeddedsession"></a>EmbeddedSession
 

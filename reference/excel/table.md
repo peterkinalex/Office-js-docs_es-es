@@ -4,7 +4,7 @@ Representa una tabla de Excel.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |highlightFirstColumn|bool|Indica si la primera columna contiene un formato especial.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
 |highlightLastColumn|bool|Indica si la última columna contiene un formato especial.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
@@ -20,12 +20,12 @@ Representa una tabla de Excel.
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción| Conjunto req.|
+| Relación | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |columns|[TableColumnCollection](tablecolumncollection.md)|Representa una colección de todas las columnas de la tabla. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |rows|[TableRowCollection](tablerowcollection.md)|Representa una colección de todas las filas de la tabla. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |sort|[TableSort](tablesort.md)|Representa la ordenación de la tabla. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|worksheet|[Worksheet](worksheet.md)|La hoja de cálculo que contiene la tabla actual. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheet|[Worksheet](worksheet.md)|Hoja de cálculo que contiene la tabla actual. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 
@@ -38,7 +38,6 @@ _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 |[getHeaderRowRange()](#getheaderrowrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado a la fila de encabezado de la tabla.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange()](#getrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado a toda la tabla.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getTotalRowRange()](#gettotalrowrange)|[Range](range.md)|Obtiene el objeto de intervalo asociado a la fila de totales de la tabla.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[reapplyFilters()](#reapplyfilters)|void|Vuelve a aplicar todos los filtros aplicados actualmente en la tabla.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
@@ -202,7 +201,7 @@ Excel.run(function (ctx) {
     var tableName = 'Table1';
     var table = ctx.workbook.tables.getItem(tableName);
     var tableRange = table.getRange();
-    tableRange.load('address'); 
+    tableRange.load('address');    
     return ctx.sync().then(function() {
             console.log(tableRange.address);
     });
@@ -235,7 +234,7 @@ Excel.run(function (ctx) {
     var tableName = 'Table1';
     var table = ctx.workbook.tables.getItem(tableName);
     var tableTotalsRange = table.getTotalRowRange();
-    tableTotalsRange.load('address');   
+    tableTotalsRange.load('address');    
     return ctx.sync().then(function() {
             console.log(tableTotalsRange.address);
     });
@@ -247,22 +246,6 @@ Excel.run(function (ctx) {
 });
 ```
 
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
 
 ### <a name="reapplyfilters"></a>reapplyFilters()
 Vuelve a aplicar todos los filtros aplicados actualmente en la tabla.

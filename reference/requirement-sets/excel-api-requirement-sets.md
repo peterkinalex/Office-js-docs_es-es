@@ -2,15 +2,17 @@
 
 Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los complementos de Office usan los conjuntos de requisitos especificados en el manifiesto o usan una comprobación en tiempo de ejecución para determinar si un host de Office admite las API necesarias para el complemento. Para obtener más información, consulte [Specify Office hosts and API requirements (Especificar hosts de Office y requisitos de la API)](../../docs/overview/specify-office-hosts-and-api-requirements.md).
 
-Los complementos de Excel se ejecutan en varias versiones de Office, incluida Office 2016 para Windows, Office para iPad, Office para Mac y Office Online. En la siguiente tabla se enumeran los conjuntos de requisitos de Excel, las aplicaciones de host de Office que admiten ese conjunto de requisitos y el número o las versiones de compilación de esas aplicaciones. 
+Los complementos de Excel se ejecutan en varias versiones de Office, incluida Office 2016 para Windows, Office para iPad, Office para Mac y Office Online. En la siguiente tabla se enumeran los conjuntos de requisitos de Excel, las aplicaciones de host de Office que admiten ese conjunto de requisitos y el número o las versiones de compilación de esas aplicaciones.
 
 |  Conjunto de requisitos  |  Office 2016 para Windows*  |  Office 2016 para iPad  |  Office 2016 para Mac  | Office Online  |  Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
+| ExcelApi 1.5 **Beta**  | Versión 1702 (compilación por determinar) o posterior| Próximamente |  Próximamente| próximamente | Próximamente|
+| ExcelApi 1.4 **Beta** | Versión 1702 (compilación por determinar) o posterior| Próximamente |  Próximamente| próximamente | Próximamente|
 | ExcelApi 1.3  | Versión 1608 (compilación 7369.2055) o posterior| 1.27 o posterior |  15.27 o posterior| Septiembre de 2016 | Versión 1608 (compilación 7601.6800) o posterior|
 | ExcelApi 1.2  | Versión 1601 (compilación 6741.2088) o posterior | 1.21 o posterior | 15.22 o posterior| Enero de 2016 ||
 | ExcelApi 1.1  | Versión 1509 (compilación 4266.1001) o posterior | 1.19 o posterior | 15.20 o posterior| Enero de 2016 ||
 
-> **Nota**: El número de compilación para Office 2016 que se ha instalado mediante MSI es 16.0.4266.1001. Esta versión solo contiene el conjunto de requisitos de ExcelApi 1.1.
+> **Nota**: El número de compilación para Office 2016 instalado mediante MSI es el 16.0.4266.1001. Esta versión solo contiene el conjunto de requisitos de ExcelApi 1.1.
 
 Para obtener más información sobre las versiones, números de compilación y Office Online Server, consulte:
 
@@ -22,8 +24,89 @@ Para obtener más información sobre las versiones, números de compilación y O
 ## <a name="office-common-api-requirement-sets"></a>Conjuntos de requisitos comunes de la API de Office
 Para obtener información sobre los conjuntos de requisitos comunes de la API, consulte [Office common API requirement sets (Conjuntos de requisitos comunes de la API de Office)](office-add-in-requirement-sets.md).
 
-## <a name="whats-new-in-excel-javascript-api-13"></a>Novedades de la API de JavaScript de Excel 1.3 
-Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel en el conjunto de requisitos 1.3. 
+## <a name="whats-new-in-excel-javascript-api-14"></a>Novedades de la API de JavaScript de Excel 1.4
+Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel en el conjunto de requisitos 1.3.
+
+### <a name="named-item-add-and-new-properties"></a>Agregar elementos con nombre y nuevas propiedades
+
+Nuevas propiedades
+* `comment`
+* `scope`: elementos con ámbito de hoja de cálculo o libro.
+* `worksheet`: devuelve la hoja de cálculo que tiene como ámbito el elemento con nombre.
+
+Nuevos métodos
+* `add(name: string, reference: Range or string, comment: string)`: agrega un nuevo nombre a la colección del ámbito especificado.
+* `addFormulaLocal(name: string, formula: string, comment: string)`: agrega un nuevo nombre a la colección del ámbito especificado con la configuración regional del usuario para la fórmula.
+
+### <a name="settings-api-in-in-excel-namespace"></a>API de configuración en el espacio de nombres de Excel
+
+El objeto [Setting](https://github.com/OfficeDev/office-js-docs/blob/ExcelJs_1.4_OpenSpec/reference/excel/setting.md) representa un par clave-valor de una configuración que se conserva en el documento. Ahora hemos agregado unas API relacionadas con la configuración en el espacio de nombres de Excel. De esta forma, aunque la funcionalidad no es estrictamente nueva, resulta más fácil permanecer en la sintaxis de API por lotes basada en compromisos y se reduce la dependencia de la API común para tareas relacionadas con Excel.
+
+Las API incluyen `getItem()` para obtener acceso a la configuración mediante la clave `add()` para agregar al libro el par clave-valor de configuración especificado.
+
+### <a name="others"></a>Otros
+
+* Establecer el nombre de la columna de tabla (la versión anterior solo permite la lectura).
+* Agregar una columna al final de la tabla (la versión anterior permite cualquier lugar excepto el último).
+* Agregar varias filas a una tabla de una sola vez (la versión anterior solo permite agregarlas de una en una).
+* `range.getColumnsAfter(count: number)` y `range.getColumnsBefore(count: number)` para obtener un número determinado de columnas a la derecha o izquierda del objeto Range actual.
+* Función para obtener un elemento o un objeto NULL: esta funcionalidad permite obtener el objeto mediante una clave. Si el objeto no existe, la propiedad isNullObject del objeto devuelto será "true". Esto permite a los desarrolladores comprobar si existe un objeto sin tener que utilizar el control de excepciones para controlarlo. Disponible para hojas de cálculo, elementos con nombre, enlaces, series de gráfico, etc.
+
+`worksheet.GetItemOrNullObject()`
+
+### <a name="suspend-calculation"></a>Suspender cálculo
+Suspende el cálculo (application.suspendCalculationUntilNextSync()) hasta que se llama al siguiente "context.sync()". Una vez establecido, será responsabilidad del desarrollador actualizar el libro para asegurarse de que se propaguen las dependencias.
+
+Además, hemos corregido el error al usar F9 para actualizar, que omitía las celdas desfasadas.
+
+|Objeto| Novedades| Descripción|Conjunto de requisitos|
+|:----|:----|:----|:----|
+|[application](../excel/application.md)|_Método_ > [suspendCalculationUntilNextSync()](../excel/application.md#suspendcalculationuntilnextsync)|Suspende el cálculo hasta que se llama al siguiente "context.sync()". Una vez establecido, será responsabilidad del desarrollador actualizar el libro para asegurarse de que se propaguen las dependencias.|1.4|
+|[bindingCollection](../excel/bindingcollection.md)|_Método_ > [getCount()](../excel/bindingcollection.md#getcount)|Obtiene el número de enlaces de la colección.|1.4|
+|[bindingCollection](../excel/bindingcollection.md)|_Método_ > [getItemOrNullObject(id: cadena)](../excel/bindingcollection.md#getitemornullobjectid-string)|Obtiene un objeto de enlace por identificador. Si no existe el objeto de enlace, devolverá un objeto nulo.|1.4|
+|[chartCollection](../excel/chartcollection.md)|_Método_ > [getCount()](../excel/chartcollection.md#getcount)|Devuelve el número de gráficos de la hoja de cálculo.|1.4|
+|[chartCollection](../excel/chartcollection.md)|_Método_ > [getItemOrNullObject(name: string)](../excel/chartcollection.md#getitemornullobjectname-string)|Obtiene un gráfico mediante su nombre. Si hay varias tablas con el mismo nombre, se devolverá la primera.|1.4|
+|[chartPointsCollection](../excel/chartpointscollection.md)|_Método_ > [getCount()](../excel/chartpointscollection.md#getcount)|Devuelve el número de puntos del gráfico de la serie.|1.4|
+|[chartSeriesCollection](../excel/chartseriescollection.md)|_Método_ > [getCount()](../excel/chartseriescollection.md#getcount)|Devuelve el número de series incluidas en la colección.|1.4|
+|[namedItem](../excel/nameditem.md)|_Propiedad_ > comment|Representa el comentario asociado a este nombre.|1.4|
+|[namedItem](../excel/nameditem.md)|_Propiedad_ > scope|Indica si el nombre está en el ámbito del libro o de una hoja de cálculo específica. Solo lectura. Los valores posibles son: Equal, Greater, GreaterEqual, Less, LessEqual, NotEqual.|1.4|
+|[namedItem](../excel/nameditem.md)|_Relación_ > worksheet|Devuelve la hoja de cálculo que tiene como ámbito el elemento con nombre. Se produce un error si el ámbito del elemento es el libro. Solo lectura.|1.4|
+|[namedItem](../excel/nameditem.md)|_Relación_ > worksheetOrNullObject|Devuelve la hoja de cálculo que tiene como ámbito el elemento con nombre. Devuelve un objeto NULL si el ámbito del elemento es el libro. Solo lectura.|1.4|
+|[namedItem](../excel/nameditem.md)|_Método_ > [delete()](../excel/nameditem.md#delete)|Elimina el nombre especificado.|1.4|
+|[namedItem](../excel/nameditem.md)|_Método_ > [getRangeOrNullObject()](../excel/nameditem.md#getrangeornullobject)|Devuelve el objeto de rango asociado al nombre. Devuelve un objeto NULL si el tipo de elemento con nombre no es un rango.|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_Método_ > [add(name: string, reference: Range or string, comment: string)](../excel/nameditemcollection.md#addname-string-reference-range-or-string-comment-string)|Agrega un nuevo nombre a la colección del ámbito especificado.|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_Método_ > [addFormulaLocal(name: string, formula: string, comment: string)](../excel/nameditemcollection.md#addformulalocalname-string-formula-string-comment-string)|Agrega un nuevo nombre a la colección del ámbito especificado, empleando la configuración regional del usuario para la fórmula.|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_Método_ > [getCount()](../excel/nameditemcollection.md#getcount)|Obtiene el número de elementos con nombre de la colección.|1.4|
+|[namedItemCollection](../excel/nameditemcollection.md)|_Método_ > [getItemOrNullObject(name: string)](../excel/nameditemcollection.md#getitemornullobjectname-string)|Obtiene un objeto NamedItem mediante su nombre. Si no existe el objeto NamedItem, devolverá un objeto NULL.|1.4|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_Método_ > [getCount()](../excel/pivottablecollection.md#getcount)|Obtiene el número de tablas dinámicas de una colección.|1.4|
+|[pivotTableCollection](../excel/pivottablecollection.md)|_Método_ > [getItemOrNullObject(name: string)](../excel/pivottablecollection.md#getitemornullobjectname-string)|Obtiene una tabla dinámica por nombre. Si no existe la tabla dinámica, devolverá un objeto NULL.|1.4|
+|[range](../excel/range.md)|_Método_ > [getIntersectionOrNullObject(anotherRange: Range or string)](../excel/range.md#getintersectionornullobjectanotherrange-range-or-string)|Obtiene el objeto de intervalo que representa la intersección rectangular de los intervalos especificados. Si no se encuentra ninguna intersección, se devolverá un objeto NULL.|1.4|
+|[range](../excel/range.md)|_Método_ > [getUsedRangeOrNullObject(valuesOnly: bool)](../excel/range.md#getusedrangeornullobjectvaluesonly-bool)|Devuelve el rango usado del objeto de rango especificado. Si no hay ninguna celda usada dentro del rango, esta función devolverá un objeto NULL.|1.4|
+|[rangeViewCollection](../excel/rangeviewcollection.md)|_Método_ > [getCount()](../excel/rangeviewcollection.md#getcount)|Obtiene el número de objetos RangeView de la colección.|1.4|
+|[setting](../excel/setting.md)|_Propiedad_ > key|Devuelve una clave que representa el identificador de la configuración. Solo lectura.|1.4|
+|[setting](../excel/setting.md)|_Propiedad_ > value|Representa el valor almacenado para esta configuración.|1.4|
+|[setting](../excel/setting.md)|_Método_ > [delete()](../excel/setting.md#delete)|Elimina la configuración.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Propiedad_ > items|Una colección de objetos de configuración. Solo lectura.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Método_ > [add(key: string, value: (any)[])](../excel/settingcollection.md#addkey-string-value-any)|Establece o agrega la configuración especificada en el libro.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Método_ > [getCount()](../excel/settingcollection.md#getcount)|Obtiene el número de configuraciones de una colección.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Método_ > [getItem(key: string)](../excel/settingcollection.md#getitemkey-string)|Obtiene una entrada de configuración mediante la clave.|1.4|
+|[settingCollection](../excel/settingcollection.md)|_Método_ > [getItemOrNullObject(key: string)](../excel/settingcollection.md#getitemornullobjectkey-string)|Obtiene una entrada de configuración mediante la clave. Si el valor no existe, devolverá un objeto NULL.|1.4|
+|[settingsChangedEventArgs](../excel/settingschangedeventargs.md)|_Relación_ > settings|Obtiene el objeto Setting que representa el enlace que ha generado el evento SettingsChanged.|1.4|
+|[tableCollection](../excel/tablecollection.md)|_Método_ > [getCount()](../excel/tablecollection.md#getcount)|Obtiene el número de tablas de la colección.|1.4|
+|[tableCollection](../excel/tablecollection.md)|_Método_ > [getItemOrNullObject(key: number or string)](../excel/tablecollection.md#getitemornullobjectkey-number-or-string)|Obtiene una tabla por nombre o identificador. Si la tabla no existe, devolverá un objeto NULL.|1.4|
+|[tableColumnCollection](../excel/tablecolumncollection.md)|_Método_ > [getCount()](../excel/tablecolumncollection.md#getcount)|Obtiene el número de columnas de la tabla.|1.4|
+|[tableColumnCollection](../excel/tablecolumncollection.md)|_Método_ > [getItemOrNullObject(key: number or string)](../excel/tablecolumncollection.md#getitemornullobjectkey-number-or-string)|Obtiene un objeto de columna por nombre o identificador. Si la columna no existe, devolverá un objeto NULL.|1.4|
+|[tableRowCollection](../excel/tablerowcollection.md)|_Método_ > [getCount()](../excel/tablerowcollection.md#getcount)|Obtiene el número de filas de la tabla.|1.4|
+|[workbook](../excel/workbook.md)|_Relación_ > settings|Representa una colección de configuraciones asociadas con el libro. Solo lectura.|1.4|
+|[worksheet](../excel/worksheet.md)|_Relación_ > names|Colección de nombres en el ámbito de la hoja de cálculo actual. Solo lectura.|1.4|
+|[worksheet](../excel/worksheet.md)|_Método_ > [getUsedRangeOrNullObject(valuesOnly: bool)](../excel/worksheet.md#getusedrangeornullobjectvaluesonly-bool)|El rango usado es el rango más pequeño que abarque todas las celdas que tengan asignado un valor o un formato. Si toda la hoja está en blanco, esta función devolverá un objeto NULL.|1.4|
+|[worksheetCollection](../excel/worksheetcollection.md)|_Método_ > [getCount(visibleOnly: bool)](../excel/worksheetcollection.md#getcountvisibleonly-bool)|Obtiene el número de hojas de cálculo de la colección.|1.4|
+|[worksheetCollection](../excel/worksheetcollection.md)|_Método_ > [getItemOrNullObject(key: string)](../excel/worksheetcollection.md#getitemornullobjectkey-string)|Obtiene un objeto de hoja de cálculo mediante su nombre o identificador. Si la hoja de cálculo no existe, devolverá un objeto NULL.|1.4|
+
+
+
+## <a name="whats-new-in-excel-javascript-api-13"></a>Novedades de la API de JavaScript de Excel 1.3
+Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel en el conjunto de requisitos 1.3.
 
 |Objeto| Novedades| Descripción|Conjunto de requisitos|
 |:----|:----|:----|:----|
@@ -76,7 +159,7 @@ Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel e
 |[worksheet](../excel/worksheet.md)|_Relación_ > pivotTables|Colección de tablas dinámicas que forman parte de la hoja de cálculo. Solo lectura.|1.3|
 
 ## <a name="whats-new-in-excel-javascript-api-12"></a>Novedades de la API de JavaScript de Excel 1.2
-Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel en el conjunto de requisitos 1.2. 
+Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel en el conjunto de requisitos 1.2.
 
 |Objeto| Novedades| Descripción|Conjunto de requisitos|
 |:----|:----|:----|:----|
@@ -162,7 +245,7 @@ Las siguientes son las nuevas incorporaciones a las API de JavaScript de Excel e
 
 ## <a name="excel-javascript-api-11"></a>API de JavaScript de Excel 1.1
 API de JavaScript de Excel 1.1 es la primera versión de la API. Para obtener más información sobre la API, consulte los temas de referencia de API de JavaScript de Excel.  
-    
+
 ## <a name="additional-resources"></a>Recursos adicionales
 
 - [Especificar los hosts de Office y los requisitos de la API](../../docs/overview/specify-office-hosts-and-api-requirements.md)

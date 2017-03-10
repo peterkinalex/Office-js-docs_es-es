@@ -1,15 +1,14 @@
 # <a name="hyperlinkcollection-object-javascript-api-for-visio"></a>Objeto HyperlinkCollection (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
 Representa la colección de hipervínculos.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad       | Tipo    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|elementos|[Hipervínculo[]](hyperlink.md)|Una colección de objetos de hipervínculo. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-items)|
+| Propiedad       | Tipo    |Descripción|
+|:---------------|:--------|:----------|
+|elementos|[Hipervínculo[]](hyperlink.md)|Una colección de objetos de hipervínculo. Solo lectura.|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -19,11 +18,11 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|[getCount()](#getcount)|int|Obtiene el número de hipervínculos.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-getCount)|
-|[getItem(Clave: número o cadena)](#getitemkey-number-or-string)|[Hipervínculo](hyperlink.md)|Obtiene un hipervínculo mediante su clave (nombre o identificador).|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-getItem)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-hyperlinkCollection-load)|
+| Método           | Tipo de valor devuelto    |Descripción|
+|:---------------|:--------|:----------|
+|[getCount()](#getcount)|int|Obtiene el número de hipervínculos.|
+|[getItem(Key: number or string)](#getitemkey-number-or-string)|[Hipervínculo](hyperlink.md)|Obtiene un hipervínculo mediante su clave (nombre o identificador).|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
 ## <a name="method-details"></a>Detalles del método
 

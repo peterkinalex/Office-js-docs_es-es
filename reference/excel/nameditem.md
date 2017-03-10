@@ -4,31 +4,50 @@ Representa un nombre definido para un rango de celdas o un valor. Los nombres pu
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto Set|
 |:---------------|:--------|:----------|:----|
-|name|string|El nombre del objeto. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|type|string|Indica el tipo de referencia que está asociado al nombre. Solo lectura. Los valores posibles son: String, Integer, Double, Boolean, Range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|value|object|Representa la fórmula a la que debe hacer referencia el nombre, según su definición. Por ejemplo =Sheet14!$B$2:$H$12, =4.75, etc. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|comment|string|Representa el comentario asociado a este nombre.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|name|string|Nombre del objeto. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|scope|string|Indica si el nombre está en el ámbito del libro o de una hoja de cálculo específica. Solo lectura. Los valores posibles son: Equal, Greater, GreaterEqual, Less, LessEqual, NotEqual.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|type|string|Indica el tipo del valor que devuelve la fórmula del nombre. Solo lectura. Los valores posibles son: String, Integer, Double, Boolean, Range.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|value|objeto|Representa el valor calculado por la fórmula del nombre. Para un rango con nombre, devolverá la dirección del rango. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |visible|bool|Especifica si el objeto es visible o no.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 ## <a name="relationships"></a>Relaciones
-Ninguno
-
+| Relación | Tipo    |Descripción| Conjunto req.|
+|:---------------|:--------|:----------|:----|
+|worksheet|[Worksheet](worksheet.md)|Devuelve la hoja de cálculo que tiene como ámbito el elemento con nombre. Se produce un error si el ámbito del elemento es el libro. Solo lectura.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|worksheetOrNullObject|[Worksheet](worksheet.md)|Devuelve la hoja de cálculo que tiene como ámbito el elemento con nombre. Devuelve un objeto NULL si el ámbito del elemento es el libro. Solo lectura.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|[getRange()](#getrange)|[Range](range.md)|Devuelve el objeto de intervalo asociado al nombre. Produce una excepción si el tipo del elemento con nombre no es un intervalo.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[delete()](#delete)|void|Elimina el nombre especificado.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRange()](#getrange)|[Range](range.md)|Devuelve el objeto de rango asociado al nombre. Se produce un error si el tipo del elemento con nombre no es un rango.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getRangeOrNullObject()](#getrangeornullobject)|[Range](range.md)|Devuelve el objeto de rango asociado al nombre. Devuelve un objeto NULL si el tipo de elemento con nombre no es un rango.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
+### <a name="delete"></a>delete()
+Elimina el nombre especificado.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+namedItemObject.delete();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+void
+
 ### <a name="getrange"></a>getRange()
-Devuelve el objeto de intervalo asociado al nombre. Produce una excepción si el tipo del elemento con nombre no es un intervalo.
+Devuelve el objeto de rango asociado al nombre. Se produce un error si el tipo del elemento con nombre no es un rango.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
@@ -43,7 +62,7 @@ Ninguno
 
 #### <a name="examples"></a>Ejemplos
 
-Devuelve el objeto Range que está asociado al nombre. `null` si el nombre no es del tipo `Range`. Nota: Esta API actualmente solo admite elementos del ámbito del libro.**
+Devuelve el objeto Range que está asociado al nombre. `null` si el nombre no es del tipo `Range`. Nota: Esta API actualmente solo admite elementos en el ámbito del libro.**
 
 ```js
 Excel.run(function (ctx) { 
@@ -62,21 +81,19 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
+### <a name="getrangeornullobject"></a>getRangeOrNullObject()
+Devuelve el objeto de rango asociado al nombre. Devuelve un objeto NULL si el tipo de elemento con nombre no es un rango.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
-object.load(param);
+namedItemObject.getRangeOrNullObject();
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
+Ninguno
 
 #### <a name="returns"></a>Valores devueltos
-void
+[Range](range.md)
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js

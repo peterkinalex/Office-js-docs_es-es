@@ -1,11 +1,11 @@
 
 # <a name="publish-task-pane-and-content-add-ins-to-a-sharepoint-catalog"></a>Publicar complementos de panel de tareas y de contenido en un catálogo de SharePoint
 
->**Nota:** Si su objetivo es un entorno en la nube o híbrido, le recomendamos que utilice una implementación centralizada con la [Vista previa del centro de administración](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) para publicar sus complementos.
+>**¡Importante!** Los catálogos de complementos de SharePoint no admiten características de complemento que se hayan implementado en el nodo VersionOverrides del [manifiesto del complemento](../overview/add-in-manifests.md), como comandos de complemento. 
+
+>Si su objetivo es un entorno en la nube o híbrido, le recomendamos que utilice una **implementación centralizada** con la [versión preliminar del Centro de administración](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) para publicar sus complementos.
 
 Un catálogo de complementos es una colección de sitios dedicada en una aplicación web de SharePoint o un arrendamiento de SharePoint Online que contiene bibliotecas de documentos para los complementos de Office y SharePoint. Los administradores pueden cargar archivos de manifiesto de complementos de Office en el catálogo de complementos para su organización. Cuando un administrador registra un catálogo de complementos como catálogo de confianza, los usuarios pueden insertar el complemento desde la interfaz de usuario de inserción en una aplicación cliente de Office.
-
->**Nota:** Los catálogos de complementos de SharePoint no admiten características de complemento que se hayan implementado en el nodo VersionOverrides del [manifiesto del complemento](../overview/add-in-manifests.md), como comandos de complemento. 
 
 No se admiten los catálogos de SharePoint en Office 2016 para Mac. Para implementar complementos de Office en clientes Mac, debe enviarlos a la [Tienda Office](http://msdn.microsoft.com/library/ff075782-1303-4517-91cc-b3d730e9b9ae%28Office.15%29.aspx).   
 

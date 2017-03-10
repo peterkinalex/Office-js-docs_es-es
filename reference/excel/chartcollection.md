@@ -4,7 +4,7 @@ Colección de todos los objetos de gráfico en una hoja de cálculo.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |count|int|Devuelve el número de gráficos de la hoja de cálculo. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[Chart[]](chart.md)|Colección de objetos de gráfico. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -20,10 +20,10 @@ Ninguno
 | Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |[add(type: string, sourceData: Range, seriesBy: string)](#addtype-string-sourcedata-range-seriesby-string)|[Chart](chart.md)|Crea un gráfico nuevo.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|entero|Devuelve el número de gráficos de la hoja de cálculo.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(name: string)](#getitemname-string)|[Chart](chart.md)|Obtiene un gráfico mediante su nombre. Si hay varias tablas con el mismo nombre, se devolverá la primera.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[Chart](chart.md)|Obtiene un gráfico basado en su posición en la colección.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(name: string)](#getitemornullname-string)|[Chart](chart.md)|Obtiene un gráfico mediante su nombre. Si hay varias tablas con el mismo nombre, se devolverá la primera.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(name: string)](#getitemornullobjectname-string)|[Chart](chart.md)|Obtiene un gráfico mediante su nombre. Si hay varias tablas con el mismo nombre, se devolverá la primera.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -37,23 +37,18 @@ chartCollectionObject.add(type, sourceData, seriesBy);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
-|type|string|Representa el tipo de un gráfico.  Consulte los tipos de gráfico disponibles a continuación.|
+|type|string|Representa el tipo de un gráfico. Los valores posibles son: ColumnClustered, ColumnStacked, ColumnStacked100, BarClustered, BarStacked, BarStacked100, LineStacked, LineStacked100, LineMarkers, LineMarkersStacked, LineMarkersStacked100, PieOfPie, etc.|
 |sourceData|Range|El objeto Range correspondiente a los datos de origen.|
-|seriesBy|string|Opcional. Especifica la manera en que las columnas o las filas se usan como series de datos en el gráfico.  Los valores posibles son: Automático, columnas, filas|
-
-**A continuación, se muestran los tipos de gráfico válidos:**
-
-`ColumnClustered`, `ColumnStacked`, `ColumnStacked100`, `_3DColumnClustered`, `_3DColumnStacked`, `_3DColumnStacked100`, `BarClustered`, `BarStacked`, `BarStacked100`, `_3DBarClustered`, `_3DBarStacked`, `_3DBarStacked100`, `LineStacked`, `LineStacked100`, `LineMarkers`, `LineMarkersStacked`, `LineMarkersStacked100`, `PieOfPie`, `PieExploded`, `_3DPieExploded`, `BarOfPie`, `XYScatterSmooth`, `XYScatterSmoothNoMarkers`, `XYScatterLines`, `XYScatterLinesNoMarkers`, `AreaStacked`, `AreaStacked100`, `_3DAreaStacked`, `_3DAreaStacked100`, `DoughnutExploded`, `RadarMarkers`, `RadarFilled`, `Surface`, `SurfaceWireframe`, `SurfaceTopView`, `SurfaceTopViewWireframe`, `Bubble`, `Bubble3DEffect`, `StockHLC`, `StockOHLC`, `StockVHLC`, `StockVOHLC`, `CylinderColClustered`, `CylinderColStacked`, `CylinderColStacked100`, `CylinderBarClustered`, `CylinderBarStacked`, `CylinderBarStacked100`, `CylinderCol`, `ConeColClustered`, `ConeColStacked`, `ConeColStacked100`, `ConeBarClustered`, `ConeBarStacked`, `ConeBarStacked100`, `ConeCol`, `PyramidColClustered`, `PyramidColStacked`, `PyramidColStacked100`, `PyramidBarClustered`, `PyramidBarStacked`, `PyramidBarStacked100`, `PyramidCol`, `_3DColumn`, `Line`, `_3DLine`, `_3DPie`, `Pie`, `XYScatter`, `_3DArea`, `Area`, `Doughnut`, `Radar`
-
+|seriesBy|string|Opcional. Especifica la manera en que las columnas o las filas se usan como series de datos en el gráfico.  Los valores posibles son: Auto, Columns, Rows|
 
 #### <a name="returns"></a>Valores devueltos
 [Chart](chart.md)
 
 #### <a name="examples"></a>Ejemplos
 
-Agregar un gráfico de `chartType` "ColumnClustered" en la hoja de cálculo "Gráficos" con `sourceData` del intervalo "A1:B4" y `seriresBy` establecido en "auto".
+Agrega un gráfico de `chartType` "ColumnClustered" en la hoja de cálculo "Gráficos" con `sourceData` del rango "A1:B4" y `seriresBy` establecido en "auto".
 
 ```js
 Excel.run(function (ctx) { 
@@ -61,7 +56,7 @@ Excel.run(function (ctx) {
     var range = ctx.workbook.worksheets.getItem(sheetName)
         .getRange(rangeSelection);
     var chart = ctx.workbook.worksheets.getItem(sheetName)
-        .charts.add("ColumnClustered", range, "auto");  return ctx.sync().then(function() {
+        .charts.add("ColumnClustered", range, "auto");    return ctx.sync().then(function() {
             console.log("New Chart Added");
     });
 }).catch(function(error) {
@@ -73,6 +68,20 @@ Excel.run(function (ctx) {
 ```
 
 
+### <a name="getcount"></a>getCount()
+Devuelve el número de gráficos de la hoja de cálculo.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+chartCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+entero
+
 ### <a name="getitemname-string"></a>getItem(name: string)
 Obtiene un gráfico mediante su nombre. Si hay varias tablas con el mismo nombre, se devolverá la primera.
 
@@ -82,7 +91,7 @@ chartCollectionObject.getItem(name);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |name|string|Nombre del gráfico que se va a recuperar.|
 
@@ -153,7 +162,7 @@ chartCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
@@ -178,37 +187,21 @@ Excel.run(function (ctx) {
 ```
 
 
-### <a name="getitemornullname-string"></a>getItemOrNull(name: string)
+### <a name="getitemornullobjectname-string"></a>getItemOrNullObject(name: string)
 Obtiene un gráfico mediante su nombre. Si hay varias tablas con el mismo nombre, se devolverá la primera.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
-chartCollectionObject.getItemOrNull(name);
+chartCollectionObject.getItemOrNullObject(name);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |name|string|Nombre del gráfico que se va a recuperar.|
 
 #### <a name="returns"></a>Valores devueltos
 [Chart](chart.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js

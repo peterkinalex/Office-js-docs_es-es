@@ -1,16 +1,17 @@
 # <a name="shapedataitem-object-javascript-api-for-visio"></a>Objeto ShapeDataItem (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
-Representa la clase ShapeDataItem.
+Representa el elemento ShapeDataItem.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad       | Tipo    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|etiqueta|string|Una cadena que especifica la etiqueta del elemento de datos de formas. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-label)|
-|valor|string|Una cadena que especifica el valor del elemento de datos de formas. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-value)|
+| Propiedad       | Tipo    |Descripción|
+|:---------------|:--------|:----------|
+|format|string|Cadena que especifica el formato del elemento de datos de formas. Solo lectura.|
+|formattedValue|string|Cadena que especifica el valor con formato del elemento de datos de formas. Solo lectura.|
+|etiqueta|string|Una cadena que especifica la etiqueta del elemento de datos de formas. Solo lectura.|
+|value|string|Una cadena que especifica el valor del elemento de datos de formas. Solo lectura.|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -20,9 +21,9 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shapeDataItem-load)|
+| Método           | Tipo de valor devuelto    |Descripción|
+|:---------------|:--------|:----------|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
 ## <a name="method-details"></a>Detalles del método
 

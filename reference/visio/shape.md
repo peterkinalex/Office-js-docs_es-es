@@ -1,36 +1,52 @@
 # <a name="shape-object-javascript-api-for-visio"></a>Objeto de forma (API de JavaScript para Visio)
 
 Se aplica a: _Visio Online_
->**Nota:** Las API de JavaScript para Visio están actualmente en la vista previa y están sujetas a cambios. Las API de JavaScript para Visio no se admiten actualmente para su uso en entornos de producción.
 
 Representa la clase Shape.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad       | Tipo    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|id|int|Identificador de la forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-id)|
-|name|string|Nombre de la forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-name)|
-|seleccionar|bool|Devuelve True, si la forma está seleccionada. Usuario puede establecer True para seleccionar la forma explícitamente.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-select)|
-|text|string|Texto de la forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-text)|
+| Propiedad       | Tipo    |Descripción|
+|:---------------|:--------|:----------|
+|id|int|Identificador de la forma. Solo lectura.|
+|name|string|Nombre de la forma. Solo lectura.|
+|select|bool|Devuelve True, si la forma está seleccionada. Usuario puede establecer True para seleccionar la forma explícitamente.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-select)|
+|text|string|Texto de la forma. Solo lectura.|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|hipervínculos|[HyperlinkCollection](hyperlinkcollection.md)|Devuelve la colección hipervínculos para un objeto de forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-hyperlinks)|
-|shapeDataItems|[ShapeDataItemCollection](shapedataitemcollection.md)|Devuelve la sección de datos de la forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-shapeDataItems)|
-|subShapes|[ShapeCollection](shapecollection.md)|Obtiene la colección de subformas. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-subShapes)|
-|vista|[ShapeView](shapeview.md)|Devuelve la vista de la forma. Solo lectura.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-view)|
+| Relación | Tipo    |Descripción|
+|:---------------|:--------|:----------|
+|comentarios|[CommentCollection](commentcollection.md)|Devuelve la colección de comentarios. Solo lectura.|
+|hipervínculos|[HyperlinkCollection](hyperlinkcollection.md)|Devuelve la colección hipervínculos para un objeto de forma. Solo lectura.|
+|shapeDataItems|[ShapeDataItemCollection](shapedataitemcollection.md)|Devuelve la sección de datos de la forma. Solo lectura.|
+|subShapes|[ShapeCollection](shapecollection.md)|Obtiene la colección de subformas. Solo lectura.|
+|vista|[ShapeView](shapeview.md)|Devuelve la vista de la forma. Solo lectura.|
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Comentarios|
-|:---------------|:--------|:----------|:---|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[Ir](https://github.com/OfficeDev/office-js-docs/issues/new?title=Visio-shape-load)|
+| Método           | Tipo de valor devuelto    |Descripción|
+|:---------------|:--------|:----------|
+|[getBounds()](#getbounds)|[BoundingBox](boundingbox.md)|Devuelve el objeto BoundingBox que especifica el cuadro de límite de la forma.|
+|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|
 
 ## <a name="method-details"></a>Detalles del método
+
+
+### <a name="getbounds"></a>getBounds()
+Devuelve el objeto BoundingBox que especifica el cuadro de límite de la forma.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+shapeObject.getBounds();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+[BoundingBox](boundingbox.md)
 
 ### <a name="loadparam-object"></a>load(param: object)
 Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.

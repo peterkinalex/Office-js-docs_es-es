@@ -40,7 +40,7 @@ Borrar el formato de línea de las líneas de cuadrícula principales del eje de
 
 ```js
 Excel.run(function (ctx) { 
-    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;   
+    var gridlines = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1").axes.valueAxis.majorGridlines;    
     gridlines.format.line.clear();
     return ctx.sync().then(function() {
             console.log("Chart Major Gridlines Format Cleared");
@@ -62,7 +62,7 @@ chartFillObject.setSolidColor(color);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |color|string|Código de color HTML que representa el color de la línea de borde con el formato #RRGGBB (por ejemplo, "FFA500") o como un color HTML con nombre (por ejemplo, "naranja").|
 
@@ -75,7 +75,7 @@ Establecer el color de fondo de Chart1 en rojo.
 
 ```js
 Excel.run(function (ctx) { 
-    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1"); 
+    var chart = ctx.workbook.worksheets.getItem("Sheet1").charts.getItem("Chart1");    
 
     chart.format.fill.setSolidColor("#FF0000");
 

@@ -4,7 +4,7 @@ Representa una colección de todas las columnas que forman parte de la tabla.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |count|int|Devuelve el número de columnas de la tabla. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |items|[TableColumn[]](tablecolumn.md)|Colección de objetos tableColumn. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
@@ -17,30 +17,31 @@ Ninguno
 
 ## <a name="methods"></a>Métodos
 
-| Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
+| Método           | Tipo de valor devuelto    |Descripción| Conjunto Set|
 |:---------------|:--------|:----------|:----|
-|[add(index: number, values: (boolean or string or number)[][])](#addindex-number-values-boolean-or-string-or-number)|[TableColumn](tablecolumn.md)|Agrega una nueva columna a la tabla.|[1.1, 1.1 requiere un índice más pequeño que el recuento total de columnas; 1.4 permite que el índice sea opcional (NULL o -1](../requirement-sets/excel-api-requirement-sets.md)|
+|[add(index: number, values: (boolean or string or number)[][], name: string)](#addindex-number-values-boolean-or-string-or-number-name-string)|[TableColumn](tablecolumn.md)|Agrega una nueva columna a la tabla.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getCount()](#getcount)|entero|Obtiene el número de columnas de la tabla.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItem(key: number or string)](#getitemkey-number-or-string)|[TableColumn](tablecolumn.md)|Obtiene un objeto de columna por nombre o identificador.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getItemAt(index: number)](#getitematindex-number)|[TableColumn](tablecolumn.md)|Obtiene una columna basada en su posición en la colección.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getItemOrNull(key: number or string)](#getitemornullkey-number-or-string)|[TableColumn](tablecolumn.md)|Obtiene un objeto de columna por nombre o identificador. Si la columna no existe, la propiedad isNull del objeto devuelto será True.|[1.3](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getItemOrNullObject(key: number or string)](#getitemornullobjectkey-number-or-string)|[TableColumn](tablecolumn.md)|Obtiene un objeto de columna por nombre o identificador. Si la columna no existe, devolverá un objeto NULL.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
 
-### <a name="addindex-number-values-boolean-or-string-or-number"></a>add(index: number, values: (boolean or string or number)[][])
+### <a name="addindex-number-values-boolean-or-string-or-number-name-string"></a>add(index: number, values: (boolean or string or number)[][], name: string)
 Agrega una nueva columna a la tabla.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
-tableColumnCollectionObject.add(index, values);
+tableColumnCollectionObject.add(index, values, name);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
-|index|number|Opcional. Especifica la posición relativa de la nueva columna. Si es NULL o -1, se produce la adición al final. Las columnas con un índice superior se desplazarán a un lado. Indexado con cero.|
-|valores|(boolean or string or number)[][]|Opcional. Matriz bidimensional de valores sin formato de la columna de la tabla.|
+|index|number|Opcional. Especifica la posición relativa de la nueva columna. Si es NULL o -1, la columna se agrega al final. Las columnas con un índice más alto se desplazarán a un lado. Indizado con cero.|
+|values|(boolean or string or number)[][]|Opcional. Matriz bidimensional de valores sin formato de la columna de la tabla.|
+|name|string|Opcional. Especifica el nombre de la nueva columna. Si es NULL, se utilizará el nombre predeterminado.|
 
 #### <a name="returns"></a>Valores devueltos
 [TableColumn](tablecolumn.md)
@@ -65,6 +66,20 @@ Excel.run(function (ctx) {
 ```
 
 
+### <a name="getcount"></a>getCount()
+Obtiene el número de columnas de la tabla.
+
+#### <a name="syntax"></a>Sintaxis
+```js
+tableColumnCollectionObject.getCount();
+```
+
+#### <a name="parameters"></a>Parámetros
+Ninguno
+
+#### <a name="returns"></a>Valores devueltos
+int
+
 ### <a name="getitemkey-number-or-string"></a>getItem(key: number or string)
 Obtiene un objeto de columna por nombre o identificador.
 
@@ -74,7 +89,7 @@ tableColumnCollectionObject.getItem(key);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |Key|número o cadena| Nombre o identificador de columna.|
 
@@ -124,7 +139,7 @@ tableColumnCollectionObject.getItemAt(index);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |index|number|Valor de índice del objeto que se va a recuperar. Indizado con cero.|
 
@@ -147,37 +162,21 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getitemornullkey-number-or-string"></a>getItemOrNull(key: number or string)
-Obtiene un objeto de columna por nombre o identificador. Si la columna no existe, la propiedad isNull del objeto devuelto será True.
+### <a name="getitemornullobjectkey-number-or-string"></a>getItemOrNullObject(key: number or string)
+Obtiene un objeto de columna por nombre o identificador. Si la columna no existe, devolverá un objeto NULL.
 
 #### <a name="syntax"></a>Sintaxis
 ```js
-tableColumnCollectionObject.getItemOrNull(key);
+tableColumnCollectionObject.getItemOrNullObject(key);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |Key|número o cadena| Nombre o identificador de columna.|
 
 #### <a name="returns"></a>Valores devueltos
 [TableColumn](tablecolumn.md)
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
-
-#### <a name="returns"></a>Valores devueltos
-void
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 
 ```js

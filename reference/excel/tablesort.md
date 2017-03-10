@@ -4,13 +4,13 @@ Administra operaciones de ordenación en objetos Table.
 
 ## <a name="properties"></a>Propiedades
 
-| Propiedad     | Tipo   |Descripción| Conjunto req.|
+| Propiedad       | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |matchCase|bool|Indica si última ordenación de la tabla distinguía mayúsculas de minúsculas. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |method|string|Representa el método de ordenación de caracteres chinos usado por última vez para ordenar la tabla. Solo lectura. Los valores posibles son: PinYin, StrokeCount.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción| Conjunto req.|
+| Relación | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |fields|[SortField](sortfield.md)|Representa las condiciones actuales que se usaron por última vez para ordenar la tabla. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
@@ -18,9 +18,8 @@ Administra operaciones de ordenación en objetos Table.
 
 | Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|[apply(fields: SortField[], matchCase: bool, method: string)](#applyfields-sortfield-matchcase-bool-method-string)|void|Realiza una operación de ordenación.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[apply(fields: SortField[], matchCase: bool, method: string)](#applyfields-sortfield-matchcase-bool-method-string)|vacío|Realiza una operación de ordenación.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear()](#clear)|void|Borra la ordenación que se aplica actualmente en la tabla. Aunque esto no modifica la ordenación de la tabla, borra el estado de los botones de encabezado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[reapply()](#reapply)|void|Vuelve a aplicar los parámetros de ordenación actuales a la tabla.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
@@ -35,7 +34,7 @@ tableSortObject.apply(fields, matchCase, method);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |fields|SortField[]|La lista de condiciones por las que realizar la ordenación.|
 |matchCase|bool|Opcional. Indica si la ordenación de cadenas distingue mayúsculas de minúsculas.|
@@ -74,22 +73,6 @@ tableSortObject.clear();
 
 #### <a name="parameters"></a>Parámetros
 Ninguno
-
-#### <a name="returns"></a>Valores devueltos
-void
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos
 void

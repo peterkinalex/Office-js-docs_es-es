@@ -7,15 +7,15 @@ Administra el filtrado de la columna de una tabla.
 Ninguno
 
 ## <a name="relationships"></a>Relaciones
-| Relación | Tipo   |Descripción| Conjunto req.|
+| Relación | Tipo    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|criteria|[FilterCriteria](filtercriteria.md)|Filtro aplicado actualmente en la columna especificada. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|criterio|[FilterCriteria](filtercriteria.md)|Filtro aplicado actualmente en la columna especificada. Solo lectura.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="methods"></a>Métodos
 
 | Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
-|[apply(criteria: FilterCriteria)](#applycriteria-filtercriteria)|void|Aplicar los criterios de filtro especificados en la columna especificada.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
+|[apply(criteria: FilterCriteria)](#applycriteria-filtercriteria)|vacío|Aplicar los criterios de filtro especificados en la columna especificada.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyBottomItemsFilter(count: number)](#applybottomitemsfiltercount-number)|void|Aplicar un filtro de "Elemento inferior" a la columna para el número de elementos especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyBottomPercentFilter(percent: number)](#applybottompercentfilterpercent-number)|void|Aplicar un filtro de "Porcentaje inferior" a la columna para el porcentaje de elementos especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyCellColorFilter(color: string)](#applycellcolorfiltercolor-string)|void|Aplicar un filtro de "Color de celda" a la columna para el color especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
@@ -27,7 +27,6 @@ Ninguno
 |[applyTopPercentFilter(percent: number)](#applytoppercentfilterpercent-number)|void|Aplicar un filtro de "Porcentaje superior" a la columna para el porcentaje de elementos especificado.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[applyValuesFilter(values: ()[])](#applyvaluesfiltervalues-)|void|Aplicar un filtro de "Valores" a la columna para los valores especificados.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
 |[clear()](#clear)|void|Borrar el filtro de la columna especificada.|[1.2](../requirement-sets/excel-api-requirement-sets.md)|
-|[load(param: object)](#loadparam-object)|void|Rellena el objeto proxy que se ha creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -41,7 +40,7 @@ filterObject.apply(criteria);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |criterios|FilterCriteria|Criterios que se aplicarán.|
 
@@ -57,7 +56,7 @@ filterObject.applyBottomItemsFilter(count);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |count|number|Número de elementos desde la parte inferior que se van a mostrar.|
 
@@ -73,7 +72,7 @@ filterObject.applyBottomPercentFilter(percent);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |signo de porcentaje|number|Porcentaje de elementos desde la parte inferior que se van a mostrar.|
 
@@ -89,7 +88,7 @@ filterObject.applyCellColorFilter(color);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |color|string|Color de fondo de las celdas que se van a mostrar.|
 
@@ -105,7 +104,7 @@ filterObject.applyCustomFilter(criteria1, criteria2, oper);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |criteria1|string|Primera cadena de criterios.|
 |criteria2|string|Opcional. Segunda cadena de criterios.|
@@ -123,7 +122,7 @@ filterObject.applyDynamicFilter(criteria);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |criterios|string|Criterios dinámicos que se aplicarán.  Los valores posibles son: Unknown, AboveAverage, AllDatesInPeriodApril, AllDatesInPeriodAugust, AllDatesInPeriodDecember, AllDatesInPeriodFebruray, AllDatesInPeriodJanuary, AllDatesInPeriodJuly, AllDatesInPeriodJune, AllDatesInPeriodMarch, AllDatesInPeriodMay, AllDatesInPeriodNovember, AllDatesInPeriodOctober, AllDatesInPeriodQuarter1, AllDatesInPeriodQuarter2, AllDatesInPeriodQuarter3, AllDatesInPeriodQuarter4, AllDatesInPeriodSeptember, BelowAverage, LastMonth, LastQuarter, LastWeek, LastYear, NextMonth, NextQuarter, NextWeek, NextYear, ThisMonth, ThisQuarter, ThisWeek, ThisYear, Today, Tomorrow, YearToDate y Yesterday.|
 
@@ -139,12 +138,12 @@ filterObject.applyFontColorFilter(color);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |color|string|Color de fuente de las celdas que se van a mostrar.|
 
 #### <a name="returns"></a>Valores devueltos
-void
+vacío
 
 ### <a name="applyiconfiltericon-icon"></a>applyIconFilter(icon: Icon)
 Aplica un filtro de "Icono" a la columna para el icono especificado.
@@ -155,7 +154,7 @@ filterObject.applyIconFilter(icon);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |icono|Icono|Iconos de las celdas que se van a mostrar.|
 
@@ -171,7 +170,7 @@ filterObject.applyTopItemsFilter(count);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |count|number|Número de elementos desde la parte superior que se van a mostrar.|
 
@@ -187,7 +186,7 @@ filterObject.applyTopPercentFilter(percent);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |signo de porcentaje|number|Porcentaje de elementos desde la parte superior que se van a mostrar.|
 
@@ -203,7 +202,7 @@ filterObject.applyValuesFilter(values);
 ```
 
 #### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
+| Parámetro       | Tipo    |Descripción|
 |:---------------|:--------|:----------|:---|
 |values|()[]|Lista de valores que se va a mostrar.|
 
@@ -220,22 +219,6 @@ filterObject.clear();
 
 #### <a name="parameters"></a>Parámetros
 Ninguno
-
-#### <a name="returns"></a>Valores devueltos
-void
-
-### <a name="loadparam-object"></a>load(param: object)
-Rellena el objeto proxy creado en la capa de JavaScript con los valores de propiedad y objeto especificados en el parámetro.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-object.load(param);
-```
-
-#### <a name="parameters"></a>Parámetros
-| Parámetro    | Tipo   |Descripción|
-|:---------------|:--------|:----------|:---|
-|param|object|Opcional. Acepta nombres de parámetro y de relación como una cadena delimitada o una matriz. O bien, proporciona el objeto [loadOption](loadoption.md).|
 
 #### <a name="returns"></a>Valores devueltos
 void
