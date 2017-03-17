@@ -67,6 +67,7 @@
     <Item text="Empaquetar el complemento con Visual Studio" url="publish/package-your-add-in-using-visual-studio" SEODescription="Empaquete su complemento de Office para prepararlo para la publicación." />
     <Item text="Publicar complementos de panel de tareas y de contenido en un catálogo de complementos" url="publish/publish-task-pane-and-content-add-ins-to-an-add-in-catalog" SEODescription="Configurar los clientes de Office para que su complemento esté disponible en el cuadro de diálogo Complementos de Office" />
 	<Item text="Enviar complementos a la Tienda Office" url="https://dev.office.com/officestore/docs/submit-add-ins-and-web-apps-to-the-office-store" IsExternal="true" />
+	<Item text="Directivas de validación de la Tienda Office" url="https://dev.office.com/officestore/docs/validation-policies" IsExternal="true" />
   </Item>
   
   <Item text="Word" url="word/word-add-ins-programming-overview" SEODescription="Use las API de JavaScript para compilar complementos para Word." Scope="word">

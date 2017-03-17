@@ -19,7 +19,7 @@ Ninguno
 | Método           | Tipo de valor devuelto    |Descripción| Conjunto req.|
 |:---------------|:--------|:----------|:----|
 |[calculate(calculationType: cadena)](#calculatecalculationtype-string)|nulo|Actualiza todos los libros abiertos actualmente en Excel.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[suspendCalculationUntilNextSync()](#suspendcalculationuntilnextsync)|void|Suspende el cálculo hasta que se llama al siguiente "context.sync()". Una vez establecido, será responsabilidad del desarrollador actualizar el libro para asegurarse de que se propaguen las dependencias.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
+
 
 ## <a name="method-details"></a>Detalles del método
 
@@ -52,20 +52,6 @@ Excel.run(function (ctx) {
         }
 });
 ```
-
-### <a name="suspendcalculationuntilnextsync"></a>suspendCalculationUntilNextSync()
-Suspende el cálculo hasta que se llama al siguiente "context.sync()". Una vez establecido, será responsabilidad del desarrollador actualizar el libro para asegurarse de que se propaguen las dependencias.
-
-#### <a name="syntax"></a>Sintaxis
-```js
-applicationObject.suspendCalculationUntilNextSync();
-```
-
-#### <a name="parameters"></a>Parámetros
-Ninguno
-
-#### <a name="returns"></a>Valores devueltos
-void
 ### <a name="property-access-examples"></a>Ejemplos de acceso a la propiedad
 ```js
 Excel.run(function (ctx) {

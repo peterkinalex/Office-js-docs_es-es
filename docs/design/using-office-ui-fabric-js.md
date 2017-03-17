@@ -38,7 +38,7 @@ Fabric proporciona varios componentes de experiencia de usuario, como botones o 
 > **Nota:** Agregaremos componentes adicionales con el tiempo. 
 
 - [Ruta de navegación](https://dev.office.com/fabric-js/Components/Breadcrumb/Breadcrumb.html)
-- [Botón](https://dev.office.com/fabric-js/Components/Button/Button.html) (Considere la posibilidad de usar la variante pequeña del botón en el complemento).
+- [Botón](https://dev.office.com/fabric-js/Components/Button/Button.html) (Considere la posibilidad de usar la variante pequeña del botón en el complemento. Agregue 16 px de relleno a los botones pequeños para garantizar que la superficie de toque sea como mínimo de 40 px en los dispositivos táctiles).
 - [Casilla](https://dev.office.com/fabric-js/Components/CheckBox/CheckBox.html)
 - [ChoiceFieldGroup](https://dev.office.com/fabric-js/Components/ChoiceFieldGroup/ChoiceFieldGroup.html)
 - [Selector de fecha](https://dev.office.com/fabric-js/Components/DatePicker/DatePicker.html) (para obtener un ejemplo que muestre cómo implementar el selector de fecha en un complemento, consulte el ejemplo de código [Seguimiento de ventas de Excel](https://github.com/OfficeDev/Excel-Add-in-JavaScript-SalesTracker)).

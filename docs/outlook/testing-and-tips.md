@@ -57,11 +57,7 @@ Para usar Outlook Web App (OWA) para instalar un complemento de Outlook, siga lo
 6. Seleccione el nombre de usuario en la esquina superior derecha de la ventana y seleccione **Mi correo** para cambiar a su correo electrónico y probar el complemento.
     
 
->**Nota** Si no usa ninguna de las siguientes características para desarrollar el complemento: 
-- Inquilino de Office 365 Developer
-- Visual Studio
-
-Y, si no tiene el rol "Mis aplicaciones personalizadas", como mínimo, en su Exchange Server, solo podrá instalar complementos desde la Tienda Office. Para probar el complemento o instalar complementos en general especificando un nombre de archivo o dirección URL del manifiesto del complemento, debe solicitar al administrador de Exchange que le proporcione los permisos necesarios.
+Si no tiene al menos el rol "Mis aplicaciones personalizadas" en su Exchange Server, solo podrá instalar complementos de la Tienda Office. Para poder probar el complemento o instalar complementos especificando un nombre de archivo o dirección URL del manifiesto del complemento, debe solicitar al administrador de Exchange que le proporcione los permisos necesarios.
 
 El administrador de Exchange puede ejecutar el siguiente cmdlet de PowerShell para asignar a un solo usuario los permisos necesarios. En este ejemplo, wendyri es el alias de correo electrónico del usuario.
 

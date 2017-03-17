@@ -3,13 +3,13 @@
 
 Puede instalar un complemento de Office para realizar pruebas en un cliente de Office que se ejecuta en Windows mediante un catálogo de carpeta compartida para publicar el manifiesto en un recurso compartido de archivos de red. 
 
->**Nota:** Para probar un complemento de Office en Office Online, consulte [Transferir localmente complementos de Office en Office Online para pruebas](sideload-office-add-ins-for-testing.md). Para probar un complemento en IPad o Mac, consulte [Transferir localmente complementos de Office para pruebas en dispositivos iPad y Mac](sideload-an-office-add-in-on-ipad-and-mac.md ). Para probar un complemento de Outlook, consulte [Transferir localmente complementos de Outlook para pruebas](sideload-outlook-add-ins-for-testing.md ).
+Si no está probando un complemento de Word, Excel o PowerPoint en Windows, consulte uno de los siguientes temas para realizar una instalación de prueba del complemento:
 
-Implemente solo el archivo de manifiesto en el catálogo de carpeta compartida. Implemente la aplicación web en un servidor web y especifique la dirección URL en el elemento **SourceLocation** del archivo de manifiesto.
+- [Instalación de prueba de complementos de Office en Office Online](sideload-office-add-ins-for-testing.md)
+- [Instalación de prueba de complementos de Office en iPad y Mac](sideload-an-office-add-in-on-ipad-and-mac.md )
+- [Instalación de prueba de complementos de Outlook](sideload-outlook-add-ins-for-testing.md )
 
- >**Importante:** Para mejorar la seguridad de las aplicaciones que obtienen acceso a datos y servicios externos, el complemento tiene que usar un protocolo seguro como HTTPS (Hypertext Transfer Protocol Secure) para conectarse a servicios y datos externos. Es necesario usar HTTPS si el complemento usa comandos de complemento.
-
-En el siguiente vídeo, se le guiará por el proceso de transferir de forma local el complemento en Office Online o en la aplicación de escritorio de Office.
+En el siguiente vídeo se explica cómo realizar una instalación de prueba de un complemento en Office Online o en la versión de escritorio de Office.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XXsAw2UUiQo" frameborder="0" allowfullscreen></iframe>
 
@@ -46,7 +46,9 @@ En el siguiente vídeo, se le guiará por el proceso de transferir de forma loca
 ## <a name="sideload-your-add-in"></a>Transferir localmente el complemento
 
 
-1. Coloque el archivo de manifiesto de cualquier complemento que se esté probando en el catálogo de carpetas compartidas.
+1. Coloque el archivo de manifiesto de cualquier complemento que se esté probando en el catálogo de carpetas compartidas. Tenga en cuenta que la propia aplicación web se implementa en un servidor web. Asegúrese de especificar la dirección URL en el elemento **SourceLocation** del archivo de manifiesto.
+
+    >**Importante:**  Para aumentar la seguridad de las aplicaciones que obtienen acceso a datos y servicios externos, su complemento debe usar un protocolo seguro como es el protocolo HTTPS para establecer la conexión con los datos y servicios externos. Debe usar HTTPS si el complemento utiliza comandos de complementos.
 
 2. En Excel, Word o PowerPoint, seleccione **Mis complementos** en la pestaña **Insertar** de la cinta de opciones.
 

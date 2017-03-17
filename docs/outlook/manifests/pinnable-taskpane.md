@@ -4,7 +4,7 @@ La forma de experiencia de usuario [panel de tareas](../add-in-commands-for-outl
 
 Sin embargo, de forma predeterminada, si un usuario tiene el panel de tareas de un complemento abierto para un mensaje en el panel de lectura y, a continuación, selecciona un mensaje nuevo, el panel de tareas se cerrará automáticamente. Es posible que, en el caso de un complemento que se use mucho, el usuario prefiera mantener el panel abierto para eliminar la necesidad de volver a activar el complemento en cada mensaje. Con los paneles de tareas anclables, el complemento puede ofrecer al usuario esa opción.
 
-> **Nota:** Actualmente, los paneles de tareas que se pueden anclar solo se admiten en Outlook 2016 para Windows (compilación 7628.1000 o posteriores).
+> **Nota**: Los paneles de tareas anclables solo se admiten en Outlook 2016 para Windows (compilación 7668.2000 o posterior para los usuarios del Canal actual u Office Insider, compilación 7900.xxxx o posterior para los usuarios del Canal Diferido).
 
 ## <a name="support-taskpane-pinning"></a>Admitir el anclado de paneles de tareas
 

@@ -3,7 +3,7 @@
 
 >**¡Importante!** Los catálogos de complementos de SharePoint no admiten características de complemento que se hayan implementado en el nodo VersionOverrides del [manifiesto del complemento](../overview/add-in-manifests.md), como comandos de complemento. 
 
->Si su objetivo es un entorno en la nube o híbrido, le recomendamos que utilice una **implementación centralizada** con la [versión preliminar del Centro de administración](https://support.office.com/en-ie/article/Deploy-Office-Add-ins-in-the-Office-365-new-Admin-Center-737e8c86-be63-44d7-bf02-492fa7cd9c3f?ui=en-US&rs=en-IE&ad=IE) para publicar sus complementos.
+>Si su objetivo es un entorno en la nube o híbrido, le recomendamos que utilice una **implementación centralizada** con la [versión preliminar del Centro de administración](publish/publish.md#office-365-admin-center-preview-deployment) para publicar sus complementos.
 
 Un catálogo de complementos es una colección de sitios dedicada en una aplicación web de SharePoint o un arrendamiento de SharePoint Online que contiene bibliotecas de documentos para los complementos de Office y SharePoint. Los administradores pueden cargar archivos de manifiesto de complementos de Office en el catálogo de complementos para su organización. Cuando un administrador registra un catálogo de complementos como catálogo de confianza, los usuarios pueden insertar el complemento desde la interfaz de usuario de inserción en una aplicación cliente de Office.
 

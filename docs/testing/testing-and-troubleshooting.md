@@ -1,4 +1,3 @@
-
 # <a name="troubleshoot-user-errors-with-office-add-ins"></a>Solucionar errores de usuario con los complementos de Office
 
 A veces, los usuarios pueden experimentar problemas con los complementos de Office que desarrolla. Por ejemplo, un complemento no se puede cargar o está inaccesible. Use la información de este artículo como ayuda para resolver problemas comunes que experimentan los usuarios con el complemento de Office. 
@@ -47,21 +46,42 @@ Compruebe que están instaladas las últimas actualizaciones de Office o descarg
 
 ## <a name="add-in-doesnt-load-in-task-pane-or-other-issues-with-the-add-in-manifest"></a>El complemento no se carga en el panel de tareas o hay otros problemas con el manifiesto del complemento
 
-Vea [Validar y solucionar problemas relacionados con el manifiesto](troubleshoot-manifest.md) para depurar problemas del manifiesto del complemento.
+Vea [Validar y solucionar problemas con el manifiesto](troubleshoot-manifest.md) para depurar problemas del manifiesto del complemento.
+
+## <a name="add-in-dialog-box-cannot-be-displayed"></a>No se puede mostrar el cuadro de diálogo del complemento
+
+Cuando se utiliza un complemento de Office, se le pregunta al usuario si se puede mostrar un cuadro de diálogo. El usuario elige **Permitir** y se produce el mensaje de error siguiente:
+
+"No pudimos crear un cuadro de diálogo a causa de la configuración de seguridad de su explorador. Pruebe otro explorador o configure su explorador para que [URL] y el dominio que se muestra en su barra de direcciones se encuentren en la misma zona de seguridad".
+
+![Captura de pantalla del mensaje de error del cuadro de diálogo](http://i.imgur.com/3mqmlgE.png)
+
+|**Exploradores afectados**|**Plataformas afectadas**|
+|:--------------------|:---------------------|
+|Internet Explorer, Microsoft Edge|Office Online|
+
+Para resolver el problema, los usuarios finales o los administradores pueden agregar el dominio del complemento a la lista de sitios de confianza en Internet Explorer. Use el mismo procedimiento tanto en Internet Explorer como en Microsoft Edge.
+
+>**Importante:** No agregue la dirección URL de un complemento a la lista de sitios de confianza si no confía en el complemento.
+
+Para agregar una dirección URL a la lista de sitios de confianza:
+
+1. En Internet Explorer, elija el botón Herramientas y vaya a **Opciones de Internet** > **Seguridad**.
+2. Seleccione la zona **Sitios de confianza** y elija **Sitios**.
+3. Introduzca la URL que aparece en el mensaje de error y seleccione **Agregar**.
+4. Intente de nuevo usar el complemento. Si el problema continúa, compruebe la configuración de las demás zonas de seguridad y asegúrese de que el dominio del complemento está en la misma zona que la dirección URL que se muestra en la barra de direcciones de la aplicación de Office.
+
+Este problema se produce cuando se utiliza la API de cuadros de diálogo en modo emergente. Para evitar este problema, utilice la marca [displayInFrame](../../reference/shared/officeui.displaydialogasync). Esto requiere que la página admita la presentación dentro de un iframe. En el siguiente ejemplo se indica cómo usar la marca.
+
+```js
+
+Office.context.ui.displayDialogAsync(startAddress, {displayInFrame:true}, callback);
+```
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
-
-
-- [Depurar complementos en Office Online](../testing/debug-add-ins-in-office-online.md)
-    
-- [Transferir localmente un complemento de Office a iPad y Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)
-    
-- [Depurar complementos de Office en dispositivos iPad y Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)
-    
-- [Crear y depurar complementos de Office en Visual Studio](../../docs/get-started/create-and-debug-office-add-ins-in-visual-studio.md)
-    
-- [Implementar e instalar complementos de Outlook para probarlos](../outlook/testing-and-tips.md)
-    
+- [Depurar complementos en Office Online](../testing/debug-add-ins-in-office-online.md) 
+- [Transferir localmente un complemento de Office a iPad y Mac](../testing/sideload-an-office-add-in-on-ipad-and-mac.md)  
+- [Depurar complementos de Office en dispositivos iPad y Mac](../testing/debug-office-add-ins-on-ipad-and-mac.md)  
 - [Validar y solucionar problemas con el manifiesto](troubleshoot-manifest.md)
     
