@@ -44,7 +44,7 @@ La actualización 1.4 de la API de JavaScript para Word contiene importantes adi
 Vea las [adiciones](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec) planificadas para el objeto Office.Context con el fin de proporcionar a los programadores información de entorno de tiempo de ejecución de complementos e información de diagnóstico. 
 
 ## <a name="single-sign-on-capability"></a>Funcionalidad de inicio de sesión único 
-Explore el diseño inicial para habilitar el inicio de sesión único en los complementos de Office [aquí](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec)
+Explore el diseño inicial para habilitar el inicio de sesión único en los complementos de Office [aquí](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec).
 
-**Consulte las [especificaciones de adiciones de contexto de Office](https://github.com/OfficeDev/office-js-docs/tree/ContextAdditions_OpenSpec) para obtener más información y enviar sus comentarios.**
+**Consulte el tema [Especificaciones del inicio de sesión único](https://github.com/OfficeDev/office-js-docs/tree/Addin_SSO_OpenSpec) para obtener más información y proporcionar sus comentarios.**
 

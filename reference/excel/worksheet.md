@@ -9,7 +9,7 @@ Una hoja de cálculo de Excel es una cuadrícula de celdas. Puede contener datos
 |id|string|Devuelve un valor que identifica de forma única la hoja de cálculo de un libro determinado. El valor del identificador permanece igual, incluso cuando se cambia el nombre de la hoja de cálculo o cuando esta se mueve. Solo lectura.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |name|string|Nombre para mostrar de la hoja de cálculo.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |position|entero|Posición de base cero de la hoja de cálculo dentro del libro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|visibility|string|La visibilidad de la hoja de cálculo. Los valores posibles son: Visible, Hidden, VeryHidden.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|visibility|string|Visibilidad de la hoja de cálculo. Los valores posibles son: Visible, Hidden, VeryHidden.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 
 _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 
@@ -30,7 +30,7 @@ _Consulte los [ejemplos](#property-access-examples) de acceso a la propiedad._
 |[delete()](#delete)|void|Elimina la hoja de cálculo del libro.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getCell(row: number, column: number)](#getcellrow-number-column-number)|[Range](range.md)|Obtiene el objeto de rango que contiene la celda en función de los números de fila y columna. La celda puede estar fuera de los límites del rango principal, siempre y cuando permanezca dentro de la cuadrícula de la hoja de cálculo.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getRange(address: string)](#getrangeaddress-string)|[Range](range.md)|Obtiene el objeto de intervalo especificado por la dirección o el nombre.|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
-|[getUsedRange(valuesOnly: [ApiSet(Version)](#getusedrangevaluesonly-apisetversion)|[Range](range.md)|El rango usado es el rango más pequeño que abarque todas las celdas que tengan asignado un valor o un formato. Si toda la hoja está en blanco, esta función devuelve la celda superior izquierda (es decir, *no* genera un error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
+|[getUsedRange(valuesOnly: bool)](#getusedrangevaluesonly-bool)|[Range](range.md)|El rango usado es el rango más pequeño que abarque todas las celdas que tengan asignado un valor o un formato. Si toda la hoja está en blanco, esta función devuelve la celda superior izquierda (es decir, *no* genera un error).|[1.1](../requirement-sets/excel-api-requirement-sets.md)|
 |[getUsedRangeOrNullObject(valuesOnly: bool)](#getusedrangeornullobjectvaluesonly-bool)|[Range](range.md)|El rango usado es el rango más pequeño que abarque todas las celdas que tengan asignado un valor o un formato. Si toda la hoja está en blanco, esta función devolverá un objeto NULL.|[1.4](../requirement-sets/excel-api-requirement-sets.md)|
 
 ## <a name="method-details"></a>Detalles del método
@@ -172,7 +172,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-En el ejemplo siguiente se usa un intervalo con nombre para obtener el objeto de intervalo.
+En el ejemplo siguiente, se usa un intervalo con nombre para obtener el objeto de intervalo.
 
 ```js
 
@@ -192,7 +192,7 @@ Excel.run(function (ctx) {
 });
 ```
 
-### <a name="getusedrangevaluesonly-apisetversion"></a>getUsedRange(valuesOnly: [ApiSet(Version)
+### <a name="getusedrangevaluesonly-bool"></a>getUsedRange(valuesOnly: bool)
 El rango usado es el rango más pequeño que abarque todas las celdas que tengan asignado un valor o un formato. Si toda la hoja está en blanco, esta función devuelve la celda superior izquierda (es decir, *no* genera un error).
 
 #### <a name="syntax"></a>Sintaxis

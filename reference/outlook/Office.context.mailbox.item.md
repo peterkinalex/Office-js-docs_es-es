@@ -271,6 +271,8 @@ Obtiene la dirección de correo electrónico del remitente de un mensaje. Solo m
 
 Las propiedades `from` y [`sender`](Office.context.mailbox.item.md#sender-emailaddressdetails) representan a la misma persona, a menos que un delegado envíe el mensaje. En ese caso, la propiedad `from` representa a la persona que delega y la propiedad sender representa al delegado.
 
+> **Nota**: La propiedad `recipientType` del objeto `EmailAddressDetails` de la propiedad `from` está `undefined`.
+
 ##### <a name="type"></a>Tipo:
 
 *   [EmailAddressDetails](simple-types.md#emailaddressdetails)
@@ -565,7 +567,7 @@ function callback(asyncResult) {
 
 #### <a name="resources-emailaddressdetailssimple-typesmdemailaddressdetails"></a>resources :[EmailAddressDetails](simple-types.md#emailaddressdetails)
 
-Obtiene los recursos necesarios para una cita. Solo modo Lectura.
+Obtiene los recursos requeridos para una cita. Solo modo Lectura.
 
 > **Nota:** Este miembro no se admite en Outlook para iOS ni en Outlook para Android.
 
@@ -585,6 +587,8 @@ Obtiene los recursos necesarios para una cita. Solo modo Lectura.
 Obtiene la dirección de correo electrónico del remitente de un mensaje de correo electrónico. Solo modo Lectura.
 
 Las propiedades [`from`](Office.context.mailbox.item.md#from-emailaddressdetails) y `sender` representan a la misma persona, a menos que un delegado envíe el mensaje. En ese caso, la propiedad `from` representa a la persona que delega y la propiedad sender representa al delegado.
+
+> **Nota**: La propiedad `recipientType` del objeto `EmailAddressDetails` de la propiedad `sender` está `undefined`.
 
 ##### <a name="type"></a>Tipo:
 

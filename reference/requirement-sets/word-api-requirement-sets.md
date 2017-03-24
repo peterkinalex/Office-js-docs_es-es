@@ -4,6 +4,10 @@ Los conjuntos de requisitos son grupos de miembros de la API con nombre. Los com
 
 Los complementos de Word se ejecutan en varias versiones de Office, incluida Office 2016 para Windows, Office para iPad, Office para Mac y Office Online. En la siguiente tabla se enumeran los conjuntos de requisitos de Word, las aplicaciones de host de Office que admiten ese conjunto de requisitos y la compilación o números de versión de esas aplicaciones.
 
+> Para los conjuntos de requisitos que están marcados como versión Beta, utilice la versión especificada (o posterior) del software de Office y la biblioteca de la versión Beta de CDN: https://appsforoffice.microsoft.com/lib/beta/hosted/office.js.
+
+> Las entradas que no se enumeran como versión Beta están generalmente disponibles y puede seguir utilizando la biblioteca de CDN de producción: https://appsforoffice.microsoft.com/lib/1/hosted/office.js.
+
 |  Conjunto de requisitos  |   Office 2016 para Windows*  |  Office 2016 para iPad  |  Office 2016 para Mac  | Office Online  | Office Online Server  |
 |:-----|-----|:-----|:-----|:-----|:-----|
 | WordApi 1.3  | En la versión preliminar, versión 1605 (compilación 6925.1000) o posterior| En la versión preliminar, mayo de 2016, 1.22 o posterior | En la versión preliminar, la 15.22 o versiones posteriores| En la versión preliminar. ||
